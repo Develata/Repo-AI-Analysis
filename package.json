@@ -1,0 +1,15 @@
+{
+  "name": "gh-repos-ai-analysis",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Static GitHub Pages site for structured AI-assisted GitHub repository analyses.",
+  "scripts": {
+    "build": "node scripts/build-index.mjs",
+    "import": "node scripts/import-from-server.mjs",
+    "serve": "npx --yes http-server . -p 4174 -c-1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

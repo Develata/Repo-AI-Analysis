@@ -1,0 +1,48 @@
+{
+  "count": 1,
+  "reports": [
+    {
+      "slug": "agent-programs/coding-agents/deepseek-reasonix",
+      "path": "content/agent-programs/coding-agents/deepseek-reasonix.md",
+      "title": "DeepSeek-Reasonix",
+      "repo_url": "https://github.com/esengine/DeepSeek-Reasonix",
+      "category": "ai-agents",
+      "tags": [
+        "coding-agent",
+        "deepseek",
+        "cli",
+        "tui",
+        "typescript",
+        "mcp",
+        "desktop-app"
+      ],
+      "primary_language": "TypeScript",
+      "license": "MIT",
+      "stars": 2748,
+      "forks": 149,
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 5,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 4,
+        "recommendation": 3
+      },
+      "overall_score": 3.8,
+      "last_checked": "2026-05-15",
+      "last_verified": "2026-05-15",
+      "updated": "2026-05-15",
+      "sources": [
+        "[GH] https://github.com/esengine/DeepSeek-Reasonix",
+        "[Docs] https://esengine.github.io/DeepSeek-Reasonix/"
+      ],
+      "summary": "为深度使用 DeepSeek API 的开发者打造的终端编程 Agent，以 prefix-cache 稳定性为核心卖点，配合 Tauri 桌面客户端和 MCP 生态，在成本控制和工程深度上均属同类顶流——但仅 24 天项目年龄决定了它仍在快速震荡期。"
+    }
+  ]
+}

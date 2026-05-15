@@ -1,0 +1,6 @@
+mobile-detail.png
+*-screenshot.png
+.qa/
+*.network-request
+*.network-response
+node_modules/
