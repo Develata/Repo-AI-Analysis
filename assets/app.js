@@ -234,9 +234,36 @@ function setupTheme() {
 
 function setupBackground() {
   const ctx = els.canvas.getContext('2d');
-  const symbols = ['∑', '∫', 'λ', 'π', '⊢', '∈', '∴', 'git', 'AI', '★'];
+  const connectDist = 160;
+  const speedFactor = 0.35;
+  const symbols = [
+    '¬', '∧', '∨', '→', '↔',
+    '∀', '∃', '⊢', '⊨', '⇔', '⇒', '⊥', '∴', '∵', '∎',
+    '∅', '∈', '⊂', '∪', '∩', 'ℵ',
+    'ℝ', 'ℂ', 'ℤ', 'ℕ', 'ℚ',
+    '∫', '∂', '∇', '∑', '∏', '∞', 'Ω', 'π',
+  ];
   let points = [];
   let raf = 0;
+
+  function getConvexHull(input) {
+    const sorted = input.slice().sort((a, b) => a.x - b.x || a.y - b.y);
+    const cross = (o, a, b) => (a.x - o.x) * (b.y - o.y) - (a.y - o.y) * (b.x - o.x);
+    const lower = [];
+    for (const point of sorted) {
+      while (lower.length >= 2 && cross(lower.at(-2), lower.at(-1), point) <= 0) lower.pop();
+      lower.push(point);
+    }
+    const upper = [];
+    for (let i = sorted.length - 1; i >= 0; i -= 1) {
+      const point = sorted[i];
+      while (upper.length >= 2 && cross(upper.at(-2), upper.at(-1), point) <= 0) upper.pop();
+      upper.push(point);
+    }
+    upper.pop();
+    lower.pop();
+    return lower.concat(upper);
+  }
 
   function resize() {
     const dpr = window.devicePixelRatio || 1;
@@ -245,48 +272,111 @@ function setupBackground() {
     els.canvas.style.width = `${window.innerWidth}px`;
     els.canvas.style.height = `${window.innerHeight}px`;
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    const count = window.innerWidth < 768 ? 12 : 34;
+    const count = window.innerWidth < 768 ? 10 : 40;
     points = Array.from({ length: count }, () => ({
       x: Math.random() * window.innerWidth,
       y: Math.random() * window.innerHeight,
-      vx: (Math.random() - 0.5) * 0.28,
-      vy: (Math.random() - 0.5) * 0.28,
+      vx: (Math.random() - 0.5) * speedFactor,
+      vy: (Math.random() - 0.5) * speedFactor,
       symbol: symbols[Math.floor(Math.random() * symbols.length)],
     }));
   }
 
   function draw() {
     const dark = document.documentElement.classList.contains('dark');
+    const symbolColor = dark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.1)';
+    const lineColor = dark ? 'rgba(120,220,255,0.25)' : 'rgba(0,50,100,0.03)';
+    const triangleColor = dark ? 'rgba(120,220,255,0.05)' : 'rgba(0,50,100,0.005)';
+    const hullColor = dark ? 'rgba(100, 220, 255, 0.05)' : 'rgba(0, 160, 200, 0.01)';
+
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, monospace';
+    ctx.font = '14px "Courier New", monospace';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillStyle = dark ? 'rgba(255,255,255,0.16)' : 'rgba(15,23,42,0.09)';
-    ctx.strokeStyle = dark ? 'rgba(56,189,248,0.16)' : 'rgba(22,119,168,0.08)';
 
     for (const point of points) {
       point.x += point.vx;
       point.y += point.vy;
-      if (point.x < 0 || point.x > window.innerWidth) point.vx *= -1;
-      if (point.y < 0 || point.y > window.innerHeight) point.vy *= -1;
-      ctx.fillText(point.symbol, point.x, point.y);
+      if (point.x < 0) {
+        point.x = 0;
+        point.vx *= -1;
+      } else if (point.x > window.innerWidth) {
+        point.x = window.innerWidth;
+        point.vx *= -1;
+      }
+      if (point.y < 0) {
+        point.y = 0;
+        point.vy *= -1;
+      } else if (point.y > window.innerHeight) {
+        point.y = window.innerHeight;
+        point.vy *= -1;
+      }
+    }
+
+    const hull = getConvexHull(points);
+    if (hull.length > 0) {
+      ctx.beginPath();
+      ctx.moveTo(hull[0].x, hull[0].y);
+      for (let i = 1; i < hull.length; i += 1) ctx.lineTo(hull[i].x, hull[i].y);
+      ctx.closePath();
+      ctx.fillStyle = dark ? 'rgba(255,255,255,0.02)' : 'rgba(0,0,0,0.01)';
+      ctx.fill();
+      ctx.strokeStyle = hullColor;
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([8, 8]);
+      ctx.stroke();
+      ctx.setLineDash([]);
     }
 
     for (let i = 0; i < points.length; i += 1) {
+      const p1 = points[i];
+      ctx.fillStyle = symbolColor;
+      ctx.fillText(p1.symbol, p1.x, p1.y);
+
       for (let j = i + 1; j < points.length; j += 1) {
-        const dx = points[i].x - points[j].x;
-        const dy = points[i].y - points[j].y;
-        const dist = Math.hypot(dx, dy);
-        if (dist < 150) {
-          ctx.globalAlpha = 1 - dist / 150;
+        const p2 = points[j];
+        const dx = p1.x - p2.x;
+        const dy = p1.y - p2.y;
+        const distSq = dx * dx + dy * dy;
+
+        if (distSq < connectDist * connectDist) {
           ctx.beginPath();
-          ctx.moveTo(points[i].x, points[i].y);
-          ctx.lineTo(points[j].x, points[j].y);
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = lineColor;
+          ctx.lineWidth = 0.8;
           ctx.stroke();
+
+          for (let k = j + 1; k < points.length; k += 1) {
+            const p3 = points[k];
+            const d2 = (p1.x - p3.x) ** 2 + (p1.y - p3.y) ** 2;
+            const d3 = (p2.x - p3.x) ** 2 + (p2.y - p3.y) ** 2;
+
+            if (d2 < connectDist ** 2 && d3 < connectDist ** 2) {
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.lineTo(p3.x, p3.y);
+              ctx.closePath();
+              ctx.fillStyle = triangleColor;
+              ctx.fill();
+
+              const cx = (p1.x + p2.x + p3.x) / 3;
+              const cy = (p1.y + p2.y + p3.y) / 3;
+              ctx.beginPath();
+              ctx.moveTo((p1.x + cx) / 2, (p1.y + cy) / 2);
+              ctx.lineTo((p2.x + cx) / 2, (p2.y + cy) / 2);
+              ctx.lineTo((p3.x + cx) / 2, (p3.y + cy) / 2);
+              ctx.closePath();
+              ctx.strokeStyle = dark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.03)';
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
         }
       }
     }
-    ctx.globalAlpha = 1;
+
     raf = requestAnimationFrame(draw);
   }
 
