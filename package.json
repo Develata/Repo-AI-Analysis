@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Static GitHub Pages site for structured AI-assisted GitHub repository analyses.",
+  "description": "Static GitHub Pages site for Github-Repos-AI-Analysis.",
   "scripts": {
     "build": "node scripts/build-index.mjs",
     "import": "node scripts/import-from-server.mjs",

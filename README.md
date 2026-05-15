@@ -1,4 +1,4 @@
-# gh-repos-ai-analysis
+# Github-Repos-AI-Analysis
 
 Structured AI-assisted analyses of open-source GitHub repositories.
 
