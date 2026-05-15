@@ -37,6 +37,8 @@ const els = {
   reportBody: document.querySelector('#report-body'),
   back: document.querySelector('#back-button'),
   theme: document.querySelector('#theme-toggle'),
+  navSearch: document.querySelector('#nav-search'),
+  navRoll: document.querySelector('#nav-roll'),
   canvas: document.querySelector('#bg-canvas'),
 };
 
@@ -210,6 +212,18 @@ async function openReport(slug) {
 function closeReport() {
   document.body.classList.remove('detail-mode');
   els.reportView.hidden = true;
+}
+
+function focusSearch() {
+  if (location.hash.startsWith('#/report/')) location.hash = '#library';
+  document.querySelector('#library')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  window.setTimeout(() => els.search.focus(), 180);
+}
+
+function openRandomReport() {
+  if (state.reports.length === 0) return;
+  const report = state.reports[Math.floor(Math.random() * state.reports.length)];
+  location.hash = `#/report/${report.slug}`;
 }
 
 function handleRoute() {
@@ -418,6 +432,14 @@ els.sharing.addEventListener('change', (event) => {
 });
 els.back.addEventListener('click', () => {
   location.hash = '';
+});
+els.navSearch.addEventListener('click', focusSearch);
+els.navRoll.addEventListener('click', openRandomReport);
+window.addEventListener('keydown', (event) => {
+  if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+    event.preventDefault();
+    focusSearch();
+  }
 });
 window.addEventListener('hashchange', handleRoute);
 
