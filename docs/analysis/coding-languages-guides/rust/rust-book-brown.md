@@ -4,7 +4,7 @@ created: 2026-05-14
 updated: 2026-05-14
 type: repository-analysis
 repo_url: https://github.com/cognitive-engineering-lab/rust-book
-category: learning-resources
+category: coding-languages-guides
 tags:
   - rust
   - book
@@ -60,7 +60,7 @@ sources:
 
 ## 总体评价
 
-本项目是 `rust-lang/book`（官方 TRPL）的 **experimental fork**，由 Brown 大学 Cognitive Engineering Lab（Will Crichton、Shriram Krishnamurthi 等）维护，受 DARPA、NSF 和 AWS 资助 [Docs]。它在保留官方 TRPL 完整内容的基础上，增加了三层交互增强：**逐节测验**（ShortAnswer / MultipleChoice / Tracing）、**Aquascope 代码可视化**（编译期借用检查 + 运行时执行流程）、**文本高亮与批注**。此外，它还包含一个**完全重写的 Chapter 4（所有权）**和 **Chris Krycho 撰写的异步 Rust 章节**，这两章与官方版差异显著 [Docs]。
+本项目是 `rust-lang/book`（官方 TRPL）的 **experimental fork**，由 Brown 大学 Cognitive Engineering Lab（Will Crichton、Shriram Krishnamurthi 等）维护，受 DARPA、NSF 和 AWS 部分资助 [Docs]。它在保留官方 TRPL 完整内容的基础上，增加了三层交互增强：**逐节测验**（ShortAnswer / MultipleChoice / Tracing）、**Aquascope 代码可视化**（编译期借用检查 + 运行时执行流程）、**文本高亮与批注**。此外，它还包含一个**完全重写的 Chapter 4（所有权）**和 **Chris Krycho 撰写的异步 Rust 章节**，这两章与官方版差异显著 [Docs]。
 
 项目有扎实的学术背书：两篇 OOPSLA 论文（一篇获 Distinguished Paper，一篇获 SIGPLAN Research Highlight + CACM Research Highlight）[Docs]。社区共识明确：**学习用 Brown 版，查引用官方版** [Reddit r/rust] [Rust Users Forum]。
 
@@ -68,7 +68,7 @@ sources:
 
 **不适合**：只需要 API 速查的人（官方版更轻量）、纯离线环境（需要 JavaScript）。
 
-> 一句话：这是 Rust 社区公认的「学 Rust 最好的书」，没有之一——前提是你要的不是参考手册，而是一本能帮你「真正理解」的教材。
+> 一句话：这是目前 Rust 社区公认的最强 Rust 初学者教材之一——前提是你要的不是参考手册，而是一本能帮你「真正理解」的教材。
 
 ## 推荐度：5/5
 
@@ -100,7 +100,9 @@ sources:
 3. **与官方版存在内容差异**——Chapter 4 完全不同，异步章节官方版没有。读者可能在两版之间切换时困惑 [Rust Users Forum]。
 4. **离线能力受限**——依赖 JavaScript 渲染测验和可视化，纯文本阅读器无法使用交互功能。虽然可以本地构建（mdbook build），但构建环境复杂 [GH]。
 5. **issue 积压**——132 open issues，其中许多是测验题目的反馈和内容建议。以学术小团队的维护节奏，积压可能持续增长 [GH]。
-
+6. **上游分歧风险**——作为 rust-lang/book 的 fork，随着官方版持续更新（最近一次大修是 Rust 2024 Edition），Brown 版与上游的差异可能扩大。自定义 Chapter 4 和异步章节无法自动 merge upstream 变更 [GH] [GH-parent]。
+7. **可访问性与兼容性**——交互式测验和 Aquascope 可视化依赖 JavaScript，可能存在屏幕阅读器兼容性和移动端体验问题。作为学术研究项目，可访问性测试未被系统性地纳入开发流程。
+8. **许可与归属**——虽继承 Apache-2.0/MIT 双许可，但因大幅修改官方 TRPL 内容，读者在引用时可能混淆哪个版本是「官方」说法。
 ---
 
 ## 适合什么场景
