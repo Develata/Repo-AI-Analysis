@@ -3,4 +3,8 @@ mobile-detail.png
 .qa/
 *.network-request
 *.network-response
+.preview-*.log
 node_modules/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+github-repo-wiki/

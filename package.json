@@ -1,15 +1,23 @@
 {
-  "name": "gh-repos-ai-analysis",
+  "name": "repo-ai-analysis",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Static GitHub Pages site for Github-Repos-AI-Analysis.",
+  "description": "VitePress GitHub Pages site for Repo-AI-Analysis.",
   "scripts": {
-    "build": "node scripts/build-index.mjs",
+    "build": "npm run docs:build",
     "import": "node scripts/import-from-server.mjs",
-    "serve": "npx --yes http-server . -p 4174 -c-1"
+    "docs:dev": "node scripts/build-index.mjs && vitepress dev docs --host 127.0.0.1",
+    "docs:build": "node scripts/build-index.mjs && vitepress build docs",
+    "docs:preview": "vitepress preview docs --host 127.0.0.1"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.1",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.13"
   }
 }

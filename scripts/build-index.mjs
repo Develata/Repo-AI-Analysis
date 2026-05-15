@@ -3,8 +3,9 @@ import path from 'node:path';
 import process from 'node:process';
 
 const root = process.cwd();
-const contentDir = path.join(root, 'content');
-const outputFile = path.join(root, 'data', 'reports.json');
+const docsDir = path.join(root, 'docs');
+const analysisDir = path.join(docsDir, 'analysis');
+const outputFile = path.join(docsDir, 'public', 'data', 'reports.json');
 
 function parseScalar(raw) {
   const value = raw.trim();
@@ -62,7 +63,7 @@ function walk(dir) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       result.push(...walk(fullPath));
-    } else if (entry.isFile() && entry.name.endsWith('.md')) {
+    } else if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'index.md') {
       result.push(fullPath);
     }
   }
@@ -84,19 +85,21 @@ function toPosixPath(value) {
   return value.split(path.sep).join('/');
 }
 
-const files = walk(contentDir);
+const files = walk(analysisDir);
 const reports = files.map((file) => {
   const markdown = fs.readFileSync(file, 'utf8');
   const data = parseFrontmatter(markdown);
-  const relative = toPosixPath(path.relative(root, file));
-  const slug = toPosixPath(path.relative(contentDir, file)).replace(/\.md$/u, '');
+  const slug = toPosixPath(path.relative(analysisDir, file)).replace(/\.md$/u, '');
+  const directory = slug.split('/').slice(0, -1).join('/');
 
   return {
     slug,
-    path: relative,
+    route: `/analysis/${slug}`,
+    source_path: toPosixPath(path.relative(root, file)),
     title: data.title ?? path.basename(file, '.md'),
     repo_url: data.repo_url ?? '',
-    category: data.category ?? slug.split('/').slice(0, -1).join('/') ?? 'uncategorized',
+    category: data.category ?? (directory || 'uncategorized'),
+    directory,
     tags: Array.isArray(data.tags) ? data.tags : [],
     primary_language: data.primary_language ?? '',
     license: data.license ?? '',

@@ -10,7 +10,7 @@ if (!source) {
 
 const root = process.cwd();
 const sourceDir = path.resolve(source);
-const targetDir = path.join(root, 'content');
+const targetDir = path.join(root, 'docs', 'analysis');
 
 if (!fs.existsSync(sourceDir) || !fs.statSync(sourceDir).isDirectory()) {
   console.error(`Source directory does not exist: ${sourceDir}`);
