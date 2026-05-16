@@ -55,6 +55,10 @@ function parseFrontmatter(markdown) {
   return data;
 }
 
+function isIndexMarkdown(fileName) {
+  return fileName === 'index.md' || fileName === '_index.md';
+}
+
 function walk(dir) {
   if (!fs.existsSync(dir)) return [];
   const result = [];
@@ -63,7 +67,7 @@ function walk(dir) {
     const fullPath = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       result.push(...walk(fullPath));
-    } else if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'index.md') {
+    } else if (entry.isFile() && entry.name.endsWith('.md') && !isIndexMarkdown(entry.name)) {
       result.push(fullPath);
     }
   }
