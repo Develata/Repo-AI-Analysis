@@ -58,8 +58,8 @@ sources:
 # Bun
 
 > Bun v1.3.14（最新稳定版，2026-05-13 发布），集 JavaScript 运行时、打包工具、测试运行器和包管理器于一体的 All-in-One 工具链。单个 `bun` 可执行文件替代 `node` + `npm` + `jest` + `webpack`。稳定版核心运行时以 Zig 编写（基于 Apple JavaScriptCore），main 分支正在 Rust 重写中（PR #30412 已合入）[GH][GH:releases]。
-
----
+>
+> **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
