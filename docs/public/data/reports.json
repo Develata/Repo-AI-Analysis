@@ -284,7 +284,7 @@
         "[API:contributors] https://api.github.com/repos/oven-sh/bun/contributors",
         "[Web] https://www.npmjs.com/package/bun"
       ],
-      "summary": "---"
+      "summary": "面向 JavaScript/TypeScript 全栈开发者的 All-in-One 工具链：单个 `bun` 二进制文件替代 Node.js 运行时 + npm 包管理 + Jest 测试 + webpack 打包，在官方基准测试中全面快于传统工具链，适合新项目和可接受部分 Node.js 兼容性风险的迁移场景。"
     },
     {
       "slug": "agent-programs/agent-skills/scientific-agent-skills",
