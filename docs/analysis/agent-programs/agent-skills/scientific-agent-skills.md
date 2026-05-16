@@ -53,8 +53,8 @@ sources:
 # Scientific Agent Skills
 
 > 135 个即用型科学 Agent Skills，横跨生物信息学、化学信息学、蛋白质组学、临床研究、材料科学、机器学习等 17+ 领域，基于开放的 [Agent Skills](https://agentskills.io/) 标准。由 [K-Dense Inc.](https://k-dense.ai) 维护。
-
----
+>
+> **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 4/5
 
 ## 一句话总结
 
