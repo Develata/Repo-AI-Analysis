@@ -10,10 +10,10 @@
 ## Subdirectories
 
 - `agent-programs/`
-- `agents/`
 - `ai-chat-platforms/`
 - `ai-using/`
 - `coding-languages-guides/`
+- `dev-tools/`
 - `document-editors/`
 - `repo-archived/`
 

@@ -4,7 +4,7 @@ created: 2026-05-14
 updated: 2026-05-14
 type: repository-analysis
 repo_url: "https://github.com/overleaf/overleaf"
-category: "self-hosted"
+category: "document-editors"
 tags: ["latex", "collaboration", "self-hosted", "docker", "typesetting", "academic"]
 primary_language: "JavaScript/TypeScript"
 license: "AGPL-3.0"
