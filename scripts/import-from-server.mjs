@@ -27,8 +27,10 @@ function copyMarkdownTree(fromDir, toDir) {
       fs.mkdirSync(to, { recursive: true });
       copyMarkdownTree(from, to);
     } else if (entry.isFile() && entry.name.endsWith('.md')) {
-      fs.mkdirSync(path.dirname(to), { recursive: true });
-      fs.copyFileSync(from, to);
+      const targetName = entry.name === '_index.md' ? 'index.md' : entry.name;
+      const target = path.join(toDir, targetName);
+      fs.mkdirSync(path.dirname(target), { recursive: true });
+      fs.copyFileSync(from, target);
     }
   }
 }

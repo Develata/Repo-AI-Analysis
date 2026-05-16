@@ -1,5 +1,5 @@
 {
-  "count": 12,
+  "count": 21,
   "reports": [
     {
       "slug": "coding-languages-guides/rust/rust-book",
@@ -7,7 +7,7 @@
       "source_path": "docs/analysis/coding-languages-guides/rust/rust-book.md",
       "title": "The Rust Programming Language (TRPL)",
       "repo_url": "https://github.com/rust-lang/book",
-      "category": "learning-resources",
+      "category": "coding-languages-guides",
       "directory": "coding-languages-guides/rust",
       "tags": [
         "rust",
@@ -45,6 +45,101 @@
         "[Brown] https://rust-book.cs.brown.edu/"
       ],
       "summary": "对于任何学习或使用 Rust 的人，这是唯一不可绕过的资源——由 Steve Klabnik（前 Rust 文档团队负责人）、Carol Nichols（Rust 核心团队成员）和 Chris Krycho 撰写，覆盖从安装到高级特性的完整 Rust 语言教学，同时可作为日常参考手册。Rust 社区通称 \"The Book\"，是公认的 Rust 学习第一站 "
+    },
+    {
+      "slug": "dev-tools/mise",
+      "route": "/analysis/dev-tools/mise",
+      "source_path": "docs/analysis/dev-tools/mise.md",
+      "title": "mise — dev tools, env vars, task runner",
+      "repo_url": "https://github.com/jdx/mise",
+      "category": "dev-tools",
+      "directory": "dev-tools",
+      "tags": [
+        "rust",
+        "version-manager",
+        "task-runner",
+        "dev-tools",
+        "asdf-alternative"
+      ],
+      "primary_language": "Rust",
+      "license": "MIT",
+      "stars": 28254,
+      "forks": 1132,
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 5,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 4,
+        "recommendation": 4
+      },
+      "overall_score": 4.1,
+      "last_checked": "2026-05-16",
+      "last_verified": "2026-05-16",
+      "updated": "2026-05-16",
+      "sources": [
+        "[GH] https://github.com/jdx/mise",
+        "[Docs] https://mise.en.dev",
+        "[Docs] https://mise.jdx.dev/dev-tools/comparison-to-asdf.html",
+        "[Wiki] https://betterstack.com/community/guides/scaling-nodejs/mise-vs-asdf/"
+      ],
+      "summary": "面向多语言开发者的统一开发环境管理器，将工具版本、环境变量和任务执行整合到单个 `mise.toml` 中，取代 asdf/nvm/pyenv/direnv/make 的碎片化工具链。"
+    },
+    {
+      "slug": "agent-programs/coding-agents/pi",
+      "route": "/analysis/agent-programs/coding-agents/pi",
+      "source_path": "docs/analysis/agent-programs/coding-agents/pi.md",
+      "title": "Pi Coding Agent",
+      "repo_url": "https://github.com/earendil-works/pi",
+      "category": "agent-programs/coding-agents",
+      "directory": "agent-programs/coding-agents",
+      "tags": [
+        "ai-agent",
+        "coding-agent",
+        "terminal",
+        "cli",
+        "typescript",
+        "multi-provider",
+        "extensible"
+      ],
+      "primary_language": "TypeScript",
+      "license": "MIT",
+      "stars": 49900,
+      "forks": 5900,
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 4,
+        "usability": 5,
+        "performance": 4,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 5,
+        "security": 4,
+        "recommendation": 4
+      },
+      "overall_score": 4.1,
+      "last_checked": "2026-05-16",
+      "last_verified": "2026-05-16",
+      "updated": "2026-05-16",
+      "sources": [
+        "[GH] https://github.com/earendil-works/pi",
+        "[Docs] https://pi.dev/docs/latest",
+        "[Docs:Extension] https://pi.dev/docs/latest/extensions",
+        "[Docs:SDK] https://pi.dev/docs/latest/sdk",
+        "[Review] https://petronellatech.com/blog/pi-dev-platform-review/",
+        "[Review] https://admix.software/blog/best-ai-coding-agents",
+        "[Review] https://www.reddit.com/r/LocalLLM/comments/1ta2tzz/pi_coding_agent_is_amazing_or_how_i_learned_to/"
+      ],
+      "summary": "面向 Unix 哲学信仰者与极简主义开发者的终端 AI 编码代理：最小核心（4 个内置工具），最大可扩展性（TypeScript 扩展系统覆盖全生命周期），15+ 模型提供商自由切换。你把模型、工具和判断力带来就行。"
     },
     {
       "slug": "ai-using/vibecoding-guide/easy-vibe",
@@ -97,7 +192,7 @@
       "source_path": "docs/analysis/coding-languages-guides/rust/rust-book-brown.md",
       "title": "Rust Book (Brown Experimental)",
       "repo_url": "https://github.com/cognitive-engineering-lab/rust-book",
-      "category": "learning-resources",
+      "category": "coding-languages-guides",
       "directory": "coding-languages-guides/rust",
       "tags": [
         "rust",
@@ -139,6 +234,107 @@
       "summary": "对于任何学习 Rust 的人，这是当前最好的入门教材——在官方 TRPL 的基础上增加了逐节测验、Aquascope 代码可视化、自定义所有权章节和异步 Rust 章节，把 Rust 最难的概念（所有权、借用、生命周期）从「硬啃」变成了「可交互理解」。"
     },
     {
+      "slug": "dev-tools/package-managers/bun",
+      "route": "/analysis/dev-tools/package-managers/bun",
+      "source_path": "docs/analysis/dev-tools/package-managers/bun.md",
+      "title": "Bun",
+      "repo_url": "https://github.com/oven-sh/bun",
+      "category": "dev-tools",
+      "directory": "dev-tools/package-managers",
+      "tags": [
+        "javascript",
+        "typescript",
+        "runtime",
+        "bundler",
+        "package-manager",
+        "zig",
+        "nodejs"
+      ],
+      "primary_language": "Zig, C++, TypeScript, Rust",
+      "license": "MIT (Bun 自身) + LGPL-2 (JavaScriptCore) + 各链接库各自许可",
+      "stars": 90755,
+      "forks": 4521,
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 5,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 4,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.9,
+      "last_checked": "2026-05-16",
+      "last_verified": "2026-05-16",
+      "updated": "2026-05-16",
+      "sources": [
+        "[GH] https://github.com/oven-sh/bun",
+        "[GH:API] https://api.github.com/repos/oven-sh/bun",
+        "[GH:releases] https://github.com/oven-sh/bun/releases",
+        "[Docs] https://bun.com/docs",
+        "[Docs:compatibility] https://bun.com/docs/runtime/nodejs-apis",
+        "[Blog] https://bun.com/blog/bun-v1.3.13",
+        "[License] https://bun.com/docs/project/license",
+        "[Security] https://github.com/oven-sh/bun/blob/main/SECURITY.md",
+        "[API:contributors] https://api.github.com/repos/oven-sh/bun/contributors",
+        "[Web] https://www.npmjs.com/package/bun"
+      ],
+      "summary": "---"
+    },
+    {
+      "slug": "agent-programs/agent-skills/scientific-agent-skills",
+      "route": "/analysis/agent-programs/agent-skills/scientific-agent-skills",
+      "source_path": "docs/analysis/agent-programs/agent-skills/scientific-agent-skills.md",
+      "title": "Scientific Agent Skills",
+      "repo_url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "category": "agent-programs/agent-skills",
+      "directory": "agent-programs/agent-skills",
+      "tags": [
+        "agent-skills",
+        "scientific-computing",
+        "bioinformatics",
+        "cheminformatics",
+        "python"
+      ],
+      "primary_language": "Python",
+      "license": "MIT",
+      "stars": 22747,
+      "forks": 2456,
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 5,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.9,
+      "last_checked": "2026-05-15",
+      "last_verified": "2026-05-15",
+      "updated": "2026-05-11",
+      "sources": [
+        "[GH] https://github.com/K-Dense-AI/scientific-agent-skills",
+        "[GH:API] https://api.github.com/repos/K-Dense-AI/scientific-agent-skills",
+        "[GH:releases] https://github.com/K-Dense-AI/scientific-agent-skills/releases",
+        "[GH:PR] https://github.com/K-Dense-AI/scientific-agent-skills/pulls",
+        "[Docs:examples] https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/docs/examples.md",
+        "[Docs:security] https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/SECURITY.md",
+        "[GH:security] https://github.com/K-Dense-AI/scientific-agent-skills/security"
+      ],
+      "summary": "---"
+    },
+    {
       "slug": "agent-programs/agent-assistants/zeroclaw",
       "route": "/analysis/agent-programs/agent-assistants/zeroclaw",
       "source_path": "docs/analysis/agent-programs/agent-assistants/zeroclaw.md",
@@ -165,13 +361,13 @@
         "performance": 5,
         "code_quality": 4,
         "documentation": 4,
-        "community": 5,
+        "community": 4,
         "maturity": 2,
         "extensibility": 4,
         "security": 4,
         "recommendation": 4
       },
-      "overall_score": 4,
+      "overall_score": 3.9,
       "last_checked": "2026-05-14",
       "last_verified": "2026-05-14",
       "updated": "2026-05-14",
@@ -184,54 +380,6 @@
         "[Kanaries] https://docs.kanaries.net/topics/openclaw/openclaw-vs-zeroclaw-vs-pi-agent-vs-nanobot"
       ],
       "summary": "面向资源敏感型部署场景（边缘设备、低配 VPS、嵌入式系统）的 AI agent runtime，以 3.2 MB Rust 二进制实现了 OpenClaw 95% 的 API 兼容，内存占用仅 ~5 MB，但在成熟度和版本稳定性上仍在快速迭代阶段。"
-    },
-    {
-      "slug": "agent-programs/agent-assistants/aionui",
-      "route": "/analysis/agent-programs/agent-assistants/aionui",
-      "source_path": "docs/analysis/agent-programs/agent-assistants/aionui.md",
-      "title": "AionUi",
-      "repo_url": "https://github.com/iOfficeAI/AionUi",
-      "category": "ai-agents",
-      "directory": "agent-programs/agent-assistants",
-      "tags": [
-        "ai-agent",
-        "desktop",
-        "multi-agent",
-        "automation",
-        "electron",
-        "rust",
-        "office",
-        "cowork"
-      ],
-      "primary_language": "TypeScript",
-      "license": "Apache-2.0",
-      "stars": 25070,
-      "forks": 2287,
-      "status": "active",
-      "sharing_candidate": true,
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 4
-      },
-      "overall_score": 3.8,
-      "last_checked": "2026-05-14",
-      "last_verified": "2026-05-14",
-      "updated": "2026-05-14",
-      "sources": [
-        "[GH] https://github.com/iOfficeAI/AionUi",
-        "[Docs] https://github.com/iOfficeAI/AionUi/tree/main/docs",
-        "[Wiki] https://github.com/iOfficeAI/AionUi/wiki",
-        "[Backend] https://github.com/iOfficeAI/aionui-backend"
-      ],
-      "summary": "面向需要同时使用多个 AI agent、希望统一界面管理、并有 24/7 自动化需求的开发者与高级用户——AionUi 是当前最完整的 AI agent 桌面工作台。"
     },
     {
       "slug": "agent-programs/coding-agents/deepseek-reasonix",
@@ -277,6 +425,101 @@
         "[Docs] https://esengine.github.io/DeepSeek-Reasonix/"
       ],
       "summary": "为深度使用 DeepSeek API 的开发者打造的终端编程 Agent，以 prefix-cache 稳定性为核心卖点，配合 Tauri 桌面客户端和 MCP 生态，在成本控制和工程深度上均属同类顶流——但仅 24 天项目年龄决定了它仍在快速震荡期。"
+    },
+    {
+      "slug": "agent-programs/agent-assistants/hermes-agent",
+      "route": "/analysis/agent-programs/agent-assistants/hermes-agent",
+      "source_path": "docs/analysis/agent-programs/agent-assistants/hermes-agent.md",
+      "title": "Hermes Agent",
+      "repo_url": "https://github.com/NousResearch/hermes-agent",
+      "category": "ai-agents",
+      "directory": "agent-programs/agent-assistants",
+      "tags": [
+        "ai-agent",
+        "self-hosted",
+        "self-improving",
+        "multi-channel",
+        "python"
+      ],
+      "primary_language": "Python",
+      "license": "MIT",
+      "stars": 148000,
+      "forks": "null",
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 5,
+        "security": 2,
+        "recommendation": 4
+      },
+      "overall_score": 3.8,
+      "last_checked": "2026-05-14",
+      "last_verified": "2026-05-14",
+      "updated": "2026-05-14",
+      "sources": [
+        "[GH] https://github.com/NousResearch/hermes-agent",
+        "[Docs] https://hermes-agent.nousresearch.com/docs/",
+        "[Docs:Arch] https://github.com/NousResearch/hermes-agent/blob/main/website/docs/developer-guide/architecture.md",
+        "[GH:Audit] https://github.com/NousResearch/hermes-agent/issues/7826",
+        "[GH:Sec1] https://github.com/NousResearch/hermes-agent/issues/7071",
+        "[GH:Sec2] https://github.com/NousResearch/hermes-agent/issues/8884",
+        "[GH:Sec3] https://github.com/NousResearch/hermes-agent/issues/3968"
+      ],
+      "summary": "Hermes Agent 是一个自托管、自进化的 AI 代理框架，内置闭环学习系统——从经验中创建技能、自我修正、跨 session 记忆、持续构建用户模型。定位：会越用越聪明的个人 AI 助理——适合追求长期积累效应、需要多工具统一调度的技术用户。"
+    },
+    {
+      "slug": "agent-programs/coding-agents/opencode",
+      "route": "/analysis/agent-programs/coding-agents/opencode",
+      "source_path": "docs/analysis/agent-programs/coding-agents/opencode.md",
+      "title": "OpenCode",
+      "repo_url": "https://github.com/anomalyco/opencode",
+      "category": "agent-programs/coding-agents",
+      "directory": "agent-programs/coding-agents",
+      "tags": [
+        "coding-agent",
+        "cli",
+        "tui",
+        "ai-assisted-development",
+        "typescript",
+        "mcp",
+        "terminal"
+      ],
+      "primary_language": "TypeScript",
+      "license": "MIT",
+      "stars": 160844,
+      "forks": 18872,
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 4,
+        "usability": 5,
+        "performance": 4,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.8,
+      "last_checked": "2026-05-15",
+      "last_verified": "2026-05-15",
+      "updated": "2026-05-15",
+      "sources": [
+        "[GH] https://github.com/anomalyco/opencode",
+        "[Docs] https://opencode.ai/docs",
+        "[CVE] https://nvd.nist.gov/vuln/detail/CVE-2026-22812",
+        "[Infralovers] https://www.infralovers.com/blog/2026-01-29-claude-code-vs-opencode/"
+      ],
+      "summary": "终端优先的开源 AI 编程 Agent，以模型无关性和插件生态为核心竞争力，是目前 Claude Code 之外最活跃的 CLI 编程 Agent 项目。"
     },
     {
       "slug": "agent-programs/agent-assistants/openhuman",
@@ -422,7 +665,7 @@
       "source_path": "docs/analysis/document-editors/overleaf.md",
       "title": "Overleaf",
       "repo_url": "https://github.com/overleaf/overleaf",
-      "category": "self-hosted",
+      "category": "document-editors",
       "directory": "document-editors",
       "tags": [
         "latex",
@@ -462,13 +705,13 @@
       "summary": "面向需要在可信环境中自托管 LaTeX 协作平台的科研团队或实验室——自托管 LaTeX 编辑器的唯一成熟选择，但 Community Edition 的功能和安全模型有明确妥协。"
     },
     {
-      "slug": "agent/skills/superpowers",
-      "route": "/analysis/agent/skills/superpowers",
-      "source_path": "docs/analysis/agent/skills/superpowers.md",
+      "slug": "agent-programs/agent-skills/superpowers",
+      "route": "/analysis/agent-programs/agent-skills/superpowers",
+      "source_path": "docs/analysis/agent-programs/agent-skills/superpowers.md",
       "title": "Superpowers",
       "repo_url": "https://github.com/obra/superpowers",
-      "category": "agents/skills",
-      "directory": "agent/skills",
+      "category": "agent-programs/agent-skills",
+      "directory": "agent-programs/agent-skills",
       "tags": [
         "agent-skills",
         "tdd",
@@ -507,6 +750,148 @@
         "[Docs] https://www.termdock.com/en/blog/superpowers-framework-agent-skills"
       ],
       "summary": "Superpowers 是一套把「软件工程纪律」编码为 agent skill 的框架——brainstorm → spec → plan → TDD → subagent-driven dev → review → ship，全链路流程由 skill 自动触发，而非靠 agent 自觉遵守。适合希望 agent 像 senior engineer 一样工作"
+    },
+    {
+      "slug": "dev-tools/nix",
+      "route": "/analysis/dev-tools/nix",
+      "source_path": "docs/analysis/dev-tools/nix.md",
+      "title": "Nix — the purely functional package manager",
+      "repo_url": "https://github.com/NixOS/nix",
+      "category": "dev-tools",
+      "directory": "dev-tools",
+      "tags": [
+        "c++",
+        "functional",
+        "package-manager",
+        "reproducible",
+        "nix",
+        "nixos",
+        "declarative"
+      ],
+      "primary_language": "C++",
+      "license": "LGPL-2.1",
+      "stars": 16877,
+      "forks": 1913,
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 5,
+        "usability": 1,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 4,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-05-16",
+      "last_verified": "2026-05-16",
+      "updated": "2026-05-16",
+      "sources": [
+        "[GH] https://github.com/NixOS/nix",
+        "[Docs] https://nix.dev",
+        "[Docs] https://nixos.org/",
+        "[Blog] https://www.dgt.is/blog/2025-01-10-nix-death-by-a-thousand-cuts/",
+        "[Blog] https://chrismcdonough.substack.com/p/the-nixos-conflict-in-under-5-minutes",
+        "[Blog] https://discourse.nixos.org/t/nix-steering-committee-vote-of-no-confidence/70176"
+      ],
+      "summary": "面向基础设施工程师的可复现包管理器，基于函数式编程范式实现原子升级/回滚、声明式系统配置和跨机器环境复制——功能极其强大，但学习曲线极其陡峭。"
+    },
+    {
+      "slug": "agent-programs/agent-assistants/aionui",
+      "route": "/analysis/agent-programs/agent-assistants/aionui",
+      "source_path": "docs/analysis/agent-programs/agent-assistants/aionui.md",
+      "title": "AionUi",
+      "repo_url": "https://github.com/iOfficeAI/AionUi",
+      "category": "ai-agents",
+      "directory": "agent-programs/agent-assistants",
+      "tags": [
+        "ai-agent",
+        "desktop",
+        "multi-agent",
+        "automation",
+        "electron",
+        "rust",
+        "office",
+        "cowork"
+      ],
+      "primary_language": "TypeScript",
+      "license": "Apache-2.0",
+      "stars": 25070,
+      "forks": 2287,
+      "status": "active",
+      "sharing_candidate": true,
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-05-14",
+      "last_verified": "2026-05-14",
+      "updated": "2026-05-14",
+      "sources": [
+        "[GH] https://github.com/iOfficeAI/AionUi",
+        "[Docs] https://github.com/iOfficeAI/AionUi/tree/main/docs",
+        "[Wiki] https://github.com/iOfficeAI/AionUi/wiki",
+        "[Backend] https://github.com/iOfficeAI/aionui-backend"
+      ],
+      "summary": "面向同时使用多个 AI agent、需要统一 workspace 的用户——AionUi 的理念迷人但现实骨感：功能极多、bugs 同样多，变动太快无法用于生产，共享上下文的 token 成本常被忽视。适合尝鲜和灵感参考，不适合依赖。"
+    },
+    {
+      "slug": "agent-programs/agent-assistants/openclaw",
+      "route": "/analysis/agent-programs/agent-assistants/openclaw",
+      "source_path": "docs/analysis/agent-programs/agent-assistants/openclaw.md",
+      "title": "OpenClaw",
+      "repo_url": "https://github.com/openclaw/openclaw",
+      "category": "ai-agents",
+      "directory": "agent-programs/agent-assistants",
+      "tags": [
+        "ai-agent",
+        "self-hosted",
+        "automation",
+        "multi-channel"
+      ],
+      "primary_language": "TypeScript",
+      "license": "MIT",
+      "stars": 371000,
+      "forks": 76800,
+      "status": "active",
+      "sharing_candidate": false,
+      "ratings": {
+        "capability": 5,
+        "usability": 2,
+        "performance": 3,
+        "code_quality": 2,
+        "documentation": 3,
+        "community": 5,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-05-14",
+      "last_verified": "2026-05-14",
+      "updated": "2026-05-14",
+      "sources": [
+        "[GH] https://github.com/openclaw/openclaw",
+        "[Wiki] https://en.wikipedia.org/wiki/OpenClaw",
+        "[Docs] https://docs.openclaw.ai/",
+        "[HW] https://www.knolli.ai/post/openclaw-system-requirements",
+        "[HW2] https://sfailabs.com/guides/openclaw-hardware-requirements"
+      ],
+      "summary": "OpenClaw 是一个自托管的单用户 AI 代理框架，通过消息应用作为交互入口，让 LLM 代表你在本地执行任务。定位：全局统筹型 AI 助理——适合作为多个 AI 工具的统一调度层，不适合垂类任务。"
     },
     {
       "slug": "agent-programs/agent-assistants/personal-ai-infrastructure",
@@ -551,6 +936,50 @@
         "[AgentConn] https://agentconn.com/agents/personal-ai-infrastructure"
       ],
       "summary": "PAI 是一套基于 Claude Code 的「个人 AI 操作系统」——将你的身份、目标、知识图谱注入 AI 上下文，让 AI 不只是回答问题，而是「知道你是谁、你要去哪」的数字助手。"
+    },
+    {
+      "slug": "agent-programs/agent-infrastructure/rtk",
+      "route": "/analysis/agent-programs/agent-infrastructure/rtk",
+      "source_path": "docs/analysis/agent-programs/agent-infrastructure/rtk.md",
+      "title": "rtk-ai/rtk",
+      "repo_url": "https://github.com/rtk-ai/rtk",
+      "category": "agent-programs/agent-infrastructure",
+      "directory": "agent-programs/agent-infrastructure",
+      "tags": [
+        "token-optimization",
+        "cli-proxy",
+        "rust",
+        "claude-code",
+        "cost-reduction"
+      ],
+      "primary_language": "Rust",
+      "license": "Apache-2.0 (API); MIT (官网footer，冲突待澄清)",
+      "stars": 48820,
+      "forks": 2965,
+      "status": "active",
+      "sharing_candidate": false,
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 5,
+        "code_quality": 2,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 1,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 2
+      },
+      "overall_score": 3,
+      "last_checked": "2026-05-16",
+      "last_verified": "2026-05-16",
+      "updated": "2026-05-16",
+      "sources": [
+        "[GH] https://github.com/rtk-ai/rtk",
+        "[Docs] https://www.rtk-ai.app/guide/",
+        "[Discord] https://discord.gg/RySmvNF5kF"
+      ],
+      "summary": "RTK（Rust Token Killer）是一个 CLI 代理，透明拦截 agent（Claude Code、Cursor 等）发出的 shell 命令，对输出做过滤/压缩/格式化后返回给 LLM，将常见开发命令的 token 消耗降低 60-90%。无系统依赖单二进制，sub-10ms 延迟（README 宣称）。4 个月 4.8 万 stars，但仅一"
     }
   ]
 }
