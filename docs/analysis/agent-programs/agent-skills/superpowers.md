@@ -4,7 +4,7 @@ created: 2026-05-15
 updated: 2026-05-15
 type: repository-analysis
 repo_url: "https://github.com/obra/superpowers"
-category: "agents/skills"
+category: "agent-programs/agent-skills"
 tags: [agent-skills, tdd, subagent, claude-code, codex, cursor, workflow]
 previous_repo: ""
 successor: ""
