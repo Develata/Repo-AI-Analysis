@@ -11,6 +11,7 @@
 
 - `agent-programs/`
 - `ai-chat-platforms/`
+- `ai-cost-manager/`
 - `ai-using/`
 - `coding-languages-guides/`
 - `dev-tools/`

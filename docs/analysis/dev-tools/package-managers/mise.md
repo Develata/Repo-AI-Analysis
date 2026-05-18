@@ -1,10 +1,10 @@
 ---
-title: "mise — dev tools, env vars, task runner"
+title: "mise"
 created: 2026-05-16
 updated: 2026-05-16
 type: repository-analysis
 repo_url: "https://github.com/jdx/mise"
-category: "dev-tools"
+category: "dev-tools/package-managers"
 tags: [rust, version-manager, task-runner, dev-tools, asdf-alternative]
 primary_language: "Rust"
 license: "MIT"
@@ -43,7 +43,7 @@ sources:
 
 > dev tools, env vars, task runner — 一个 TOML 文件管理你的整个开发环境
 >
-> **状态**: `active` · **总分**: 4.2/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 4.1/5 · **推荐度**: 4/5
 
 ## 一句话总结
 

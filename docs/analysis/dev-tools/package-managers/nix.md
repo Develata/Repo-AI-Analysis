@@ -1,10 +1,10 @@
 ---
-title: "Nix — the purely functional package manager"
+title: "Nix"
 created: 2026-05-16
 updated: 2026-05-16
 type: repository-analysis
 repo_url: "https://github.com/NixOS/nix"
-category: "dev-tools"
+category: "dev-tools/package-managers"
 tags: [c++, functional, package-manager, reproducible, nix, nixos, declarative]
 primary_language: "C++"
 license: "LGPL-2.1"
@@ -45,7 +45,7 @@ sources:
 
 > Nix, the purely functional package manager — 可复现、声明式的包管理与系统配置
 >
-> **状态**: `active` · **总分**: 3.2/5 · **推荐度**: 3/5
+> **状态**: `active` · **总分**: 3.3/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
