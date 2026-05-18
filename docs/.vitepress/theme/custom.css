@@ -53,7 +53,8 @@ body {
 
 .VPFeature:hover,
 .raia-card:hover,
-.raia-latest-item:hover {
+.raia-latest-item:hover,
+.raia-latest-item.is-active {
   background-color: var(--raia-glass-hover) !important;
   border-color: var(--vp-c-brand-1) !important;
   transform: translateY(-4px);
@@ -63,7 +64,7 @@ body {
 .raia-home {
   min-height: calc(100vh - var(--vp-nav-height) - 90px);
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(340px, 0.9fr);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.9fr);
   gap: 28px;
   align-items: center;
   padding: 28px 0 48px;
@@ -71,19 +72,9 @@ body {
 
 .raia-hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.86fr) minmax(320px, 0.9fr);
-  gap: 24px;
   align-items: center;
 }
 
-.raia-hero h1 {
-  margin: 0;
-  font-size: clamp(42px, 7vw, 78px);
-  line-height: 0.96;
-  letter-spacing: 0;
-}
-
-.raia-hero p,
 .raia-analysis-copy {
   color: var(--vp-c-text-2);
   font-size: 17px;
@@ -95,6 +86,15 @@ body {
   display: grid;
   place-items: center;
   padding: 28px;
+}
+
+.raia-home-radar-card {
+  min-height: min(62vh, 620px);
+  padding: clamp(18px, 4vw, 44px);
+}
+
+.raia-home-radar-card .raia-radar {
+  width: min(100%, 620px);
 }
 
 .raia-radar {

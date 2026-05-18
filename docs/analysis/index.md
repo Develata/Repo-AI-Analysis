@@ -1,20 +1,9 @@
-# Popular GitHub repository analyses: capabilities, ratings, comparisons
+---
+title: Analysis
+sidebar: false
+aside: false
+---
 
-> Path ID: `2`
+# Analysis
 
-## Files
-
-(none yet)
-
-
-## Subdirectories
-
-- `agent-programs/`
-- `ai-chat-platforms/`
-- `ai-cost-manager/`
-- `ai-using/`
-- `coding-languages-guides/`
-- `dev-tools/`
-- `document-editors/`
-- `repo-archived/`
-
+<AnalysisIndex />

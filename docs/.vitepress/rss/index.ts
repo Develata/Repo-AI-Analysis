@@ -35,10 +35,7 @@ export function generateRssFeeds(siteConfig: SiteConfig): void {
 
 export function generateRssFeedsToDir(outDir: string): void {
   const items = collectItems().slice(0, FEED_LIMIT);
-  const rssDir = path.join(outDir, 'rss');
-  fs.mkdirSync(rssDir, { recursive: true });
   fs.writeFileSync(path.join(outDir, 'rss.xml'), renderFeed(items, '/rss.xml'), 'utf-8');
-  fs.writeFileSync(path.join(rssDir, 'analysis.xml'), renderFeed(items, '/rss/analysis.xml'), 'utf-8');
 }
 
 export function listRssFeeds(): RssFeedLink[] {
@@ -47,11 +44,6 @@ export function listRssFeeds(): RssFeedLink[] {
       title: 'Repo-AI-Analysis',
       url: withBasePath('/rss.xml'),
       description: `最新 ${FEED_LIMIT} 篇 repository analysis。`,
-    },
-    {
-      title: 'Analysis',
-      url: withBasePath('/rss/analysis.xml'),
-      description: `Github repository analysis 最新 ${FEED_LIMIT} 篇。`,
     },
   ];
 }
@@ -64,15 +56,14 @@ export function rssDevServer() {
       server.middlewares.use((req, res, next) => {
         const pathname = new URL(req.url || '/', 'http://localhost').pathname;
         const isRootFeed = pathname.endsWith('/rss.xml');
-        const isAnalysisFeed = pathname.endsWith('/rss/analysis.xml');
-        if (!isRootFeed && !isAnalysisFeed) {
+        if (!isRootFeed) {
           next();
           return;
         }
 
         const outDir = path.join(os.tmpdir(), 'repo-ai-analysis-vitepress-rss-dev');
         generateRssFeedsToDir(outDir);
-        const filePath = isRootFeed ? path.join(outDir, 'rss.xml') : path.join(outDir, 'rss', 'analysis.xml');
+        const filePath = path.join(outDir, 'rss.xml');
         if (!fs.existsSync(filePath)) {
           next();
           return;

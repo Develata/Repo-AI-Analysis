@@ -17,7 +17,7 @@ if (!fs.existsSync(sourceDir) || !fs.statSync(sourceDir).isDirectory()) {
   process.exit(1);
 }
 
-function copyMarkdownTree(fromDir, toDir) {
+function copyMarkdownTree(fromDir, toDir, isSourceRoot = false) {
   for (const entry of fs.readdirSync(fromDir, { withFileTypes: true })) {
     if (entry.name.startsWith('.')) continue;
     const from = path.join(fromDir, entry.name);
@@ -25,8 +25,12 @@ function copyMarkdownTree(fromDir, toDir) {
 
     if (entry.isDirectory()) {
       fs.mkdirSync(to, { recursive: true });
-      copyMarkdownTree(from, to);
+      copyMarkdownTree(from, to, false);
     } else if (entry.isFile() && entry.name.endsWith('.md')) {
+      if (isSourceRoot && (entry.name === '_index.md' || entry.name === 'index.md')) {
+        continue;
+      }
+
       const targetName = entry.name === '_index.md' ? 'index.md' : entry.name;
       const target = path.join(toDir, targetName);
       fs.mkdirSync(path.dirname(target), { recursive: true });
@@ -35,5 +39,5 @@ function copyMarkdownTree(fromDir, toDir) {
   }
 }
 
-copyMarkdownTree(sourceDir, targetDir);
+copyMarkdownTree(sourceDir, targetDir, true);
 console.log(`Imported Markdown reports from ${sourceDir} into ${targetDir}`);
