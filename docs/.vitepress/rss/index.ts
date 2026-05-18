@@ -34,6 +34,7 @@ export function generateRssFeeds(siteConfig: SiteConfig): void {
 }
 
 export function generateRssFeedsToDir(outDir: string): void {
+  fs.mkdirSync(outDir, { recursive: true });
   const items = collectItems().slice(0, FEED_LIMIT);
   fs.writeFileSync(path.join(outDir, 'rss.xml'), renderFeed(items, '/rss.xml'), 'utf-8');
 }
