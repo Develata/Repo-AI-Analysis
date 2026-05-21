@@ -1,10 +1,11 @@
 ---
+
 title: "Rust Book (Brown Experimental)"
 created: 2026-05-14
 updated: 2026-05-14
 type: repository-analysis
 repo_url: https://github.com/cognitive-engineering-lab/rust-book
-category: coding-languages-guides
+category: "coding-languages-guides/rust"
 tags:
   - rust
   - book

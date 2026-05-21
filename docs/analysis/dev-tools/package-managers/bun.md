@@ -1,10 +1,11 @@
 ---
+
 title: Bun
 created: 2021-04-14
 updated: 2026-05-16
 type: repository-analysis
 repo_url: https://github.com/oven-sh/bun
-category: dev-tools
+category: "dev-tools/package-managers"
 tags:
   - javascript
   - typescript

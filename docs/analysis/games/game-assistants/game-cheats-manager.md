@@ -1,4 +1,5 @@
 ---
+
 title: "Game Cheats Manager"
 created: 2026-05-19
 updated: 2026-05-19

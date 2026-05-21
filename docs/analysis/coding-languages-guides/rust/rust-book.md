@@ -1,10 +1,11 @@
 ---
+
 title: "The Rust Programming Language (TRPL)"
 created: 2026-05-14
 updated: 2026-05-14
 type: repository-analysis
 repo_url: https://github.com/rust-lang/book
-category: coding-languages-guides
+category: "coding-languages-guides/rust"
 tags:
   - rust
   - book
