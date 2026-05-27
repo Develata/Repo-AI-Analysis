@@ -3,7 +3,7 @@
 
 title: "AionUi"
 created: 2026-05-14
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: https://github.com/iOfficeAI/AionUi
 category: "ai-programs/agent-assistants"
@@ -49,6 +49,8 @@ sources:
   - "[Docs] https://github.com/iOfficeAI/AionUi/tree/main/docs"
   - "[Wiki] https://github.com/iOfficeAI/AionUi/wiki"
   - "[Backend] https://github.com/iOfficeAI/aionui-backend"
+  - "[Wiki: LLM Configuration] GitHub wiki page under iOfficeAI/AionUi for LLM/custom OpenAI-compatible platform configuration, checked as part of wiki/documentation review: https://github.com/iOfficeAI/AionUi/wiki"
+
 ---
 
 # AionUi

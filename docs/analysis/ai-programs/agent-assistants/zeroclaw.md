@@ -3,7 +3,7 @@
 
 title: "ZeroClaw"
 created: 2026-05-14
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/zeroclaw-labs/zeroclaw"
 category: "ai-programs/agent-assistants"
@@ -42,6 +42,9 @@ sources:
   - "[SparkCo-VS] https://sparkco.ai/blog/openclaw-vs-zeroclaw-which-ai-agent-framework-should-you-choose-in-2026"
   - "[Bitdoze] https://www.bitdoze.com/openclaw-alternatives/"
   - "[Kanaries] https://docs.kanaries.net/topics/openclaw/openclaw-vs-zeroclaw-vs-pi-agent-vs-nanobot"
+  - "[GH#6094] GitHub issue/PR reference for zeroclaw-labs/zeroclaw dead-code/cost tracker discussion: https://github.com/zeroclaw-labs/zeroclaw/issues/6094"
+  - "[Borq168] Third-party Zeroclaw review / issue-density commentary cited in original audit: https://www.borq168.com"
+
 ---
 
 # ZeroClaw

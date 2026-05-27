@@ -3,7 +3,7 @@
 
 title: "Cherry Studio"
 created: 2026-05-14
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: https://github.com/CherryHQ/cherry-studio
 category: "ai-programs/ai-chat-platforms"
@@ -47,6 +47,18 @@ sources:
   - "[Docs] https://docs.cherry-ai.com"
   - "[GH API] https://api.github.com/repos/CherryHQ/cherry-studio"
   - "[PulseMCP] https://www.pulsemcp.com/clients/cherryhq-cherry-studio"
+  - "[GH: #12304] GitHub issue CherryHQ/cherry-studio#12304, idle CPU/performance report: https://github.com/CherryHQ/cherry-studio/issues/12304"
+  - "[GH: #14276] GitHub issue CherryHQ/cherry-studio#14276, memory growth/leak report: https://github.com/CherryHQ/cherry-studio/issues/14276"
+  - "[GH: #14624] GitHub issue CherryHQ/cherry-studio#14624, multi-agent IPC/UI blocking report: https://github.com/CherryHQ/cherry-studio/issues/14624"
+  - "[GH: #14276, #14624] Combined issue references for memory growth and IPC/UI blocking: https://github.com/CherryHQ/cherry-studio/issues/14276 and https://github.com/CherryHQ/cherry-studio/issues/14624"
+  - "[GH: #15051] GitHub issue CherryHQ/cherry-studio#15051, CherryClaw custom-model selection problem: https://github.com/CherryHQ/cherry-studio/issues/15051"
+  - "[GH: #15055] GitHub issue CherryHQ/cherry-studio#15055, macOS/V8 SIGTRAP crash report: https://github.com/CherryHQ/cherry-studio/issues/15055"
+  - "[GH: #15058] GitHub issue CherryHQ/cherry-studio#15058, CherryClaw wrong-model/random-request report: https://github.com/CherryHQ/cherry-studio/issues/15058"
+  - "[GH: #15051, #15058] Combined issue references for CherryClaw custom-model and wrong-model reports: https://github.com/CherryHQ/cherry-studio/issues/15051 and https://github.com/CherryHQ/cherry-studio/issues/15058"
+  - "[GH: #15071] GitHub issue CherryHQ/cherry-studio#15071, CherryClaw agent routing bug report: https://github.com/CherryHQ/cherry-studio/issues/15071"
+  - "[GH: CLAUDE.md] Local shallow clone checked CLAUDE.md for Electron/Node/runtime and CI/development notes during original audit."
+  - "[GH: CONTRIBUTING.md] Local shallow clone checked CONTRIBUTING.md for main-branch freeze / v2 hotfix and contribution-policy notes during original audit."
+
 ---
 
 # Cherry Studio
@@ -124,7 +136,7 @@ Cherry Studio 是 2024–2026 年中国开源 AI 工具中增长最快的桌面�
 
 ## 与类似项目对比
 
-| 项目 | 定位 | 相对 Cherry Studio |
+| 项目 | 定位 | 相对本项目 |
 |------|------|-------------------|
 | LobeChat | Web 端多模型聊天平台 | Web 部署，有插件市场，更开发者友好；Cherry Studio 桌面原生体验更好 |
 | Open WebUI | 自托管 Web LLM 前端 | Docker 部署，企业级功能更全；Cherry Studio 上手更简单 |

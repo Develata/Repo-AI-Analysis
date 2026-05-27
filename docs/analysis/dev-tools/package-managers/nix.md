@@ -2,7 +2,7 @@
 
 title: "Nix"
 created: 2026-05-16
-updated: 2026-05-16
+updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/NixOS/nix"
 category: "dev-tools/package-managers"
@@ -56,7 +56,7 @@ sources:
 
 Nix 是 Eelco Dolstra 2006 年博士论文的实现，14 年+的发展使其成为最强大的可复现构建系统之一。核心思想——将包管理建模为纯函数，输入（依赖、源码、构建脚本）→ 输出（`/nix/store` 中的不可变路径）——优雅且从根本上消除了依赖地狱。
 
-然而，这份强大伴随着三个沉重代价：（1）上手门槛极高，Nix 表达式语言、flakes vs 非 flakes、home-manager、nixpkgs 等概念层层嵌套；（2）4,058 个 open issues 反映了维护负荷严重超出社区能力；（3）2024 年的治理危机导致社区分裂出 Lix 和 Determinate Nix 两个 fork，治理修复仍在进行中。
+然而，这份强大伴随着三个沉重代价：（1）上手门槛极高，Nix 表达式语言、flakes vs 非 flakes、home-manager、nixpkgs 等概念层层嵌套；（2）约 4,000 个 open issues/PRs（其中约 3,400 issues 与 600 PRs）反映了维护负荷严重超出社区能力；（3）2024 年的治理危机导致社区分裂出 Lix 和 Determinate Nix 两个 fork，治理修复仍在进行中。
 
 一句话判词：**如果你愿意花三个月学习它，它给你一个能保存十年的可复现环境；如果你只想今天写完代码，选 mise。**
 
@@ -81,7 +81,7 @@ Nix 不是 asdf/mise 的替代品——它是完全不同的概念层级。asdf/
 
 1. **学习曲线极其陡峭**。Nix 表达式语言、flakes、nixpkgs 架构、home-manager——概念层级深且互相关联，新手迷失率高
 2. **文档碎片化严重**。nix.dev 在改进但仍假设深层知识，大量有效信息分散在 wiki、Discourse、博客和 GitHub issue 中
-2. **约 3,400 个 open issues**。C++ 核心仓库的 issue 积压严重（另有约 600 个 open PR），维护能力跟不上使用规模 [GH]
+3. **约 4,000 个 open issues/PRs**。C++ 核心仓库的 issue/PR 积压严重（约 3,400 issues 与 600 PRs），维护能力跟不上使用规模 [GH]
 4. **资源消耗大**。每日更新动辄 500MB 下载，`/nix/store` 持续膨胀，编译场景可打满 16 核/64GB
 5. **社区分裂**。2024 年治理危机导致核心贡献者流失，Lix 和 Determinate Nix 两个 fork 分散了精力和生态
 6. **配置范式碎片化**。flakes（实验性但已成事实标准）vs 传统方式，同一件事有 3-5 种实现路径，GitHub 上的解决方案因上下文不同而经常无法复用
@@ -169,7 +169,7 @@ Nix 表达式语言的语法学习约需数周，调试工具（`nix repl`）功
 
 评分 3/5。
 
-C++ 核心代码库，Meson 构建系统，23,633 commits 跨越 14 年+。CI 存在且基本可用 [GH]。但 4,058 个 open issues 是硬信号——issue 积压不是偶然波动，是维护能力与使用规模的结构性矛盾。
+C++ 核心代码库，Meson 构建系统，23,633 commits 跨越 14 年+。CI 存在且基本可用 [GH]。但约 4,000 个 open issues/PRs 是硬信号——issue 积压不是偶然波动，是维护能力与使用规模的结构性矛盾。
 
 edolstra 贡献 10,660 commits，远超第二名 Ericson2314（2,906），存在 bus factor 风险——但相比 mise 的 jdx 绝对主导，Nix 的核心维护者群更分散（前 5 名贡献者合计 16,525 commits）。
 
@@ -212,7 +212,7 @@ nix.dev 在持续改进，提供了 tutorials → guides → reference → conce
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 3/5 | 16.8k stars、Discourse 和 Matrix 活跃，PR 和 nixpkgs 生态贡献量大。但 2024 年治理危机重创社区——核心贡献者流失，Lix 和 Determinate Nix 两个 fork 分散精力。约 3,400 个 open issues 反映了维护负荷压力 |
+| 社区活跃度 | 3/5 | 16.8k stars、Discourse 和 Matrix 活跃，PR 和 nixpkgs 生态贡献量大。但 2024 年治理危机重创社区——核心贡献者流失，Lix 和 Determinate Nix 两个 fork 分散精力。约 4,000 个 open issues/PRs（约 3,400 issues 与 600 PRs）反映了维护负荷压力 |
 | 成熟度 | 4/5 | 2012 年至今 14 年+，基于 2006 年博士论文。NixOS 每半年发版（25.05、25.11，26.05 预计 2026 年 5 月底发布），生产环境广泛使用。但 flakes 至今标记为实验性（实际已成事实标准），配置范式碎片化拉低了「设定后不变」的成熟感 |
 
 **治理危机背景**（2024）：NixOS 社区围绕 RFC 98（赋予 moderation team 广泛权力）爆发激烈冲突，核心维护者和赞助商之间信任崩塌。事件后成立了新的 Steering Committee，但 2025 年 10 月再次出现不信任投票，Lix 和 Determinate Nix 两 fork 已具备独立生态 [Blog]。
@@ -230,7 +230,7 @@ nix.dev 在持续改进，提供了 tutorials → guides → reference → conce
 
 **风险**：
 - **治理风险**（当前最高风险）：社区分裂可能影响安全补丁的及时性。两个 fork 各自维护，核心代码库的关注度分散
-- **issue 积压**：约 3,400 个 open issues 增加了安全相关 issue 被遗漏的可能性，尽管无法断言已有严重安全问题未被发现
+- **issue 积压**：约 4,000 个 open issues/PRs 增加了安全相关 issue 被遗漏的可能性，尽管无法断言已有严重安全问题未被发现
 - **C++ 代码库**：内存安全风险是 C++ 的固有属性。Nix 本身不是网络暴露服务（daemon 监听本地 socket），攻击面小于 Web 服务器，但 C++ 的内存 bug 始终是潜在风险
 - **供应链范围**：nixpkgs 包含数万个包定义，每个 PR 都是潜在的供应链入口。nixpkgs 的 PR 审查质量参差不齐是社区公开讨论的话题 [Blog]
 

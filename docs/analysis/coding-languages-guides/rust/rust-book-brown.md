@@ -47,9 +47,12 @@ sources:
   - "[CEL] https://cel.cs.brown.edu/"
   - "[Aquascope] https://github.com/cognitive-engineering-lab/aquascope"
   - "[mdbook-quiz] https://github.com/cognitive-engineering-lab/mdbook-quiz"
+  - "[Reddit r/rust] Reddit r/rust community discussions used as weak community-sentiment evidence for Brown Rust Book positioning: https://www.reddit.com/r/rust/"
+  - "[Rust Users Forum] Rust users forum discussions used as weak community-sentiment evidence for Brown Rust Book positioning: https://users.rust-lang.org/"
+
 ---
 
-# Rust Book (Brown Experimental Edition)
+# Rust Book (Brown Experimental)
 
 > 《The Rust Programming Language》的交互增强版——测验、代码可视化、所有权深度剖析。
 >

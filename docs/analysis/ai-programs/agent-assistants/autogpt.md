@@ -3,11 +3,23 @@
 
 title: "AutoGPT"
 created: 2026-05-20
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/Significant-Gravitas/AutoGPT"
 category: "ai-programs/agent-assistants"
 tags: ["autonomous-agents", "agent-history", "agent-platform", "workflow-automation", "low-code-agents", "python", "typescript"]
+ratings:
+  capability: 5
+  usability: 3
+  performance: 3
+  code_quality: 3
+  documentation: 4
+  community: 5
+  maturity: 3
+  extensibility: 4
+  security: 2
+  recommendation: 1
+
 overall_score: 3.3
 recommendation: "强烈建议作为 autonomous-agent 历史线收录；若作为今天的生产平台采用，应先审许可证边界、历史安全公告、Classic 弃用状态与 autogpt_platform 的部署复杂度。"
 status: active-platform-classic-deprecated
@@ -55,7 +67,7 @@ AutoGPT 是 autonomous-agent 史上必须收录的项目：Classic 把“让 GPT
 
 因此我把它放在 `ai-programs/agent-assistants`，并明确状态为 `active-platform-classic-deprecated`：这是按 Classic/agent-history lineage 归类，不表示当前 AutoGPT Platform 只是简单 assistant；当前 product surface 已明显接近 workflow automation / agent platform。
 
-## 收录推荐度：3/5；生产采用推荐度：1/5
+## 推荐度：1/5
 
 推荐收录和研究；不推荐未经审查直接作为生产平台采用。评分表中的“推荐度”按生产采用推荐度计算。
 
@@ -207,20 +219,3 @@ README、docs site、integrations docs、SECURITY、CONTRIBUTING 都存在且信
 1. agent 史：为什么 2023 年 AutoGPT 能成为象征。
 2. 产品演化：从 autonomous task loop 到 continuous workflow platform。
 3. 工程教训：agent 平台一旦连接 credentials、webhooks、browser actions、blocks，就进入严肃安全工程，而非 prompt demo。
-
-## 评分
-
-| 维度 | 分数 | 理由 |
-|---|---:|---|
-| 能力广度 | 5/5 | continuous agents、frontend/server、blocks、triggers、marketplace、Classic/Forge/benchmark 历史组件，能力面极广 [GH:readme][GH:integrations] |
-| 上手体验 | 3/5 | 有一行脚本，但 self-host 要 Docker/Compose/Node/npm/8GB+ RAM，平台概念复杂 [GH:readme] |
-| 性能 | 3/5 | 平台化架构能力强但资源要求不轻；本次未跑 benchmark 或部署测试 [GH:readme] |
-| 代码质量 | 3/5 | 文件/治理结构完整且 release 活跃；但 Classic deprecated 与 platform 转型并存，历史包袱和 advisories 多 [GH:local-scan][GH:advisories] |
-| 文档质量 | 4/5 | README/docs/integrations/security/contribution 齐全；但 Classic/Platform/Cloud/self-host 叙事复杂 [GH:readme][Docs:platform] |
-| 社区活跃度 | 5/5 | stars/forks 极高、contributors 多、community profile 文件齐全；但 backlog 也高，文件齐全不等于治理无风险 [GH:api][GH:graphql][GH:community] |
-| 成熟度 | 3/5 | 历史影响成熟，但当前 autogpt-platform-beta 与大转向使生产成熟度不能按 stars 高估 [GH:releases][GH:security] |
-| 可扩展性 | 4/5 | blocks/triggers/custom blocks/integrations 扩展面强，但每个扩展也是权限与维护成本 [GH:integrations] |
-| 安全性 | 2/5 | advisories 历史重，Classic unsupported，agent workflow 平台攻击面大 [GH:advisories][GH:security] |
-| 推荐度 | 1/5 | 作为历史研究强烈推荐；作为默认生产采用不推荐，除非专门审许可证、版本、安全与部署 |
-
-**Overall score**: (5+3+3+3+4+5+3+4+2+1)/10 = **3.3**

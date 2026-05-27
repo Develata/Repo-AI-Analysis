@@ -3,7 +3,7 @@
 
 title: "Flowise"
 created: 2026-05-20
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/FlowiseAI/Flowise"
 category: "ai-programs/ai-workflow"
@@ -109,7 +109,7 @@ Flowise 的价值在于：把 LLM apps 的常见构件——chatflow、agentflow
 
 这里按 visual builder / agent app platform 相邻项目做 positioning 级对比，未对所有项目重新深审。
 
-| 项目 | 定位 | 相对 Flowise |
+| 项目 | 定位 | 相对本项目 |
 |---|---|---|
 | Flowise | visual AI agent builder / low-code LLM app platform | 可视化、self-host、AgentflowV2；安全与许可证需重点审计 |
 | Dify | LLM app platform / workflow / dataset ops | Dify 更像完整产品平台；Flowise 更强调 visual node builder 与 Agentflow canvas/workflow vocabulary [GH:agentflow] |
@@ -198,20 +198,3 @@ frontmatter 中 `enterprise_ready: partial` 只表示仓库/官网存在 enterpr
 ## 学习价值
 
 学习价值高。Flowise 适合观察一个重要趋势：当 agent 从代码库走向业务用户，系统复杂性不会消失，只会从 Python/TypeScript 代码转移到 visual graph、credentials、auth、tenant isolation 和 deployment policy。
-
-## 评分
-
-| 维度 | 分数 | 理由 |
-|---|---:|---|
-| 功能完整性 | 4/5 | Agentflow/chatflow/RAG/tools/MCP/deployment 配置覆盖广 [GH:agentflow][Docs:home] |
-| 上手体验 | 5/5 | visual UI + Docker/npx/pnpm 路线，demo 友好 [GH:readme][GH:contributing] |
-| 代码质量 | 3/5 | monorepo 清楚，但 advisories/backlog/license complexity 扣分 [GH:advisories][GH:graphql][GH:license] |
-| 可扩展性 | 4/5 | nodes/components/credentials/MCP/custom functions 扩展面强 [GH:agentflow][GH:contributing] |
-| 文档质量 | 4/5 | docs/README/CONTRIBUTING/SECURITY/LICENSE 较完整 [Docs:home][GH:contributing][GH:security] |
-| 社区活跃度 | 5/5 | stars/forks/discussions/releases/contributors 均强 [GH:api][GH:graphql][GH:contributors] |
-| 成熟度 | 3/5 | 活跃且产品化，但生产 hardening 风险突出 [GH:releases][GH:advisories] |
-| 安全性 | 2/5 | historical advisories + credential/RBAC/tenant/MCP 风险；未逐条判断 latest 版本影响范围 [GH:advisories][GH:contributing] |
-| 性能/资源效率 | 3/5 | demo 友好，但作为 Web platform + RAG/agent workflow builder，生产资源消耗取决于并发、数据库、存储和模型 provider；不是极简 CLI/SDK |
-| 推荐度 | 3/5 | 推荐收录和原型使用；生产采用需强审计，公网/多租户部署不应默认推荐 |
-
-算术平均：3.6/5。

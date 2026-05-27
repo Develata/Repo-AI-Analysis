@@ -3,11 +3,23 @@
 
 title: "AutoGen"
 created: 2026-05-20
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/microsoft/autogen"
 category: "ai-programs/agent-frameworks"
 tags: ["multi-agent", "agent-framework", "microsoft", "agent-history", "python", "dotnet", "mcp", "maintenance-mode"]
+ratings:
+  capability: 5
+  usability: 4
+  performance: 3
+  code_quality: 4
+  documentation: 4
+  community: 5
+  maturity: 2
+  extensibility: 4
+  security: 3
+  recommendation: 2
+
 overall_score: 3.6
 recommendation: "适合作为 multi-agent framework 历史线和现有 AutoGen 代码维护参考收录；新项目不建议从 AutoGen 开始，应优先看 Microsoft Agent Framework。"
 status: maintenance-mode-community-managed
@@ -59,7 +71,7 @@ AutoGen 是 multi-agent framework 历史线上的关键项目：它把 multi-age
 - 维护既有 AutoGen 应用：仍需参考。
 - 新项目技术选型：不建议作为首选。
 
-## 收录推荐度：3/5；新项目采用推荐度：2/5
+## 推荐度：2/5
 
 推荐收录、阅读与维护参考；不推荐新项目从 AutoGen 开始。评分表中的“推荐度”按新项目采用推荐度计算。
 
@@ -216,20 +228,3 @@ MSRC reporting path 是正面治理信号 [GH:security]，但不能抵消上述 
 - AgentTool 展示了把 agent 当 tool 的组合范式。
 - MCP Workbench 与 Docker executor 展示了 agent tool/code-execution 风险边界。
 - Maintenance-mode + successor migration 是开源 AI framework 生命周期的典型案例。
-
-## 评分
-
-| 维度 | 分数 | 理由 |
-|---|---:|---|
-| 能力广度 | 5/5 | Core、AgentChat、Extensions、Studio、Bench、MCP、Docker executor、distributed runtime，多 agent 能力面广 [GH:architecture][Docs:home] |
-| 上手体验 | 4/5 | pip install quickstart 简单；但 API key、迁移历史和 maintenance-mode 使新用户路径变复杂 [GH:readme] |
-| 性能 | 3/5 | 框架本身提供 runtime/distributed primitives，但性能主要取决于模型、工具和应用；本次未跑 benchmark [GH:architecture] |
-| 代码质量 | 4/5 | 分层清晰、发布体系与贡献流程完整；但 maintenance-mode 和 backlog 压低评分 [GH:local-scan][GH:contributing] |
-| 文档质量 | 4/5 | docs/README 对状态、架构、安装、Studio 风险说明充分 [GH:readme][Docs:home][Docs:studio] |
-| 社区活跃度 | 5/5 | stars/forks/discussions/contributors 很强，Microsoft 背书；但社区管理后响应可能有限 [GH:api][GH:graphql][GH:readme] |
-| 成熟度 | 2/5 | 历史成熟，但当前 maintenance mode 且新项目被引导到 MAF [GH:readme] |
-| 可扩展性 | 4/5 | Extensions/Core/MCP/Docker/gRPC 扩展 surface 丰富；但新功能路线已迁移 [Docs:home][GH:readme] |
-| 安全性 | 3/5 | MSRC 流程与 advisories=0 是正面；但 MCP/code execution/Studio 非生产就绪/maintenance-mode 带来风险 [GH:security][Docs:studio] |
-| 推荐度 | 2/5 | 适合历史研究和维护；新项目不建议首选，除非明确兼容既有 AutoGen 生态 |
-
-**Overall score**: (5+4+3+4+4+5+2+4+3+2)/10 = **3.6**

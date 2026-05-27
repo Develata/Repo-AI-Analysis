@@ -3,7 +3,7 @@
 
 title: "Hermes Agent"
 created: 2026-05-14
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: https://github.com/NousResearch/hermes-agent
 category: "ai-programs/agent-assistants"
@@ -127,7 +127,7 @@ Hermes Agent 是 2026 年 AI 代理浪潮中**增长最快的新星**：7 周突
 
 ## 与类似项目对比
 
-| 项目 | 定位 | 相对 Hermes |
+| 项目 | 定位 | 相对本项目 |
 |------|------|------------|
 | OpenClaw | 通用自托管 agent | 社区更大（371k vs 148k），但无学习闭环；TypeScript vs Python；Hermes 的 skills 是活的，OpenClaw 的 skills 是静态配置 |
 | Claude Code / Codex CLI | 专用代码 agent | 代码能力更强，但无记忆/自进化/跨 session 能力；定位完全不同 |

@@ -2,7 +2,7 @@
 
 title: "Overleaf"
 created: 2026-05-14
-updated: 2026-05-14
+updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/overleaf/overleaf"
 category: "document-editors"
@@ -38,6 +38,11 @@ sources:
   - "[GH] https://github.com/overleaf/overleaf"
   - "[Docs] https://docs.overleaf.com/on-premises"
   - "[Wiki] https://github.com/overleaf/overleaf/wiki"
+  - "[GH Security] GitHub security overview/advisory index for overleaf/overleaf: https://github.com/overleaf/overleaf/security"
+  - "[GH: Issue #1441] GitHub issue overleaf/overleaf#1441 about docker-compose/MongoDB compatibility: https://github.com/overleaf/overleaf/issues/1441"
+  - "[GHSA-m95q-g8qg-wgj4] GitHub Security Advisory GHSA-m95q-g8qg-wgj4 for overleaf/overleaf: https://github.com/overleaf/overleaf/security/advisories/GHSA-m95q-g8qg-wgj4"
+  - "[GHSA-pxm4-p454-vppg] GitHub Security Advisory GHSA-pxm4-p454-vppg for overleaf/overleaf: https://github.com/overleaf/overleaf/security/advisories/GHSA-pxm4-p454-vppg"
+
 ---
 
 # Overleaf

@@ -3,7 +3,7 @@
 
 title: "Cline"
 created: 2026-05-20
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/cline/cline"
 category: "ai-programs/coding-agents"
@@ -211,49 +211,3 @@ Cline 的安全风险来自两层：一是 coding agent 天然会读写文件、
 ## 学习价值
 
 Cline 的学习价值很高：它展示了现代 coding agent 如何从“IDE chat extension”演化为多入口 runtime。值得重点观察的主题包括：Plan/Act UX、approval policy、checkpoint shadow Git、MCP/plugin capability design、SDK embedding、TUI/headless 双模式、Kanban multi-agent 任务板、provider abstraction 与 enterprise governance。
-
----
-
-## 附录：评分标准
-
-所有维度均为 1–5 分，分高为优。未评估填 null。
-
-### capability（能力广度）
-
-5：功能极全，覆盖 IDE/CLI/TUI/SDK/MCP/plugins/checkpoints/Kanban 等主要 coding-agent 场景。
-
-### usability（上手体验）
-
-4：基础安装路径清楚，但正确配置 provider、permissions、MCP/plugins 与安全策略需要额外学习。
-
-### performance（资源效率）
-
-4：agent runtime 本身资源合理；真正成本来自 IDE、workspace、checkpoints、外部命令和模型 provider。
-
-### code_quality（代码质量）
-
-4：工程结构、社区文件和测试说明较完整；未做完整测试验证且 surface 大。
-
-### documentation（文档质量）
-
-5：官方 docs 信息架构完整，且提供 llms.txt 索引。
-
-### community（社区活跃度）
-
-5：高 star/fork/contributor，维护活跃。
-
-### maturity（成熟度）
-
-3：项目仍年轻，高速演进。
-
-### extensibility（可扩展性）
-
-5：MCP、plugins、hooks、skills、SDK/API 等扩展点丰富。
-
-### security（安全性）
-
-2：已有 critical advisory，且 agent 权限面天然大。
-
-### recommendation（推荐度）
-
-4：强烈值得关注和试用，但需先做权限治理。

@@ -3,7 +3,7 @@
 
 title: "Personal AI Infrastructure (PAI)"
 created: 2026-05-15
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: https://github.com/danielmiessler/Personal_AI_Infrastructure
 category: "ai-programs/agent-assistants"
@@ -39,6 +39,8 @@ sources:
   - "[GH] https://github.com/danielmiessler/Personal_AI_Infrastructure"
   - "[Docs] https://docs.ourpai.ai"
   - "[AgentConn] https://agentconn.com/agents/personal-ai-infrastructure"
+  - "[GH: discussions] GitHub Discussions for danielmiessler/Personal_AI_Infrastructure, used for Linux compatibility, permission prompt and token-management community reports: https://github.com/danielmiessler/Personal_AI_Infrastructure/discussions"
+
 ---
 
 # Personal AI Infrastructure (PAI)

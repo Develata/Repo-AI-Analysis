@@ -3,7 +3,7 @@
 
 title: "OpenCode"
 created: 2026-05-15
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/anomalyco/opencode"
 category: "ai-programs/coding-agents"
@@ -42,6 +42,9 @@ sources:
   - "[Docs] https://opencode.ai/docs"
   - "[CVE] https://nvd.nist.gov/vuln/detail/CVE-2026-22812"
   - "[Infralovers] https://www.infralovers.com/blog/2026-01-29-claude-code-vs-opencode/"
+  - "[Docs: Plugins] opencode plugin documentation, plugin event hooks and extension surface: https://opencode.ai/docs/plugins"
+  - "[Web] opencode official website / documentation entry used for high-level positioning: https://opencode.ai"
+
 ---
 
 # OpenCode

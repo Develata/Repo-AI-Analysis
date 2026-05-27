@@ -3,7 +3,7 @@
 
 title: Scientific Agent Skills
 created: 2025-10-19
-updated: 2026-05-21
+updated: 2026-05-27
 type: repository-analysis
 repo_url: https://github.com/K-Dense-AI/scientific-agent-skills
 category: "ai-programs/agent-skills"
@@ -50,6 +50,8 @@ sources:
   - "[Docs:examples] https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/docs/examples.md"
   - "[Docs:security] https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/SECURITY.md"
   - "[GH:security] https://github.com/K-Dense-AI/scientific-agent-skills/security"
+  - "[Paper Digest] Paper Digest academic search / paper-digest reference site used only as comparator in positioning table: https://www.paperdigest.org"
+
 ---
 
 # Scientific Agent Skills
