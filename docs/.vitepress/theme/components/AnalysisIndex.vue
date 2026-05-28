@@ -8,8 +8,29 @@ const query = ref('');
 const category = ref('all');
 const language = ref('all');
 
-const categories = computed(() => [...new Set(reports.value.map((report) => report.directory || report.category).filter(Boolean))].sort());
-const languages = computed(() => [...new Set(reports.value.map((report) => report.primary_language).filter(Boolean))].sort());
+const categoryOptions = computed(() => {
+  const counts = new Map<string, number>();
+
+  for (const report of reports.value) {
+    const parts = String(report.directory || report.category || '').split('/').filter(Boolean);
+    for (let index = 1; index <= parts.length; index += 1) {
+      const path = parts.slice(0, index).join('/');
+      counts.set(path, (counts.get(path) ?? 0) + 1);
+    }
+  }
+
+  return [...counts.entries()]
+    .sort(([left], [right]) => left.localeCompare(right, 'en'))
+    .map(([value, count]) => {
+      const parts = value.split('/');
+      const depth = parts.length - 1;
+      return {
+        value,
+        label: `${'\u00A0\u00A0'.repeat(depth)}${depth > 0 ? '↳ ' : ''}${parts[parts.length - 1]} (${count})`,
+      };
+    });
+});
+const languages = computed(() => [...new Set(reports.value.flatMap((report) => splitLanguages(report.primary_language)))].sort());
 
 function normalizeText(value: unknown): string {
   return String(value ?? '')
@@ -30,11 +51,25 @@ function normalizePath(value: unknown): string {
     .trim();
 }
 
+function splitLanguages(value: unknown): string[] {
+  return String(value ?? '')
+    .split(/\s*(?:\/|,)\s*/u)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function matchesCategoryFilter(reportCategory: string, selectedCategory: string): boolean {
+  return selectedCategory === 'all'
+    || reportCategory === selectedCategory
+    || reportCategory.startsWith(`${selectedCategory}/`);
+}
+
 const searchIndex = computed(() => reports.value.map((report) => {
-  const reportCategory = report.directory || report.category;
+  const reportCategory = String(report.directory || report.category || '');
   return {
     report,
     category: reportCategory,
+    languages: splitLanguages(report.primary_language),
     titleText: normalizeText(report.title),
     categoryText: normalizeText(reportCategory),
     categoryPath: normalizePath(reportCategory),
@@ -48,8 +83,8 @@ const filtered = computed(() => {
 
   return searchIndex.value
     .filter((item) => {
-      if (category.value !== 'all' && item.category !== category.value) return false;
-      if (language.value !== 'all' && item.report.primary_language !== language.value) return false;
+      if (!matchesCategoryFilter(item.category, category.value)) return false;
+      if (language.value !== 'all' && !item.languages.includes(language.value)) return false;
       if (!pathNeedle) return true;
 
       // Prefer literal folder-path matching, then fall back to separator-normalized token matching.
@@ -73,7 +108,7 @@ onMounted(async () => {
     <input v-model="query" type="search" placeholder="title or folder path, e.g. ai-programs/coding-agents">
     <select v-model="category" aria-label="Category filter">
       <option value="all">All categories</option>
-      <option v-for="item in categories" :key="item" :value="item">{{ item }}</option>
+      <option v-for="item in categoryOptions" :key="item.value" :value="item.value">{{ item.label }}</option>
     </select>
     <select v-model="language" aria-label="Language filter">
       <option value="all">All languages</option>

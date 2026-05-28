@@ -204,7 +204,7 @@ body {
 
 .raia-analysis-toolbar {
   display: grid;
-  grid-template-columns: minmax(240px, 1fr) 180px 180px;
+  grid-template-columns: minmax(240px, 1fr) minmax(220px, 260px) minmax(180px, 220px);
   gap: 12px;
   margin: 20px 0;
 }
