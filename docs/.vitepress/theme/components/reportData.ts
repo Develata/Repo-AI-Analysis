@@ -14,16 +14,16 @@ export const dimensionKeys = [
 ] as const;
 
 export const dimensionLabels: Record<string, string> = {
-  capability: 'Capability',
-  usability: 'Usability',
-  performance: 'Performance',
-  code_quality: 'Code Quality',
-  documentation: 'Docs',
-  community: 'Community',
-  maturity: 'Maturity',
-  extensibility: 'Extensibility',
-  security: 'Security',
-  recommendation: 'Recommendation',
+  capability: '能力',
+  usability: '易用性',
+  performance: '性能',
+  code_quality: '代码质量',
+  documentation: '文档',
+  community: '社区',
+  maturity: '成熟度',
+  extensibility: '可扩展性',
+  security: '安全性',
+  recommendation: '推荐度',
 };
 
 export type Report = {
