@@ -335,12 +335,10 @@ body {
   border-radius: 18px;
   padding: 18px;
   color: var(--vp-c-text-1);
-  background:
-    radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--vp-c-brand-1) 10%, transparent), transparent 38%),
-    linear-gradient(145deg, color-mix(in srgb, var(--raia-glass-bg) 78%, var(--vp-c-bg)), color-mix(in srgb, var(--vp-c-bg) 92%, var(--vp-c-brand-soft)) 76%);
-  box-shadow:
-    0 0 0 1px color-mix(in srgb, var(--vp-c-text-1) 5%, transparent),
-    0 18px 44px rgba(0, 0, 0, 0.08);
+  background-color: var(--raia-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--raia-shadow);
 }
 
 .raia-home-signal-topline,
@@ -386,10 +384,10 @@ body {
   display: grid;
   align-content: end;
   min-height: 112px;
-  border: 1px solid color-mix(in srgb, var(--vp-c-divider) 78%, transparent);
+  border: 1px solid var(--raia-glass-border);
   border-radius: 14px;
   padding: 16px;
-  background: color-mix(in srgb, var(--vp-c-bg) 72%, var(--raia-glass-bg));
+  background-color: var(--raia-glass-bg);
 }
 
 .raia-home-signal-main small,
@@ -428,10 +426,10 @@ body {
 
 .raia-home-signal-grid div {
   min-width: 0;
-  border: 1px solid color-mix(in srgb, var(--vp-c-divider) 74%, transparent);
+  border: 1px solid var(--raia-glass-border);
   border-radius: 12px;
   padding: 12px;
-  background: color-mix(in srgb, var(--vp-c-bg) 76%, var(--raia-glass-bg));
+  background-color: var(--raia-glass-bg);
 }
 
 .raia-home-signal-grid strong {

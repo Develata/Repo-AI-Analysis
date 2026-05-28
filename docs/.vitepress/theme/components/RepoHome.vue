@@ -16,14 +16,17 @@ type CategorySummary = {
   latestDate: string;
 };
 
+type DomainHighlight = {
+  path: string;
+  label: string;
+  count: number;
+  report: Report;
+};
+
 const latest = computed(() => reports.value
   .slice()
   .sort((a, b) => reportTimestamp(b) - reportTimestamp(a) || Number(b.overall_score) - Number(a.overall_score))
   .slice(0, 6));
-const topRated = computed(() => reports.value
-  .slice()
-  .sort((a, b) => Number(b.overall_score) - Number(a.overall_score) || a.title.localeCompare(b.title, 'en'))
-  .slice(0, 3));
 const average = computed(() => averageRatings(reports.value));
 const averageScore = computed(() => {
   if (!reports.value.length) return 0;
@@ -53,6 +56,30 @@ const categorySummaries = computed<CategorySummary[]>(() => {
       latestDate: items.map(reportDate).sort().at(-1) ?? '',
     }))
     .sort((left, right) => right.count - left.count || left.label.localeCompare(right.label, 'en'));
+});
+const domainHighlights = computed<DomainHighlight[]>(() => {
+  const buckets = new Map<string, Report[]>();
+
+  for (const report of reports.value) {
+    const path = topLevelCategory(report);
+    const bucket = buckets.get(path) ?? [];
+    bucket.push(report);
+    buckets.set(path, bucket);
+  }
+
+  return [...buckets.entries()]
+    .map(([path, items]) => ({
+      path,
+      label: formatCategoryLabel(path),
+      count: items.length,
+      report: items
+        .slice()
+        .sort((left, right) => Number(right.overall_score) - Number(left.overall_score)
+          || reportTimestamp(right) - reportTimestamp(left)
+          || left.title.localeCompare(right.title, 'en'))[0],
+    }))
+    .filter((item): item is DomainHighlight => Boolean(item.report))
+    .sort((left, right) => left.label.localeCompare(right.label, 'en'));
 });
 
 function topLevelCategory(report: Report): string {
@@ -122,8 +149,8 @@ onMounted(async () => {
             <strong>{{ latest[0] ? reportDate(latest[0]) : '—' }}</strong>
           </div>
           <div>
-            <small>top pick</small>
-            <strong>{{ topRated[0]?.title ?? '—' }}</strong>
+            <small>lens score</small>
+            <strong>{{ selectedReport ? `${formatScore(selectedReport.overall_score)}/5` : formatScore(averageScore) }}</strong>
           </div>
           <div>
             <small>scope</small>
@@ -209,14 +236,14 @@ onMounted(async () => {
 
     <section class="raia-panel raia-home-top-panel">
       <div class="raia-panel-head">
-        <h2>High-signal picks</h2>
-        <span>highest overall score</span>
+        <h2>Domain representatives</h2>
+        <span>best within each folder</span>
       </div>
       <div class="raia-home-picks">
-        <a v-for="report in topRated" :key="report.slug" :href="reportLink(report)">
-          <span>{{ report.title }}</span>
-          <strong>{{ formatScore(report.overall_score) }}/5</strong>
-          <small>{{ report.directory || report.category }}</small>
+        <a v-for="item in domainHighlights" :key="item.path" :href="reportLink(item.report)">
+          <span>{{ item.label }}</span>
+          <strong>{{ formatScore(item.report.overall_score) }}/5</strong>
+          <small>{{ item.report.title }} · {{ item.count }} reports</small>
         </a>
       </div>
     </section>
