@@ -36,7 +36,7 @@ function normalizeText(value: unknown): string {
   return String(value ?? '')
     .normalize('NFKC')
     .toLowerCase()
-    .replace(/[._/\\|:+#()[\]{}"'`-]+/gu, ' ')
+    .replace(/[._/\\|:()[\]{}"'`-]+/gu, ' ')
     .replace(/\s+/gu, ' ')
     .trim();
 }
