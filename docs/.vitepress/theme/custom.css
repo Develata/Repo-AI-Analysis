@@ -304,7 +304,46 @@ body {
 }
 
 .raia-compare .raia-compare-options {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.raia-compare-folder,
+.raia-compare-option {
+  margin-left: var(--raia-tree-indent, 0px);
+}
+
+.raia-compare-folder {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  width: calc(100% - var(--raia-tree-indent, 0px));
+  padding: 9px 10px;
+  border: 1px solid color-mix(in srgb, var(--vp-c-brand-1) 38%, var(--vp-c-divider));
+  border-radius: 10px;
+  color: var(--vp-c-text-1);
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 68%, transparent);
+  cursor: pointer;
+}
+
+.raia-compare-folder.is-selected {
+  border-color: var(--vp-c-brand-1);
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 92%, transparent);
+}
+
+.raia-compare-folder-name::before {
+  content: '▸ ';
+  color: var(--vp-c-brand-1);
+}
+
+.raia-compare-folder small,
+.raia-compare-option small {
+  color: var(--vp-c-text-2);
+  font-weight: 500;
 }
 
 .raia-compare-option {
@@ -312,13 +351,15 @@ body {
   grid-template-columns: 18px minmax(0, 1fr) auto;
   gap: 10px;
   align-items: center;
+  width: calc(100% - var(--raia-tree-indent, 0px));
   padding: 10px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 10px;
   cursor: pointer;
 }
 
-.raia-compare-option span {
+.raia-compare-option span,
+.raia-compare-folder-name {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
