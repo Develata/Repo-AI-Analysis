@@ -11,23 +11,52 @@ const language = ref('all');
 const categories = computed(() => [...new Set(reports.value.map((report) => report.directory || report.category).filter(Boolean))].sort());
 const languages = computed(() => [...new Set(reports.value.map((report) => report.primary_language).filter(Boolean))].sort());
 
+function normalizeText(value: unknown): string {
+  return String(value ?? '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/[._/\\|:+#()[\]{}"'`-]+/gu, ' ')
+    .replace(/\s+/gu, ' ')
+    .trim();
+}
+
+function normalizePath(value: unknown): string {
+  return String(value ?? '')
+    .normalize('NFKC')
+    .toLowerCase()
+    .replace(/\\/gu, '/')
+    .replace(/\s*\/\s*/gu, '/')
+    .replace(/\/+/gu, '/')
+    .trim();
+}
+
+const searchIndex = computed(() => reports.value.map((report) => {
+  const reportCategory = report.directory || report.category;
+  return {
+    report,
+    category: reportCategory,
+    titleText: normalizeText(report.title),
+    categoryText: normalizeText(reportCategory),
+    categoryPath: normalizePath(reportCategory),
+  };
+}));
+
 const filtered = computed(() => {
-  const needle = query.value.trim().toLowerCase();
-  return reports.value.filter((report) => {
-    const reportCategory = report.directory || report.category;
-    if (category.value !== 'all' && reportCategory !== category.value) return false;
-    if (language.value !== 'all' && report.primary_language !== language.value) return false;
-    if (!needle) return true;
-    return [
-      report.title,
-      report.repo_url,
-      reportCategory,
-      report.primary_language,
-      report.status,
-      report.tags.join(' '),
-      excerpt(report),
-    ].join(' ').toLowerCase().includes(needle);
-  });
+  const rawQuery = query.value.trim();
+  const pathNeedle = normalizePath(rawQuery);
+  const textTokens = normalizeText(rawQuery).split(' ').filter(Boolean);
+
+  return searchIndex.value
+    .filter((item) => {
+      if (category.value !== 'all' && item.category !== category.value) return false;
+      if (language.value !== 'all' && item.report.primary_language !== language.value) return false;
+      if (!pathNeedle) return true;
+
+      // Prefer literal folder-path matching, then fall back to separator-normalized token matching.
+      if (item.categoryPath.includes(pathNeedle)) return true;
+      return textTokens.every((token) => item.titleText.includes(token) || item.categoryText.includes(token));
+    })
+    .map((item) => item.report);
 });
 
 onMounted(async () => {
@@ -41,7 +70,7 @@ onMounted(async () => {
   </p>
 
   <div class="raia-analysis-toolbar">
-    <input v-model="query" type="search" placeholder="repo, tag, language, category">
+    <input v-model="query" type="search" placeholder="title or folder path, e.g. ai-programs/coding-agents">
     <select v-model="category" aria-label="Category filter">
       <option value="all">All categories</option>
       <option v-for="item in categories" :key="item" :value="item">{{ item }}</option>
