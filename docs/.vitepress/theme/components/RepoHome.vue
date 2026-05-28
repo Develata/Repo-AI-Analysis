@@ -1,25 +1,79 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue';
+import { withBase } from 'vitepress';
 import DimensionsRadar from './DimensionsRadar.vue';
 import { useReports } from '../composables/useReports';
-import { averageRatings, excerpt, formatScore, reportDate, type Report } from './reportData';
+import { averageRatings, excerpt, formatScore, reportDate, reportLink, type Report } from './reportData';
 
 const { reports, ensureReports } = useReports();
 const selectedSlug = ref('');
 
+type CategorySummary = {
+  path: string;
+  label: string;
+  count: number;
+  averageScore: number;
+  latestDate: string;
+};
+
 const latest = computed(() => reports.value
   .slice()
-  .sort((a, b) => Date.parse(reportDate(b)) - Date.parse(reportDate(a)) || Number(b.overall_score) - Number(a.overall_score))
-  .slice(0, 5));
+  .sort((a, b) => reportTimestamp(b) - reportTimestamp(a) || Number(b.overall_score) - Number(a.overall_score))
+  .slice(0, 6));
+const topRated = computed(() => reports.value
+  .slice()
+  .sort((a, b) => Number(b.overall_score) - Number(a.overall_score) || a.title.localeCompare(b.title, 'en'))
+  .slice(0, 3));
 const average = computed(() => averageRatings(reports.value));
+const averageScore = computed(() => {
+  if (!reports.value.length) return 0;
+  return reports.value.reduce((sum, report) => sum + Number(report.overall_score || 0), 0) / reports.value.length;
+});
 const selectedReport = computed(() => latest.value.find((report) => report.slug === selectedSlug.value) ?? latest.value[0]);
 const radarSeries = computed(() => [{
   label: selectedReport.value?.title ?? 'Average',
   ratings: selectedReport.value?.ratings ?? average.value,
 }]);
+const categorySummaries = computed<CategorySummary[]>(() => {
+  const buckets = new Map<string, Report[]>();
+
+  for (const report of reports.value) {
+    const path = topLevelCategory(report);
+    const bucket = buckets.get(path) ?? [];
+    bucket.push(report);
+    buckets.set(path, bucket);
+  }
+
+  return [...buckets.entries()]
+    .map(([path, items]) => ({
+      path,
+      label: formatCategoryLabel(path),
+      count: items.length,
+      averageScore: items.reduce((sum, report) => sum + Number(report.overall_score || 0), 0) / items.length,
+      latestDate: items.map(reportDate).sort().at(-1) ?? '',
+    }))
+    .sort((left, right) => right.count - left.count || left.label.localeCompare(right.label, 'en'));
+});
+
+function topLevelCategory(report: Report): string {
+  return String(report.directory || report.category || 'uncategorized').split('/').filter(Boolean)[0] ?? 'uncategorized';
+}
+
+function formatCategoryLabel(path: string): string {
+  return path
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.slice(0, 1).toUpperCase() + part.slice(1))
+    .join(' ');
+}
 
 function selectReport(report: Report) {
   selectedSlug.value = report.slug;
+}
+
+function reportTimestamp(report: Report): number {
+  const timestamp = Date.parse(reportDate(report));
+  return Number.isFinite(timestamp) ? timestamp : 0;
 }
 
 watch(latest, (items) => {
@@ -35,38 +89,105 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="raia-home">
-    <div class="raia-hero">
+  <section class="raia-home raia-home-v2">
+    <div class="raia-home-hero raia-panel">
+      <div class="raia-home-kicker">REPO INTELLIGENCE / CURATED ANALYSIS</div>
+      <h1>Repository maps for tools worth remembering.</h1>
+      <p>
+        面向 AI agents、coding tools、文档系统与数学工具的结构化仓库分析：不只看 star，
+        更看能力边界、工程质量、生态成熟度与是否值得进入长期工具箱。
+      </p>
+      <div class="raia-home-actions">
+        <a class="raia-button-primary" :href="withBase('/analysis/')">Browse Analysis</a>
+        <a class="raia-button-ghost" :href="withBase('/compare/')">Compare Repos</a>
+      </div>
+      <div class="raia-home-stats" aria-label="Repository analysis statistics">
+        <div class="raia-home-stat">
+          <strong>{{ reports.length }}</strong>
+          <span>analyses</span>
+        </div>
+        <div class="raia-home-stat">
+          <strong>{{ formatScore(averageScore) }}</strong>
+          <span>avg score</span>
+        </div>
+        <div class="raia-home-stat">
+          <strong>{{ categorySummaries.length }}</strong>
+          <span>domains</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="raia-home-radar-panel raia-panel">
+      <div class="raia-panel-head">
+        <h2>Current lens</h2>
+        <span>{{ selectedReport?.directory || selectedReport?.category || 'average' }}</span>
+      </div>
       <div class="raia-radar-card raia-home-radar-card">
         <DimensionsRadar :series="radarSeries" :title="selectedReport?.title ?? 'DIMENSIONS'" />
       </div>
     </div>
 
-    <aside class="raia-panel">
+    <aside class="raia-panel raia-home-latest-panel">
       <div class="raia-panel-head">
-        <h2>Latest</h2>
-        <span>{{ reports.length }} analyses</span>
+        <h2>Latest reports</h2>
+        <span>{{ latest.length }} recent</span>
       </div>
       <div class="raia-latest-list">
-        <a
+        <article
           v-for="report in latest"
           :key="report.slug"
-          class="raia-latest-item"
+          class="raia-latest-item raia-home-latest-item"
           :class="{ 'is-active': report.slug === selectedReport?.slug }"
-          href="#"
-          role="button"
-          :aria-pressed="report.slug === selectedReport?.slug"
-          @click.prevent="selectReport(report)"
         >
-          <div class="raia-score-row">
-            <span class="raia-score">{{ formatScore(report.overall_score) }}/5</span>
-            <span class="raia-chip">{{ reportDate(report) || 'unknown date' }}</span>
-            <span class="raia-chip">{{ report.directory || report.category }}</span>
-          </div>
-          <h3>{{ report.title }}</h3>
-          <p>{{ excerpt(report) }}</p>
-        </a>
+          <button
+            type="button"
+            :aria-pressed="report.slug === selectedReport?.slug"
+            @click="selectReport(report)"
+          >
+            <div class="raia-score-row">
+              <span class="raia-score">{{ formatScore(report.overall_score) }}/5</span>
+              <span class="raia-chip">{{ reportDate(report) || 'unknown date' }}</span>
+              <span class="raia-chip">{{ report.directory || report.category }}</span>
+            </div>
+            <h3>{{ report.title }}</h3>
+            <p>{{ excerpt(report) }}</p>
+          </button>
+          <a :href="reportLink(report)">Open report →</a>
+        </article>
       </div>
     </aside>
+
+    <section class="raia-panel raia-home-taxonomy-panel">
+      <div class="raia-panel-head">
+        <h2>Taxonomy map</h2>
+        <span>top-level folders</span>
+      </div>
+      <div class="raia-home-category-grid">
+        <a
+          v-for="category in categorySummaries"
+          :key="category.path"
+          class="raia-home-category-card"
+          :href="withBase('/analysis/')"
+        >
+          <span>{{ category.label }}</span>
+          <strong>{{ category.count }}</strong>
+          <small>avg {{ formatScore(category.averageScore) }} · latest {{ category.latestDate || 'unknown' }}</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="raia-panel raia-home-top-panel">
+      <div class="raia-panel-head">
+        <h2>High-signal picks</h2>
+        <span>highest overall score</span>
+      </div>
+      <div class="raia-home-picks">
+        <a v-for="report in topRated" :key="report.slug" :href="reportLink(report)">
+          <span>{{ report.title }}</span>
+          <strong>{{ formatScore(report.overall_score) }}/5</strong>
+          <small>{{ report.directory || report.category }}</small>
+        </a>
+      </div>
+    </section>
   </section>
 </template>
