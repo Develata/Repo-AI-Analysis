@@ -91,16 +91,47 @@ onMounted(async () => {
 <template>
   <section class="raia-home raia-home-v2">
     <div class="raia-home-hero raia-panel">
-      <div class="raia-home-kicker">REPO INTELLIGENCE / CURATED ANALYSIS</div>
-      <h1>Repository maps for tools worth remembering.</h1>
-      <p>
-        面向 AI agents、coding tools、文档系统与数学工具的结构化仓库分析：不只看 star，
-        更看能力边界、工程质量、生态成熟度与是否值得进入长期工具箱。
-      </p>
-      <div class="raia-home-actions">
-        <a class="raia-button-primary" :href="withBase('/analysis/')">Browse Analysis</a>
-        <a class="raia-button-ghost" :href="withBase('/compare/')">Compare Repos</a>
+      <div class="raia-home-hero-copy">
+        <div class="raia-home-kicker">REPO INTELLIGENCE / CURATED ANALYSIS</div>
+        <h1>Repository maps for tools worth remembering.</h1>
+        <p>
+          面向 AI agents、coding tools、文档系统与数学工具的结构化仓库分析：不只看 star，
+          更看能力边界、工程质量、生态成熟度与是否值得进入长期工具箱。
+        </p>
+        <div class="raia-home-actions">
+          <a class="raia-button-primary" :href="withBase('/analysis/')">Browse Analysis</a>
+          <a class="raia-button-ghost" :href="withBase('/compare/')">Compare Repos</a>
+        </div>
       </div>
+
+      <aside class="raia-home-signal-card" aria-label="Repository intelligence summary">
+        <div class="raia-home-signal-topline">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <strong>reports.json</strong>
+        </div>
+        <div class="raia-home-signal-main">
+          <small>current lens</small>
+          <strong>{{ selectedReport?.title ?? 'Average' }}</strong>
+          <span>{{ selectedReport?.directory || selectedReport?.category || 'all domains' }}</span>
+        </div>
+        <div class="raia-home-signal-grid">
+          <div>
+            <small>latest</small>
+            <strong>{{ latest[0] ? reportDate(latest[0]) : '—' }}</strong>
+          </div>
+          <div>
+            <small>top pick</small>
+            <strong>{{ topRated[0]?.title ?? '—' }}</strong>
+          </div>
+          <div>
+            <small>scope</small>
+            <strong>{{ categorySummaries.length }} domains</strong>
+          </div>
+        </div>
+      </aside>
+
       <div class="raia-home-stats" aria-label="Repository analysis statistics">
         <div class="raia-home-stat">
           <strong>{{ reports.length }}</strong>
