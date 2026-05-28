@@ -1,5 +1,6 @@
 ---
 title: Analysis
+sidebar: false
 aside: false
 ---
 
