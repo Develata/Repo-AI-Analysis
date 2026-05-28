@@ -6,6 +6,7 @@ import { dimensionKeys, dimensionLabels, formatScore, type Report } from './repo
 
 const { reports, ensureReports } = useReports();
 const selected = ref<string[]>([]);
+const expandedFolders = ref<Set<string>>(new Set());
 
 type CompareTreeItem =
   | {
@@ -15,6 +16,7 @@ type CompareTreeItem =
     depth: number;
     count: number;
     selectedCount: number;
+    expanded: boolean;
   }
   | {
     type: 'report';
@@ -46,8 +48,11 @@ const compareTreeItems = computed<CompareTreeItem[]>(() => {
 
   const items: CompareTreeItem[] = [];
   for (const path of [...folderPaths].sort((left, right) => left.localeCompare(right, 'en'))) {
+    if (!isFolderVisible(path)) continue;
+
     const parts = path.split('/').filter(Boolean);
     const descendantReports = reportsInFolder(path);
+    const expanded = isFolderExpanded(path);
     items.push({
       type: 'folder',
       path,
@@ -55,7 +60,10 @@ const compareTreeItems = computed<CompareTreeItem[]>(() => {
       depth: Math.max(0, parts.length - 1),
       count: descendantReports.length,
       selectedCount: descendantReports.filter((report) => selectedSlugs.has(report.slug)).length,
+      expanded,
     });
+
+    if (!expanded) continue;
 
     const directReports = (reportsByDirectory.get(path) ?? [])
       .slice()
@@ -77,6 +85,28 @@ function reportsInFolder(path: string): Report[] {
     const directory = reportDirectory(report);
     return directory === path || directory.startsWith(`${path}/`);
   });
+}
+
+function isFolderExpanded(path: string): boolean {
+  return expandedFolders.value.has(path);
+}
+
+function isFolderVisible(path: string): boolean {
+  const parts = path.split('/').filter(Boolean);
+  for (let index = 1; index < parts.length; index += 1) {
+    if (!isFolderExpanded(parts.slice(0, index).join('/'))) return false;
+  }
+  return true;
+}
+
+function toggleFolderExpanded(path: string) {
+  const next = new Set(expandedFolders.value);
+  if (next.has(path)) {
+    next.delete(path);
+  } else {
+    next.add(path);
+  }
+  expandedFolders.value = next;
 }
 
 function sameSlugSet(left: string[], right: string[]): boolean {
@@ -137,19 +167,33 @@ onMounted(async () => {
       </div>
       <div class="raia-compare-options">
         <template v-for="item in compareTreeItems" :key="item.type === 'folder' ? item.path : item.report.slug">
-          <button
+          <div
             v-if="item.type === 'folder'"
-            type="button"
             class="raia-compare-folder"
             :class="{ 'is-selected': item.selectedCount === item.count && item.count > 0 }"
             :style="{ '--raia-tree-indent': `${item.depth * 18}px` }"
-            :aria-pressed="item.selectedCount === item.count"
-            :aria-label="`Select all repositories in ${item.path}`"
-            @click="selectFolder(item.path)"
           >
-            <span class="raia-compare-folder-name">{{ item.label }}</span>
-            <small>{{ item.count }} repos · {{ folderStateLabel(item) }}</small>
-          </button>
+            <button
+              type="button"
+              class="raia-compare-folder-toggle"
+              :class="{ 'is-expanded': item.expanded }"
+              :aria-expanded="item.expanded"
+              :aria-label="`${item.expanded ? 'Collapse' : 'Expand'} ${item.path}`"
+              @click="toggleFolderExpanded(item.path)"
+            >
+              ▸
+            </button>
+            <button
+              type="button"
+              class="raia-compare-folder-select"
+              :aria-pressed="item.selectedCount === item.count"
+              :aria-label="`Select all repositories in ${item.path}`"
+              @click="selectFolder(item.path)"
+            >
+              <span class="raia-compare-folder-name">{{ item.label }}</span>
+              <small>{{ item.count }} repos · {{ folderStateLabel(item) }}</small>
+            </button>
+          </div>
           <label
             v-else
             class="raia-compare-option"

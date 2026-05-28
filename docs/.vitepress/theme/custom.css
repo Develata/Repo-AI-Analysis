@@ -666,7 +666,7 @@ body {
 
 .raia-compare-folder {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
   gap: 10px;
   align-items: center;
   width: calc(100% - var(--raia-tree-indent, 0px));
@@ -678,7 +678,6 @@ body {
   font-weight: 700;
   text-align: left;
   background: color-mix(in srgb, var(--vp-c-brand-soft) 68%, transparent);
-  cursor: pointer;
 }
 
 .raia-compare-folder.is-selected {
@@ -686,9 +685,52 @@ body {
   background: color-mix(in srgb, var(--vp-c-brand-soft) 92%, transparent);
 }
 
-.raia-compare-folder-name::before {
-  content: '▸ ';
+.raia-compare-folder-toggle {
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0;
   color: var(--vp-c-brand-1);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.raia-compare-folder-toggle:hover,
+.raia-compare-folder-toggle:focus-visible {
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 72%, transparent);
+}
+
+.raia-compare-folder-toggle.is-expanded {
+  transform: rotate(90deg);
+}
+
+.raia-compare-folder-select {
+  display: grid;
+  grid-column: 2 / -1;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  text-align: left;
+  background: transparent;
+  cursor: pointer;
+}
+
+.raia-compare-folder-select:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 2px;
 }
 
 .raia-compare-folder small,
