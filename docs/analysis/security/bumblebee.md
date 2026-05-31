@@ -24,17 +24,17 @@ estimated_storage: "small for binary and catalogs; output NDJSON size depends on
 status: active
 sharing_candidate: true
 ratings:
-  capability: 4
-  usability: 4
-  performance: 5
-  code_quality: 4
+  capability: 3
+  usability: 3
+  performance: 3
+  code_quality: 3
   documentation: 4
   community: 3
   maturity: 2
   extensibility: 3
-  security: 4
-  recommendation: 4
-overall_score: 3.7
+  security: 3
+  recommendation: 3
+overall_score: 3.0
 sources:
   - "[GH] https://github.com/perplexityai/bumblebee"
   - "[GH:api] GitHub API queried 2026-05-31; stars=3968, forks=344, created_at=2026-05-20, pushed_at=2026-05-29, license=Apache-2.0, primary_language=Go, latest_release=v0.1.1 published 2026-05-22, topics include package-inventory/supply-chain-security"
@@ -51,7 +51,7 @@ sources:
 
 > 面向开发者终端的 read-only package / extension / MCP config inventory scanner，用于供应链事件发生后快速回答“哪些机器暴露于这个已知恶意包/扩展/版本”。
 >
-> **状态**: `active` · **总分**: 3.7/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.0/5 · **推荐度**: 3/5
 > **核验版本**: GitHub commit `7c93206`；GitHub API / local clone 快照 2026-05-31
 
 ## 一句话总结
@@ -62,22 +62,22 @@ Bumblebee 是一个很窄但很有价值的安全工具：它不做通用 EDR，
 
 Bumblebee 应归入 `security`，更具体是 **developer endpoint supply-chain exposure scanner**。它回答的问题不是“软件制品里依赖了什么”，也不是“进程实际运行了什么”，而是：当已知某个 npm/PyPI/RubyGem/Homebrew 包、编辑器扩展或 MCP server 配置存在风险时，当前开发者终端磁盘上的 metadata 是否显示暴露迹象 [GH:readme][GH:inventory]。
 
-设计取向值得肯定：单个 Go binary、零非标准库运行依赖、只读扫描、三类 profile（`baseline` / `project` / `deep`）、NDJSON 输出、exposure catalog 精确匹配、stderr diagnostics、scan summary 完成语义。这些都说明它不是玩具脚本，而是在按 incident-response collector 的方式设计 wire format 和运行边界 [GH:readme][GH:transport]。
+设计取向清楚：单个 Go binary、零非标准库运行依赖、只读扫描、三类 profile（`baseline` / `project` / `deep`）、NDJSON 输出、exposure catalog 精确匹配、stderr diagnostics、scan summary 完成语义。这些是面向 incident-response collector 的设计信号，但仍需实测和长期维护来验证 [GH:readme][GH:transport]。
 
-但成熟度必须保守。仓库创建于 2026-05-20，默认分支只有 8 个 commit，公开 release 仅 v0.1.1；当前热度主要来自“安全事件响应需求 + Perplexity 背书 + 话题新鲜度”，还不是长期生产部署沉淀 [GH:api][GH:graphql]。所以它适合作为高价值观察对象和试点工具，不应直接等同为成熟企业 endpoint security 产品。
+但成熟度必须保守。仓库创建于 2026-05-20，默认分支只有 8 个 commit，公开 release 仅 v0.1.1；当前关注度较高，但从现有证据只能确认 stars/forks 的点时数值，不能证明长期采用或社区成熟 [GH:api][GH:graphql]。所以它适合作为高价值观察对象和小规模试点工具，不应直接等同为成熟企业 endpoint security 产品。
 
-## 推荐度：4/5
+## 推荐度：3/5
 
-推荐度 4/5。对 Develata 的 wiki 来说，它值得收录：原因不是功能巨大，而是问题定义精确、工程边界干净，并且切中了 agent/MCP/开发工具供应链这一新风险面。
+推荐度 3/5。对 Develata 的 wiki 来说，它值得收录：原因不是功能巨大，而是问题定义精确、工程边界干净，并且切中了 agent/MCP/开发工具供应链这一新风险面。但它仍是 v0.1.1 的新工具，本轮也没有运行测试或 benchmark；因此推荐是“关注与试点”，不是“默认生产采用”。
 
-给 4 的理由：
+给 3 的理由：
 
 1. 供应链事件响应场景真实，尤其适合检查 npm/PyPI/Go/Ruby/Composer/Homebrew、编辑器扩展、浏览器扩展和 MCP 配置暴露 [GH:inventory]。
 2. read-only + no package-manager execution 的边界有安全价值：它避免在受污染机器上运行 `npm ls`、`pip show` 等可能触发副作用的命令 [GH:readme][GH:inventory]。
 3. 输出格式面向汇总系统：NDJSON、稳定 `record_id`、`scan_summary`、HTTP HMAC/gzip 规则都写得比较具体 [GH:transport]。
-4. CI 信号不错：Ubuntu/macOS、gofmt、go vet、race test、selftest、govulncheck，且 Actions pinned by SHA [GH:ci]。
+4. CI 配置信号不错：Ubuntu/macOS、gofmt、go vet、race test、selftest、govulncheck，且 Actions pinned by SHA；注意本轮只审查了 workflow 配置，没有核验实际 CI run 日志 [GH:ci]。
 
-不给 5 的理由：项目极新，release/commit/adoption 证据太少；当前 catalog 和 parser 覆盖仍是 v0.1 形态，生产 fleet rollout 需要自建调度、收集、去重、权限与隐私治理。
+不给 4/5 的理由：项目极新，release/commit/adoption 证据太少；当前 catalog 和 parser 覆盖仍是 v0.1 形态，生产 fleet rollout 需要自建调度、收集、去重、权限与隐私治理。
 
 ## 优势
 
@@ -85,7 +85,7 @@ Bumblebee 应归入 `security`，更具体是 **developer endpoint supply-chain 
 2. **覆盖面贴近现代开发终端**：npm/pnpm/Yarn/Bun、PyPI、Go modules、RubyGems、Composer、Homebrew、VS Code/Cursor/Windsurf/VSCodium 扩展、Chromium/Firefox 扩展、MCP JSON host configs 都进入视野 [GH:inventory]。
 3. **输出适合自动化响应**：NDJSON 一行一对象，支持 package/finding/scan_summary，HTTP sink 明确 Content-Type、HMAC、gzip、批次成功/失败语义 [GH:transport]。
 4. **工程小而可审**：本地 clone 只有 86 个 tracked files、51 个 Go 文件，核心在 `internal/ecosystem/`、`internal/scanner/`、`internal/output/`，读者可以较快完成代码审计 [GH:local-scan]。
-5. **CI 与贡献规范比较完整**：CONTRIBUTING 要求 gofmt/go vet/go test -race/selftest；CI 实际覆盖 ubuntu/macos、race test、selftest 和 govulncheck [GH:ci]。
+5. **CI 与贡献规范配置比较完整**：CONTRIBUTING 要求 gofmt/go vet/go test -race/selftest；workflow 配置覆盖 ubuntu/macos、race test、selftest 和 govulncheck，但本轮没有核验 CI run 是否实际通过 [GH:ci]。
 
 ## 劣势
 
@@ -131,7 +131,7 @@ Bumblebee 应归入 `security`，更具体是 **developer endpoint supply-chain 
 
 ## 它能做什么
 
-能力评分 4/5。这里按“developer endpoint exposure inventory”这一窄定位评分，而不是按完整安全平台评分。
+能力评分 3/5。这里按“developer endpoint exposure inventory”这一窄定位评分，而不是按完整安全平台评分；即便在这个窄定位内，也只能基于源码/文档判断其核心能力存在，不能把 v0.1 parser 覆盖直接视为成熟能力。
 
 - **三类扫描 profile**：`baseline` 扫全局/user package roots、toolchain、extensions、MCP configs；`project` 扫开发目录；`deep` 扫 operator 指定 root，适合 incident campaign [GH:readme][GH:inventory]。
 - **多生态 metadata 解析**：覆盖 npm/pnpm/Yarn/Bun、PyPI、Go modules、RubyGems、Composer、Homebrew、MCP、editor extensions、browser extensions [GH:inventory]。
@@ -139,7 +139,7 @@ Bumblebee 应归入 `security`，更具体是 **developer endpoint supply-chain 
 - **输出与传输**：stdout/file/HTTP(S) POST；HTTP 支持 bearer token、HMAC、gzip，并定义 receiver 行为和 partial acceptance 语义 [GH:transport]。
 - **selftest**：二进制内置 fake package fixtures，可做安装后 smoke test [GH:readme]。
 
-不给 5 的原因是：它还不能覆盖所有生态、不能做语义化漏洞范围推理、不能替代 fleet receiver，也不能证明运行时 exploit 是否发生。
+不给 4/5 的原因是：它还不能覆盖所有生态、不能做语义化漏洞范围推理、不能替代 fleet receiver，也不能证明运行时 exploit 是否发生。
 
 ## 运行环境与资源占用
 
@@ -149,31 +149,31 @@ Bumblebee 应归入 `security`，更具体是 **developer endpoint supply-chain 
 | 推荐 | 低到中 | 低 | 输出随 endpoint inventory 增长 | 用 MDM/cron/systemd 定期执行，HTTP 发往内部 collector |
 | incident deep scan | 中 | 低到中 | NDJSON 可能较大 | `--profile deep --root "$HOME"` 会遍历更广，建议配 `--exposure-catalog` 和 `--findings-only` |
 
-- **运行时**：Go 1.25+ 构建；README 声称零非标准库依赖 [GH:readme]。
+- **运行时**：README 声称 Go 1.25+ 构建且零非标准库运行依赖；本轮未独立构建验证 [GH:readme]。
 - **操作系统**：macOS / Linux developer endpoints [GH:readme]。
 - **Docker**：未见 Dockerfile；设计上更像 endpoint-native binary，不是容器服务 [GH:local-scan]。
 - **GPU**：不需要。
 - **外部依赖**：扫描本身不需要网络；HTTP sink 需要内部 collector；exposure catalog 来源需要安全团队维护。
 
-performance 给 5 是基于设计形态：只读、单 binary、无后台常驻、无 package-manager execution。由于本轮不能运行 benchmark，这个 5 只评价资源模型，不表示已验证大规模 fleet 性能。
+performance 给 3 是基于保守原则：只读、单 binary、无后台常驻、无 package-manager execution 的资源模型看起来很轻，但本轮不能运行 benchmark，也不能验证大规模 fleet 扫描时的延迟、内存峰值和输出体积。
 
 ## 上手体验
 
-评分 4/5。
+评分 3/5。
 
-README 的安装和使用路径清楚：`go install ...@v0.1.1`、`go build`、`bumblebee selftest`、`scan --profile baseline/project/deep` 都有示例 [GH:readme]。如果只是本地试跑，成本很低。
+README 的安装和使用路径清楚：`go install ...@v0.1.1`、`go build`、`bumblebee selftest`、`scan --profile baseline/project/deep` 都有示例 [GH:readme]。如果只是本地试跑，成本很低；但本轮环境没有 Go toolchain，未独立验证这些命令。
 
 扣一分在于生产 rollout 不只是安装二进制：你要决定 scan cadence、root policy、catalog 更新、HTTP collector、HMAC/bearer token 管理、current-state promotion 语义、隐私脱敏与 retention。这些系统性工作超出 Bumblebee 本体 [GH:transport]。
 
 ## 代码质量
 
-评分 4/5。
+评分 3/5。
 
 本地扫描显示仓库小而结构化：`cmd/bumblebee` 放 CLI/selftest/root/sink，`internal/ecosystem/*` 分生态解析器，`internal/scanner` 管扫描，`internal/output` 管 NDJSON/HTTP sink，`docs/schema/v0.1.0` 给 record schema。86 个 tracked files 中有 51 个 Go 文件、26 个 test-ish 文件 [GH:local-scan]。
 
-CI 质量强于一般新项目：ubuntu/macos matrix、gofmt、go vet、go test -race、go build、selftest、govulncheck；checkout/setup-go action 还 pin 到 SHA [GH:ci]。
+CI 配置强于一般新项目：ubuntu/macos matrix、gofmt、go vet、go test -race、go build、selftest、govulncheck；checkout/setup-go action 还 pin 到 SHA。本轮没有核验实际 workflow run，所以这里只把它作为工程治理配置证据 [GH:ci]。
 
-不给 5 的原因是：项目太新，提交历史短，未看到长期维护下的复杂兼容性演化；本轮也未能在本机独立跑测试。
+不给 4/5 的原因是：项目太新，提交历史短，未看到长期维护下的复杂兼容性演化；本轮也未能在本机独立跑测试。CI 配置合理只能证明维护者设计了质量门槛，不能替代真实执行结果。
 
 ## 可扩展性
 
@@ -195,19 +195,19 @@ README 不只是安装说明，还解释了为什么 SBOM/EDR之外需要 endpoi
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 3/5 | stars/forks 增长快，open issues=10、open PRs=18；但项目仅 8 个 default-branch commits、1 个 release，还不足以证明社区治理成熟 [GH:api][GH:graphql] |
+| 社区活跃度 | 3/5 | stars/forks 的点时数值较高，open issues=10、open PRs=18；但项目仅 8 个 default-branch commits、1 个 release，还不足以证明社区治理成熟或长期采用 [GH:api][GH:graphql] |
 | 成熟度 | 2/5 | v0.1.1，2026-05-20 创建；适合试点和观察，不适合无评估直接进入强 SLA 生产环境 [GH:api][GH:graphql] |
 
 ## 安全与风险
 
-评分 4/5。
+评分 3/5。
 
 正面安全信号：
 
 - read-only scanner，不执行 package-manager commands，不读源码文件，这显著降低在受污染环境中触发副作用的风险 [GH:readme][GH:inventory]。
 - HTTP sink 要求非 loopback 默认 HTTPS；bearer/HMAC secrets 从环境变量读取，不建议 CLI literal；HMAC 签名规则明确 [GH:transport]。
-- CI 包含 govulncheck，GitHub vulnerability alerts 本轮为 0，repository security advisories API 返回空 [GH:graphql][GH:advisories]。
-- SECURITY.md 存在，GitHub API 显示 security policy enabled [GH:api]。
+- CI 配置包含 govulncheck，GitHub vulnerability alerts 本轮为 0，repository security advisories API 返回空；这不是第三方审计，也不是实际 CI run 证明 [GH:graphql][GH:advisories][GH:ci]。
+- SECURITY.md 存在，说明仓库提供了安全报告入口；本轮未把它视为安全审计证明 [GH:local-scan]。
 
 风险也要明说：
 
@@ -215,6 +215,9 @@ README 不只是安装说明，还解释了为什么 SBOM/EDR之外需要 endpoi
 2. MCP config 解析要非常谨慎；README 声称不会 emit env 值，但配置文件可能含 credentials，部署前仍需自行审计输出字段 [GH:readme]。
 3. HTTP collector 若设计不当，会成为全公司开发者资产清单集中点；应使用 TLS、HMAC、最小权限、retention 和访问审计 [GH:transport]。
 4. “未发现 advisory”不是安全证明；项目本身还处于 v0.1，解析器边界和 schema 仍可能变化 [GH:advisories][GH:api]。
+5. 扫描器自身也可能成为攻击面：若 binary、release 或内部分发链路被篡改，它天然具备 filesystem reconnaissance 与 HTTP exfiltration 的形态。生产试点应固定版本、校验 checksum/signature、限制 HTTP sink 目标并审计 collector 访问。
+6. exposure catalog 也有信任模型：catalog 被投毒会制造假阳性或假阴性，进而误导 incident response。catalog 来源、签名、review 和回滚流程应独立治理。
+7. 在员工终端部署 inventory scanner 还涉及隐私/合规：hostname、username、uid、project path、source file 等字段应按最小化原则收集，并明确 retention、跨区域传输与访问控制。
 
 ## 学习价值
 
@@ -225,4 +228,4 @@ Bumblebee 的学习价值在于安全工具的“窄而硬”：
 - 如何设计 NDJSON record identity、scan summary、diagnostics 和 HTTP receiver semantics。
 - 如何把 MCP config、editor extension、browser extension 纳入 agent-era supply-chain inventory。
 
-对 Develata 而言，它是一个很好的工程正例：少即是多。工具之善，不在其大，而在其能正中问题之要害。
+对 Develata 而言，它是一个有参考价值的工程样本：边界明确、输出契约清楚、适合作为 incident-response collector 设计参考。
