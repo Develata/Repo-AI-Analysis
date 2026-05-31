@@ -131,34 +131,6 @@ onMounted(async () => {
         </div>
       </div>
 
-      <aside class="raia-home-signal-card" aria-label="Repository intelligence summary">
-        <div class="raia-home-signal-topline">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <strong>reports.json</strong>
-        </div>
-        <div class="raia-home-signal-main">
-          <small>current lens</small>
-          <strong>{{ selectedReport?.title ?? 'Average' }}</strong>
-          <span>{{ selectedReport?.directory || selectedReport?.category || 'all domains' }}</span>
-        </div>
-        <div class="raia-home-signal-grid">
-          <div>
-            <small>latest</small>
-            <strong>{{ latest[0] ? reportDate(latest[0]) : '—' }}</strong>
-          </div>
-          <div>
-            <small>lens score</small>
-            <strong>{{ selectedReport ? `${formatScore(selectedReport.overall_score)}/5` : formatScore(averageScore) }}</strong>
-          </div>
-          <div>
-            <small>scope</small>
-            <strong>{{ categorySummaries.length }} domains</strong>
-          </div>
-        </div>
-      </aside>
-
       <div class="raia-home-stats" aria-label="Repository analysis statistics">
         <div class="raia-home-stat">
           <strong>{{ reports.length }}</strong>
