@@ -28,10 +28,6 @@ const latest = computed(() => reports.value
   .sort((a, b) => reportTimestamp(b) - reportTimestamp(a) || Number(b.overall_score) - Number(a.overall_score))
   .slice(0, 6));
 const average = computed(() => averageRatings(reports.value));
-const averageScore = computed(() => {
-  if (!reports.value.length) return 0;
-  return reports.value.reduce((sum, report) => sum + Number(report.overall_score || 0), 0) / reports.value.length;
-});
 const selectedReport = computed(() => latest.value.find((report) => report.slug === selectedSlug.value) ?? latest.value[0]);
 const radarSeries = computed(() => [{
   label: selectedReport.value?.title ?? 'Average',
@@ -117,36 +113,6 @@ onMounted(async () => {
 
 <template>
   <section class="raia-home raia-home-v2">
-    <div class="raia-home-hero raia-panel">
-      <div class="raia-home-hero-copy">
-        <div class="raia-home-kicker">REPO INTELLIGENCE / CURATED ANALYSIS</div>
-        <h1>Repository maps for tools worth remembering.</h1>
-        <p>
-          面向 AI agents、coding tools、文档系统与数学工具的结构化仓库分析：不只看 star，
-          更看能力边界、工程质量、生态成熟度与是否值得进入长期工具箱。
-        </p>
-        <div class="raia-home-actions">
-          <a class="raia-button-primary" :href="withBase('/analysis/')">Browse Analysis</a>
-          <a class="raia-button-ghost" :href="withBase('/compare/')">Compare Repos</a>
-        </div>
-      </div>
-
-      <div class="raia-home-stats" aria-label="Repository analysis statistics">
-        <div class="raia-home-stat">
-          <strong>{{ reports.length }}</strong>
-          <span>analyses</span>
-        </div>
-        <div class="raia-home-stat">
-          <strong>{{ formatScore(averageScore) }}</strong>
-          <span>avg score</span>
-        </div>
-        <div class="raia-home-stat">
-          <strong>{{ categorySummaries.length }}</strong>
-          <span>domains</span>
-        </div>
-      </div>
-    </div>
-
     <div class="raia-home-radar-panel raia-panel">
       <div class="raia-panel-head">
         <h2>Current lens</h2>
