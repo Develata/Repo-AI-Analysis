@@ -35,8 +35,8 @@ ratings:
   maturity: 3
   extensibility: 4
   security: 3
-  recommendation: 4
-overall_score: 3.9
+  recommendation: 3
+overall_score: 3.8
 sources:
   - "[GH] https://github.com/modelcontextprotocol/servers"
   - "[GH:api] https://api.github.com/repos/modelcontextprotocol/servers queried 2026-05-20; stars=85956, forks=10762, open_issues_count=490, created_at=2024-11-19, pushed_at=2026-05-17, license=NOASSERTION, default_branch=main"
@@ -66,7 +66,7 @@ sources:
 
 > 官方 MCP reference servers 集合：不是“全量 MCP server 市场”，而是用于展示 MCP SDK、协议能力、安全边界和基础工具模式的官方参考实现。
 >
-> **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.8/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
@@ -80,11 +80,14 @@ sources:
 
 关键边界必须说清：这个 repo 现在只维护少数 reference servers：Everything、Fetch、Filesystem、Git、Memory、Sequential Thinking、Time。README 明确表示第三方 server 列表已迁移到 MCP Registry，并且本仓库中的 servers 旨在展示 MCP features 和 SDK usage，不是 production-ready solutions [Docs:readme][Docs:registry]。所以它的价值在“标准样板”和“生态入口”，而不是“即插即用生产服务大全”。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：repo 自身偏 reference/non-production MCP servers，4/5 容易被误读为部署信心。
+
 
 **定位**：面向正在理解或建设 MCP server/client/tooling 的开发者、agent infra 研究者，以及需要一组官方 reference servers 做原型验证的人。
 
-推荐度 4/5。给 4 的理由是：MCP 是当前 agent infrastructure 的核心连接协议之一，官方 reference servers 对学习工具定义、resources/prompts、Roots、ToolAnnotations、stdio/HTTP transport、package 发布模式和安全边界都很有价值 [Docs:mcp-intro][Docs:filesystem][Docs:contributing]。不给 5，是因为项目自己声明非生产就绪，而且已有 filesystem/git 相关安全 advisory；同时新 server 不再通过这个 repo 接收，生态发现职责已转移到 Registry [Docs:readme][Docs:contributing][GH:advisory:filesystem][GH:advisory:git]。
+推荐度 3/5。加分理由是：MCP 是当前 agent infrastructure 的核心连接协议之一，官方 reference servers 对学习工具定义、resources/prompts、Roots、ToolAnnotations、stdio/HTTP transport、package 发布模式和安全边界都很有价值 [Docs:mcp-intro][Docs:filesystem][Docs:contributing]。维持 3 而非 4，是因为项目自己声明非生产就绪，而且已有 filesystem/git 相关安全 advisory；同时新 server 不再通过这个 repo 接收，生态发现职责已转移到 Registry [Docs:readme][Docs:contributing][GH:advisory:filesystem][GH:advisory:git]。
 
 实际建议：把它当“协议范式教材 + 小型 reference server set + MCP 生态入口”，不要把它当“可以无审计部署到敏感环境的工具集合”。
 

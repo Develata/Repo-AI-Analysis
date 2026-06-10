@@ -35,8 +35,8 @@ ratings:
   maturity: 2
   extensibility: 5
   security: 2
-  recommendation: 4
-overall_score: 3.7
+  recommendation: 3
+overall_score: 3.6
 sources:
   - "[GH] https://github.com/code-yeongyu/oh-my-openagent"
   - "[GH:api] https://api.github.com/repos/code-yeongyu/oh-my-openagent queried 2026-05-18"
@@ -74,7 +74,7 @@ sources:
 
 > OpenCode 的 batteries-included 多模型、多智能体 orchestration harness：把 hooks、skills、MCP、LSP/AST 工具、background agents、team mode 与模型路由压成一个可安装的 coding-agent infrastructure 包。
 >
-> **状态**: `active` · **总分**: 3.7/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 3/5
 > **核验版本**: GitHub dev commit `37bd866c32b1d140526967b51b8c8957e9daed83`；GitHub API / npm registry 快照 2026-05-18
 
 ## 一句话总结
@@ -91,11 +91,14 @@ oh-my-openagent 的价值在于把 OpenCode 从一个交互式 coding agent host
 
 结论：这是一个值得重点观察和实验的 OpenCode agent infrastructure repo，尤其适合 Develata 研究多智能体 coding workflow、模型路由与工具 harness；但它不适合保守生产环境直接全量启用。正确使用时，它能把多模型、多工具、多角色分工组织成 workflow；错误使用时，它会把 agent、provider、shell、MCP 与本地仓库的复杂性聚成一团。
 
-## 推荐度：4/5
+## 推荐度：3/5
 
-对目标用户——已经熟悉 OpenCode、希望把复杂 coding work 拆成 planning / delegation / execution / verification / review 的 power users——推荐度是 4/5。
+> 2026-06 推荐度重校准：maturity=2、security=2，标准安全流程不足且 rename/version churn 明显。
 
-给 4 而不是 5 的理由很明确：capability 与 extensibility 已经接近顶格，但 maturity 和 security 明显不能顶格。项目创建于 2025-12，默认分支为 `dev`，2026-05-18 同日就有 v4.2.0、v4.2.1、v4.2.2 三个 release；npm `oh-my-opencode` 已有 213 个版本，`oh-my-openagent` 也已有 38 个版本；官方 docs 明确还在 rename transition，known issues 也记录了 delegate-task fallback 的近期 blocker 历史 [GH:api][GH:releases][NPM:opencode][NPM:openagent][Docs:configuration][Docs:known-issues]。
+
+对目标用户——已经熟悉 OpenCode、希望把复杂 coding work 拆成 planning / delegation / execution / verification / review 的 power users——推荐度是 3/5。
+
+给 3 而不是 4 的理由很明确：capability 与 extensibility 已经接近顶格，但 maturity 和 security 明显不能顶格。项目创建于 2025-12，默认分支为 `dev`，2026-05-18 同日就有 v4.2.0、v4.2.1、v4.2.2 三个 release；npm `oh-my-opencode` 已有 213 个版本，`oh-my-openagent` 也已有 38 个版本；官方 docs 明确还在 rename transition，known issues 也记录了 delegate-task fallback 的近期 blocker 历史 [GH:api][GH:releases][NPM:opencode][NPM:openagent][Docs:configuration][Docs:known-issues]。
 
 所以它值得试用、值得分析、值得从中学习 agent workflow engineering；但采用策略应是：固定版本，小仓库试运行，禁用或理解 telemetry，先只启用必要 provider，逐步打开 Team Mode / MCP / hooks / background agents。勿以“高星 + 高能”误认为“稳定 + 安全”。
 

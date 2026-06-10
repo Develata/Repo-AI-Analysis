@@ -35,8 +35,8 @@ ratings:
   maturity: 2
   extensibility: 4
   security: 3
-  recommendation: 4
-overall_score: 3.7
+  recommendation: 3
+overall_score: 3.6
 sources:
   - "[GH] https://github.com/github/spec-kit — GitHub API checked 2026-05-19: created_at=2025-08-30T10:22:19Z, stars=102454, forks=9009, open_issues_count=426, open_issues=280, open_prs=146, pushed_at=2026-05-18T12:02:19Z, latest stable release=v0.8.11, releases=146, contributors=192, languages=Python/Shell/PowerShell"
   - "[Docs] https://github.github.com/spec-kit/ — checked 2026-05-19: homepage public counters show 96K+ GitHub stars, 200+ contributors, 30 integrations, 91 extensions, 18 presets"
@@ -56,7 +56,7 @@ sources:
 
 > GitHub 出品的 Spec-Driven Development 工具包：把 spec / plan / tasks / implement 变成跨 agent 的可执行开发工件，而不是一次性 prompt。
 >
-> **状态**: `active` · **总分**: 3.7/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
@@ -70,7 +70,10 @@ Spec Kit 的价值不在于“又一个 prompt 包”，而在于把开发中最
 
 但它也明显未成熟：仓库创建于 2025-08，当前仍是 v0.8.x；146 个 release 与 426 个 open issues / PRs 说明社区活跃，也说明接口与流程仍在高速演化 [GH]。对个人小项目而言，完整 SDD 流程有 artifact overhead；对严肃项目而言，社区 extension/preset 的安全与质量边界也需要人工审查 [Docs:presets]。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：maturity=2、v0.8，agent command/preset trust boundary 尚需验证。
+
 
 **角色定位**：推荐给正在用 Claude Code / Codex / Copilot / Gemini / Cursor 等 coding agent 做中等复杂度项目，并希望建立 spec-first、artifact-centric 开发纪律的开发者或小团队。
 

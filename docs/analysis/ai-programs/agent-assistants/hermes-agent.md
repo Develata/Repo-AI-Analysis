@@ -39,8 +39,8 @@ ratings:
   maturity: 3
   extensibility: 5
   security: 2
-  recommendation: 4
-overall_score: 3.8
+  recommendation: 3
+overall_score: 3.7
 sources:
   - "[GH] https://github.com/NousResearch/hermes-agent"
   - "[Docs] https://hermes-agent.nousresearch.com/docs/"
@@ -55,7 +55,7 @@ sources:
 
 > 自托管、自进化的 AI 代理。由 Nous Research 打造。☤
 >
-> **状态**: `active` · **总分**: 3.8/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.7/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
@@ -73,7 +73,10 @@ Hermes Agent 是 2026 年 AI 代理浪潮中**增长最快的新星**：7 周突
 
 > 一句话：这是目前唯一真正在「自进化」的 agent——用一个月之后，它和第一天完全不同。但你要愿意投入时间调教它，且愿意承受它偶尔的「成长痛」。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：security=2，默认 ALLOW-ALL、插件/代码执行边界风险高；即使能力强，也不应给默认采用级推荐。
+
 
 **定位**：需要一个**越用越聪明**的个人 AI 助理、愿意投入时间调教的**技术用户**。Hermes 的核心价值不在于功能的广度（虽然它已经很广），而在于**时间维度上的增值**：skills 从经验中自动创建并自我改进、memory 跨 session 积累、session search 让你找回以前的对话——这些是任何竞品都没有的闭环。
 

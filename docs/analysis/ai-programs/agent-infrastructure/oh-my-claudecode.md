@@ -35,8 +35,8 @@ ratings:
   maturity: 3
   extensibility: 5
   security: 3
-  recommendation: 4
-overall_score: 4.0
+  recommendation: 3
+overall_score: 3.9
 sources:
   - "[GH] https://github.com/Yeachan-Heo/oh-my-claudecode"
   - "[GH:api] https://api.github.com/repos/Yeachan-Heo/oh-my-claudecode"
@@ -67,7 +67,7 @@ sources:
 
 > Claude Code 的 teams-first 多智能体编排层：把 hooks、skills、commands、MCP tools、tmux workers 与 agent prompts 组织成一个可安装的工程基础设施包。
 >
-> **状态**: `active` · **总分**: 4.0/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 3/5
 > **核验版本**: GitHub tag / npm `oh-my-claude-sisyphus@4.14.0`，GitHub API 快照 2026-05-18
 
 ## 一句话总结
@@ -84,11 +84,14 @@ oh-my-claudecode 的核心价值不是再做一个 coding agent，而是补 Clau
 
 结论：这是值得重点关注的 Claude Code infrastructure repo，尤其适合研究「agent workflow engineering」；但实际采用时应先从小项目试运行，固定版本，限制外部 LLM / MCP，逐步打开自动化能力。善用则如加一套脚手架；滥用则是把复杂性搬进终端。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：年轻且高权限，hooks/shell/MCP/update 风险高；应按选择性借鉴/试点而非采用推荐。
+
 
 oh-my-claudecode 最适合作为 Claude Code advanced users 与小型 agentic-coding 团队的 orchestration layer：当你已经熟悉 Claude Code，并且痛点从「让 agent 写代码」上升到「让多个 agent 分工、保持状态、审查彼此、调用外部模型并可恢复地推进长任务」时，它值得试用。
 
-给 4 分而非 5 分，是因为它的 capability 与 extensibility 已经接近顶格，但 maturity 与 security 不宜高估。项目创建于 2026-01，四个月内已到 v4.14.0、npm 版本数超过 200，说明迭代极快；迁移文档显示部分 agent 命名、plan 触发方式、legacy mode 等仍在调整 [GH:api][NPM][Docs:migration]。这类工具在个人研究和 power-user workflow 中很有价值，但若要进入多人生产仓库，必须先建立版本 pinning、权限边界、外部服务白名单和回滚策略。
+加分理由是它的 capability 与 extensibility 已经接近顶格；维持 3 而非 4，则是因为 maturity 与 security 不宜高估。项目创建于 2026-01，四个月内已到 v4.14.0、npm 版本数超过 200，说明迭代极快；迁移文档显示部分 agent 命名、plan 触发方式、legacy mode 等仍在调整 [GH:api][NPM][Docs:migration]。这类工具在个人研究和 power-user workflow 中很有价值，但若要进入多人生产仓库，必须先建立版本 pinning、权限边界、外部服务白名单和回滚策略。
 
 ## 优势
 

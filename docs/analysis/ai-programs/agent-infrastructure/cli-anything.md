@@ -35,8 +35,8 @@ ratings:
   maturity: 1
   extensibility: 5
   security: 3
-  recommendation: 4
-overall_score: 3.6
+  recommendation: 3
+overall_score: 3.5
 sources:
   - "[GH] https://github.com/HKUDS/CLI-Anything"
   - "[GH:api] https://api.github.com/repos/HKUDS/CLI-Anything queried 2026-05-20; stars=37720, forks=3615, open_issues_count=67, created_at=2026-03-08, pushed_at=2026-05-18, license=Apache-2.0"
@@ -61,7 +61,7 @@ sources:
 
 > 把任意现有软件包装成 agent-native CLI 的方法论、harness collection 与 CLI-Hub registry：让 agent 通过结构化命令而不是脆弱 GUI/RPA 去操作真实软件。
 >
-> **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.5/5 · **推荐度**: 3/5
 > **核验版本**: GitHub commit `a32f11fc67052ff233dfaa5106de5bb1ccdf24ec`；GitHub API / CLI-Hub / PyPI 快照 2026-05-20
 
 ## 一句话总结
@@ -76,11 +76,14 @@ Develata 的判断是对的：CLI-Anything 应归入 `ai-programs/agent-infrastr
 
 但高概念不等于稳态。GitHub API 显示仓库创建于 2026-03-08，latest release 为 v0.3.0；这是典型 early-stage infrastructure，maturity 只能给 1 [GH:api][GH:releases]。它值得放进观察与分享清单，适合试验和贡献 harness；不应被当成已稳定覆盖“所有软件”的通用层。
 
-## 推荐度：4/5
+## 推荐度：3/5
 
-对目标用户——关注 agent tooling、愿意为真实软件写/审 CLI harness、希望让 Claude Code / Codex / OpenClaw / Nanobot 等 agent 可发现并安装工具的开发者——推荐度是 4/5，但这是 **experiment / contribution / watchlist recommendation**，不是生产采用推荐。
+> 2026-06 推荐度重校准：maturity=1、v0.3、任意软件 harness surface 且无部署证据；只能建议研究/谨慎试点。
 
-给 4 的理由：它在 agent infrastructure 板块中的概念位置非常准，扩展性和生态叙事强，CLI-Hub 已提供安装、搜索、管理与 agent SKILL 入口 [Docs][PyPI:cli-anything-hub]。不给 5 的理由同样明确：v0.3.0、建仓仅两个月、harness 质量必然不均匀，且“任意软件”带来的 security surface 很宽。
+
+对目标用户——关注 agent tooling、愿意为真实软件写/审 CLI harness、希望让 Claude Code / Codex / OpenClaw / Nanobot 等 agent 可发现并安装工具的开发者——推荐度是 3/5，且这是 **experiment / contribution / watchlist recommendation**，不是生产采用推荐。
+
+加分理由：它在 agent infrastructure 板块中的概念位置非常准，扩展性和生态叙事强，CLI-Hub 已提供安装、搜索、管理与 agent SKILL 入口 [Docs][PyPI:cli-anything-hub]。维持 3 而非 4 的理由同样明确：v0.3.0、建仓仅两个月、harness 质量必然不均匀，且“任意软件”带来的 security surface 很宽。
 
 ## 优势
 

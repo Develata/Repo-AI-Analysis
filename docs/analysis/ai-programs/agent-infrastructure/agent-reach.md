@@ -33,8 +33,8 @@ ratings:
   maturity: 2
   extensibility: 4
   security: 2
-  recommendation: 4
-overall_score: 3.3
+  recommendation: 3
+overall_score: 3.2
 sources:
   - "[GH] https://github.com/Panniantong/Agent-Reach — GitHub REST/GraphQL snapshot 2026-06-07: created_at=2026-02-24T02:10:24Z, pushed_at=2026-05-18T12:39:22Z, default_branch=main, commit=17624268a059ccfb23eba8a2ba50f9f92c8dc0ca, stars=22236, forks=1900, open issues=27, open PRs=26, commits=249, license=MIT, primary_language=Python, diskUsageKB=1452"
   - "[GH:readme] Local README snapshot /opt/data/tmp/repo_wiki_trending_20260607_remaining/panniantong-agent-reach/README.md checked 2026-06-07; total_lines=394; analysis uses README-described capabilities only and did not run the project"
@@ -47,7 +47,7 @@ sources:
 
 > 给 coding agent 补齐互联网读取/search/scrape 能力的 CLI/MCP 工具层，覆盖 YouTube、GitHub、Reddit、Twitter/X、B站、小红书等；强实用，但权限和账号/cookie 风险高。
 >
-> **状态**: `active` · **总分**: 3.3/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.2/5 · **推荐度**: 3/5
 > **验证边界**: 本轮只做 GitHub metadata、README 与 tree/API scan；未安装、未构建、未运行、未复现实测 benchmark。
 
 ## 一句话总结
@@ -60,7 +60,10 @@ sources:
 
 评分采取保守口径：README/docs claim 只证明项目设计目标和公开描述，本轮没有实测运行效果；local scan 只证明文件结构、语言、workflow/test/docs 线索，不证明业务正确性、安全边界或性能数字 [GH:readme] [GH:local-scan]。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：maturity=2、security=2，未 smoke test，覆盖社交/爬虫等高权限面；4/5 过高。
+
 
 **角色定位**：适合对 `ai-programs/agent-infrastructure` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
@@ -69,7 +72,7 @@ sources:
 - 工程可审计性：仓库结构、语言分布、workflow/test/docs 数量已记录到 source 层，便于后续深挖 [GH:local-scan]。
 - 风险前置：本条不把 star 数、官方品牌或 README benchmark 当作独立生产采用证据 [GH]。
 
-**结论**：推荐度 4/5。可收录、可跟踪；是否采用取决于你的场景是否落在它的强项内，以及能否接受未实测/权限/运维边界。
+**结论**：推荐度 3/5。可收录、可跟踪；是否采用取决于你的场景是否落在它的强项内，以及能否接受未实测/权限/运维边界。
 
 ## 优势
 

@@ -40,11 +40,13 @@ ratings:
   maturity: 3
   extensibility: 4
   security: 3
-  recommendation: 4
-overall_score: 4.0
+  recommendation: 3
+overall_score: 3.9
 sources:
   - "[GH] https://github.com/K-Dense-AI/scientific-agent-skills"
   - "[GH:API] https://api.github.com/repos/K-Dense-AI/scientific-agent-skills"
+  - "[awesome-claude-skills] https://github.com/topics/claude-skills — comparison positioning source for the broader Claude skills topic ecosystem."
+  - "[Aminer] https://www.aminer.cn — comparison positioning source for academic search / literature discovery tools."
   - "[GH:releases] https://github.com/K-Dense-AI/scientific-agent-skills/releases"
   - "[GH:PR] https://github.com/K-Dense-AI/scientific-agent-skills/pulls"
   - "[Docs:examples] https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/docs/examples.md"
@@ -58,7 +60,7 @@ sources:
 
 > 135 个即用型科学 Agent Skills，横跨生物信息学、化学信息学、蛋白质组学、临床研究、材料科学、机器学习等 17+ 领域，基于开放的 [Agent Skills](https://agentskills.io/) 标准。由 [K-Dense Inc.](https://k-dense.ai) 维护。
 >
-> **状态**: `active` · **总分**: 4.0/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
@@ -74,11 +76,14 @@ Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent S
 
 **一句话**：若你的研究涉及已验证的 17+ 科学领域且使用现代 AI agent，这是值得优先关注的技能包之一；但 7 个月的年龄和高度集中于 K-Dense 的维护模式是长期依赖的关键风险。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：采用证据弱，skill/code-execution 模型有指令供应链风险，维护集中；阅读价值高但采用推荐应保守。
+
 
 **角色定位**：面向使用 Claude Code、Cursor、Codex 或 Gemini CLI 进行科学计算的研究者，特别是生物信息学、药物发现、化学信息学、临床研究、材料科学、单细胞组学等领域的从业者。
 
-推荐度维持在 4/5 的核心原因是**领域匹配度**：对上述领域的研究者而言，这是一套覆盖面极广、文档质量优秀的即用技能集；但对于纯数学/物理/随机图方向（Develata 的研究重点），受益有限。另外，项目仅 7 个月历史且维护高度集中于 K-Dense，中期可持续性存疑。
+推荐度降至 3/5 后，保留的核心正面理由是**领域匹配度**：对上述领域的研究者而言，这是一套覆盖面极广、文档质量优秀的即用技能集；但对于纯数学/物理/随机图方向（Develata 的研究重点），受益有限。另外，项目仅 7 个月历史且维护高度集中于 K-Dense，中期可持续性存疑。
 
 **核心痛点**：仅 7 个月历史 — 未经历足够时间的社区压力测试；版本迭代极快但无稳定性承诺和迁移指南；高度依赖 K-Dense 组织，关键人物风险显著。
 

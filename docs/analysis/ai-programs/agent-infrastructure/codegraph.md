@@ -35,8 +35,8 @@ ratings:
   maturity: 1
   extensibility: 4
   security: 4
-  recommendation: 4
-overall_score: 3.7
+  recommendation: 3
+overall_score: 3.6
 sources:
   - "[GH] https://github.com/colbymchenry/codegraph"
   - "[GH:api] https://api.github.com/repos/colbymchenry/codegraph queried 2026-05-20; stars=6658, forks=439, open_issues_count=55, created_at=2026-01-18, pushed_at=2026-05-20, license=MIT"
@@ -57,7 +57,7 @@ sources:
 
 > 面向 Claude Code、Codex、Cursor、OpenCode 的本地代码知识图谱：用 tree-sitter + SQLite 预索引 symbol / call graph / references / routes，让 agent 少 grep、少读文件、少烧 token。
 >
-> **状态**: `active` · **总分**: 3.7/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 3/5
 > **核验版本**: GitHub commit `8125798e683fc9bc500c1eb5edcc559b79d9b940`；GitHub API / npm 快照 2026-05-20
 
 ## 一句话总结
@@ -72,11 +72,14 @@ Develata 对 codegraph 的分类判断也成立。它解决的是 agent infrastr
 
 项目本身很新：GitHub 创建于 2026-01-18，npm latest 为 0.7.11，GitHub latest release v0.7.10 [GH:api][GH:releases][NPM]。但它不像纯概念 repo：local scan 显示 116 个 TypeScript 文件、27 个 test/spec-ish 文件；CLAUDE.md 详细描述 extraction pipeline、SQLite backend、installer target、MCP server instructions 与测试结构 [GH:local-scan]。因此推荐试用和观察，但成熟度不能高估。
 
-## 推荐度：4/5
+## 推荐度：3/5
 
-对目标用户——重度使用 Claude Code / Codex / Cursor / OpenCode，在中大型代码库中反复让 agent 做探索、希望降低 token/tool-call 成本的开发者——推荐度是 4/5。
+> 2026-06 推荐度重校准：maturity=1，缺生产证据，installer/config 修改风险存在；采用推荐应保守。
 
-给 4 的理由：它的价值路径非常直接，安装命令短，支持多 agent，100% local，无需 API key；README 还给出跨 6 个真实代码库的 benchmark claim [GH]。不给 5 的理由：项目只有四个月，版本仍在 0.x；benchmark 是项目自述，未由本次独立复现；且不同语言/框架的 extraction 精度会决定实际体验。
+
+对目标用户——重度使用 Claude Code / Codex / Cursor / OpenCode，在中大型代码库中反复让 agent 做探索、希望降低 token/tool-call 成本的开发者——推荐度是 3/5。
+
+加分理由：它的价值路径非常直接，安装命令短，支持多 agent，100% local，无需 API key；README 还给出跨 6 个真实代码库的 benchmark claim [GH]。维持 3 而非 4 的理由：项目只有四个月，版本仍在 0.x；benchmark 是项目自述，未由本次独立复现；且不同语言/框架的 extraction 精度会决定实际体验。
 
 ## 优势
 

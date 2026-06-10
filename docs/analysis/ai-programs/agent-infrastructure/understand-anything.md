@@ -33,8 +33,8 @@ ratings:
   maturity: 2
   extensibility: 4
   security: 3
-  recommendation: 4
-overall_score: 3.6
+  recommendation: 3
+overall_score: 3.5
 sources:
   - "[GH] https://github.com/Lum1104/Understand-Anything"
   - "[GH:api] GitHub API/gh repo view queried 2026-05-27: stars=36425, forks=2916, watchers=137, created_at=2026-03-15, pushed_at=2026-05-26, latest_release=v2.7.3 published 2026-05-19, primary_language=TypeScript, license=MIT, diskUsage=32430 KB, hasDiscussionsEnabled=true, isSecurityPolicyEnabled=false."
@@ -55,7 +55,7 @@ sources:
 
 > 把代码库、知识库或文档转成 agent-readable / human-browsable 的交互式知识图谱：tree-sitter 提供结构，LLM agent 补语义，Dashboard 负责把结构、业务逻辑与导览可视化。
 >
-> **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.5/5 · **推荐度**: 3/5
 > **核验版本**: GitHub commit `26edf61856fa476e466bda1814819a266a293c47`；GitHub API / local scan 快照 2026-05-27
 
 ## 一句话总结
@@ -70,11 +70,14 @@ Understand Anything 的核心价值在于把“新进代码库的第一性理解
 
 但它仍是非常年轻的项目：仓库创建于 2026-03-15，latest release 为 v2.7.3，默认分支两个月多已有 547 commits、7 个 releases、44 个 open PRs [GH:api][GH:graphql]。这说明社区与迭代速度强，也说明 API、安装路径、平台适配、图谱 schema 和性能策略仍在快速变化。结论宜保守：值得试用和长期观察，不宜把它视为已稳定的企业级 code intelligence platform。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：年轻、未 smoke test，存在 LLM/source-code exfiltration 与 agent hook 风险；不应给 4。
+
 
 **角色定位**：面向重度使用 Claude Code / Codex / Cursor / Gemini CLI / Hermes 等 coding agents，并且经常进入陌生中大型仓库、需要快速建立架构图谱与 onboarding 路径的开发者。
 
-给 4/5 的理由：
+加分理由：
 
 1. **方向正确**：coding agent 最大的信息熵之一是“我该先读哪里”；Understand Anything 把结构扫描、语义摘要、业务流程和导览沉淀成可复用图谱 [GH:readme][Docs]。
 2. **功能已成体系**：不是单个脚本，而是 multi-agent pipeline + core analyzer + Dashboard + skills + installers 的组合 [GH:local-scan]。

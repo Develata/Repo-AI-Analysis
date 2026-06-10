@@ -41,8 +41,8 @@ ratings:
   maturity: 2
   extensibility: 5
   security: 4
-  recommendation: 4
-overall_score: 4.1
+  recommendation: 3
+overall_score: 4.0
 sources:
   - "[GH] https://github.com/earendil-works/pi"
   - "[Docs] https://pi.dev/docs/latest"
@@ -69,7 +69,10 @@ Pi 是个奇怪的 50k star 项目：它的核心只有 4 个工具（read/write
 
 **适合**: 想自己掌控模型选择、数据流向、工具行为的开发者；需要合规审计（CMMC/HIPAA）的受监管团队；喜欢 Unix 哲学「小而美」的用户。**不适合**: 想要开箱即用全套工程的团队；不接受频繁 breaking change 的用户。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：maturity=2，v0.x breaking APIs，采用证据弱；设计好但不等于可推荐采用。
+
 
 Pi 是为「想理解自己工具并能脚本化、扩展它」的开发者设计的终端编码代理。它的核心亮点不是功能数量多，而是架构设计让功能的「可组合性」极高：TypeScript 扩展可拦截生命周期事件、注册自定义工具和命令、渲染 TUI 组件，甚至可以注册新的模型提供商——这一切在运行时即可生效，无需 fork 代码。
 

@@ -33,8 +33,8 @@ ratings:
   maturity: 2
   extensibility: 4
   security: 3
-  recommendation: 4
-overall_score: 3.6
+  recommendation: 3
+overall_score: 3.5
 sources:
   - "[GH] https://github.com/h4ckf0r0day/obscura"
   - "[GH:api] GitHub REST/repo snapshot 2026-06-09: stars=14629, forks=968, subscribers=48, REST open_issues_count=11, open issues=4, open PRs=7, created_at=2026-04-13T10:31:41Z, pushed_at=2026-06-09T06:55:46Z, primary_language=Rust, license=Apache-2.0, default_branch=main, latest_release=v0.1.7 published 2026-06-06"
@@ -63,7 +63,7 @@ sources:
 
 > 面向 AI agents 与 web scraping 的 Rust headless browser engine：不启动完整 Chrome，而用 V8 + 自建 DOM + CDP/MCP 接口提供轻量浏览器能力；非常值得跟踪和小规模试用，但目前仍是 0.1.x 早期基础设施。
 >
-> **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.5/5 · **推荐度**: 3/5
 > **核验版本**: commit `f64aca8064d67836804f979be225cbce820905da`；GitHub / docs / Docker Hub / benchmark repo / local test 快照 2026-06-09
 > **验证边界**: 本轮运行了 `cargo test` 与 `example.com` CLI smoke test；未运行 Docker image、未接 Puppeteer/Playwright client、未接真实 MCP client、未复现 stealth/fingerprint bypass，也未重跑上游 benchmark suite。
 
@@ -83,11 +83,14 @@ Obscura 的核心工程取舍很清楚：不做完整浏览器的 rendering/layo
 
 repo/product 边界也要分清：开源 engine 在仓库中以 Apache-2.0 发布；README 提到正在筹备 hosted Obscura Cloud，但本条只分析开源仓库和已检查的 Docker Hub 页面，未评估 future hosted product；Docker Hub 官方镜像只做页面提取与元数据检查，本轮没有实际运行容器 [GH:readme][DockerHub]。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：很新的 browser/CDP/MCP substrate；smoke test 只能支持 POC，不支持 4/5 采用推荐。
+
 
 **定位**：适合 Rust / agent-infra / scraping 工具开发者，以及想降低 Headless Chrome 资源成本、同时仍需要 JavaScript/DOM/CDP/MCP 的实验者和工程团队。
 
-推荐度 4/5，指的是“值得加入关注列表并做隔离 POC”，不是“可无脑替换生产 Chrome”。给 4 的理由：它命中 agent browser substrate 的真实缺口；Rust workspace 分层清楚；release binary、Docker、CDP、MCP、Puppeteer/Playwright、CLI scrape/fetch/Rust library 多入口齐全；本轮本地测试与 smoke test 成功 [GH:readme][GH:architecture][GH:test][GH:smoke]。
+推荐度 3/5，指的是“值得加入关注列表并做隔离 POC”，不是“可无脑替换生产 Chrome”。加分理由：它命中 agent browser substrate 的真实缺口；Rust workspace 分层清楚；release binary、Docker、CDP、MCP、Puppeteer/Playwright、CLI scrape/fetch/Rust library 多入口齐全；本轮本地测试与 smoke test 成功 [GH:readme][GH:architecture][GH:test][GH:smoke]。
 
 不给 5 的原因也明确：项目极新、仍是 0.1.x；上游 benchmark 很亮眼但本轮未复现；CDP/MCP/stealth 都是高边界复杂度能力；serve/MCP 一旦暴露端口就近似“把浏览器控制权给对方”，官方生产文档也明确说 CDP server 没有内置 auth [GH:production][Benchmark]。
 

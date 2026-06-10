@@ -33,8 +33,8 @@ ratings:
   maturity: 2
   extensibility: 4
   security: 4
-  recommendation: 4
-overall_score: 3.9
+  recommendation: 3
+overall_score: 3.8
 sources:
   - "[GH] https://github.com/zeroclaw-labs/zeroclaw"
   - "[Docs] https://docs.zeroclawlabs.ai/"
@@ -51,7 +51,7 @@ sources:
 
 > Fast, small, and fully autonomous AI personal assistant infrastructure — ANY OS, ANY PLATFORM
 >
-> **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.8/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
@@ -65,7 +65,10 @@ ZeroClaw 是目前 AI personal assistant 领域最极端的「轻量化」方案
 
 > **结论**：资源效率领域无可争议的冠军，成熟度领域同样无可争议的短板。值得密切关注，但暂时不宜作为唯一依赖的生产基础设施。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：3 个月 beta、maturity=2、issue 量高且 API 不稳定；性能兴趣不能直接等同采用推荐。
+
 
 **角色定位**：面向边缘部署、低配 VPS、嵌入式系统或 CI 管线的 AI agent runtime 需求者。如果「用 2 GB 内存的 VPS 跑一个完整 AI 助手」是你的核心需求，ZeroClaw 是答案。
 
@@ -74,7 +77,7 @@ ZeroClaw 是目前 AI personal assistant 领域最极端的「轻量化」方案
 - 465 open issues，外部评论明确指出「high bug volume suggests stability challenges」[Borq168]
 - 开发节奏过快（~1.6 releases/day），社区和文档追不上代码变化
 
-**结论**：如果强调性能优先并接受不稳定性，强烈推荐试用。如果需要稳定基础设施，等 v1.0 再评估。
+**结论**：如果强调性能优先并接受不稳定性，可以谨慎试用；如果需要稳定基础设施，等 v1.0 再评估。
 
 ## 优势
 

@@ -35,8 +35,8 @@ ratings:
   maturity: 3
   extensibility: 5
   security: 3
-  recommendation: 4
-overall_score: 3.9
+  recommendation: 3
+overall_score: 3.8
 sources:
   - "[GH] https://github.com/mem0ai/mem0"
   - "[GH:api] https://api.github.com/repos/mem0ai/mem0 queried 2026-05-20; stars=56213, forks=6399, open_issues_count=392, created_at=2023-06-20, pushed_at=2026-05-19, license=Apache-2.0, default_branch=main, topics include agents/ai-agents/long-term-memory/rag/state-management"
@@ -61,7 +61,7 @@ sources:
 
 > 面向 AI agents 的长期记忆基础设施：提供 SDK、CLI、self-hosted server、dashboard、vector/graph memory、平台 API 与 agent skills/plugin 表面。
 >
-> **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.8/5 · **推荐度**: 3/5
 > **核验版本**: GitHub commit `74d043731b9f3ef5d89dcbd435e359b885be5add`；GitHub API / Docs / npm / PyPI 快照 2026-05-20
 
 ## 一句话总结
@@ -76,11 +76,14 @@ Mem0 应归入 `ai-programs/agent-infrastructure`。它不是一个终端 coding
 
 该项目的优点是覆盖面非常强：SDK、CLI、自托管服务、云平台、skills、插件、benchmark/evaluation、docs、cookbooks 都在一个 monorepo 中；缺点也由此而来：系统复杂度高、依赖面广、版本/包面较多，且 memory 作为隐私敏感层必须谨慎部署。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：memory layer 涉隐私与长期数据风险，未部署测试，快速演进；适合评估而非默认采用。
+
 
 **定位**：面向正在构建长期个性化 AI assistant、customer support agent、多 agent 系统或需要跨会话记忆的 LLM 应用开发者。
 
-推荐度 4/5。给 4 的理由：Mem0 的能力面和扩展面在 memory infrastructure 中非常完整，支持 Python/TypeScript、CLI、server、dashboard、平台 API、多 LLM 与多 vector database；社区活跃度也高 [Docs:llms][Docs:vectordbs][Docs:cli][GH:api]。不给 5 的理由：memory layer 牵涉隐私、删除/更新语义、数据保留、telemetry、auth、日志与成本；同时项目仍高速迭代，open PR 数较高，生产采用前需要实测 retrieval quality、数据治理和运维复杂度 [GH:issues][Docs:server]。
+推荐度 3/5。加分理由：Mem0 的能力面和扩展面在 memory infrastructure 中非常完整，支持 Python/TypeScript、CLI、server、dashboard、平台 API、多 LLM 与多 vector database；社区活跃度也高 [Docs:llms][Docs:vectordbs][Docs:cli][GH:api]。维持 3 而非 4 的理由：memory layer 牵涉隐私、删除/更新语义、数据保留、telemetry、auth、日志与成本；同时项目仍高速迭代，open PR 数较高，生产采用前需要实测 retrieval quality、数据治理和运维复杂度 [GH:issues][Docs:server]。
 
 ## 优势
 

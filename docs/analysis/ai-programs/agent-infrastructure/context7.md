@@ -35,8 +35,8 @@ ratings:
   maturity: 3
   extensibility: 4
   security: 3
-  recommendation: 4
-overall_score: 3.9
+  recommendation: 3
+overall_score: 3.8
 sources:
   - "[GH] https://github.com/upstash/context7"
   - "[GH:api] https://api.github.com/repos/upstash/context7 queried 2026-05-20; stars=55686, forks=2643, open_issues_count=154, created_at=2025-03-26, pushed_at=2026-05-19, license=MIT, default_branch=master, topics include llm/mcp/mcp-server/vibe-coding"
@@ -59,7 +59,7 @@ sources:
 
 > 面向 AI coding agents 的实时文档上下文层：通过 MCP、CLI、SDK 与 REST API，把版本化官方文档和代码示例送进 agent 的工作上下文。
 >
-> **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 3.8/5 · **推荐度**: 3/5
 > **核验版本**: GitHub commit `438b1df235218c6dd66086e9b0d6a5b410f1635e`；GitHub API / Docs / npm 快照 2026-05-20
 
 ## 一句话总结
@@ -74,11 +74,14 @@ Context7 应归入 `ai-programs/agent-infrastructure`。它提供的核心 primi
 
 需要明确 repo/product 边界：公开仓库主要包含 CLI、MCP server、SDK、AI SDK tools、docs 与插件/skill 表面；README 明确说明 API backend、parsing engine、crawling engine 等支撑组件是私有的，不在此仓库内 [GH][GH:local-scan]。所以能力评分可以参考官方产品文档，但代码质量不能把私有 backend 当作已审计开源实现。
 
-## 推荐度：4/5
+## 推荐度：3/5
+
+> 2026-06 推荐度重校准：项目较新，核心 backend 部分闭源/服务化，涉及私有源码与 API-key 上下文；采用信心不足。
+
 
 **定位**：面向经常让 Claude Code、Cursor、OpenCode 等 agent 生成库/API 相关代码，并且希望减少 outdated docs / hallucinated APIs 的开发者和 agent-infra 构建者。
 
-推荐度 4/5。给 4 的理由：它命中 coding-agent 真实痛点，MCP + CLI + SDK + REST API 入口完整，文档体系清楚，接入成本低 [Docs:intro][Docs:cli][Docs:api][NPM]。不给 5 的理由：开源仓库只是产品表面的一部分，核心索引/解析/爬取后端不可审计；此外 API key、private source、teamspace、on-prem 等产品面带来数据与权限风险，需要按环境审查 [Docs:api][Docs:on-prem]。
+推荐度 3/5。加分理由：它命中 coding-agent 真实痛点，MCP + CLI + SDK + REST API 入口完整，文档体系清楚，接入成本低 [Docs:intro][Docs:cli][Docs:api][NPM]。维持 3 而非 4 的理由：开源仓库只是产品表面的一部分，核心索引/解析/爬取后端不可审计；此外 API key、private source、teamspace、on-prem 等产品面带来数据与权限风险，需要按环境审查 [Docs:api][Docs:on-prem]。
 
 ## 优势
 
