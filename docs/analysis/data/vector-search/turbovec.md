@@ -214,6 +214,6 @@ README、docs/api、integration docs、benchmark 目录、CONTRIBUTING、CHANGEL
 - Rust performance crate 如何组织 core、SIMD path、OnceLock cache、typed errors；
 - PyO3/maturin 如何发布 Python wheel，同时保留 Rust crate；
 - RAG framework integrations 如何模仿 in-tree reference store 的 public surface；
-- alpha project 如何通过 changelog 与 audit-driven releases 快速补 correctness。 
+- alpha project 如何通过 changelog 与 audit-driven releases 快速补 correctness。
 
 若 Develata 想做随机图/统计物理之外的工程小实验，它也可作为“高维向量压缩 + approximate search + benchmark methodology”的读源码对象。器虽新，观其筋骨，已有可学之处。
