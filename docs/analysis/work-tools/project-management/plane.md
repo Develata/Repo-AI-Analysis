@@ -4,7 +4,7 @@ created: 2026-06-18
 updated: 2026-06-18
 type: repository-analysis
 repo_url: "https://github.com/makeplane/plane"
-category: "productivity/project-management"
+category: "work-tools/project-management"
 tags: ["project-management", "issue-tracker", "kanban", "roadmap", "self-hosted", "react", "django", "agpl"]
 previous_repo: ""
 successor: ""

@@ -4,7 +4,7 @@ created: 2026-06-18
 updated: 2026-06-18
 type: repository-analysis
 repo_url: "https://github.com/penpot/penpot"
-category: "productivity/design-tools"
+category: "work-tools/design-tools"
 tags: ["design-tool", "prototyping", "self-hosted", "clojure", "clojurescript", "design-systems", "mcp"]
 previous_repo: ""
 successor: ""
@@ -199,4 +199,4 @@ Penpot 的安全风险来自多个方向：多租户/团队权限、文件和媒
 
 ## 学习价值
 
-Penpot 的学习价值很高：它让人看到一个非典型技术栈如何支撑大型协作产品，也展示了 design-code-AI 三者如何通过 tokens、inspect、API、plugin、MCP 连接。于 Develata，它比普通 productivity app 更值得看，因为它既是产品，也是可研究的协作系统。
+Penpot 的学习价值很高：它让人看到一个非典型技术栈如何支撑大型协作产品，也展示了 design-code-AI 三者如何通过 tokens、inspect、API、plugin、MCP 连接。于 Develata，它比普通 work-tool app 更值得看，因为它既是产品，也是可研究的协作系统。
