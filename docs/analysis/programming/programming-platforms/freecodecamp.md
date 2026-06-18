@@ -4,7 +4,7 @@ created: 2026-06-18
 updated: 2026-06-18
 type: repository-analysis
 repo_url: "https://github.com/freeCodeCamp/freeCodeCamp"
-category: "education/programming-platforms"
+category: "programming/programming-platforms"
 tags: ["education", "curriculum", "programming", "certification", "typescript", "interactive-learning", "nonprofit"]
 previous_repo: ""
 successor: ""

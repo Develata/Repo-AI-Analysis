@@ -4,7 +4,7 @@ created: 2026-06-18
 updated: 2026-06-18
 type: repository-analysis
 repo_url: "https://github.com/krahets/hello-algo"
-category: "coding-languages-guides/algorithms"
+category: "programming/algorithms"
 tags: ["algorithms", "data-structures", "book", "education", "visualization", "multi-language", "mkdocs"]
 previous_repo: ""
 successor: ""

@@ -4,7 +4,7 @@ created: 2026-06-07
 updated: 2026-06-07
 type: repository-analysis
 repo_url: "https://github.com/sveltejs/svelte"
-category: "frontend"
+category: "programming/frontend"
 tags: [frontend, compiler, ui, javascript, svelte]
 previous_repo: ""
 successor: ""
@@ -61,7 +61,7 @@ Svelte 是 compiler-first 前端框架：把声明式组件编译为直接更新
 
 ## 推荐度：5/5
 
-**角色定位**：适合对 `frontend` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
+**角色定位**：适合对 `programming/frontend` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
 推荐理由：
 - 能力面与主题匹配：核心能力是组件编译、响应式 UI 和生态集成；本地 scan 看到大量测试与 release workflow，说明工程面成熟。 [GH:readme]。
@@ -104,7 +104,7 @@ Svelte 是 compiler-first 前端框架：把声明式组件编译为直接更新
 | React | 组件 UI 生态参照项 | React 更偏运行时生态；Svelte 更偏编译期转换 |
 | Vue | 渐进式 UI framework 参照项 | 二者都强调组件开发，Svelte 的 compiler-first 取向更强 |
 
-上述项目按 `frontend` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
+上述项目按 `programming/frontend` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
 
 ---
 
@@ -166,4 +166,4 @@ GitHub security-advisories endpoint 本轮返回结果已记录，但“无 advi
 
 ## 学习价值
 
-学习价值主要在三个层面：一是理解 `frontend` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
+学习价值主要在三个层面：一是理解 `programming/frontend` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。

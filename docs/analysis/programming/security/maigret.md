@@ -4,7 +4,7 @@ created: 2026-06-10
 updated: 2026-06-10
 type: repository-analysis
 repo_url: "https://github.com/soxoj/maigret"
-category: "security"
+category: "programming/security"
 tags: [security, osint, username, python, cli, scraping, investigation]
 previous_repo: ""
 successor: ""

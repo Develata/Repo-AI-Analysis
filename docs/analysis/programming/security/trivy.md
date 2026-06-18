@@ -4,7 +4,7 @@ created: 2026-06-07
 updated: 2026-06-07
 type: repository-analysis
 repo_url: "https://github.com/aquasecurity/trivy"
-category: "security"
+category: "programming/security"
 tags: [security, scanner, container, kubernetes, sbom, iac, go]
 previous_repo: ""
 successor: ""
@@ -61,7 +61,7 @@ README 的 target/scanner 矩阵非常明确，release/CI/test/docs 信号强。
 
 ## 推荐度：5/5
 
-**角色定位**：适合对 `security` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
+**角色定位**：适合对 `programming/security` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
 推荐理由：
 - 能力面与主题匹配：README 明确列出 targets 和 scanners，GitHub local scan 显示 22 workflows、702 个 test-ish 文件和大量文档文件，支撑较高工程成熟度判断。 [GH:readme]。
@@ -104,7 +104,7 @@ README 的 target/scanner 矩阵非常明确，release/CI/test/docs 信号强。
 | Semgrep | 静态代码/规则扫描参照项 | Semgrep 更偏代码语义规则；Trivy 更偏供应链、配置与部署对象 |
 | Snyk CLI | 商业安全扫描生态参照项 | Snyk 更偏商业 SaaS 生态；Trivy 是开源 CLI/生态组件 |
 
-上述项目按 `security` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
+上述项目按 `programming/security` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
 
 ---
 
@@ -166,4 +166,4 @@ GitHub security-advisories endpoint 本轮返回结果已记录，但“无 advi
 
 ## 学习价值
 
-学习价值主要在三个层面：一是理解 `security` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
+学习价值主要在三个层面：一是理解 `programming/security` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。

@@ -4,7 +4,7 @@ created: 2026-06-18
 updated: 2026-06-18
 type: repository-analysis
 repo_url: "https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation"
-category: "security/android-privacy-tools"
+category: "programming/security/android-privacy-tools"
 tags: ["android", "privacy", "adb", "debloater", "rust", "gui", "device-management"]
 previous_repo: "https://github.com/0x192/universal-android-debloater"
 successor: ""

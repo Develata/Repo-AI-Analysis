@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/perplexityai/bumblebee"
-category: "security"
+category: "programming/security"
 tags: ["security", "supply-chain-security", "endpoint-inventory", "developer-tools", "package-inventory", "go", "read-only-scanner"]
 previous_repo: ""
 successor: ""
@@ -59,7 +59,7 @@ Bumblebee 是一个很窄但很有价值的安全工具：它不做通用 EDR，
 
 ## 总体评价
 
-Bumblebee 应归入 `security`，更具体是 **developer endpoint supply-chain exposure scanner**。它回答的问题不是“软件制品里依赖了什么”，也不是“进程实际运行了什么”，而是：当已知某个 npm/PyPI/RubyGem/Homebrew 包、编辑器扩展或 MCP server 配置存在风险时，当前开发者终端磁盘上的 metadata 是否显示暴露迹象 [GH:readme][GH:inventory]。
+Bumblebee 应归入 `programming/security`，更具体是 **developer endpoint supply-chain exposure scanner**。它回答的问题不是“软件制品里依赖了什么”，也不是“进程实际运行了什么”，而是：当已知某个 npm/PyPI/RubyGem/Homebrew 包、编辑器扩展或 MCP server 配置存在风险时，当前开发者终端磁盘上的 metadata 是否显示暴露迹象 [GH:readme][GH:inventory]。
 
 设计取向清楚：单个 Go binary、零非标准库运行依赖、只读扫描、三类 profile（`baseline` / `project` / `deep`）、NDJSON 输出、exposure catalog 精确匹配、stderr diagnostics、scan summary 完成语义。这些是面向 incident-response collector 的设计信号，但仍需实测和长期维护来验证 [GH:readme][GH:transport]。
 

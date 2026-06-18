@@ -4,7 +4,7 @@ created: 2026-06-07
 updated: 2026-06-07
 type: repository-analysis
 repo_url: "https://github.com/vitejs/vite"
-category: "frontend"
+category: "programming/frontend"
 tags: [frontend, build-tool, dev-server, hmr, typescript]
 previous_repo: ""
 successor: ""
@@ -61,7 +61,7 @@ Vite 是成熟前端基础设施。README 对核心部件表述清楚：dev serv
 
 ## 推荐度：5/5
 
-**角色定位**：适合对 `frontend` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
+**角色定位**：适合对 `programming/frontend` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
 推荐理由：
 - 能力面与主题匹配：README 列出 instant server start、fast HMR、optimized build、universal plugin interface、typed APIs；local scan 看到 13 workflows、454 test-ish 文件。 [GH:readme]。
@@ -104,7 +104,7 @@ Vite 是成熟前端基础设施。README 对核心部件表述清楚：dev serv
 | webpack | 老牌 bundler 参照项 | webpack 更老牌且配置面广；Vite 更偏现代 dev server/HMR 体验 |
 | esbuild | 快速 bundler/transpiler 参照项 | esbuild 是底层工具之一；Vite 是面向应用的开发/构建框架 |
 
-上述项目按 `frontend` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
+上述项目按 `programming/frontend` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
 
 ---
 
@@ -166,4 +166,4 @@ GitHub security-advisories endpoint 本轮返回结果已记录，但“无 advi
 
 ## 学习价值
 
-学习价值主要在三个层面：一是理解 `frontend` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
+学习价值主要在三个层面：一是理解 `programming/frontend` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
