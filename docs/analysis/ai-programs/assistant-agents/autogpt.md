@@ -6,7 +6,7 @@ created: 2026-05-20
 updated: 2026-05-27
 type: repository-analysis
 repo_url: "https://github.com/Significant-Gravitas/AutoGPT"
-category: "ai-programs/agent-assistants"
+category: "ai-programs/assistant-agents"
 tags: ["autonomous-agents", "agent-history", "agent-platform", "workflow-automation", "low-code-agents", "python", "typescript"]
 ratings:
   capability: 5
@@ -65,7 +65,7 @@ AutoGPT 是 autonomous-agent 史上必须收录的项目：Classic 把“让 GPT
 - 作为 **agent history / 2023 autonomous-agent wave landmark**：分量很重。
 - 作为 **today's deployable platform**：要非常谨慎，因为 autogpt_platform 使用 Polyform Shield，Classic 已明确 deprecated/unsupported，且仓库有 21 条 GitHub Security Advisories 历史记录，其中包括 RCE、session hijacking、SSRF、secret logging 等平台级风险 [GH:license][GH:security][GH:advisories]。
 
-因此我把它放在 `ai-programs/agent-assistants`，并明确状态为 `active-platform-classic-deprecated`：这是按 Classic/agent-history lineage 归类，不表示当前 AutoGPT Platform 只是简单 assistant；当前 product surface 已明显接近 workflow automation / agent platform。
+因此我把它放在 `ai-programs/assistant-agents`，并明确状态为 `active-platform-classic-deprecated`：这是按 Classic/agent-history lineage 归类，不表示当前 AutoGPT Platform 只是简单 assistant；当前 product surface 已明显接近 workflow automation / agent platform。
 
 ## 推荐度：1/5
 
@@ -107,7 +107,7 @@ AutoGPT 是 autonomous-agent 史上必须收录的项目：Classic 把“让 GPT
 
 ## 与类似项目对比
 
-上述项目按 `ai-programs/agent-assistants` 同类/相邻范围做定位级对比，未按同一 10 维度框架深审；这里主要用于 agent 史定位。
+上述项目按 `ai-programs/assistant-agents` 同类/相邻范围做定位级对比，未按同一 10 维度框架深审；这里主要用于 agent 史定位。
 
 | 项目 | 定位 | 相对本项目 |
 |---|---|---|

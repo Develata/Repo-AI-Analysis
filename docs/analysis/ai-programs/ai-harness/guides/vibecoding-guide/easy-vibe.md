@@ -6,7 +6,7 @@ created: 2026-05-15
 updated: 2026-05-21
 type: repository-analysis
 repo_url: https://github.com/datawhalechina/easy-vibe
-category: "ai-programs/ai-using/vibecoding-guide"
+category: "ai-programs/ai-harness/guides/vibecoding-guide"
 tags: [vibe-coding, tutorial, beginners, ai-programming, chinese, course]
 primary_language: JavaScript
 license: CC BY-NC-SA 4.0

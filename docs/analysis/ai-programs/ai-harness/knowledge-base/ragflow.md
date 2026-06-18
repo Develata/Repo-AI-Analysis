@@ -67,9 +67,9 @@ RAGFlow 是一个把 deep document understanding、知识库、RAG workflow、ag
 
 ## 总体评价
 
-分类上，RAGFlow 放在 `ai-programs/ai-workflow` 比 `document-processing` 更合适。它确实有 DeepDoc、OCR/文档解析和 PDF/DOCX/表格等 ingestion 能力，但 repo 的主对象已经不是单纯 parser，而是一个 Web platform：知识库、chat、agent workflow、数据源、model provider、API、MCP、sandbox、admin server、Docker self-host 共同构成完整 RAG application platform [GH][GH:readme][GH:docker][Docs:agent-intro]。
+分类上，RAGFlow 放在 `ai-programs/ai-harness/knowledge-base` 比 `document-processing` 或 `agent-workflows` 更合适。它确实有 DeepDoc、OCR/文档解析和 PDF/DOCX/表格等 ingestion 能力，但 repo 的主对象已经不是单纯 parser，而是一个 Web platform：知识库、chat、agent workflow、数据源、model provider、API、MCP、sandbox、admin server、Docker self-host 共同构成完整 RAG application platform [GH][GH:readme][GH:docker][Docs:agent-intro]。
 
-它与 Dify/Flowise 同属低代码/平台化 AI workflow 大类，但 RAGFlow 的重心更偏 **RAG quality and context engine**：文档理解、chunking、metadata、RAPTOR、knowledge graph、PageIndex、retrieval tests、grounded citations、多源同步等都围绕“把复杂材料变成可检索上下文”展开 [Docs:dataset]。
+它与 Dify/Flowise 同属低代码/平台化 agent workflow 大类，但 RAGFlow 的重心更偏 **RAG quality and context engine**：文档理解、chunking、metadata、RAPTOR、knowledge graph、PageIndex、retrieval tests、grounded citations、多源同步等都围绕“把复杂材料变成可检索上下文”展开 [Docs:dataset]。
 
 正面看，RAGFlow 能力广、社区热、迭代快、Apache-2.0 许可边界相对清晰，且 README 给出的 self-host 资源要求、Docker Compose、gVisor sandbox prerequisite 都比较具体 [GH:api][GH:readme]。负面看，它是大型多语言多服务系统：open issues=2947、open PRs=239、历史 security advisories=7，且 sampled advisories 被 repository advisory API 报告为 authenticated SSTI/RCE 类问题 [GH:graphql][GH:advisories]。高 stars 不能抵消安全、维护和运维风险。
 
@@ -132,9 +132,9 @@ RAGFlow 是一个把 deep document understanding、知识库、RAG workflow、ag
 | Flowise | visual agent builder / low-code workflow | Flowise 更强调 visual Agentflow canvas；RAGFlow 更强调 knowledge base、document understanding 与 retrieval quality |
 | n8n | 通用 workflow automation + AI nodes | n8n 更通用自动化；RAGFlow 更专注 RAG/知识库/agent context |
 | Langflow | visual LLM/agent workflow builder | Langflow 更贴 LangChain-like visual builder；RAGFlow 更像自带文档解析、知识库和检索平台的 RAG system |
-| Dify / Flowise security posture | 多租户 AI workflow 平台安全参照 | RAGFlow 与它们一样必须严肃处理 XSS/SSRF/RCE/RBAC/secret/tenant/sandbox 风险 |
+| Dify / Flowise security posture | 多租户 agent workflow 平台安全参照 | RAGFlow 与它们一样必须严肃处理 XSS/SSRF/RCE/RBAC/secret/tenant/sandbox 风险 |
 
-上述项目按 `ai-programs/ai-workflow` 同类范围做定位级对比，未按同一 10 维度框架深审；Dify、Flowise 已在本 wiki 同目录收录，表格用于 taxonomy placement，不重新比较未归一化的 stars、release 或安全质量。
+上述项目按 `ai-programs/ai-harness/knowledge-base` 同类或相邻 agent-workflows 范围做定位级对比，未按同一 10 维度框架深审；Dify、Flowise 已在本 wiki 同目录收录，表格用于 taxonomy placement，不重新比较未归一化的 stars、release 或安全质量。
 
 ---
 

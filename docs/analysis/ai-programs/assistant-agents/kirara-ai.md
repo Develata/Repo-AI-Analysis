@@ -6,7 +6,7 @@ created: 2026-05-19
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/lss233/kirara-ai"
-category: "ai-programs/agent-assistants"
+category: "ai-programs/assistant-agents"
 tags: ["ai-chatbot", "im-bot", "workflow", "plugin-system", "multimodal", "python"]
 previous_repo: "https://github.com/lss233/chatgpt-mirai-qq-bot"
 successor: ""

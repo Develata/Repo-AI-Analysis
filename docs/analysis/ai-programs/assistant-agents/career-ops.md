@@ -4,7 +4,7 @@ created: 2026-06-07
 updated: 2026-06-07
 type: repository-analysis
 repo_url: "https://github.com/santifer/career-ops"
-category: "ai-programs/agent-assistants"
+category: "ai-programs/assistant-agents"
 tags: [career, job-search, claude-code, agent-skills, automation, resume]
 previous_repo: ""
 successor: ""
@@ -61,7 +61,7 @@ README 有强烈个人 case-study 色彩，功能定位清晰且 human-in-the-lo
 
 ## 推荐度：3/5
 
-**角色定位**：适合对 `ai-programs/agent-assistants` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
+**角色定位**：适合对 `ai-programs/assistant-agents` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
 推荐理由：
 - 能力面与主题匹配：README 声称 A-F scoring、ATS PDF、portal scanner、batch processing、TUI 和 integrity checks；local scan 显示 8 workflows 但 tests_count 仅 3，本轮未实际跑求职 pipeline。 [GH:readme]。
@@ -100,11 +100,11 @@ README 有强烈个人 case-study 色彩，功能定位清晰且 human-in-the-lo
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| personal-ai-infrastructure | 个人 AI workflow/assistant stack | Career-Ops 更垂直于求职，PAI 更泛化 |
+| personal-ai-infrastructure | 个人 agent workflow/assistant stack | Career-Ops 更垂直于求职，PAI 更泛化 |
 | superpowers | agentic skills methodology | Career-Ops 是领域 workflow 应用；Superpowers 是软件工程方法论框架 |
 | open-notebook | 研究/资料 assistant | 二者都是 end-user AI assistant，任务域不同 |
 
-上述项目按 `ai-programs/agent-assistants` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
+上述项目按 `ai-programs/assistant-agents` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
 
 ---
 
@@ -166,4 +166,4 @@ GitHub security-advisories endpoint 本轮返回结果已记录，但“无 advi
 
 ## 学习价值
 
-学习价值主要在三个层面：一是理解 `ai-programs/agent-assistants` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
+学习价值主要在三个层面：一是理解 `ai-programs/assistant-agents` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
