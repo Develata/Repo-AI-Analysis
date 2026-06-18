@@ -1,5 +1,5 @@
 ---
-title: "Hello 算法"
+title: "Hello Algo"
 created: 2026-06-18
 updated: 2026-06-18
 type: repository-analysis
@@ -48,7 +48,7 @@ sources:
   - "[GH:release-1.3.0] https://github.com/krahets/hello-algo/releases/tag/1.3.0 extracted 2026-06-18; release provides PDF/EPUB assets in 3 language variants and 13 programming-language editions; printed edition mentioned"
 ---
 
-# Hello 算法
+# Hello Algo
 
 > 动画图解 + 一键运行代码的数据结构与算法入门教程：多语言代码、网页版、PDF/EPUB 与纸质书共同构成的开源教育项目。
 >
@@ -56,11 +56,11 @@ sources:
 
 ## 一句话总结
 
-Hello 算法是中文语境下极强的 DSA 入门资源：对初学者几乎可直接推荐；但 CC BY-NC-SA 4.0 的非商业/相同方式共享限制需要明确。
+Hello Algo 是中文语境下极强的 DSA 入门资源：对初学者几乎可直接推荐；但 CC BY-NC-SA 4.0 的非商业/相同方式共享限制需要明确。
 
 ## 总体评价
 
-Hello 算法不是普通代码库，而是内容型/教育型 repo。按 non-software scoring，它的 capability、usability 和 documentation 主要看主题覆盖、学习路径、可读性、多格式、多语言和贡献机制，而不是服务端功能 [GH:local-scan]。项目官网给出的定位非常明确：动画图解、一键运行的数据结构与算法教程；含 500 幅动画图解、14 种编程语言代码、3000 条社区问答 [Docs]。
+Hello Algo 不是普通代码库，而是内容型/教育型 repo。按 non-software scoring，它的 capability、usability 和 documentation 主要看主题覆盖、学习路径、可读性、多格式、多语言和贡献机制，而不是服务端功能 [GH:local-scan]。项目官网给出的定位非常明确：动画图解、一键运行的数据结构与算法教程；含 500 幅动画图解、14 种编程语言代码、3000 条社区问答 [Docs]。
 
 它的教育产品质量很强。README 和官网都强调新手友好、学习曲线平滑、动画图解、代码可运行；release 1.3.0 提供简中/繁中/English 三种语言变体，以及 Python/C++/Java/C#/Go/Swift/JavaScript/TypeScript/Dart/Rust/C/Ruby/Kotlin 13 种编程语言的 PDF/EPUB 版本 [GH][Docs][GH:release-1.3.0]。127k stars 和 15k forks 当然不能直接等于质量，但在教育内容项目里，它们结合低 open issue 数和多语言贡献，确实是强社区信号 [GH:api][GH:issues-prs]。
 
@@ -110,10 +110,10 @@ Hello 算法不是普通代码库，而是内容型/教育型 repo。按 non-sof
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| CLRS | 经典算法理论教材 | CLRS 更严肃和深入；Hello 算法更适合入门、图解和代码实践 |
-| VisuAlgo | 算法可视化网站 | VisuAlgo 交互可视化强；Hello 算法更像完整教材 + 多语言代码 + 电子书 |
-| LeetCode 学习卡/题库 | 刷题训练平台 | LeetCode 更偏题目训练；Hello 算法更偏概念和基础结构讲解 |
-| The Algorithms 系列 repo | 多语言算法实现集合 | The Algorithms 更像代码集合；Hello 算法更重教学叙事与学习曲线 |
+| CLRS | 经典算法理论教材 | CLRS 更严肃和深入；Hello Algo 更适合入门、图解和代码实践 |
+| VisuAlgo | 算法可视化网站 | VisuAlgo 交互可视化强；Hello Algo 更像完整教材 + 多语言代码 + 电子书 |
+| LeetCode 学习卡/题库 | 刷题训练平台 | LeetCode 更偏题目训练；Hello Algo 更偏概念和基础结构讲解 |
+| The Algorithms 系列 repo | 多语言算法实现集合 | The Algorithms 更像代码集合；Hello Algo 更重教学叙事与学习曲线 |
 
 上述对比是定位级比较，未对竞品按同一 10 维度框架深审。
 
@@ -172,7 +172,7 @@ performance 评分 4/5。阅读端轻量；但多语言、多图片、MkDocs/Doc
 
 评分 5/5。
 
-这里的“文档质量”主要评价产品本身：Hello 算法作为教程非常清晰，图解、多语言代码、问答和多格式出版都强化学习体验 [GH][Docs][GH:release-1.3.0]。项目贡献文档也可用 [Docs:contribution]。
+这里的“文档质量”主要评价产品本身：Hello Algo 作为教程非常清晰，图解、多语言代码、问答和多格式出版都强化学习体验 [GH][Docs][GH:release-1.3.0]。项目贡献文档也可用 [Docs:contribution]。
 
 ## 社区与成熟度
 
@@ -191,4 +191,4 @@ performance 评分 4/5。阅读端轻量；但多语言、多图片、MkDocs/Doc
 
 ## 学习价值
 
-Hello 算法的学习价值很高。它让 DSA 从“抽象定义 + 黑板推导”变成“图解 + 代码 + 讨论”的渐进体验。对 Develata 或其他数学/CS 学习者，它不是最高阶教材，却是极佳的入门与教学材料；善教者因材施教，善学者由浅入深。
+Hello Algo 的学习价值很高。它让 DSA 从“抽象定义 + 黑板推导”变成“图解 + 代码 + 讨论”的渐进体验。对 Develata 或其他数学/CS 学习者，它不是最高阶教材，却是极佳的入门与教学材料；善教者因材施教，善学者由浅入深。
