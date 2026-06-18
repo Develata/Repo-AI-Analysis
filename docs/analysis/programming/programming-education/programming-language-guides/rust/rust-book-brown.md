@@ -5,7 +5,7 @@ created: 2026-05-14
 updated: 2026-05-14
 type: repository-analysis
 repo_url: https://github.com/cognitive-engineering-lab/rust-book
-category: "programming/programming-language-guides/rust"
+category: "programming/programming-education/programming-language-guides/rust"
 tags:
   - rust
   - book
