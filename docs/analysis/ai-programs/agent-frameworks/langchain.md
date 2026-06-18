@@ -24,7 +24,6 @@ estimated_cpu: "library-dependent; minimal CPU for framework itself, application
 estimated_memory: "library-dependent; core package light, application-dependent for retrievers/vector stores/LLM clients"
 estimated_storage: "langchain wheel ~114 KB; sdist ~581 KB; tracked Python source bytes in local scan ~12.4 MB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -136,10 +135,6 @@ For Python teams who need provider-agnostic LLM/agent abstractions and expect to
 | Hermes Agent | Personal agent runtime / assistant system | Hermes 更像带工具、skills、memory、delivery 的可运行 agent 系统；LangChain 是可被这类系统借鉴或调用的 framework layer [Wiki:hermes] |
 
 上述项目只做定位级对比，未按同一 10 维度框架深审。核心分类判断是：**LangChain 与 OpenClaw/Hermes 有关联，但不是同一类；LangChain 是 framework，OpenClaw/Hermes 更接近 assistant 或 harness/runtime system**。
-
-## 个人主页 sharing 候选
-
-是，适合写一篇 taxonomy 型 sharing：不是“LangChain 好不好”，而是“agent framework / runtime / harness / assistant 的层次如何区分”。LangChain 是这个问题的好案例，因为官方 taxonomy 已经明确区分 LangChain、LangGraph、Deep Agents [Docs:products]，而社区对它的批评又集中体现了 abstraction 的利弊 [Blog:logic][Blog:xqa]。
 
 ---
 

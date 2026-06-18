@@ -22,7 +22,6 @@ estimated_cpu: "1 core"
 estimated_memory: "8-50 MB"
 estimated_storage: "10-100 MB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -121,17 +120,6 @@ ZeroClaw 是目前 AI personal assistant 领域最极端的「轻量化」方案
 | Hermes Agent | Python AI assistant，注重可扩展性 | 功能更完整，资源占用更高，成熟度略高 |
 | Pi Agent | 超轻量 Raspberry Pi agent | 更轻，功能更少，通用性不如 ZeroClaw |
 | Nanobot | MCP host 层 | 定位更低层，不提供完整的 agent runtime |
-
-## 个人主页 sharing 候选
-
-**是**。
-
-- **新奇度**：Rust 重写 + 99% footprint reduction 有极强的「哇」效应，对读者吸引力高
-- **可用性**：已经可以实际部署使用（虽然不稳定），不是纯概念
-- **话题性**：AI agent + Rust + 边缘计算三重热度叠加
-- **成熟度顾虑**：v0.7.x 的不稳定性需要在分享中明确标注
-
-可选标题方向：「跑在 5 MB 内存里的 AI 助手——ZeroClaw 深度评测」或「从 OpenClaw 到 ZeroClaw：AI agent 的 Rust 革命」。
 
 ---
 

@@ -22,7 +22,6 @@ estimated_cpu: "low for simple policy-evaluator use; medium for sidecar/gateway/
 estimated_memory: "low to medium; Python/TypeScript/.NET/Rust/Go SDK usage varies, Docker dev image includes Python + Node + OPA"
 estimated_storage: "large for source checkout and dev environment; runtime package footprint depends on extras such as [full], OPA/Cedar, dashboards and examples"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -129,10 +128,6 @@ AGT 应归入 `ai-programs/agent-infrastructure`，旁支涉及 security/complia
 | Open Policy Agent / Cedar | 通用 policy engine | OPA/Cedar 是底层策略语言/引擎；AGT 是 agent-specific wrapper + SDK + docs/examples |
 | LangChain / CrewAI / AutoGen | agent framework | 这些框架构建 agent；AGT 试图治理 agent 的工具、身份、审计和可靠性 |
 | Enterprise EDR/SIEM/GRC | 安全运营与合规平台 | 更成熟、更重；AGT 更偏开发者/agent runtime 侧的 governance library/toolkit |
-
-## 个人主页 sharing 候选
-
-是，但适合写成“趋势分析”而非“工具推荐”。主题可以是：**Agent governance 的控制面正在从 prompt 迁移到 runtime policy**。AGT 的价值在于把这个趋势显性化；它的风险也在于想一次性覆盖过多层，从而需要保守地拆开验证。
 
 ---
 

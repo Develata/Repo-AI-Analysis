@@ -22,7 +22,6 @@ estimated_cpu: "CPU 可运行但慢；实用推理通常依赖 GPU/加速器"
 estimated_memory: "README 给出 tiny/base ~1GB VRAM 到 large ~10GB、turbo ~6GB 的近似需求"
 estimated_storage: "模型权重按尺寸下载；仓库本体小，音频输入/输出另计"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -106,12 +105,6 @@ Whisper 已是事实标准级 ASR baseline。README 给出模型尺寸、VRAM、
 | faster-whisper | Whisper 加速实现参照项 | faster-whisper 偏推理优化，本条只分析 OpenAI 原始仓库 |
 
 上述项目按 `document-processing` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
-## 个人主页 sharing 候选
-
-**是**。
-
-理由：题材清晰，能形成分享线索；但若涉及高权限 agent、账号/cookie、模型生成或安全扫描，应把风险边界写在正文开头。
 
 ---
 

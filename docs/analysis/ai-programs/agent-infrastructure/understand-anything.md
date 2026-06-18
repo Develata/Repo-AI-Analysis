@@ -22,7 +22,6 @@ estimated_cpu: "2-4 cores for dashboard/dev; analysis cost scales with repositor
 estimated_memory: "2-4 GB for local dashboard/dev; generated graph and layout memory scale with graph size"
 estimated_storage: "Repository snapshot about 32 MB by GitHub diskUsage; generated .understand-anything graphs may exceed 10 MB on large projects"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -133,12 +132,6 @@ Understand Anything 的核心价值在于把“新进代码库的第一性理解
 | AGENTS.md | repo-local agent instruction convention | AGENTS.md 规定 agent 进仓库后遵守什么规则；Understand Anything 生成 agent 可读、团队可浏览的 repo knowledge artifact [Local:comparison] |
 
 上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-**是，但应以“早期工具观察 / agent code-understanding infrastructure”角度分享，而不是“稳定生产方案”角度推荐。**
-
-理由：它有清晰叙事——“graphs that teach > graphs that impress”——且正好落在 coding agent 时代的关键问题：agent 如何减少进入陌生代码库时的信息熵 [Docs]。成熟度不足反而适合写成观察型分享：为什么这个方向重要、它如何组合 tree-sitter 与 LLM、哪些风险尚未解决。
 
 ---
 

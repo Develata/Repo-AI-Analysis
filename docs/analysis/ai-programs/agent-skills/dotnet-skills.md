@@ -22,7 +22,6 @@ estimated_cpu: "N/A for skill files; .NET SDK required for validator/evals"
 estimated_memory: "N/A for skill files; validator/evals depend on fixture and model run"
 estimated_storage: "~20 MB repo checkout excluding git history; tests/fixtures dominate"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -135,14 +134,6 @@ sources:
 | Cursor Plugins | Cursor 官方 plugin marketplace seed | Cursor Plugins 展示 Cursor 产品能力包；`dotnet/skills` 展示领域团队如何把技术栈知识、agents 和 eval 体系打包 [GH:cursor-plugins]。 |
 | Superpowers | 跨平台 agentic SDLC workflow | Superpowers 是通用工程流程纪律；`dotnet/skills` 是 .NET 技术栈专业知识与任务技能。 |
 | Scientific Agent Skills | 科学计算领域技能库 | Scientific 覆盖研究/生物/化学等应用科学；`dotnet/skills` 覆盖软件平台生态，且更强调 CI/eval/validator。 |
-
-## 个人主页 sharing 候选
-
-**是，但更适合“agent skills 怎么工程化评测”主题，不适合作为面向大众的 .NET 工具推荐。**
-
-- novelty：把 skills 当作可测试、可评估、可拥有 owner 的工程资产，是 agent tooling 生态的重要信号。
-- practicality：对 .NET 开发者可直接试用；对非 .NET 用户可借鉴 governance/eval pattern。
-- caveat：仓库年轻，本轮未运行 eval，分享时不能把其评测体系解读为已证明所有 skill 有效。
 
 ---
 

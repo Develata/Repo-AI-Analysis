@@ -22,7 +22,6 @@ estimated_cpu: "CPU/GPU/XPU/NPU 均有说明；大模型/批量文档更适合 G
 estimated_memory: "OCR pipeline 和 VLM 模型随输入分辨率/模型尺寸增长；轻量模型可边缘部署"
 estimated_storage: "GitHub diskUsage≈1.9 GB；模型权重、缓存、文档输出另计"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -106,12 +105,6 @@ README 的功能与 benchmark claim 很强：PaddleOCR-VL、PP-StructureV3、多
 | marker | PDF/文档转 Markdown | Marker 更轻，PaddleOCR 更大而多模型/多语言 |
 
 上述项目按 `document-processing` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
-## 个人主页 sharing 候选
-
-**是**。
-
-理由：题材清晰，能形成分享线索；但若涉及高权限 agent、账号/cookie、模型生成或安全扫描，应把风险边界写在正文开头。
 
 ---
 

@@ -6,8 +6,8 @@ created: 2026-05-20
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/modelcontextprotocol/servers"
-category: "ai-programs/agent-infrastructure"
-tags: ["agent-infrastructure", "mcp", "servers", "tooling", "reference-implementation", "typescript", "python", "registry", "filesystem", "memory"]
+category: "ai-programs/mcp"
+tags: ["mcp", "servers", "tooling", "reference-implementation", "typescript", "python", "registry", "filesystem", "memory"]
 previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
@@ -24,7 +24,6 @@ estimated_cpu: "low for most reference servers; server-specific operations such 
 estimated_memory: "low-to-moderate; each reference server is a small stdio process, but memory server graph size and fetched content volume can grow"
 estimated_storage: "small for individual npm/PyPI packages; Docker images and local data such as memory.jsonl or mounted repositories dominate"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -76,7 +75,7 @@ sources:
 
 `modelcontextprotocol/servers` 的定位非常明确：它是 Model Context Protocol 的 reference implementations 集合，同时指向官方 MCP Registry 作为第三方 server 发现入口 [GH][Docs:readme][Docs:registry]。MCP 本身是连接 AI applications 到外部系统、数据源、工具和 workflows 的开放标准，常被比作“AI applications 的 USB-C port” [Docs:mcp-intro]。
 
-因此，这个仓库应归入 `ai-programs/agent-infrastructure`，而不是普通 dev-tools。它解决的是 agent 如何通过标准协议访问 filesystem、git、memory、time、fetch 等外部能力；这是 tool/data access substrate，而不是某个最终用户应用 [Docs:mcp-intro][Docs:readme]。
+因此，这个仓库应归入 `ai-programs/mcp`，而不是普通 dev-tools。它解决的是 agent 如何通过标准协议访问 filesystem、git、memory、time、fetch 等外部能力；这是 tool/data access substrate，而不是某个最终用户应用 [Docs:mcp-intro][Docs:readme]。
 
 关键边界必须说清：这个 repo 现在只维护少数 reference servers：Everything、Fetch、Filesystem、Git、Memory、Sequential Thinking、Time。README 明确表示第三方 server 列表已迁移到 MCP Registry，并且本仓库中的 servers 旨在展示 MCP features 和 SDK usage，不是 production-ready solutions [Docs:readme][Docs:registry]。所以它的价值在“标准样板”和“生态入口”，而不是“即插即用生产服务大全”。
 
@@ -133,13 +132,8 @@ sources:
 | cal.diy | 调度/日历基础设施 | cal.diy 是 scheduling primitive；MCP Servers 是 tool/data access primitives |
 | Context7 | 文档上下文检索 / MCP docs server | Context7 更偏文档知识供给；MCP Servers 更偏官方 reference implementation set |
 
-上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审。
+上述项目按 `ai-programs/mcp` 同类或相邻 agent infrastructure 范围做定位级对比，未按同一 10 维度框架深审。
 
-## 个人主页 sharing 候选
-
-是。它适合写成“为什么 MCP 是 agent infrastructure 的连接层”或“从 function calling 到 protocolized tool substrate”的 sharing。这个 repo 的价值不在某个工具多强，而在它把 filesystem、git、memory、fetch、time 等常见能力变成可被 agent/client 统一发现和调用的协议样板。
-
-也可以作为安全主题案例：filesystem 和 git 看似基础，实则最容易越权；symlink、path traversal、内网 fetch、secret exposure 都说明 agent tools 的安全边界必须显式证明，而非口头宣称。
 
 ## 它能做什么
 

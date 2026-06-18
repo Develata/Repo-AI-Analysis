@@ -4,8 +4,8 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/ChromeDevTools/chrome-devtools-mcp"
-category: "ai-programs/agent-infrastructure"
-tags: ["agent-infrastructure", "mcp", "browser-automation", "chrome-devtools", "debugging", "performance", "coding-agents", "typescript", "puppeteer"]
+category: "ai-programs/mcp"
+tags: ["mcp", "browser-automation", "chrome-devtools", "debugging", "performance", "coding-agents", "typescript", "puppeteer"]
 previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
@@ -22,7 +22,6 @@ estimated_cpu: "low to moderate for the MCP/CLI wrapper; real workload cost is d
 estimated_memory: "Node.js server itself is light, but Chrome sessions and DevTools traces can require hundreds of MB to several GB depending on pages and concurrent tabs"
 estimated_storage: "small npm package/runtime footprint; screenshots, traces, videos, heap snapshots and browser profiles can dominate storage when enabled"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -65,7 +64,7 @@ Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugg
 
 ## 总体评价
 
-这个仓库应归入 `ai-programs/agent-infrastructure`。它不是终端 coding agent 本体，也不是通用网页采集 API，而是 agent runtime 中的 **browser inspection and debugging layer**：当 agent 修改前端、排查 console/network 错误、验证交互流程、运行性能分析时，它需要真实浏览器反馈；Chrome DevTools MCP 正是把这层反馈以 MCP tool 形式开放给 Claude Code、Codex、Gemini CLI、Cursor、Copilot 等客户端 [GH:readme][Blog:chrome]。
+这个仓库应归入 `ai-programs/mcp`。它不是终端 coding agent 本体，也不是通用网页采集 API，而是 agent runtime 中的 **browser inspection and debugging layer**：当 agent 修改前端、排查 console/network 错误、验证交互流程、运行性能分析时，它需要真实浏览器反馈；Chrome DevTools MCP 正是把这层反馈以 MCP tool 形式开放给 Claude Code、Codex、Gemini CLI、Cursor、Copilot 等客户端 [GH:readme][Blog:chrome]。
 
 从工程信号看，项目虽年轻但并非玩具：本地扫描有 264 个 tracked files、6 个 workflows、89 个 test-ish 文件，package scripts 覆盖 build/typecheck/test/format/docs generation，工具文档由脚本生成，设计原则也清楚强调小而确定的工具块和 token-optimized summaries [GH:local-scan][GH:package][GH:design]。v1.0.0 与 v1.1.1 已在 2026-05 发布，说明从 public preview 走向更正式的版本轨道 [GH:releases]。
 
@@ -123,11 +122,7 @@ Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugg
 | MCP Servers | MCP reference server 集合 | MCP Servers 是通用 MCP server 样板集合；Chrome DevTools MCP 是具体的 Chrome/DevTools tool provider |
 | CLI-Anything | agent tool-access harness | CLI-Anything 让 agent 包装任意 CLI；Chrome DevTools MCP 专注浏览器调试与自动化工具面 |
 
-上述项目按 `ai-programs/agent-infrastructure` 同类范围做粗略定位级对比，未按同一 10 维度框架深审。比较行只表达功能层位置，不比较未重新审计的质量、速度、安全性或社区规模。
-
-## 个人主页 sharing 候选
-
-是。Chrome DevTools MCP 适合写成一篇关于 **“coding agent 为什么必须看见运行时”** 的 sharing。好的角度不是“又一个 MCP server”，而是：前端开发的真相在浏览器 runtime 中，agent 若只看源码就是盲人摸象；但给它 DevTools，也是在把真实环境的钥匙递出去。其利甚大，其戒亦深。
+上述项目按 `ai-programs/mcp` 同类或相邻 agent infrastructure 范围做粗略定位级对比，未按同一 10 维度框架深审。比较行只表达功能层位置，不比较未重新审计的质量、速度、安全性或社区规模。
 
 ---
 
@@ -217,6 +212,6 @@ README、tool reference、slim tool reference、CLI docs、design principles、t
 
 ## 学习价值
 
-学习价值很高。Chrome DevTools MCP 是 agent-infrastructure 的好样本：它展示了如何把一个复杂 GUI/runtime 系统拆成 LLM 可调用的 deterministic tools，如何控制 token 输出，如何用文件路径承载 heavy assets，如何让 agent 从“代码生成器”走向“运行时验证者”。
+学习价值很高。Chrome DevTools MCP 是 MCP 工具/服务器分类的好样本：它展示了如何把一个复杂 GUI/runtime 系统拆成 LLM 可调用的 deterministic tools，如何控制 token 输出，如何用文件路径承载 heavy assets，如何让 agent 从“代码生成器”走向“运行时验证者”。
 
 即便不在生产中采用，也值得研究它的 tool taxonomy、CLI daemon 设计、docs generation、设计原则和安全 disclaimer。所谓“执其两端，用其中于民”：既看见它给 agent 以目，也记得目之所视不可无界。

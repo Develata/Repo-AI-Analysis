@@ -22,7 +22,6 @@ estimated_cpu: "README prerequisites list CPU >=4 cores for self-host; productio
 estimated_memory: "README prerequisites list RAM >=16 GB; production deployments should budget more for MySQL/Redis/MinIO/ES-or-Infinity/OCR/worker/browser/sandbox components"
 estimated_storage: "README prerequisites list disk >=50 GB; runtime storage dominated by uploaded files, document chunks, vector/index storage, MinIO objects, logs and sandbox artifacts"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -136,12 +135,6 @@ RAGFlow 是一个把 deep document understanding、知识库、RAG workflow、ag
 | Dify / Flowise security posture | 多租户 AI workflow 平台安全参照 | RAGFlow 与它们一样必须严肃处理 XSS/SSRF/RCE/RBAC/secret/tenant/sandbox 风险 |
 
 上述项目按 `ai-programs/ai-workflow` 同类范围做定位级对比，未按同一 10 维度框架深审；Dify、Flowise 已在本 wiki 同目录收录，表格用于 taxonomy placement，不重新比较未归一化的 stars、release 或安全质量。
-
-## 个人主页 sharing 候选
-
-是，但应写成“RAG 平台形态与安全代价”的文章，而非“推荐部署 RAGFlow”。
-
-可写主题：**《从 RAGFlow 看 RAG 平台的下一步：context engine、agent canvas 与 sandbox 的合流》**。核心观点：RAG 的复杂性没有消失，它从 prompt 转移到了文档解析、chunking、metadata、retrieval、agent workflow、sandbox 和权限隔离中。
 
 ---
 

@@ -20,7 +20,6 @@ gpu_required: false
 estimated_cpu: "2-4 核（编译场景 16+ 核）"
 estimated_memory: "2-8GB（编译场景 32GB+）"
 estimated_storage: "5-20GB（/nix/store 持续增长）"
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 1
@@ -113,10 +112,6 @@ Nix 不是 asdf/mise 的替代品——它是完全不同的概念层级。asdf/
 | asdf/mise | 多语言版本管理器 | mise 上手极快（30 分钟）、轻量；Nix 功能深度远超但学习成本 100x |
 | Homebrew | macOS 包管理器 | Homebrew 简单直接；Nix 可复现但 macOS 体验不如 Linux |
 | Ansible/Salt | 声明式系统配置 | NixOS 配置是「构建」而非「命令式修改」，回滚能力根本性更强 |
-
-## 个人主页 sharing 候选
-
-是。推荐理由：有深度的技术项目，函数式包管理概念本身有启发价值，2024 年治理危机是开源社区治理的典型案例。适合作为「技术深度探讨」类分享，而非工具推荐。
 
 ---
 

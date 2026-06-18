@@ -22,7 +22,6 @@ estimated_cpu: "medium-to-high"
 estimated_memory: "medium-to-high"
 estimated_storage: "context DB/resources/skills grow with workload"
 status: active
-sharing_candidate: false
 ratings:
   capability: 4
   usability: 2
@@ -106,10 +105,6 @@ OpenViking 属于 `ai-programs/agent-infrastructure`：它服务于 agent 的长
 | Mem0 | 通用 memory layer | Mem0 更偏 SDK/API；OpenViking 把 memory/resources/skills 统一为 context filesystem |
 
 以上对比是定位级对比，竞品未在本条目中按同一 10 维度重新深审；结论应结合各自独立条目或后续审计。
-
-## 个人主页 sharing 候选
-
-暂不作为优先 sharing 推荐；更适合作为 agent context database 架构观察案例。 如果写成分享文章，重点不应是“又一个 memory 项目”，而应是 memory 的工程边界：local vs cloud、自动写入 vs 手动治理、事实检索 vs 用户建模、成本 vs 召回质量。
 
 ---
 

@@ -22,7 +22,6 @@ estimated_cpu: "low for the scaffold CLI itself; generated agent projects depend
 estimated_memory: "low-to-medium for local scaffold and tests; generated projects may need more for frontend/playground, ADK/RAG dependencies and deployment tooling"
 estimated_storage: "local shallow clone checked at 468 git-tracked files; generated projects include app/tests/deployment/frontend/notebooks depending on template and target"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -136,10 +135,6 @@ Agent Starter Pack（ASP）的定位不是 runtime framework，而是 **template
 | CrewAI / AutoGen | 多 agent framework | CrewAI/AutoGen 偏 agent 协作逻辑；ASP 偏 GCP production packaging、CI/CD 与 deployment |
 
 上述对比按 `ai-programs/agent-infrastructure` 大类做定位级对比，功能子层并不完全相同；`agents-cli` 是官方继任项目而非同一批次深审对象。表格用于 taxonomy placement，不代表这些项目已按同一 10 维框架重新评测。
-
-## 个人主页 sharing 候选
-
-是，但主题应写成“迁移观察”而不是“工具推荐”。比较好的分享角度是：**Agent 工程化从 scaffold template 走向 coding-agent-first lifecycle CLI**。ASP 本身已经进入 maintenance mode，真正值得讲的是这个转向：人类手动执行 `make dev/make deploy` 的骨架，正在被面向 coding agent 的统一 CLI、skills、eval/deploy/playground/lint lifecycle 接管 [Docs:successor]。
 
 ---
 

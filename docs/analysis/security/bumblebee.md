@@ -22,7 +22,6 @@ estimated_cpu: "low; one-shot filesystem inventory scanner, CPU cost mainly depe
 estimated_memory: "low; single Go binary with streaming NDJSON output, but not independently benchmarked in this review"
 estimated_storage: "small for binary and catalogs; output NDJSON size depends on endpoint package/extension inventory"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -122,10 +121,6 @@ Bumblebee 应归入 `security`，更具体是 **developer endpoint supply-chain 
 | EDR / XDR agent | 运行时行为与威胁检测 | 能看进程/网络/行为；Bumblebee 只读 metadata，不替代 EDR |
 | GitHub Dependabot / osv-scanner | 仓库依赖漏洞发现 | 更偏代码库/manifest；Bumblebee 面向终端当前 on-disk state |
 | SBOM from CI | 构建产物依赖清单 | 能回答“发布了什么”；Bumblebee 回答“开发者机器现在有什么” |
-
-## 个人主页 sharing 候选
-
-是。Bumblebee 适合写成“agent 时代的开发者终端供应链暴露面”短文：MCP 配置、编辑器扩展、package lockfiles 和本地 toolchain metadata，正在变成安全响应必须看见的一层。它的价值在于把这个问题定得很窄，也因此可执行。
 
 ---
 

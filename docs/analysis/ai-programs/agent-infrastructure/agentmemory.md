@@ -24,7 +24,6 @@ estimated_cpu: "minimal"
 estimated_memory: "~200MB"
 estimated_storage: "~500MB (SQLite + embeddings)"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -119,10 +118,6 @@ agentmemory 是目前 agent 记忆领域**设计最完整、基准最透明**的
 | **Letta/MemGPT** (22k⭐) | 完整 agent 运行时 | OS 式记忆层级完整；但框架锁入严重，需 Postgres + vector，非 MCP 原生 |
 | **Khoj** (34k⭐) | 个人 AI 搜索 | 语义搜索强；但不面向 agent 记忆，无 hook 自动捕获 |
 | **claude-mem** (46k⭐) | Claude Code MCP 记忆 | 轻量、SQLite FTS5；但仅 Claude 限定，无多 agent 协调，无向量检索 |
-
-## 个人主页 sharing 候选
-
-**是**——满足所有标准：趋势性（GitHub trending #2，单日 +754⭐）、实用性（coding agent 直接痛点）、基准过硬（LongMemEval-S 表格可直接引用）、技术透明（"retrieval-only"诚实标注避免误导）。适合放在 develata.me Sharing 中作为 "AI 工具推荐" 条目。
 
 ---
 

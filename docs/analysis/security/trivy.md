@@ -22,7 +22,6 @@ estimated_cpu: "CLI 扫描随目标大小和数据库更新而变；通常适合
 estimated_memory: "容器镜像/Kubernetes/IaC 扫描为中等占用；大型镜像和集群更高"
 estimated_storage: "GitHub diskUsage≈936 MB；本地缓存漏洞数据库和镜像层另计"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -106,12 +105,6 @@ README 的 target/scanner 矩阵非常明确，release/CI/test/docs 信号强。
 | Snyk CLI | 商业安全扫描生态参照项 | Snyk 更偏商业 SaaS 生态；Trivy 是开源 CLI/生态组件 |
 
 上述项目按 `security` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
-## 个人主页 sharing 候选
-
-**是**。
-
-理由：题材清晰，能形成分享线索；但若涉及高权限 agent、账号/cookie、模型生成或安全扫描，应把风险边界写在正文开头。
 
 ---
 

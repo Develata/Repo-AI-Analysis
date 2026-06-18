@@ -23,7 +23,6 @@ estimated_cpu: "2-4 cores for small CPU jobs; GPU strongly preferred for through
 estimated_memory: "4-16GB depending on model/device/document size"
 estimated_storage: "several GB for package/model caches; more for batch workloads"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -116,10 +115,6 @@ README 称 Marker converts documents to markdown, JSON, chunks, HTML，支持 PD
 | Nougat | 学术 PDF 到 Markdown/OCR | Nougat 更学术论文 OCR 取向；Marker 覆盖更多文件类型和产品化路径 |
 
 上述项目按 `document-processing` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-有条件是。最佳分享方式不是单独推荐，而是作为“PDF-to-Markdown 三工具横评：Docling vs MinerU vs Marker”的一部分，重点展示数学公式、定理环境、表格和参考文献的真实效果。
 
 ---
 

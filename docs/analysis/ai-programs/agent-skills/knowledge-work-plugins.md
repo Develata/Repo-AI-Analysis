@@ -22,7 +22,6 @@ estimated_cpu: "N/A"
 estimated_memory: "N/A"
 estimated_storage: "< 20 MB for plugin files; external connector data/cache depends on platform"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -127,14 +126,6 @@ sources:
 | Superpowers | coding agent 的工程纪律技能框架 | Superpowers 聚焦软件开发流程和跨平台 agent discipline；本项目聚焦企业知识工作角色，平台绑定更强、业务连接器更多 [GH:superpowers]。 |
 | MCP server collections | 提供工具/API 连接能力 | MCP server 解决“能调用什么工具”；knowledge-work plugins 解决“某个岗位应该如何使用这些工具、按什么流程输出”。两者互补 [Docs:mcp]。 |
 | n8n / Zapier / Make | 可视化 workflow automation | n8n/Zapier 是确定性流程编排；Cowork plugins 是 agent 行为包装，流程更柔性但可预测性更弱。 |
-
-## 个人主页 sharing 候选
-
-**是，但建议作为“AI agent 组织知识打包范式”分享，而不是工具安利。**
-
-- novelty：将企业知识工作角色产品化为 file-based plugins，是 agent OS/agent marketplace 的重要方向。
-- practicality：对使用 Claude Cowork 的企业团队有潜在价值；对个人用户更多是模板和架构参考。
-- caveat：风险边界很大，尤其 legal/finance/HR/customer data；分享时应强调 human-in-the-loop 和权限治理。
 
 ---
 

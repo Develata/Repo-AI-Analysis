@@ -29,7 +29,6 @@ estimated_cpu: N/A
 estimated_memory: N/A
 estimated_storage: ~35 MB (skills files) + 按需安装的 Python 包
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -135,11 +134,6 @@ Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent S
 
 > 与 Claude Scientific Writer 的区别：CSW 专注科学写作（论文、审稿、海报），Scientific Agent Skills 涵盖从实验到写作的全流程。两者出自同一组织，可配合使用。
 
-## 个人主页 sharing 候选
-
-**候选：是。**
-
-理由：(1) **新颖性高** — 135 个科学 skill 的工程化集合在开源生态中罕见；(2) **实用性** — 对生物/化学/医学方向的研究生和研究者极具实用价值；(3) **可分享性** — 有完整的叙事：「如何用 AI agent 做科学研究」，23 个工作流示例可直接展示；(4) **成熟度短板** — 分享时需明确标注「项目仅 7 个月历史，快速迭代中，长期稳定性不确定」。
 
 ## 它能做什么
 

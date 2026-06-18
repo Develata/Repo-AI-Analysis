@@ -24,7 +24,6 @@ estimated_cpu: "x64 or ARM64 processor; normal CLI workload is light, model infe
 estimated_memory: "official setup docs list 4GB+ RAM"
 estimated_storage: "small CLI/runtime footprint; workspace files, transcripts, plugins, and caches grow with usage"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 5
@@ -124,11 +123,6 @@ Claude Code 现在已经不只是一个 terminal code assistant，而是 Anthrop
 
 上述项目按 `ai-programs/coding-agents` 同类范围做定位级对比，未按同一 10 维度框架深审。
 
-## 个人主页 sharing 候选
-
-是。Claude Code 值得作为 sharing 候选，但角度不应是“又一个 AI 写代码工具”，而应是“官方 coding agent 如何从 CLI 扩展为 workflow platform”。
-
-适合写成：Claude Code 作为 agent OS 雏形——terminal、IDE、CI、mobile/remote、plugins、skills、MCP、schedule/routines 如何组合成一个开发者自动化系统。需要同时提醒：这不是纯开源工具，安全和供应商锁定是核心约束。
 
 ## 它能做什么
 

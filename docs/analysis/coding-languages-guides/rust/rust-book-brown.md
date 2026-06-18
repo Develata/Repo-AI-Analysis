@@ -27,7 +27,6 @@ estimated_cpu: "N/A"
 estimated_memory: "N/A"
 estimated_storage: "N/A"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 5
@@ -133,15 +132,6 @@ sources:
 | [Rustlings](https://github.com/rust-lang/rustlings) | 小型 Rust 练习题集 | 侧重动手编码，非教材。与本项目互补——先读本书理解概念，再用 Rustlings 练习 |
 | [Comprehensive Rust](https://github.com/google/comprehensive-rust) | Google 的 Rust 培训课程（4 天） | 面向有 C++/Java 背景的工程师，节奏更快、深度更浅。适合企业培训场景 |
 | [Rust 程序设计语言（中文版）](https://github.com/KaiserY/trpl-zh-cn) | 官方 TRPL 的中文翻译 | 无交互增强，翻译质量参差。本项目为英文，对中文读者有一定语言门槛 |
-
-## 个人主页 sharing 候选
-
-**是**。满足四个标准：
-
-- **novelty**：交互式测验 + 代码可视化 + 学术研究背书，与官方 TRPL 形成鲜明的「学习方法 vs 参考手册」对比，分享角度独特
-- **maturity**：4 年历史，稳定可用，两篇顶会论文背书，非玩具项目
-- **practicality**：对 Rust 学习者有立即可获得的实际价值——测验和可视化直接提升学习效率
-- **shareability**：「官方 Rust 书 vs Brown 增强版，该用哪个？」是 Rust 社区反复讨论的话题，有天然的分享叙事
 
 ---
 

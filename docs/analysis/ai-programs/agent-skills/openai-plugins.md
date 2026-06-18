@@ -22,7 +22,6 @@ estimated_cpu: "N/A for static plugin corpus; runtime cost depends on installed 
 estimated_memory: "N/A for repository body; active plugin execution depends on Codex/MCP/tooling"
 estimated_storage: "~38 MB repository disk usage by GitHub API; local plugin installs vary"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -106,12 +105,6 @@ OpenAI 官方 Codex plugin examples 仓库，展示 `.codex-plugin/plugin.json` 
 | cursor/plugins | Cursor plugin marketplace | 同为 agent-client 插件分发参照；生态和 runtime 权限模型不同 |
 
 上述项目按 `ai-programs/agent-skills` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
-## 个人主页 sharing 候选
-
-**是**。
-
-理由：题材清晰，能形成分享线索；但若涉及高权限 agent、账号/cookie、模型生成或安全扫描，应把风险边界写在正文开头。
 
 ---
 

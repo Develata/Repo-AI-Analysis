@@ -27,7 +27,6 @@ estimated_cpu: "N/A"
 estimated_memory: "N/A"
 estimated_storage: "N/A"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -131,15 +130,6 @@ sources:
 | [Comprehensive Rust](https://github.com/google/comprehensive-rust) | Google 的 Rust 培训（4 天） | 面向有 C++/Java 背景的工程师，节奏更快。适合企业培训，不适合零基础自学 |
 | [Rust Reference](https://doc.rust-lang.org/reference/) | Rust 语言参考手册 | 不是教材，是语言规范。TRPL 更侧重教学，Reference 更侧重精确定义 |
 | [The Cargo Book](https://doc.rust-lang.org/cargo/) | Cargo 包管理器文档 | 与 TRPL 互补——TRPL 教语言，Cargo Book 教构建工具 |
-
-## 个人主页 sharing 候选
-
-**是**。满足四个标准：
-
-- **novelty**：虽然不是新项目，但「Rust 官方教材 10 年进化史」或「TRPL vs Brown 版：该用哪个？」都是独特的分享角度
-- **maturity**：极高。10 年历史，三版印刷，17.7k stars，无可争议的成熟度
-- **practicality**：对所有 Rust 学习者有直接实用价值
-- **shareability**：「每个 Rust 程序员都读过的一本书」——天然的高传播叙事
 
 ---
 

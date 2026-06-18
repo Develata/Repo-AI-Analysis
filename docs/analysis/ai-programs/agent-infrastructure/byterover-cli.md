@@ -22,7 +22,6 @@ estimated_cpu: "low-to-medium"
 estimated_memory: "medium for daemon/TUI/LLM workflows"
 estimated_storage: "local context tree/query logs grow with projects"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -107,10 +106,6 @@ ByteRover CLI 属于 `ai-programs/agent-infrastructure`：它服务于 agent 的
 | OpenViking | context database | OpenViking 更平台化和重型；ByteRover 更像个人 coding-agent portable memory |
 
 以上对比是定位级对比，竞品未在本条目中按同一 10 维度重新深审；结论应结合各自独立条目或后续审计。
-
-## 个人主页 sharing 候选
-
-是，但应作为 agent memory/context infrastructure 观察条目，而非默认采用推荐。 如果写成分享文章，重点不应是“又一个 memory 项目”，而应是 memory 的工程边界：local vs cloud、自动写入 vs 手动治理、事实检索 vs 用户建模、成本 vs 召回质量。
 
 ---
 

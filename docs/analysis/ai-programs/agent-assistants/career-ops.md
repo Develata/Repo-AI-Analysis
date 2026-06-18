@@ -22,7 +22,6 @@ estimated_cpu: "Node/Go/Playwright + agent CLI；批量评估成本主要来自 
 estimated_memory: "普通开发机可运行；批量 Playwright/agent worker 会增加占用"
 estimated_storage: "简历、PDF、tracker、浏览器缓存和日志随使用增长"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -106,12 +105,6 @@ README 有强烈个人 case-study 色彩，功能定位清晰且 human-in-the-lo
 | open-notebook | 研究/资料 assistant | 二者都是 end-user AI assistant，任务域不同 |
 
 上述项目按 `ai-programs/agent-assistants` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
-## 个人主页 sharing 候选
-
-**是**。
-
-理由：题材清晰，能形成分享线索；但若涉及高权限 agent、账号/cookie、模型生成或安全扫描，应把风险边界写在正文开头。
 
 ---
 

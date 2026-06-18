@@ -30,7 +30,6 @@ estimated_cpu: "4-8 cores"
 estimated_memory: "8-16GB"
 estimated_storage: "2-10GB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -143,17 +142,6 @@ UI-TARS Desktop / Agent TARS 是一个能力很强、工程投入也真实的 **
 | Claude Computer Use | Anthropic 模型能力/产品接口 | Claude Computer Use 是闭源模型/产品参照项；UI-TARS/Agent TARS 更适合作为开源工程样本拆解 |
 
 上述项目按 `ai-programs/agent-assistants` 同类范围做定位级对比，未按同一 10 维度框架深审；`browser-use / Midscene` 与 `Claude Computer Use` 是相邻生态/产品参照项，不是同目录 wiki 条目的直接竞品。
-
-## 个人主页 sharing 候选
-
-**候选：是，但要用“观察/分析”口吻，不要用“推荐你部署”口吻。**
-
-理由：
-
-- **新颖性**：视觉 GUI agent + browser-use + MCP + desktop app 的组合非常适合写一篇 “computer-use agent 工程化观察”。
-- **可叙述性**：从「LLM 写字」转向「LLM 操作界面」，叙事清楚。
-- **成熟度风险**：0.3.0、issue 积压、远程 operator 服务变更，必须在分享中明示。
-- **安全教育价值**：它是讲解 agent 权限边界、sandbox、MCP tool 风险的好例子。
 
 ---
 

@@ -24,7 +24,6 @@ estimated_cpu: "low for CLI-Hub/metadata operations; per-harness cost depends on
 estimated_memory: "low for hub/package manager; target software dominates runtime memory"
 estimated_storage: "small for CLI-Hub package itself; installed harnesses and target applications can range from MBs to many GBs"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -129,10 +128,6 @@ Develata 的判断是对的：CLI-Anything 应归入 `ai-programs/agent-infrastr
 | oh-my-openagent | coding-agent orchestration harness | oh-my-openagent 组织多 agent workflow；CLI-Anything 提供可被这些 agent 调用的工具生态 |
 
 上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。它非常适合做一篇“Agent-native software interface”的 sharing：为什么 CLI 比 GUI/RPA 更适合作为 agent 操作层，为什么 JSON output、state、undo/redo、SKILL.md 和 registry 会成为 agent infrastructure 的基本构件。
 
 ---
 

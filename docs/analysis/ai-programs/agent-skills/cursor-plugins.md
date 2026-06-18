@@ -22,7 +22,6 @@ estimated_cpu: "N/A"
 estimated_memory: "N/A"
 estimated_storage: "< 5 MB for plugin files; external Cursor cloud/API runs billed separately"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -128,14 +127,6 @@ sources:
 | Knowledge Work Plugins | Claude Cowork 企业知识工作角色插件 | Knowledge Work 面向 sales/legal/finance/data 等业务角色；Cursor Plugins 面向软件开发者和 coding-agent 工作流。 |
 | Superpowers | 跨平台 agentic SDLC skills/workflows | Superpowers 方法论更完整、跨平台心智更强；Cursor Plugins 更官方但平台绑定更强，且生态仍早期 [GH:superpowers]。 |
 | dotnet/skills | .NET 团队维护的领域技能与评测体系 | dotnet/skills 更领域化、测试/eval 更重；Cursor Plugins 更像 marketplace seed 与 Cursor 功能展示。 |
-
-## 个人主页 sharing 候选
-
-**是，但应定位为“Cursor plugin ecosystem early anatomy”，不是工具安利。**
-
-- novelty：Cursor 将 rules、skills、agents、commands、MCP servers、hooks 统一成 marketplace plugin，代表 coding agent 产品的下一层封装。
-- practicality：Cursor 用户可以直接尝试部分插件；Hermes 可借鉴 manifest/schema/hook 分层。
-- caveat：仓库早期、无 release、强依赖 Cursor；分享时要强调“观察生态形态”，不要承诺稳定生产价值。
 
 ---
 

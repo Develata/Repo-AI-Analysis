@@ -24,7 +24,6 @@ estimated_cpu: "single core for plugin/CLI itself; multi-agent/team-mode use sca
 estimated_memory: "low-to-moderate for plugin process; practical usage dominated by concurrent OpenCode/agent sessions, repo size, LSP/AST-grep tooling, and provider SDK clients"
 estimated_storage: "npm unpacked package about 8.7 MB for v4.2.2; local state/config under OpenCode/OmO paths and optional worktrees are project-dependent"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 3
@@ -147,17 +146,6 @@ oh-my-openagent 的价值在于把 OpenCode 从一个交互式 coding agent host
 | LangChain / LangGraph | Agent/LLM application framework | LangChain 是面向开发者构建 agent apps 的库；oh-my-openagent 是面向 coding workflow 的 runtime/harness |
 
 上述项目只做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。它适合放在个人主页的 coding / AI workflow 分享里，但要以“高能力、高复杂度、高风险边界”的方式分享，而不是写成无脑推荐。
-
-推荐分享角度：
-
-- agent harness 如何把「prompt」变成「workflow system」。
-- 多模型协作是否真的优于单一强模型。
-- hooks / tools / MCP / state / team mode 的组合如何改变 coding-agent 工程学。
-- 为什么高星项目仍须区分 community、maturity 与 security。
 
 ---
 

@@ -24,7 +24,6 @@ estimated_cpu: "modest local/server CPU for demo; production sizing depends on w
 estimated_memory: "small demos can run on a modest machine; production self-hosting should budget for server, UI, database/storage and workflow execution overhead"
 estimated_storage: "repo clone ~74M in local scan; runtime storage depends on database, uploaded files, logs, vector/RAG assets and workflow artifacts"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 5
@@ -119,11 +118,6 @@ Flowise 的价值在于：把 LLM apps 的常见构件——chatflow、agentflow
 
 上述项目按 `ai-programs/ai-workflow` 同类范围做定位级对比，未按同一 10 维度框架深审。Flowise、Dify、n8n 都是低代码 workflow/platform 化方向，但 Flowise 更专注 visual agent graph，Dify 更偏端到端 LLM app platform，n8n 更偏通用 automation 吸收 AI nodes。
 
-## 个人主页 sharing 候选
-
-适合作为“visual agent builder”专题。
-
-可写主题：**《Flowise 与低代码 agent：把 agent workflow 画出来，问题也会随之显形》**。核心论点：visual builder 的价值不是让复杂性消失，而是把复杂性从代码移到图结构、权限、凭证与运行时配置里。
 
 ## 它能做什么
 

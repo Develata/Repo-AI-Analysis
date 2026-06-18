@@ -22,7 +22,6 @@ estimated_cpu: "low-to-medium local CPU for webhook/CLI orchestration and diff p
 estimated_memory: "low-to-medium for Python service/CLI; larger PRs and provider SDKs increase memory/token pressure"
 estimated_storage: "local shallow clone checked at 260 git-tracked files; Docker image/package footprint not measured in this review"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -139,12 +138,6 @@ PR-Agent 的核心对象是 pull request，而不是一般意义上的 coding ag
 | Qodo hosted AI review | 商业 AI code review 产品/服务 | Qodo hosted product 是产品参照项；PR-Agent repo 明确不是 Qodo free tier，也不应把 hosted 能力全部算入本 repo |
 
 以下对比是基于本 wiki 已有认知与项目公开定位的粗略 taxonomy placement，未在本批次重新核验这些相邻项目，也未按同一 10 维度框架重审；Qodo hosted AI review 是产品参照项，不是本批次 GitHub repo 条目。因此表格只用于说明“PR-Agent 位于 PR review/comment automation 子层”，不作为替代品推荐。
-
-## 个人主页 sharing 候选
-
-是，适合写成“PR 是 AI review 最自然的边界”或“AI code review agent 的开源 legacy 与产品化分叉”。PR-Agent 的研究价值在于：它把代码审查场景拆成 bounded diff、reviewer persona、description、improvement suggestions、labels、configurable prompts、multi-provider LLM 和 Git provider webhooks [Docs:review][Docs:compression][GH:config]。
-
-但分享时必须把 caveat 放在标题附近：它是 community-maintained legacy，不是 Qodo 当前 hosted 主线；AI reviewer 是辅助，不是判官。
 
 ---
 

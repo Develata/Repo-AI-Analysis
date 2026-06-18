@@ -24,7 +24,6 @@ estimated_cpu: "Framework/SDK 本体 CPU 占用低；实际资源消耗主要由
 estimated_memory: "SDK 本体较轻；agent state、chat history、RAG/vector connector 和外部模型响应缓存会决定实际内存"
 estimated_storage: "源码 clone 约 88M；生产存储主要来自应用日志、telemetry、vector store 与外部数据源"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -127,10 +126,6 @@ Semantic Kernel 是 `ai-programs/agent-frameworks` 中的 **enterprise app orche
 | LangGraph | stateful graph workflow | LangGraph 更偏显式状态图；SK 更偏 plugins/connectors/functions |
 
 上述项目按 `ai-programs/agent-frameworks` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。可写主题：**《Semantic Kernel 到 Microsoft Agent Framework：agent framework 为什么最终会走向企业应用中间件》**。核心观点：agent 不是单独存在的“智能体玩具”，而必须接入已有 API、权限、审计、流程和模型供应商；SK 的价值正在这里。
 
 ---
 

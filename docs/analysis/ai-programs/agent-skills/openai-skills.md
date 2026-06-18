@@ -22,7 +22,6 @@ estimated_cpu: "N/A for repository body; actual task cost depends on Codex/model
 estimated_memory: "N/A for repository body; actual task cost depends on Codex/model/tool execution"
 estimated_storage: "~4.6 MB tracked file bytes excluding .git in local clone; installed skills add small markdown/script assets"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -132,14 +131,6 @@ sources:
 | Superpowers / community skill packs | 跨平台工程纪律或个人方法论 skill collection | 社区 skill packs 方法论可能更完整或风格更鲜明；OpenAI Skills 的优势是官方 Codex 对齐，劣势是年轻、治理信号仍少。 |
 
 上述项目按 `ai-programs/agent-skills` 同类范围做定位级对比，未按同一 10 维度框架在本轮重新深审；比较重点是 taxonomy placement，不是无来源的优劣判定。
-
-## 个人主页 sharing 候选
-
-**是，但应写成“Codex Skills 生态观察”，不是“必装技能包推荐”。**
-
-- novelty：OpenAI 把 Agent Skills 作为 Codex 官方能力扩展机制，说明 file-based agent capability packaging 正在被多个主流 agent 产品采用。
-- practicality：对 Hermes skills 治理、trigger description、installer workflow、per-skill license 审计有直接借鉴。
-- caveat：必须强调年轻、无 release、license 混合、无公开行为基准和指令供应链风险。
 
 ---
 

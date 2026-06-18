@@ -24,7 +24,6 @@ estimated_cpu: "极低（sub-10ms 代理延迟）"
 estimated_memory: "< 10 MB（单二进制）"
 estimated_storage: "< 50 MB（二进制 + 缓存）"
 status: active
-sharing_candidate: false
 ratings:
   capability: 4
   usability: 4
@@ -117,10 +116,6 @@ RTK（Rust Token Killer）是一个 CLI 代理，透明拦截 agent（Claude Cod
 | 手动 shell alias/wrapper | 自写脚本包装命令输出 | 灵活但不通用，维护成本高 |
 | LLM 内置截断 | Claude Code 等自动截断长输出 | 无成本但丢失信息不可控 |
 | `mods` (Charmbracelet) | LLM 管道工具 | 不同定位，RTK 社区要求支持 |
-
-## 个人主页 sharing 候选
-
-否。项目太早期（4 个月、仅一个 stable release），推荐度仅 2/5，不适合作为推荐分享。等更成熟后重评。
 
 ---
 

@@ -22,7 +22,6 @@ estimated_cpu: "N/A for repository body; plugin execution depends on Claude Code
 estimated_memory: "N/A for repository body; plugin execution depends on enabled plugin set"
 estimated_storage: "~4.4 MB tracked file bytes excluding .git in local clone; external plugin installs may download additional repos/packages"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -134,14 +133,6 @@ sources:
 | OpenAI Skills | Codex Skills Catalog | OpenAI Skills 更聚焦 Codex skill authoring/installer；Claude Plugins Official 更像全功能 plugin marketplace，包含 MCP/hook/source pinning [GH:openai-skills]。 |
 
 上述项目按 `ai-programs/agent-skills` 同类范围做定位级对比，未在本轮按同一 10 维度框架重审；比较重点是 taxonomy placement，不是完整 benchmark。
-
-## 个人主页 sharing 候选
-
-**是，但建议定位为“Agent plugin marketplace supply-chain anatomy”。**
-
-- novelty：把 skills、MCP、hooks、agents、commands、外部 git source 和 marketplace policy scan 放在一个官方目录里，是 agent 生态从 prompt/skill 走向插件市场的关键样本。
-- practicality：对 Hermes 插件治理非常有借鉴价值，尤其是 SHA pin、policy verdict cache、external entry scan、license/MCP URL workflows。
-- caveat：分享时必须把 README trust warning 放在前面；这不是“推荐大家都装”，而是“研究它如何治理风险”。
 
 ---
 

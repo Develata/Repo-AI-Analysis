@@ -24,7 +24,6 @@ estimated_cpu: "low-to-moderate for SDK/local Qdrant prototyping; self-hosted se
 estimated_memory: "moderate for full self-hosted stack; SDK-only usage can be light, but vector store, graph store and LLM calls dominate"
 estimated_storage: "small for SDK packages; memory/vector/graph databases and request logs grow with usage"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -129,10 +128,6 @@ Mem0 应归入 `ai-programs/agent-infrastructure`。它不是一个终端 coding
 | MCP Servers | MCP reference servers | MCP Servers 是 protocol/tool substrate 样板；Mem0 是具体 memory substrate，可通过 CLI/API/plugin/skills 接入 agent workflow |
 
 上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。Mem0 适合作为 sharing 候选，但文章应聚焦“agent memory 的工程边界”而不是只复述 benchmark：memory 是 agent autonomy 的必要条件之一，同时也是隐私、遗忘、事实更新和治理问题的集中爆发点。这个张力很适合写成有判断力的分享。
 
 ---
 

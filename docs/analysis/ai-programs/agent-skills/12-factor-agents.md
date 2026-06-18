@@ -22,7 +22,6 @@ estimated_cpu: "N/A for reading; Node.js 20-class runtime for workshop examples"
 estimated_memory: "N/A for reading; normal local development memory for workshop examples"
 estimated_storage: "~47 MB local checkout in this scan"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 4
@@ -123,12 +122,6 @@ sources:
 | Anthropic Skills | 官方 skills 语料与产品能力样本 | Anthropic Skills 是可被 Claude 产品加载的 skill content；12-Factor Agents 不是 skill runtime，而是工程方法论 [GH:anthropic-skills]。 |
 
 上述项目按 `ai-programs/agent-skills/` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-**是**。它适合写成“从 agent demo 到 production LLM software：为什么要 own your context/control flow”的分享。
-
-推荐放在 Knowledge/Coding 或 Blog：不需要宣传为“框架”，而应定位为 agent 工程的判断准则。对 Develata 的工程宪法也有映射价值：先定义失败边界，再谈自动化能力。
 
 ---
 

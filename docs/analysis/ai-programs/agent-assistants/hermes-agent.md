@@ -28,7 +28,6 @@ estimated_cpu: "2-4 cores"
 estimated_memory: "2-8GB"
 estimated_storage: "5-20GB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -135,10 +134,6 @@ Hermes Agent 是 2026 年 AI 代理浪潮中**增长最快的新星**：7 周突
 | OpenClaw | 通用自托管 agent | 社区更大（371k vs 148k），但无学习闭环；TypeScript vs Python；Hermes 的 skills 是活的，OpenClaw 的 skills 是静态配置 |
 | Claude Code / Codex CLI | 专用代码 agent | 代码能力更强，但无记忆/自进化/跨 session 能力；定位完全不同 |
 | n8n / LangChain | 工作流自动化 | 可视化编排更强，但无自主学习和记忆；Hermes 更「agent」，n8n 更「automation」|
-
-## 个人主页 sharing 候选
-
-**是**。Hermes Agent 满足 novelty（唯一具备学习闭环的 agent）、maturity（12 releases、Nous Research 团队维护）、practicality（对技术用户有实际价值）、shareability（「会自己成长的 AI」是强有力的叙事）。适合在个人主页的 AI 工具推荐或技术观察类文章中出现。
 
 ---
 

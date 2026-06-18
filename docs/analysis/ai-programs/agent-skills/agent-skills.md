@@ -30,7 +30,6 @@ estimated_cpu: "N/A"
 estimated_memory: "N/A"
 estimated_storage: "< 5 MB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -143,14 +142,6 @@ Agent Skills 是一组面向 AI coding agents 的 **工程纪律注入包**：23
 | Hermes Agent skills | Hermes 的可演化 procedural memory | Hermes skills 可在运行中被 agent patch/治理；Agent Skills 是外部静态包，适合作为方法论参考 |
 
 上述项目按 `ai-programs/agent-skills` 同类范围做定位级对比，未按同一 10 维度框架深审；其中 Hermes Agent skills 是本地体系参照项，不是公开 GitHub repo 的直接竞品。
-
-## 个人主页 sharing 候选
-
-**是。**
-
-适合写成「如何让 coding agent 像 senior engineer 一样工作」的分享：不是写更长 prompt，而是把流程拆成可触发、可验证、可复用的 skills。它的传播点明确：AI 不是缺能力，而是缺工程纪律；skills 是纪律的载体。
-
-分享时要保守注明：项目很新、未必适合全量采用、不同 agent 平台效果差异大。最好用「挑 3 个 skills 试用」而非「安装后生产可用」作为推荐方式。
 
 ---
 

@@ -23,7 +23,6 @@ estimated_cpu: "普通 Linux 桌面 CPU；具体游戏另计"
 estimated_memory: "客户端中等；具体游戏/runner 另计"
 estimated_storage: "客户端较小；runners、Wine prefixes 与游戏库可从数 GB 到数百 GB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -111,10 +110,6 @@ Lutris 不是“另一个游戏商店”，而是 Linux 上跨时代游戏运行
 | RetroArch | 多核心模拟器前端 | RetroArch 专注模拟器 core；Lutris 可以调用 RetroArch/libretro 并同时管理 Wine/Steam/GOG 等 |
 
 上述项目按 `games/game-content-platforms/` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。Lutris 有明确的 Linux gaming 基础设施价值，也很好地体现“开源 glue layer 如何把复杂生态组织成可用平台”。适合放在 gaming / Linux desktop / open-source preservation 相关分享中。
 
 ---
 

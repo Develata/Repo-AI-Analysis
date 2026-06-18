@@ -117,11 +117,6 @@ AutoGPT 是 autonomous-agent 史上必须收录的项目：Classic 把“让 GPT
 | Flowise | visual LLM/agent builder | Flowise 更明确是 visual builder；AutoGPT 更强调 continuous agents 与平台/server/frontend |
 | LangGraph apps | agent workflow orchestration | LangGraph 更偏 framework/runtime；AutoGPT 更偏 end-user/platform product |
 
-## 个人主页 sharing 候选
-
-适合作为“Agent 史”分享候选，而不是工具推荐文。
-
-可写主题：**《AutoGPT 的启示：自主智能体热潮如何从魔法叙事走向 workflow platform》**。重点不是复述 stars，而是讨论为什么 Classic 弃用、为什么平台化、为什么 advisories 与许可证边界成为真实工程问题。
 
 ## 它能做什么
 

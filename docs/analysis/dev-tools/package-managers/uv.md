@@ -23,7 +23,6 @@ estimated_cpu: "1-2 cores for normal package operations; resolver/build work sca
 estimated_memory: "low-to-moderate; large resolves/builds may use several GB"
 estimated_storage: "global cache can grow from hundreds of MB to many GB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 5
@@ -115,10 +114,6 @@ uv 是当前 Python 工具链中最值得优先评估、并在个人项目中默
 | pip/pip-tools/pipx/venv | Python 传统工具组合 | uv 将这些常见流程合为一个 Rust CLI |
 
 上述项目按 `dev-tools/package-managers` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。适合写“Python 工具链从 pip/venv/poetry/pipx 到 uv 的收敛”，并给出 Develata 自己的文献处理/实验脚本模板。
 
 ---
 

@@ -22,7 +22,6 @@ estimated_cpu: "1-4 cores for native-text PDFs; OCR uses CPU workers by default 
 estimated_memory: "1-4GB for ordinary PDFs; larger OCR/batch workloads may need more"
 estimated_storage: "hundreds of MB to several GB depending on PDFium/Tesseract/model data, bindings and Docker images"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 4
@@ -118,10 +117,6 @@ LiteParse 的定位很清楚：fast, local PDF parsing with spatial text parsing
 | Marker | 模型驱动 PDF/多格式转 Markdown/JSON | Marker 更强调 Markdown conversion quality；LiteParse 更强调 no-cloud、bbox-aware、Rust core 和多语言 bindings |
 
 上述项目按 `document-processing` 同类范围做粗定位，主要依据本 wiki 既有同类条目和本轮 MarkItDown 草稿；未按同一 10 维度框架重新深审。
-
-## 个人主页 sharing 候选
-
-是，但只作为 tracking/trial 候选。它适合放进“文档解析工具分层图”：MarkItDown 是 Markdown utility，Docling/MinerU/Marker 是 document intelligence/conversion，LiteParse 则是本地 bbox-aware parser。
 
 ---
 

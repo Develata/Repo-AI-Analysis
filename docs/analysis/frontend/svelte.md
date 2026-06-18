@@ -22,7 +22,6 @@ estimated_cpu: "本地编译/测试随项目规模增长；运行时输出是普
 estimated_memory: "开发服务器和构建内存取决于应用规模"
 estimated_storage: "npm package/monorepo依赖另计；GitHub diskUsage≈121 MB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -106,12 +105,6 @@ Svelte 是 compiler-first 前端框架：把声明式组件编译为直接更新
 | Vue | 渐进式 UI framework 参照项 | 二者都强调组件开发，Svelte 的 compiler-first 取向更强 |
 
 上述项目按 `frontend` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
-## 个人主页 sharing 候选
-
-**是**。
-
-理由：题材清晰，能形成分享线索；但若涉及高权限 agent、账号/cookie、模型生成或安全扫描，应把风险边界写在正文开头。
 
 ---
 

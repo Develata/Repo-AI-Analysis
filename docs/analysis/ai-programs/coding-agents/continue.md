@@ -24,7 +24,6 @@ estimated_cpu: "low-to-moderate for CLI/IDE orchestration; local indexing and sp
 estimated_memory: "moderate for IDE extension/CLI runtime and codebase index; larger repositories and local model providers increase memory pressure"
 estimated_storage: "local shallow clone 272.4MB with 3157 tracked files; installed CLI package unpacked size about 80.8MB via npm view @continuedev/cli"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -128,12 +127,6 @@ Continue 适合想把 AI coding agent 变成 **可配置、可进 CI、可源代
 | Tabby | self-hosted code completion/chat backend | Tabby 是 coding-agents 板块中的 adjacent code-assistant/backend 边界案例；Continue 更偏 agent workflow、PR checks 与多工具配置 |
 
 上述项目按 `ai-programs/coding-agents` 同一大类范围做定位级对比；其中 Tabby 是 adjacent code-assistant/backend 边界案例，不作为直接 autonomous-agent 竞品处理。对比表未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-**是，sharing_candidate=true。**
-
-理由：Continue 的新叙事“source-controlled AI checks”很适合作为个人主页 / sharing 内容中的案例：它把 agent 行为从 UI prompt 提升到 repo artifact 与 CI status check，主题有 novelty、工程实践意义和可讨论性 [GH:local-scan]。但分享时要明确：这不是“最强 coding agent”叙事，而是“agent workflow as code / AI checks as CI primitive”叙事。
 
 ---
 

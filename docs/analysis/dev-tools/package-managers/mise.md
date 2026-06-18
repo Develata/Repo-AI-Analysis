@@ -20,7 +20,6 @@ gpu_required: false
 estimated_cpu: "任意"
 estimated_memory: "<100MB"
 estimated_storage: "<500MB"
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -108,10 +107,6 @@ mise 是 asdf 的精神继承者，用 Rust 重写后补齐了 asdf 缺失的几
 | make/just | 任务执行器 | mise 的 task runner 更简洁，与工具版本/env 集成；make 更通用 |
 | Docker/devcontainer | 容器化开发环境 | mise 更轻量（无容器开销）；Docker 隔离性更强 |
 | Nix | 函数式包管理/可复现环境 | mise 上手极快，30 分钟即可用；Nix 更强大但学习曲线陡峭 |
-
-## 个人主页 sharing 候选
-
-是。推荐理由：28k stars 的热门项目，Rust 重写的 asdf 替代品，三合一设计有讨论价值，文档质量高可作工具类文档范例。适合「开发工具推荐」类分享。
 
 ---
 

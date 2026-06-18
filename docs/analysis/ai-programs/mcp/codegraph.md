@@ -6,7 +6,7 @@ created: 2026-05-20
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/colbymchenry/codegraph"
-category: "ai-programs/agent-infrastructure"
+category: "ai-programs/mcp"
 tags: ["code-intelligence", "knowledge-graph", "mcp", "context", "token-optimization", "typescript", "sqlite", "tree-sitter"]
 previous_repo: ""
 successor: ""
@@ -24,7 +24,6 @@ estimated_cpu: "low-to-moderate for normal projects; initial indexing scales wit
 estimated_memory: "low-to-moderate; Node.js process + SQLite/tree-sitter runtime; large monorepos may spike during indexing"
 estimated_storage: "npm package ~7.7MB unpacked; per-project .codegraph SQLite index grows with repository size"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -62,11 +61,11 @@ sources:
 
 ## 一句话总结
 
-codegraph 也应归入 agent infrastructure：它不是普通代码搜索工具，而是给 coding agents 提供本地 context/indexing layer，用预计算代码图谱替代反复 grep/read 的探索成本。
+codegraph 应归入 `ai-programs/mcp`：它不是普通代码搜索工具，而是给 coding agents 提供本地 context/indexing layer，用预计算代码图谱替代反复 grep/read 的探索成本。
 
 ## 总体评价
 
-Develata 对 codegraph 的分类判断也成立。它解决的是 agent infrastructure 中的 context layer 问题：LLM coding agent 在大型代码库中常把大量 token 和工具调用花在“找入口、找调用链、找相关文件”上；codegraph 预先用 tree-sitter 抽取 symbols、edges、files、routes，存到本地 SQLite/FTS5，再通过 MCP / CLI 暴露给 Claude Code、Cursor、Codex CLI、opencode [GH]。
+Develata 对 codegraph 的分类判断也成立。它解决的是 MCP-first agent context layer 问题：LLM coding agent 在大型代码库中常把大量 token 和工具调用花在“找入口、找调用链、找相关文件”上；codegraph 预先用 tree-sitter 抽取 symbols、edges、files、routes，存到本地 SQLite/FTS5，再通过 MCP / CLI 暴露给 Claude Code、Cursor、Codex CLI、opencode [GH]。
 
 这个方向与 CLI-Anything 正交。CLI-Anything 是“agent 能操作哪些软件”的 tool access layer；codegraph 是“agent 如何低成本理解代码库”的 knowledge/context layer。二者都不是 end-user agent，本质上都在给 agent 提供 substrate。
 
@@ -124,11 +123,7 @@ Develata 对 codegraph 的分类判断也成立。它解决的是 agent infrastr
 | oh-my-openagent | coding-agent orchestration harness | oh-my-openagent 管 workflow/roles；codegraph 提供可接入这些 workflow 的 code-intelligence substrate |
 | cal.diy | scheduling / booking infrastructure | cal.diy 是时间协调层；codegraph 是代码知识层 |
 
-上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。适合写成“Agent 的 L1 cache / codebase index”主题：当 agentic coding 从 toy repo 进入大型代码库，问题不再只是模型会不会写代码，而是它如何经济地取得正确上下文。
+上述项目按 `ai-programs/mcp` 同类或相邻 agent infrastructure 范围做定位级对比，未按同一 10 维度框架深审。
 
 ---
 

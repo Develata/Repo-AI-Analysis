@@ -22,7 +22,6 @@ estimated_cpu: "2-4 cores"
 estimated_memory: "512MB-2GB"
 estimated_storage: "300-500MB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -117,16 +116,6 @@ Reasonix 在 DeepSeek 生态位中几乎没有对手——OpenCode、Claude Code
 | Cursor | AI 增强 IDE | IDE 插件、订阅制、闭源、图形界面为主、多模型 |
 
 Reasonix 在「DeepSeek 缓存优化」这一维度上独树一帜——其他所有工具要么无法使用 DeepSeek，要么使用了也无法获得高缓存命中率。但它的模型绑定也是最大的差异化劣势。
-
-## 个人主页 sharing 候选
-
-**是**。Reasonix 符合 sharing 候选的四条标准：
-- **新颖性**：以「前缀缓存优先」为架构核心的编程 Agent 在开源社区中独一无二，设计哲学值得传播。
-- **成熟度**：虽然 v0.x 不成熟，但文档质量、测试覆盖和社区活跃度使其「看起来」比实际年龄成熟得多——在 sharing 场景中可以标注「观察中」。
-- **实用性**：对 DeepSeek API 用户有即时成本收益（案例研究：\$12 vs \$61），观众可以立刻验证。
-- **可分享性**：24 天 2.7k stars 的增长故事 + 四 Pillar 架构 + 「leave it running」的使用范式，有很强的叙事吸引力。
-
-建议分享时强调「观察中，尚未稳定」的限定。
 
 ---
 

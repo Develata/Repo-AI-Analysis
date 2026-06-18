@@ -105,11 +105,6 @@ AGENTS.md 是 coding agents 的 repo-local instruction convention：把“这个
 | vibe-kanban | task orchestration | vibe-kanban 解决多 agent attempts 的看板与 review；AGENTS.md 解决单仓库规则入口 |
 | cal.diy | scheduling primitive | cal.diy 解决 calendar/scheduling；AGENTS.md 解决 repo-local instructions |
 
-## 个人主页 sharing 候选
-
-是。可写主题：**《AGENTS.md：agent 时代的 .editorconfig + CONTRIBUTING + runbook》**。
-
-分享重点不是“又多了一个 Markdown 文件”，而是 agentic coding 为什么需要可发现、可版本控制、仓库局部的操作纪律。名不正则言不顺；AGENTS.md 的价值正在于给 repository-agent interaction 正名。
 
 ## 它能做什么
 

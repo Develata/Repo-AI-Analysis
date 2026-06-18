@@ -23,7 +23,6 @@ estimated_cpu: "2-4 cores for normal rendering; code execution depends on notebo
 estimated_memory: "2-8GB depending on document size and executed computations"
 estimated_storage: "1-10GB including Quarto, Pandoc/LaTeX/TinyTeX/Jupyter/R dependencies"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -115,10 +114,6 @@ README 定位 Quarto 为 built on Pandoc 的 scientific and technical publishing
 | Jupyter Book | Jupyter/Markdown 书籍发布系统 | 这是 publishing-system 相邻项目而非纯 editor；Quarto 覆盖更广的语言/输出和 Pandoc 生态 |
 
 上述项目按 `document-editors` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。尤其适合和 develata.me 的 Knowledge/Blog/Sharing 板块结合，写“科研写作如何从 notebook/markdown 走向可发布网站与 PDF”。
 
 ---
 

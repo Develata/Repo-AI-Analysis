@@ -24,7 +24,6 @@ estimated_cpu: "CPU-only 可运行小/中模型，性能高度依赖量化、线
 estimated_memory: "由 GGUF 模型大小、quantization、context/KV cache、并发 slots 决定；小量化模型数 GB 起，大模型显著更高"
 estimated_storage: "源码 clone 约 185M；模型文件通常数 GB 到数十/数百 GB，Docker/model cache 会继续增长"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -126,10 +125,6 @@ llama.cpp 是 Agent Infrastructure 中的 **local inference substrate**：它不
 | llama-cpp-python | Python bindings | binding 生态，不等于 upstream runtime 本体 [PyPI:llama-cpp-python] |
 
 上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审；其中 `llama-cpp-python` 是相邻 binding 生态而非直接竞品。
-
-## 个人主页 sharing 候选
-
-是。主题可以是：**《为什么 agent infrastructure 需要本地推理底座：从 llama.cpp 到 Ollama/vLLM》**。核心观点：agent 的自主性不仅取决于模型智力，也取决于模型是否可本地、可控、可负担、可长期运行。
 
 ---
 

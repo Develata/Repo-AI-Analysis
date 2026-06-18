@@ -24,7 +24,6 @@ estimated_cpu: "N/A"
 estimated_memory: "N/A"
 estimated_storage: "< 100 MB for CLI/templates; project artifacts grow with repository size"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -133,15 +132,6 @@ Spec Kit 的价值不在于“又一个 prompt 包”，而在于把开发中最
 | Agent OS | 面向 AI-powered development 的 coding standards / spec shaping 系统 | Spec Kit 更强调跨 agent CLI 初始化、artifact layout 与 extension/preset 生态；Agent OS 更偏项目标准、产品上下文和 Claude Code 风格的轻量 spec shaping [GH:agent-os]。 |
 
 上述项目按 `ai-programs/agent-skills/` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-**是**。
-
-- novelty：把 spec-driven development 显式产品化为 AI coding agent 工具链，叙事清楚。
-- maturity：项目仍新，但 GitHub 背书、生态增长、文档结构使其值得跟踪。
-- practicality：对 Develata 的工具开发、agent 工作流治理、工程宪法落地都有借鉴意义。
-- shareability：可以写成“从 vibe coding 到 spec-driven coding”的分享。
 
 ---
 

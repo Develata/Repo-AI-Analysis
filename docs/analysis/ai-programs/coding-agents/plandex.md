@@ -112,11 +112,6 @@ Plandex 是一条较早公开并获得显著关注的 open-source terminal codin
 | Continue | IDE/CLI/checks workflow | Continue 更强调 repo-local checks/config；Plandex 更强调 autonomous plan execution |
 | Aider | terminal pair-programming agent | Aider 更轻量、git-centric；Plandex 更复杂、更注重大上下文和 sandbox |
 
-## 个人主页 sharing 候选
-
-是。可写主题：**《Plandex：早期开源 coding agent 如何处理大任务、大上下文与 diff sandbox》**。
-
-它值得分享，不是因为它今天一定是最佳选择，而是因为它代表了一条重要路线：重规划、重上下文、重隔离、重自托管。
 
 ## 它能做什么
 

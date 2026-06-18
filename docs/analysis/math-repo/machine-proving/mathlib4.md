@@ -23,7 +23,6 @@ estimated_cpu: "2-4 cores for browsing/small builds; large local builds benefit 
 estimated_memory: "4-16GB depending on build scope; cached olean files strongly recommended"
 estimated_storage: "5-20GB including Lake packages, olean cache and local clone"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 3
@@ -118,10 +117,6 @@ mathlib4 是 Lean 4 的数学库，README 明确称其包含 programming infrast
 | Isabelle AFP | Isabelle 生态 formal proof archive | AFP 更像论文/证明档案库；mathlib4 更像统一命名和依赖结构下的核心数学库 |
 
 上述项目按 `math-repo/machine-proving` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。可以写成“现代数学共同体如何把 theorem 变成 infrastructure”。它既服务 Lean 学习，也贴合 Develata 的数学背景；读者即便不写 Lean，也能理解形式化数学为何改变“证明的可复用性”。
 
 ---
 

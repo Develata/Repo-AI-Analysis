@@ -4,7 +4,7 @@ created: 2026-06-10
 updated: 2026-06-10
 type: repository-analysis
 repo_url: "https://github.com/apple/container"
-category: "infra"
+category: "dev-tools/apple-ecosystem"
 tags: [container, macos, apple-silicon, swift, virtualization, linux]
 previous_repo: ""
 successor: ""
@@ -22,7 +22,6 @@ estimated_cpu: "需要 Apple Silicon Mac；运行 Linux container 通过轻量 V
 estimated_memory: "每个 VM/container workload 需要额外内存；不适合按普通纯 CLI 工具估计"
 estimated_storage: "源码文件 460；镜像、rootfs 与 VM 数据另计"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -101,10 +100,6 @@ Apple Container 是 Apple 官方 Swift 工具，用 lightweight virtual machines
 | Lima / Colima | macOS 上轻量 Linux VM/container 方案 | Lima/Colima 更社区化和成熟；Apple Container 的优势是官方定位与 Swift/Apple 平台整合。 |
 
 上述项目按相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
-## 个人主页 sharing 候选
-
-是。适合放在“Apple Silicon 上容器工具链变化”类分享，但推荐语必须保守。
 
 ---
 

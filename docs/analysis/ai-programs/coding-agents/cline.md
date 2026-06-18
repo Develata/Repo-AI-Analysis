@@ -24,7 +24,6 @@ estimated_cpu: "low-to-moderate local CPU for IDE/CLI/TUI orchestration; spawned
 estimated_memory: "moderate for VS Code/webview/TUI runtime plus workspace context; large repositories and checkpoints increase memory/storage pressure"
 estimated_storage: "local shallow clone 80M with 3192 tracked files; checkpoints use a shadow Git repository and may grow on large tasks"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -129,12 +128,6 @@ Cline 是当前开源 coding-agent 生态里功能面最宽的一类项目之一
 | Aider | terminal pair-programming assistant | Aider 更轻、更专注 git/code editing；Cline 更重、更产品化、能力面更宽 |
 
 上述项目按 `ai-programs/coding-agents` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是。Cline 很适合写成一篇 sharing：主题可以是“从 IDE Copilot 到 agentic IDE runtime：Cline 把哪些权限交给了 agent？”
-
-它的分享价值不在“又一个聊天写代码工具”，而在于它把 Plan/Act、MCP、plugins、hooks、skills、checkpoints、TUI/headless、Kanban/subagents 等概念放入一个产品化 workflow。对 Develata 的 Hermes / Codex / Claude Code 工作流，也有直接对照意义。
 
 ---
 

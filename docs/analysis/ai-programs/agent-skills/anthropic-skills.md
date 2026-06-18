@@ -22,7 +22,6 @@ estimated_cpu: "N/A"
 estimated_memory: "N/A"
 estimated_storage: "< 10 MB for skill files; generated documents/scripts add per task"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -130,14 +129,6 @@ sources:
 | scientific-agent-skills | 科学计算/生物医药/化学等领域 skill collection | scientific-agent-skills 覆盖专门科研工作流；`anthropics/skills` 覆盖面较泛，重点在官方格式与 document skills reference [GH:scientific-agent-skills]。 |
 | Spec Kit | spec-driven development CLI/templates/integrations | Spec Kit 是 artifact-centric 的开发流程工具；Agent Skills 是动态加载的 task capability package。两者可互补：Spec Kit 管 spec/plan/tasks，Skills 管具体任务能力。 |
 | Claude built-in Projects / custom instructions | 静态背景知识或长期指令 | Skills 比 Projects 更程序化、按需加载；但也更依赖 code execution/file access，安全审查更重要 [Docs:help-what]。 |
-
-## 个人主页 sharing 候选
-
-**是，但应偏“技术观察/标准解读”，不是“开源库推荐”。**
-
-- novelty：Agent Skills 把 prompt engineering、scripts、references 与文件系统结合成可分发能力包，有明确范式价值。
-- practicality：对 Develata 维护 Hermes skills、repo-wiki 分析模板、文档生成工作流都有借鉴。
-- caveat：许可证和 Claude 生态绑定需要在分享中突出，避免读者误以为全部内容可自由复用。
 
 ---
 

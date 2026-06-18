@@ -23,7 +23,6 @@ estimated_cpu: "任意现代 Windows 桌面 CPU"
 estimated_memory: "约 200MB-1GB（PyQt/本地索引/下载任务，未实测）"
 estimated_storage: "应用本体较小；trainer 库随下载数量增长"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 4
@@ -109,10 +108,6 @@ Game Cheats Manager（GCM）的核心价值很明确：它不试图成为游戏 
 | Cheat Evolution | trainer 发布与订阅平台 | Cheat Evolution 更偏商业 trainer 供给；GCM 更偏开源 manager 与多来源整合 |
 
 上述项目按 `games/game-assistants/` 同类范围做定位级对比，未按同一 10 维度框架深审。
-
-## 个人主页 sharing 候选
-
-是，但应以“游戏辅助工具与安全边界”角度分享，而不是普通软件推荐。它有明确痛点、增长快、README 讲产品讲得清楚；同时 trainer 场景天然带来安全/伦理讨论，适合写成一篇有边界意识的工具观察。
 
 ---
 

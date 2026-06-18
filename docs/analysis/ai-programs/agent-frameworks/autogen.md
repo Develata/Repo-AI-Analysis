@@ -120,11 +120,6 @@ AutoGen 的历史价值与参考设计价值仍高，但 maintenance-mode 直接
 | LangGraph | graph-based agent workflow framework | LangGraph 更偏有状态图与控制流；AutoGen 更偏 conversational/multi-agent runtime |
 | Semantic Kernel | Microsoft agent/app orchestration SDK | SK 更偏 enterprise app orchestration 与 plugins/connectors；AutoGen 更偏 multi-agent research/framework 线 |
 
-## 个人主页 sharing 候选
-
-适合作为“multi-agent framework 史”分享候选。
-
-可写主题：**《AutoGen 的一生：multi-agent 框架如何从研究范式走向维护模式》**。关键不在“它还能不能用”，而在它如何定义了 Core / AgentChat / Extensions / Studio 这套分层语言，以及为什么 Microsoft 选择迁移到 Agent Framework。
 
 ## 它能做什么
 

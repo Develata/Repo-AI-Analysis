@@ -24,7 +24,6 @@ estimated_cpu: "2+ cores for a small self-hosted instance; production-like use d
 estimated_memory: "2-4GB practical minimum for app + PostgreSQL + build/runtime services; more for production-like use"
 estimated_storage: "several GB for source/build artifacts, PostgreSQL data, logs, and uploads; grows with bookings/integrations"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -124,10 +123,6 @@ cal.diy 的核心价值不是“又一个日历 UI”，而是把 event types、
 | oh-my-openagent | coding-agent orchestration harness | oh-my-openagent 组织多 agent coding workflow；cal.diy 更像 agent 可调用的时间协调后端 |
 
 上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审。cal.diy 是该目录中的边界型项目：它不是 agent-specific，但可作为 agent scheduling infrastructure 使用；若后续 wiki 新增 `scheduling/` 或 `self-hosted-saas/` 目录，可考虑迁移。
-
-## 个人主页 sharing 候选
-
-是。推荐分享角度不是“开源 Calendly 替代品”这么浅，而是：agent 要真正参与现实世界任务，除了 tools/context/memory，还需要 scheduling primitive；cal.diy 提供了一个可研究、可 self-host、但必须尊重安全与生产边界的案例。
 
 ---
 

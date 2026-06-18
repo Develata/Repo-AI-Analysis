@@ -22,7 +22,6 @@ estimated_cpu: "low to medium for CLI/daemon; heavier when desktop, channels, br
 estimated_memory: "README claims ~40 MB idle and ~32 MB binary, but not measured in this review; expect higher with Tauri/WebView, SQLite/vector memory, channel gateways, Playwright/browser or local model integrations"
 estimated_storage: "small for binary; grows with ~/.openfang data, SQLite/vector memory, logs, bundled skills, channel artifacts and optional Docker image"
 status: active
-sharing_candidate: true
 ratings:
   capability: 4
   usability: 3
@@ -134,12 +133,6 @@ OpenFang 应归入 `ai-programs/agent-assistants`，而不是纯 `agent-infrastr
 定位摘要：OpenFang 的最近参照不是单一竞品，而是“个人 agent assistant + Rust runtime + 安全控制面”的交叉点。
 
 上述项目按 `ai-programs/agent-assistants` 同类范围做定位级对比，未按同一 10 维度框架深审；表格用于定位，不是完整 benchmark，也不比较 star/release 等未按项目年龄归一化的指标。
-
-## 个人主页 sharing 候选
-
-是，但建议写成“早期观察”而不是“推荐安装”。可写主题：**Rust Agent OS：从聊天机器人到常驻 autonomous Hands**。
-
-它的传播点很强：single binary、Hands、40 channels、WASM sandbox、Merkle audit、Tauri desktop。风险也同样强：pre-1.0、高权限、快速 release、production checklist 张力。因此分享时应把“很酷”和“很早”同时写清楚。
 
 ---
 

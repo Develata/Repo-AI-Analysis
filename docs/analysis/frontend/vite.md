@@ -22,7 +22,6 @@ estimated_cpu: "开发服务器和 build 随项目规模增长；设计目标是
 estimated_memory: "普通前端开发机可用；大型 monorepo 构建会增加内存"
 estimated_storage: "node_modules/cache 较大；GitHub diskUsage≈70 MB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 5
@@ -106,12 +105,6 @@ Vite 是成熟前端基础设施。README 对核心部件表述清楚：dev serv
 | esbuild | 快速 bundler/transpiler 参照项 | esbuild 是底层工具之一；Vite 是面向应用的开发/构建框架 |
 
 上述项目按 `frontend` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
-## 个人主页 sharing 候选
-
-**是**。
-
-理由：题材清晰，能形成分享线索；但若涉及高权限 agent、账号/cookie、模型生成或安全扫描，应把风险边界写在正文开头。
 
 ---
 

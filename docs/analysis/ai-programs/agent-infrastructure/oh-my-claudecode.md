@@ -24,7 +24,6 @@ estimated_cpu: "single core for basic CLI/setup; multiple terminal workers consu
 estimated_memory: "low hundreds of MB for OMC itself; real usage dominated by Claude/Codex/Gemini CLI worker processes and project size"
 estimated_storage: "npm tarball about 5.3 MB, unpacked about 27.3 MB; repository clone and local .omc/.claude state add project-dependent storage"
 status: active
-sharing_candidate: true
 ratings:
   capability: 5
   usability: 4
@@ -141,17 +140,6 @@ oh-my-claudecode 最适合作为 Claude Code advanced users 与小型 agentic-co
 | Claude Code 原生 | Anthropic 的 terminal / IDE agentic coding tool | OMC 建立在 Claude Code 之上，增强多智能体、hooks、skills 与外部 CLI 编排；不能脱离 Claude Code 使用 [Anthropic][GH] |
 
 注：上述类似项目只做定位级对比，未在本文中按同一 10 维度框架深审；比较结论仅用于帮助选择方向。
-
-## 个人主页 sharing 候选
-
-是。它适合放在「Agent Infrastructure」或「Claude Code 生态观察」主题下分享。
-
-理由：
-
-- **novelty**：它代表了 coding agent 从单体对话走向 workflow runtime 的趋势。
-- **practicality**：Claude Code 用户能直接试用，并从 Team / review / verifier / Codex-Gemini interop 中获得现实收益。
-- **narrative**：它是「oh-my-zsh 式增强包」在 agentic coding 上的对应物：不是新模型，而是把 agent 使用方法工程化。
-- **maturity caveat**：分享时应明确它仍在快速演化，适合 advanced users，不应作为无脑推荐的新手插件。
 
 ---
 

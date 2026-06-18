@@ -21,7 +21,6 @@ estimated_cpu: "2-4 cores"
 estimated_memory: "3-8GB"
 estimated_storage: "5-20GB"
 status: active
-sharing_candidate: true
 ratings:
   capability: 3
   usability: 3
@@ -117,10 +116,6 @@ Overleaf 是学术界 LaTeX 协作的绝对统治者。它的云服务（overlea
 | overleaf.com（云版） | SaaS LaTeX 协作 | 零运维，但有编译时间/协作者限制 |
 | TeXstudio | 本地 LaTeX IDE | 编辑体验更强，无协作功能，无自托管需求 |
 | ShareLaTeX | （已被 Overleaf 合并） | 2017 年合并进入 Overleaf，原代码即为本仓库前身 |
-
-## 个人主页 sharing 候选
-
-**是**。Overleaf CE 是每个 LaTeX 用户都可能感兴趣的部署方案——「搭建一个没有编译时间限制的私人 Overleaf」具有强的叙事性。成熟度（12 年）和新颖性（对不熟悉自托管的人来说）都满足分享条件。
 
 ---
 
