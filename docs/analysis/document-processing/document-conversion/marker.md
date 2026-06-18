@@ -5,7 +5,7 @@ created: 2026-05-21
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/datalab-to/marker"
-category: "document-processing"
+category: "document-processing/document-conversion"
 tags: ["document-processing", "pdf", "markdown", "ocr", "json", "llm", "python", "datalab"]
 previous_repo: ""
 successor: ""
@@ -64,7 +64,7 @@ README 称 Marker converts documents to markdown, JSON, chunks, HTML，支持 PD
 
 但 Marker 的 adoption 边界比 Docling/MinerU 更复杂。README 明确：code license 是 GPL-3.0，model license 是 OpenRAIL-M；commercial self-hosting requires a license；模型权重对商业规模有额外限制 [GH][GH:local-scan]。CLA.md 还要求贡献者向 Endless Labs 授予很宽的权利 [GH:local-scan]。
 
-因此它应进入 document-processing，但推荐策略是“对比评测与个人 pipeline 可试”，不是“默认基础设施”。
+因此它应进入 document-processing/document-conversion，但推荐策略是“对比评测与个人 pipeline 可试”，不是“默认基础设施”。
 
 ## 推荐度：3/5
 
@@ -114,7 +114,7 @@ README 称 Marker converts documents to markdown, JSON, chunks, HTML，支持 PD
 | MinerU | 科学文献/LLM-ready 文档解析 | MinerU 更强调科学文献符号转换；Marker 更强调 PDF/多格式转换 benchmark 和 Datalab 生态 |
 | Nougat | 学术 PDF 到 Markdown/OCR | Nougat 更学术论文 OCR 取向；Marker 覆盖更多文件类型和产品化路径 |
 
-上述项目按 `document-processing` 同类范围做定位级对比，未按同一 10 维度框架深审。
+上述项目按 `document-processing/document-conversion` 同类范围做定位级对比，未按同一 10 维度框架深审。
 
 ---
 

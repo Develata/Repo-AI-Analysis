@@ -5,7 +5,7 @@ created: 2026-05-21
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/leanprover-community/mathlib4"
-category: "math-repo/machine-proving"
+category: "math/machine-proving"
 tags: ["lean4", "formalization", "mathematics", "theorem-proving", "library", "mathlib"]
 previous_repo: ""
 successor: ""
@@ -116,7 +116,7 @@ mathlib4 是 Lean 4 的数学库，README 明确称其包含 programming infrast
 | Coq Mathematical Components | Coq 生态经典数学库 | MathComp 更偏 Coq/SSReflect 风格；mathlib4 更贴 Lean 4 typeclass/tactic 生态 |
 | Isabelle AFP | Isabelle 生态 formal proof archive | AFP 更像论文/证明档案库；mathlib4 更像统一命名和依赖结构下的核心数学库 |
 
-上述项目按 `math-repo/machine-proving` 同类范围做定位级对比，未按同一 10 维度框架深审。
+上述项目按 `math/machine-proving` 同类范围做定位级对比，未按同一 10 维度框架深审。
 
 ---
 

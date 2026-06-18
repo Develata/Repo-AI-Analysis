@@ -4,7 +4,7 @@ created: 2026-06-10
 updated: 2026-06-10
 type: repository-analysis
 repo_url: "https://github.com/refactoringhq/tolaria"
-category: "document-editors"
+category: "document-processing/editors"
 tags: [markdown, knowledge-base, desktop-app, typescript, notes, agpl]
 previous_repo: ""
 successor: ""

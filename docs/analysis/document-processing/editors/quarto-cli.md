@@ -5,7 +5,7 @@ created: 2026-05-21
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/quarto-dev/quarto-cli"
-category: "document-editors"
+category: "document-processing/editors"
 tags: ["publishing", "markdown", "scientific-writing", "pandoc", "jupyter", "r", "typst", "technical-writing"]
 previous_repo: ""
 successor: ""
@@ -113,7 +113,7 @@ README 定位 Quarto 为 built on Pandoc 的 scientific and technical publishing
 | Overleaf | Web LaTeX 协作编辑器 | Overleaf 管协作写 LaTeX；Quarto 管 Markdown/计算文档到多格式发布 |
 | Jupyter Book | Jupyter/Markdown 书籍发布系统 | 这是 publishing-system 相邻项目而非纯 editor；Quarto 覆盖更广的语言/输出和 Pandoc 生态 |
 
-上述项目按 `document-editors` 同类范围做定位级对比，未按同一 10 维度框架深审。
+上述项目按 `document-processing/editors` 同类范围做定位级对比，未按同一 10 维度框架深审。
 
 ---
 

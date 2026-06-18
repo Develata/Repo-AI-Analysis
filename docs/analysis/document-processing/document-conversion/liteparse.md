@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/run-llama/liteparse"
-category: "document-processing"
+category: "document-processing/document-conversion"
 tags: ["document-processing", "pdf", "ocr", "bounding-boxes", "rust", "python", "typescript", "wasm", "llamaindex"]
 previous_repo: ""
 successor: ""
@@ -116,7 +116,7 @@ LiteParse 的定位很清楚：fast, local PDF parsing with spatial text parsing
 | MinerU | 科学文献/复杂 PDF 到 Markdown/JSON | MinerU 更偏科学文献和 OCR/VLM；LiteParse 更偏本地快速解析、坐标与轻量嵌入 |
 | Marker | 模型驱动 PDF/多格式转 Markdown/JSON | Marker 更强调 Markdown conversion quality；LiteParse 更强调 no-cloud、bbox-aware、Rust core 和多语言 bindings |
 
-上述项目按 `document-processing` 同类范围做粗定位，主要依据本 wiki 既有同类条目和本轮 MarkItDown 草稿；未按同一 10 维度框架重新深审。
+上述项目按 `document-processing/document-conversion` 同类范围做粗定位，主要依据本 wiki 既有同类条目和本轮 MarkItDown 草稿；未按同一 10 维度框架重新深审。
 
 ---
 
