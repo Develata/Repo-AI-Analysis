@@ -186,7 +186,7 @@ LiteParse 的扩展性主要体现在两个层面：一是多语言 bindings / W
 | 社区活跃度 | 3/5 | 7.8k stars、461 forks、18 contributors first page、issues/PR backlog 低；关注度不错但贡献者和生态仍早期 [GH:api][GH:contributors]。 |
 | 成熟度 | 2/5 | 2026-02 创建，v2.0.4、多包 release 节奏很快；适合试用和跟踪，但不能按稳定多年项目对待 [GH:api][GH:releases]。 |
 
-## 维护与发布风险
+### 维护与发布风险
 
 LiteParse 的 releases 数量不少，且 2026-05-30 同时出现 wasm/python/node/crates v2.0.4 相关 tag；这说明项目发布自动化和多包分发较活跃，但也意味着 API/bindings/安装路径仍可能快速变化 [GH:releases][GH:local-scan]。对 wiki 结论，应把它视为“值得跟踪的早期工具”，不是已经验证稳定的长期底座。
 
@@ -198,7 +198,7 @@ LiteParse 的 releases 数量不少，且 2026-05-30 同时出现 wasm/python/no
 
 因此本地可信文件处理风险相对较低，但仍依赖 PDFium/Tesseract/转换链本身的安全性；若对外提供 API，必须由部署层补安全边界。
 
-## 未验证项
+### 未验证项
 
 - 解析速度、峰值内存与 batch parse 吞吐。
 - OCR 准确率、复杂表格、多栏、数学公式和扫描件质量。

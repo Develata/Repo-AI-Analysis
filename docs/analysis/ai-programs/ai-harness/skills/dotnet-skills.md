@@ -247,6 +247,6 @@ README 清楚列出插件、安装方式、平台兼容与 dashboard 链接 [GH:
 
 ---
 
-## 附录：评分说明
+### 附录：评分说明
 
 本条目按 non-software/hybrid rubric 评估。`capability` 因 .NET 领域覆盖广给 4；`code_quality` 因 eval/validator/workflow/CODEOWNERS 给 4；`performance` 因真实成本依赖 agent/model/eval pipeline 给 3；`maturity` 因有 v1.0.0 但项目仍年轻给 3；`recommendation` 结合 Develata 当前非 .NET 主线需求保守给 3。

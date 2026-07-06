@@ -232,6 +232,6 @@ Cursor docs 说明 plugins 可打包 hooks、MCP servers、commands、skills、a
 
 ---
 
-## 附录：评分说明
+### 附录：评分说明
 
 本条目按 non-software/hybrid rubric 评估。`capability` 看插件覆盖面和组件丰富度；`performance` 因真实运行成本依赖 Cursor/model/cloud agents 而给中性分；`code_quality` 评估 manifest/schema/validator/tests，而非所有技能行为正确性；`security` 因 hooks/scripts/token 场景和未审计行为下调到 2；`maturity` 因无 release 和项目很新保守给 2；`recommendation` 结合 Develata 当前需求给 3。

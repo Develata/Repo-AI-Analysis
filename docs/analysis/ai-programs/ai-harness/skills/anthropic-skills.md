@@ -215,6 +215,6 @@ README 简洁说明 skills 定义、仓库定位、Claude Code/Claude.ai/API 使
 
 ---
 
-## 附录：评分说明
+### 附录：评分说明
 
 本条目按 non-software/hybrid rubric 评估：仓库主体是可执行/可加载的技能材料，而非传统库。`performance` 评估文件型技能包本体的资源效率；`code_quality` 评估目录结构、skill 组织、辅助脚本和验证机制；`maturity` 对无 release 和快速变化作保守扣分。

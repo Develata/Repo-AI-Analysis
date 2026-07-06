@@ -46,7 +46,7 @@ sources:
   - "[GH:release-1.4.2] v1.4.2 release notes inspected via GitHub API 2026-06-18; removed Douyin/Weibo/WeChat channels because upstreams were unmaintained/unreliable or anti-bot blocked, added transcribe and doctor --json, and improved skill trigger descriptions"
   - "[GH:release-1.4.1] v1.4.1 release notes inspected via GitHub API 2026-06-18; fixed source-install failure caused by duplicate wheel entries and added a wheel-build gate that builds/install-smokes the wheel in CI"
   - "[GH:local-scan] local shallow clone /opt/data/tmp/repo_wiki_agent_reach at commit 22d7f03a59401b5740b380c3ad43e3ff7a9dc373 inspected 2026-06-18; git ls-files=89, markdown/rst/adoc files=26, test/spec-ish paths=15, GitHub workflows=1; root files include README.md, SECURITY.md, CONTRIBUTING.md, LICENSE, CLAUDE.md, CHANGELOG.md, constraints.txt, llms.txt, pyproject.toml, test.sh; root dirs include agent_reach, config, docs, scripts, tests"
-  - "[GH:pyproject] pyproject.toml local scan 2026-06-18; package name=agent-reach, version=1.5.0, Python>=3.10, MIT, Development Status :: 4 - Beta; dependencies include requests, feedparser, python-dotenv, loguru, pyyaml, rich, yt-dlp; optional deps include playwright, browser-cookie3, mcp[cli]; dev deps include pytest, ruff, mypy"
+  - "[GH:pyproject] pyproject.toml local scan 2026-06-18; package name=agent-reach, version=1.5.0, Python>=3.10, MIT, Development Status :: 4 - Beta; dependencies include requests, feedparser, python-dotenv, loguru, pyyaml, rich, yt-dlp; optional deps include playwright, browser-cookie3, mcp optional cli; dev deps include pytest, ruff, mypy"
   - "[GH:ci] .github/workflows/pytest.yml local scan 2026-06-18; CI runs pytest on Python 3.10/3.11/3.12/3.13 and has a wheel-gate job that builds the wheel, checks no duplicate entries, verifies SKILL.md/guides/scripts/references are present, smoke-installs the wheel in a clean venv and runs agent-reach version"
   - "[GH:security] SECURITY.md local scan 2026-06-18; supported version is latest; vulnerability reporting uses GitHub private security advisory; response timeline says acknowledgement within 48h, status update within 7 days, fix timeline within 14 days; scope includes auth bypass, RCE, path traversal/arbitrary file read, SSRF, injection and sensitive data exposure"
   - "[Local:test] local command `uv run --extra dev pytest -q` in /opt/data/tmp/repo_wiki_agent_reach on 2026-06-18 installed project/dev deps into .venv and returned 162 passed in 10.36s. Earlier plain `uv run pytest -q` failed because pytest was not installed without dev extra."
@@ -141,7 +141,7 @@ Agent Reach 能安装和维护一个面向 agent 的互联网读取工具层。�
 
 ## 运行环境与资源占用
 
-Agent Reach 自身是 Python CLI，小型包，资源消耗低；`pyproject.toml` 要求 Python >=3.10，依赖 requests、feedparser、python-dotenv、loguru、pyyaml、rich、yt-dlp，optional deps 包括 Playwright、browser-cookie3、mcp[cli] [GH:pyproject]。
+Agent Reach 自身是 Python CLI，小型包，资源消耗低；`pyproject.toml` 要求 Python >=3.10，依赖 requests、feedparser、python-dotenv、loguru、pyyaml、rich、yt-dlp，optional deps 包括 Playwright、browser-cookie3、mcp optional cli [GH:pyproject]。
 
 真实资源占用由上游决定：YouTube/yt-dlp 可能下载字幕或媒体，OpenCLI 复用浏览器，音频转写可能使用外部转写后端，MCP/Exa/GitHub/Reddit/Twitter/B站等工具各有网络和缓存成本 [GH:readme][Docs:install][Docs:update]。
 

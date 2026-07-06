@@ -126,7 +126,7 @@ sources:
 |------|------|-----------|
 | [Brown Experimental](https://github.com/cognitive-engineering-lab/rust-book) | TRPL 的交互增强 fork | 有测验、Aquascope 可视化、高亮批注、自定义所有权章节。学习体验更好，但非官方、非印刷版 |
 | [Rust by Example](https://github.com/rust-lang/rust-by-example) | 代码驱动的 Rust 学习 | 侧重"看代码学 Rust"，无系统讲解。与 TRPL 互补——先读 TRPL 理解概念，再查 RbE 看代码 |
-| [Rustlings](https://github.com/rust-lang/rustlings) | 小型 Rust 练习集 | 侧重动手编码，非教材。与 TRPL 互补 |
+| [Rustlings 项目](https://github.com/rust-lang/rustlings) | 小型 Rust 练习集 | 侧重动手编码，非教材。与 TRPL 互补 |
 | [Comprehensive Rust](https://github.com/google/comprehensive-rust) | Google 的 Rust 培训（4 天） | 面向有 C++/Java 背景的工程师，节奏更快。适合企业培训，不适合零基础自学 |
 | [Rust Reference](https://doc.rust-lang.org/reference/) | Rust 语言参考手册 | 不是教材，是语言规范。TRPL 更侧重教学，Reference 更侧重精确定义 |
 | [The Cargo Book](https://doc.rust-lang.org/cargo/) | Cargo 包管理器文档 | 与 TRPL 互补——TRPL 教语言，Cargo Book 教构建工具 |

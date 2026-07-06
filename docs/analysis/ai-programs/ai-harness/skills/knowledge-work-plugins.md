@@ -213,6 +213,6 @@ README 给出 Claude Code 安装示例：`claude plugin marketplace add anthropi
 
 ---
 
-## 附录：评分说明
+### 附录：评分说明
 
 本条目按 non-software/hybrid rubric 评估：仓库主体是 plugin/skill/connector 配置集合，不是传统运行库。`capability` 既看角色和 connector 覆盖面，也因未实际验证任务正确性而下调；`performance` 因真实运行成本不可测而给中性分；`code_quality` 只评估结构、治理 workflow 和可验证性，不代表业务流程或 agent 行为质量；`security` 因外部 MCP/业务权限攻击面较大而保守给 2；`recommendation` 按 Develata 当前使用场景保守给 3。

@@ -129,7 +129,7 @@ sources:
 |------|------|-----------|
 | [rust-lang/book](https://github.com/rust-lang/book) | 官方 TRPL，Rust 语言的权威教程 | 无交互层，Chapter 4 为规则式教学，无异步章节。作为**参考手册**更优 |
 | [Rust by Example](https://github.com/rust-lang/rust-by-example) | 代码驱动的 Rust 学习 | 侧重"看代码学 Rust"，无系统讲解、无测验、无可视化。适合「先看例子再查书」的补充 |
-| [Rustlings](https://github.com/rust-lang/rustlings) | 小型 Rust 练习题集 | 侧重动手编码，非教材。与本项目互补——先读本书理解概念，再用 Rustlings 练习 |
+| [Rustlings 项目](https://github.com/rust-lang/rustlings) | 小型 Rust 练习题集 | 侧重动手编码，非教材。与本项目互补——先读本书理解概念，再用 Rustlings 练习 |
 | [Comprehensive Rust](https://github.com/google/comprehensive-rust) | Google 的 Rust 培训课程（4 天） | 面向有 C++/Java 背景的工程师，节奏更快、深度更浅。适合企业培训场景 |
 | [Rust 程序设计语言（中文版）](https://github.com/KaiserY/trpl-zh-cn) | 官方 TRPL 的中文翻译 | 无交互增强，翻译质量参差。本项目为英文，对中文读者有一定语言门槛 |
 
