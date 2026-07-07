@@ -45,7 +45,7 @@ sources:
   - "[GH:changelog] CHANGELOG.md local scan 2026-07-07; v4.1.0 added algorithms package support, allowed statement command optional PDF insertion, fixed extra spaces in keywords; v4.0.0 synchronized several undergraduate thesis-format changes from the 2026-04-24 official format style"
   - "[GH:ci] .github/workflows/test.yml local scan 2026-07-07; CI uses actions/checkout@v6 and zauguin/install-texlive@v4, then runs make main, LuaTeX build after clean, make doc, and make test/l3build check; failed test output is archived"
   - "[GH:makefile] Makefile local scan 2026-07-07; commands include main/doc builds via latexmk -xelatex, test via l3build check, save via test/save.sh, install into TEXMFHOME, and zip packaging"
-  - "[GH:class] ustcthesis.cls local scan 2026-07-07; declares version 4.1.0 dated 2026-05-30, requires LaTeX2e 2017/04/15 or later, requires XeLaTeX or LuaLaTeX, and exposes a key-value setup pattern through \ustcsetup / \ustc@define@key; CHANGELOG records blind-review and statement-page related interface changes"
+  - "[GH:class] ustcthesis.cls local scan 2026-07-07; declares version 4.1.0 dated 2026-05-30, requires LaTeX2e 2017/04/15 or later, requires XeLaTeX or LuaLaTeX, and exposes a key-value setup pattern through \\ustcsetup / \\ustc@define@key; CHANGELOG records blind-review and statement-page related interface changes"
   - "[GH:license] LICENSE local scan 2026-07-07; LaTeX Project Public License v1.3c"
 ---
 
