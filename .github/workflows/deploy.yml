@@ -38,6 +38,9 @@ jobs:
       - name: Build with VitePress
         run: npm run build
 
+      - name: Verify generated reports index is committed
+        run: git diff --exit-code -- docs/public/data/reports.json
+
       - name: Package Pages artifact
         run: |
           tar \
