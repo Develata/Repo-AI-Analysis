@@ -3,7 +3,9 @@
 
 title: "AutoGPT"
 created: 2026-05-20
-updated: 2026-05-27
+updated: 2026-07-11
+last_checked: 2026-07-11
+last_verified: 2026-07-11
 type: repository-analysis
 repo_url: "https://github.com/Significant-Gravitas/AutoGPT"
 category: "ai-programs/assistant-agents"
@@ -25,15 +27,19 @@ recommendation: "强烈建议作为 autonomous-agent 历史线收录；若作为
 status: active-platform-classic-deprecated
 license: "Polyform Shield + MIT"
 language: "Python / TypeScript"
-stars: 184425
-forks: 46228
+stars: 185457
+forks: 46113
 docker_support: true
 self_hostable: true
 enterprise_ready: false
 security_score: 2
-last_evaluated: 2026-05-20
+last_evaluated: 2026-07-11
 evidence: "GitHub API + GraphQL issue/PR counts + releases/contributors/advisories + official docs/site + local shallow clone scan; no runtime smoke test was performed."
 sources:
+  - "[GH:refresh-2026-07-11] GitHub REST/GraphQL snapshot for Significant-Gravitas/AutoGPT on 2026-07-11: canonical repository exists and is not archived/disabled; default_branch=master, pushed_at=2026-07-11T02:32:15Z, primary language=Python, GitHub license metadata=NOASSERTION, stars=185457, forks=46113, open issues=285, open PRs=208, releases=110."
+  - "[GH:releases-2026-07-11] GitHub Releases checked 2026-07-11: latest release autogpt-platform-beta-v0.6.66 published 2026-07-09; preceding stable beta tags v0.6.65/v0.6.64/v0.6.63/v0.6.62 were published from 2026-05-28 through 2026-06-25."
+  - "[GH:advisories-2026-07-11] GitHub repository security-advisories endpoint returned 32 published advisories on 2026-07-11. New post-audit examples include GHSA-rq9m-xvc7-v9h6 (medium webhook IDOR, patched 0.6.64), GHSA-j2cp-jg5q-38wj (high signup XSS/open redirect, patched 0.6.62), and GHSA-8qc5-rhmg-r6r6 (high SSRF bypass, patched 0.6.52). These are historical/patched-version records, not proof that v0.6.66 remains vulnerable."
+  - "[Docs:refresh-2026-07-11] https://docs.agpt.co/ extracted 2026-07-11: current docs still position AutoGPT Platform as low-code continuous-agent workflows with Server/Frontend, cloud and self-host paths, and a dual-license split of MIT for most of the repo versus Polyform Shield for autogpt_platform."
   - "[GH:api] GitHub REST API snapshot for Significant-Gravitas/AutoGPT on 2026-05-20: stars=184425, forks=46228, watchers=1534, open_issues_count=424, created_at=2023-03-16, pushed_at=2026-05-20, default_branch=master, language=Python, topics include autonomous-agents/agentic-ai/llm/openai, GitHub license spdx_id=NOASSERTION."
   - "[GH:graphql] GitHub GraphQL query on 2026-05-20: open issues=260, open PRs=164, releases=105, latest tag autogpt-platform-beta-v0.6.61 dated 2026-05-20."
   - "[GH:contributors] GitHub contributors API first page on 2026-05-20: 100 contributors returned; top contributor Auto-GPT-Bot with 1076 commits."
@@ -60,10 +66,10 @@ AutoGPT 是 autonomous-agent 史上必须收录的项目：Classic 把“让 GPT
 
 它的历史价值远高于今天的默认生产推荐。`Significant-Gravitas/AutoGPT` 拥有 18.4 万 stars、4.6 万 forks，是 2023 年自主智能体热潮的标志物；但当前主线已不是原来的 Classic agent，而是 `autogpt_platform`：一个连续运行 agent/workflow 的平台 [GH:api][GH:readme]。
 
-这个转向带来两重判断：
+这个转向带来两重判断；2026-07 的复核没有改变结论，只进一步强化了安全审计要求：
 
 - 作为 **agent history / 2023 autonomous-agent wave landmark**：分量很重。
-- 作为 **today's deployable platform**：要非常谨慎，因为 autogpt_platform 使用 Polyform Shield，Classic 已明确 deprecated/unsupported，且仓库有 21 条 GitHub Security Advisories 历史记录，其中包括 RCE、session hijacking、SSRF、secret logging 等平台级风险 [GH:license][GH:security][GH:advisories]。
+- 作为 **today's deployable platform**：要非常谨慎，因为 autogpt_platform 使用 Polyform Shield，Classic 已明确 deprecated/unsupported，且截至 2026-07-11 仓库有 32 条 published GitHub Security Advisories 历史记录，其中包括 RCE、session hijacking、SSRF、IDOR、XSS/open redirect 与 secret logging 等平台级风险 [GH:license][GH:security][GH:advisories-2026-07-11]。
 
 因此我把它放在 `ai-programs/assistant-agents`，并明确状态为 `active-platform-classic-deprecated`：这是按 Classic/agent-history lineage 归类，不表示当前 AutoGPT Platform 只是简单 assistant；当前 product surface 已明显接近 workflow automation / agent platform。
 
@@ -85,9 +91,9 @@ AutoGPT 是 autonomous-agent 史上必须收录的项目：Classic 把“让 GPT
 
 1. **Classic 已弃用且不受安全支持**：SECURITY 明确 classic/ deprecated、unsupported、out of scope for security reports [GH:security]。
 2. **混合许可证影响采用**：autogpt_platform 是 Polyform Shield，其余为 MIT；这不是简单的 MIT 项目 [GH:license]。
-3. **安全历史很重**：21 条 advisories，样本包括 critical RCE、high session hijacking、SSRF、secret logging、DoS 等；虽然多有 patched version，但这是攻击面强信号 [GH:advisories]。
+3. **安全历史很重**：32 条 published advisories，样本包括 critical RCE、high session hijacking、SSRF、IDOR、XSS/open redirect、secret logging 与 DoS；记录中的样本均列出 patched version，但这仍是攻击面强信号 [GH:advisories-2026-07-11]。
 4. **复杂度高**：self-host 推荐 4+ cores、8GB minimum RAM、Docker/Compose/Node/npm；不是轻量 CLI agent [GH:readme]。
-5. **issue/PR backlog 不低**：GraphQL 显示 open issues=260、open PRs=164 [GH:graphql]。
+5. **issue/PR backlog 不低**：2026-07-11 GraphQL 显示 open issues=285、open PRs=208 [GH:refresh-2026-07-11]。
 
 ## 适合什么场景
 
@@ -141,7 +147,7 @@ README 给出的 self-host 要求较重：
 
 Docker support: `docker_support: true` 指 self-host/development stack 路径；这说明它不是“一条 pip install 就跑”的轻量 agent，而是一个 Docker 化平台栈。
 
-frontmatter 中 `enterprise_ready: false` 是针对 AutoGPT Platform 当前 beta release line、Polyform Shield 边界、高严重度历史 advisories、未做 smoke test 与部署复杂度的保守判断，不是对其历史价值的否定 [GH:releases][GH:license][GH:advisories][GH:readme]。
+frontmatter 中 `enterprise_ready: false` 是针对 AutoGPT Platform 当前 beta release line（复核时最新 v0.6.66）、Polyform Shield 边界、高严重度历史 advisories、未做 smoke test 与部署复杂度的保守判断，不是对其历史价值的否定 [GH:releases-2026-07-11][GH:license][GH:advisories-2026-07-11][GH:readme]。
 
 ## 上手体验
 
@@ -162,7 +168,7 @@ README 提供一行安装脚本：macOS/Linux 下 `curl -fsSL https://setup.agpt
 
 - 前后端、docs、integrations、security/contribution 文件齐全。
 - AGENTS.md 给出较具体的 backend/frontend/testing/conventional commits 规则 [GH:local-scan]。
-- release 节奏仍活跃，latest beta release 为 2026-05-20 [GH:releases]。
+- release 节奏仍活跃，latest beta release 为 v0.6.66（2026-07-09）[GH:releases-2026-07-11]。
 
 负面：
 
@@ -190,7 +196,7 @@ README、docs site、integrations docs、SECURITY、CONTRIBUTING 都存在且信
 
 社区可见度是 5/5 级别：18.4 万 stars、4.6 万 forks、100 first-page contributors、community profile 100%（文件存在性信号）[GH:api][GH:contributors][GH:community]。
 
-成熟度只给 3/5：原因是成熟不是 stars。AutoGPT 经历了从 Classic 到 Platform 的大转向，当前 releases 是 `autogpt-platform-beta` 系列；GraphQL open issues=260/open PRs=164；安全公告历史重 [GH:graphql][GH:releases][GH:advisories]。
+成熟度只给 3/5：原因是成熟不是 stars。AutoGPT 经历了从 Classic 到 Platform 的大转向，当前 releases 仍是 `autogpt-platform-beta` 系列；2026-07-11 open issues=285/open PRs=208；安全公告历史重 [GH:refresh-2026-07-11][GH:releases-2026-07-11][GH:advisories-2026-07-11]。
 
 ## 安全与风险
 
@@ -200,12 +206,12 @@ README、docs site、integrations docs、SECURITY、CONTRIBUTING 都存在且信
 
 负面：
 
-- 21 条 advisories，且样本中有 critical RCE、高危 session hijacking、SSRF、secret logging、DoS、Redis pickle deserialization/RCE 等 [GH:advisories]。
+- 32 条 published advisories，且样本中有 critical RCE、高危 session hijacking、SSRF、IDOR、XSS/open redirect、secret logging、DoS、Redis pickle deserialization/RCE 等 [GH:advisories-2026-07-11]。
 - Classic 被明确标为 deprecated/unsupported/out of scope [GH:security]。
 - workflow blocks 与外部 credentials、webhooks、browser/web actions 的组合天然扩大攻击面 [GH:integrations]。
 - Polyform Shield 对商业竞争场景有许可证风险 [GH:license]。
 
-因此 security_score 只给 2/5。不是说当前 latest 必然有已知未修漏洞，而是历史攻击面和平台权限模型要求很高。
+因此 security_score 只给 2/5。不是说当前 v0.6.66 必然仍受这些已修公告影响，而是历史攻击面和平台权限模型要求很高；操作时仍须逐条核对所部署版本与公告 patched version。
 
 ## 学习价值
 

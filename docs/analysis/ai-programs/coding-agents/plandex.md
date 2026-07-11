@@ -4,6 +4,7 @@
 title: "Plandex"
 created: 2026-05-20
 updated: 2026-05-27
+last_checked: 2026-07-11
 type: repository-analysis
 repo_url: "https://github.com/plandex-ai/plandex"
 category: "ai-programs/coding-agents"
