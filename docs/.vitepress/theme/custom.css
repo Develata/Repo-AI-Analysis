@@ -70,14 +70,18 @@ body {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
   gap: 18px;
-  align-items: stretch;
+  align-items: start;
   padding: 28px 0 48px;
 }
 
-.raia-home-v2 {
-  grid-template-areas:
-    'radar latest'
-    'taxonomy picks';
+.raia-home-column {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.raia-home-column > .raia-panel {
+  grid-area: auto;
 }
 
 .raia-analysis-copy {
@@ -112,9 +116,53 @@ body {
 }
 
 .raia-home-radar-card {
-  min-height: min(54vh, 540px);
-  padding: clamp(18px, 4vw, 44px);
+  min-height: 360px;
+  padding: clamp(14px, 2.5vw, 28px);
   background: radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--vp-c-brand-soft) 72%, transparent), transparent 58%), var(--raia-glass-bg) !important;
+}
+
+.raia-home-lens-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(190px, 0.46fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.raia-home-lens-summary {
+  display: grid;
+  align-content: center;
+  gap: 18px;
+  padding: 18px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--vp-c-bg) 72%, transparent);
+}
+
+.raia-home-lens-summary > div:first-child strong {
+  display: block;
+  color: var(--vp-c-brand-1);
+  font-size: 34px;
+}
+
+.raia-home-lens-summary span,
+.raia-home-lens-summary dt {
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+}
+
+.raia-home-lens-summary dl,
+.raia-home-lens-summary dd {
+  margin: 0;
+}
+
+.raia-home-lens-summary dl {
+  display: grid;
+  gap: 12px;
+}
+
+.raia-home-lens-summary dd {
+  margin-top: 3px;
+  line-height: 1.5;
 }
 
 .raia-home-radar-card .raia-radar {
@@ -125,6 +173,42 @@ body {
   width: min(100%, 440px);
   height: auto;
   overflow: visible;
+}
+
+.raia-radar-figure {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.raia-radar-title {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.raia-radar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 14px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+}
+
+.raia-radar-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.raia-radar-legend li span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
 }
 
 .raia-radar-grid {
@@ -258,12 +342,21 @@ body {
 }
 
 .raia-home-latest-panel .raia-latest-list {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .raia-home-latest-item {
   align-content: space-between;
-  min-height: 210px;
+  min-height: 250px;
+}
+
+.raia-path {
+  display: block;
+  overflow: hidden;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .raia-home-latest-item button {
@@ -287,7 +380,7 @@ body {
 }
 
 .raia-home-category-grid {
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .raia-home-category-card {
@@ -309,7 +402,7 @@ body {
 }
 
 .raia-home-picks {
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .raia-home-picks a {
@@ -332,14 +425,23 @@ body {
 }
 
 .raia-analysis-toolbar {
+  position: sticky;
+  top: calc(var(--vp-nav-height) + 8px);
+  z-index: 10;
   display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(220px, 260px) minmax(180px, 220px);
-  gap: 12px;
+  grid-template-columns: minmax(190px, 1fr) minmax(150px, 210px) minmax(120px, 160px) minmax(130px, 180px) minmax(120px, 160px) auto;
+  gap: 10px;
   margin: 20px 0;
+  padding: 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--vp-c-bg) 92%, transparent);
+  backdrop-filter: blur(14px);
 }
 
 .raia-analysis-toolbar input,
-.raia-analysis-toolbar select {
+.raia-analysis-toolbar select,
+.raia-filter-clear {
   width: 100%;
   min-height: 38px;
   border: 1px solid var(--vp-c-divider);
@@ -349,13 +451,56 @@ body {
   color: var(--vp-c-text-1);
 }
 
+.raia-filter-clear {
+  width: auto;
+  color: var(--vp-c-brand-1);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.raia-card {
+  text-decoration: none !important;
+}
+
+.raia-chip.is-warning {
+  border-color: var(--vp-c-warning-1);
+  color: var(--vp-c-warning-1);
+}
+
+.raia-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  align-items: center;
+  margin: 26px 0;
+}
+
+.raia-pagination button {
+  min-height: 38px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0 14px;
+  color: var(--vp-c-text-1);
+  background: var(--raia-glass-bg);
+  cursor: pointer;
+}
+
+.raia-pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .raia-card-grid {
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 
 .raia-report-header {
-  margin-bottom: 28px;
-  padding: min(5vw, 32px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 24px;
 }
 
 .raia-report-header + .main .vp-doc > div:first-child > h1:first-child {
@@ -364,13 +509,29 @@ body {
 
 .raia-report-title {
   margin: 0 0 18px;
-  font-size: clamp(32px, 5vw, 56px);
+  font-size: clamp(32px, 4vw, 46px);
   line-height: 1.06;
+}
+
+.raia-report-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.raia-status-badge {
+  border: 1px solid var(--vp-c-warning-1);
+  border-radius: 999px;
+  padding: 4px 9px;
+  color: var(--vp-c-warning-1);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .raia-score-deck {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 18px;
 }
@@ -392,9 +553,71 @@ body {
   font-size: 12px;
 }
 
+.raia-report-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.raia-report-facts > * {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 3px 8px;
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.raia-report-evidence {
+  margin: 0 0 16px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.raia-report-radar-card {
+  min-height: 0;
+  padding: 8px;
+}
+
+.raia-report-radar-card .raia-radar {
+  width: min(100%, 260px);
+}
+
+.raia-data-state {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  margin: 28px 0;
+  padding: 22px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  color: var(--vp-c-text-2);
+  background: var(--raia-glass-bg);
+}
+
+.raia-data-state strong {
+  color: var(--vp-c-text-1);
+}
+
+.raia-data-state button {
+  min-height: 38px;
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 8px;
+  padding: 0 14px;
+  color: var(--vp-c-brand-1);
+  background: transparent;
+  cursor: pointer;
+}
+
+.raia-data-state.is-error {
+  border-color: var(--vp-c-danger-1);
+}
+
 .raia-compare {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
   gap: 18px;
   align-items: start;
   padding-top: 22px;
@@ -432,9 +655,93 @@ body {
   width: 100%;
 }
 
+.raia-compare-selector {
+  position: sticky;
+  top: calc(var(--vp-nav-height) + 12px);
+  max-height: calc(100vh - var(--vp-nav-height) - 24px);
+  overflow: hidden;
+}
+
+.raia-selected-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.raia-selected-list button {
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 999px;
+  padding: 5px 9px;
+  color: var(--vp-c-brand-1);
+  background: transparent;
+  cursor: pointer;
+}
+
+.raia-selected-list button.is-clear {
+  border-color: var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+}
+
+.raia-compare-filter {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.raia-compare-filter input[type='search'] {
+  min-width: 0;
+  min-height: 38px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 0 10px;
+  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
+}
+
+.raia-compare-filter label {
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.raia-inline-alert,
+.raia-inline-note {
+  margin: 10px 0;
+  border-left: 3px solid var(--vp-c-warning-1);
+  padding: 8px 10px;
+  color: var(--vp-c-text-2);
+  background: color-mix(in srgb, var(--vp-c-warning-soft) 65%, transparent);
+}
+
+.raia-inline-note {
+  border-color: var(--vp-c-brand-1);
+  background: color-mix(in srgb, var(--vp-c-brand-soft) 65%, transparent);
+}
+
+.raia-sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  clip-path: inset(50%) !important;
+}
+
 .raia-compare .raia-compare-options {
   grid-template-columns: 1fr;
   gap: 8px;
+  max-height: min(58vh, 620px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.raia-compare-list-empty {
+  min-height: 150px;
+  margin-top: 10px;
 }
 
 .raia-compare-folder,
@@ -555,16 +862,42 @@ body {
 }
 
 @media (max-width: 1080px) {
-  .raia-home {
+  .raia-home,
+  .raia-compare {
     grid-template-columns: 1fr;
   }
 
-  .raia-home-v2 {
-    grid-template-areas:
-      'radar'
-      'latest'
-      'taxonomy'
-      'picks';
+  .raia-compare-selector {
+    position: static;
+    max-height: none;
+  }
+
+  .raia-compare .raia-compare-options {
+    max-height: 520px;
+  }
+
+  .raia-analysis-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .raia-home-column {
+    display: contents;
+  }
+
+  .raia-home-radar-panel {
+    order: 1;
+  }
+
+  .raia-home-latest-panel {
+    order: 2;
+  }
+
+  .raia-home-taxonomy-panel {
+    order: 3;
+  }
+
+  .raia-home-top-panel {
+    order: 4;
   }
 
   .raia-home-latest-panel .raia-latest-list {
@@ -575,7 +908,10 @@ body {
 @media (max-width: 720px) {
   .raia-analysis-toolbar,
   .raia-score-deck,
-  .raia-home-latest-panel .raia-latest-list {
+  .raia-home-latest-panel .raia-latest-list,
+  .raia-home-lens-layout,
+  .raia-home-picks,
+  .raia-report-header {
     grid-template-columns: 1fr;
   }
 
@@ -586,5 +922,26 @@ body {
   .raia-radar-card {
     min-height: 320px;
     padding: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .VPFeature:hover,
+  .raia-card:hover,
+  .raia-latest-item:hover,
+  .raia-home-category-card:hover,
+  .raia-home-picks a:hover,
+  .raia-button-primary:hover,
+  .raia-button-ghost:hover {
+    transform: none;
   }
 }

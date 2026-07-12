@@ -1,32 +1,31 @@
 <script setup lang="ts">
 import { useRouter, withBase } from 'vitepress';
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
+import { useReports } from '../composables/useReports';
 
 const router = useRouter();
+const { reports, ensureReports } = useReports();
+const jumping = ref(false);
 
-const modules = import.meta.glob([
-  '../../../analysis/**/*.md',
-  '!../../../analysis/index.md',
-]);
-
-const urls = Object.keys(modules)
-  .map((filePath) => filePath
-    .replace(/^\.\.\/\.\.\/\.\.\/analysis\//u, '/analysis/')
-    .replace(/\.md$/u, '')
-    .replace(/\/index$/u, '/'))
-  .sort();
-
-function jumpRandom() {
-  const currentPath = decodeURI(router.route.path).replace(/\.html$/u, '').replace(/\/$/u, '');
-  const availableUrls = urls.filter((url) => decodeURI(url).replace(/\/$/u, '') !== currentPath);
-
-  if (availableUrls.length === 0) {
-    window.alert('没有其他分析了。');
-    return;
+async function jumpRandom() {
+  if (jumping.value) return;
+  jumping.value = true;
+  try {
+    await ensureReports();
+    const currentPath = decodeURI(router.route.path).replace(/\.html$/u, '').replace(/\/$/u, '');
+    const available = reports.value.filter((report) => decodeURI(report.route).replace(/\/$/u, '') !== currentPath);
+    if (available.length === 0) {
+      window.alert('没有其他分析了。');
+      return;
+    }
+    const report = available[Math.floor(Math.random() * available.length)];
+    router.go(withBase(report.route));
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    window.alert(`无法读取报告索引：${message}`);
+  } finally {
+    jumping.value = false;
   }
-
-  const targetUrl = availableUrls[Math.floor(Math.random() * availableUrls.length)];
-  router.go(withBase(targetUrl));
 }
 
 function handleGlobalClick(event: MouseEvent) {
@@ -34,25 +33,26 @@ function handleGlobalClick(event: MouseEvent) {
   const link = target.closest('a');
   const href = link?.getAttribute('href');
   if (!href?.includes('#randomjump')) return;
-
   event.preventDefault();
-  jumpRandom();
+  void jumpRandom();
 }
 
-onMounted(() => {
-  window.addEventListener('click', handleGlobalClick);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('click', handleGlobalClick);
-});
+onMounted(() => window.addEventListener('click', handleGlobalClick));
+onUnmounted(() => window.removeEventListener('click', handleGlobalClick));
 </script>
 
 <template>
   <div class="nav-item">
-    <button class="random-btn" type="button" title="随机访问一篇分析" @click="jumpRandom">
-      <span class="icon">🎲</span>
-      <span class="text">Roll</span>
+    <button
+      class="random-btn"
+      type="button"
+      title="随机访问一篇分析"
+      :disabled="jumping"
+      :aria-busy="jumping"
+      @click="jumpRandom"
+    >
+      <span class="icon" aria-hidden="true">🎲</span>
+      <span class="text">{{ jumping ? 'Loading' : 'Roll' }}</span>
     </button>
   </div>
 </template>
@@ -77,14 +77,18 @@ onUnmounted(() => {
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
 
-.random-btn:hover {
+.random-btn:hover:not(:disabled) {
   border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
   background-color: var(--vp-c-bg-soft);
-  transform: translateY(-1px);
+}
+
+.random-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
 }
 
 .icon {
@@ -95,9 +99,8 @@ onUnmounted(() => {
   .text {
     display: none;
   }
-
   .random-btn {
-    padding: 0 8px;
+    padding: 0 10px;
   }
 }
 </style>
