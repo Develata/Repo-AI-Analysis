@@ -6,7 +6,7 @@ created: 2026-05-18
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/code-yeongyu/oh-my-openagent"
-category: "ai-programs/agent-infrastructure"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: ["opencode", "agent-orchestration", "multi-agent", "coding-agent", "mcp", "hooks", "skills", "typescript"]
 previous_repo: ""
 successor: ""
@@ -71,7 +71,7 @@ sources:
 
 # oh-my-openagent
 
-> OpenCode 的 batteries-included 多模型、多智能体 orchestration harness：把 hooks、skills、MCP、LSP/AST 工具、background agents、team mode 与模型路由压成一个可安装的 coding-agent infrastructure 包。
+> OpenCode 的 batteries-included 多模型、多智能体 orchestration harness：把 hooks、skills、MCP、LSP/AST 工具、background agents、team mode 与模型路由压成一个可安装的复合型 AI plugin。
 >
 > **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 3/5
 > **核验版本**: GitHub dev commit `37bd866c32b1d140526967b51b8c8957e9daed83`；GitHub API / npm registry 快照 2026-05-18
@@ -88,7 +88,7 @@ oh-my-openagent 的价值在于把 OpenCode 从一个交互式 coding agent host
 
 但它的风险也来自同一结构。安装文档默认建议“让 LLM agent 安装”，并要求根据 Claude/OpenAI/Gemini/Copilot/Z.ai/Kimi/Vercel 等订阅组合生成 flags；匿名 telemetry 默认开启；包名处于 `oh-my-opencode` 到 `oh-my-openagent` 的 rename transition；GitHub API 快照显示 313 open issues、256 open PRs，近期 bug 与兼容性问题密集；repo 未见 `SECURITY.md`，但产品会运行 hooks、MCP、shell-like tools 与外部 provider 配置 [Docs:installation][Docs:privacy][GH:issues][GH:prs][GH:local-scan]。
 
-结论：这是一个值得重点观察和实验的 OpenCode agent infrastructure repo，尤其适合 Develata 研究多智能体 coding workflow、模型路由与工具 harness；但它不适合保守生产环境直接全量启用。正确使用时，它能把多模型、多工具、多角色分工组织成 workflow；错误使用时，它会把 agent、provider、shell、MCP 与本地仓库的复杂性聚成一团。
+结论：这是一个值得重点观察和实验的 OpenCode AI plugin repo，尤其适合 Develata 研究多智能体 coding workflow、模型路由与工具 harness；但它不适合保守生产环境直接全量启用。正确使用时，它能把多模型、多工具、多角色分工组织成 workflow；错误使用时，它会把 agent、provider、shell、MCP 与本地仓库的复杂性聚成一团。
 
 ## 推荐度：3/5
 
@@ -142,7 +142,7 @@ oh-my-openagent 的价值在于把 OpenCode 从一个交互式 coding agent host
 | OpenCode | coding agent host / TUI | oh-my-openagent 是 OpenCode 之上的 orchestration harness，不是基础 host |
 | Claude Code | Claude-first coding agent | oh-my-openagent 更强调 multi-provider / multi-model，不锁定单一 provider |
 | Codex CLI | GPT-native coding CLI | oh-my-openagent 把 GPT 作为多角色体系的一部分，而不是单一 worker |
-| oh-my-claudecode | Claude Code 的 agent infrastructure layer | 两者都属于 agent infrastructure；oh-my-openagent 的主场是 OpenCode 与 multi-provider routing |
+| oh-my-claudecode | Claude Code 的复合型 AI plugin | 两者都属于 `ai-harness/ai-plugins`；oh-my-openagent 的主场是 OpenCode 与 multi-provider routing |
 | LangChain / LangGraph | Agent/LLM application framework | LangChain 是面向开发者构建 agent apps 的库；oh-my-openagent 是面向 coding workflow 的 runtime/harness |
 
 上述项目只做定位级对比，未按同一 10 维度框架深审。
@@ -151,7 +151,7 @@ oh-my-openagent 的价值在于把 OpenCode 从一个交互式 coding agent host
 
 ## 它能做什么
 
-capability 评分 5/5。理由是它覆盖了 OpenCode agent infrastructure 的几乎所有重要维度：
+capability 评分 5/5。理由是它覆盖了 OpenCode 复合型 AI plugin 的几乎所有重要维度：
 
 - **Agent roles**：Sisyphus orchestrator、Hephaestus GPT-native worker、Prometheus planner、Atlas executor、Oracle、Librarian、Explore、Metis、Momus、multimodal-looker、sisyphus-junior 等 11 个 built-in agents [Docs:overview][Docs:orchestration]。
 - **Model/category routing**：通过 agent settings、categories、fallback_models、variant、reasoningEffort、textVerbosity 等配置，把任务路由到不同 provider/model [Docs:configuration]。

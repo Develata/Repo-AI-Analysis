@@ -127,7 +127,7 @@ Develata 的判断是对的：CLI-Anything 应归入 `ai-programs/agent-infrastr
 | RTK | agent shell 输出 token 压缩代理 | RTK 处理已有 CLI 输出效率；CLI-Anything 让更多软件先拥有 agent-friendly CLI |
 | oh-my-openagent | coding-agent orchestration harness | oh-my-openagent 组织多 agent workflow；CLI-Anything 提供可被这些 agent 调用的工具生态 |
 
-上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审。
+上述项目跨 `ai-programs/agent-infrastructure` 与相邻 AI harness categories 做定位级对比，未按同一 10 维度框架深审。
 
 ---
 

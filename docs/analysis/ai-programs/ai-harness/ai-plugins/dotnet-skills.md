@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/dotnet/skills"
-category: "ai-programs/ai-harness/skills"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: [dotnet, csharp, agent-skills, coding-agent, evaluation, microsoft]
 previous_repo: ""
 successor: ""

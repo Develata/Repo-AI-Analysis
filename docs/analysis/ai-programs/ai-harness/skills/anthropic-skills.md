@@ -45,8 +45,8 @@ sources:
   - "[Docs:api] https://docs.claude.com/en/api/skills-guide"
   - "[Docs:help-what] https://support.claude.com/en/articles/12512176-what-are-skills"
   - "[Docs:help-use] https://support.claude.com/en/articles/12512180-using-skills-in-claude"
-  - "[GH:superpowers] https://github.com/obra/superpowers — same-category comparison; existing local analysis under ai-programs/agent-skills/superpowers.md"
-  - "[GH:scientific-agent-skills] https://github.com/K-Dense-AI/scientific-agent-skills — same-category comparison; existing local analysis under ai-programs/agent-skills/scientific-agent-skills.md"
+  - "[GH:superpowers] https://github.com/obra/superpowers — adjacent plugin comparison; existing local analysis under ai-programs/ai-harness/ai-plugins/superpowers.md"
+  - "[GH:scientific-agent-skills] https://github.com/K-Dense-AI/scientific-agent-skills — same-category comparison; existing local analysis under ai-programs/ai-harness/skills/scientific-agent-skills.md"
 ---
 
 # Anthropic Agent Skills

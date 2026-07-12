@@ -122,7 +122,7 @@ cal.diy 的核心价值不是“又一个日历 UI”，而是把 event types、
 | RTK | agent shell 输出 token 压缩代理 | RTK 是 token/cost 中间层；cal.diy 是外部业务流程的 scheduling substrate |
 | oh-my-openagent | coding-agent orchestration harness | oh-my-openagent 组织多 agent coding workflow；cal.diy 更像 agent 可调用的时间协调后端 |
 
-上述项目按 `ai-programs/agent-infrastructure` 同类范围做定位级对比，未按同一 10 维度框架深审。cal.diy 是该目录中的边界型项目：它不是 agent-specific，但可作为 agent scheduling infrastructure 使用；若后续 wiki 新增 `scheduling/` 或 `self-hosted-saas/` 目录，可考虑迁移。
+上述项目跨 `ai-programs/agent-infrastructure` 与相邻 AI harness categories 做定位级对比，未按同一 10 维度框架深审。cal.diy 是该目录中的边界型项目：它不是 agent-specific，但可作为 agent scheduling infrastructure 使用；若后续 wiki 新增 `scheduling/` 或 `self-hosted-saas/` 目录，可考虑迁移。
 
 ---
 

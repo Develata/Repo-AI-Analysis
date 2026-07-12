@@ -6,7 +6,7 @@ created: 2026-05-18
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/Yeachan-Heo/oh-my-claudecode"
-category: "ai-programs/agent-infrastructure"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: ["claude-code", "multi-agent", "agent-orchestration", "agent-infrastructure", "hooks", "skills", "mcp", "typescript"]
 previous_repo: ""
 successor: ""
@@ -71,7 +71,7 @@ sources:
 
 ## 一句话总结
 
-oh-my-claudecode 适合已经重度使用 Claude Code、希望把单个 coding agent 扩展成「可分工、可持久、可审查、可调用外部 CLI」工作流的 advanced users；它是强大的 agent infrastructure，而不是轻量新手插件。
+oh-my-claudecode 适合已经重度使用 Claude Code、希望把单个 coding agent 扩展成「可分工、可持久、可审查、可调用外部 CLI」工作流的 advanced users；它是强大的复合型 AI plugin，而不是轻量单功能插件。
 
 ## 总体评价
 
@@ -154,7 +154,7 @@ OMC 的能力可以分成六层：
 5. **skills / commands / hooks**：提供 autopilot、ralph、ultrawork、ccg、deep-interview、omc-doctor、project-session-manager 等 skills/commands，并通过 hooks 做 prompt detection、state persistence、recovery、rules injection、context handling 等 [Docs:ref]。
 6. **MCP / code intelligence tools**：包含 state、team、notepad、project memory、LSP、AST、Python REPL 等工具；本地源码的 `src/tools/AGENTS.md` 明确列出 12 个 LSP tools、2 个 AST tools 与 Python REPL [Docs:ref]。
 
-capability 给 5/5：在 Claude Code agent infrastructure 这个定义域内，OMC 覆盖从 orchestration 到 persistence、code intelligence、external workers、skills、hooks 的几乎所有预期场景。扣分不放在 capability，而放在 usability、maturity 与 security。
+capability 给 5/5：在 Claude Code 复合型 AI plugin 这个定义域内，OMC 覆盖从 orchestration 到 persistence、code intelligence、external workers、skills、hooks 的几乎所有预期场景。扣分不放在 capability，而放在 usability、maturity 与 security。
 
 ## 运行环境与资源占用
 

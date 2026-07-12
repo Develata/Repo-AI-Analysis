@@ -6,7 +6,7 @@ created: 2026-05-19
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/github/spec-kit"
-category: "ai-programs/ai-harness/skills"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: [agent-skills, spec-driven-development, ai-coding, github, workflow, cli]
 previous_repo: ""
 successor: ""
@@ -45,8 +45,8 @@ sources:
   - "[Docs:presets] https://github.github.com/spec-kit/community/presets.html"
   - "[GH:contributing] https://github.com/github/spec-kit/blob/main/CONTRIBUTING.md"
   - "[GH:security] https://github.com/github/spec-kit/security/advisories — checked 2026-05-19: no published security advisories"
-  - "[GH:superpowers] https://github.com/obra/superpowers — same-category comparison candidate; existing local analysis under ai-programs/agent-skills/superpowers.md"
-  - "[GH:scientific-agent-skills] https://github.com/K-Dense-AI/scientific-agent-skills — same-category comparison candidate; existing local analysis under ai-programs/agent-skills/scientific-agent-skills.md"
+  - "[GH:superpowers] https://github.com/obra/superpowers — same-category comparison candidate; existing local analysis under ai-programs/ai-harness/ai-plugins/superpowers.md"
+  - "[GH:scientific-agent-skills] https://github.com/K-Dense-AI/scientific-agent-skills — adjacent pure-skill comparison candidate; existing local analysis under ai-programs/ai-harness/skills/scientific-agent-skills.md"
   - "[GH:agent-os] https://github.com/buildermethods/agent-os — same-category comparison candidate checked 2026-05-19"
   - "[GH:local-scan] /tmp/repo-analysis-spec-openlist/spec-kit at 51e6a140e291f6f83b920fcf848531d17940ef9d, cloned 2026-05-19: 314 git-tracked files, 63 pytest files, 9 workflow files, 30 integration dirs, pyproject requires Python >=3.11"
 ---
@@ -131,7 +131,7 @@ Spec Kit 的价值不在于“又一个 prompt 包”，而在于把开发中最
 | scientific-agent-skills | 科研/论文阅读/实验 workflow skills | Spec Kit 面向通用软件开发 spec-first 流程；scientific-agent-skills 更偏科研任务编排，不是通用项目初始化工具 [GH:scientific-agent-skills]。 |
 | Agent OS | 面向 AI-powered development 的 coding standards / spec shaping 系统 | Spec Kit 更强调跨 agent CLI 初始化、artifact layout 与 extension/preset 生态；Agent OS 更偏项目标准、产品上下文和 Claude Code 风格的轻量 spec shaping [GH:agent-os]。 |
 
-上述项目按 `ai-programs/agent-skills/` 同类范围做定位级对比，未按同一 10 维度框架深审。
+上述项目按 `ai-programs/ai-harness/ai-plugins/` 与相邻 pure-skill 项目做定位级对比，未按同一 10 维度框架深审。
 
 ---
 

@@ -4,7 +4,7 @@ created: 2026-07-12
 updated: 2026-07-12
 type: repository-analysis
 repo_url: "https://github.com/Dicklesworthstone/destructive_command_guard"
-category: "dev-tools"
+category: "ai-programs/ai-harness/hooks"
 tags: ["rust", "developer-tools", "ai-agents", "safety-hook", "command-guard", "git-safety", "shell-safety"]
 previous_repo: ""
 successor: ""
@@ -128,7 +128,7 @@ sources:
 | omamori | macOS-focused Rust guard，结合 PATH shims、hooks、trash/stash 与 tamper-evident audit | omamori 更强调 self-disablement protection 与 macOS defense layers；dcg 平台面更广、pack catalog 更大 [GH:comparison-omamori] |
 | slb | 为 destructive commands 引入 multi-agent two-person approval 的 Go CLI | slb 解决“谁批准执行”，dcg 解决“本地规则是否直接阻断”；前者流程更重，后者更适合低延迟 inline hook [GH:comparison-slb] |
 
-上述项目按 `dev-tools` 中的 agent command-safety 工具做定位级对比；仅核验了官方 repo metadata/README 级信息，未按同一 10 维度框架深审，表格不构成质量或安全性 benchmark [GH:comparison-cc-safety-net][GH:comparison-omamori][GH:comparison-slb]。
+上述项目按 `ai-programs/ai-harness/hooks` 中的 agent command-safety 工具做定位级对比；仅核验了官方 repo metadata/README 级信息，未按同一 10 维度框架深审，表格不构成质量或安全性 benchmark [GH:comparison-cc-safety-net][GH:comparison-omamori][GH:comparison-slb]。
 
 ---
 

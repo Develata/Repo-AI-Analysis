@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/humanlayer/12-factor-agents"
-category: "ai-programs/ai-harness/skills"
+category: "ai-programs/ai-harness/guides/agent-engineering"
 tags: ["agent-methodology", "llm-apps", "context-engineering", "human-in-the-loop", "tutorial", "non-software"]
 previous_repo: ""
 successor: ""
@@ -47,9 +47,9 @@ sources:
   - "[GH:claude] CLAUDE.md in local clone checked 2026-05-31: generated promptx instructions demand persona selection and contain generic placeholder project context/commands; relevant as prompt-supply-chain risk if copied blindly"
   - "[GH:workshop] packages/create-12-factor-agent/template/README.md and package manifests in local clone checked 2026-05-31: TypeScript workshop template, Node/npm/BAML/Baseten/OpenAI-like API-key setup, walkthrough chapters from CLI/agent loop to tools/human approval/webhook; package has build/dev scripts but no formal release in repository releases; workshop behavior not smoke-tested"
   - "[Anthropic:effective-agents] https://www.anthropic.com/engineering/building-effective-agents — referenced by README as contrast for agent-loop patterns"
-  - "[GH:spec-kit] https://github.com/github/spec-kit — same-category comparison; existing local analysis under ai-programs/agent-skills/spec-kit.md"
-  - "[GH:superpowers] https://github.com/obra/superpowers — same-category comparison; existing local analysis under ai-programs/agent-skills/superpowers.md"
-  - "[GH:anthropic-skills] https://github.com/anthropics/skills — same-category comparison; existing local analysis under ai-programs/agent-skills/anthropic-skills.md"
+  - "[GH:spec-kit] https://github.com/github/spec-kit — adjacent plugin comparison; existing local analysis under ai-programs/ai-harness/ai-plugins/spec-kit.md"
+  - "[GH:superpowers] https://github.com/obra/superpowers — adjacent plugin comparison; existing local analysis under ai-programs/ai-harness/ai-plugins/superpowers.md"
+  - "[GH:anthropic-skills] https://github.com/anthropics/skills — adjacent pure-skill comparison; existing local analysis under ai-programs/ai-harness/skills/anthropic-skills.md"
 ---
 
 # 12-Factor Agents
@@ -121,7 +121,7 @@ sources:
 | Superpowers | Agent skills / process discipline，强调 TDD、debugging、review 等可触发 workflow | Superpowers 更像 agent 操作规训包；12-Factor Agents 更像 LLM application design manifesto [GH:superpowers]。 |
 | Anthropic Skills | 官方 skills 语料与产品能力样本 | Anthropic Skills 是可被 Claude 产品加载的 skill content；12-Factor Agents 不是 skill runtime，而是工程方法论 [GH:anthropic-skills]。 |
 
-上述项目按 `ai-programs/agent-skills/` 同类范围做定位级对比，未按同一 10 维度框架深审。
+上述项目按 AI harness engineering 的相邻方法论、plugin 与 skill 项目做定位级对比，未按同一 10 维度框架深审。
 
 ---
 

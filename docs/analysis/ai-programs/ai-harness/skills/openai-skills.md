@@ -45,9 +45,9 @@ sources:
   - "[Docs:openai-skills] https://developers.openai.com/codex/skills — extracted 2026-05-31: skills are reusable instructions/resources/scripts; Codex uses progressive disclosure; available in Codex CLI, IDE extension, and app; initial skill-list context cap is roughly 2% of model context or 8000 chars if unknown"
   - "[Docs:create-skill] https://developers.openai.com/codex/skills/create-skill — extracted 2026-05-31: skills are authoring format, plugins are distribution unit; locations include repo/user/admin/system scopes; `SKILL.md` requires name and description"
   - "[Docs:agentskills] https://agentskills.io — extracted 2026-05-31: Agent Skills is an open folder format with SKILL.md plus optional scripts/references/assets; progressive disclosure stages are discovery, activation, execution"
-  - "[GH:anthropic-skills] https://github.com/anthropics/skills — same-category official Agent Skills reference; existing local analysis under ai-programs/agent-skills/anthropic-skills.md"
-  - "[GH:cursor-plugins] https://github.com/cursor/plugins — same-category Cursor plugin marketplace; existing local analysis under ai-programs/agent-skills/cursor-plugins.md"
-  - "[GH:knowledge-work] https://github.com/anthropics/knowledge-work-plugins — same-category role-level Claude plugin marketplace; existing local analysis under ai-programs/agent-skills/knowledge-work-plugins.md"
+  - "[GH:anthropic-skills] https://github.com/anthropics/skills — same-category official Agent Skills reference; existing local analysis under ai-programs/ai-harness/skills/anthropic-skills.md"
+  - "[GH:cursor-plugins] https://github.com/cursor/plugins — adjacent Cursor plugin marketplace; existing local analysis under ai-programs/ai-harness/ai-plugins/cursor-plugins.md"
+  - "[GH:knowledge-work] https://github.com/anthropics/knowledge-work-plugins — adjacent role-level Claude plugin marketplace; existing local analysis under ai-programs/ai-harness/ai-plugins/knowledge-work-plugins.md"
 ---
 
 # OpenAI Skills
@@ -130,7 +130,7 @@ sources:
 | Knowledge Work Plugins | Claude Cowork 的企业角色插件 marketplace | Knowledge Work 是 role-level business plugin；OpenAI Skills 更偏 Codex/developer workflow catalog [GH:knowledge-work]。 |
 | Superpowers / community skill packs | 跨平台工程纪律或个人方法论 skill collection | 社区 skill packs 方法论可能更完整或风格更鲜明；OpenAI Skills 的优势是官方 Codex 对齐，劣势是年轻、治理信号仍少。 |
 
-上述项目按 `ai-programs/ai-harness/skills` 同类范围做定位级对比，未按同一 10 维度框架在本轮重新深审；比较重点是 taxonomy placement，不是无来源的优劣判定。
+上述项目跨 `ai-programs/ai-harness/skills` 与相邻 `ai-programs/ai-harness/ai-plugins` 做定位级对比，未按同一 10 维度框架在本轮重新深审；比较重点是 taxonomy placement，不是无来源的优劣判定。
 
 ---
 

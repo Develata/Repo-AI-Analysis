@@ -4,7 +4,7 @@ created: 2026-06-19
 updated: 2026-06-19
 type: repository-analysis
 repo_url: "https://github.com/DietrichGebert/ponytail"
-category: "ai-programs/ai-harness/skills"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: [agent-skills, prompt-engineering, claude-code-plugin, cursor-rules, codex-plugin, yagni, developer-tools]
 previous_repo: ""
 successor: ""
@@ -127,7 +127,7 @@ sources:
 | Superpowers | agentic SDLC / workflow skill collection | `superpowers` 更像完整开发流程方法论；`ponytail` 只盯一个原则：少写不必要代码，scope 更窄但更容易植入 [WikiLocal:comparisons]。 |
 | Caveman | terse prose / compressed communication style skill | Caveman 管“how the agent talks”，Ponytail 管“what the agent builds”；二者可以互补，但不是同一维度 [GH:issues]。 |
 
-上述项目按 `ai-programs/ai-harness/skills` 同类范围做定位级对比，依据本地 wiki 既有条目与本轮 issue/README 语境；未按同一 10 维度框架重审 [WikiLocal:comparisons]。
+上述项目按 `ai-programs/ai-harness/ai-plugins` 与相邻 pure-skill 项目做定位级对比，依据本地 wiki 既有条目与本轮 issue/README 语境；未按同一 10 维度框架重审 [WikiLocal:comparisons]。
 
 ## 它能做什么
 

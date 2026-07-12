@@ -1751,12 +1751,12 @@
       "summary": "面向 Linux 玩家和游戏保存/运行需求者的开放游戏平台，把 Wine、模拟器、engine reimplementation、商店库同步和用户安装脚本统一到一个桌面客户端中。"
     },
     {
-      "slug": "ai-programs/agent-infrastructure/oh-my-claudecode",
-      "route": "/analysis/ai-programs/agent-infrastructure/oh-my-claudecode",
+      "slug": "ai-programs/ai-harness/ai-plugins/oh-my-claudecode",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/oh-my-claudecode",
       "title": "oh-my-claudecode",
       "repo_url": "https://github.com/Yeachan-Heo/oh-my-claudecode",
-      "category": "ai-programs/agent-infrastructure",
-      "directory": "ai-programs/agent-infrastructure",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "claude-code",
         "multi-agent",
@@ -1785,7 +1785,7 @@
       "overall_score": 3.9,
       "last_checked": "2026-05-18",
       "updated": "2026-05-21",
-      "summary": "oh-my-claudecode 适合已经重度使用 Claude Code、希望把单个 coding agent 扩展成「可分工、可持久、可审查、可调用外部 CLI」工作流的 advanced users；它是强大的 agent infrastructure，而不是轻量新手插件。"
+      "summary": "oh-my-claudecode 适合已经重度使用 Claude Code、希望把单个 coding agent 扩展成「可分工、可持久、可审查、可调用外部 CLI」工作流的 advanced users；它是强大的复合型 AI plugin，而不是轻量单功能插件。"
     },
     {
       "slug": "ai-programs/ai-chat-platforms/open-webui",
@@ -2810,12 +2810,12 @@
       "summary": "MinerU 很值得放入 document-processing 板块并实测，尤其适合科学文献解析；但它的自定义许可证和模型/部署复杂度，使其更适合作为“强候选”，不是默认无脑依赖。"
     },
     {
-      "slug": "ai-programs/agent-infrastructure/oh-my-openagent",
-      "route": "/analysis/ai-programs/agent-infrastructure/oh-my-openagent",
+      "slug": "ai-programs/ai-harness/ai-plugins/oh-my-openagent",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/oh-my-openagent",
       "title": "oh-my-openagent",
       "repo_url": "https://github.com/code-yeongyu/oh-my-openagent",
-      "category": "ai-programs/agent-infrastructure",
-      "directory": "ai-programs/agent-infrastructure",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "opencode",
         "agent-orchestration",
@@ -2956,12 +2956,12 @@
       "summary": "RomM 是目前功能面最完整的 self-hosted ROM manager 之一；适合已有合法 ROM library、愿意维护 Docker/数据库/备份的 homelab 用户，但 5.0 重写期与 2026-07 查询到的高危 advisory 版本范围，使它暂不适合未经核验就直接暴露公网。"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/spec-kit",
-      "route": "/analysis/ai-programs/ai-harness/skills/spec-kit",
+      "slug": "ai-programs/ai-harness/ai-plugins/spec-kit",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/spec-kit",
       "title": "Spec Kit",
       "repo_url": "https://github.com/github/spec-kit",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "agent-skills",
         "spec-driven-development",
@@ -3425,12 +3425,12 @@
       "summary": "Obscura 是一个 Rust 写的 headless browser substrate：它试图在“普通 HTTP 抓取太弱”和“完整 Headless Chrome 太重”之间，给 agents / scraping workloads 提供 V8 JavaScript、DOM、CDP、MCP、Puppeteer/Playwright 兼容与低资源占用"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/ponytail",
-      "route": "/analysis/ai-programs/ai-harness/skills/ponytail",
+      "slug": "ai-programs/ai-harness/ai-plugins/ponytail",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/ponytail",
       "title": "Ponytail",
       "repo_url": "https://github.com/DietrichGebert/ponytail",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "agent-skills",
         "prompt-engineering",
@@ -4040,12 +4040,12 @@
       "summary": "Vibe Kanban 适合已经使用多个 coding-agent CLI、并想用 kanban board 管理任务、workspace、diff review 和 PR flow 的开发者；但由于 bloop 公司已关闭、项目转为 open-source/community maintained，它更适合作为 agent workflow infrast"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/agent-skills",
-      "route": "/analysis/ai-programs/ai-harness/skills/agent-skills",
+      "slug": "ai-programs/ai-harness/ai-plugins/agent-skills",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/agent-skills",
       "title": "Agent Skills",
       "repo_url": "https://github.com/addyosmani/agent-skills",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "agent-skills",
         "coding-agent",
@@ -4187,12 +4187,12 @@
       "summary": "Career-Ops 把 Claude Code/OpenCode/Gemini CLI 变成 job-search command center：职位评估、定制 CV、portal scan、batch processing 和 dashboard。 [GH:readme]"
     },
     {
-      "slug": "dev-tools/destructive-command-guard",
-      "route": "/analysis/dev-tools/destructive-command-guard",
+      "slug": "ai-programs/ai-harness/hooks/destructive-command-guard",
+      "route": "/analysis/ai-programs/ai-harness/hooks/destructive-command-guard",
       "title": "destructive_command_guard",
       "repo_url": "https://github.com/Dicklesworthstone/destructive_command_guard",
-      "category": "dev-tools",
-      "directory": "dev-tools",
+      "category": "ai-programs/ai-harness/hooks",
+      "directory": "ai-programs/ai-harness/hooks",
       "tags": [
         "rust",
         "developer-tools",
@@ -4366,12 +4366,12 @@
       "summary": "Plane 值得作为自托管项目管理平台候选和工程治理样本收录，但近期安全 advisories 多、issue/PR backlog 高，生产采用推荐度只能给谨慎的 3/5。"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/superpowers",
-      "route": "/analysis/ai-programs/ai-harness/skills/superpowers",
+      "slug": "ai-programs/ai-harness/ai-plugins/superpowers",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/superpowers",
       "title": "Superpowers",
       "repo_url": "https://github.com/obra/superpowers",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "agent-skills",
         "tdd",
@@ -4402,12 +4402,12 @@
       "summary": "Superpowers 是一套把「软件工程纪律」编码为 agent skill 的框架——brainstorm → spec → plan → TDD → subagent-driven dev → review → ship，全链路流程由 skill 自动触发，而非靠 agent 自觉遵守。适合希望 agent 像 senior engineer 一样工作"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/dotnet-skills",
-      "route": "/analysis/ai-programs/ai-harness/skills/dotnet-skills",
+      "slug": "ai-programs/ai-harness/ai-plugins/dotnet-skills",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/dotnet-skills",
       "title": ".NET Agent Skills",
       "repo_url": "https://github.com/dotnet/skills",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "dotnet",
         "csharp",
@@ -4584,12 +4584,12 @@
       "summary": "UI-TARS Desktop / Agent TARS 是一个能力很强、工程投入也真实的 multimodal computer-use agent stack：它把视觉定位、浏览器控制、MCP 工具、桌面 GUI 操作和 Web UI/CLI 包进一个 TypeScript monorepo；但版本仍在 0.3.0、issue 积压高、远程 operat"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/12-factor-agents",
-      "route": "/analysis/ai-programs/ai-harness/skills/12-factor-agents",
+      "slug": "ai-programs/ai-harness/guides/agent-engineering/12-factor-agents",
+      "route": "/analysis/ai-programs/ai-harness/guides/agent-engineering/12-factor-agents",
       "title": "12-Factor Agents",
       "repo_url": "https://github.com/humanlayer/12-factor-agents",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/guides/agent-engineering",
+      "directory": "ai-programs/ai-harness/guides/agent-engineering",
       "tags": [
         "agent-methodology",
         "llm-apps",
@@ -4722,12 +4722,12 @@
       "summary": "AutoScraper 适合快速从结构简单、变化不大的网页里抽一类重复字段；不适合复杂站点、大规模爬取或反爬对抗。"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/claude-plugins-official",
-      "route": "/analysis/ai-programs/ai-harness/skills/claude-plugins-official",
+      "slug": "ai-programs/ai-harness/ai-plugins/claude-plugins-official",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/claude-plugins-official",
       "title": "Claude Plugins Official",
       "repo_url": "https://github.com/anthropics/claude-plugins-official",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "claude-code",
         "anthropic",
@@ -4980,12 +4980,12 @@
       "summary": "Google Skills 是 Google 产品与技术相关的 agent skills 集合，偏技能包/流程素材，而不是传统软件库。 [GH:readme]"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/knowledge-work-plugins",
-      "route": "/analysis/ai-programs/ai-harness/skills/knowledge-work-plugins",
+      "slug": "ai-programs/ai-harness/ai-plugins/knowledge-work-plugins",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/knowledge-work-plugins",
       "title": "Knowledge Work Plugins",
       "repo_url": "https://github.com/anthropics/knowledge-work-plugins",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "claude",
         "cowork",
@@ -5159,12 +5159,12 @@
       "summary": "Presenton 是一个值得观察的开源 AI presentation engine：它把“生成 slide deck”做成 UI + API + Docker + Electron + MCP 的完整产品形态，但当前 beta、依赖重、攻击面宽，不宜仅凭 README 的 Gamma/Beautiful AI alternative 叙事高估成熟度 [G"
     },
     {
-      "slug": "ai-programs/agent-infrastructure/rtk",
-      "route": "/analysis/ai-programs/agent-infrastructure/rtk",
+      "slug": "ai-programs/ai-harness/hooks/rtk",
+      "route": "/analysis/ai-programs/ai-harness/hooks/rtk",
       "title": "rtk-ai/rtk",
       "repo_url": "https://github.com/rtk-ai/rtk",
-      "category": "ai-programs/agent-infrastructure",
-      "directory": "ai-programs/agent-infrastructure",
+      "category": "ai-programs/ai-harness/hooks",
+      "directory": "ai-programs/ai-harness/hooks",
       "tags": [
         "token-optimization",
         "cli-proxy",
@@ -5306,12 +5306,12 @@
       "summary": "Agent Starter Pack 适合作为“Google Cloud agent production scaffold”历史样本和迁移参考；由于官方已宣布维护模式并把 active development 转向 `google/agents-cli`，新项目采用推荐度只有 2/5，但它仍值得加入 wiki 用来理解 Google Cloud agent"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/cursor-plugins",
-      "route": "/analysis/ai-programs/ai-harness/skills/cursor-plugins",
+      "slug": "ai-programs/ai-harness/ai-plugins/cursor-plugins",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/cursor-plugins",
       "title": "Cursor Plugins",
       "repo_url": "https://github.com/cursor/plugins",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "cursor",
         "plugins",
@@ -5415,12 +5415,12 @@
       "summary": "`openai/skills` 值得收录，因为 OpenAI 也开始以官方仓库和 Codex 文档形式采用 Agent Skills 机制；但它当前更像年轻的官方 catalog 与示例集合，不是成熟、版本化、可无审查批量安装的工程依赖 [GH] [GH:readme] [Docs:openai-skills]。"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/openai-plugins",
-      "route": "/analysis/ai-programs/ai-harness/skills/openai-plugins",
+      "slug": "ai-programs/ai-harness/ai-plugins/openai-plugins",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/openai-plugins",
       "title": "OpenAI Plugins",
       "repo_url": "https://github.com/openai/plugins",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
         "openai",
         "codex",

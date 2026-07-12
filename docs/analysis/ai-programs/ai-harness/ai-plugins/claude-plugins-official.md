@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/anthropics/claude-plugins-official"
-category: "ai-programs/ai-harness/skills"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: [claude-code, anthropic, plugins, marketplace, mcp, agent-skills, supply-chain]
 previous_repo: ""
 successor: ""
@@ -46,10 +46,10 @@ sources:
   - "[GH:mcp-github] /opt/data/tmp/repo-wiki-trending-2026-05-31/batch8/repos/claude-plugins-official/external_plugins/github/.mcp.json checked 2026-05-31: configures HTTP MCP endpoint https://api.githubcopilot.com/mcp/ with Authorization header Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}; this source entry redacts no secret because file only contains env var placeholder"
   - "[Docs:plugins] https://code.claude.com/docs/en/plugins — extracted 2026-05-31: Claude Code plugins can include skills, agents, hooks, MCP servers, LSP servers, monitors, binaries, settings; plugin manifest is `.claude-plugin/plugin.json`; plugins namespace skills/commands"
   - "[Docs:marketplaces] https://code.claude.com/docs/en/plugin-marketplaces — extracted 2026-05-31: marketplace is `.claude-plugin/marketplace.json`; install commands include `/plugin marketplace add`, `/plugin marketplace update`, `/plugin install plugin-name@marketplace-name`; schema supports local paths, GitHub/git sources, metadata.pluginRoot, dependencies; relative paths escaping marketplace root are not allowed"
-  - "[GH:knowledge-work] https://github.com/anthropics/knowledge-work-plugins — adjacent role-level Claude plugin marketplace; existing local analysis under ai-programs/agent-skills/knowledge-work-plugins.md"
-  - "[GH:anthropic-skills] https://github.com/anthropics/skills — official Agent Skills reference; existing local analysis under ai-programs/agent-skills/anthropic-skills.md"
-  - "[GH:cursor-plugins] https://github.com/cursor/plugins — Cursor plugin marketplace comparison; existing local analysis under ai-programs/agent-skills/cursor-plugins.md"
-  - "[GH:openai-skills] https://github.com/openai/skills — Codex Skills Catalog comparison; local analysis in this batch under ai-programs/agent-skills/openai-skills.md"
+  - "[GH:knowledge-work] https://github.com/anthropics/knowledge-work-plugins — adjacent role-level Claude plugin marketplace; existing local analysis under ai-programs/ai-harness/ai-plugins/knowledge-work-plugins.md"
+  - "[GH:anthropic-skills] https://github.com/anthropics/skills — official Agent Skills reference; existing local analysis under ai-programs/ai-harness/skills/anthropic-skills.md"
+  - "[GH:cursor-plugins] https://github.com/cursor/plugins — Cursor plugin marketplace comparison; existing local analysis under ai-programs/ai-harness/ai-plugins/cursor-plugins.md"
+  - "[GH:openai-skills] https://github.com/openai/skills — Codex Skills Catalog comparison; local analysis in this batch under ai-programs/ai-harness/skills/openai-skills.md"
 ---
 
 # Claude Plugins Official
@@ -132,7 +132,7 @@ sources:
 | Cursor Plugins | Cursor 官方 plugin marketplace seed | 两者都代表 editor/agent product 的 plugin marketplace；Claude Plugins Official 覆盖 entry 数更多，供应链 scan/pin 治理更突出，但风险面也更大 [GH:cursor-plugins]。 |
 | OpenAI Skills | Codex Skills Catalog | OpenAI Skills 更聚焦 Codex skill authoring/installer；Claude Plugins Official 更像全功能 plugin marketplace，包含 MCP/hook/source pinning [GH:openai-skills]。 |
 
-上述项目按 `ai-programs/ai-harness/skills` 同类范围做定位级对比，未在本轮按同一 10 维度框架重审；比较重点是 taxonomy placement，不是完整 benchmark。
+上述项目按 `ai-programs/ai-harness/ai-plugins` 同类范围做定位级对比，未在本轮按同一 10 维度框架重审；比较重点是 taxonomy placement，不是完整 benchmark。
 
 ---
 

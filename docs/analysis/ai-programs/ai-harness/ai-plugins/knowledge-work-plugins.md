@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/anthropics/knowledge-work-plugins"
-category: "ai-programs/ai-harness/skills"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: [claude, cowork, plugins, agent-skills, mcp, knowledge-work, enterprise]
 previous_repo: ""
 successor: ""
@@ -44,7 +44,7 @@ sources:
   - "[Docs:cowork] https://claude.com/product/cowork"
   - "[Docs:mcp] https://modelcontextprotocol.io/"
   - "[GH:anthropic-skills] https://github.com/anthropics/skills — adjacent official Agent Skills repository"
-  - "[GH:superpowers] https://github.com/obra/superpowers — same-category comparison; existing local analysis under ai-programs/agent-skills/superpowers.md"
+  - "[GH:superpowers] https://github.com/obra/superpowers — same-category comparison; existing local analysis under ai-programs/ai-harness/ai-plugins/superpowers.md"
 ---
 
 # Knowledge Work Plugins

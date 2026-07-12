@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/cursor/plugins"
-category: "ai-programs/ai-harness/skills"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: [cursor, plugins, agent-skills, coding-agent, marketplace, workflow]
 previous_repo: ""
 successor: ""
@@ -44,8 +44,8 @@ sources:
   - "[GH:pstack] https://github.com/cursor/plugins/tree/main/pstack — pstack plugin README describes poteto-mode, multi-model review, arena/interrogate/tdd/reflect workflows"
   - "[Docs:cursor-plugins] https://cursor.com/docs/plugins — Cursor docs: plugins can bundle rules, skills, agents, commands, MCP servers, hooks; marketplace plugins are Git repositories and reviewed before listing"
   - "[Docs:agentskills] https://agentskills.io/specification — Agent Skills specification for SKILL.md format and progressive disclosure"
-  - "[GH:anthropic-skills] https://github.com/anthropics/skills — same-category official Agent Skills reference, existing local analysis under ai-programs/agent-skills/anthropic-skills.md"
-  - "[GH:superpowers] https://github.com/obra/superpowers — same-category engineering workflow skills, existing local analysis under ai-programs/agent-skills/superpowers.md"
+  - "[GH:anthropic-skills] https://github.com/anthropics/skills — adjacent official Agent Skills reference, existing local analysis under ai-programs/ai-harness/skills/anthropic-skills.md"
+  - "[GH:superpowers] https://github.com/obra/superpowers — same-category engineering workflow plugin, existing local analysis under ai-programs/ai-harness/ai-plugins/superpowers.md"
 ---
 
 # Cursor Plugins

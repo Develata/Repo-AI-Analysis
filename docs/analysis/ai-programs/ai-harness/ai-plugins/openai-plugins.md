@@ -4,7 +4,7 @@ created: 2026-06-07
 updated: 2026-06-07
 type: repository-analysis
 repo_url: "https://github.com/openai/plugins"
-category: "ai-programs/ai-harness/skills"
+category: "ai-programs/ai-harness/ai-plugins"
 tags: [openai, codex, plugins, agent-skills, examples, mcp]
 previous_repo: ""
 successor: ""
@@ -61,7 +61,7 @@ OpenAI 官方 Codex plugin examples 仓库，展示 `.codex-plugin/plugin.json` 
 
 ## 推荐度：3/5
 
-**角色定位**：适合对 `ai-programs/ai-harness/skills` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
+**角色定位**：适合对 `ai-programs/ai-harness/ai-plugins` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
 推荐理由：
 - 能力面与主题匹配：覆盖多个 plugin 示例面：manifest、skills、MCP、commands、hooks 与 assets 的组合方式，但 README 只证明结构和样例存在，不证明每个插件行为正确。 [GH:readme]。
@@ -104,7 +104,7 @@ OpenAI 官方 Codex plugin examples 仓库，展示 `.codex-plugin/plugin.json` 
 | anthropics/claude-plugins-official | Claude Code plugin marketplace | Claude 项目有 marketplace 治理面；本项目当前更像 Codex plugin examples |
 | cursor/plugins | Cursor plugin marketplace | 同为 agent-client 插件分发参照；生态和 runtime 权限模型不同 |
 
-上述项目按 `ai-programs/ai-harness/skills` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
+上述项目按 `ai-programs/ai-harness/ai-plugins` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
 
 ---
 
@@ -166,4 +166,4 @@ GitHub security-advisories endpoint 本轮返回结果已记录，但“无 advi
 
 ## 学习价值
 
-学习价值主要在三个层面：一是理解 `ai-programs/ai-harness/skills` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
+学习价值主要在三个层面：一是理解 `ai-programs/ai-harness/ai-plugins` 这一类项目当前如何组织复合能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
