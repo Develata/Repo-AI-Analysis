@@ -1,285 +1,212 @@
 ---
 
-
 title: "DeepSeek-Reasonix"
 created: 2026-05-15
-updated: 2026-05-21
+updated: 2026-07-12
 type: repository-analysis
 repo_url: "https://github.com/esengine/DeepSeek-Reasonix"
 category: "ai-programs/coding-agents"
-tags: ["coding-agent", "deepseek", "cli", "tui", "typescript", "mcp", "desktop-app"]
-primary_language: "TypeScript"
+tags: ["coding-agent", "deepseek", "cli", "tui", "go", "mcp", "desktop-app"]
+primary_language: "Go"
 license: "MIT"
-stars: 2748
-forks: 149
-last_checked: 2026-05-15
-last_verified: 2026-05-15
-evidence: "code review + docs + community reports"
+stars: 26674
+forks: 1673
+last_checked: 2026-07-12
+last_verified: 2026-07-12
+evidence: "GitHub API + official README/spec/migration guide/releases"
 archived_reason: ""
 docker_support: false
 gpu_required: false
-estimated_cpu: "2-4 cores"
-estimated_memory: "512MB-2GB"
-estimated_storage: "300-500MB"
+estimated_cpu: "低（本地 Go CLI；模型推理在远端）"
+estimated_memory: "未独立实测"
+estimated_storage: "单静态二进制 + 会话/归档数据；未独立实测"
 status: active
 ratings:
   capability: 4
   usability: 3
   performance: 5
-  code_quality: 4
+  code_quality: 3
   documentation: 5
   community: 4
   maturity: 2
   extensibility: 4
-  security: 4
+  security: 3
   recommendation: 3
-overall_score: 3.8
+overall_score: 3.6
 sources:
   - "[GH] https://github.com/esengine/DeepSeek-Reasonix"
   - "[Docs] https://esengine.github.io/DeepSeek-Reasonix/"
+  - "[GH:README] Official README on default branch main-v2, inspected 2026-07-12: Go rewrite, single static binary, OpenAI-compatible providers, plugins/MCP and install paths; https://github.com/esengine/DeepSeek-Reasonix/blob/main-v2/README.md"
+  - "[GH:MIGRATING] Official 1.0 migration guide, inspected 2026-07-12: ground-up Go rewrite, legacy TypeScript branch maintenance-only, config/session migration and unported semantic index; https://github.com/esengine/DeepSeek-Reasonix/blob/main-v2/docs/MIGRATING.md"
+  - "[GH:SPEC] Official engineering spec, inspected 2026-07-12: provider/tool registries, permissions, plan mode, sandbox status, MCP transports, context management and distribution; https://github.com/esengine/DeepSeek-Reasonix/blob/main-v2/docs/SPEC.md"
+  - "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main-v2, primary language Go, MIT, 26,674 stars, 1,673 forks, 930 open issues, 184 open PRs, head 78e9e265 (2026-07-11), latest CLI/Desktop release v1.17.10 (2026-07-10), repository advisories endpoint returned []."
+  - "[GH:v1.17.10] Official CLI/Desktop release v1.17.10: MCP get, approval-gated planner handoffs, Feishu bot/media and multiple tab/session isolation fixes; https://github.com/esengine/DeepSeek-Reasonix/releases/tag/v1.17.10"
 ---
 
 # DeepSeek-Reasonix
 
-> DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cache stability — leave it running.
+> DeepSeek-native coding agent，现已完成从 TypeScript 0.x 到 Go 1.x 的 ground-up rewrite；单静态二进制、配置/插件驱动，同时保留 prefix-cache-first 设计。
 >
-> **状态**: `active` · **总分**: 3.8/5 · **推荐度**: 3/5
+> **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
-为深度使用 DeepSeek API 的开发者打造的终端编程 Agent，以 prefix-cache 稳定性为核心卖点，配合 Tauri 桌面客户端和 MCP 生态，在成本控制和工程深度上均属同类顶流——但仅 24 天项目年龄决定了它仍在快速震荡期。
+Reasonix 已不再是 2026-05 的 TypeScript 0.x 实验品：默认分支现为 Go 重写的 1.x，支持 OpenAI-compatible providers、双模型 planner/executor、MCP plugins、CLI 与 Wails desktop；但迁移刚完成、发布极快、backlog 很大，适合 DeepSeek 重度用户试用，不宜成为无备份的唯一 coding harness [GH:README] [GH:MIGRATING]。
 
 ## 总体评价
 
-Reasonix 是 2026 年 4 月下旬突然出现的 DeepSeek 专属编程 Agent。它在设计哲学上与 Claude Code / Codex CLI 同属一类——终端内 AI 辅助编码——但差异点极其鲜明：**它是主流终端编程 Agent 中极少数以 DeepSeek 前缀缓存为核心工程约束的项目**。项目的架构文档、测试覆盖、CI 流水线和社区建设都展现出远超 24 天项目年龄的成熟度，但版本号从 v0.1.0 到 v0.43.0 的 43 次发布也诚实地暴露了高速迭代的不稳定性。
+最大的材料变化是**整个代码库换代**。旧 TypeScript 线停在 0.x，迁至 `v1` branch 且 maintenance-only；默认 `main-v2` 是 Go ground-up rewrite，当前 CLI/Desktop 为 v1.17.10 [GH:MIGRATING] [GH:API-2026-07-12]。新架构以 `Provider`、`Tool` registry 和 stdio/Streamable HTTP MCP 为核心，DeepSeek 只是 preset，任意 OpenAI-compatible endpoint 都可由 TOML 配置接入；这修正了旧分析中“只能使用 DeepSeek”的边界 [GH:README] [GH:SPEC]。
 
-适合：DeepSeek API 重度用户，追求低成本终端编程 Agent，愿意承受频繁更新和偶尔的 UX 纸割伤。不适合：需要非 DeepSeek 模型的用户，追求生产环境稳定性的团队，或者偏好 IDE 插件而非终端界面的开发者。
-
-**一句话判断**：工程深度令人印象深刻，但需要再观察一两个月才能判断它是不是流星。
+正面看，单静态 Go binary、独立 planner/executor sessions、cache-aware context maintenance、plan mode、memory/history retrieval、CLI/Desktop 与细粒度 plugin surface 构成了有辨识度的 harness。负面看，2026-07-12 仍有 930 open issues 与 184 open PRs；v1.17.x 几乎逐日发布，v1.17.10 仍在修复跨 tab/session routing 和 approval gate 隔离问题 [GH:API-2026-07-12] [GH:v1.17.10]。这更像高速演化的 1.x，而非稳定平台。
 
 ## 推荐度：3/5
 
-**定位**：为 DeepSeek API 用户打造的终端编程 Agent，追求成本最优和缓存命中率最大化。
+**适用角色**：主要使用 DeepSeek 或 OpenAI-compatible endpoint、偏好终端/桌面双入口、愿意自行验证权限与迁移边界的开发者。
 
-Reasonix 在 DeepSeek 生态位中几乎没有对手——OpenCode、Claude Code、Codex CLI 均未针对 DeepSeek 前缀缓存做深度优化。Prefix-cache 99.82% 命中率的案例研究 [GH] 令人信服地证明了这一设计的价值：435M input tokens → $12 而非 $61（flash 价格），成本优势立竿见影。
+给 3/5 的理由：
 
-但 3/5 的推荐度反映了两个核心风险：
-1. **项目年龄仅 24 天**——43 次发布意味着平均每天近 2 个版本。功能在快速增加，但破坏性变更的风险也极高。现阶段不宜作为主力工具，更适合观察和偶尔试用。
-2. **DeepSeek 锁定**——架构层面深度绑定 DeepSeek 的缓存机制和 API 行为，无法切换到 Anthropic/OpenAI。如果 DeepSeek 服务不稳定或定价调整，工具会受直接影响。
+- Go 单二进制和 npm/prebuilt 安装降低了运行时负担；DeepSeek prefix-cache 仍是核心工程约束 [GH:README]。
+- provider 已配置化，不再是单一 DeepSeek vendor hard lock；planner/executor 可分离模型与 cache-stable sessions [GH:SPEC]。
+- 但 TypeScript→Go 是 wholesale migration。即使新线已成为默认，旧 session/config、未移植 semantic index、分支双线维护与高频修复仍是现实迁移成本 [GH:MIGRATING]。
+- 930 issues / 184 PRs 与 v1.17.10 的多项隔离修复，不支持“生产稳定”判断 [GH:API-2026-07-12] [GH:v1.17.10]。
 
-对于已经在用 DeepSeek API 做编码任务的用户，Reasonix 值得安装试用的门槛极低（`npx reasonix code`），成本优势可即时验证。但建议将关键工作保留在其他工具上，等 Reasonix 进入 v1.x 后再考虑迁移。
+**结论**：可以作为 DeepSeek/OpenAI-compatible coding workflow 的强力副工具；关键仓库应保留 Git、备份和第二套 agent，不建议把它当作唯一自动化执行面。
 
 ## 优势
 
-1. **架构层面的缓存优化**——四个 Pillar（Cache-first loop、R1 thought harvesting、Tool-call repair、Cost control）全部围绕 DeepSeek 前缀缓存设计，不是事后贴上的优化，而是从 loop 层开始的工程决策。Append-only 日志、不可变前缀、volatile scratch 三分区模型清晰且可验证。
-2. **成本控制体系完善**——flash-first 默认策略 + auto-escalation + turn-end auto-compaction + `/pro` 单轮武装，覆盖了「日常便宜、关键时刻强力」的完整使用模式。辅助调用（摘要、子 agent、截断修复）硬编码 flash，杜绝隐性费用。
-3. **文档质量出类拔萃**——中英双语 README、架构文档、CLI 参考、贡献指南、行为准则、安全策略、基准测试、代码注释（REASONIX.md）、案例研究，覆盖广度甚至超过部分运营数年的项目。
-4. **测试与 CI 配置堪称典范**——109 个测试文件、Vitest + Stryker 变异测试、Biome lint/format、CodeQL 安全扫描、7 个 GitHub Actions 工作流、pre-push verify 门禁。变异测试在 24 天项目中极为罕见。
-5. **Tauri 桌面客户端**——v0.43.0 正式 graduates 桌面客户端，提供 TUI 之外的 GUI 选项，含多标签、文件树、设置面板、国际化等完整功能。与对比表所列项目相比唯一提供原生桌面应用。
-6. **社区爆发式增长**——24 天 2,748 stars、304 total issues（242 已关闭）、活跃的中文用户社区、丰富的 Discussions。issue 关闭效率极高（日均 ~10 个）。
+1. **cache-first 架构仍有辨识度**：planner 与 executor 使用分离 session，context 只在低频 compaction 时重置前缀 [GH:SPEC]。
+2. **单静态 Go binary**：`CGO_ENABLED=0`，支持 macOS/Linux/Windows × amd64/arm64；npm 只是 native binary installer，不是运行时 [GH:README] [GH:MIGRATING]。
+3. **provider 不再硬编码**：OpenAI-compatible endpoint 由 `reasonix.toml` 配置，多模型 vendor 与 planner model 均可声明 [GH:SPEC]。
+4. **工具与插件边界清晰**：built-in registry + MCP stdio/Streamable HTTP；tools、prompts、resources 均有映射 [GH:SPEC]。
+5. **文档工程强**：README、migration guide、engineering spec、tool contract、config paths 与安全边界写得非常具体。
+6. **CLI/Desktop 双入口**：TUI 适合终端，Wails desktop 提供多 tab、MCP 管理、审批与 bot 观察面 [GH:v1.17.10]。
 
 ## 劣势
 
-1. **项目极度年轻**——创建于 2026-04-21，43 次发布在 24 天内完成。版本号 v0.x 意味着无稳定性承诺，API/配置格式随时可能变化。
-2. **DeepSeek 深度锁定**——不仅后端限定 DeepSeek，连架构设计都绑定其前缀缓存行为。无法使用其他模型提供商，切换成本等于放弃核心优势。
-3. **UX 纸割伤较多**——62 个开放 issue 中有多位用户报告主题切换 bug、Windows 安装问题、多标签会话丢失、输入框显示异常等 TUI/桌面端的细节问题。功能丰富但打磨不足。
-4. **单维护者主导**——尽管社区活跃，核心架构决策和大部分提交仍由 esengine 一人完成。Bus factor 较高。
-5. **纯终端/桌面应用，无服务端部署**——没有 Docker 镜像（npx 方式运行），不适合 CI/CD 流水线中的 headless 调用（虽然有 ACP 入口）。
-6. **文档只有中英文**——国际化覆盖了 UI，但文档仅 EN + zh-CN，限制了非中英语用户。
-
----
+1. **刚完成 wholesale rewrite**：旧 TS 线 maintenance-only，semantic search/tree-sitter index 尚未移植；迁移不是普通 major upgrade [GH:MIGRATING]。
+2. **backlog 高**：930 open issues、184 open PRs，功能与 bug 输入仍超过稳定项目应有水平 [GH:API-2026-07-12]。
+3. **发布过快**：v1.17.7 到 v1.17.10 在数日内连续发布，稳定窗口短。
+4. **权限语义需要谨慎阅读**：spec 写明非交互 `reasonix run` 在没有 approver 时会把普通 `Ask` fallback 解析为 allow；hard deny 仍有效，但不能把默认 ask 当作 headless fail-closed [GH:SPEC]。
+5. **sandbox 跨平台不一致**：Linux/macOS 有 OS backend 路线，Windows stable 当前强制 Bash sandbox 为 off [GH:SPEC]。
+6. **旧线功能未完全等价**：CodeGraph/semantic index 未移植，用户需依赖 LSP、grep、read_file 与 glob [GH:MIGRATING]。
 
 ## 适合什么场景
 
-- 日常使用 DeepSeek API 进行编码，希望降低 token 费用
-- 需要一个 `npx` 即可运行的轻量终端编程 Agent
-- 偏好开源 MIT 许可的编码工具
-- 有 MCP server 生态并希望集成到编码工作流
-- 想观察/研究「前缀缓存优先」架构设计的实现
+- DeepSeek API / DeepSeek-compatible 工作负载，需要显式优化 prefix cache
+- 使用自建 OpenAI-compatible endpoint，并希望 TOML 配置多个 provider/model
+- 终端编码与 desktop 多会话并用
+- 通过 MCP tools/prompts/resources 扩展本地 coding agent
+- 研究 planner/executor 双 session、context compaction 与 permission gate 设计
 
 ## 不适合什么场景
 
-- 需要使用 Anthropic / OpenAI / 其他模型提供商
-- 生产环境需要稳定工具链（项目年龄 24 天，版本号 v0.x）
-- 偏好 IDE 插件（VS Code / JetBrains）而非终端
-- 需要多人协作的编码 Agent（无团队共享、无服务端部署）
-- CI/CD 流水线中自动化的代码修复任务
+- 要求长期稳定 CLI/API 和低频升级的组织
+- 不能接受 TypeScript 0.x → Go 1.x 迁移或功能缺口的现有用户
+- 把默认 `ask` 误认为 headless fail-closed 的高安全自动化
+- 需要 Windows 上强制 shell sandbox 的环境
+- 不愿处理高频 release、issue backlog 与 migration verification 的团队
 
 ## 与类似项目对比
 
+> 下表仅作定位；竞品未在本次 freshness audit 中按同一 10 维框架复核。
+
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| Claude Code | Anthropic 生态终端编程 Agent | Claude 模型为主、闭源产品、无前缀缓存优化 |
-| Codex CLI | OpenAI 生态终端编程 Agent | GPT 模型为主、开源 MIT、无 TUI 桌面客户端 |
-| OpenCode | 开源终端编程 Agent | 多模型（OpenRouter）、开源 Apache 2.0、无 DeepSeek 缓存优化 |
-| Aider | AI 结对编程工具 | 多模型（OpenRouter）、开源 Apache 2.0、无 TUI、无缓存架构 |
-| Cursor | AI 增强 IDE | IDE 插件、订阅制、闭源、图形界面为主、多模型 |
-
-Reasonix 在「DeepSeek 缓存优化」这一维度上独树一帜——其他所有工具要么无法使用 DeepSeek，要么使用了也无法获得高缓存命中率。但它的模型绑定也是最大的差异化劣势。
-
----
+| OpenCode | 多 provider 开源 coding agent | 社区与 provider 生态更大；Reasonix 更强调 DeepSeek cache、Go 单 binary 和双模型 session |
+| Codex CLI | OpenAI 官方 terminal coding agent | 官方模型/服务整合更强；Reasonix 可自配 OpenAI-compatible endpoint |
+| Aider | git-centric AI pair programmer | 更成熟、编辑流程更聚焦；Reasonix harness、desktop 与 MCP 面更宽 |
+| Claude Code | Anthropic 官方 coding agent | 模型/产品整合更成熟；Reasonix 开源、可配置且对 DeepSeek 更有针对性 |
 
 ## 它能做什么
 
 评分 4/5。
 
-Reasonix 的功能广度在同类终端 Agent 中表现优异：
+- 交互 TUI 与 `reasonix run` headless coding
+- 文件 read/write/edit/move、glob/grep、shell、LSP-assisted code reading
+- plan mode、evidence-backed step completion、read-only research subagents
+- planner/executor 双模型协作，分别维护 cache-stable session
+- MCP stdio 与 Streamable HTTP tools、prompts、resources
+- project/user commands、skills、hooks、session resume/history、auto-memory
+- Wails desktop、多 tab、MCP 管理与 bot/Feishu 入口 [GH:SPEC] [GH:v1.17.10]
 
-**核心编码能力**：
-- `reasonix code`：以项目为根目录启动编码 Agent，支持文件读写、shell 执行、SEARCH/REPLACE 编辑块
-- Plan mode：变更方案先审核再落地，持久化跨会话 [Docs]
-- Auto-checkpoints：Cursor 风格的 AI 编辑回滚，不污染 git 历史 [GH]
-- Subagent spawn：通过 skill 的 `runAs: subagent` 隔离子任务，v0.43.0 增加 pause/resume 机制 [GH]
-
-**DeepSeek 专属能力**：
-- Prefix-cache 优化 loop（Pillar 1）：三分区上下文模型，命中率 99.82% 案例 [GH]
-- R1 thought harvesting（Pillar 2）：从 `reasoning_content` 蒸馏 plan 状态 [Docs]
-- Tool-call repair（Pillar 3）：flatten / scavenge / storm / truncation 四通道修复 DeepSeek 特有的 tool-call 缺陷 [Docs]
-- Cost control（Pillar 4）：flash-first + `/pro` 单轮武装 + 辅助调用硬编码 flash [GH]
-
-**平台与集成**：
-- MCP first-class：stdio + SSE + Streamable HTTP transport，tools/resources/prompts 完整支持
-- Web search：内置 Mojeek（零配置）或自托管 SearXNG
-- Embedded dashboard：本地 HTTP 服务，实时展示 cache hit rate、cost、session timeline
-- Tauri 桌面客户端 v0.43.0：多标签、文件树、设置面板、国际化、暗色主题 [GH]
-- ACP (Agent Communication Protocol)：headless 入口，NDJSON 帧，支持 `--transcript` `--yolo` `--mcp` [GH]
-
-**质量与工具**：
-- Slash commands：`/search-engine` `/effort` `/theme` `/btw` `/skill` `/help` 等
-- Hooks：shell 生命周期钩子
-- Skills：markdown playbook，支持 `max-iters` frontmatter
-- Memory：用户自定义类型 + priority/expiry
-- Semantic search：`reasonix index` 构建嵌入索引（本地 Ollama 或 DeepSeek）
-- Transcript replay & diff：`reasonix replay` / `reasonix diff`
-- Event log：`events.jsonl` + reducers + `reasonix events` CLI
-
-限制：仅支持 DeepSeek。即使是 DeepSeek 兼容 API（如自定义 baseUrl）的用户也在 issue #927 中询问方案，该 issue 目前尚未得到明确解决方案。
+扣一分：旧线 semantic index/CodeGraph 未移植，且 broad surface 在 v1.17.x 仍持续修复。
 
 ## 运行环境与资源占用
 
 评分 5/5。
 
-| 场景 | CPU | 内存 | 存储 | 说明 |
-|------|-----|------|------|------|
-| 最小 | 2 核 | 512 MB | 200 MB | 仅 CLI，npx 运行 |
-| 推荐 | 4 核 | 1-2 GB | 500 MB | CLI + 桌面客户端 + 会话历史 |
+- **运行时**：Go 静态 binary；npm 仅负责下载平台包 [GH:MIGRATING]
+- **平台**：macOS/Linux/Windows，amd64/arm64 [GH:README]
+- **安装**：`npm i -g reasonix`、Homebrew、release archive 或源码 `make build`
+- **Docker**：未验证官方用户向 Docker image，因此 `docker_support: false`
+- **GPU**：核心无需本地 GPU；模型通常通过远端 endpoint
+- **资源数据**：本次未做 RSS/latency benchmark，故不写未经验证的 MB 数字
 
-- **运行时**：Node.js ≥22，TypeScript 编译为 JS（tsup bundle），无需运行时编译
-- **操作系统**：macOS / Linux / Windows（PowerShell, Git Bash, Windows Terminal）
-- **Docker**：不提供。npx 直接运行，无容器化部署方案
-- **GPU**：核心功能无需 GPU；可选本地 Ollama 语义搜索需 GPU
-- **外部依赖**：DeepSeek API key（必需）；MCP servers（可选）；SearXNG（可选，用于自托管搜索）
-
-**为什么 performance 给 5 分**：
-
-Reasonix 的资源效率体现在两个层面：
-
-1. **本地运行时轻量**：纯 Node.js 进程，npx 零安装启动。无 Electron（桌面端用 Tauri），无 Python 依赖。与主流终端 Agent 相比依赖树极简。dashboard 作为嵌入式 HTTP 服务运行在同一进程中，不增加额外开销。
-
-2. **API 成本效率（额外加分项）**：虽然 performance 维度主要评估本地资源占用，但 Reasonix 的 Prefix-cache 优先架构将 DeepSeek 缓存命中率推向 99.82%，使同等工作负载的 API 费用降至无缓存的 ~20%——$61 → $12 [GH]。flash-first 默认 + auto-compaction + 辅助调用硬编码 flash 的组合，确保用户无需手动调优即可获得接近最优的成本曲线。对于 AI Agent 类工具，API 调用成本是实际使用中的主要资源消耗，因此计入 performance 评估是合理的。
-
-同类工具中，Reasonix 在运行时轻量化和 API 成本控制上均表现优异。
+单 binary、无 Node runtime、lean pure-Go dependency policy 支持 5/5；该分数指本地 harness 效率，不代表模型 API latency 或费用。
 
 ## 上手体验
 
 评分 3/5。
 
-**启动体验**：`npx reasonix code` 一条命令即可。首次运行时粘贴 DeepSeek API key，自动持久化到 `~/.reasonix/config.json`。`reasonix doctor` 进行环境健康检查 [GH]。从零到首次编码对话 < 2 分钟。
+新用户可 `npm i -g reasonix` → `reasonix setup` → 设置 API key → 启动；prebuilt binary 降低了环境摩擦 [GH:README]。旧用户则要处理 config path、credentials、sessions、memory 与未移植 code intelligence；官方提供一次性 non-destructive import 和 `/migrate`，但也明确列出 missed-data 与版本前提 [GH:MIGRATING]。
 
-**学习曲线**：支持 `/help` 和 slash command 自动补全，但 feature surface 较广（plan mode / checkpoints / hooks / skills / memory / MCP / `/btw` / `/effort`），新用户可能需要 30 分钟以上才能掌握全部功能。
-
-**UX 问题（来自 GitHub Issues）**：
-- 主题切换后输入框显示异常（#930，bug，无详情）
-- 安装后 `/help` 推荐功能有问题（#929，bug，无详情）
-- Windows 安装时运行检测变量错误（#928，bug）
-- 多标签桌面客户端重启后仅保留最新标签（#933，enhancement → 实质 bug）
-- TUI 输入框位置争议（#937，部分用户偏好顶部，目前底部）
-- 会话清除缺少确认对话框（#934，enhancement）
-
-这些问题以 UI 打磨层面的纸割伤为主，但 session/tab 丢失和 Windows 安装问题可能影响部分用户的正常使用。62 个开放 issue 的体量对于 24 天项目而言意味着仍有大量粗糙边缘。
-
-**亮点**：中英双语文档大幅降低了中文用户的入门门槛，这在英文主导的编程 Agent 生态中是一个显著优势。`/btw`（by the way）命令允许在 coding session 中插入不影响上下文的侧问题，设计体贴。
+v1.17.10 继续修复 tab-scoped workspace、prompt gates、async actions 和 recovery sessions，说明 desktop 多会话体验仍在打磨 [GH:v1.17.10]。
 
 ## 代码质量
 
-评分 4/5。
+评分 3/5。
 
-**架构**：ports/adapters 模式清晰，事件溯源内核（`src/core/`）设计严谨。目录结构有明确边界：`src/tools/`（工具定义）、`src/repair/`（修复管道）、`src/mcp/`（MCP 客户端）、`src/frame/`（TUI 渲染）、`src/index/`（向量索引）。每个模块有单一职责。
-
-**REASONIX.md**：相当于 AGENTS.md 但更工程化——包含完整的技术栈声明、目录布局、命令参考、编码规范和已知陷阱（"This IS Reasonix — edits to loop.ts affect every session"）。这是高质量代码库的标志。
-
-**测试**：109 个测试文件，覆盖 loop（16 个文件，最大 96KB）、MCP（22 个文件）、slash commands、repair pipeline、subagent 等核心模块。使用 Vitest + Stryker 变异测试——变异测试在如此年轻的项目中极为罕见，说明维护者对测试质量而非仅覆盖率有追求。
-
-**CI/CD**：7 个 GitHub Actions 工作流——CI（构建+测试）、CodeQL 安全分析、issue 自动标签、相似 issue 检测、指标收集、发布镜像、发布流程。pre-push hook 执行 `lint + typecheck + test + build`（`npm run verify`）。
-
-**扣分原因**：4 分而非 5 分，因为 24 天项目中架构仍在快速演化。43 次发布意味着接口和模块边界必然经历了多次重组。虽然当前代码整洁，但无法判断架构是否能经受长期维护。此外，测试覆盖率的具体数字未知（CI 未公开覆盖率报告），仅知文件数量。
+Go 线有 interface-first registry、acyclic dependency direction、tool contract、tests、`gofmt`/`go vet` 与单 binary 约束，设计文档远优于一般早期项目 [GH:SPEC]。但评分规则要求 active wholesale language migration 期间 `code_quality` 上限为 3：当前仍有 legacy TS maintenance branch、迁移器、未移植功能和快速 v1.x 修复，不能仅凭新架构整洁给 4。
 
 ## 可扩展性
 
 评分 4/5。
 
-Reasonix 的扩展体系有三层：
+- provider factory/registry；OpenAI-compatible vendors 主要靠配置扩展
+- built-in `Tool` registry
+- MCP stdio 与 Streamable HTTP plugins
+- MCP prompts/resources 映射
+- project/user slash commands、skills、hooks
 
-**第一层 — MCP（Model Context Protocol）**：一等公民支持。stdio + SSE + Streamable HTTP transport，支持 tools、resources、prompts 三种能力。MCP registry 在启动时注册。用户可通过 `--mcp "name=cmd"` 反复附加 MCP server [Docs]。MCP 工具的 `parallelSafe` 标记参与并行调度 [GH]。
-
-**第二层 — Skills 系统**：基于 markdown 的可注入 playbook。`/skill new` 脚手架生成，支持 `description:` frontmatter 和 `runAs: subagent` 隔离执行。v0.43.0 新增 `max-iters` frontmatter 控制工具调用预算 [GH]。尚无远程 registry，仅本地和全局（`~/.reasonix/skills/`）路径。
-
-**第三层 — Hooks**：shell 生命周期钩子，可在特定事件触发自定义脚本 [Docs]。
-
-**限制**：无正式插件 API——Skills 是最接近插件系统的机制但偏向「提示词注入」而非「功能扩展」。无 hook 市场或 skill 分享平台。深度定制（如新增工具类型）可能需要 fork 而非扩展。
+限制是 external plugins 当前主要提供 tools；spec 将 OAuth、provider plugins、MCP long tail 列为后续工作 [GH:SPEC]。
 
 ## 文档质量
 
 评分 5/5。
 
-Reasonix 的文档是 24 天项目的最大惊喜——覆盖面甚至超过部分运营数年的开源项目：
-
-- **中英双语 README**：README.md（16.7KB）+ README.zh-CN.md（14.7KB），功能描述、安装指南、对比表完全双语 [GH]
-- **架构文档**：`docs/ARCHITECTURE.md` 详细阐述四个 Pillar 的设计哲学、三分区前缀模型、并行工具调度、修复管道四通道、成本控制四机制 [Docs]
-- **CLI 参考**：官网完整的命令列表 + 全局标志 + 子命令说明 [Docs]
-- **REASONIX.md**：面向贡献者和 AI 编码工具的工程文档——技术栈、目录布局、命令、编码规范、已知陷阱 [GH]
-- **贡献指南**：CONTRIBUTING.md（5.4KB）含开发环境搭建、测试运行、PR 流程 [GH]
-- **安全策略**：SECURITY.md（1.9KB）含漏洞报告流程 [GH]
-- **行为准则**：CODE_OF_CONDUCT.md [GH]
-- **基准测试**：`benchmarks/` 目录含 tau-bench 测试框架和真实案例研究（435M tokens, 99.82% cache hit）[GH]
-- **代码示例**：`examples/` 目录含 basic-chat、mcp-server-demo [GH]
-
-文档结构清晰，从「60 秒快速开始」到「四 Pillar 深度解读」到「基准测试可复现验证」的信息架构层次分明。案例研究的可复现性（提供了精确的 `reasonix replay` 命令和 transcript 文件）特别值得肯定。
+README 给出定位与 quick start；`MIGRATING.md` 诚实区分旧/新 codebase、功能缺口与自动迁移边界；`SPEC.md` 则写清 registry、permissions、plan mode、sandbox、MCP、context management 与 roadmap [GH:README] [GH:MIGRATING] [GH:SPEC]。对于如此年轻且剧烈重写的项目，这种“contract first”文档是重要正面信号。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | 24 天 2,748 stars、149 forks、7 subscribers。304 total issues（242 closed + 62 open），issue 关闭率 79.6%。活跃的 Discussions [GH]。中文用户社区为主要参与群体，issues 中有大量中文 feature request 和 bug 报告。esengine 关闭 issue 效率极高——242 个已关闭 issue 在 24 天内完成，日均关闭 ~10 个。但社区仍由单一维护者主导，尚未形成多核心贡献者结构。 |
-| 成熟度 | 2/5 | **评分 2/5：频繁破坏性变更，无稳定 API 承诺**。v0.43.0，43 次发布在 24 天内完成（日均 1.8 版本）。0.x 版本号本身即是无稳定性承诺的声明。43 次发布的 changelog 体量（305KB）意味着每个版本都可能涉及破坏性变更；无迁移指南。 |
+| 社区活跃度 | 4/5 | 26,674 stars、1,673 forks，提交与 release 活跃；但 930 issues / 184 PRs 显示维护压力很高 [GH:API-2026-07-12]。 |
+| 成熟度 | 2/5 | 建仓约 3 个月，刚完成 TypeScript→Go ground-up rewrite，v1.17.x 高频发布，旧线仅 maintenance；尚无稳定窗口 [GH:MIGRATING]。 |
 
-社区活跃度 4 分而非 5 分，因为虽然总量惊人但关键指标显示单一维护者——bus factor 仍然是 1。如果 esengine 停止维护，项目可能迅速沉寂。
+“1.x”不是成熟度证明。这里的 1.0 是新 codebase generation 的 semver 起点，而非多年兼容积累。
 
 ## 安全与风险
 
-评分 4/5。
+评分 3/5。
 
-- **许可证**：MIT，无商业使用限制 [GH]
-- **API key 管理**：存储于 `~/.reasonix/config.json`，本地文件权限依赖操作系统 [GH]
-- **权限系统**：`allow` / `ask` / `deny` 三级权限模型，可按工具粒度配置；shell 规则可细化 [Docs]
-- **安全扫描**：CodeQL 在 CI 中运行（`.github/workflows/codeql.yml`），覆盖 TypeScript/JavaScript [GH]
-- **无自有服务端组件**：除 DeepSeek API 外，无其他第三方服务端。dashboard 仅绑定 localhost。代码和上下文必然发送至 DeepSeek API [GH]
-- **依赖健康**：12 个生产依赖 + 17 个开发依赖，依赖树较浅。使用 undici（Node 官方 HTTP 客户端）而非 axios
-- **已知漏洞**：因项目极新（24 天），无 CVE 记录不构成安全证据。现有的安全措施（CodeQL、权限系统、localhost 限制）为评分 4 的基础
+正面：workspace writer confinement、permission deny/ask/allow、plan-mode fail-closed reader trust、memory mutation fresh approval、MCP namespacing、serve token/password 模式和 OS sandbox 设计均有明确 contract [GH:SPEC]。
 
-扣 1 分的原因：权限系统默认行为未在文档中明确说明，`--yolo` 标志可能绕过权限检查。但计划模式（先审核再落地）和三级权限模型的存在缓解了部分风险。
+边界：
+
+- 非交互运行中，普通 writer `Ask` 在无 approver 时可解析为 allow；必须用 deny rules / sandbox 形成硬边界。
+- Windows stable 当前将 Bash sandbox 强制为 off。
+- `serve` 默认 `auth_mode = none` 只适用于 loopback；对外绑定前必须配置 token/password。
+- v1.17.10 仍在修复 planner handoff approval 与跨 tab prompt/session isolation [GH:v1.17.10]。
+- repository advisories endpoint 本次返回 `[]`，仅表示未查到已发布 GHSA，不等于安全审计通过 [GH:API-2026-07-12]。
 
 ## 学习价值
 
-**高**。Reasonix 是研究「将模型特性作为架构约束而非事后优化」这一设计哲学的绝佳案例：
+**高**。建议重点阅读：
 
-1. **Prefix-cache 的架构化应用**——将 DeepSeek 的前缀缓存从「API 的一个特性」提升为「loop 的核心不变量」，三分区模型、append-only 日志、volatile scratch 的设计值得深入学习。
-2. **事件溯源内核**——`src/core/` 中的 Event union + pure reducers + eventize 模式，是一种可重现、可回放、可查询的 Agent 状态管理方案。
-3. **工具调用修复管道**——针对 DeepSeek 实际行为的四通道修复（flatten/scavenge/storm/truncation），展示了从工程角度应对 LLM 非确定性输出的实战方法论。
-4. **ports/adapters 架构**——在 TypeScript 项目中实践 Clean Architecture，适配器与核心逻辑的边界清晰。
+1. Go registry 如何把 provider/tool/plugin 从核心 loop 解耦
+2. planner/executor 双 session 如何维持 prefix-cache stability
+3. deterministic snip/prune + low-frequency summary compaction
+4. permission policy、plan-mode trust 与 OS sandbox 三层边界
+5. 一次 ground-up rewrite 如何设计 non-destructive config/session migration
 
-即使不部署 Reasonix，阅读其架构文档和核心代码（特别是 `src/loop.ts`、`src/repair/`、`src/core/`）也能获得对 AI Agent 工程设计的深刻理解。
-
----
-
-*分析完成于 2026-05-15。证据基础：code review + docs + community reports。评分基于当前 v0.43.0 状态，项目正在快速迭代中。*
+它同时是正面架构样本与迁移风险样本：代码重写可以清理结构，但不会自动产生成熟度。

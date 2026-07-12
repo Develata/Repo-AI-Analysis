@@ -3,7 +3,7 @@
 
 title: Scientific Agent Skills
 created: 2025-10-19
-updated: 2026-05-27
+updated: 2026-07-12
 type: repository-analysis
 repo_url: https://github.com/K-Dense-AI/scientific-agent-skills
 category: "ai-programs/ai-harness/skills"
@@ -17,11 +17,11 @@ previous_repo: ""
 successor: ""
 primary_language: Python
 license: MIT
-stars: 22747
-forks: 2456
-last_checked: 2026-05-15
-last_verified: 2026-05-15
-evidence: docs review + community signals
+stars: 30692
+forks: 3091
+last_checked: 2026-07-12
+last_verified: 2026-07-12
+evidence: GitHub API + README + release/docs review
 archived_reason: ""
 docker_support: false
 gpu_required: false
@@ -52,28 +52,30 @@ sources:
   - "[Docs:security] https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/SECURITY.md"
   - "[GH:security] https://github.com/K-Dense-AI/scientific-agent-skills/security"
   - "[Paper Digest] Paper Digest academic search / paper-digest reference site used only as comparator in positioning table: https://www.paperdigest.org"
+  - "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main, Python, MIT, 30,692 stars, 3,091 forks, 10 open issues, 29 open PRs, head 4d97e293 (2026-07-06), latest release v2.53.0 (2026-06-23), repository advisories endpoint returned []."
+  - "[GH:v2.53.0] Official release: deterministic/provenance-rich database lookup changes, Ginkgo Cloud Lab update, transformers metadata/dependency update; https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.53.0"
 
 ---
 
 # Scientific Agent Skills
 
-> 135 个即用型科学 Agent Skills，横跨生物信息学、化学信息学、蛋白质组学、临床研究、材料科学、机器学习等 17+ 领域，基于开放的 [Agent Skills](https://agentskills.io/) 标准。由 [K-Dense Inc.](https://k-dense.ai) 维护。
+> 148 个即用型科学 Agent Skills，覆盖生物信息学、化学信息学、临床研究、材料科学、地理空间科学、机器学习等领域，基于开放的 [Agent Skills](https://agentskills.io/) 标准。由 [K-Dense Inc.](https://k-dense.ai) 维护。
 >
 > **状态**: `active` · **总分**: 3.9/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
-面向**生物医药/化学/材料/数据科学研究者**的 Agent Skills 集合：通过 135 个精心编排的技能文档，将任何支持 Agent Skills 标准的 AI agent 转化为能执行复杂多步科学工作流的研究助手。
+面向**生物医药/化学/材料/地理空间/数据科学研究者**的 Agent Skills 集合：通过 148 个技能文档，为支持 Agent Skills 标准的 AI agent 提供科学工具、数据库与工作流的结构化操作知识。
 
 ## 总体评价
 
-Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent Skills 合集之一。其核心价值不在于提供新工具，而在于为 135 个科学 Python 库、数据库和平台提供结构化、经过工程优化的 skill 文档——每个 skill 包含代码模式、最佳实践、常见陷阱和参考材料，使得 AI agent 能可靠地编排复杂的科学管线。
+Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent Skills 合集之一。其核心价值不在于提供新运行时，而在于用 148 个结构化 skill 整理科学 Python 库、数据库、研究平台与工作流的操作知识；v2.53.0 又强化了数据库查询的确定性、分页、来源记录与不可信响应处理 [GH:v2.53.0]。
 
 **适合**：使用 Cursor/Claude Code/Codex 等现代 agent 进行科学计算的研究者；需要快速搭建药物发现、基因组分析、材料筛选等管线的团队。
 
 **不适合**：不使用 Agent Skills 生态的研究者（需先采纳支持该标准的 agent）；研究领域偏纯数学/理论物理（当前 skills 偏应用科学）。
 
-**一句话**：若你的研究涉及已验证的 17+ 科学领域且使用现代 AI agent，这是值得优先关注的技能包之一；但 7 个月的年龄和高度集中于 K-Dense 的维护模式是长期依赖的关键风险。
+**一句话**：若你的研究落在其覆盖的应用科学领域且使用现代 AI agent，这是值得优先了解的技能包之一；但项目仍年轻，维护集中与 skill 供应链风险决定了它更适合审查后按需采用。
 
 ## 推荐度：3/5
 
@@ -82,15 +84,15 @@ Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent S
 
 **角色定位**：面向使用 Claude Code、Cursor、Codex 或 Gemini CLI 进行科学计算的研究者，特别是生物信息学、药物发现、化学信息学、临床研究、材料科学、单细胞组学等领域的从业者。
 
-推荐度降至 3/5 后，保留的核心正面理由是**领域匹配度**：对上述领域的研究者而言，这是一套覆盖面极广、文档质量优秀的即用技能集；但对于纯数学/物理/随机图方向（Develata 的研究重点），受益有限。另外，项目仅 7 个月历史且维护高度集中于 K-Dense，中期可持续性存疑。
+推荐度 3/5 的核心正面理由是**领域匹配度**：对上述应用科学领域的研究者而言，这是一套覆盖面极广、文档质量优秀的即用技能集；但对于纯数学、理论物理或随机图方向，受益有限。项目约 9 个月历史且维护仍集中于 K-Dense，中期可持续性仍需观察。
 
-**核心痛点**：仅 7 个月历史 — 未经历足够时间的社区压力测试；版本迭代极快但无稳定性承诺和迁移指南；高度依赖 K-Dense 组织，关键人物风险显著。
+**核心痛点**：约 9 个月历史，尚未经历长期压力测试；版本迭代快但迁移信息仍弱；高度依赖 K-Dense 组织，关键人物风险显著。
 
 **结论**：值得**了解、跟踪并尝试安装几个与你研究相关的 skill**，但不应将其视为不可替代的基础设施。将关键人物/组织集中风险纳入依赖评估。
 
 ## 优势
 
-1. **领域覆盖极广** — 135 个 skill、100+ 数据库、70+ 优化的 Python 包 skill，覆盖 17+ 科学领域。这是当前开源生态中最全面的科学 Agent Skills 合集
+1. **领域覆盖极广** — 148 个 skill、100+ 数据库入口、70+ 优化的 Python 包 skill，并新增地理空间、实验室自动化与 agent infrastructure 等覆盖 [GH]
 2. **文档质量高** — 每个 skill 包含完整的使用指南、代码示例、最佳实践章节和常见陷阱，远超市面上大多数「只给 prompt 模板」的 skill 项目；23 个完整工作流示例展示了多 skill 编排能力
 3. **基于开放标准** — 遵循 Agent Skills 开放标准（agentskills.io），不限特定 agent 平台，Cursor、Claude Code、Codex、Gemini CLI 均可使用
 4. **安装简便** — `npx skills add` 或 `gh skill add` 一键安装，agent 自动发现可用 skill
@@ -98,12 +100,12 @@ Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent S
 
 ## 劣势
 
-1. **项目极年轻** — 创建于 2025 年 10 月，仅 7 个月历史，尚未经历足够的时间检验和社区压力测试
+1. **项目仍年轻** — 创建于 2025 年 10 月，约 9 个月历史，尚未经历足够长的时间检验和社区压力测试
 2. **维护高度集中** — 组织账号 K-Dense-AI 维护，顶级贡献者 TKassis（105 次贡献）远超其他贡献者（38-9 次），关键人物风险显著
 3. **领域偏应用科学** — 对纯数学、理论物理、计算理论等方向覆盖不足；Develata 的随机图研究方向受益有限
 4. **安全模型依赖用户自查** — skill 可执行任意代码、安装包、网络请求、修改文件，安全最终责任在用户侧，skill 审查机制无法完全消除供应链风险
-5. **无稳定性承诺** — 版本号从 v2.34 跳到 v2.38（数周内），无版本策略文档，无迁移指南，无人工撰写的 CHANGELOG（release note 为自动化生成的提交列表），API 稳定性无保障
-6. **生态系统依赖** — 需要 Python 3.11+、uv 包管理器、支持 Agent Skills 标准的 agent，有轻微的生态锁定效应
+5. **无清晰稳定性承诺** — 当前已到 v2.53.0，release note 仍以提交摘要为主，缺少版本策略和迁移指南；skill 内容与依赖可随版本快速变化 [GH:v2.53.0]
+6. **生态系统依赖** — 当前仓库 tooling 要求 Python 3.13+、uv，以及支持 Agent Skills 标准的 client；各 skill 依赖可有不同 Python 范围 [GH]
 
 ## 适合什么场景
 
@@ -120,15 +122,15 @@ Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent S
 - 纯数学/随机图/统计物理研究 — 当前 skill 覆盖不足，受益有限
 - 不使用 Agent Skills 标准 agent 的研究者 — 需先采纳支持该标准的工具
 - 对供应链安全要求极高的环境 — skill 执行任意代码，安全最终依赖用户审查
-- 需要长期稳定 API 的项目 — 项目仅 7 个月历史，无稳定性承诺
+- 需要长期稳定 skill contract 的项目 — 项目约 9 个月历史，仍缺少清晰稳定性承诺
 - 希望「all-in-one」工具而非 skill 集合的场景 — 这只是给 agent 的提示/文档，不提供独立的 GUI 或运行时
 
 ## 与类似项目对比
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| [Claude Scientific Writer](https://github.com/K-Dense-AI/claude-scientific-writer) | K-Dense 旗下的科学写作专用技能集 | 本项目覆盖面更广（含实验分析等），但写作专项不如 CSW 深入 |
-| [awesome-claude-skills](https://github.com/topics/claude-skills) 生态 | 社区维护的松散 skill 集合 | 本项目统一管理、质量一致，社区版本碎片化但跨组织风险更低 |
+| [Claude Scientific Writer](https://github.com/K-Dense-AI/claude-scientific-writer) | K-Dense 的科学写作专用技能集 | 本项目覆盖科学分析到写作的更宽范围；对方聚焦写作定位 |
+| [awesome-claude-skills](https://github.com/topics/claude-skills) 生态 | 多仓库、多维护者的 skill 发现入口 | 本项目统一收录科学 skills；topic 生态更分散，未按同一评分框架审计 |
 | [Aminer](https://www.aminer.cn) / [Paper Digest](https://www.paperdigest.org) | 学术搜索引擎/文献综述 | 本项目是 agent 技能文档，不是搜索服务；可与搜索服务互补 |
 | 各库官方文档 | RDKit、Scanpy 等科学库的官方文档 | 本项目提供「让 agent 可靠使用这些库」的结构化指导，与官方文档互补而非替代 |
 
@@ -137,7 +139,7 @@ Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent S
 
 ## 它能做什么
 
-**科学数据库查询**：通过统一的 `database-lookup` skill 接入 78+ 公共 REST API（ChEMBL、PubChem、ClinVar、COSMIC、UniProt、Ensembl、Reactome、KEGG、Open Targets 等），另有专用 skill 覆盖 DepMap、Imaging Data Commons、PrimeKG、U.S. Treasury 等。
+**科学数据库查询**：通过统一的 `database-lookup` skill 接入 78 个公共数据库，并由专用 skill 与多数据库 Python 包扩展到 100+ 数据源入口。v2.53.0 增加了更明确的检索契约、分页、来源记录和不可信响应处理 [GH:v2.53.0]。
 
 **Python 科学计算**：70+ 优化的 Python 包 skill，包括 RDKit（化学信息学）、Scanpy（单细胞分析）、PyTorch Lightning（深度学习）、BioPython、OpenMM（分子动力学）、PennyLane/Qiskit（量子计算）、TimesFM（时间序列预测）、scVelo（RNA 速度）等。每个 skill 包含文档和使用示例，目标是提升 agent 在对应库上的代码生成可靠性和上下文感知能力。
 
@@ -158,7 +160,7 @@ Scientific Agent Skills 是目前开源生态中覆盖面最广的科学 Agent S
 - **操作系统**：macOS、Linux、Windows WSL2 [GH]
 - **Docker**：无
 - **GPU**：不需要（skill 集合本身，底层科学包可能用到 GPU）
-- **外部依赖**：Python 3.11+（推荐 3.12+），uv 包管理器 [GH]
+- **外部依赖**：仓库 tooling 当前要求 Python 3.13+ 与 uv；单个 skill 的依赖/兼容范围以其 `SKILL.md` 为准 [GH]
 
 **性能评价**：Skill 文件本身是纯 markdown，零运行时开销。资源占用的主体是各 skill 引用的 Python 科学包，但这些包的安装是**按需触发**的——只有被激活的 skill 才会安装对应依赖。与「一次性安装全量依赖」的方案相比，这种设计在磁盘和内存占用上更高效。评分 5/5 反映的是 skill 集合本身的设计效率，而非底层科学包的性能特征。
 
@@ -204,7 +206,7 @@ gh skill install K-Dense-AI/scientific-agent-skills --pin
 
 **添加自定义 skill**：遵循 Agent Skills 开放标准，用户可在同一目录下创建自定义 SKILL.md 文件，agent 自动发现。Skill 格式有明确规范，RDKit 等示例可作为模板参考 [GH]。
 
-**Fork 开发**：MIT 许可证允许任意 fork 和修改。但由于项目更新频繁（数周内多个 minor 版本），fork 可能面临与上游同步的维护成本。
+**Fork 开发**：仓库级 LICENSE 为 MIT，允许 fork 仓库框架与其覆盖内容；但每个 skill 另有 `SKILL.md` license metadata，复用前必须逐项核对。高频更新也会增加同步成本 [GH]。
 
 **社区贡献**：通过 PR 贡献新的 skill 或修复，流程清晰 [GH:PR]，社区已有多个贡献者提交 skill 优化。
 
@@ -228,26 +230,26 @@ gh skill install K-Dense-AI/scientific-agent-skills --pin
 - 无架构文档（说明为什么 skill 按此方式组织，设计原则等）
 - 无迁移指南（版本间变更无记录）
 
-**总体**：产品层文档质量 4-5 分水平；项目层文档有缺失。给定 99% 的用户是「使用 skill 的科学研究者」而非「贡献者」，加权偏向产品层。评分 4/5。
+**总体**：产品层 skill 文档较强，项目层仍缺 versioning/migration 说明。评分 4/5；该权重偏向 skill 使用体验，但不假设具体用户比例。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | 22,747 stars，2,456 forks，158+ PR 活跃合并 [GH:PR]。37 个 open issue 相对于项目规模极低，说明质量较高或响应及时。但贡献者集中度高（TKassis 105 次，第二仅 38 次），跨组织贡献正在增长但核心仍在 K-Dense |
-| 成熟度 | 3/5 | 仅 7 个月历史（2025-10-19 至今），版本迭代极快但无稳定性承诺和迁移指南。未发现直接的破坏性变更证据，但快速的版本号跳跃（v2.34→v2.38 数周内）提示 API 稳定性可能不是当前优先事项。项目在 GitHub 上不是 archived 状态且持续活跃，但尚未进入「可以放心依赖」的成熟阶段 |
+| 社区活跃度 | 4/5 | 30,692 stars、3,091 forks；2026-07-12 有 10 个 open issues 与 29 个 open PRs，外部参与可见，但维护中心仍在 K-Dense [GH:API-2026-07-12]。 |
+| 成熟度 | 3/5 | 约 9 个月历史，已到 v2.53.0 且仍高频变化；未发现仓库级已发布 GHSA，但版本策略和迁移指南仍不足，尚不宜视为稳定基础设施 [GH:API-2026-07-12]。 |
 
 ## 安全与风险
 
 **代码执行风险**：skill 本质上是给 agent 的操作指南，agent 会根据 skill 指令执行任意 Python 代码、安装包、发起网络请求、修改文件。项目明确声明用户需自行审查 skill 内容后才使用 [GH]。每周通过 Cisco AI Defense Skill Scanner 进行 LLM 安全扫描 [GH:security]。
 
-**供应链风险**：135 个 skill 依赖大量第三方 Python 包（RDKit、Scanpy、PyTorch 等），供应链攻击面广。每个 skill 可独立安装其依赖，减少了不必要的暴露，但无法消除底层包的风险。
+**供应链风险**：148 个 skill 涉及大量第三方 Python 包（RDKit、Scanpy、PyTorch 等），供应链攻击面广。按需安装可以在只启用少量 skill 时减少不必要依赖，但实际暴露取决于用户安装与执行路径，不能视为已证明的安全缓解。
 
-**许可风险**：MIT 许可证，无 copyleft 约束，商业友好。
+**许可风险**：仓库级 LICENSE 为 MIT；但官方 README 明确说明每个 skill 在 `SKILL.md` 的 `license` metadata 中可声明不同条款，商业复用必须逐 skill 审查，不能把仓库 MIT 外推到全部 skill 内容 [GH]。
 
 **数据隐私**：科学数据库查询通过公共 API 进行，谨慎处理敏感研究数据（如患者 VCF 文件）的用户应注意网络传输和数据驻留。
 
-**总体**：攻击面由设计决定（skill = 代码执行），已有安全扫描流程但不完美。评分 3/5 反映「有安全关注点，但不影响正常使用」——前提是用户执行了建议的安全审查。
+**总体**：攻击面由设计决定（skill = 指令与代码执行入口），已有持续安全扫描但不能替代人工审查。GitHub repository advisories endpoint 在本次检查返回 `[]`，仅表示此次未发现已发布仓库级 GHSA，不证明 148 个 skill 及其依赖安全 [GH:API-2026-07-12]。评分维持 3/5。
 
 ## 学习价值
 

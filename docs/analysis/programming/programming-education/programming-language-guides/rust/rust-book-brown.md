@@ -16,7 +16,7 @@ primary_language: Rust
 license: Apache-2.0 / MIT
 stars: 1126
 forks: 182
-last_checked: 2026-05-14
+last_checked: 2026-07-12
 last_verified: 2026-05-14
 evidence: "code review + docs review + community reports + live site testing"
 archived_reason: ""

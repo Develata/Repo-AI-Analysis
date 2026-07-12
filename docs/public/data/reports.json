@@ -1,5 +1,5 @@
 {
-  "count": 149,
+  "count": 150,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -579,7 +579,7 @@
         "recommendation": 5
       },
       "overall_score": 4.4,
-      "last_checked": "2026-05-14",
+      "last_checked": "2026-07-12",
       "last_verified": "2026-05-14",
       "updated": "2026-05-14",
       "sources": [
@@ -1840,8 +1840,8 @@
       ],
       "primary_language": "JavaScript",
       "license": "CC BY-NC-SA 4.0",
-      "stars": 10978,
-      "forks": 1024,
+      "stars": 18060,
+      "forks": 1720,
       "status": "active",
       "sharing_candidate": false,
       "ratings": {
@@ -1857,13 +1857,15 @@
         "recommendation": 4
       },
       "overall_score": 4,
-      "last_checked": "2026-05-15",
-      "last_verified": "2026-05-15",
-      "updated": "2026-05-21",
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
       "sources": [
         "[GH] https://github.com/datawhalechina/easy-vibe",
         "[Docs] https://datawhalechina.github.io/easy-vibe/",
-        "[Zhihu] https://zhuanlan.zhihu.com/p/1990857610690335267"
+        "[Zhihu] https://zhuanlan.zhihu.com/p/1990857610690335267",
+        "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main, JavaScript, no recognized license metadata, 18,060 stars, 1,720 forks, 12 open issues, 2 open PRs, head 0123354 (2026-07-06), no releases, repository advisories endpoint returned [].",
+        "[GH:i18n] Official README and commit dc3795f3 verified 2026-07-12: all Stages 1-3 are available in 10 languages; https://github.com/datawhalechina/easy-vibe/commit/dc3795f37a0acfccea9f5fe78ee4aaef5888b2da"
       ],
       "summary": "easy-vibe 是目前中文圈最系统、完成度最高的 vibe coding 入门教程之一——Datawhale 与清华大学联合出品，三阶段渐进式课程覆盖从「零基础玩游戏」到「Claude Code 高级 agent 工作流」的完整路径。"
     },
@@ -2199,7 +2201,7 @@
         "recommendation": 5
       },
       "overall_score": 4,
-      "last_checked": "2026-05-14",
+      "last_checked": "2026-07-12",
       "last_verified": "2026-05-14",
       "updated": "2026-05-14",
       "sources": [
@@ -2763,8 +2765,8 @@
       ],
       "primary_language": "Python",
       "license": "MIT",
-      "stars": 22747,
-      "forks": 2456,
+      "stars": 30692,
+      "forks": 3091,
       "status": "active",
       "sharing_candidate": false,
       "ratings": {
@@ -2780,9 +2782,9 @@
         "recommendation": 3
       },
       "overall_score": 3.9,
-      "last_checked": "2026-05-15",
-      "last_verified": "2026-05-15",
-      "updated": "2026-05-27",
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
       "sources": [
         "[GH] https://github.com/K-Dense-AI/scientific-agent-skills",
         "[GH:API] https://api.github.com/repos/K-Dense-AI/scientific-agent-skills",
@@ -2793,9 +2795,11 @@
         "[Docs:examples] https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/docs/examples.md",
         "[Docs:security] https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/SECURITY.md",
         "[GH:security] https://github.com/K-Dense-AI/scientific-agent-skills/security",
-        "[Paper Digest] Paper Digest academic search / paper-digest reference site used only as comparator in positioning table: https://www.paperdigest.org"
+        "[Paper Digest] Paper Digest academic search / paper-digest reference site used only as comparator in positioning table: https://www.paperdigest.org",
+        "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main, Python, MIT, 30,692 stars, 3,091 forks, 10 open issues, 29 open PRs, head 4d97e293 (2026-07-06), latest release v2.53.0 (2026-06-23), repository advisories endpoint returned [].",
+        "[GH:v2.53.0] Official release: deterministic/provenance-rich database lookup changes, Ginkgo Cloud Lab update, transformers metadata/dependency update; https://github.com/K-Dense-AI/scientific-agent-skills/releases/tag/v2.53.0"
       ],
-      "summary": "面向生物医药/化学/材料/数据科学研究者的 Agent Skills 集合：通过 135 个精心编排的技能文档，将任何支持 Agent Skills 标准的 AI agent 转化为能执行复杂多步科学工作流的研究助手。"
+      "summary": "面向生物医药/化学/材料/地理空间/数据科学研究者的 Agent Skills 集合：通过 148 个技能文档，为支持 Agent Skills 标准的 AI agent 提供科学工具、数据库与工作流的结构化操作知识。"
     },
     {
       "slug": "ustc/campus-resources/ustc-network-resources",
@@ -3017,51 +3021,6 @@
         "[L1:crewai] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/agent-frameworks/crewai.md"
       ],
       "summary": "CopilotKit 是给 agent 应用补“用户界面层”的 TypeScript/React 主线框架：当你的 agent backend 已经存在，但还缺 chat surface、generative UI、shared state、HITL 和跨前端框架接入时，它正好站在 agent runtime 与最终用户之间 [GH:readme][Docs"
-    },
-    {
-      "slug": "ai-programs/coding-agents/deepseek-reasonix",
-      "route": "/analysis/ai-programs/coding-agents/deepseek-reasonix",
-      "source_path": "docs/analysis/ai-programs/coding-agents/deepseek-reasonix.md",
-      "title": "DeepSeek-Reasonix",
-      "repo_url": "https://github.com/esengine/DeepSeek-Reasonix",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
-      "tags": [
-        "coding-agent",
-        "deepseek",
-        "cli",
-        "tui",
-        "typescript",
-        "mcp",
-        "desktop-app"
-      ],
-      "primary_language": "TypeScript",
-      "license": "MIT",
-      "stars": 2748,
-      "forks": 149,
-      "status": "active",
-      "sharing_candidate": false,
-      "ratings": {
-        "capability": 4,
-        "usability": 3,
-        "performance": 5,
-        "code_quality": 4,
-        "documentation": 5,
-        "community": 4,
-        "maturity": 2,
-        "extensibility": 4,
-        "security": 4,
-        "recommendation": 3
-      },
-      "overall_score": 3.8,
-      "last_checked": "2026-05-15",
-      "last_verified": "2026-05-15",
-      "updated": "2026-05-21",
-      "sources": [
-        "[GH] https://github.com/esengine/DeepSeek-Reasonix",
-        "[Docs] https://esengine.github.io/DeepSeek-Reasonix/"
-      ],
-      "summary": "为深度使用 DeepSeek API 的开发者打造的终端编程 Agent，以 prefix-cache 稳定性为核心卖点，配合 Tauri 桌面客户端和 MCP 生态，在成本控制和工程深度上均属同类顶流——但仅 24 天项目年龄决定了它仍在快速震荡期。"
     },
     {
       "slug": "developer-resources/free-tier-catalogs/free-for-dev",
@@ -3324,8 +3283,8 @@
       ],
       "primary_language": "Rust",
       "license": "Apache-2.0 / MIT",
-      "stars": 31284,
-      "forks": 4601,
+      "stars": 32229,
+      "forks": 4807,
       "status": "active",
       "sharing_candidate": false,
       "ratings": {
@@ -3341,9 +3300,9 @@
         "recommendation": 3
       },
       "overall_score": 3.8,
-      "last_checked": "2026-05-14",
-      "last_verified": "2026-05-14",
-      "updated": "2026-05-27",
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
       "sources": [
         "[GH] https://github.com/zeroclaw-labs/zeroclaw",
         "[Docs] https://docs.zeroclawlabs.ai/",
@@ -3352,9 +3311,12 @@
         "[Bitdoze] https://www.bitdoze.com/openclaw-alternatives/",
         "[Kanaries] https://docs.kanaries.net/topics/openclaw/openclaw-vs-zeroclaw-vs-pi-agent-vs-nanobot",
         "[GH#6094] GitHub issue/PR reference for zeroclaw-labs/zeroclaw dead-code/cost tracker discussion: https://github.com/zeroclaw-labs/zeroclaw/issues/6094",
-        "[Borq168] Third-party Zeroclaw review / issue-density commentary cited in original audit: https://www.borq168.com"
+        "[Borq168] Third-party Zeroclaw review / issue-density commentary cited in original audit: https://www.borq168.com",
+        "[GH:API-2026-07-12] GitHub API snapshot: active, default branch master, Rust, Apache-2.0 metadata (README badge says MIT OR Apache-2.0), 32,229 stars, 4,807 forks, 311 open issues, 206 open PRs, head 2c2edec (2026-07-11), latest release v0.8.2 (2026-06-26), repository advisories endpoint returned [].",
+        "[GH:v0.8.0] Official release: multi-agent runtime, Schema V3 migration, zerocode TUI, per-agent security, observability rework, WASM plugin interfaces and breaking changes; https://github.com/zeroclaw-labs/zeroclaw/releases/tag/v0.8.0",
+        "[GH:v0.8.2] Official release: A2A discovery, extra skill registries, durable run/task control plane, ingress/SOP hardening, plugin SSRF guard and broader channels; https://github.com/zeroclaw-labs/zeroclaw/releases/tag/v0.8.2"
       ],
-      "summary": "面向资源敏感型部署场景（边缘设备、低配 VPS、嵌入式系统）的 AI agent runtime，以 3.2 MB Rust 二进制实现了 OpenClaw 95% 的 API 兼容，内存占用仅 ~5 MB，但在成熟度和版本稳定性上仍在快速迭代阶段。"
+      "summary": "面向资源敏感型部署与本地多 Agent 场景的 Rust agent runtime；v0.8 系列已加入多 Agent 隔离、zerocode TUI、SOP、A2A 与 WASM 扩展面，但仍处于 pre-1.0 快速演化期。"
     },
     {
       "slug": "ai-programs/agent-infrastructure/hcom",
@@ -3624,55 +3586,6 @@
       "summary": "Open Notebook 是 self-hosted、privacy-focused 的 NotebookLM 替代品，面向多模态资料组织、检索、对话和 podcast 生成。 [GH:readme]"
     },
     {
-      "slug": "ai-programs/coding-agents/opencode",
-      "route": "/analysis/ai-programs/coding-agents/opencode",
-      "source_path": "docs/analysis/ai-programs/coding-agents/opencode.md",
-      "title": "OpenCode",
-      "repo_url": "https://github.com/anomalyco/opencode",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
-      "tags": [
-        "coding-agent",
-        "cli",
-        "tui",
-        "ai-assisted-development",
-        "typescript",
-        "mcp",
-        "terminal"
-      ],
-      "primary_language": "TypeScript",
-      "license": "MIT",
-      "stars": 160844,
-      "forks": 18872,
-      "status": "active",
-      "sharing_candidate": false,
-      "ratings": {
-        "capability": 4,
-        "usability": 5,
-        "performance": 4,
-        "code_quality": 3,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 2,
-        "extensibility": 5,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.7,
-      "last_checked": "2026-05-15",
-      "last_verified": "2026-05-15",
-      "updated": "2026-05-27",
-      "sources": [
-        "[GH] https://github.com/anomalyco/opencode",
-        "[Docs] https://opencode.ai/docs",
-        "[CVE] https://nvd.nist.gov/vuln/detail/CVE-2026-22812",
-        "[Infralovers] https://www.infralovers.com/blog/2026-01-29-claude-code-vs-opencode/",
-        "[Docs: Plugins] opencode plugin documentation, plugin event hooks and extension surface: https://opencode.ai/docs/plugins",
-        "[Web] opencode official website / documentation entry used for high-level positioning: https://opencode.ai"
-      ],
-      "summary": "终端优先的开源 AI 编程 Agent，以模型无关性和插件生态为核心竞争力，是目前 Claude Code 之外最活跃的 CLI 编程 Agent 项目。"
-    },
-    {
       "slug": "ai-programs/assistant-agents/openhuman",
       "route": "/analysis/ai-programs/assistant-agents/openhuman",
       "source_path": "docs/analysis/ai-programs/assistant-agents/openhuman.md",
@@ -3831,54 +3744,6 @@
       "summary": "Plandex 是一条较早公开并获得显著关注的 open-source terminal coding-agent 历史线：它把大任务规划、上下文管理、diff sandbox、可调 autonomy、本地/自托管 server 组合成完整 CLI workflow [GH:api][GH:readme][Docs:autonomy]。"
     },
     {
-      "slug": "ai-programs/ai-harness/memory/agentmemory",
-      "route": "/analysis/ai-programs/ai-harness/memory/agentmemory",
-      "source_path": "docs/analysis/ai-programs/ai-harness/memory/agentmemory.md",
-      "title": "agentmemory",
-      "repo_url": "https://github.com/rohitg00/agentmemory",
-      "category": "ai-programs/ai-harness/memory",
-      "directory": "ai-programs/ai-harness/memory",
-      "tags": [
-        "memory",
-        "mcp",
-        "agent",
-        "coding-agent",
-        "iii-engine",
-        "persistent-storage"
-      ],
-      "primary_language": "TypeScript",
-      "license": "Apache-2.0",
-      "stars": 9300,
-      "forks": 768,
-      "status": "active",
-      "sharing_candidate": false,
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 3,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 2,
-        "extensibility": 4,
-        "security": 4,
-        "recommendation": 3
-      },
-      "overall_score": 3.6,
-      "last_checked": "2026-05-15",
-      "last_verified": "2026-05-15",
-      "updated": "2026-05-21",
-      "sources": [
-        "[GH] https://github.com/rohitg00/agentmemory",
-        "[Docs] https://agent-memory.dev",
-        "[Benchmark] https://github.com/rohitg00/agentmemory/blob/main/benchmark/LONGMEMEVAL.md",
-        "[Comparison] https://github.com/rohitg00/agentmemory/blob/main/benchmark/COMPARISON.md",
-        "[AgentConn] https://agentconn.com/agents/agentmemory",
-        "[SignalForges] https://signalforges.com/pages/rohitg00-agentmemory-best-practices-2026-05-13/"
-      ],
-      "summary": "agentmemory 是面向 AI coding agent 的持久记忆基础设施，基于 iii-engine 构建，通过 12 个生命周期 hook 自动捕获 agent 所有工具调用，经四层记忆整合后提供 BM25+Vector+Knowledge Graph 三流混合检索，年度 token 成本 $0–$10，远低于 LLM 摘要替代方案（~$500/"
-    },
-    {
       "slug": "ai-programs/agent-frameworks/autogen",
       "route": "/analysis/ai-programs/agent-frameworks/autogen",
       "source_path": "docs/analysis/ai-programs/agent-frameworks/autogen.md",
@@ -3993,6 +3858,56 @@
         "[NPM] https://registry.npmjs.org/%40colbymchenry%2Fcodegraph queried 2026-05-20; latest=0.7.11, versions=20, unpackedSize=7718877"
       ],
       "summary": "codegraph 应归入 `ai-programs/ai-harness/mcp`：它不是普通代码搜索工具，而是给 coding agents 提供本地 context/indexing layer，用预计算代码图谱替代反复 grep/read 的探索成本。"
+    },
+    {
+      "slug": "ai-programs/coding-agents/deepseek-reasonix",
+      "route": "/analysis/ai-programs/coding-agents/deepseek-reasonix",
+      "source_path": "docs/analysis/ai-programs/coding-agents/deepseek-reasonix.md",
+      "title": "DeepSeek-Reasonix",
+      "repo_url": "https://github.com/esengine/DeepSeek-Reasonix",
+      "category": "ai-programs/coding-agents",
+      "directory": "ai-programs/coding-agents",
+      "tags": [
+        "coding-agent",
+        "deepseek",
+        "cli",
+        "tui",
+        "go",
+        "mcp",
+        "desktop-app"
+      ],
+      "primary_language": "Go",
+      "license": "MIT",
+      "stars": 26674,
+      "forks": 1673,
+      "status": "active",
+      "sharing_candidate": false,
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 5,
+        "code_quality": 3,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.6,
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
+      "sources": [
+        "[GH] https://github.com/esengine/DeepSeek-Reasonix",
+        "[Docs] https://esengine.github.io/DeepSeek-Reasonix/",
+        "[GH:README] Official README on default branch main-v2, inspected 2026-07-12: Go rewrite, single static binary, OpenAI-compatible providers, plugins/MCP and install paths; https://github.com/esengine/DeepSeek-Reasonix/blob/main-v2/README.md",
+        "[GH:MIGRATING] Official 1.0 migration guide, inspected 2026-07-12: ground-up Go rewrite, legacy TypeScript branch maintenance-only, config/session migration and unported semantic index; https://github.com/esengine/DeepSeek-Reasonix/blob/main-v2/docs/MIGRATING.md",
+        "[GH:SPEC] Official engineering spec, inspected 2026-07-12: provider/tool registries, permissions, plan mode, sandbox status, MCP transports, context management and distribution; https://github.com/esengine/DeepSeek-Reasonix/blob/main-v2/docs/SPEC.md",
+        "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main-v2, primary language Go, MIT, 26,674 stars, 1,673 forks, 930 open issues, 184 open PRs, head 78e9e265 (2026-07-11), latest CLI/Desktop release v1.17.10 (2026-07-10), repository advisories endpoint returned [].",
+        "[GH:v1.17.10] Official CLI/Desktop release v1.17.10: MCP get, approval-gated planner handoffs, Feishu bot/media and multiple tab/session isolation fixes; https://github.com/esengine/DeepSeek-Reasonix/releases/tag/v1.17.10"
+      ],
+      "summary": "Reasonix 已不再是 2026-05 的 TypeScript 0.x 实验品：默认分支现为 Go 重写的 1.x，支持 OpenAI-compatible providers、双模型 planner/executor、MCP plugins、CLI 与 Wails desktop；但迁移刚完成、发布极快、backlog 很大，适合 DeepSeek "
     },
     {
       "slug": "ai-programs/agent-workflows/flowise",
@@ -4419,6 +4334,61 @@
         "[NPM:opencode] https://registry.npmjs.org/oh-my-opencode queried 2026-05-18; latest=4.2.2, versions_count=213, unpackedSize=8671442"
       ],
       "summary": "oh-my-openagent 适合已经重度使用 OpenCode、愿意承担高复杂度配置与安全边界管理、希望把单个 coding agent 扩展成多模型协作团队的 advanced users；它很强，但不是稳态轻量工具。"
+    },
+    {
+      "slug": "ai-programs/coding-agents/opencode",
+      "route": "/analysis/ai-programs/coding-agents/opencode",
+      "source_path": "docs/analysis/ai-programs/coding-agents/opencode.md",
+      "title": "OpenCode",
+      "repo_url": "https://github.com/anomalyco/opencode",
+      "category": "ai-programs/coding-agents",
+      "directory": "ai-programs/coding-agents",
+      "tags": [
+        "coding-agent",
+        "cli",
+        "tui",
+        "ai-assisted-development",
+        "typescript",
+        "mcp",
+        "terminal"
+      ],
+      "primary_language": "TypeScript",
+      "license": "MIT",
+      "stars": 184799,
+      "forks": 23057,
+      "status": "active",
+      "sharing_candidate": false,
+      "ratings": {
+        "capability": 4,
+        "usability": 5,
+        "performance": 4,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 5,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.6,
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
+      "sources": [
+        "[GH] https://github.com/anomalyco/opencode",
+        "[Docs] https://opencode.ai/docs",
+        "[CVE] https://nvd.nist.gov/vuln/detail/CVE-2026-22812",
+        "[Infralovers] https://www.infralovers.com/blog/2026-01-29-claude-code-vs-opencode/",
+        "[Docs: Plugins] opencode plugin documentation, plugin event hooks and extension surface: https://opencode.ai/docs/plugins",
+        "[Web] opencode official website / documentation entry used for high-level positioning: https://opencode.ai",
+        "[GH:API-2026-07-12] GitHub API snapshot: active, default branch dev, TypeScript, MIT, 184,799 stars, 23,057 forks, 3,621 open issues, 1,081 open PRs, head 9976269 (2026-07-10), latest release v1.17.18 (2026-07-09).",
+        "[GH:v1.17.18] Official patch release: Copilot zero billing-batch crash/pricing fix and Meta Muse Spark prompt; https://github.com/anomalyco/opencode/releases/tag/v1.17.18",
+        "[GHSA-critical] GHSA-c83v-7274-4vgp / CVE-2026-22813, critical CVSS 4.0 9.4: malicious website/XSS path to local command execution; affected <1.1.10, patched 1.1.10; https://github.com/anomalyco/opencode/security/advisories/GHSA-c83v-7274-4vgp",
+        "[GHSA-high] GHSA-vxw4-wv6m-9hhh / CVE-2026-22812, high: unauthenticated HTTP server arbitrary command execution; opencode-ai <1.0.216, patched 1.0.216; https://github.com/anomalyco/opencode/security/advisories/GHSA-vxw4-wv6m-9hhh",
+        "[GH:issues] Sampled historical bug reports, checked 2026-07-12: #18612 'There are too many bugs...' closed 2026-03-22 https://github.com/anomalyco/opencode/issues/18612 ; #23443 desktop sidecar Bun panic/RSS report closed 2026-05-18 https://github.com/anomalyco/opencode/issues/23443",
+        "[GHCR] Official public container package checked 2026-07-12: ghcr.io/anomalyco/opencode:1.17.18 and latest, amd64/arm64 manifests; https://github.com/anomalyco/opencode/pkgs/container/opencode"
+      ],
+      "summary": "终端优先的开源 AI 编程 Agent，以模型无关性和插件生态为核心竞争力，是目前 Claude Code 之外最活跃的 CLI 编程 Agent 项目。"
     },
     {
       "slug": "cloud-server/storage-aggregation/openlist",
@@ -5916,8 +5886,8 @@
       ],
       "primary_language": "JavaScript/TypeScript",
       "license": "AGPL-3.0",
-      "stars": 17686,
-      "forks": 1973,
+      "stars": 17915,
+      "forks": 2026,
       "status": "active",
       "sharing_candidate": false,
       "ratings": {
@@ -5933,19 +5903,22 @@
         "recommendation": 4
       },
       "overall_score": 3.4,
-      "last_checked": "2026-05-14",
-      "last_verified": "2026-05-14",
-      "updated": "2026-05-27",
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
       "sources": [
         "[GH] https://github.com/overleaf/overleaf",
-        "[Docs] https://docs.overleaf.com/on-premises",
+        "[Docs] Official on-premises docs inspected 2026-07-12: CE/Server Pro Docker deployment, air-gap operation, trusted-user boundary and lack of Sandbox Compiles in CE; https://docs.overleaf.com/on-premises",
+        "[Docs:Toolkit] Official Toolkit configuration docs inspected 2026-07-12; https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit",
         "[Wiki] https://github.com/overleaf/overleaf/wiki",
-        "[GH Security] GitHub security overview/advisory index for overleaf/overleaf: https://github.com/overleaf/overleaf/security",
-        "[GH: Issue #1441] GitHub issue overleaf/overleaf#1441 about docker-compose/MongoDB compatibility: https://github.com/overleaf/overleaf/issues/1441",
-        "[GHSA-m95q-g8qg-wgj4] GitHub Security Advisory GHSA-m95q-g8qg-wgj4 for overleaf/overleaf: https://github.com/overleaf/overleaf/security/advisories/GHSA-m95q-g8qg-wgj4",
-        "[GHSA-pxm4-p454-vppg] GitHub Security Advisory GHSA-pxm4-p454-vppg for overleaf/overleaf: https://github.com/overleaf/overleaf/security/advisories/GHSA-pxm4-p454-vppg"
+        "[GH Security] GitHub security overview for overleaf/overleaf: https://github.com/overleaf/overleaf/security",
+        "[GH:Issue-1441] overleaf/overleaf#1441 about docker-compose/MongoDB compatibility; closed 2026-05-18, verified 2026-07-12: https://github.com/overleaf/overleaf/issues/1441",
+        "[GHSA-m95q-g8qg-wgj4] CVE-2024-45313 high: insecure defaults in Toolkit before 2024-07-17 and docker-compose before 2024-08-28; patched by those dated versions; https://github.com/overleaf/overleaf/security/advisories/GHSA-m95q-g8qg-wgj4",
+        "[GHSA-pxm4-p454-vppg] CVE-2024-45312 medium: aspell language-parameter issue; CE/Server Pro 4.x <4.2.7 and 5.x <5.0.7 affected, patched 4.2.7/5.0.7; https://github.com/overleaf/overleaf/security/advisories/GHSA-pxm4-p454-vppg",
+        "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main, JavaScript, AGPL-3.0, 17,915 stars, 2,026 forks, 143 open issues, 20 open PRs, default-branch head 28ad3b03 (2026-06-26), repository pushed_at 2026-07-10; repository advisories endpoint returned the same two published 2024 advisories cited above.",
+        "[GH:issues] Long-lived feature requests checked 2026-07-12: #198, #520 and #1400 remain open; https://github.com/overleaf/overleaf/issues/198 ; https://github.com/overleaf/overleaf/issues/520 ; https://github.com/overleaf/overleaf/issues/1400"
       ],
-      "summary": "面向需要在可信环境中自托管 LaTeX 协作平台的科研团队或实验室——自托管 LaTeX 编辑器的唯一成熟选择，但 Community Edition 的功能和安全模型有明确妥协。"
+      "summary": "对需要自托管协作式 LaTeX、且所有用户都可信的实验室或研究团队，Overleaf Community Edition 是本次评估中最成熟的开源选择之一；若需要用户隔离、Sandbox Compiles 或企业身份治理，应评估 Server Pro 或 SaaS，而不是把 CE 暴露给不可信用户 [Docs]。"
     },
     {
       "slug": "ai-programs/assistant-agents/personal-ai-infrastructure",
@@ -6413,6 +6386,63 @@
         "[GH:security-advisories] GitHub security-advisories endpoint checked 2026-06-07: returned 0; absence only means no advisory returned by this endpoint in this check, not proof of safety"
       ],
       "summary": "Career-Ops 把 Claude Code/OpenCode/Gemini CLI 变成 job-search command center：职位评估、定制 CV、portal scan、batch processing 和 dashboard。 [GH:readme]"
+    },
+    {
+      "slug": "dev-tools/destructive-command-guard",
+      "route": "/analysis/dev-tools/destructive-command-guard",
+      "source_path": "docs/analysis/dev-tools/destructive-command-guard.md",
+      "title": "destructive_command_guard",
+      "repo_url": "https://github.com/Dicklesworthstone/destructive_command_guard",
+      "category": "dev-tools",
+      "directory": "dev-tools",
+      "tags": [
+        "rust",
+        "developer-tools",
+        "ai-agents",
+        "safety-hook",
+        "command-guard",
+        "git-safety",
+        "shell-safety"
+      ],
+      "primary_language": "Rust",
+      "license": "MIT License with OpenAI/Anthropic Rider (custom, non-OSI)",
+      "stars": 2221,
+      "forks": 84,
+      "status": "active",
+      "sharing_candidate": false,
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 4,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
+      "sources": [
+        "[GH] https://github.com/Dicklesworthstone/destructive_command_guard",
+        "[GH:api] GitHub REST/GraphQL/CLI snapshot 2026-07-12: created_at=2026-01-07T22:27:34Z, pushed_at=2026-07-11T21:44:17Z, default_branch=main, primary_language=Rust, stars=2221, forks=84, open issues=5, open PRs=1, closed issues=83, closed PRs=87, contributors endpoint returned Dicklesworthstone=1752 and dependabot[bot]=8, archived=false, diskUsageKB=26733; REST open_issues_count=6 reconciles to 5 issues + 1 PR",
+        "[GH:readme] Local README.md at commit 10552f492e2a02fa4bf88677446143ceb9add7eb inspected 2026-07-12; it documents core Git/filesystem guards, 50+ opt-in packs, custom YAML packs, scan/explain/allowlist flows, Linux/macOS/Windows installers, and native or community integration paths across multiple agent clients; these are repository claims, not all independently exercised",
+        "[GH:local-scan] Shallow clone /opt/data/tmp/dcg-analysis-pCKUHW/repo at commit 10552f492e2a02fa4bf88677446143ceb9add7eb inspected 2026-07-12: 541 tracked files, 190 test/fixture-ish tracked paths by git path heuristic, 10 workflow files, 73 docs Markdown files, 25 MB checkout; Cargo.toml version=0.6.5, Rust edition=2024, rust-version=1.85, release profile uses size optimization/LTO/strip; no root SECURITY.md, CONTRIBUTING.md, or CODE_OF_CONDUCT.md found in this scan",
+        "[GH:releases] GitHub release/tag endpoints checked 2026-07-12: releases.totalCount=29, tag refs totalCount=43; latest published release=v0.6.5 at 2026-07-03T09:03:36Z with 24 assets; no v0.6.6 tag or GitHub Release was found, while main CHANGELOG already contains a v0.6.6 section",
+        "[GH:issues] GitHub issue samples checked 2026-07-12: open #183 reports Codex CLI 0.144.x on Windows treating v0.6.5 deny as hook failure and executing the command; open #181 reports a heredoc false positive; open #185 reports a broken install URL in the distributed skill. Closed #174 reports wrong-architecture v0.6.4 assets that made the hook binary unable to start on affected targets, after which the client continued command execution; closed #160 records malformed-JSON fail-open bypass vectors. Main CHANGELOG says fixes are prepared for v0.6.6, but that release was not published at check time",
+        "[GH:ci] GitHub Actions checked 2026-07-12 for main commit 10552f492e2a: run 29169302391 failed (Linux check and several other jobs passed; Windows full suite and fuzz-smoke failed). Windows nextest discovered 4223 tests but ended with numerous failures, including protocol/allowlist/golden/help/performance cases; fuzz-smoke failed compiling fsqlite-pager. Bench run 29169302388 failed its regression gate, with several measured regressions and a reported >100% regression match. A newer scheduled run was still queued at check time",
+        "[GH:docs] Local docs/security.md, docs/security-model.md, docs/configuration.md, docs/agents.md and .github/workflows/{ci.yml,dist.yml} inspected 2026-07-12: heredoc parsing/timeouts are fail-open by default; docs enumerate unsupported/obfuscated/dynamic cases; config exposes bypass/allowlist/profile controls; dist workflow publishes checksums and Sigstore bundles. docs/configuration.md still described an older Codex exit-code-2 contract while README/main changelog described the newer minimal JSON/exit-0 contract",
+        "[GH:license] Local LICENSE inspected 2026-07-12: title is 'MIT License (with OpenAI/Anthropic Rider)'; rider grants no rights to OpenAI, Anthropic, affiliates, or persons/entities acting on their behalf and restricts providing the software or derivatives to them. GitHub API reports spdx_id=NOASSERTION while Cargo.toml says license=MIT; legal interpretation requires independent review",
+        "[GH:advisories] GitHub repository security-advisories endpoint checked 2026-07-12 and returned []; this means no published repository advisory was found through that endpoint in this check, not that the project, dependencies, installers, or hook protocols are audited safe",
+        "[Local:smoke] Checksum-verified v0.6.5 x86_64-unknown-linux-musl release tested in /opt/data/tmp/dcg-smoke-uYRz35 on 2026-07-12: sha256sum passed; binary version=0.6.5, size=26475896 bytes, statically linked; 20 fresh-process runs had median 49.600 ms for `dcg test 'git status'` (exit 0) and 39.204 ms for a destructive Git test string (exit 1), child max RSS about 12300 KB. Raw Claude-shaped hook input allowed `git status` silently and returned deny JSON for the destructive test string. This did not install a hook, test a real agent client, verify Windows/macOS, or benchmark internal evaluator-only latency",
+        "[GH:comparison-cc-safety-net] https://github.com/kenryu42/cc-safety-net checked 2026-07-12: TypeScript/Node destructive-command hook for multiple agent CLIs; repository license metadata=MIT; positioning only, not a 10-dimension audit",
+        "[GH:comparison-omamori] https://github.com/yottayoshida/omamori checked 2026-07-12: Rust semantic guard using macOS-focused shims/hooks and audit controls; repository offers Apache-2.0 OR MIT; positioning only, not a 10-dimension audit",
+        "[GH:comparison-slb] https://github.com/Dicklesworthstone/slb checked 2026-07-12: Go CLI implementing multi-agent two-person approval for destructive commands; repository uses a custom rider license; positioning only, not a 10-dimension audit"
+      ],
+      "summary": "`destructive_command_guard`（dcg）适合希望给 AI coding agent 增加一层低成本、可解释的 destructive-command guard 的个人开发者；它值得试用，但不能替代 sandbox、最小权限、版本控制与备份，并且截至本次检查不宜把 v0.6.5 当作所有 client/platform 上都可靠的硬安"
     },
     {
       "slug": "games/game-assistants/game-cheats-manager",
@@ -6990,6 +7020,56 @@
         "[GH:anthropic-skills] https://github.com/anthropics/skills — same-category comparison; existing local analysis under ai-programs/agent-skills/anthropic-skills.md"
       ],
       "summary": "12-Factor Agents 是一份值得收录的 agent 工程方法论：它不是可直接部署的框架，而是把 production LLM software 的关键纪律整理成 12 条可讨论、可迁移、可落地的原则 [GH:readme]。"
+    },
+    {
+      "slug": "ai-programs/ai-harness/memory/agentmemory",
+      "route": "/analysis/ai-programs/ai-harness/memory/agentmemory",
+      "source_path": "docs/analysis/ai-programs/ai-harness/memory/agentmemory.md",
+      "title": "agentmemory",
+      "repo_url": "https://github.com/rohitg00/agentmemory",
+      "category": "ai-programs/ai-harness/memory",
+      "directory": "ai-programs/ai-harness/memory",
+      "tags": [
+        "memory",
+        "mcp",
+        "agent",
+        "coding-agent",
+        "iii-engine",
+        "persistent-storage"
+      ],
+      "primary_language": "TypeScript",
+      "license": "Apache-2.0",
+      "stars": 24996,
+      "forks": 2067,
+      "status": "active",
+      "sharing_candidate": false,
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 4,
+        "code_quality": 2,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 2
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
+      "sources": [
+        "[GH] https://github.com/rohitg00/agentmemory",
+        "[Docs] https://agent-memory.dev",
+        "[Benchmark] https://github.com/rohitg00/agentmemory/blob/main/benchmark/LONGMEMEVAL.md",
+        "[Comparison] https://github.com/rohitg00/agentmemory/blob/main/benchmark/COMPARISON.md",
+        "[AgentConn] https://agentconn.com/agents/agentmemory",
+        "[SignalForges] https://signalforges.com/pages/rohitg00-agentmemory-best-practices-2026-05-13/",
+        "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main, TypeScript, Apache-2.0, 24,996 stars, 2,067 forks, 183 open issues, 191 open PRs, head 93ae9bc (2026-06-28), latest release v0.9.27 (2026-06-07), repository advisories endpoint returned [].",
+        "[GH:v0.9.27] Official release: fixed cross-agent isolation bypass, stop/restart data loss, large-graph failures and multi-instance collisions; 128 REST endpoints after the release; https://github.com/rohitg00/agentmemory/releases/tag/v0.9.27"
+      ],
+      "summary": "agentmemory 是基于 iii-engine 的 coding-agent 持久记忆层：12 个生命周期 hook、BM25+Vector+Graph 混合检索、53 个 MCP tools 与 128 个 REST endpoints，功能很完整；但 v0.9.27 刚修复跨 Agent 隔离绕过和 stop/restart 数据丢失，且 back"
     },
     {
       "slug": "ai-programs/ai-harness/skills/anthropic-skills",
@@ -7760,9 +7840,9 @@
         "cost-reduction"
       ],
       "primary_language": "Rust",
-      "license": "Apache-2.0 (API); MIT (官网footer，冲突待澄清)",
-      "stars": 48820,
-      "forks": 2965,
+      "license": "Apache-2.0",
+      "stars": 70345,
+      "forks": 4377,
       "status": "active",
       "sharing_candidate": false,
       "ratings": {
@@ -7772,21 +7852,29 @@
         "code_quality": 2,
         "documentation": 3,
         "community": 3,
-        "maturity": 1,
+        "maturity": 2,
         "extensibility": 3,
-        "security": 3,
+        "security": 2,
         "recommendation": 2
       },
       "overall_score": 3,
-      "last_checked": "2026-05-16",
-      "last_verified": "2026-05-16",
-      "updated": "2026-05-21",
+      "last_checked": "2026-07-12",
+      "last_verified": "2026-07-12",
+      "updated": "2026-07-12",
       "sources": [
         "[GH] https://github.com/rtk-ai/rtk",
         "[Docs] https://www.rtk-ai.app/guide/",
-        "[Discord] https://discord.gg/RySmvNF5kF"
+        "[Discord] https://discord.gg/RySmvNF5kF",
+        "[GH:API-2026-07-12] GitHub API snapshot: active, default branch develop, Rust, Apache-2.0, 70,345 stars, 4,377 forks, 774 open issues, 792 open PRs, head 5d32d073 (2026-07-09), latest stable release v0.43.0 (2026-06-28), current prerelease dev-0.44.0-rc.316 (2026-07-09).",
+        "[GH:v0.43.0] Official release: OpenShift/Pulumi filters plus never-worse output guard and exit-code/output correctness fixes across git/grep/docker/dotnet/read; https://github.com/rtk-ai/rtk/releases/tag/v0.43.0",
+        "[GH:issue-1891] Open issue as of 2026-07-12: 'URGENT: rtk overwrite the copilot / claude.md', priority:high, needs-reproduction; https://github.com/rtk-ai/rtk/issues/1891",
+        "[GHSA-config] GHSA-fvvm-949w-qj4w / CVE-2026-45792, medium: project-local filter config could silently alter LLM-visible output; affected rtk <0.32.0, patched 0.32.0; https://github.com/rtk-ai/rtk/security/advisories/GHSA-fvvm-949w-qj4w",
+        "[GHSA-gate] GHSA-7gxq-fvfc-g327 / CVE-2026-54555, high: rewrite auto-allow permission-gate bypass; API reports affected <=0.40.0 and patched >=42.2, whose version semantics are surprising and require advisory-level verification before operations; https://github.com/rtk-ai/rtk/security/advisories/GHSA-7gxq-fvfc-g327",
+        "[GHSA-plugin] GHSA-fqgj-m2gp-mr3q / CVE-2026-55249, medium: @rtk-ai/rtk-rewrite 1.0.0 command injection; GitHub API lists no patched version; https://github.com/rtk-ai/rtk/security/advisories/GHSA-fqgj-m2gp-mr3q",
+        "[GH:LICENSE] Apache-2.0 LICENSE on develop inspected 2026-07-12; https://github.com/rtk-ai/rtk/blob/develop/LICENSE",
+        "[GH:issues] Sampled open extension requests checked 2026-07-12: #1904 systemctl/python3/ssh/adb/etc. https://github.com/rtk-ai/rtk/issues/1904 ; #1896 Crush agent support https://github.com/rtk-ai/rtk/issues/1896"
       ],
-      "summary": "RTK（Rust Token Killer）是一个 CLI 代理，透明拦截 agent（Claude Code、Cursor 等）发出的 shell 命令，对输出做过滤/压缩/格式化后返回给 LLM，将常见开发命令的 token 消耗降低 60-90%。无系统依赖单二进制，sub-10ms 延迟（README 宣称）。4 个月 4.8 万 stars，但仅一"
+      "summary": "RTK（Rust Token Killer）是一个 CLI 输出代理：拦截 coding agent 发出的 shell 命令并压缩结果，README 宣称常见开发命令节省 60–90% token、代理开销 <10 ms。项目已发布到 v0.43.0，但 774 open issues、792 open PRs、仍开放的数据覆盖 bug 与三项已发布 se"
     },
     {
       "slug": "document-processing/vibevoice",

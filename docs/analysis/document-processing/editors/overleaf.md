@@ -2,24 +2,24 @@
 
 title: "Overleaf"
 created: 2026-05-14
-updated: 2026-05-27
+updated: 2026-07-12
 type: repository-analysis
 repo_url: "https://github.com/overleaf/overleaf"
 category: "document-processing/editors"
 tags: ["latex", "collaboration", "self-hosted", "docker", "typesetting", "academic"]
 primary_language: "JavaScript/TypeScript"
 license: "AGPL-3.0"
-stars: 17686
-forks: 1973
-last_checked: 2026-05-14
-last_verified: 2026-05-14
-evidence: "docs review + community reports"
+stars: 17915
+forks: 2026
+last_checked: 2026-07-12
+last_verified: 2026-07-12
+evidence: "GitHub API + official on-premises docs/advisories + issue verification"
 archived_reason: ""
 docker_support: true
 gpu_required: false
-estimated_cpu: "2-4 cores"
-estimated_memory: "3-8GB"
-estimated_storage: "5-20GB"
+estimated_cpu: "2-4 cores（reviewer estimate; workload-dependent）"
+estimated_memory: "3-8 GB（reviewer estimate; workload-dependent）"
+estimated_storage: "5-20 GB typical（reviewer estimate; TeX/project data-dependent）"
 status: active
 ratings:
   capability: 3
@@ -35,215 +35,169 @@ ratings:
 overall_score: 3.4
 sources:
   - "[GH] https://github.com/overleaf/overleaf"
-  - "[Docs] https://docs.overleaf.com/on-premises"
+  - "[Docs] Official on-premises docs inspected 2026-07-12: CE/Server Pro Docker deployment, air-gap operation, trusted-user boundary and lack of Sandbox Compiles in CE; https://docs.overleaf.com/on-premises"
+  - "[Docs:Toolkit] Official Toolkit configuration docs inspected 2026-07-12; https://docs.overleaf.com/on-premises/configuration/overleaf-toolkit"
   - "[Wiki] https://github.com/overleaf/overleaf/wiki"
-  - "[GH Security] GitHub security overview/advisory index for overleaf/overleaf: https://github.com/overleaf/overleaf/security"
-  - "[GH: Issue #1441] GitHub issue overleaf/overleaf#1441 about docker-compose/MongoDB compatibility: https://github.com/overleaf/overleaf/issues/1441"
-  - "[GHSA-m95q-g8qg-wgj4] GitHub Security Advisory GHSA-m95q-g8qg-wgj4 for overleaf/overleaf: https://github.com/overleaf/overleaf/security/advisories/GHSA-m95q-g8qg-wgj4"
-  - "[GHSA-pxm4-p454-vppg] GitHub Security Advisory GHSA-pxm4-p454-vppg for overleaf/overleaf: https://github.com/overleaf/overleaf/security/advisories/GHSA-pxm4-p454-vppg"
-
+  - "[GH Security] GitHub security overview for overleaf/overleaf: https://github.com/overleaf/overleaf/security"
+  - "[GH:Issue-1441] overleaf/overleaf#1441 about docker-compose/MongoDB compatibility; closed 2026-05-18, verified 2026-07-12: https://github.com/overleaf/overleaf/issues/1441"
+  - "[GHSA-m95q-g8qg-wgj4] CVE-2024-45313 high: insecure defaults in Toolkit before 2024-07-17 and docker-compose before 2024-08-28; patched by those dated versions; https://github.com/overleaf/overleaf/security/advisories/GHSA-m95q-g8qg-wgj4"
+  - "[GHSA-pxm4-p454-vppg] CVE-2024-45312 medium: aspell language-parameter issue; CE/Server Pro 4.x <4.2.7 and 5.x <5.0.7 affected, patched 4.2.7/5.0.7; https://github.com/overleaf/overleaf/security/advisories/GHSA-pxm4-p454-vppg"
+  - "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main, JavaScript, AGPL-3.0, 17,915 stars, 2,026 forks, 143 open issues, 20 open PRs, default-branch head 28ad3b03 (2026-06-26), repository pushed_at 2026-07-10; repository advisories endpoint returned the same two published 2024 advisories cited above."
+  - "[GH:issues] Long-lived feature requests checked 2026-07-12: #198, #520 and #1400 remain open; https://github.com/overleaf/overleaf/issues/198 ; https://github.com/overleaf/overleaf/issues/520 ; https://github.com/overleaf/overleaf/issues/1400"
 ---
 
 # Overleaf
 
-> A web-based collaborative LaTeX editor — 学术界 LaTeX 协作的事实标准，Community Edition 可自托管。
+> Web-based collaborative LaTeX editor；Community Edition 可通过官方 Docker/Toolkit 路径自托管，但只适用于全员可信环境。
 >
 > **状态**: `active` · **总分**: 3.4/5 · **推荐度**: 4/5
 
 ## 一句话总结
 
-面向需要在可信环境中自托管 LaTeX 协作平台的科研团队或实验室——**自托管 LaTeX 编辑器的唯一成熟选择，但 Community Edition 的功能和安全模型有明确妥协**。
+对需要自托管协作式 LaTeX、且所有用户都可信的实验室或研究团队，Overleaf Community Edition 是本次评估中最成熟的开源选择之一；若需要用户隔离、Sandbox Compiles 或企业身份治理，应评估 Server Pro 或 SaaS，而不是把 CE 暴露给不可信用户 [Docs]。
 
 ## 总体评价
 
-Overleaf 是学术界 LaTeX 协作的绝对统治者。它的云服务（overleaf.com）拥有数百万用户，开源仓库则是整个平台的核心代码——通过 Docker Compose 即可部署 Community Edition（CE）。
+Overleaf 仓库承载 web-based collaborative LaTeX editor 的开源代码；官方把 Community Edition（CE）和 Server Pro 都定义为 on-premises Docker deployments [GH] [Docs]。其优势不是“单机编辑器功能最多”，而是把浏览器编辑、协作与 LaTeX 编译放到一套长期维护的自托管产品中。
 
-这个仓库承载了 12 年的持续开发历史，包含完整的微服务架构（web、编译引擎、实时同步、文档存储、聊天等 12 个服务），代码量巨大（27,908 commits，230MB repo）。但 Community Edition 是一个**刻意功能受限**的产品——缺少评论、修订追踪、Git 集成、SSO、Sandboxed Compiles 等，这些全在 Server Pro（商业版）中。CE 的存在意义是：让信任环境中（如实验室内部）的团队免费使用核心 LaTeX 协作功能，同时作为 Server Pro 的漏斗。
+核心边界必须先说清：官方明确说明 CE 只适合**所有用户可信**的环境，因为 CE 不提供 Sandbox Compiles；非沙箱编译以 container 权限运行，可接触 container filesystem、network 与 environment variables [Docs]。因此 recommendation=4 只针对可信内网团队，不适用于公共多租户服务。
 
-**适合**：实验室自用、信任环境下的团队 LaTeX 协作、想摆脱 overleaf.com 编译时间/协作者限制的用户。
-
-**不适合**：需要用户隔离的多租户场景、需要 SSO/LDAP 的组织、需要评论/修订追踪等高级协作功能的团队。
-
-> 一句话：Community Edition 是「你可以免费用的 Overleaf 核心引擎」，但缺失的安全和协作功能是故意的，不是 bug。
+本次 material change 是旧安装问题的状态修正：#1441 曾报告 docker-compose/MongoDB 不兼容，但已于 2026-05-18 关闭。它不能再作为当前 compose 必然不可用的证据 [GH:Issue-1441]。
 
 ## 推荐度：4/5
 
-**定位**：对于需要在可信环境中自托管 LaTeX 协作的科研团队，Overleaf CE 是唯一的成熟选择。它不是最好的 LaTeX 编辑器（TeXstudio 的编辑体验更强），也不是功能最全的方案（Server Pro 才是），但它是自托管 LaTeX 协作这个细分领域中唯一真正可用的产品。
+**适用角色**：有 Docker/Linux 运维能力、所有用户都可信、需要数据驻留或离线部署的实验室/科研团队。
 
-**痛处**：Sandboxed Compiles 缺失意味着 CE 中的任何用户都可以通过 LaTeX 编译访问容器文件系统、网络和环境变量。这在所有用户可信的实验室内部不是问题，但在任何需要用户隔离的场景中都是硬伤。此外，社区安装体验有摩擦——docker-compose.yml 存在已知的 MongoDB 版本兼容问题 [GH: Issue #1441]，Toolkit 的文档也假定用户有 Docker/Linux 经验。
+推荐理由：
 
-**结论**：愿意接受「全用户可信」的安全模型和「无高级协作功能」的前提下，CE 值得部署。如果这两个前提不成立，要么上 Server Pro，要么用云版 overleaf.com。
+- 官方维护 CE/Server Pro 的 Docker 与 Toolkit 文档，部署路径不是社区 fork [Docs] [Docs:Toolkit]。
+- 可在 air-gapped server 运行；初次下载后可不依赖 Internet [Docs]。
+- 仓库长期维护，当前仍有提交、issues 与 PR 活动 [GH:API-2026-07-12]。
+
+硬前提：CE 缺少 Sandbox Compiles，不得把 4/5 解读为公共多租户推荐。若用户不互信，应使用提供 sandboxing 的产品线或其他隔离方案 [Docs]。
 
 ## 优势
 
-1. **自托管 LaTeX 协作的唯一成熟方案**：12 年开发历史，与 overleaf.com 共享核心代码库，功能经过大规模生产验证。
-2. **完整的 LaTeX 编译环境**：内嵌 TeX Live，编译体验与云版一致。
-3. **Docker 一键部署**：通过 Toolkit 的 `bin/init && bin/up` 即可启动，官方维护 Docker 镜像。
-4. **无使用限制**：自托管版本无编译时间、协作者数量、项目数限制——这正是很多人从 overleaf.com 逃到 CE 的核心动机。
-5. **官方文档体系完善**：docs.overleaf.com 有结构化的 On-premises 文档，Server Pro vs CE 对比清晰。
+1. **官方自托管产品线**：CE 与 Server Pro 都有官方 on-premises 文档和 Docker 路径 [Docs]。
+2. **协作式 LaTeX 定位明确**：项目本身就是浏览器协作 LaTeX editor，而非需自行拼装的通用文本编辑器 [GH]。
+3. **支持气隙环境**：官方文档说明下载后可在无 Internet 的 air-gapped server 运行 [Docs]。
+4. **持续维护**：2026-07-12 有 143 open issues、20 open PRs，repository 仍活跃 [GH:API-2026-07-12]。
+5. **安全边界写得清楚**：官方没有把 CE 包装成安全多租户；trusted-user requirement 与 Sandbox Compiles 缺失均明确披露 [Docs]。
 
 ## 劣势
 
-1. **Sandboxed Compiles 仅 Server Pro 可用**：CE 中 LaTeX 编译以容器权限运行，用户可访问文件系统、网络、环境变量。这是 CE 最大的安全边界。
-2. **高级协作功能全部缺失**：评论、修订追踪（Track Changes）、Git 集成、模板管理系统、Symbol Palette 均为 Server Pro 专属 [Docs]。
-3. **无 SSO/LDAP**：CE 的用户管理极简陋，无企业级认证集成。
-4. **安装有隐性障碍**：Toolkit 文档假定 Docker/Linux 知识；`docker-compose.yml` 存在已知的 MongoDB 版本兼容问题 [GH: Issue #1441]；第三方安装指南作者反映「官方文档很难实施」。
-5. **无插件/扩展系统**：除了环境变量和源码修改，几乎没有设计的扩展点。
-6. **AGPL-3.0 强 Copyleft**：修改代码后如对外提供服务，必须开源。对商业使用有限制。
-
----
+1. **CE 无 Sandbox Compiles**：用户编译可接触 container filesystem、network 与 environment variables [Docs]。
+2. **只适合全员可信环境**：公共服务、跨租户组织或不可信学生/外部用户场景不应直接采用 CE [Docs]。
+3. **运维负担不低**：Docker、Toolkit、数据库与持久化数据都需要管理员维护；不能把“有官方容器”写成“一键、零运维” [Docs:Toolkit]。
+4. **扩展机制有限**：深度定制通常依赖配置或维护 fork，而不是稳定插件 API。
+5. **AGPL 合规要求**：若修改后通过网络向用户提供服务，需按 AGPL 条款向这些交互用户提供对应源码；这不是禁止商业使用，但会影响闭源修改的合规路径。
 
 ## 适合什么场景
 
-- 实验室内 5-50 人的 LaTeX 协作（所有人可信）
-- 大量编译、大文档（PhD 论文、书籍），不受 overleaf.com 编译时间限制
-- 需要完全控制数据和隐私的科研环境
-- 作为评估 Server Pro 前的试用
+- 可信实验室或研究团队的内部 LaTeX 协作
+- 需要数据驻留、自主管理备份或 air-gap 的机构
+- 有 Docker/Linux 管理能力，并愿意维护升级与持久化数据
+- 评估 Overleaf on-premises 产品线的团队
+
+> 团队规模与硬件需求取决于并发编译和项目大小；本文不把某个“5–50 人”数字当作官方支持范围。
 
 ## 不适合什么场景
 
-- 多用户不可信的环境（如为不特定用户提供 LaTeX 服务）
-- 需要评论/修订追踪等高级协作功能的团队
-- 需要 SSO/LDAP 集成的组织
-- 缺少 Docker/Linux 运维能力的个人
-- 只是个人写作、不需要协作（直接用 TeXstudio 等本地编辑器更轻量）
+- 任何需要隔离不可信用户的多租户服务 [Docs]
+- 无法承担 Docker/数据库/升级运维的个人
+- 只需单人 LaTeX 编辑、不需要协作的场景
+- 要求插件市场或低成本深度定制的部署
+- 不能接受 AGPL 网络交互源码义务的闭源修改方案
 
 ## 与类似项目对比
 
+> 以下仅作定位；竞品未在本次 audit 中按同一 10 维框架复核。
+
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| Overleaf Server Pro | Overleaf 商业自托管版 | 功能完整（Sandboxed Compiles、修订追踪、SSO），但需付费 |
-| overleaf.com（云版） | SaaS LaTeX 协作 | 零运维，但有编译时间/协作者限制 |
-| TeXstudio | 本地 LaTeX IDE | 编辑体验更强，无协作功能，无自托管需求 |
-| ShareLaTeX | （已被 Overleaf 合并） | 2017 年合并进入 Overleaf，原代码即为本仓库前身 |
-
----
+| Overleaf Server Pro | 商业 on-premises 产品 | 与 CE 同属官方 on-premises 产品线，并提供 CE 缺失的 Sandbox Compiles 路径 [Docs] |
+| overleaf.com | 官方 SaaS | 无自托管运维，但数据驻留、账户与服务边界由 SaaS 决定 |
+| TeXstudio | 本地 LaTeX editor | 个人本地编辑更轻；不提供同类 self-hosted web collaboration 定位 |
+| ShareLaTeX | 历史项目/品牌 | 已并入 Overleaf 历史，不应作为当前独立维护替代项 |
 
 ## 它能做什么
 
-- **实时协作 LaTeX 编辑**：多用户同时编辑同一文档，WebSocket 驱动的实时同步
-- **LaTeX 编译**：内嵌 TeX Live，支持完整 LaTeX 编译管线
-- **项目历史**：完整的项目版本历史与回滚
-- **文件管理**：上传图片、参考文献、样式文件等
-- **基本的项目共享**：项目链接分享
-- **编译输出下载**：生成 PDF 并下载
+评分 3/5。
 
-**CE 不具备（Server Pro 专属）**：评论、修订追踪（Track Changes）、Git 集成、Symbol Palette、模板管理系统、SSO/LDAP、Sandboxed Compiles [Docs]。
+- 在浏览器中编辑 LaTeX 项目
+- 多用户协作与项目共享
+- 在 on-premises deployment 中编译 LaTeX
+- 由机构自行管理项目数据、备份与网络边界
+- 在 air-gapped server 上运行 [Docs]
+
+扣分不来自核心协作编辑能力，而来自 CE 产品边界：Sandbox Compiles 不可用，因此 capability 不能按完整 Server Pro 或 SaaS 功能外推 [Docs]。
 
 ## 运行环境与资源占用
 
-| 场景 | CPU | 内存 | 存储 | 说明 |
-|------|-----|------|------|------|
-| 最小（~5 并发） | 2 cores | 3 GB | ~10 GB | 基础运行，包含 TeX Live |
-| 推荐（10-20 并发） | 4 cores | 8 GB | ~20 GB | 日常实验室使用 |
-| 大规模（100+ 并发） | 8+ cores | 32 GB | ~50 GB | 需调优 Nginx worker |
+评分 4/5。
 
-- **运行时**：Docker Compose（sharelatex + mongo + redis 三个容器，CE 不含 Sandboxed Compiles 的 sibling containers）
-- **操作系统**：推荐 Ubuntu/Debian；官方仅支持 Docker 25.0–29、MongoDB 7.0–8.0、Redis 6.2–7.5 [Docs]
-- **Docker**：官方镜像 `sharelatex/sharelatex`，通过 Toolkit 管理
+- **运行方式**：官方 Docker/Toolkit on-premises deployment [Docs] [Docs:Toolkit]
 - **GPU**：不需要
-- **外部依赖**：Docker、git（仅安装时）。部署后可完全离线运行
-- **关键性能特征**：LaTeX 编译为单线程——单核性能比多核更重要。多核仅在并发编译超过空闲核心数时有价值 [Wiki]
+- **网络**：初次获取 artifacts 后可 air-gap；这降低外部网络暴露，但不会防住恶意或被入侵的“可信用户” [Docs]
+- **资源估算**：frontmatter 的 2–4 cores、3–8 GB RAM、5–20 GB typical storage 是 reviewer estimate，不是官方最低配置；实际值受 TeX distribution、项目数据、并发编译和备份策略影响
+- **Docker support**：`true`，因为 CE/Server Pro 的官方用户路径就是 Docker deployment，而不只是仓库存在 Dockerfile [Docs]
 
 ## 上手体验
 
 评分 3/5。
 
-Toolkit 的 Quick Start Guide 将安装简化为三步：`git clone` → `bin/init` → `bin/up`，之后通过 `/launchpad` 创建管理员账户。从零到使用 <30 分钟在理想情况下可行 [Docs]。
+官方 Toolkit 给出了持续维护的配置入口 [Docs:Toolkit]。不过管理员仍需理解 Docker、持久化、数据库、反向代理、备份与升级；故这里只评价为“官方路径清晰”，不声称“一键”或“30 分钟必然完成”。
 
-但现实中有摩擦：
-- **Docker/Linux 前置知识**：文档假定用户熟悉 Docker 命令和 Linux 运维
-- **MongoDB 兼容性问题**：Issue #1441 报告 `docker-compose.yml` 存在 MongoDB 版本与 sharelatex 镜像不兼容的问题，不能开箱即用
-- **Sandbox 配置陷阱**：`docker-compose.yml` 中默认启用了 Sandboxed Compiles 相关变量，CE 用户必须注释掉，否则编译报错
-- **第三方指南作者反馈**：「官方指南很难实施」[第三方指南]
-
-对于有 Docker 经验的用户，CE 部署是可控的。对于没有运维背景的 LaTeX 用户，可能需要半天时间排错。
+旧 #1441 已关闭是正面变化，但单个 issue 的关闭不等于所有环境组合都无安装摩擦 [GH:Issue-1441]。
 
 ## 代码质量
 
 评分 3/5。
 
-**架构**：12 个微服务（web、clsi、document-updater、real-time、filestore、docstore、chat、contacts、notifications、git-bridge、history-v1、project-history）+ MongoDB + Redis。模块边界清晰，服务职责单一。
-
-**测试**：有 Cypress E2E 测试框架（repo 中有 `dockerfiles/cypress/`），但未公开测试覆盖率数据。Issue 列表中常见与部署兼容性相关的问题（MongoDB 版本、docker-compose 配置），表明集成测试可能有盲区。
-
-**维护性**：12 年历史的代码库（2014 年起），经历 ShareLaTeX 合并（2017），代码中至今仍有大量 `sharelatex` 命名遗留。TypeScript 逐步引入但仍以 JavaScript 为主。贡献者需要签 CLA。
-
-**问题**：
-- 已知 docker-compose.yml 开箱不可用 [GH: Issue #1441]
-- 服务间耦合较重——CE 设计上是把所有微服务打包进单个 sharelatex 容器（实际仍是微服务但部署为 monolithic container）
-
-并非混乱的代码库，但 12 年的技术债和合并历史是真实存在的。
+这是长期演化的大型 JavaScript/TypeScript repository，而非小型 standalone app。持续提交、20 open PRs 与公开 issue tracker 表明维护仍在进行 [GH:API-2026-07-12]。同时，大型 web/collaboration/compile surface 和历史兼容负担会增加测试与重构成本；本次未做 local build、coverage audit 或 service-count scan，因此不写精确 service/commit 数字。
 
 ## 可扩展性
 
 评分 2/5。
 
-Overleaf CE **没有设计的插件或扩展系统**。定制只能通过：
-
-- **环境变量**：`variables.env` 中暴露了品牌、SMTP、LDAP（仅 Pro）等配置
-- **源码修改**：AGPL-3.0 许可，可以 fork 后修改，但需开源
-- **外部代理**：可前置 nginx 实现 TLS 终止、访问控制
-
-对比典型的可扩展系统（VS Code 的插件市场、Discourse 的 Plugin API），Overleaf CE 的扩展面积极窄。深度定制基本等于维护一个 fork。
-
-Server Pro 通过 Sandboxed Compiles 的 sibling containers 提供了编译环境隔离，但这属于安全边界，不是"可扩展性"范畴。
+CE 的主要定制面是 Toolkit/configuration 与源码修改 [Docs:Toolkit]。本文未验证稳定的第三方 plugin API 或 marketplace；深度定制通常意味着维护 fork，并承担 AGPL 与上游同步成本。Server Pro-only configuration 不计入 CE 的 extensibility 得分。
 
 ## 文档质量
 
 评分 4/5。
 
-- **官方 On-premises 文档**（docs.overleaf.com/on-premises）：Gitbook 托管，结构清晰。涵盖安装、配置、升级、故障排查、Server Pro vs CE 对比
-- **GitHub Wiki**：开发者文档，包含硬件要求、Release Notes、Sandboxed Compiles 指南 [Wiki]
-- **Toolkit Quick Start Guide**：简洁三步部署流程，关键路径覆盖
-- **docker-compose.yml 注释**：内嵌大量环境变量说明和 CE/Pro 差异说明，相当于配置文档即代码
-
-扣分点：
-- 文档假定 Docker/Linux 知识，对非技术用户不友好
-- Wiki 中有大量 `sharelatex` 遗留命名未更新 [Wiki]
-- 社区部署常见问题（MongoDB 兼容性、sandbox 变量注释）未在 Quick Start 中预警
+官方 on-premises docs 清楚区分 CE 的 trusted-user boundary、Docker deployment、air-gap 与 Sandbox Compiles 缺失 [Docs]；Toolkit 也有独立配置文档 [Docs:Toolkit]。扣分在于：运维者仍需跨安装、配置、安全与升级页面理解完整系统，文档不能消除产品本身的部署复杂度。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | 17,686 stars，1,973 forks，活跃维护（最后 push 为当天），157 open issues 对于此规模的项目偏低；Toolkit 仓库有 1,216 stars 和 119 issues。未开启 GitHub Discussions，部分 feature request 停留多年未关闭（#198, #520, #1400） |
-| 成熟度 | 4/5 | 12 年历史（2014.2–至今），overleaf.com 服务数百万用户。但 Community Edition 跟踪 main 分支而非结构化发布，CE 的成熟度不等同于 SaaS 版本的生产稳定性。Server Pro 有 v5/v6 系列版本管理，CE 部署体验中仍存在开箱不可用的问题 |
+| 社区活跃度 | 4/5 | 17,915 stars、2,026 forks、143 open issues、20 open PRs，仓库仍活跃；#198、#520、#1400 等 feature requests 长期开放 [GH:API-2026-07-12] [GH:issues]。 |
+| 成熟度 | 4/5 | 仓库长期维护，官方有 on-premises 产品与运维文档；但 CE 的成熟度不能从 SaaS/Server Pro 无条件外推，且自托管升级仍需运维验证。 |
 
-Overleaf 的成熟度无可争议——它是 LaTeX 协作编辑器的品类定义者。社区的活跃度良好但并非爆炸式：issue 数偏低暗示维护团队在持续处理，但 issue 中也有 feature request 停留多年未关闭（#198, #520, #1400 等）的情况。
+公司主导治理和长期 feature requests 使 community 不到 5；稳定产品历史与官方部署路径支持 maturity=4。
 
 ## 安全与风险
 
 评分 3/5。
 
-**已知 CVE**：
-- CVE-2024-45312（2024.9）：拼写检查中的 aspell 可执行文件允许任意语言参数传递 [GHSA-pxm4-p454-vppg]
-- CVE-2024-45313（2024.9）：Server Pro 旧版 Toolkit 和 docker-compose 的默认配置不安全 [GHSA-m95q-g8qg-wgj4]
-- 两个 CVE 均已修复
+**已发布且已修复 advisories**：
 
-**CE 特有安全风险**：
-- **无 Sandboxed Compiles**：LaTeX 编译以容器权限运行。取决于 TeX 发行版的 shell-escape 配置，恶意 LaTeX 文档可能通过 `\write18` 执行任意 shell 命令。官方明确声明 CE「仅适用于所有用户可信的环境」[Docs]
-- 这意味着在未配置 shell-escape 限制的 CE 部署中，用户权限等同于容器级别
+- CVE-2024-45312：CE/Server Pro 4.x <4.2.7、5.x <5.0.7 affected；patched 4.2.7/5.0.7 [GHSA-pxm4-p454-vppg]。
+- CVE-2024-45313：Toolkit before 2024-07-17 与 docker-compose before 2024-08-28 affected；patched by those dated versions [GHSA-m95q-g8qg-wgj4]。
 
-**许可风险**：
-- AGPL-3.0：强 Copyleft，修改后如对外提供网络服务，必须公开源码
-- 内含大量 GPL 依赖（TeX Live 等）
+这些是历史攻击面证据，不表示当前 patched deployment 仍受同一漏洞影响。
 
-**正面**：
-- 官方有安全策略和披露流程 [GH Security]
-- Docker 容器化本身提供了一层隔离（应用与宿主机之间）
-- 支持完全离线/气隙部署，减少外部攻击面
-
-评分 3 而非更低，因为：安全边界被**清晰文档化**，CE 的设计意图就是信任环境，不是安全漏洞。对于目标场景（实验室内部可信用户），风险可控。
+**当前固有边界**：CE 无 Sandbox Compiles；非沙箱编译可访问 container filesystem、network、environment variables，因此只适用于全员可信环境 [Docs]。Docker 对 host 上其他应用提供一定 cross-application isolation，但**不隔离 CE 用户与 sharelatex container 内资源**，不能替代 Sandbox Compiles [Docs]。Air-gap 可减少外部网络威胁，同样不能防范恶意/被入侵的内部用户。
 
 ## 学习价值
 
-**高**。Overleaf 的代码库是学习大型 Node.js/TypeScript 微服务架构的绝佳案例：
+**高**，但应聚焦可验证主题：
 
-- **微服务拆分**：12 个服务的职责划分、通信模式值得研究
-- **实时协作**：WebSocket + document-updater 的 OT/CRDT 实现
-- **Docker 化部署**：Toolkit 的 bin/ 脚本展示了生产级 Docker Compose 编排
-- **商业化开源**：Studying Overleaf 的 CE/Pro 分化策略对理解开源商业模式有启发
-- **LaTeX 编译管线**：clsi（Core LaTeX Service Instance）服务是 LaTeX 编译引擎封装的好例子
+- 大型 collaborative editor 的开源仓库组织
+- 官方 Docker/Toolkit 运维文档如何表达产品边界
+- CE/商业产品线如何划分 security features
+- 为什么 container isolation 与 per-user compile sandbox 是不同层级
+- AGPL 网络服务义务如何影响 self-hosted software 的修改与分发
 
-即使不部署，阅读 Overleaf 的架构设计和 `docker-compose.yml` 也是值得的。
+本次未核验具体 OT/CRDT 实现、精确 service count 或“production-grade orchestration”，故不把这些当作学习结论。

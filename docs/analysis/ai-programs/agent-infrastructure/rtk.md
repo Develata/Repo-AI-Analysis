@@ -3,7 +3,7 @@
 
 title: "rtk-ai/rtk"
 created: 2026-05-16
-updated: 2026-05-21
+updated: 2026-07-12
 type: repository-analysis
 repo_url: "https://github.com/rtk-ai/rtk"
 category: "ai-programs/agent-infrastructure"
@@ -11,12 +11,12 @@ tags: ["token-optimization", "cli-proxy", "rust", "claude-code", "cost-reduction
 previous_repo: ""
 successor: ""
 primary_language: "Rust"
-license: "Apache-2.0 (API); MIT (官网footer，冲突待澄清)"
-stars: 48820
-forks: 2965
-last_checked: 2026-05-16
-last_verified: 2026-05-16
-evidence: "GitHub API + README + issues 采样"
+license: "Apache-2.0"
+stars: 70345
+forks: 4377
+last_checked: 2026-07-12
+last_verified: 2026-07-12
+evidence: "GitHub API + README/release + issue/advisory review"
 archived_reason: ""
 docker_support: false
 gpu_required: false
@@ -31,15 +31,23 @@ ratings:
   code_quality: 2
   documentation: 3
   community: 3
-  maturity: 1
+  maturity: 2
   extensibility: 3
-  security: 3
+  security: 2
   recommendation: 2
 overall_score: 3.0
 sources:
   - "[GH] https://github.com/rtk-ai/rtk"
   - "[Docs] https://www.rtk-ai.app/guide/"
   - "[Discord] https://discord.gg/RySmvNF5kF"
+  - "[GH:API-2026-07-12] GitHub API snapshot: active, default branch develop, Rust, Apache-2.0, 70,345 stars, 4,377 forks, 774 open issues, 792 open PRs, head 5d32d073 (2026-07-09), latest stable release v0.43.0 (2026-06-28), current prerelease dev-0.44.0-rc.316 (2026-07-09)."
+  - "[GH:v0.43.0] Official release: OpenShift/Pulumi filters plus never-worse output guard and exit-code/output correctness fixes across git/grep/docker/dotnet/read; https://github.com/rtk-ai/rtk/releases/tag/v0.43.0"
+  - "[GH:issue-1891] Open issue as of 2026-07-12: 'URGENT: rtk overwrite the copilot / claude.md', priority:high, needs-reproduction; https://github.com/rtk-ai/rtk/issues/1891"
+  - "[GHSA-config] GHSA-fvvm-949w-qj4w / CVE-2026-45792, medium: project-local filter config could silently alter LLM-visible output; affected rtk <0.32.0, patched 0.32.0; https://github.com/rtk-ai/rtk/security/advisories/GHSA-fvvm-949w-qj4w"
+  - "[GHSA-gate] GHSA-7gxq-fvfc-g327 / CVE-2026-54555, high: rewrite auto-allow permission-gate bypass; API reports affected <=0.40.0 and patched >=42.2, whose version semantics are surprising and require advisory-level verification before operations; https://github.com/rtk-ai/rtk/security/advisories/GHSA-7gxq-fvfc-g327"
+  - "[GHSA-plugin] GHSA-fqgj-m2gp-mr3q / CVE-2026-55249, medium: @rtk-ai/rtk-rewrite 1.0.0 command injection; GitHub API lists no patched version; https://github.com/rtk-ai/rtk/security/advisories/GHSA-fqgj-m2gp-mr3q"
+  - "[GH:LICENSE] Apache-2.0 LICENSE on develop inspected 2026-07-12; https://github.com/rtk-ai/rtk/blob/develop/LICENSE"
+  - "[GH:issues] Sampled open extension requests checked 2026-07-12: #1904 systemctl/python3/ssh/adb/etc. https://github.com/rtk-ai/rtk/issues/1904 ; #1896 Crush agent support https://github.com/rtk-ai/rtk/issues/1896"
 ---
 
 # rtk-ai/rtk
@@ -50,11 +58,13 @@ sources:
 
 ## 一句话总结
 
-RTK（Rust Token Killer）是一个 CLI 代理，透明拦截 agent（Claude Code、Cursor 等）发出的 shell 命令，对输出做过滤/压缩/格式化后返回给 LLM，将常见开发命令的 token 消耗降低 60-90%。无系统依赖单二进制，sub-10ms 延迟（README 宣称）。4 个月 4.8 万 stars，但仅一个 stable release（v0.40.0），914 个 open issues 暴露了维护瓶颈。
+RTK（Rust Token Killer）是一个 CLI 输出代理：拦截 coding agent 发出的 shell 命令并压缩结果，README 宣称常见开发命令节省 60–90% token、代理开销 <10 ms。项目已发布到 v0.43.0，但 774 open issues、792 open PRs、仍开放的数据覆盖 bug 与三项已发布 security advisories，使其依然属于高风险早期工具 [GH:API-2026-07-12] [GH:issue-1891]。
 
 ## 总体评价
 
-想法极好——用一个透明的中间层解决 agent 编码中最直观的 token 浪费问题。实现路径也优雅：hook 机制零侵入，单二进制无系统依赖，100+ 命令覆盖。但项目增长远超维护容量：4 个月 914 open issues（含数据丢失级别的 bug），仅一个 stable release，维护速度跟不上增长速度。
+想法极好——用透明中间层解决 agent 编码中最直观的 token 浪费。实现路径也优雅：hook/plugin rewrite、Rust 单 binary、100+ command adapters。相比 5 月，稳定版从 v0.40.0 推进到 v0.43.0，并加入 never-worse output guard 与多项 exit-code/原始输出正确性修复 [GH:v0.43.0]。
+
+但风险没有消失：项目约 6 个月，仍有 774 issues / 792 PRs；#1891 的配置覆盖报告保持 open。更重要的是，仓库现有三项已发布 advisory，涵盖不可信 project-local filter、permission-gate bypass 与 rewrite plugin command injection [GH:API-2026-07-12] [GHSA-config] [GHSA-gate] [GHSA-plugin]。
 
 **适合**：愿意接受不稳定性的早期采用者，使用 Claude Code/Cursor 且 token 成本敏感。
 
@@ -67,11 +77,12 @@ RTK（Rust Token Killer）是一个 CLI 代理，透明拦截 agent（Claude Cod
 **定位**：面向使用 AI coding agent 且对 token 成本敏感的开发者，提供透明的 CLI 输出压缩。
 
 **选 2 而非 3 的核心理由**：
-1. **几乎无稳定 release**——4 个月仅一个 stable tag（v0.40.0），其余 ~223 个构建均为 RC prerelease。版本号 0.x，API 随时可变。
-2. **数据丢失 bug 未修**——Issue #1891：rtk 覆盖 `copilot/claude.md`，属严重可靠性问题。
-3. **维护严重跟不上**——914 open issues / ~1900 total，含垃圾广告无人清理。
+1. **仍是 0.x + 高频 RC**——最新稳定版 v0.43.0，develop 上已有大量 `dev-0.44.0-rc.*` 构建 [GH:API-2026-07-12]。
+2. **数据覆盖报告仍未关闭**——Issue #1891 仍为 open、priority:high、needs-reproduction [GH:issue-1891]。
+3. **安全边界发生过多类失效**——三项 advisory 覆盖输出完整性、permission gate 与 plugin command injection [GHSA-config] [GHSA-gate] [GHSA-plugin]。
+4. **维护仍跟不上**——774 open issues 与 792 open PRs [GH:API-2026-07-12]。
 
-**正面信号**：48k stars 说明需求真实且巨大。如果团队能稳住节奏、发布 1.0、清理 issue backlog，推荐度可快速升至 3-4。
+**正面信号**：70k+ stars 与持续 release 说明需求真实，v0.43.0 的 never-worse guard 也直接回应“过滤不能比原输出更差”的核心可靠性问题 [GH:v0.43.0]。
 
 **结论**：目前不建议在生产或关键工作流中 adopt。关注、试用、贡献 issue，等 stable release。
 
@@ -85,11 +96,11 @@ RTK（Rust Token Killer）是一个 CLI 代理，透明拦截 agent（Claude Cod
 
 ## 劣势
 
-1. **极度不成熟**——4 个月，仅 v0.40.0 一个 stable release，其余 tag 均为 `dev-x.y.z-rc.N`。API/行为随时可能变化。
-2. **issue backlog 严重**——914 open issues（2026-05-16 API 快照），含垃圾广告、重复请求。核心贡献者 ~4 人，响应速度落后于增长速度。
-3. **存在数据丢失 bug**——Issue #1891：rtk 覆盖 `copilot/claude.md`，属严重可靠性问题，截至分析时未修复。
-4. **文档有死链**——README 指向的 configuration 页面 404。多语言文档质量参差不齐。
-5. **许可证声明不一致**——GitHub API 标注 Apache 2.0，官网 footer 写 MIT License。需澄清。
+1. **仍不成熟**——约 6 个月、v0.43.0；develop 上继续生成密集 0.44 RC，行为仍快速变化 [GH:API-2026-07-12]。
+2. **backlog 严重**——774 open issues 与 792 open PRs，review 队列尤其突出 [GH:API-2026-07-12]。
+3. **数据覆盖 bug 仍 open**——#1891 尚未关闭，不能按“已修复”处理 [GH:issue-1891]。
+4. **安全历史较重**——三项 advisory 中有 permission-gate bypass 和 plugin command injection；plugin advisory 未列 patched version [GHSA-gate] [GHSA-plugin]。
+5. **过滤天然有信息损失风险**——即使 v0.43.0 加入 never-worse guard，各 command adapter 仍需逐类验证 exit code、错误详情与原始输出保真。
 
 ---
 
@@ -151,29 +162,29 @@ RTK（Rust Token Killer）是一个 CLI 代理，透明拦截 agent（Claude Cod
 
 安装路径极简：`brew install rtk` 一行，或 `curl | bash` 一键脚本。安装后 hook 机制自动生效——agent 发出的 `git status` 等命令自动经 rtk 过滤，用户零感知。`rtk version` 验证安装 [GH]。
 
-扣 1 分：README 指向的 configuration 页面 404 [Docs]。Windows 原生支持有限（推荐 WSL），有用户报告 Windows 11 安装失败（#1887）。crates.io 命名冲突（另一个 rtk 包），Cargo 安装需指定 `--git`。
+扣 1 分：hook/plugin rewrite 会改变 agent 实际执行路径；Windows 与多 agent 集成仍需单独验证。`rtk init -g` 提供 Claude/Copilot/Gemini/Codex 等入口，但易安装不等于行为无风险 [GH]。
 
 ## 代码质量
 
 评分 2/5。
 
-**正面**：Rust 代码，CI 由 github-actions bot 驱动（62 次 contribution），release 流程自动化（rtk-release-bot）。
+**正面**：Rust 单 binary，仓库有自动化 CI/release 流程；v0.43.0 的 never-worse guard 与多项 exit-code/raw-output 修复直接针对核心正确性边界 [GH:v0.43.0]。
 
 **负面信号极强**：
-- 914 open issues / ~1900 total issues（4 个月项目）——bug 密度极高 [GH]。项目增长远超维护容量
-- 存在严重 bug：#1891（覆盖 copilot/claude.md）、#1892（php 命令回归）、#1882（go test 隐藏失败详情）
+- 774 open issues 与 792 open PRs——维护与 review 压力仍高 [GH:API-2026-07-12]
+- #1891 的配置覆盖报告仍为 open；v0.43.0 release 同时列出大量 exit-code、raw fallback 与 failure-detail 修复 [GH:issue-1891] [GH:v0.43.0]
 - 代码仓库无测试覆盖率数据可见
-- 默认分支 `develop`（非 `main`），CI 以 release bot 自动化为主
+- 高频 RC 与 large PR queue 增加 release gate 的验证压力
 
-**注意**：release 均为 prerelease、版本号 0.x 等信号计入「成熟度」维度（1/5），此处聚焦代码级证据
+**注意**：项目已有 v0.43.0 stable release，但版本仍为 0.x 且 develop 上 RC 密集；这些信号计入成熟度 2/5，此处聚焦代码级证据。
 
-**判断**：项目处于快速迭代期，功能增长优先于稳定性。bug 发现速度远超修复速度。按 skill 规定，bug 密度是硬信号，覆盖 CI 表面印象。
+**判断**：项目处于快速迭代期，large backlog 和 v0.43.0 的多项 correctness fixes 说明稳定性仍受压。按评分规则，bug/回归证据优先于 CI 表面信号。
 
 ## 可扩展性
 
 评分 3/5。
 
-**已有**：100+ 命令支持，显然有内部命令注册/适配机制。社区持续提交新命令支持请求（#1904 systemctl/python3/ssh/adb, #1896 crush agent）[GH]。
+**已有**：100+ 命令支持，显然有内部命令注册/适配机制。社区持续提交新命令支持请求（#1904 systemctl/python3/ssh/adb，#1896 Crush agent，均为 open）[GH:issues]。
 
 **缺失**：无正式插件系统。虽有 `.rtk/filters.toml` 配置文件支持 TOML DSL 自定义过滤规则 [Docs]，但用户无法自行添加全新命令的 handler——必须等上游支持。对于非标准/内部 CLI 工具，基本不可用。
 
@@ -185,37 +196,35 @@ RTK（Rust Token Killer）是一个 CLI 代理，透明拦截 agent（Claude Cod
 
 README 质量高——清晰的 token 节省表、安装说明、架构图、示例。官网有分语言的 /guide/ 文档（EN FR ES DE ZH JA）[Docs]。有 CHANGELOG、CONTRIBUTING。
 
-扣分项：
-- README 指向的 configuration 页面 404（链接指向 `/guide/`，实际已迁至 `/docs/`）[Docs]
-- 多语言文档质量参差不齐
-- 所有文档面向 prerelease 版本，无 stable 文档线
-- 无 API 文档（封闭系统，不需要 API 文档，但缺少命令过滤规则的详细说明）
+扣分项：多语言文档质量和同步程度不易核验；0.x 高频 RC 使文档持续追赶行为；每种 command filter 的保真边界仍需更系统的契约说明。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 3/5 | 48k stars 说明巨大兴趣。但维护者 overwhelmed——914 open issues 无人及时处理，含垃圾广告（#1900）。核心贡献者 ~4 人，响应速度与项目规模严重不匹配。 |
-| 成熟度 | 1/5 | 建仓 2026-01-22（~4 个月）。仅 v0.40.0 一个 stable release，其余均为 pre-release（`dev-x.y.z-rc.N`）。版本号 0.x，API/行为无稳定性承诺。按 scoring boundaries：预发布/alpha → maturity = 1。 |
+| 社区活跃度 | 3/5 | 70,345 stars、4,377 forks，需求与参与度高；但 774 issues / 792 PRs 说明维护吞吐仍不足 [GH:API-2026-07-12]。 |
+| 成熟度 | 2/5 | 约 6 个月、稳定版 v0.43.0，已不再是“只有一个 stable tag”；但仍为 0.x，高频 0.44 RC、开放严重 bug 与多项 advisory 阻止更高评分 [GH:API-2026-07-12]。 |
 
 ## 安全与风险
 
-评分 3/5。
+评分 2/5。
 
-**正面**：单二进制、无系统依赖——攻击面极小。本地代理，无需网络。
+**正面**：核心 Rust binary 可本地运行且依赖面相对集中；但 rewrite plugins、hooks、project-local config 与包分发形成额外 trust boundaries，不能概括为“攻击面极小”。
 
 **风险点**：
-- Issue #1891：rtk 覆盖 `copilot/claude.md` 配置文件——数据丢失风险，影响 agent 行为完整性 [GH]
-- 许可证声明不一致：GitHub API 标注 Apache 2.0，官网 footer 写 MIT License [Docs]
-- 无独立安全审计记录。仓库有 `SECURITY.md` 含私有报告指引、预期响应时间、`cargo audit` 自动化流程
-- 作为透明代理，理论上可能过滤掉 LLM 需要的关键上下文——非安全漏洞但影响可靠性
+- #1891：覆盖 `copilot/claude.md` 的报告仍 open，影响配置完整性 [GH:issue-1891]
+- CVE-2026-45792：project-local filter 可篡改 LLM 所见输出，`<0.32.0`，patched `0.32.0` [GHSA-config]
+- CVE-2026-54555：rewrite auto-allow permission-gate bypass。API 的 `patched >=42.2` 与 0.x 版本线表述异常，运维前必须逐 advisory/版本核对，不能直接强化成“v0.42.2 已修复” [GHSA-gate]
+- CVE-2026-55249：`@rtk-ai/rtk-rewrite` 1.0.0 command injection；API 未列 patched version [GHSA-plugin]
+
+许可证冲突现已消除：GitHub metadata、README badge 与仓库 LICENSE 均为 Apache-2.0 [GH:LICENSE]。但三类 advisory 与开放配置覆盖 bug 表明 rewrite/filter 处在真实 trust boundary 上，security 下调至 2/5。
 
 ## 学习价值
 
 - **Rust CLI 设计参考**：无系统依赖单二进制、跨平台 CI/CD、Homebrew 分发——小而美的工程实践
 - **Agent 基础设施思维**：透明代理模式可推广到其他 agent 中间件场景（memory、context、routing）
-- **反面教材**：超速增长的治理挑战——4 个月 48k stars，但核心团队扩容跟不上，issue backlog 积累迅速
+- **反面教材**：约 6 个月 70k+ stars，但 issues 与 PRs 均达数百，展示超速增长下的治理与 review 瓶颈
 
 ---
 
-*分析完成于 2026-05-16。含该日期已知的严重 issue（#1891 等）。若后续有 stable release，成熟度与推荐度需大幅上调。*
+*2026-07-12 复核：稳定版已到 v0.43.0，因此 maturity 从 1 上调到 2；但 #1891、backlog 与三项 advisory 使 recommendation 维持 2。*

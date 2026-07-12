@@ -3,7 +3,7 @@
 
 title: "agentmemory"
 created: 2026-05-15
-updated: 2026-05-21
+updated: 2026-07-12
 type: repository-analysis
 repo_url: "https://github.com/rohitg00/agentmemory"
 category: "ai-programs/ai-harness/memory"
@@ -12,13 +12,13 @@ previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
 license: "Apache-2.0"
-stars: 9300
-forks: 768
-last_checked: 2026-05-15
-last_verified: 2026-05-15
-evidence: "code review + third-party analysis"
+stars: 24996
+forks: 2067
+last_checked: 2026-07-12
+last_verified: 2026-07-12
+evidence: "GitHub API + official README/release + issue/backlog review"
 archived_reason: ""
-docker_support: true
+docker_support: false
 gpu_required: false
 estimated_cpu: "minimal"
 estimated_memory: "~200MB"
@@ -26,16 +26,16 @@ estimated_storage: "~500MB (SQLite + embeddings)"
 status: active
 ratings:
   capability: 4
-  usability: 4
+  usability: 3
   performance: 4
-  code_quality: 3
+  code_quality: 2
   documentation: 4
-  community: 4
+  community: 3
   maturity: 2
   extensibility: 4
-  security: 4
-  recommendation: 3
-overall_score: 3.6
+  security: 3
+  recommendation: 2
+overall_score: 3.1
 sources:
   - "[GH] https://github.com/rohitg00/agentmemory"
   - "[Docs] https://agent-memory.dev"
@@ -43,34 +43,36 @@ sources:
   - "[Comparison] https://github.com/rohitg00/agentmemory/blob/main/benchmark/COMPARISON.md"
   - "[AgentConn] https://agentconn.com/agents/agentmemory"
   - "[SignalForges] https://signalforges.com/pages/rohitg00-agentmemory-best-practices-2026-05-13/"
+  - "[GH:API-2026-07-12] GitHub API snapshot: active, default branch main, TypeScript, Apache-2.0, 24,996 stars, 2,067 forks, 183 open issues, 191 open PRs, head 93ae9bc (2026-06-28), latest release v0.9.27 (2026-06-07), repository advisories endpoint returned []."
+  - "[GH:v0.9.27] Official release: fixed cross-agent isolation bypass, stop/restart data loss, large-graph failures and multi-instance collisions; 128 REST endpoints after the release; https://github.com/rohitg00/agentmemory/releases/tag/v0.9.27"
 ---
 
 # agentmemory
 
 > AI coding agent 的持久记忆层——12 个生命周期 hook 自动捕获、BM25+Vector+Graph 三流混合检索、LongMemEval-S R@5 95.2%、本地嵌入免费运行
 >
-> **状态**: `active` · **总分**: 3.6/5 · **推荐度**: 3/5
+> **状态**: `active` · **总分**: 3.1/5 · **推荐度**: 2/5
 
 ## 一句话总结
 
-agentmemory 是面向 AI coding agent 的持久记忆基础设施，基于 iii-engine 构建，通过 12 个生命周期 hook 自动捕获 agent 所有工具调用，经四层记忆整合后提供 BM25+Vector+Knowledge Graph 三流混合检索，年度 token 成本 $0–$10，远低于 LLM 摘要替代方案（~$500/年）。一个 `npx` 命令即可启动。
+agentmemory 是基于 iii-engine 的 coding-agent 持久记忆层：12 个生命周期 hook、BM25+Vector+Graph 混合检索、53 个 MCP tools 与 128 个 REST endpoints，功能很完整；但 v0.9.27 刚修复跨 Agent 隔离绕过和 stop/restart 数据丢失，且 backlog 已升至 183 issues / 191 PRs，现阶段应实验而非关键依赖 [GH:v0.9.27] [GH:API-2026-07-12]。
 
 ## 总体评价
 
-agentmemory 是目前 agent 记忆领域**设计最完整、基准最透明**的开源方案。其核心优势在于：(1) 零手动标注——12 个 hook 覆盖从 SessionStart 到 SessionEnd 全生命周期，自动捕获所有工具调用；(2) 检索基准过硬——直接在 README 中贴 LongMemEval-S 结果表（BM25+Vector R@5 95.2%），不依赖抽象"效果很好"的宣称；(3) 本地优先——`all-MiniLM-L6-v2` 本地嵌入免费运行，不需要任何 API key。
+agentmemory 仍是 agent memory 领域功能设计与 benchmark 透明度较突出的开源方案。其优势是自动捕获、混合检索、本地 embedding、审计/viewer 与多 Agent 协调；README 继续公开 LongMemEval-S retrieval-only R@5 95.2%，并列出 53 MCP tools、12 hooks 与 1,423+ tests [GH]。
 
-主要风险：iii-engine 依赖——一个年轻的运行时（当前 v0.11.2），agentmemory 自身仍在 v0.9.x（pre-1.0），API 稳定性无承诺。适合愿意接受早期版本迭代成本的场景；追求稳定生产部署需等待 1.0。
+然而，v0.9.27 的修复内容本身构成强负面证据：此前 isolated mode 的常规 recall 路径可跨 Agent 读到记忆，`agentmemory stop` 后重启可能丢失全部数据，大图查询还会超时或 crash [GH:v0.9.27]。这些问题已在该版本修复，但说明 pre-1.0 可靠性和安全边界尚未经受充分压力测试。再加上 183 open issues 与 191 open PRs，生产采用应比 5 月更保守 [GH:API-2026-07-12]。
 
-## 推荐度：3/5
+## 推荐度：2/5
 
-**定位**：对有多个 agent session 的开发者、需要跨 session 保持上下文一致性的场景——agentmemory 是目前功能最完整的开源选择，但需仔细评估 pre-1.0 风险。
+**定位**：对多个 coding-agent session 做跨会话记忆实验、愿意审计数据边界并保留备份的开发者。
 
 - 核心体验出众：一键启动、30 秒 demo、auto-wire MCP、实时 viewer
 - 基准透明：LongMemEval-S 检索 Recall 表直接在 README 公开，且诚实标注 retrieval-only 非端到端 QA
-- 扩展面广：51 MCP tools、107 REST endpoints、12 hooks、多 embedding provider 可插拔
-- **关键扣分**：v0.9.13 pre-1.0，iii-engine 依赖年轻（v0.11.2），API 无稳定性承诺；solo maintainer 存在 bus factor；生产环境部署风险不可忽略
+- 扩展面广：53 MCP tools、128 REST endpoints、12 hooks、多 embedding provider 可插拔 [GH] [GH:v0.9.27]
+- **关键扣分**：v0.9.27 仍为 pre-1.0；近期出现已修复的跨 Agent 隔离绕过与完整数据丢失回归；iii-engine 固定在 v0.11.2；backlog 达 183 issues / 191 PRs [GH:v0.9.27] [GH:API-2026-07-12]
 
-**结论**：作为 agent 记忆领域的先行者值得关注和试用，但目前更适合早期采用者和实验性项目。对于生产环境，建议等待 1.0 发布并持续观察 iii-engine 生态的成熟度。
+**结论**：值得研究与隔离试用，但不建议承载唯一副本、敏感跨 Agent 记忆或关键生产状态；至少应等待更长的无数据损坏窗口、backlog 收敛和 1.0 稳定承诺。
 
 ## 优势
 
@@ -83,11 +85,11 @@ agentmemory 是目前 agent 记忆领域**设计最完整、基准最透明**的
 
 ## 劣势
 
-1. **pre-1.0 不稳定**：v0.9.13，API 随时可能 breaking change
+1. **pre-1.0 不稳定**：v0.9.27，API 仍可能 breaking change
 2. **iii-engine 锁入**：依赖 iii-engine v0.11.2——同样年轻的运行时，整体生态不成熟，且 iii-engine 本身由同一作者维护
-3. **solo maintainer**：Rohit Ghumare 单人维护，bus factor 高
+3. **维护吞吐不足**：24,996 stars 对应 183 open issues 与 191 open PRs，review 与修复队列已不再“可控” [GH:API-2026-07-12]
 4. **跨基准对比困难**：当前只有 LongMemEval-S retrieval 基准，与 Mem0/Letta 的 LoCoMo 基准不可直接比较（项目已诚实标注）
-5. **Node.js 限定**：TypeScript 实现，仅 REST/MCP 可供其他语言调用；对 Python 生态无一等 SDK
+5. **已出现严重回归**：v0.9.27 才修复跨 Agent recall 隔离绕过、stop/restart 数据丢失和大图 crash；修复完成不等于风险历史可忽略 [GH:v0.9.27]
 
 ---
 
@@ -105,7 +107,7 @@ agentmemory 是目前 agent 记忆领域**设计最完整、基准最透明**的
 - 纯 Python 技术栈且不愿引入 Node.js 依赖
 - 只需要简单的 session 摘要——agentmemory 功能过剩
 - 需要对记忆系统进行深度定制（iii-engine 抽象层增加定制成本）
-- 对 bus factor 敏感的项目（solo maintainer）
+- 对维护者集中度或 backlog 敏感的项目
 
 ## 与类似项目对比
 
@@ -138,16 +140,16 @@ agentmemory 提供完整记忆生命周期管理：
 
 | 场景 | CPU | 内存 | 存储 | 说明 |
 |------|-----|------|------|------|
-| 最小 | ~50MB | ~100MB | ~100MB | BM25-only，无 embedding |
-| 推荐 | minimal | ~200MB | ~500MB | local embeddings (all-MiniLM-L6-v2) |
+| 最小（估算） | 低 | ~100 MB | ~100 MB | BM25-only；非独立实测 |
+| 推荐（估算） | 低 | ~200 MB | ~500 MB | local embeddings；非独立实测 |
 
 - **运行时**：Node.js ≥ 20，一个 `npx @agentmemory/agentmemory` 启动
 - **操作系统**：跨平台 (Node.js)
-- **Docker**：提供 `docker-compose.yml` 及 `iii-config.docker.yaml`
+- **Docker**：提供 Dockerfile/Compose fallback，并会拉取固定的 `iiidev/iii:0.11.2` engine image；本次未验证官方预构建的 agentmemory 用户向 image，因此 `docker_support: false` [GH]
 - **GPU**：不需要
-- **外部依赖**：无（SQLite 内嵌，本地 embedding 可选 `@xenova/transformers`）
+- **外部数据库**：无需 Postgres/Qdrant；运行仍需要 Node.js，并需要本地 iii-engine 或 Docker fallback [GH]
 
-资源效率高——local embeddings 免费，无外部数据库依赖，单节点即可运行。但相比极简方案（如 claude-mem 的纯 SQLite FTS5），embedding 模型（all-MiniLM-L6-v2）增加了额外内存开销（~100MB）。评分 4/5。[GH]
+资源路径较轻——local embeddings 可避免外部 embedding API，SQLite 免去独立数据库服务。但表中 MB 数字是架构估算而非本次 benchmark；embedding model 会增加内存与存储。评分 4/5。[GH]
 
 ## 上手体验
 
@@ -155,24 +157,24 @@ agentmemory 提供完整记忆生命周期管理：
 
 学习路径分三层：(1) 零配置试用 = 一键启动；(2) 深度配置 = 调整 embedding provider + token budget + BM25/Vector 权重；(3) 高级 = 自定义 hook 脚本 + 多 agent 协调。大多数用户停留在第一层即可获得价值。
 
-扣分项：`AGENTMEMORY_TOOLS=all` 的完整 51 工具模式文档较少，需要探索。
+扣分项：完整 53-tool surface 的文档分散；近期 first-run、stop/restart 与 isolation 回归增加了升级前 smoke test 成本 [GH:v0.9.27]。
 
-评分 4/5。[GH]
+评分 3/5。安装入口仍简单，但可靠性回归已对真实上手和升级体验构成影响。
 
 ## 代码质量
 
 TypeScript + vitest 测试框架。AGENTS.md 详细记录了架构、一致性规则（修改 MCP 工具需同步更新 8 个文件）、代码模式。iii-engine 抽象（`registerFunction`/`registerTrigger`/`sdk.trigger()`）保持了内部一致性。
 
-顾虑：(1) iii-engine 耦合——记忆系统的核心业务逻辑绑定在 iii-engine 的三原语上，替换成本高；(2) pre-1.0，303 commits 的迭代速度意味着重构频繁；(3) solo maintainer，bus factor 显著；(4) 12 open issues + 18 PRs 在可控范围内，但缺乏多 reviewer 的代码审查保障。
+顾虑：(1) iii-engine 耦合——核心业务逻辑绑定在其运行时与固定版本；(2) pre-1.0 频繁重构；(3) v0.9.27 之前出现隔离、持久化与大图热路径回归；(4) 183 issues / 191 PRs 表明维护吞吐不足 [GH:v0.9.27] [GH:API-2026-07-12]。
 
-评分 3/5。[GH]
+评分下调至 2/5：测试数量很多，但已发生的数据完整性与隔离回归属于硬负面信号。
 
 ## 可扩展性
 
 设计层面对扩展友好：
 
 - **12 lifecycle hooks**：可在任意 hook 点注入自定义脚本（`src/hooks/` 下的独立 Node.js 脚本，通过 stdin/stdout 通信）
-- **51 MCP tools + 107 REST endpoints**：任意 MCP client 或 HTTP client 可集成
+- **53 MCP tools + 128 REST endpoints**：任意 MCP client 或 HTTP client 可集成 [GH] [GH:v0.9.27]
 - **Embedding provider 可插拔**：local (all-MiniLM-L6-v2)、Gemini、OpenAI、Voyage AI 四选一
 - **Plugin 系统**：为 Claude Code、OpenClaw、Hermes 等提供专用 plugin 注册
 - **多 agent mesh**：Lease + Signal 机制支持自定义多 agent 协调逻辑
@@ -189,7 +191,7 @@ README 信息密度极高，一页覆盖：定位、快速开始、benchmark 表
 
 AGENTS.md 为贡献者提供了清晰的架构指南和一致性规则（修改 MCP 工具需同步 8 个文件、修改 REST endpoint 需同步 3 个文件）。
 
-扣分项：51 MCP tools 的完整文档不在一处（`AGENTMEMORY_TOOLS=all` 模式需要探索）；API endpoint 仅列 README 表格，无 OpenAPI spec。
+扣分项：53 MCP tools 的完整文档分散；API endpoint 主要由 README/文档表格描述，缺少稳定 OpenAPI contract。
 
 评分 4/5。[GH]
 
@@ -197,10 +199,10 @@ AGENTS.md 为贡献者提供了清晰的架构指南和一致性规则（修改 
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | 9.3k stars，GitHub trending #2（单日 +754⭐ 峰值），12 issues + 18 PRs 可控。维护者响应及时。第三方评测（AgentConn、SignalForges）正在涌现 |
-| 成熟度 | 2/5 | v0.9.13，pre-1.0，303 commits + 高迭代速度。iii-engine v0.11.2 同样年轻。无稳定 API 承诺，breaking change 可能频繁。但 benchmark 结果已稳定可重现 |
+| 社区活跃度 | 3/5 | 24,996 stars、2,067 forks，关注度高；但 183 open issues 与 191 open PRs 说明社区输入远超维护吞吐 [GH:API-2026-07-12]。 |
+| 成熟度 | 2/5 | v0.9.27、pre-1.0，iii-engine 仍固定 v0.11.2；近期严重回归虽已修复，但不能证明已有稳定运行窗口 [GH:v0.9.27]。 |
 
-社区活跃度高、增长势头好，但成熟度低——这是权衡：选择 agentmemory 意味着接受早期软件的迭代成本以换取领先的功能。[GH]
+社区兴趣很高，但 backlog 与严重回归使“活跃”不能等同于“健康”。选择 agentmemory 意味着用领先功能交换升级、备份与隔离验证成本。
 
 ## 安全与风险
 
@@ -209,11 +211,11 @@ AGENTS.md 为贡献者提供了清晰的架构指南和一致性规则（修改 
 - **本地优先**：默认本地 embeddings，不需要外发数据到第三方 API
 - **AGENTMEMORY_SECRET**：API 鉴权机制存在
 - **Apache-2.0 许可证**：商业友好，无 copyleft 限制
-- **无已知 CVE**：npm 依赖相对精简（核心依赖 ~5 个）
+- GitHub repository advisories endpoint 在本次检查返回 `[]`；这只表示未查到已发布 GHSA，不是安全证明 [GH:API-2026-07-12]
 
-风险：(1) iii-engine 供应链风险——两层依赖链（agentmemory → iii-engine → 其依赖），攻击面叠加；(2) solo maintainer 的密钥管理安全性未经审计。
+风险：(1) iii-engine 供应链与固定版本；(2) v0.9.27 前的 isolated recall 路径可跨 Agent 读取记忆；(3) 记忆服务天然处理源代码、prompt 与凭据邻近数据 [GH:v0.9.27]。
 
-评分 4/5。[GH]
+隔离缺陷已修复且默认 local-first 是缓解因素，但近期安全边界回归足以将评分下调至 3/5。
 
 ## 学习价值
 
