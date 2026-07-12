@@ -8,20 +8,28 @@ The VitePress build also emits RSS feeds at `rss.xml` and `rss/analysis.xml`, li
 ## Workflow
 
 1. Sync or copy reports from the server into `docs/analysis/`, preserving directory structure.
-2. Run:
+2. Run the full local gate:
 
 ```bash
-npm run docs:build
+npm run check
 ```
 
-3. Commit `docs/analysis/`, `docs/public/data/reports.json`, and site assets.
+This runs Node contract tests, `vue-tsc`, the production build, and generated-route/RSS/asset validation.
+
+3. Commit `docs/analysis/`, `docs/public/data/reports.json`, and the relevant source changes.
 
 For a direct import from a local or mounted server directory:
 
 ```bash
-npm run import -- /opt/data/wiki/github-repo-wiki
-npm run docs:build
+# Preview the import plan without changing files.
+npm run import -- /opt/data/wiki/github-repo-wiki --dry-run --sync-delete
+
+# Mirror the source and explicitly remove stale target reports.
+npm run import -- /opt/data/wiki/github-repo-wiki --sync-delete
+npm run check
 ```
+
+Without `--sync-delete`, the importer preserves target-only reports and prints them as stale.
 
 For local development:
 

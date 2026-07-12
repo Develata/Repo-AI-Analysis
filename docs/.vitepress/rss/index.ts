@@ -29,13 +29,21 @@ interface RssItem {
   contentHtml: string;
 }
 
+interface RssCandidate {
+  title: string;
+  url: string;
+  date: Date;
+  description: string;
+  content: string;
+}
+
 export function generateRssFeeds(siteConfig: SiteConfig): void {
   generateRssFeedsToDir(siteConfig.outDir);
 }
 
 export function generateRssFeedsToDir(outDir: string): void {
   fs.mkdirSync(outDir, { recursive: true });
-  const items = collectItems().slice(0, FEED_LIMIT);
+  const items = collectItems();
   fs.writeFileSync(path.join(outDir, 'rss.xml'), renderFeed(items, '/rss.xml'), 'utf-8');
 }
 
@@ -81,12 +89,20 @@ export function rssDevServer() {
 function collectItems(): RssItem[] {
   return listMarkdownFiles(analysisRoot)
     .filter((file) => path.basename(file).toLowerCase() !== 'index.md')
-    .map(readItem)
-    .filter((item): item is RssItem => Boolean(item))
-    .sort((a, b) => b.date.getTime() - a.date.getTime() || a.url.localeCompare(b.url));
+    .map(readCandidate)
+    .filter((item): item is RssCandidate => Boolean(item))
+    .sort((a, b) => b.date.getTime() - a.date.getTime() || a.url.localeCompare(b.url))
+    .slice(0, FEED_LIMIT)
+    .map((item) => ({
+      title: item.title,
+      url: item.url,
+      date: item.date,
+      description: item.description,
+      contentHtml: renderContent(item.content, item.url),
+    }));
 }
 
-function readItem(file: string): RssItem | undefined {
+function readCandidate(file: string): RssCandidate | undefined {
   const source = fs.readFileSync(file, 'utf-8');
   const { data, content, excerpt } = matter(source, { excerpt: true });
   if (data.rss === false || data.hideInSidebar) return undefined;
@@ -100,7 +116,7 @@ function readItem(file: string): RssItem | undefined {
     url,
     date,
     description: summarize(data.description || data.summary || excerpt || content),
-    contentHtml: renderContent(content, url),
+    content,
   };
 }
 

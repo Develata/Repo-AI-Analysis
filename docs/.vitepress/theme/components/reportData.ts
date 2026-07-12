@@ -36,9 +36,7 @@ export type Report = {
   tags: string[];
   primary_language: string;
   stars: number;
-  forks: number;
   status: string;
-  sharing_candidate: boolean;
   ratings: Record<string, number>;
   overall_score: number;
   last_checked: string;
@@ -63,10 +61,52 @@ export function reportLink(report: Report): string {
   return withBase(report.route);
 }
 
+function isScore(value: unknown): value is number {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 5;
+}
+
+function isReport(value: unknown): value is Report {
+  if (!value || typeof value !== 'object') return false;
+  const report = value as Partial<Report>;
+  return typeof report.slug === 'string'
+    && report.slug.length > 0
+    && typeof report.route === 'string'
+    && report.route.startsWith('/analysis/')
+    && typeof report.title === 'string'
+    && report.title.length > 0
+    && typeof report.repo_url === 'string'
+    && /^https?:\/\//u.test(report.repo_url)
+    && typeof report.category === 'string'
+    && typeof report.directory === 'string'
+    && Array.isArray(report.tags)
+    && report.tags.every((tag) => typeof tag === 'string')
+    && typeof report.primary_language === 'string'
+    && typeof report.stars === 'number'
+    && Number.isFinite(report.stars)
+    && report.stars >= 0
+    && typeof report.status === 'string'
+    && typeof report.ratings === 'object'
+    && report.ratings !== null
+    && dimensionKeys.every((key) => isScore(report.ratings?.[key]))
+    && isScore(report.overall_score)
+    && typeof report.last_checked === 'string'
+    && typeof report.updated === 'string'
+    && typeof report.summary === 'string';
+}
+
 export async function loadReports(): Promise<Report[]> {
   const response = await fetch(withBase('/data/reports.json'));
-  const payload = await response.json();
-  return (payload.reports ?? []) as Report[];
+  if (!response.ok) {
+    throw new Error(`Reports index request failed (${response.status} ${response.statusText})`);
+  }
+
+  const payload: unknown = await response.json();
+  if (!payload || typeof payload !== 'object') throw new Error('Reports index is not an object');
+  const index = payload as { schema_version?: unknown; count?: unknown; reports?: unknown };
+  if (index.schema_version !== 1) throw new Error(`Unsupported reports index schema: ${String(index.schema_version)}`);
+  if (!Array.isArray(index.reports) || !index.reports.every(isReport)) throw new Error('Reports index contains invalid report items');
+  if (index.count !== index.reports.length) throw new Error('Reports index count does not match its items');
+  return index.reports;
 }
 
 export function averageRatings(reports: Report[]): Record<string, number> {

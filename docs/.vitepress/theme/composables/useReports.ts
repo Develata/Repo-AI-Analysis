@@ -3,6 +3,7 @@ import { loadReports, type Report } from '../components/reportData';
 
 const reports = ref<Report[]>([]);
 const loading = ref(false);
+const started = ref(false);
 const error = ref<Error | null>(null);
 let loadPromise: Promise<Report[]> | null = null;
 
@@ -11,6 +12,7 @@ export function useReports() {
     if (reports.value.length > 0) return reports.value;
     if (loadPromise) return loadPromise;
 
+    started.value = true;
     loading.value = true;
     error.value = null;
     loadPromise = loadReports()
@@ -33,6 +35,7 @@ export function useReports() {
   return {
     reports,
     loading,
+    started,
     error,
     ready: computed(() => reports.value.length > 0 && !loading.value),
     ensureReports,

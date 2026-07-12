@@ -6,6 +6,10 @@
   "description": "VitePress GitHub Pages site for Repo-AI-Analysis.",
   "scripts": {
     "build": "npm run docs:build",
+    "test": "node --test tests/*.test.mjs",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "check": "npm test && npm run typecheck && npm run docs:build && npm run validate:build",
+    "validate:build": "node scripts/validate-build.mjs",
     "import": "node scripts/import-from-server.mjs",
     "docs:dev": "node scripts/build-index.mjs && vitepress dev docs --host 127.0.0.1",
     "docs:build": "node scripts/build-index.mjs && vitepress build docs",
@@ -15,9 +19,12 @@
     "node": ">=20"
   },
   "devDependencies": {
+    "@types/node": "^22.20.1",
     "gray-matter": "^4.0.3",
-    "markdown-it": "^14.1.1",
+    "markdown-it": "^14.3.0",
+    "typescript": "^6.0.3",
     "vitepress": "^1.6.4",
-    "vue": "^3.5.13"
+    "vue": "^3.5.39",
+    "vue-tsc": "^3.3.7"
   }
 }

@@ -3,6 +3,8 @@ name: Deploy VitePress site to Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,23 +13,24 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: Setup Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v6
         with:
           node-version: 24
           cache: npm
 
       - name: Setup Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v6
         with:
           enablement: true
@@ -35,13 +38,23 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Run unit and contract tests
+        run: npm test
+
+      - name: Type-check theme and build code
+        run: npm run typecheck
+
       - name: Build with VitePress
         run: npm run build
 
       - name: Verify generated reports index is committed
         run: git diff --exit-code -- docs/public/data/reports.json
 
+      - name: Validate generated site and RSS
+        run: npm run validate:build
+
       - name: Package Pages artifact
+        if: github.event_name != 'pull_request'
         run: |
           tar \
             --dereference --hard-dereference \
@@ -53,6 +66,7 @@ jobs:
             .
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-artifact@v6
         with:
           name: github-pages
@@ -60,6 +74,7 @@ jobs:
           retention-days: 1
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
