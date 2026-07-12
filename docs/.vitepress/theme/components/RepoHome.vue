@@ -15,8 +15,12 @@ import {
   type Report,
 } from './reportData';
 
+const LATEST_PAGE_SIZE = 6;
+const LATEST_PAGE_LIMIT = 3;
+
 const { reports, loading, started, error, ensureReports } = useReports();
 const selectedSlug = ref('');
+const latestPage = ref(1);
 
 type CategorySummary = {
   path: string;
@@ -33,10 +37,16 @@ type DomainHighlight = {
   report: Report;
 };
 
-const latest = computed(() => reports.value
+const latestPool = computed(() => reports.value
   .slice()
   .sort((a, b) => reportTimestamp(b) - reportTimestamp(a) || Number(b.overall_score) - Number(a.overall_score))
-  .slice(0, 6));
+  .slice(0, LATEST_PAGE_SIZE * LATEST_PAGE_LIMIT));
+const latestPageCount = computed(() => Math.ceil(latestPool.value.length / LATEST_PAGE_SIZE));
+const latestPages = computed(() => Array.from({ length: latestPageCount.value }, (_, index) => index + 1));
+const latest = computed(() => {
+  const start = (latestPage.value - 1) * LATEST_PAGE_SIZE;
+  return latestPool.value.slice(start, start + LATEST_PAGE_SIZE);
+});
 const average = computed(() => averageRatings(reports.value));
 const selectedReport = computed(() => latest.value.find((report) => report.slug === selectedSlug.value) ?? latest.value[0]);
 const radarSeries = computed(() => [{
@@ -113,6 +123,10 @@ function selectReport(report: Report) {
   selectedSlug.value = report.slug;
 }
 
+function setLatestPage(page: number) {
+  latestPage.value = Math.min(Math.max(1, page), latestPageCount.value || 1);
+}
+
 function reportTimestamp(report: Report): number {
   const timestamp = Date.parse(reportDate(report));
   return Number.isFinite(timestamp) ? timestamp : 0;
@@ -125,6 +139,10 @@ function categoryLink(path: string): string {
 function load() {
   void ensureReports().catch(() => undefined);
 }
+
+watch(latestPageCount, (count) => {
+  if (latestPage.value > count) latestPage.value = Math.max(1, count);
+});
 
 watch(latest, (items) => {
   if (!items.length) return;
@@ -197,7 +215,7 @@ onMounted(load);
       <aside class="raia-panel raia-home-latest-panel">
         <div class="raia-panel-head">
           <h2>最近更新</h2>
-          <span>{{ latest.length }} reports</span>
+          <span>{{ latest.length }} / {{ latestPool.length }} reports</span>
         </div>
         <div class="raia-latest-list">
           <article
@@ -222,6 +240,38 @@ onMounted(load);
             <a :href="reportLink(report)">打开报告 →</a>
           </article>
         </div>
+        <nav
+          v-if="latestPageCount > 1"
+          class="raia-latest-pagination"
+          :aria-label="`最近更新，共 ${latestPageCount} 页`"
+        >
+          <button
+            type="button"
+            aria-label="上一页"
+            :disabled="latestPage === 1"
+            @click="setLatestPage(latestPage - 1)"
+          >
+            ‹
+          </button>
+          <button
+            v-for="page in latestPages"
+            :key="page"
+            type="button"
+            :aria-label="`第 ${page} 页`"
+            :aria-current="page === latestPage ? 'page' : undefined"
+            @click="setLatestPage(page)"
+          >
+            {{ page }}
+          </button>
+          <button
+            type="button"
+            aria-label="下一页"
+            :disabled="latestPage === latestPageCount"
+            @click="setLatestPage(latestPage + 1)"
+          >
+            ›
+          </button>
+        </nav>
       </aside>
 
       <section class="raia-panel raia-home-top-panel">
