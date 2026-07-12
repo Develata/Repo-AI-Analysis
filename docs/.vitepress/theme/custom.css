@@ -101,6 +101,13 @@ body {
   grid-area: radar;
   display: grid;
   grid-template-rows: auto 1fr;
+  overflow: hidden;
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 14%, var(--raia-glass-border)) !important;
+  background-color: color-mix(in srgb, var(--vp-c-brand-soft) 34%, var(--vp-c-bg)) !important;
+  background-image:
+    radial-gradient(circle at 18% 8%, color-mix(in srgb, var(--vp-c-brand-1) 10%, transparent), transparent 42%),
+    linear-gradient(145deg, color-mix(in srgb, var(--vp-c-brand-soft) 34%, transparent), transparent 72%);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--vp-c-brand-1) 8%, transparent);
 }
 
 .raia-home-latest-panel {
@@ -116,26 +123,30 @@ body {
 }
 
 .raia-home-radar-card {
-  min-height: 360px;
-  padding: clamp(14px, 2.5vw, 28px);
-  background: radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--vp-c-brand-soft) 72%, transparent), transparent 58%), var(--raia-glass-bg) !important;
+  min-height: 0;
+  padding: 4px 8px;
+  border: 0 !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .raia-home-lens-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(190px, 0.46fr);
-  gap: 14px;
-  align-items: stretch;
+  gap: 18px;
+  align-items: center;
 }
 
 .raia-home-lens-summary {
   display: grid;
   align-content: center;
-  gap: 18px;
-  padding: 18px;
-  border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--vp-c-bg) 72%, transparent);
+  gap: 14px;
+  padding: 14px 16px 14px 2px;
+  border: 0;
+  background: transparent;
 }
 
 .raia-home-lens-summary > div:first-child strong {
@@ -157,16 +168,47 @@ body {
 
 .raia-home-lens-summary dl {
   display: grid;
-  gap: 12px;
+  gap: 10px;
+}
+
+.raia-home-lens-summary dl > div {
+  padding-left: 10px;
+  border-left: 2px solid color-mix(in srgb, var(--vp-c-brand-1) 54%, transparent);
+}
+
+.raia-home-lens-summary dl > div:last-child {
+  border-left-color: color-mix(in srgb, var(--vp-c-brand-1) 24%, var(--vp-c-divider));
 }
 
 .raia-home-lens-summary dd {
   margin-top: 3px;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .raia-home-radar-card .raia-radar {
-  width: min(100%, 620px);
+  width: min(100%, 420px);
+}
+
+.raia-lens-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 10px;
+  padding: 0 16px;
+  color: white !important;
+  background: var(--vp-c-brand-1);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--vp-c-brand-1) 22%, transparent);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.raia-lens-cta:hover {
+  background: var(--vp-c-brand-2);
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--vp-c-brand-1) 28%, transparent);
+  transform: translateY(-1px);
 }
 
 .raia-radar {
@@ -923,6 +965,58 @@ body {
     min-height: 320px;
     padding: 14px;
   }
+
+  .raia-home-radar-panel {
+    padding: 16px;
+  }
+
+  .raia-home-radar-panel .raia-panel-head {
+    margin-bottom: 4px;
+  }
+
+  .raia-home-radar-panel .raia-panel-head span {
+    flex-basis: 100%;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+  }
+
+  .raia-home-lens-layout {
+    gap: 0;
+  }
+
+  .raia-home-radar-card .raia-radar {
+    width: min(100%, 320px);
+  }
+
+  .raia-home-radar-card .raia-radar-label {
+    fill: color-mix(in srgb, var(--vp-c-text-1) 86%, transparent);
+    font-size: 11px;
+  }
+
+  .raia-home-lens-summary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 6px 8px;
+  }
+
+  .raia-home-lens-summary > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    align-items: baseline;
+  }
+
+  .raia-home-lens-summary > div:first-child strong {
+    font-size: 30px;
+  }
+
+  .raia-home-lens-summary dl {
+    gap: 8px;
+  }
+
+  .raia-lens-cta {
+    min-height: 46px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -941,7 +1035,8 @@ body {
   .raia-home-category-card:hover,
   .raia-home-picks a:hover,
   .raia-button-primary:hover,
-  .raia-button-ghost:hover {
+  .raia-button-ghost:hover,
+  .raia-lens-cta:hover {
     transform: none;
   }
 }
