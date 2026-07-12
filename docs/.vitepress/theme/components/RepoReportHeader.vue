@@ -55,7 +55,7 @@ function normalizeDate(value: unknown): string {
       </div>
 
       <p v-if="frontmatter.evidence" class="raia-report-evidence">证据等级：{{ frontmatter.evidence }}</p>
-      <a class="raia-button-primary" href="#一句话总结">开始阅读</a>
+      <a class="raia-liquid-cta raia-report-read-cta" href="#一句话总结">开始阅读</a>
     </div>
 
     <div class="raia-radar-card raia-report-radar-card">

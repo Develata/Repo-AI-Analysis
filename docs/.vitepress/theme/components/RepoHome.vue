@@ -186,7 +186,7 @@ onMounted(load);
                 <dd>{{ risks.map((item) => `${item.label} ${formatScore(item.score)}`).join(' · ') }}</dd>
               </div>
             </dl>
-            <a class="raia-lens-cta" :href="reportLink(selectedReport)">阅读完整报告 →</a>
+            <a class="raia-liquid-cta raia-lens-cta" :href="reportLink(selectedReport)">阅读完整报告 →</a>
           </div>
         </div>
       </div>
