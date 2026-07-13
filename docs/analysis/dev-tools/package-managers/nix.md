@@ -11,7 +11,7 @@ primary_language: "C++"
 license: "LGPL-2.1"
 stars: 16877
 forks: 1913
-last_checked: 2026-05-16
+last_checked: 2026-07-13
 last_verified: 2026-05-16
 evidence: "docs review + community reports + third-party critiques + governance analysis + GitHub security advisories. Test coverage and issue aging metrics not exhaustively measured."
 status: active

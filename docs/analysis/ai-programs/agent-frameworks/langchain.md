@@ -3,7 +3,7 @@
 
 title: "LangChain"
 created: 2026-05-18
-updated: 2026-05-21
+updated: 2026-07-13
 type: repository-analysis
 repo_url: "https://github.com/langchain-ai/langchain"
 category: "ai-programs/agent-frameworks"
@@ -12,17 +12,17 @@ previous_repo: ""
 successor: ""
 primary_language: "Python"
 license: "MIT"
-stars: 136954
-forks: 22654
-last_checked: 2026-05-18
-last_verified: 2026-05-18
-evidence: "official docs + GitHub API + PyPI metadata + local code scan; not deployed by Develata"
+stars: 141599
+forks: 23545
+last_checked: 2026-07-13
+last_verified: 2026-07-13
+evidence: "current official docs + GitHub API/releases/advisories + PyPI metadata + prior local code scan; not deployed by Develata"
 archived_reason: ""
 docker_support: false
 gpu_required: false
 estimated_cpu: "library-dependent; minimal CPU for framework itself, application-dependent for agents/RAG"
 estimated_memory: "library-dependent; core package light, application-dependent for retrievers/vector stores/LLM clients"
-estimated_storage: "langchain wheel ~114 KB; sdist ~581 KB; tracked Python source bytes in local scan ~12.4 MB"
+estimated_storage: "langchain 1.3.13 wheel ~137 KB; sdist ~643 KB; tracked Python source bytes in prior local scan ~12.4 MB"
 status: active
 ratings:
   capability: 5
@@ -38,13 +38,13 @@ ratings:
 overall_score: 4.3
 sources:
   - "[GH] https://github.com/langchain-ai/langchain"
-  - "[GH:api] https://api.github.com/repos/langchain-ai/langchain"
-  - "[GH:search] GitHub Search API queries at 2026-05-18T05:37+08: open issues, open PRs, closed issues since 2026-04-18, merged PRs since 2026-04-18"
+  - "[GH:api] https://api.github.com/repos/langchain-ai/langchain checked 2026-07-13 UTC+8; archived=false, default_branch=master, language=Python, license=MIT, stars=141599, forks=23545, open issues=354, open PRs=68"
+  - "[GH:release-current] https://github.com/langchain-ai/langchain/releases/tag/langchain%3D%3D1.3.13 published 2026-07-10"
   - "[GH:contributors] GitHub contributors API Link pagination checked without anon at 2026-05-18T05:37+08"
   - "[GH:readme] https://github.com/langchain-ai/langchain/blob/master/README.md"
   - "[GH:agents] https://github.com/langchain-ai/langchain/blob/40c515c7b18830460672b455b74e9d7140d2a03b/AGENTS.md"
   - "[GH:local-scan] local clone /tmp/langchain at commit 40c515c7b18830460672b455b74e9d7140d2a03b; commands: git ls-files, pyproject.toml scan, tracked Python byte count; checked 2026-05-18T05:37+08"
-  - "[GH:advisories] https://github.com/langchain-ai/langchain/security/advisories"
+  - "[GH:advisories] https://github.com/langchain-ai/langchain/security/advisories checked 2026-07-13 UTC+8; latest GHSA-gr75-jv2w-4656 Moderate affects langchain<=1.3.8 and langchain-anthropic<=1.4.5, fixed in 1.3.9/1.4.6"
   - "[GHSA:c67j] https://github.com/langchain-ai/langchain/security/advisories/GHSA-c67j-w6g6-q2cm"
   - "[Docs:overview] https://docs.langchain.com/oss/python/langchain/overview"
   - "[Docs:agents] https://docs.langchain.com/oss/python/langchain/agents"
@@ -52,7 +52,7 @@ sources:
   - "[Docs:langgraph] https://docs.langchain.com/oss/python/langgraph/overview"
   - "[Docs:langsmith] https://docs.langchain.com/langsmith/home"
   - "[Docs:release] https://docs.langchain.com/oss/python/release-policy"
-  - "[PyPI] https://pypi.org/pypi/langchain/json"
+  - "[PyPI] https://pypi.org/pypi/langchain/json checked 2026-07-13 UTC+8; version=1.3.13, Python>=3.10,<4.0, wheel=136911 bytes"
   - "[PyPI:core] https://pypi.org/pypi/langchain-core/json"
   - "[PyPI:classic] https://pypi.org/pypi/langchain-classic/json"
   - "[Blog:1.0] https://blog.langchain.com/langchain-langgraph-1dot0"
@@ -88,7 +88,7 @@ For Python teams who need provider-agnostic LLM/agent abstractions and expect to
 
 ## 优势
 
-1. **生态极强**：GitHub API 快照显示约 137k stars、22.6k forks；GitHub Search API 当次查询显示 open issues 约 412、open PRs 约 168、近 30 天 closed issues 约 99、merged PRs 约 232，说明社区规模和维护吞吐都非常高 [GH:api][GH:search]。
+1. **生态极强**：2026-07-13 GitHub API 快照显示 141,599 stars、23,545 forks、354 open issues、68 open PRs，说明社区规模和维护吞吐都非常高 [GH:api]。
 2. **抽象层次清楚化**：官方文档把 LangChain / LangGraph / Deep Agents 分别定义为 framework / runtime / harness，较早期“什么都往 LangChain 放”的状态更清晰 [Docs:products][Blog:1.0]。
 3. **1.0 后有稳定承诺**：`langchain` 与 `langchain-core` 遵循 semver，1.x deprecated features 持续工作，breaking changes 只在 major release；0.3 进入维护至 2026-12 [Docs:release]。
 4. **扩展性非常强**：model provider、tools、middleware、structured output、LangGraph runtime、LangSmith observability/eval 形成完整生态 [Docs:agents][Docs:langgraph][Docs:langsmith]。
@@ -159,10 +159,10 @@ LangChain 覆盖 LLM/agent application 的主要公共抽象：
 
 | 场景 | CPU | 内存 | 存储 | 说明 |
 |------|-----|------|------|------|
-| 最小 | 单核即可 | Python 进程基础开销 | `langchain` wheel 约 114 KB，sdist 约 581 KB | 只做模型接口或简单 agent loop；实际消耗主要来自模型 API、retriever、vector store 或用户代码 [PyPI] |
+| 最小 | 单核即可 | Python 进程基础开销 | `langchain` 1.3.13 wheel 约 137 KB，sdist 约 643 KB | 只做模型接口或简单 agent loop；实际消耗主要来自模型 API、retriever、vector store 或用户代码 [PyPI] |
 | 推荐 | 2-4 cores | 取决于并发请求、工具、retriever、LangSmith tracing 与 LangGraph persistence | local scan 统计的 tracked Python source bytes 约 12.4 MB；完整 clone 远大于安装包 | 用于开发、测试、多 provider integration、agent workflow 时按应用复杂度扩容 [GH:local-scan] |
 
-- **运行时**：Python `>=3.10,<4.0`；PyPI 当前 `langchain==1.3.1`，依赖 `langchain-core>=1.4.0,<2.0.0`、`langgraph>=1.2.0,<1.3.0`、`pydantic>=2.7.4,<3.0.0` [PyPI]。
+- **运行时**：Python `>=3.10,<4.0`；PyPI 当前 `langchain==1.3.13`，依赖 `langchain-core>=1.4.9,<2.0.0`、`langgraph>=1.2.5,<1.3.0`、`pydantic>=2.7.4,<3.0.0` [PyPI]。
 - **操作系统**：Python library，通常跨平台；具体 provider SDK、vector store、tooling 另算。
 - **Docker**：`docker_support: false` 指没有把官方 runtime Docker image 作为主要交付形态；这是 library/framework 的正常特征，不作为缺点扣分。
 - **GPU**：不要求 GPU；若本地模型、embedding、reranker 或 vector workload 需要 GPU，那是下游应用选择。
@@ -208,7 +208,7 @@ LangChain 的文档质量不是只有“多”，而是能承认自身演化：1
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 5/5 | GitHub API 快照：136,954 stars、22,654 forks、870 watchers；Search API 当次查询：open issues 约 412、open PRs 约 168、近 30 天 closed issues 约 99、merged PRs 约 232；contributors endpoint 页数估计 469。社区极大且维护吞吐高 [GH:api][GH:search][GH:contributors]。 |
+| 社区活跃度 | 5/5 | 2026-07-13 GitHub API 快照：141,599 stars、23,545 forks、354 open issues、68 open PRs；contributors endpoint 页数在 2026-05 估计 469。社区极大且维护吞吐高 [GH:api][GH:contributors]。 |
 | 成熟度 | 4/5 | 项目创建于 2022-10，整体生态已经从 pre-1.0 快速迭代进入 LangChain/LangGraph 1.0；官方承诺 semver、1.x deprecated features 保持工作、0.3 维护到 2026-12 [GH:api][Docs:release][Blog:1.0]。不给 5 是因为 1.0 API 稳定承诺较新，且历史上 breaking changes / migration burden 是真实社区痛点 [Blog:logic][Blog:xqa]。 |
 
 社区指标不等于生产采用证明。LangChain 官方和 PyPI metadata 都强调 production/stable 与 battle-tested，但这属于发布者自述而非独立审计；本分析没有 Develata 部署经验，也没有独立生产可靠性审计。因此 community 可给 5，maturity 保守给 4 [PyPI][PyPI:core]。

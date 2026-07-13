@@ -510,7 +510,7 @@
         "ai-infrastructure"
       ],
       "primary_language": "Python",
-      "stars": 136954,
+      "stars": 141599,
       "status": "active",
       "ratings": {
         "capability": 5,
@@ -525,8 +525,8 @@
         "recommendation": 4
       },
       "overall_score": 4.3,
-      "last_checked": "2026-05-18",
-      "updated": "2026-05-21",
+      "last_checked": "2026-07-13",
+      "updated": "2026-07-13",
       "summary": "LangChain 适合需要快速标准化 LLM/agent 应用开发的 Python 团队；它和 OpenClaw、Hermes Agent 不完全同类，更准确地说是 agent framework，位于 assistant / harness 之下、runtime 之上或之旁的抽象层 [Docs:products]。"
     },
     {
@@ -1015,40 +1015,6 @@
       "summary": "Lean4 是 mathlib4 之“器”：若 mathlib4 是形式化数学的图书馆，Lean4 就是定义“何为证明、何为程序、何为可检查对象”的语言与内核。"
     },
     {
-      "slug": "dev-tools/package-managers/mise",
-      "route": "/analysis/dev-tools/package-managers/mise",
-      "title": "mise",
-      "repo_url": "https://github.com/jdx/mise",
-      "category": "dev-tools/package-managers",
-      "directory": "dev-tools/package-managers",
-      "tags": [
-        "rust",
-        "version-manager",
-        "task-runner",
-        "dev-tools",
-        "asdf-alternative"
-      ],
-      "primary_language": "Rust",
-      "stars": 28254,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 5,
-        "code_quality": 4,
-        "documentation": 5,
-        "community": 4,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 4,
-        "recommendation": 4
-      },
-      "overall_score": 4.1,
-      "last_checked": "2026-05-16",
-      "updated": "2026-05-16",
-      "summary": "面向多语言开发者的统一开发环境管理器，将工具版本、环境变量和任务执行整合到单个 `mise.toml` 中，取代 asdf/nvm/pyenv/direnv/make 的碎片化工具链。"
-    },
-    {
       "slug": "ai-programs/computer-vision/supervision",
       "route": "/analysis/ai-programs/computer-vision/supervision",
       "title": "Supervision",
@@ -1185,7 +1151,7 @@
         "recommendation": 4
       },
       "overall_score": 4,
-      "last_checked": "2026-05-18",
+      "last_checked": "2026-07-13",
       "updated": "2026-05-21",
       "summary": "ccusage 适合已经重度使用 coding agents、需要从本地日志中看清 token 消耗与估算成本的个人开发者和小团队；它是轻量而高效的「AI 使用额度 / 资费管理」工具，但不是完整的预算审批或云端 FinOps 系统。"
     },
@@ -1379,6 +1345,40 @@
       "summary": "这是目前最完整的开源 ML systems 教学 monorepo 之一：在线阅读和 browser labs 可以直接使用，TinyTorch/MLSys·im 又把概念落实为代码与定量模型；但 Volume II 和多个 2026 子项目仍属 early release，适合选择性学习，不宜把整仓库的 0.x 组件都当作生产工具。"
     },
     {
+      "slug": "dev-tools/package-managers/mise",
+      "route": "/analysis/dev-tools/package-managers/mise",
+      "title": "mise",
+      "repo_url": "https://github.com/jdx/mise",
+      "category": "dev-tools/package-managers",
+      "directory": "dev-tools/package-managers",
+      "tags": [
+        "rust",
+        "version-manager",
+        "task-runner",
+        "dev-tools",
+        "asdf-alternative"
+      ],
+      "primary_language": "Rust",
+      "stars": 30671,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 5,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 4,
+      "last_checked": "2026-07-13",
+      "updated": "2026-07-13",
+      "summary": "面向多语言开发者的统一开发环境管理器，将工具版本、环境变量和任务执行整合到单个 `mise.toml` 中，取代 asdf/nvm/pyenv/direnv/make 的碎片化工具链。"
+    },
+    {
       "slug": "ai-programs/agent-workflows/n8n",
       "route": "/analysis/ai-programs/agent-workflows/n8n",
       "title": "n8n",
@@ -1416,42 +1416,6 @@
       "last_checked": "2026-05-20",
       "updated": "2026-05-21",
       "summary": "n8n 的主分类在本次 taxonomy 中改为 `ai-programs/agent-workflows`：它原本是 workflow automation / integration platform，但在 2026 的语境下，AI nodes、LangChain nodes、agent、memory、human-in-the-loop 已经成为其重要能"
-    },
-    {
-      "slug": "ai-programs/coding-agents/pi",
-      "route": "/analysis/ai-programs/coding-agents/pi",
-      "title": "Pi Coding Agent",
-      "repo_url": "https://github.com/earendil-works/pi",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
-      "tags": [
-        "ai-agent",
-        "coding-agent",
-        "terminal",
-        "cli",
-        "typescript",
-        "multi-provider",
-        "extensible"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 49900,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 5,
-        "performance": 4,
-        "code_quality": 4,
-        "documentation": 5,
-        "community": 4,
-        "maturity": 2,
-        "extensibility": 5,
-        "security": 4,
-        "recommendation": 3
-      },
-      "overall_score": 4,
-      "last_checked": "2026-05-16",
-      "updated": "2026-05-21",
-      "summary": "面向 Unix 哲学信仰者与极简主义开发者的终端 AI 编码代理：最小核心（4 个内置工具），最大可扩展性（TypeScript 扩展系统覆盖全生命周期），15+ 模型提供商自由切换。你把模型、工具和判断力带来就行。"
     },
     {
       "slug": "programming/programming-education/programming-language-guides/rust/rust-book-brown",
@@ -1519,7 +1483,7 @@
         "recommendation": 3
       },
       "overall_score": 3.9,
-      "last_checked": "2026-05-16",
+      "last_checked": "2026-07-13",
       "updated": "2026-05-16",
       "summary": "面向 JavaScript/TypeScript 全栈开发者的 All-in-One 工具链：单个 `bun` 二进制文件替代 Node.js 运行时 + npm 包管理 + Jest 测试 + webpack 打包，在官方基准测试中全面快于传统工具链，适合新项目和可接受部分 Node.js 兼容性风险的迁移场景。"
     },
@@ -1783,46 +1747,45 @@
         "recommendation": 3
       },
       "overall_score": 3.9,
-      "last_checked": "2026-05-18",
+      "last_checked": "2026-07-13",
       "updated": "2026-05-21",
       "summary": "oh-my-claudecode 适合已经重度使用 Claude Code、希望把单个 coding agent 扩展成「可分工、可持久、可审查、可调用外部 CLI」工作流的 advanced users；它是强大的复合型 AI plugin，而不是轻量单功能插件。"
     },
     {
-      "slug": "ai-programs/ai-chat-platforms/open-webui",
-      "route": "/analysis/ai-programs/ai-chat-platforms/open-webui",
-      "title": "Open WebUI",
-      "repo_url": "https://github.com/open-webui/open-webui",
-      "category": "ai-programs/ai-chat-platforms",
-      "directory": "ai-programs/ai-chat-platforms",
+      "slug": "ai-programs/coding-agents/pi",
+      "route": "/analysis/ai-programs/coding-agents/pi",
+      "title": "Pi Coding Agent",
+      "repo_url": "https://github.com/earendil-works/pi",
+      "category": "ai-programs/coding-agents",
+      "directory": "ai-programs/coding-agents",
       "tags": [
-        "ai-chat",
-        "self-hosted",
-        "webui",
-        "ollama",
-        "openai-compatible",
-        "rag",
-        "enterprise",
-        "plugins"
+        "ai-agent",
+        "coding-agent",
+        "terminal",
+        "cli",
+        "typescript",
+        "multi-provider",
+        "extensible"
       ],
-      "primary_language": "Python",
-      "stars": 137582,
+      "primary_language": "TypeScript",
+      "stars": 69893,
       "status": "active",
       "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 3,
+        "capability": 4,
+        "usability": 5,
+        "performance": 4,
+        "code_quality": 4,
         "documentation": 5,
-        "community": 5,
-        "maturity": 3,
+        "community": 4,
+        "maturity": 2,
         "extensibility": 5,
-        "security": 2,
-        "recommendation": 4
+        "security": 3,
+        "recommendation": 3
       },
       "overall_score": 3.9,
-      "last_checked": "2026-05-18",
-      "updated": "2026-05-21",
-      "summary": "Open WebUI 是面向想把本地/云端 LLM 统一成一个自托管 Web 入口的个人、实验室和组织的 AI chat platform：能力面极宽，生态极活跃，但安全攻击面和许可边界都必须认真对待。"
+      "last_checked": "2026-07-13",
+      "updated": "2026-07-13",
+      "summary": "面向 Unix 哲学信仰者与极简主义开发者的终端 AI 编码代理：最小核心（4 个内置工具），最大可扩展性（TypeScript 扩展系统覆盖全生命周期），15+ 模型提供商自由切换。你把模型、工具和判断力带来就行。"
     },
     {
       "slug": "ai-programs/ai-harness/skills/scientific-agent-skills",
@@ -2368,6 +2331,43 @@
       "summary": "Open Notebook 是 self-hosted、privacy-focused 的 NotebookLM 替代品，面向多模态资料组织、检索、对话和 podcast 生成。 [GH:readme]"
     },
     {
+      "slug": "ai-programs/ai-chat-platforms/open-webui",
+      "route": "/analysis/ai-programs/ai-chat-platforms/open-webui",
+      "title": "Open WebUI",
+      "repo_url": "https://github.com/open-webui/open-webui",
+      "category": "ai-programs/ai-chat-platforms",
+      "directory": "ai-programs/ai-chat-platforms",
+      "tags": [
+        "ai-chat",
+        "self-hosted",
+        "webui",
+        "ollama",
+        "openai-compatible",
+        "rag",
+        "enterprise",
+        "plugins"
+      ],
+      "primary_language": "Python",
+      "stars": 145150,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 2,
+        "documentation": 5,
+        "community": 5,
+        "maturity": 3,
+        "extensibility": 5,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.7,
+      "last_checked": "2026-07-13",
+      "updated": "2026-07-13",
+      "summary": "Open WebUI 是面向想把本地/云端 LLM 统一成一个自托管 Web 入口的个人、实验室和组织的 AI chat platform：能力面极宽，生态极活跃，但安全攻击面和许可边界都必须认真对待。"
+    },
+    {
       "slug": "ai-programs/assistant-agents/openhuman",
       "route": "/analysis/ai-programs/assistant-agents/openhuman",
       "title": "OpenHuman",
@@ -2716,7 +2716,7 @@
         "dashboard"
       ],
       "primary_language": "Go",
-      "stars": 4658,
+      "stars": 5323,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -2731,8 +2731,8 @@
         "recommendation": 3
       },
       "overall_score": 3.6,
-      "last_checked": "2026-05-17",
-      "updated": "2026-05-17",
+      "last_checked": "2026-07-13",
+      "updated": "2026-07-13",
       "summary": "面向个人 VPS、小型自托管集群和轻量运维场景的服务器探针系统：部署比 Prometheus/Zabbix 简单得多，功能比纯状态页完整，但不应被理解为严肃生产监控体系的替代品。"
     },
     {
@@ -2808,43 +2808,6 @@
       "last_checked": "2026-05-21",
       "updated": "2026-05-21",
       "summary": "MinerU 很值得放入 document-processing 板块并实测，尤其适合科学文献解析；但它的自定义许可证和模型/部署复杂度，使其更适合作为“强候选”，不是默认无脑依赖。"
-    },
-    {
-      "slug": "ai-programs/ai-harness/ai-plugins/oh-my-openagent",
-      "route": "/analysis/ai-programs/ai-harness/ai-plugins/oh-my-openagent",
-      "title": "oh-my-openagent",
-      "repo_url": "https://github.com/code-yeongyu/oh-my-openagent",
-      "category": "ai-programs/ai-harness/ai-plugins",
-      "directory": "ai-programs/ai-harness/ai-plugins",
-      "tags": [
-        "opencode",
-        "agent-orchestration",
-        "multi-agent",
-        "coding-agent",
-        "mcp",
-        "hooks",
-        "skills",
-        "typescript"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 58372,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 3,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 5,
-        "maturity": 2,
-        "extensibility": 5,
-        "security": 2,
-        "recommendation": 3
-      },
-      "overall_score": 3.6,
-      "last_checked": "2026-05-18",
-      "updated": "2026-05-21",
-      "summary": "oh-my-openagent 适合已经重度使用 OpenCode、愿意承担高复杂度配置与安全边界管理、希望把单个 coding agent 扩展成多模型协作团队的 advanced users；它很强，但不是稳态轻量工具。"
     },
     {
       "slug": "ai-programs/coding-agents/opencode",
@@ -3856,6 +3819,43 @@
       "summary": "MarkItDown 是 document-processing 板块中值得优先分析和试用的轻量 Markdown 转换器：许可友好、入口简单、MCP 适配直接，但复杂 PDF/OCR 能力不应高估 [GH][GH:mcp-local]。"
     },
     {
+      "slug": "ai-programs/ai-harness/ai-plugins/oh-my-openagent",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/oh-my-openagent",
+      "title": "oh-my-openagent",
+      "repo_url": "https://github.com/code-yeongyu/oh-my-openagent",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
+      "tags": [
+        "opencode",
+        "agent-orchestration",
+        "multi-agent",
+        "coding-agent",
+        "mcp",
+        "hooks",
+        "skills",
+        "typescript"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 65615,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 5,
+        "maturity": 2,
+        "extensibility": 5,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.4,
+      "last_checked": "2026-07-13",
+      "updated": "2026-07-13",
+      "summary": "oh-my-openagent 适合已经重度使用 OpenCode、愿意承担高复杂度配置与安全边界管理、希望把单个 coding agent 扩展成多模型协作团队的 advanced users；它很强，但不是稳态轻量工具。"
+    },
+    {
       "slug": "document-processing/editors/overleaf",
       "route": "/analysis/document-processing/editors/overleaf",
       "title": "Overleaf",
@@ -4324,7 +4324,7 @@
         "recommendation": 3
       },
       "overall_score": 3.3,
-      "last_checked": "2026-05-16",
+      "last_checked": "2026-07-13",
       "updated": "2026-05-27",
       "summary": "面向基础设施工程师的可复现包管理器，基于函数式编程范式实现原子升级/回滚、声明式系统配置和跨机器环境复制——功能极其强大，但学习曲线极其陡峭。"
     },

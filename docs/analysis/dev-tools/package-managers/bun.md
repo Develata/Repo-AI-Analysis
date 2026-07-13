@@ -20,7 +20,7 @@ primary_language: "Zig, C++, TypeScript, Rust"
 license: MIT (Bun 自身) + LGPL-2 (JavaScriptCore) + 各链接库各自许可
 stars: 90755
 forks: 4521
-last_checked: 2026-05-16
+last_checked: 2026-07-13
 last_verified: 2026-05-16
 evidence: docs review + community signals
 archived_reason: ""

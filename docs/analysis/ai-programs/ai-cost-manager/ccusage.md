@@ -14,7 +14,7 @@ primary_language: "TypeScript"
 license: "MIT (package/LICENSE); GitHub API SPDX NOASSERTION"
 stars: 14287
 forks: 560
-last_checked: 2026-05-18
+last_checked: 2026-07-13
 last_verified: 2026-05-18
 evidence: "GitHub API + repository clone/code review + official docs + npm/deps.dev metadata + CLI smoke test (Node 20 failure matches npm engines; docs drift noted)"
 archived_reason: ""
