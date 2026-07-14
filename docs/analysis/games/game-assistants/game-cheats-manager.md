@@ -13,7 +13,7 @@ primary_language: "C++ / Python"
 license: "GPL-3.0"
 stars: 11565
 forks: 408
-last_checked: 2026-05-19
+last_checked: 2026-07-14
 last_verified: 2026-05-19
 evidence: "README + GitHub API metadata + release history + local shallow clone scan at e773e2f. No hands-on Windows execution or trainer download verification."
 archived_reason: ""

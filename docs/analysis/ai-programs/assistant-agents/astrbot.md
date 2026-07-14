@@ -14,7 +14,7 @@ primary_language: "Python"
 license: "AGPL-3.0 / AGPL-3.0-or-later（GitHub API 与 pyproject 表述略有差异）"
 stars: 32538
 forks: 2236
-last_checked: 2026-05-19
+last_checked: 2026-07-14
 last_verified: 2026-05-19
 evidence: "GitHub API + official docs + local shallow clone scan; no production deployment test"
 archived_reason: ""

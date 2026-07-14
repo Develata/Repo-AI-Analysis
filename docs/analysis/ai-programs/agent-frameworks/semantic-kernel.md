@@ -14,7 +14,7 @@ primary_language: "C#"
 license: "MIT"
 stars: 27944
 forks: 4600
-last_checked: 2026-05-20
+last_checked: 2026-07-14
 last_verified: 2026-05-20
 evidence: "GitHub API + GraphQL issue/PR counts + NuGet/PyPI package metadata + Microsoft Learn docs + local shallow clone scan; no runtime smoke test was performed."
 archived_reason: ""

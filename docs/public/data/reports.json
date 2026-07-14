@@ -710,7 +710,7 @@
         "recommendation": 4
       },
       "overall_score": 4.3,
-      "last_checked": "2026-05-20",
+      "last_checked": "2026-07-14",
       "updated": "2026-05-21",
       "summary": "Semantic Kernel 是 `ai-programs/agent-frameworks` 中的 enterprise app orchestration / plugin-first agent SDK：它不追求“纯 agent 自主性”，而是把模型调用、function calling、企业 API、OpenAPI/MCP 插件、agent col"
     },
@@ -1230,45 +1230,6 @@
       "summary": "easy-vibe 是目前中文圈最系统、完成度最高的 vibe coding 入门教程之一——Datawhale 与清华大学联合出品，三阶段渐进式课程覆盖从「零基础玩游戏」到「Claude Code 高级 agent 工作流」的完整路径。"
     },
     {
-      "slug": "ai-programs/agent-infrastructure/firecrawl",
-      "route": "/analysis/ai-programs/agent-infrastructure/firecrawl",
-      "title": "Firecrawl",
-      "repo_url": "https://github.com/firecrawl/firecrawl",
-      "category": "ai-programs/agent-infrastructure",
-      "directory": "ai-programs/agent-infrastructure",
-      "tags": [
-        "agent-infrastructure",
-        "web-data",
-        "scraping",
-        "crawler",
-        "search",
-        "mcp",
-        "sdk",
-        "agents",
-        "typescript",
-        "self-hosted"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 122041,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 4,
-        "documentation": 5,
-        "community": 4,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 4
-      },
-      "overall_score": 4,
-      "last_checked": "2026-05-20",
-      "updated": "2026-05-21",
-      "summary": "Firecrawl 是典型的 Agent Infrastructure：它给 agent 提供“从真实 Web 获取、清洗、结构化并回传 LLM-ready context”的网页数据层，而不是一个普通爬虫 demo。"
-    },
-    {
       "slug": "ai-programs/coding-agents/gemini-cli",
       "route": "/analysis/ai-programs/coding-agents/gemini-cli",
       "title": "Gemini CLI",
@@ -1642,6 +1603,46 @@
       "summary": "EasyTier 是一个能力很完整、工程推进很快的自托管/半自托管 mesh VPN；对个人 homelab、远程访问、游戏联机和多地小网络很值得试，但不应把它当作已经被大规模企业生产验证的 Tailscale/ZeroTier 替代品。"
     },
     {
+      "slug": "ai-programs/agent-infrastructure/firecrawl",
+      "route": "/analysis/ai-programs/agent-infrastructure/firecrawl",
+      "title": "Firecrawl",
+      "repo_url": "https://github.com/firecrawl/firecrawl",
+      "category": "ai-programs/agent-infrastructure",
+      "directory": "ai-programs/agent-infrastructure",
+      "tags": [
+        "agent-infrastructure",
+        "web-data",
+        "scraping",
+        "crawler",
+        "search",
+        "mcp",
+        "sdk",
+        "agents",
+        "typescript",
+        "self-hosted",
+        "research-index"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 150342,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.9,
+      "last_checked": "2026-07-14",
+      "updated": "2026-07-14",
+      "summary": "Firecrawl 是典型的 Agent Infrastructure：它给 agent 提供“从真实 Web 获取、清洗、交互、结构化、监控并回传 LLM-ready context”的网页数据层，而不是一个普通爬虫 demo。版本线需要分开看：repo release 为 v2.11.0，npm SDK/CLI 和 Python SDK 另有独立版本号 "
+    },
+    {
       "slug": "cloud-server/networking/iroh",
       "route": "/analysis/cloud-server/networking/iroh",
       "title": "iroh",
@@ -1710,7 +1711,7 @@
         "recommendation": 4
       },
       "overall_score": 3.9,
-      "last_checked": "2026-05-19",
+      "last_checked": "2026-07-14",
       "updated": "2026-05-19",
       "summary": "面向 Linux 玩家和游戏保存/运行需求者的开放游戏平台，把 Wine、模拟器、engine reimplementation、商店库同步和用户安装脚本统一到一个桌面客户端中。"
     },
@@ -1886,7 +1887,7 @@
         "recommendation": 3
       },
       "overall_score": 3.8,
-      "last_checked": "2026-05-19",
+      "last_checked": "2026-07-14",
       "updated": "2026-05-21",
       "summary": "AstrBot 适合需要把 LLM Agent 嵌入多种聊天平台、并愿意接受较高运维复杂度与安全治理要求的个人开发者、小团队和 IM 自动化场景。"
     },
@@ -2474,6 +2475,41 @@
       "summary": "Plandex 是一条较早公开并获得显著关注的 open-source terminal coding-agent 历史线：它把大任务规划、上下文管理、diff sandbox、可调 autonomy、本地/自托管 server 组合成完整 CLI workflow [GH:api][GH:readme][Docs:autonomy]。"
     },
     {
+      "slug": "ai-programs/ai-harness/ai-plugins/spec-kit",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/spec-kit",
+      "title": "Spec Kit",
+      "repo_url": "https://github.com/github/spec-kit",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
+      "tags": [
+        "agent-skills",
+        "spec-driven-development",
+        "ai-coding",
+        "github",
+        "workflow",
+        "cli"
+      ],
+      "primary_language": "Python",
+      "stars": 120478,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 4,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 5,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.7,
+      "last_checked": "2026-07-14",
+      "updated": "2026-07-14",
+      "summary": "Spec Kit 是面向 AI-assisted coding 的 spec-first workflow toolkit：它用 `specify` CLI 初始化项目，把需求、技术方案、任务分解、执行检查固化为 Markdown 工件、agent 命令和可复用工作流，适合希望从 vibe coding 走向可审计开发流程的团队与个人 [Docs]。"
+    },
+    {
       "slug": "ai-programs/agent-frameworks/autogen",
       "route": "/analysis/ai-programs/agent-frameworks/autogen",
       "title": "AutoGen",
@@ -2859,10 +2895,11 @@
         "webdav",
         "storage",
         "go",
-        "alist-fork"
+        "alist-fork",
+        "mcp"
       ],
       "primary_language": "Go",
-      "stars": 22586,
+      "stars": 23520,
       "status": "active",
       "ratings": {
         "capability": 5,
@@ -2877,8 +2914,8 @@
         "recommendation": 3
       },
       "overall_score": 3.6,
-      "last_checked": "2026-05-19",
-      "updated": "2026-05-21",
+      "last_checked": "2026-07-14",
+      "updated": "2026-07-14",
       "summary": "OpenList 是一个面向个人和小团队的 self-hosted file listing / WebDAV / multi-storage gateway：它继承 AList 的多网盘聚合能力，并以 AGPL-3.0、社区维护、治理透明作为与原项目区分的核心叙事 [GH:readme]。"
     },
     {
@@ -2917,41 +2954,6 @@
       "last_checked": "2026-07-11",
       "updated": "2026-07-11",
       "summary": "RomM 是目前功能面最完整的 self-hosted ROM manager 之一；适合已有合法 ROM library、愿意维护 Docker/数据库/备份的 homelab 用户，但 5.0 重写期与 2026-07 查询到的高危 advisory 版本范围，使它暂不适合未经核验就直接暴露公网。"
-    },
-    {
-      "slug": "ai-programs/ai-harness/ai-plugins/spec-kit",
-      "route": "/analysis/ai-programs/ai-harness/ai-plugins/spec-kit",
-      "title": "Spec Kit",
-      "repo_url": "https://github.com/github/spec-kit",
-      "category": "ai-programs/ai-harness/ai-plugins",
-      "directory": "ai-programs/ai-harness/ai-plugins",
-      "tags": [
-        "agent-skills",
-        "spec-driven-development",
-        "ai-coding",
-        "github",
-        "workflow",
-        "cli"
-      ],
-      "primary_language": "Python",
-      "stars": 102454,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 3,
-        "performance": 4,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 5,
-        "maturity": 2,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.6,
-      "last_checked": "2026-05-19",
-      "updated": "2026-05-21",
-      "summary": "Spec Kit 是面向 AI-assisted coding 的 spec-first workflow toolkit：它用 `specify` CLI 初始化项目，把需求、技术方案、任务分解、执行检查固化为 Markdown 工件和 agent 命令，适合希望从 vibe coding 走向可审计开发流程的团队与个人 [Docs]。"
     },
     {
       "slug": "ai-programs/agent-infrastructure/agent-reach",
@@ -3022,46 +3024,9 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-05-20",
+      "last_checked": "2026-07-14",
       "updated": "2026-05-21",
       "summary": "cal.diy 适合需要自托管预约、可用性与 calendar integration 的个人或小团队；若把 agent autonomous scheduling 视为基础能力，它是一个强但偏重、且明确不推荐生产商用的 scheduling infrastructure 选项。"
-    },
-    {
-      "slug": "ai-programs/agent-infrastructure/cli-anything",
-      "route": "/analysis/ai-programs/agent-infrastructure/cli-anything",
-      "title": "CLI-Anything",
-      "repo_url": "https://github.com/HKUDS/CLI-Anything",
-      "category": "ai-programs/agent-infrastructure",
-      "directory": "ai-programs/agent-infrastructure",
-      "tags": [
-        "agent-native",
-        "cli",
-        "tooling",
-        "mcp",
-        "skills",
-        "python",
-        "cli-hub",
-        "automation"
-      ],
-      "primary_language": "Python",
-      "stars": 37720,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 3,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 1,
-        "extensibility": 5,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.5,
-      "last_checked": "2026-05-20",
-      "updated": "2026-05-21",
-      "summary": "CLI-Anything 是典型的 agent infrastructure：它解决“agent 如何可靠调用现有软件”这一 tool access layer 问题，方向非常重要，但项目只有两个多月历史，成熟度必须保守看待。"
     },
     {
       "slug": "ai-programs/ai-harness/mcp/codebase-memory-mcp",
@@ -3639,6 +3604,44 @@
       "last_checked": "2026-05-31",
       "updated": "2026-05-31",
       "summary": "Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugging substrate：它把 Chrome DevTools、Puppeteer、Lighthouse/performance trace、console/network/screenshot/heap snapshot 等能力"
+    },
+    {
+      "slug": "ai-programs/agent-infrastructure/cli-anything",
+      "route": "/analysis/ai-programs/agent-infrastructure/cli-anything",
+      "title": "CLI-Anything",
+      "repo_url": "https://github.com/HKUDS/CLI-Anything",
+      "category": "ai-programs/agent-infrastructure",
+      "directory": "ai-programs/agent-infrastructure",
+      "tags": [
+        "agent-native",
+        "cli",
+        "tooling",
+        "mcp",
+        "skills",
+        "python",
+        "cli-hub",
+        "automation",
+        "matrix"
+      ],
+      "primary_language": "Python",
+      "stars": 45261,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 4,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 1,
+        "extensibility": 5,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.4,
+      "last_checked": "2026-07-14",
+      "updated": "2026-07-14",
+      "summary": "CLI-Anything 是典型的 agent infrastructure：它解决“agent 如何可靠调用现有软件”这一 tool access layer 问题，方向非常重要；GitHub release 线最新为 v0.4.0，PyPI `cli-anything-hub` 包已到 0.4.1，但项目仍只有数月历史，成熟度必须保守看待 [GH][Py"
     },
     {
       "slug": "ai-programs/ai-harness/memory/cognee",
@@ -4253,7 +4256,7 @@
         "recommendation": 3
       },
       "overall_score": 3.3,
-      "last_checked": "2026-05-19",
+      "last_checked": "2026-07-14",
       "updated": "2026-05-19",
       "summary": "面向 Windows 单机玩家的 trainer 管理器：把 Fling、XiaoXing、Cheat Tables、GCM/社区上传 trainer 聚合到一个桌面 dashboard 中，降低“到处找修改器”的摩擦，但安全信任边界天然较重。"
     },
@@ -4288,7 +4291,7 @@
         "recommendation": 3
       },
       "overall_score": 3.3,
-      "last_checked": "2026-05-19",
+      "last_checked": "2026-07-14",
       "updated": "2026-05-21",
       "summary": "Kirara AI 适合想要一个可 DIY、多模态、带工作流和插件机制的聊天机器人框架，但能接受 v3 alpha/快速重构状态的个人开发者与 bot 爱好者。"
     },

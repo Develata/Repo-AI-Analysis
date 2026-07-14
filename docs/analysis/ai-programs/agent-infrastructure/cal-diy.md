@@ -14,7 +14,7 @@ primary_language: "TypeScript"
 license: "MIT"
 stars: 43685
 forks: 13483
-last_checked: 2026-05-20
+last_checked: 2026-07-14
 last_verified: 2026-05-20
 evidence: "GitHub API + official documentation + repository local scan; not deployed in production by Develata"
 archived_reason: ""

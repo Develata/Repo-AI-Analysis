@@ -13,7 +13,7 @@ primary_language: "Python"
 license: "GPL-3.0"
 stars: 9970
 forks: 836
-last_checked: 2026-05-19
+last_checked: 2026-07-14
 last_verified: 2026-05-19
 evidence: "README + official website/download docs + GitHub API metadata + release history + local shallow clone scan at e269d43. No hands-on game installation benchmark in this review."
 archived_reason: ""
