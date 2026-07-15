@@ -14,7 +14,7 @@ primary_language: "C++"
 license: "MIT"
 stars: 111680
 forks: 18483
-last_checked: 2026-05-20
+last_checked: 2026-07-15
 last_verified: 2026-05-20
 evidence: "GitHub API + GraphQL issue/PR counts + releases/advisories + official docs in repo + local shallow clone scan; no model runtime smoke test or benchmark was performed."
 archived_reason: ""

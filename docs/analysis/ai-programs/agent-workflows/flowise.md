@@ -14,7 +14,7 @@ primary_language: "TypeScript"
 license: "GitHub NOASSERTION; local LICENSE.md: Apache-2.0 open-source core + commercial enterprise/cloud components"
 stars: 52956
 forks: 24366
-last_checked: 2026-05-20
+last_checked: 2026-07-15
 last_verified: 2026-05-20
 evidence: "GitHub API + GraphQL issue/PR counts + npm package lookup + official docs/site + local shallow clone scan; no runtime smoke test was performed."
 archived_reason: ""

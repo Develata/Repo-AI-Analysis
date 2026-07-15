@@ -14,7 +14,7 @@ primary_language: "Rust"
 license: "Apache-2.0"
 stars: 26367
 forks: 2755
-last_checked: 2026-05-20
+last_checked: 2026-07-15
 last_verified: 2026-05-20
 evidence: "GitHub API + GraphQL issue/PR counts + official docs + npm metadata + repository local scan + official shutdown blog; local repo scan only, not a fresh deployment test; status means repo-active/community-maintained, not company-backed product-active"
 archived_reason: ""
