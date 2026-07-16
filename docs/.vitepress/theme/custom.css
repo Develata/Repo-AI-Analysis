@@ -3,6 +3,7 @@
   --raia-glass-bg: rgba(142, 150, 170, 0.10);
   --raia-glass-hover: rgba(142, 150, 170, 0.18);
   --raia-glass-border: rgba(128, 128, 128, 0.15);
+  --raia-card-bg: color-mix(in srgb, var(--vp-c-bg) 46%, var(--raia-glass-bg));
   --raia-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
   --raia-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
@@ -35,33 +36,61 @@ body {
   padding-left: 13px !important;
 }
 
-.VPFeature,
-.raia-card,
-.raia-panel,
-.raia-radar-card,
-.raia-latest-item,
-.raia-home-category-card,
-.raia-home-picks a,
-.raia-report-header,
-.raia-compare-table {
+/* VitePress' own component styles win on specificity, so VPFeature keeps !important. */
+.VPFeature {
   background-color: var(--raia-glass-bg) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--raia-glass-border) !important;
   border-radius: 12px !important;
   box-shadow: var(--raia-shadow);
-  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease !important;
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.VPFeature:hover,
+.raia-card,
+.raia-panel,
+.raia-radar-card,
+.raia-latest-item,
+.raia-home-category-card,
+.raia-report-header,
+.raia-compare-table {
+  border: 1px solid var(--raia-glass-border);
+  border-radius: 12px;
+  box-shadow: var(--raia-shadow);
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Blur is expensive at scroll time: only top-level surfaces get it.
+   Inner cards sit on an already-blurred panel and use a plain translucent fill. */
+.raia-panel,
+.raia-report-header,
+.raia-compare-table {
+  background-color: var(--raia-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.raia-card,
+.raia-radar-card,
+.raia-latest-item,
+.raia-home-category-card {
+  background-color: var(--raia-card-bg);
+}
+
 .raia-card:hover,
 .raia-latest-item:hover,
 .raia-latest-item.is-active,
-.raia-home-category-card:hover,
-.raia-home-picks a:hover {
+.raia-home-category-card:hover {
+  background-color: var(--raia-glass-hover);
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-2px);
+  box-shadow: var(--raia-shadow-hover);
+}
+
+.VPFeature:hover {
   background-color: var(--raia-glass-hover) !important;
   border-color: var(--vp-c-brand-1) !important;
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--raia-shadow-hover);
 }
 
@@ -69,19 +98,8 @@ body {
   min-height: calc(100vh - var(--vp-nav-height) - 90px);
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-  gap: 18px;
-  align-items: start;
-  padding: 28px 0 48px;
-}
-
-.raia-home-column {
-  display: grid;
-  gap: 18px;
-  align-content: start;
-}
-
-.raia-home-column > .raia-panel {
-  grid-area: auto;
+  gap: 24px;
+  padding: 32px 0 56px;
 }
 
 .raia-analysis-copy {
@@ -100,37 +118,29 @@ body {
 .raia-home-radar-panel {
   position: relative;
   isolation: isolate;
-  grid-area: radar;
+  grid-column: 1;
   display: grid;
   grid-template-rows: auto 1fr;
   overflow: hidden;
-  border-color: var(--raia-glass-border) !important;
-  background-color: var(--raia-glass-bg) !important;
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 22%, var(--raia-glass-border));
   background-image: none;
-  box-shadow: var(--raia-shadow);
 }
 
 .raia-home-latest-panel {
-  grid-area: latest;
+  grid-column: 2;
 }
 
 .raia-home-taxonomy-panel {
-  grid-area: taxonomy;
-}
-
-.raia-home-top-panel {
-  grid-area: picks;
+  grid-column: 1 / -1;
 }
 
 .raia-home-radar-card {
   min-height: 0;
   padding: 4px 8px;
-  border: 0 !important;
-  background-color: transparent !important;
-  background-image: none !important;
+  border: 0;
+  background-color: transparent;
+  background-image: none;
   box-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
 }
 
 .raia-home-lens-layout {
@@ -330,7 +340,7 @@ body {
 }
 
 .raia-panel {
-  padding: 20px;
+  padding: 24px;
 }
 
 .raia-panel-head,
@@ -362,16 +372,13 @@ body {
 .raia-latest-list,
 .raia-card-grid,
 .raia-compare-options,
-.raia-home-category-grid,
-.raia-home-picks {
+.raia-home-category-grid {
   display: grid;
-  gap: 12px;
+  gap: 14px;
 }
 
 .raia-latest-item,
-.raia-card,
-.raia-home-category-card,
-.raia-home-picks a {
+.raia-card {
   display: grid;
   gap: 10px;
   padding: 16px;
@@ -379,16 +386,13 @@ body {
 }
 
 .raia-latest-item h3,
-.raia-card h3,
-.raia-home-picks span {
+.raia-card h3 {
   margin: 0;
   font-size: 18px;
 }
 
 .raia-latest-item p,
-.raia-card p,
-.raia-home-category-card small,
-.raia-home-picks small {
+.raia-card p {
   display: -webkit-box;
   margin: 0;
   overflow: hidden;
@@ -493,7 +497,7 @@ body {
 
 .raia-home-latest-item {
   align-content: space-between;
-  min-height: 250px;
+  min-height: 210px;
 }
 
 .raia-path {
@@ -526,34 +530,62 @@ body {
 }
 
 .raia-home-category-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
 }
 
 .raia-home-category-card {
-  min-height: 128px;
-  color: inherit;
-  text-decoration: none !important;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 0;
+  overflow: hidden;
 }
 
-.raia-home-category-card span,
-.raia-home-picks span {
+/* a.-prefixed to match .vp-doc a specificity, which underlines plain links. */
+a.raia-category-main {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 16px 16px 12px;
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+a.raia-category-main:hover {
+  color: inherit;
+}
+
+.raia-category-main span {
   font-weight: 750;
 }
 
-.raia-home-category-card strong,
-.raia-home-picks strong {
+.raia-category-main strong {
   color: var(--vp-c-brand-1);
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1;
 }
 
-.raia-home-picks {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.raia-category-main small,
+.raia-category-top {
+  color: var(--vp-c-text-2);
+  font-size: 12px;
 }
 
-.raia-home-picks a {
-  color: inherit;
-  text-decoration: none !important;
+a.raia-category-top {
+  display: block;
+  overflow: hidden;
+  padding: 9px 16px 11px;
+  border-top: 1px solid color-mix(in srgb, var(--raia-glass-border) 62%, transparent);
+  color: var(--vp-c-text-2);
+  font-weight: inherit;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.raia-category-top:hover,
+a.raia-category-top:focus-visible {
+  color: var(--vp-c-brand-1);
 }
 
 .raia-chip {
@@ -792,6 +824,20 @@ body {
   padding: 26px;
 }
 
+/* Without a selection there is no chart: collapse the stage instead of
+   presenting a 540px empty pane. */
+.raia-compare-stage:has(.raia-compare-empty) {
+  min-height: 0;
+  padding: 18px;
+}
+
+.raia-compare-empty {
+  width: 100%;
+  margin: 0;
+  border-style: dashed;
+  background: transparent;
+}
+
 .raia-compare .raia-radar-card {
   width: min(100%, 620px);
   min-height: 500px;
@@ -1013,6 +1059,12 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .raia-home-radar-panel,
+  .raia-home-latest-panel,
+  .raia-home-taxonomy-panel {
+    grid-column: auto;
+  }
+
   .raia-compare-selector {
     position: static;
     max-height: none;
@@ -1026,26 +1078,6 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .raia-home-column {
-    display: contents;
-  }
-
-  .raia-home-radar-panel {
-    order: 1;
-  }
-
-  .raia-home-latest-panel {
-    order: 2;
-  }
-
-  .raia-home-taxonomy-panel {
-    order: 3;
-  }
-
-  .raia-home-top-panel {
-    order: 4;
-  }
-
   .raia-home-latest-panel .raia-latest-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1056,7 +1088,6 @@ body {
   .raia-score-deck,
   .raia-home-latest-panel .raia-latest-list,
   .raia-home-lens-layout,
-  .raia-home-picks,
   .raia-report-header {
     grid-template-columns: 1fr;
   }
@@ -1146,7 +1177,6 @@ body {
   .raia-card:hover,
   .raia-latest-item:hover,
   .raia-home-category-card:hover,
-  .raia-home-picks a:hover,
   .raia-button-primary:hover,
   .raia-button-ghost:hover,
   .raia-liquid-cta:hover {

@@ -309,6 +309,7 @@ onUnmounted(() => window.removeEventListener('popstate', restoreUrlState));
       <div class="raia-panel raia-compare-stage">
         <div v-if="selectedReports.length === 0" class="raia-data-state raia-compare-empty" role="status">
           <strong>请选择 2–5 个同类仓库进行比较。</strong>
+          <span>在左侧展开目录并勾选仓库，雷达图与评分明细表会即时生成。</span>
           <span>选择会写入 URL；刷新或分享链接后仍可恢复。跨目录比较允许，但评分口径可能不完全同构。</span>
         </div>
         <template v-else>
