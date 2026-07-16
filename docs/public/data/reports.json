@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 150,
+  "count": 152,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -4549,6 +4549,43 @@
       "summary": "LiteParse 值得作为 document-processing 板块的“轻量本地解析 + bbox”代表跟踪和试验；它可能适合 agent/RAG 前处理，但项目很新，成熟度和推荐度都必须保守。"
     },
     {
+      "slug": "ai-programs/ai-harness/skills/mattpocock-skills",
+      "route": "/analysis/ai-programs/ai-harness/skills/mattpocock-skills",
+      "title": "Skills For Real Engineers",
+      "repo_url": "https://github.com/mattpocock/skills",
+      "category": "ai-programs/ai-harness/skills",
+      "directory": "ai-programs/ai-harness/skills",
+      "tags": [
+        "agent-skills",
+        "software-engineering",
+        "workflow",
+        "tdd",
+        "code-review",
+        "domain-modeling",
+        "claude-code",
+        "codex"
+      ],
+      "primary_language": "Markdown / Shell",
+      "stars": 172006,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-07-16",
+      "updated": "2026-07-16",
+      "summary": "`mattpocock/skills` 适合已经有 agent harness、希望研究“如何把 alignment、domain language、spec、vertical slices、TDD、debugging 与 review 写成可组合 skills”的工程师；对现有成熟 workflow，应按概念和局部 skill 选择性吸收，不宜全量覆盖安装"
+    },
+    {
       "slug": "ai-programs/assistant-agents/ui-tars-desktop",
       "route": "/analysis/ai-programs/assistant-agents/ui-tars-desktop",
       "title": "UI-TARS Desktop / Agent TARS",
@@ -4980,6 +5017,43 @@
       "last_checked": "2026-06-10",
       "updated": "2026-06-10",
       "summary": "Google Skills 是 Google 产品与技术相关的 agent skills 集合，偏技能包/流程素材，而不是传统软件库。 [GH:readme]"
+    },
+    {
+      "slug": "ai-programs/ai-harness/skills/hallmark",
+      "route": "/analysis/ai-programs/ai-harness/skills/hallmark",
+      "title": "Hallmark",
+      "repo_url": "https://github.com/Nutlope/hallmark",
+      "category": "ai-programs/ai-harness/skills",
+      "directory": "ai-programs/ai-harness/skills",
+      "tags": [
+        "agent-skills",
+        "frontend-design",
+        "design-system",
+        "ui-audit",
+        "responsive-design",
+        "accessibility",
+        "claude-code",
+        "codex"
+      ],
+      "primary_language": "Markdown / CSS",
+      "stars": 7885,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 2,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3,
+      "last_checked": "2026-07-16",
+      "updated": "2026-07-16",
+      "summary": "Hallmark 适合维护 frontend-design skill 或 AI-generated UI audit workflow 的工程师作为规则库和 taxonomy 参考；对已有前端 taste/QA skills 的 harness，应抽取少数缺失 gates，而不是并排加载整套 66k-character 主 skill。"
     },
     {
       "slug": "ai-programs/ai-harness/ai-plugins/knowledge-work-plugins",
