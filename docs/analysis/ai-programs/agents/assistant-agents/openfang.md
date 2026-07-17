@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/RightNow-AI/openfang"
-category: "ai-programs/assistant-agents"
+category: "ai-programs/agents/assistant-agents"
 tags: ["ai-agent", "agent-os", "autonomous-agents", "rust", "desktop", "self-hosted", "mcp", "a2a", "multi-channel", "agent-runtime"]
 previous_repo: ""
 successor: ""
@@ -65,7 +65,7 @@ OpenFang 是 OpenClaw / ZeroClaw 这一类自托管个人 agent assistant 的 Ru
 
 ## 总体评价
 
-OpenFang 应归入 `ai-programs/assistant-agents`，而不是纯 `agent-infrastructure`：它的核心交付对象不是一个被其他 agent framework 嵌入的小库，而是一个用户可安装、可启动 daemon/dashboard/desktop、可激活 Hands 并通过多通道持续工作的自托管 agent system [GH:getting-started][GH:architecture]。
+OpenFang 应归入 `ai-programs/agents/assistant-agents`，而不是纯 `agent-infrastructure`：它的核心交付对象不是一个被其他 agent framework 嵌入的小库，而是一个用户可安装、可启动 daemon/dashboard/desktop、可激活 Hands 并通过多通道持续工作的自托管 agent system [GH:getting-started][GH:architecture]。
 
 它的亮点是把“personal agent”做得很工程化：14 个 Rust crate、SQLite memory、capability-based security、WASM sandbox、MCP/A2A、40 channel adapters、OpenAI-compatible API、desktop Tauri app、FangHub skills、7 个 Hands 这些模块都有文档和目录层证据 [GH:architecture][GH:readme]。相较 OpenClaw 这类 hypergrowth TypeScript 平台，它试图用 Rust workspace 和 explicit security architecture 获得更强的可维护性与安全基线。
 
@@ -132,7 +132,7 @@ OpenFang 应归入 `ai-programs/assistant-agents`，而不是纯 `agent-infrastr
 
 定位摘要：OpenFang 的最近参照不是单一竞品，而是“个人 agent assistant + Rust runtime + 安全控制面”的交叉点。
 
-上述项目按 `ai-programs/assistant-agents` 同类范围做定位级对比，未按同一 10 维度框架深审；表格用于定位，不是完整 benchmark，也不比较 star/release 等未按项目年龄归一化的指标。
+上述项目按 `ai-programs/agents/assistant-agents` 同类范围做定位级对比，未按同一 10 维度框架深审；表格用于定位，不是完整 benchmark，也不比较 star/release 等未按项目年龄归一化的指标。
 
 ---
 

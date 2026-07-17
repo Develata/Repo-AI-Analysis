@@ -6,7 +6,7 @@ created: 2026-05-15
 updated: 2026-07-12
 type: repository-analysis
 repo_url: "https://github.com/anomalyco/opencode"
-category: "ai-programs/coding-agents"
+category: "ai-programs/agents/coding-agents"
 tags: ["coding-agent", "cli", "tui", "ai-assisted-development", "typescript", "mcp", "terminal"]
 previous_repo: ""
 successor: ""

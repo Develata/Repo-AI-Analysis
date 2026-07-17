@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/The-PR-Agent/pr-agent"
-category: "ai-programs/coding-agents"
+category: "ai-programs/agents/coding-agents"
 tags: ["coding-agent", "code-review", "pull-request", "github-action", "gitlab", "bitbucket", "azure-devops", "gitea", "docker", "python", "legacy"]
 previous_repo: "https://github.com/qodo-ai/pr-agent"
 successor: ""

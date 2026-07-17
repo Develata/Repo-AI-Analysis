@@ -6,7 +6,7 @@ created: 2026-05-20
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/continuedev/continue"
-category: "ai-programs/coding-agents"
+category: "ai-programs/agents/coding-agents"
 tags: ["coding-agent", "cli", "ide-extension", "vscode", "jetbrains", "ci", "ai-checks", "mcp", "config-yaml", "typescript"]
 previous_repo: ""
 successor: ""
@@ -14,7 +14,7 @@ primary_language: "TypeScript"
 license: "Apache-2.0"
 stars: 33281
 forks: 4534
-last_checked: 2026-05-20
+last_checked: 2026-07-17
 last_verified: 2026-05-20
 evidence: "GitHub API + GraphQL issue/PR counts + official docs + npm metadata + repository local scan; local repo scan only, not a fresh deployment or CI run"
 archived_reason: ""
@@ -126,7 +126,7 @@ Continue 适合想把 AI coding agent 变成 **可配置、可进 CI、可源代
 | Gemini CLI | Google 官方 terminal coding agent | Gemini CLI 更偏 Google/Gemini 入口；Continue 更像跨 provider 的 coding workflow framework |
 | Tabby | self-hosted code completion/chat backend | Tabby 是 coding-agents 板块中的 adjacent code-assistant/backend 边界案例；Continue 更偏 agent workflow、PR checks 与多工具配置 |
 
-上述项目按 `ai-programs/coding-agents` 同一大类范围做定位级对比；其中 Tabby 是 adjacent code-assistant/backend 边界案例，不作为直接 autonomous-agent 竞品处理。对比表未按同一 10 维度框架深审。
+上述项目按 `ai-programs/agents/coding-agents` 同一大类范围做定位级对比；其中 Tabby 是 adjacent code-assistant/backend 边界案例，不作为直接 autonomous-agent 竞品处理。对比表未按同一 10 维度框架深审。
 
 ---
 

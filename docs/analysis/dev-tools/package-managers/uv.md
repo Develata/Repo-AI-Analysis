@@ -13,7 +13,7 @@ primary_language: "Rust"
 license: "MIT OR Apache-2.0"
 stars: 85250
 forks: 3144
-last_checked: 2026-05-21
+last_checked: 2026-07-17
 last_verified: 2026-05-21
 evidence: "GitHub API + official docs extraction + local repository scan; installation/benchmark not independently reproduced in this run"
 archived_reason: ""

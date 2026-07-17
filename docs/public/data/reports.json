@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 152,
+  "count": 157,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -206,7 +206,7 @@
         "recommendation": 5
       },
       "overall_score": 4.6,
-      "last_checked": "2026-05-21",
+      "last_checked": "2026-07-17",
       "updated": "2026-05-21",
       "summary": "uv 是当前 Python 工具链中最值得优先评估、并在个人项目中默认采用的候选之一：Rust 实现、速度极强、统一 project/script/tool/Python version workflow；但作为包管理器已有 archive/file-write 类 advisories，采用时必须保持及时升级和版本 pinning。"
     },
@@ -317,43 +317,6 @@
       "last_checked": "2026-05-21",
       "updated": "2026-05-21",
       "summary": "Typst 是目前很值得数学写作者认真试用的 LaTeX 替代候选：不是完全替代 TeX 生态，而是在“个人笔记、讲义、短文、技术文档、可维护模板”上给出更现代的默认解。"
-    },
-    {
-      "slug": "document-processing/document-conversion/docling",
-      "route": "/analysis/document-processing/document-conversion/docling",
-      "title": "Docling",
-      "repo_url": "https://github.com/docling-project/docling",
-      "category": "document-processing/document-conversion",
-      "directory": "document-processing/document-conversion",
-      "tags": [
-        "document-processing",
-        "pdf",
-        "ocr",
-        "rag",
-        "markdown",
-        "json",
-        "mcp",
-        "python"
-      ],
-      "primary_language": "Python",
-      "stars": 60058,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 5,
-        "community": 5,
-        "maturity": 4,
-        "extensibility": 5,
-        "security": 4,
-        "recommendation": 5
-      },
-      "overall_score": 4.4,
-      "last_checked": "2026-05-21",
-      "updated": "2026-05-21",
-      "summary": "Docling 是第二优先级 document-processing 板块中最值得先试的项目：格式覆盖广、文档强、MIT 许可清晰，并且直接面向 RAG/agentic AI 文档入口。"
     },
     {
       "slug": "dev-tools/scrcpy",
@@ -715,6 +678,43 @@
       "summary": "Semantic Kernel 是 `ai-programs/agent-frameworks` 中的 enterprise app orchestration / plugin-first agent SDK：它不追求“纯 agent 自主性”，而是把模型调用、function calling、企业 API、OpenAPI/MCP 插件、agent col"
     },
     {
+      "slug": "document-processing/document-conversion/docling",
+      "route": "/analysis/document-processing/document-conversion/docling",
+      "title": "Docling",
+      "repo_url": "https://github.com/docling-project/docling",
+      "category": "document-processing/document-conversion",
+      "directory": "document-processing/document-conversion",
+      "tags": [
+        "document-processing",
+        "pdf",
+        "ocr",
+        "rag",
+        "markdown",
+        "json",
+        "mcp",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 63296,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 5,
+        "maturity": 4,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 4.2,
+      "last_checked": "2026-07-17",
+      "updated": "2026-07-17",
+      "summary": "Docling 仍是 document-processing 板块中最值得先试的项目之一：格式覆盖广、文档强、MIT 许可清晰，并且直接面向 RAG/agentic AI 文档入口；但 2026-06 集中披露的 6 条 parser/download advisories 证明其不可信文档攻击面不能再按低风险处理。"
+    },
+    {
       "slug": "dev-tools/gitea",
       "route": "/analysis/dev-tools/gitea",
       "title": "Gitea",
@@ -903,45 +903,6 @@
       "last_checked": "2026-07-15",
       "updated": "2026-07-15",
       "summary": "vLLM 是 Agent Infrastructure 中的 high-throughput model serving layer：它不直接编排 agent，而是为 agent、RAG、IDE assistant、batch inference 和 API products 提供可扩展的 OpenAI-compatible / multimodal / d"
-    },
-    {
-      "slug": "ai-programs/coding-agents/cline",
-      "route": "/analysis/ai-programs/coding-agents/cline",
-      "title": "Cline",
-      "repo_url": "https://github.com/cline/cline",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
-      "tags": [
-        "coding-agent",
-        "vscode",
-        "cli",
-        "tui",
-        "mcp",
-        "sdk",
-        "plugins",
-        "checkpoints",
-        "kanban",
-        "typescript"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 62072,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 4,
-        "documentation": 5,
-        "community": 5,
-        "maturity": 3,
-        "extensibility": 5,
-        "security": 2,
-        "recommendation": 4
-      },
-      "overall_score": 4.1,
-      "last_checked": "2026-05-20",
-      "updated": "2026-05-27",
-      "summary": "Cline 是当前开源 coding-agent 生态里功能面最宽的一类项目之一：它把 IDE 侧审阅/批准、CLI/TUI 自动化、MCP 工具、插件、skills、checkpoints、subagents 和 Kanban 并入同一产品线；但其权限面很大，且已有 critical security advisory，团队使用必须先做安全边界治理。"
     },
     {
       "slug": "ai-programs/agent-frameworks/crewai",
@@ -1156,43 +1117,43 @@
       "summary": "ccusage 适合已经重度使用 coding agents、需要从本地日志中看清 token 消耗与估算成本的个人开发者和小团队；它是轻量而高效的「AI 使用额度 / 资费管理」工具，但不是完整的预算审批或云端 FinOps 系统。"
     },
     {
-      "slug": "ai-programs/coding-agents/claude-code",
-      "route": "/analysis/ai-programs/coding-agents/claude-code",
-      "title": "Claude Code",
-      "repo_url": "https://github.com/anthropics/claude-code",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "slug": "ai-programs/agents/coding-agents/cline",
+      "route": "/analysis/ai-programs/agents/coding-agents/cline",
+      "title": "Cline",
+      "repo_url": "https://github.com/cline/cline",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-agent",
+        "vscode",
         "cli",
-        "anthropic",
-        "claude",
-        "terminal",
-        "ide",
+        "tui",
         "mcp",
+        "sdk",
         "plugins",
-        "hooks",
-        "agent-sdk"
+        "checkpoints",
+        "kanban",
+        "typescript"
       ],
-      "primary_language": "Shell",
-      "stars": 125050,
+      "primary_language": "TypeScript",
+      "stars": 64728,
       "status": "active",
       "ratings": {
-        "capability": 5,
-        "usability": 5,
+        "capability": 4,
+        "usability": 4,
         "performance": 4,
-        "code_quality": 3,
+        "code_quality": 4,
         "documentation": 5,
-        "community": 4,
+        "community": 5,
         "maturity": 3,
         "extensibility": 5,
         "security": 2,
         "recommendation": 4
       },
       "overall_score": 4,
-      "last_checked": "2026-05-20",
-      "updated": "2026-05-21",
-      "summary": "Claude Code 是面向深度依赖 Claude 模型的开发者和团队的官方 agentic coding tool，优势是能力面、文档和生态整合，代价是模型/平台锁定、闭源核心与较高安全治理要求。"
+      "last_checked": "2026-07-17",
+      "updated": "2026-07-17",
+      "summary": "Cline 是当前开源 coding-agent 生态里功能面最宽的一类项目之一：它把 IDE 侧审阅/批准、CLI/TUI 自动化、MCP 工具、插件、skills、checkpoints、subagents 和 Kanban 并入同一产品线；但其权限面很大，且已有 critical security advisory，团队使用必须先做安全边界治理。"
     },
     {
       "slug": "ai-programs/ai-harness/guides/vibecoding-guide/easy-vibe",
@@ -1230,12 +1191,12 @@
       "summary": "easy-vibe 是目前中文圈最系统、完成度最高的 vibe coding 入门教程之一——Datawhale 与清华大学联合出品，三阶段渐进式课程覆盖从「零基础玩游戏」到「Claude Code 高级 agent 工作流」的完整路径。"
     },
     {
-      "slug": "ai-programs/coding-agents/gemini-cli",
-      "route": "/analysis/ai-programs/coding-agents/gemini-cli",
+      "slug": "ai-programs/agents/coding-agents/gemini-cli",
+      "route": "/analysis/ai-programs/agents/coding-agents/gemini-cli",
       "title": "Gemini CLI",
       "repo_url": "https://github.com/google-gemini/gemini-cli",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-agent",
         "cli",
@@ -1264,7 +1225,7 @@
         "recommendation": 3
       },
       "overall_score": 4,
-      "last_checked": "2026-05-20",
+      "last_checked": "2026-07-17",
       "updated": "2026-05-21",
       "summary": "Gemini CLI 是 Google/Gemini 生态的官方 coding agent，能力面和文档非常强，但项目仍年轻、版本仍在 0.x、高速迭代且存在 headless/CI 信任模型安全历史，因此适合积极试用和学习，不宜无治理地生产放权。"
     },
@@ -1449,51 +1410,51 @@
       "summary": "面向 JavaScript/TypeScript 全栈开发者的 All-in-One 工具链：单个 `bun` 二进制文件替代 Node.js 运行时 + npm 包管理 + Jest 测试 + webpack 打包，在官方基准测试中全面快于传统工具链，适合新项目和可接受部分 Node.js 兼容性风险的迁移场景。"
     },
     {
-      "slug": "ai-programs/coding-agents/codex",
-      "route": "/analysis/ai-programs/coding-agents/codex",
-      "title": "Codex",
-      "repo_url": "https://github.com/openai/codex",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "slug": "ai-programs/agents/coding-agents/claude-code",
+      "route": "/analysis/ai-programs/agents/coding-agents/claude-code",
+      "title": "Claude Code",
+      "repo_url": "https://github.com/anthropics/claude-code",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-agent",
         "cli",
-        "openai",
-        "codex",
-        "rust",
+        "anthropic",
+        "claude",
         "terminal",
         "ide",
         "mcp",
-        "sandbox",
-        "agents-md"
+        "plugins",
+        "hooks",
+        "agent-sdk"
       ],
-      "primary_language": "Rust",
-      "stars": 83926,
+      "primary_language": "Python",
+      "stars": 137980,
       "status": "active",
       "ratings": {
         "capability": 4,
         "usability": 5,
         "performance": 4,
-        "code_quality": 4,
+        "code_quality": 3,
         "documentation": 5,
         "community": 4,
-        "maturity": 2,
+        "maturity": 3,
         "extensibility": 5,
-        "security": 3,
-        "recommendation": 3
+        "security": 2,
+        "recommendation": 4
       },
       "overall_score": 3.9,
-      "last_checked": "2026-05-20",
-      "updated": "2026-05-21",
-      "summary": "Codex 是适合 OpenAI / ChatGPT 生态用户的官方开源 coding agent，优势是 Rust 实现、Apache-2.0、沙箱/审批模型和多 surface 文档，主要风险是项目仍年轻、issue backlog 大且外部贡献受限。"
+      "last_checked": "2026-07-17",
+      "updated": "2026-07-17",
+      "summary": "Claude Code 是面向深度依赖 Claude 模型的开发者和团队的官方 agentic coding tool，优势是能力面、文档和生态整合，代价是模型/平台锁定、闭源核心与较高安全治理要求。"
     },
     {
-      "slug": "ai-programs/coding-agents/continue",
-      "route": "/analysis/ai-programs/coding-agents/continue",
+      "slug": "ai-programs/agents/coding-agents/continue",
+      "route": "/analysis/ai-programs/agents/coding-agents/continue",
       "title": "Continue",
       "repo_url": "https://github.com/continuedev/continue",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-agent",
         "cli",
@@ -1522,7 +1483,7 @@
         "recommendation": 4
       },
       "overall_score": 3.9,
-      "last_checked": "2026-05-20",
+      "last_checked": "2026-07-17",
       "updated": "2026-05-21",
       "summary": "Continue 适合想把 AI coding agent 变成 可配置、可进 CI、可源代码管理 的团队或个人：它不是单一 IDE sidebar，而是 CLI、IDE extension、PR checks、config.yaml agent spec、MCP/tools/rules/models 的组合体。"
     },
@@ -1753,12 +1714,12 @@
       "summary": "oh-my-claudecode 适合已经重度使用 Claude Code、希望把单个 coding agent 扩展成「可分工、可持久、可审查、可调用外部 CLI」工作流的 advanced users；它是强大的复合型 AI plugin，而不是轻量单功能插件。"
     },
     {
-      "slug": "ai-programs/coding-agents/pi",
-      "route": "/analysis/ai-programs/coding-agents/pi",
+      "slug": "ai-programs/agents/coding-agents/pi",
+      "route": "/analysis/ai-programs/agents/coding-agents/pi",
       "title": "Pi Coding Agent",
       "repo_url": "https://github.com/earendil-works/pi",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "ai-agent",
         "coding-agent",
@@ -1857,12 +1818,12 @@
       "summary": "USTC-Network-Resources 适合作为 USTC 新生和低年级同学认识校园网络服务的索引，但使用任何具体链接前都应做当年可用性复核。"
     },
     {
-      "slug": "ai-programs/assistant-agents/astrbot",
-      "route": "/analysis/ai-programs/assistant-agents/astrbot",
+      "slug": "ai-programs/agents/assistant-agents/astrbot",
+      "route": "/analysis/ai-programs/agents/assistant-agents/astrbot",
       "title": "AstrBot",
       "repo_url": "https://github.com/AstrBotDevs/AstrBot",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-agent",
         "chatbot",
@@ -2003,6 +1964,45 @@
       "summary": "free-for-dev 是查找开发者免费层服务时非常有用的第一站；它适合发现和初筛，不适合作为计费、合规或安全决策的唯一事实来源。"
     },
     {
+      "slug": "ai-programs/agents/assistant-agents/goose",
+      "route": "/analysis/ai-programs/agents/assistant-agents/goose",
+      "title": "Goose",
+      "repo_url": "https://github.com/aaif-goose/goose",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
+      "tags": [
+        "ai-agent",
+        "developer-agent",
+        "rust",
+        "desktop",
+        "cli",
+        "mcp",
+        "acp",
+        "recipes",
+        "multi-model",
+        "aaif"
+      ],
+      "primary_language": "Rust",
+      "stars": 51203,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.8,
+      "last_checked": "2026-07-16",
+      "updated": "2026-07-16",
+      "summary": "迁移说明：此前本 wiki 跟踪 `https://github.com/block/goose`；当前 canonical repository 已迁至 `https://github.com/aaif-goose/goose`。"
+    },
+    {
       "slug": "ai-programs/ai-harness/mcp/mcp-servers",
       "route": "/analysis/ai-programs/ai-harness/mcp/mcp-servers",
       "title": "MCP Servers",
@@ -2058,8 +2058,8 @@
         "self-hosted",
         "mcp"
       ],
-      "primary_language": "Python",
-      "stars": 56213,
+      "primary_language": "TypeScript",
+      "stars": 60997,
       "status": "active",
       "ratings": {
         "capability": 5,
@@ -2074,8 +2074,8 @@
         "recommendation": 3
       },
       "overall_score": 3.8,
-      "last_checked": "2026-05-20",
-      "updated": "2026-05-21",
+      "last_checked": "2026-07-17",
+      "updated": "2026-07-17",
       "summary": "Mem0 是 agent infrastructure 中的 memory layer：它解决“agent 如何跨会话记住、检索、更新用户/会话/agent 状态”这一长期上下文问题，能力广但系统面较重。"
     },
     {
@@ -2117,12 +2117,12 @@
       "summary": "Unciv 适合想在手机或普通桌面设备上玩轻量、开源、可 mod 的 Civilization V-like 4X 策略游戏的人。"
     },
     {
-      "slug": "ai-programs/assistant-agents/zeroclaw",
-      "route": "/analysis/ai-programs/assistant-agents/zeroclaw",
+      "slug": "ai-programs/agents/assistant-agents/zeroclaw",
+      "route": "/analysis/ai-programs/agents/assistant-agents/zeroclaw",
       "title": "ZeroClaw",
       "repo_url": "https://github.com/zeroclaw-labs/zeroclaw",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-assistant",
         "agent-runtime",
@@ -2188,6 +2188,45 @@
       "summary": "codegraph 应归入 `ai-programs/ai-harness/mcp`：它不是普通代码搜索工具，而是给 coding agents 提供本地 context/indexing layer，用预计算代码图谱替代反复 grep/read 的探索成本。"
     },
     {
+      "slug": "ai-programs/agents/coding-agents/codex",
+      "route": "/analysis/ai-programs/agents/coding-agents/codex",
+      "title": "Codex",
+      "repo_url": "https://github.com/openai/codex",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
+      "tags": [
+        "coding-agent",
+        "cli",
+        "openai",
+        "codex",
+        "rust",
+        "terminal",
+        "ide",
+        "mcp",
+        "sandbox",
+        "agents-md"
+      ],
+      "primary_language": "Rust",
+      "stars": 98834,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.7,
+      "last_checked": "2026-07-16",
+      "updated": "2026-07-16",
+      "summary": "Codex 是适合 OpenAI / ChatGPT 生态用户的官方开源 coding agent，优势是 Rust 实现、Apache-2.0、沙箱/审批模型和多 surface 文档，主要风险是项目仍年轻、issue backlog 大且外部贡献受限。"
+    },
+    {
       "slug": "ai-programs/agent-infrastructure/hcom",
       "route": "/analysis/ai-programs/agent-infrastructure/hcom",
       "title": "hcom",
@@ -2227,12 +2266,12 @@
       "summary": "hcom 适合多个 terminal agent 需要长期并发、彼此通信、观察、唤醒和管理生命周期的场景；如果只是 Claude/Hermes 调 Codex CLI 做一次 review 或 second opinion，skill + CLI 的单次主从调用更简单、更稳，也更符合最小复杂度原则。"
     },
     {
-      "slug": "ai-programs/assistant-agents/hermes-agent",
-      "route": "/analysis/ai-programs/assistant-agents/hermes-agent",
+      "slug": "ai-programs/agents/assistant-agents/hermes-agent",
+      "route": "/analysis/ai-programs/agents/assistant-agents/hermes-agent",
       "title": "Hermes Agent",
       "repo_url": "https://github.com/NousResearch/hermes-agent",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-agent",
         "self-hosted",
@@ -2405,12 +2444,12 @@
       "summary": "Open WebUI 是面向想把本地/云端 LLM 统一成一个自托管 Web 入口的个人、实验室和组织的 AI chat platform：能力面极宽，生态极活跃，但安全攻击面和许可边界都必须认真对待。"
     },
     {
-      "slug": "ai-programs/assistant-agents/openhuman",
-      "route": "/analysis/ai-programs/assistant-agents/openhuman",
+      "slug": "ai-programs/agents/assistant-agents/openhuman",
+      "route": "/analysis/ai-programs/agents/assistant-agents/openhuman",
       "title": "OpenHuman",
       "repo_url": "https://github.com/tinyhumansai/openhuman",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-agent",
         "desktop",
@@ -2475,12 +2514,12 @@
       "summary": "Penpot 是少数真正成熟的开源设计平台之一，适合需要自托管、开放格式、设计系统和 design-code collaboration 的团队；但近期多个高危/严重 GHSA 使安全评分必须保守。"
     },
     {
-      "slug": "ai-programs/coding-agents/plandex",
-      "route": "/analysis/ai-programs/coding-agents/plandex",
+      "slug": "ai-programs/agents/coding-agents/plandex",
+      "route": "/analysis/ai-programs/agents/coding-agents/plandex",
       "title": "Plandex",
       "repo_url": "https://github.com/plandex-ai/plandex",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-agent",
         "terminal-agent",
@@ -2509,6 +2548,45 @@
       "last_checked": "2026-07-11",
       "updated": "2026-05-27",
       "summary": "Plandex 是一条较早公开并获得显著关注的 open-source terminal coding-agent 历史线：它把大任务规划、上下文管理、diff sandbox、可调 autonomy、本地/自托管 server 组合成完整 CLI workflow [GH:api][GH:readme][Docs:autonomy]。"
+    },
+    {
+      "slug": "ai-programs/agent-frameworks/rig",
+      "route": "/analysis/ai-programs/agent-frameworks/rig",
+      "title": "Rig",
+      "repo_url": "https://github.com/0xPlaygrounds/rig",
+      "category": "ai-programs/agent-frameworks",
+      "directory": "ai-programs/agent-frameworks",
+      "tags": [
+        "agent-framework",
+        "rust",
+        "llm",
+        "rag",
+        "tools",
+        "multi-provider",
+        "vector-store",
+        "wasm",
+        "opentelemetry",
+        "crates-io"
+      ],
+      "primary_language": "Rust",
+      "stars": 7951,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.7,
+      "last_checked": "2026-07-16",
+      "updated": "2026-07-16",
+      "summary": "Rig 是目前最有影响力的 Rust agent framework 之一，适合把 agent 嵌入 typed、concurrent、production-oriented Rust service；若需求只是“安装后帮我写代码”，它选错了抽象层。"
     },
     {
       "slug": "ai-programs/ai-harness/ai-plugins/spec-kit",
@@ -2583,12 +2661,12 @@
       "summary": "AutoGen 是 multi-agent framework 历史线上的关键项目：它把 multi-agent conversation、AgentChat、Core runtime、Extensions、Studio、Magentic-One 等概念系统化；但它现在已经进入 maintenance mode，新项目应转向 Microsoft Agent "
     },
     {
-      "slug": "ai-programs/coding-agents/deepseek-reasonix",
-      "route": "/analysis/ai-programs/coding-agents/deepseek-reasonix",
+      "slug": "ai-programs/agents/coding-agents/deepseek-reasonix",
+      "route": "/analysis/ai-programs/agents/coding-agents/deepseek-reasonix",
       "title": "DeepSeek-Reasonix",
       "repo_url": "https://github.com/esengine/DeepSeek-Reasonix",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-agent",
         "deepseek",
@@ -2657,6 +2735,45 @@
       "last_checked": "2026-07-15",
       "updated": "2026-05-27",
       "summary": "Flowise 是 visual agent builder / low-code LLM app platform 的代表项目：它把 agent workflow、RAG、tools、chatflows、AgentflowV2 和 integrations 放进拖拽式 UI 中，降低了非底层工程用户构建 AI agents 的门槛 [GH:readme]["
+    },
+    {
+      "slug": "ai-programs/agents/coding-agents/forgecode",
+      "route": "/analysis/ai-programs/agents/coding-agents/forgecode",
+      "title": "ForgeCode",
+      "repo_url": "https://github.com/tailcallhq/forgecode",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
+      "tags": [
+        "coding-agent",
+        "rust",
+        "terminal",
+        "tui",
+        "zsh",
+        "multi-provider",
+        "mcp",
+        "skills",
+        "agents-md",
+        "semantic-search"
+      ],
+      "primary_language": "Rust",
+      "stars": 7461,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.6,
+      "last_checked": "2026-07-16",
+      "updated": "2026-07-16",
+      "summary": "ForgeCode 是功能扎实、provider-neutral、社区真实活跃的 Rust coding agent，但 restricted policy 默认并不收紧、MCP 绕过该 policy，且 optional semantic sync 会上传文件内容，采用前必须主动配置安全边界。"
     },
     {
       "slug": "ai-programs/ai-harness/mcp/github-mcp-server",
@@ -2803,7 +2920,7 @@
         "recommendation": 3
       },
       "overall_score": 3.6,
-      "last_checked": "2026-05-21",
+      "last_checked": "2026-07-17",
       "updated": "2026-05-21",
       "summary": "Marker 能力很强，适合做 PDF/Markdown 转换质量对比；但 GPL 代码、模型许可限制、商业 self-host license 和 CLA 边界，使它更适合个人研究试用，不宜直接作为默认生产底座。"
     },
@@ -2845,12 +2962,12 @@
       "summary": "MinerU 很值得放入 document-processing 板块并实测，尤其适合科学文献解析；但它的自定义许可证和模型/部署复杂度，使其更适合作为“强候选”，不是默认无脑依赖。"
     },
     {
-      "slug": "ai-programs/coding-agents/opencode",
-      "route": "/analysis/ai-programs/coding-agents/opencode",
+      "slug": "ai-programs/agents/coding-agents/opencode",
+      "route": "/analysis/ai-programs/agents/coding-agents/opencode",
       "title": "OpenCode",
       "repo_url": "https://github.com/anomalyco/opencode",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-agent",
         "cli",
@@ -3456,12 +3573,12 @@
       "summary": "面向 AI 时代的 memory/context engine，生态热度高，Hermes 也内置了 Supermemory provider；但云/API 产品边界与本地自托管边界需要分清 [Hermes:provider]。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端到端 smoke test [GH:api"
     },
     {
-      "slug": "ai-programs/coding-agents/tabby",
-      "route": "/analysis/ai-programs/coding-agents/tabby",
+      "slug": "ai-programs/agents/coding-agents/tabby",
+      "route": "/analysis/ai-programs/agents/coding-agents/tabby",
       "title": "Tabby",
       "repo_url": "https://github.com/TabbyML/tabby",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-assistant",
         "self-hosted",
@@ -3489,7 +3606,7 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-05-20",
+      "last_checked": "2026-07-17",
       "updated": "2026-05-21",
       "summary": "Tabby 是值得记录的 self-hosted AI coding assistant：它补齐了“代码助手的本地/私有化部署”这一类目，但它更接近 coding assistant / code-completion backend，而不是 Cline、Codex、Claude Code 那种 fully agentic coding agent；并且 `"
     },
@@ -3893,12 +4010,12 @@
       "summary": "对需要自托管协作式 LaTeX、且所有用户都可信的实验室或研究团队，Overleaf Community Edition 是本次评估中最成熟的开源选择之一；若需要用户隔离、Sandbox Compiles 或企业身份治理，应评估 Server Pro 或 SaaS，而不是把 CE 暴露给不可信用户 [Docs]。"
     },
     {
-      "slug": "ai-programs/assistant-agents/personal-ai-infrastructure",
-      "route": "/analysis/ai-programs/assistant-agents/personal-ai-infrastructure",
+      "slug": "ai-programs/agents/assistant-agents/personal-ai-infrastructure",
+      "route": "/analysis/ai-programs/agents/assistant-agents/personal-ai-infrastructure",
       "title": "Personal AI Infrastructure (PAI)",
       "repo_url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "personal-ai",
         "life-os",
@@ -3927,12 +4044,12 @@
       "summary": "PAI 是一套基于 Claude Code 的「个人 AI 操作系统」——将你的身份、目标、知识图谱注入 AI 上下文，让 AI 不只是回答问题，而是「知道你是谁、你要去哪」的数字助手。"
     },
     {
-      "slug": "ai-programs/coding-agents/pr-agent",
-      "route": "/analysis/ai-programs/coding-agents/pr-agent",
+      "slug": "ai-programs/agents/coding-agents/pr-agent",
+      "route": "/analysis/ai-programs/agents/coding-agents/pr-agent",
       "title": "PR-Agent",
       "repo_url": "https://github.com/The-PR-Agent/pr-agent",
-      "category": "ai-programs/coding-agents",
-      "directory": "ai-programs/coding-agents",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
       "tags": [
         "coding-agent",
         "code-review",
@@ -4079,12 +4196,12 @@
       "summary": "Agent Skills 是一组面向 AI coding agents 的 工程纪律注入包：23 个 skills、7 个 lifecycle slash commands、3 个 specialist personas、4 个 reference checklists，覆盖 Claude Code、Cursor、Gemini CLI、OpenCode、Co"
     },
     {
-      "slug": "ai-programs/assistant-agents/autogpt",
-      "route": "/analysis/ai-programs/assistant-agents/autogpt",
+      "slug": "ai-programs/agents/assistant-agents/autogpt",
+      "route": "/analysis/ai-programs/agents/assistant-agents/autogpt",
       "title": "AutoGPT",
       "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "autonomous-agents",
         "agent-history",
@@ -4154,12 +4271,12 @@
       "summary": "Browser Use 是 AI agent 访问真实 Web 的 browser-control layer：它把页面状态、截图、DOM/可点击元素、Playwright/CDP 控制、LLM action loop、CLI、Claude Code skill、cloud browser/session 等组合成 agent-native primitiv"
     },
     {
-      "slug": "ai-programs/assistant-agents/career-ops",
-      "route": "/analysis/ai-programs/assistant-agents/career-ops",
+      "slug": "ai-programs/agents/assistant-agents/career-ops",
+      "route": "/analysis/ai-programs/agents/assistant-agents/career-ops",
       "title": "Career-Ops",
       "repo_url": "https://github.com/santifer/career-ops",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "career",
         "job-search",
@@ -4260,12 +4377,12 @@
       "summary": "面向 Windows 单机玩家的 trainer 管理器：把 Fling、XiaoXing、Cheat Tables、GCM/社区上传 trainer 聚合到一个桌面 dashboard 中，降低“到处找修改器”的摩擦，但安全信任边界天然较重。"
     },
     {
-      "slug": "ai-programs/assistant-agents/kirara-ai",
-      "route": "/analysis/ai-programs/assistant-agents/kirara-ai",
+      "slug": "ai-programs/agents/assistant-agents/kirara-ai",
+      "route": "/analysis/ai-programs/agents/assistant-agents/kirara-ai",
       "title": "Kirara AI",
       "repo_url": "https://github.com/lss233/kirara-ai",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-chatbot",
         "im-bot",
@@ -4439,12 +4556,12 @@
       "summary": "`dotnet/skills` 是目前 agent-skills 生态中少见的“官方领域团队 + 大规模 eval fixtures + 跨 Copilot/Claude/Cursor/Codex 分发”的技能库；它对 .NET/C# 开发者有实用价值，对 Develata/Hermes 更大的价值是学习其 skill quality gate、CODEOW"
     },
     {
-      "slug": "ai-programs/assistant-agents/aionui",
-      "route": "/analysis/ai-programs/assistant-agents/aionui",
+      "slug": "ai-programs/agents/assistant-agents/aionui",
+      "route": "/analysis/ai-programs/agents/assistant-agents/aionui",
       "title": "AionUi",
       "repo_url": "https://github.com/iOfficeAI/AionUi",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-agent",
         "desktop",
@@ -4549,6 +4666,44 @@
       "summary": "LiteParse 值得作为 document-processing 板块的“轻量本地解析 + bbox”代表跟踪和试验；它可能适合 agent/RAG 前处理，但项目很新，成熟度和推荐度都必须保守。"
     },
     {
+      "slug": "ai-programs/agents/coding-agents/open-interpreter",
+      "route": "/analysis/ai-programs/agents/coding-agents/open-interpreter",
+      "title": "Open Interpreter",
+      "repo_url": "https://github.com/openinterpreter/openinterpreter",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
+      "tags": [
+        "coding-agent",
+        "rust",
+        "codex-fork",
+        "terminal",
+        "open-models",
+        "multi-provider",
+        "harness-emulation",
+        "acp",
+        "sandbox"
+      ],
+      "primary_language": "Rust",
+      "stars": 65937,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 1,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-07-16",
+      "updated": "2026-07-16",
+      "summary": "Open Interpreter 适合研究“同一模型在不同 coding-agent harness 下为何表现不同”，但当前 Rust rewrite 只有 `0.0.26`，其 6.6 万 stars 主要代表长期项目品牌与历史积累，不能当作新 Rust 版本已经成熟的证明。"
+    },
+    {
       "slug": "ai-programs/ai-harness/skills/mattpocock-skills",
       "route": "/analysis/ai-programs/ai-harness/skills/mattpocock-skills",
       "title": "Skills For Real Engineers",
@@ -4586,12 +4741,12 @@
       "summary": "`mattpocock/skills` 适合已经有 agent harness、希望研究“如何把 alignment、domain language、spec、vertical slices、TDD、debugging 与 review 写成可组合 skills”的工程师；对现有成熟 workflow，应按概念和局部 skill 选择性吸收，不宜全量覆盖安装"
     },
     {
-      "slug": "ai-programs/assistant-agents/ui-tars-desktop",
-      "route": "/analysis/ai-programs/assistant-agents/ui-tars-desktop",
+      "slug": "ai-programs/agents/assistant-agents/ui-tars-desktop",
+      "route": "/analysis/ai-programs/agents/assistant-agents/ui-tars-desktop",
       "title": "UI-TARS Desktop / Agent TARS",
       "repo_url": "https://github.com/bytedance/UI-TARS-desktop",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-agent",
         "gui-agent",
@@ -4797,12 +4952,12 @@
       "summary": "`anthropics/claude-plugins-official` 是值得作为样本跟踪的 Claude Code plugin marketplace：它展示了 Anthropic 如何把 skills、agents、hooks、MCP servers、commands 和外部 git sources 组织成官方插件目录；但它不是“安全白名单”，REA"
     },
     {
-      "slug": "ai-programs/assistant-agents/openfang",
-      "route": "/analysis/ai-programs/assistant-agents/openfang",
+      "slug": "ai-programs/agents/assistant-agents/openfang",
+      "route": "/analysis/ai-programs/agents/assistant-agents/openfang",
       "title": "OpenFang",
       "repo_url": "https://github.com/RightNow-AI/openfang",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-agent",
         "agent-os",
@@ -5019,6 +5174,46 @@
       "summary": "Google Skills 是 Google 产品与技术相关的 agent skills 集合，偏技能包/流程素材，而不是传统软件库。 [GH:readme]"
     },
     {
+      "slug": "ai-programs/agents/coding-agents/grok-build",
+      "route": "/analysis/ai-programs/agents/coding-agents/grok-build",
+      "title": "Grok Build",
+      "repo_url": "https://github.com/xai-org/grok-build",
+      "category": "ai-programs/agents/coding-agents",
+      "directory": "ai-programs/agents/coding-agents",
+      "tags": [
+        "coding-agent",
+        "rust",
+        "grok",
+        "xai",
+        "tui",
+        "cli",
+        "acp",
+        "mcp",
+        "skills",
+        "plugins",
+        "sandbox"
+      ],
+      "primary_language": "Rust",
+      "stars": 11678,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 1,
+        "maturity": 1,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3,
+      "last_checked": "2026-07-16",
+      "updated": "2026-07-16",
+      "summary": "Grok Build 是值得观察和试用的官方 Rust coding agent，但“11.6k stars + 99% Rust”不能抵消 public repo 仅两次同步、零公开 releases/workflows、拒绝外部 PR 的证据缺口。"
+    },
+    {
       "slug": "ai-programs/ai-harness/skills/hallmark",
       "route": "/analysis/ai-programs/ai-harness/skills/hallmark",
       "title": "Hallmark",
@@ -5127,12 +5322,12 @@
       "summary": "MXC 是 Microsoft 早期预览的跨平台 untrusted code sandbox system，统一 JSON schema/TypeScript SDK 包装 ProcessContainer、LXC、Bubblewrap、Seatbelt、MicroVM 等 backend；README 明确警告当前不能当安全边界。 [GH:readme]"
     },
     {
-      "slug": "ai-programs/assistant-agents/openclaw",
-      "route": "/analysis/ai-programs/assistant-agents/openclaw",
+      "slug": "ai-programs/agents/assistant-agents/openclaw",
+      "route": "/analysis/ai-programs/agents/assistant-agents/openclaw",
       "title": "OpenClaw",
       "repo_url": "https://github.com/openclaw/openclaw",
-      "category": "ai-programs/assistant-agents",
-      "directory": "ai-programs/assistant-agents",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
       "tags": [
         "ai-agent",
         "self-hosted",

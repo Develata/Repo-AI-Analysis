@@ -5,7 +5,7 @@ created: 2026-05-15
 updated: 2026-07-12
 type: repository-analysis
 repo_url: "https://github.com/esengine/DeepSeek-Reasonix"
-category: "ai-programs/coding-agents"
+category: "ai-programs/agents/coding-agents"
 tags: ["coding-agent", "deepseek", "cli", "tui", "go", "mcp", "desktop-app"]
 primary_language: "Go"
 license: "MIT"

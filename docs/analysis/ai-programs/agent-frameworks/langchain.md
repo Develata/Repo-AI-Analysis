@@ -58,8 +58,8 @@ sources:
   - "[Blog:1.0] https://blog.langchain.com/langchain-langgraph-1dot0"
   - "[Blog:logic] https://logic.inc/resources/langchain-production-issues"
   - "[Blog:xqa] https://xqa.io/blog/stopped-using-langchain-abstraction-problem"
-  - "[Wiki:openclaw] /opt/data/wiki/github-repo-wiki/ai-programs/assistant-agents/openclaw.md"
-  - "[Wiki:hermes] /opt/data/wiki/github-repo-wiki/ai-programs/assistant-agents/hermes-agent.md"
+  - "[Wiki:openclaw] /opt/data/wiki/github-repo-wiki/ai-programs/agents/assistant-agents/openclaw.md"
+  - "[Wiki:hermes] /opt/data/wiki/github-repo-wiki/ai-programs/agents/assistant-agents/hermes-agent.md"
 ---
 
 # LangChain

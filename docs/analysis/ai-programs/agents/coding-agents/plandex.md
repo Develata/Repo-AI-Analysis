@@ -7,7 +7,7 @@ updated: 2026-05-27
 last_checked: 2026-07-11
 type: repository-analysis
 repo_url: "https://github.com/plandex-ai/plandex"
-category: "ai-programs/coding-agents"
+category: "ai-programs/agents/coding-agents"
 tags: ["coding-agent", "terminal-agent", "early-agent-history", "large-context", "self-hosted", "go", "diff-review"]
 ratings:
   capability: 5
@@ -60,7 +60,7 @@ Plandex 是一条较早公开并获得显著关注的 open-source terminal codin
 
 `plandex-ai/plandex` 是 Go 写的 terminal-based AI coding agent，面向 large projects / real world tasks。README 说它可以 plan and execute 多步骤、多文件任务，支持 2M effective context window、约 100k tokens per file、20M+ token directories 的 tree-sitter project map indexing，并用 cumulative diff review sandbox 将 AI edits 与工作区隔离，直到用户 review/apply [GH:readme]。
 
-它应该归入 `ai-programs/coding-agents`，但历史意义比当前实用推荐更突出。Plandex 很早就明确了后来 coding agents 都在追的设计线：长任务 planning/execution、大仓库 context selection、diff sandbox / review before apply、可调 autonomy levels、多模型/多 provider 组合，以及 self-hosted server + CLI client 架构 [GH:readme][Docs:context][Docs:autonomy]。
+它应该归入 `ai-programs/agents/coding-agents`，但历史意义比当前实用推荐更突出。Plandex 很早就明确了后来 coding agents 都在追的设计线：长任务 planning/execution、大仓库 context selection、diff sandbox / review before apply、可调 autonomy levels、多模型/多 provider 组合，以及 self-hosted server + CLI client 架构 [GH:readme][Docs:context][Docs:autonomy]。
 
 必须强调 caveat：官方 quickstart 与 README 都说明 **Plandex Cloud is winding down as of 2025-10-03 and no longer accepting new users**，推荐路径转向 self-hosted/local mode；本次抓取 docs.plandex.ai 若干页面返回 404，本文主要以本地 repo docs 作为 evidence [Docs:quickstart][GH:local-scan]。
 
@@ -102,7 +102,7 @@ Plandex 是一条较早公开并获得显著关注的 open-source terminal codin
 
 ## 与类似项目对比
 
-这里按 `ai-programs/coding-agents` 同类/相邻项目做定位级对比；部分项目能力随时间快速变化，未在本表做同一 10 维度深审，比较结论仅用于 positioning。
+这里按 `ai-programs/agents/coding-agents` 同类/相邻项目做定位级对比；部分项目能力随时间快速变化，未在本表做同一 10 维度深审，比较结论仅用于 positioning。
 
 | 项目 | 定位 | 相对本项目 |
 |---|---|---|

@@ -13,7 +13,7 @@ primary_language: "Python"
 license: "GPL-3.0-or-later code + OpenRAIL-M-like model terms"
 stars: 35280
 forks: 2447
-last_checked: 2026-05-21
+last_checked: 2026-07-17
 last_verified: 2026-05-21
 evidence: "GitHub API + README/docs extraction + local repository scan; benchmark claims not independently reproduced"
 archived_reason: ""

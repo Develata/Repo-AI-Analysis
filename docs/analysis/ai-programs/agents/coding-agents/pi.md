@@ -6,7 +6,7 @@ created: 2026-05-16
 updated: 2026-07-13
 type: repository-analysis
 repo_url: https://github.com/earendil-works/pi
-category: "ai-programs/coding-agents"
+category: "ai-programs/agents/coding-agents"
 tags:
   - ai-agent
   - coding-agent

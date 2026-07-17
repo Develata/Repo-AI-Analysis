@@ -4,7 +4,7 @@ created: 2026-05-31
 updated: 2026-05-31
 type: repository-analysis
 repo_url: "https://github.com/bytedance/UI-TARS-desktop"
-category: "ai-programs/assistant-agents"
+category: "ai-programs/agents/assistant-agents"
 tags:
   - ai-agent
   - gui-agent
@@ -141,7 +141,7 @@ UI-TARS Desktop / Agent TARS 是一个能力很强、工程投入也真实的 **
 | browser-use / Midscene | 浏览器自动化 agent/tooling | UI-TARS 覆盖桌面 GUI + 浏览器 + MCP，范围更宽但也更重 |
 | Claude Computer Use | Anthropic 模型能力/产品接口 | Claude Computer Use 是闭源模型/产品参照项；UI-TARS/Agent TARS 更适合作为开源工程样本拆解 |
 
-上述项目按 `ai-programs/assistant-agents` 同类范围做定位级对比，未按同一 10 维度框架深审；`browser-use / Midscene` 与 `Claude Computer Use` 是相邻生态/产品参照项，不是同目录 wiki 条目的直接竞品。
+上述项目按 `ai-programs/agents/assistant-agents` 同类范围做定位级对比，未按同一 10 维度框架深审；`browser-use / Midscene` 与 `Claude Computer Use` 是相邻生态/产品参照项，不是同目录 wiki 条目的直接竞品。
 
 ---
 

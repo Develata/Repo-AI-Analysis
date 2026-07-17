@@ -6,7 +6,7 @@ created: 2026-05-19
 updated: 2026-05-21
 type: repository-analysis
 repo_url: "https://github.com/AstrBotDevs/AstrBot"
-category: "ai-programs/assistant-agents"
+category: "ai-programs/agents/assistant-agents"
 tags: ["ai-agent", "chatbot", "im-bot", "mcp", "plugin-system", "python"]
 previous_repo: ""
 successor: ""

@@ -3,20 +3,20 @@
 
 title: "Cline"
 created: 2026-05-20
-updated: 2026-05-27
+updated: 2026-07-17
 type: repository-analysis
 repo_url: "https://github.com/cline/cline"
-category: "ai-programs/coding-agents"
+category: "ai-programs/agents/coding-agents"
 tags: ["coding-agent", "vscode", "cli", "tui", "mcp", "sdk", "plugins", "checkpoints", "kanban", "typescript"]
 previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
 license: "Apache-2.0"
-stars: 62072
-forks: 6480
-last_checked: 2026-05-20
-last_verified: 2026-05-20
-evidence: "GitHub API + official documentation + npm metadata + repository local scan; local repo scan only, not a fresh production deployment test"
+stars: 64728
+forks: 6926
+last_checked: 2026-07-17
+last_verified: 2026-07-17
+evidence: "Current GitHub API/README/advisories + official docs index + npm metadata; historical 2026-05 local scan retained; no fresh production deployment test"
 archived_reason: ""
 docker_support: false
 gpu_required: false
@@ -25,7 +25,7 @@ estimated_memory: "moderate for VS Code/webview/TUI runtime plus workspace conte
 estimated_storage: "local shallow clone 80M with 3192 tracked files; checkpoints use a shadow Git repository and may grow on large tasks"
 status: active
 ratings:
-  capability: 5
+  capability: 4
   usability: 4
   performance: 4
   code_quality: 4
@@ -35,20 +35,22 @@ ratings:
   extensibility: 5
   security: 2
   recommendation: 4
-overall_score: 4.1
+overall_score: 4.0
 sources:
   - "[GH] https://github.com/cline/cline"
-  - "[GH:api] https://api.github.com/repos/cline/cline queried 2026-05-20; stars=62072, forks=6480, open_issues_count=900, created_at=2024-07-06, pushed_at=2026-05-20, license=Apache-2.0, default_branch=main"
-  - "[GH:issues] GitHub Search API queried 2026-05-20; open issues=474, open PRs=426 for repo:cline/cline"
-  - "[GH:languages] https://api.github.com/repos/cline/cline/languages queried 2026-05-20; TypeScript=14852005, JavaScript=212446, Rust=43944, CSS=36995, HTML=35471, Shell=20212, Python=7735"
-  - "[GH:releases] https://api.github.com/repos/cline/cline/releases?per_page=10 queried 2026-05-20; latest releases include cli-v3.0.9 published 2026-05-20 and v3.84.0 published 2026-05-19"
+  - "[GH:api] https://api.github.com/repos/cline/cline queried 2026-07-17; canonical full_name=cline/cline, archived=false, disabled=false, stars=64728, forks=6926, created_at=2024-07-06, pushed_at=2026-07-16, primary language=TypeScript, license=Apache-2.0, default_branch=main"
+  - "[GH:issues] GitHub Search API queried 2026-07-17; open issues=635 and open PRs=626 for repo:cline/cline"
+  - "[GH:languages] https://api.github.com/repos/cline/cline/languages queried 2026-07-17; TypeScript=16569727, JavaScript=333510, CSS=48727, Rust=44257, HTML=35842, Shell=19413, Python=7735"
+  - "[GH:releases] https://api.github.com/repos/cline/cline/releases/latest queried 2026-07-17; latest=cli-v3.0.42 published 2026-07-16; release body records an Ollama native API routing fix"
   - "[GH:contributors] https://api.github.com/repos/cline/cline/contributors?per_page=100 queried 2026-05-20; first page contributors=100; top entries include saoudrizwan=1962, abeatrix=782, celestial-vault=374"
-  - "[GH:community] https://api.github.com/repos/cline/cline/community/profile queried 2026-05-20; health_percentage=100; readme, license, contributing, code_of_conduct and pull_request_template detected"
-  - "[GH:advisories] https://api.github.com/repos/cline/cline/security-advisories?per_page=20 queried 2026-05-20; returned GHSA-5c57-rqjx-35g2/CVE-2026-44211 critical Kanban cross-origin WebSocket hijack and GHSA-9ppg-jx86-fqw7 low unauthorized npm publish affecting cline@2.3.0"
-  - "[GH:local-scan] Local shallow clone /tmp/repo-wiki-batch6/cline at commit 015b61924f3fe32a732e3aa390066e2d1574f53b dated 2026-05-20; git ls-files=3192; checked README.md, SECURITY.md, CONTRIBUTING.md, package.json and LICENSE; README documents zero-interaction scripting/automation with JSON output and CI/CD chaining; package.json reports extension version 3.84.0 and description as autonomous coding agent in IDE; SECURITY.md points to Bugcrowd VDP and security@cline.bot"
-  - "[NPM:cli] npm view cline queried 2026-05-20; version=3.0.9, license=Apache-2.0, description='Autonomous coding agent CLI - capable of creating/editing files, running commands, using the browser, and more', dist.unpackedSize=21271"
-  - "[NPM:sdk] npm view @cline/sdk queried 2026-05-20; version=0.0.41, license=Apache-2.0, description='Cline SDK - user-facing alias for @cline/core'"
-  - "[Docs:index] https://docs.cline.bot/llms.txt extracted 2026-05-20; docs map lists IDE, CLI, TUI, Kanban, SDK, Cline API, MCP, rules, skills, plugins, hooks, scheduling, connectors, subagents and enterprise pages"
+  - "[GH:community] https://api.github.com/repos/cline/cline/community/profile queried 2026-07-17; health_percentage=100; README, license, CONTRIBUTING, CODE_OF_CONDUCT and PR template detected"
+  - "[GH:advisories] https://api.github.com/repos/cline/cline/security-advisories?per_page=100 queried 2026-07-17; returned 3 published advisories: GHSA-5c57-rqjx-35g2 critical Kanban WebSocket hijack, GHSA-9ppg-jx86-fqw7 low unauthorized cline@2.3.0 publish, and new GHSA-3cj3-hqcr-g934 high Cline Hub dashboard /browser cross-origin WebSocket hijack"
+  - "[GH:advisory:hub] https://github.com/cline/cline/security/advisories/GHSA-3cj3-hqcr-g934 and API metadata checked 2026-07-17; affected npm package cline <=3.0.24; GitHub API patched_versions is empty even though current cli-v3.0.42 lies above the affected range, so exact remediation semantics should be checked at advisory/release level before operation"
+  - "[GH:readme] https://github.com/cline/cline/blob/main/README.md fetched through GitHub Contents API 2026-07-17 at blob 055918ffa093d18ac4876ea34dbe1a92598710d5; current product matrix covers CLI, separate cline/kanban repo, VS Code, JetBrains and SDK; README states the JetBrains plugin is currently not open-sourced and documents teams, scheduling and chat connectors"
+  - "[GH:local-scan] Historical local shallow clone /tmp/repo-wiki-batch6/cline at commit 015b61924f3fe32a732e3aa390066e2d1574f53b dated 2026-05-20; git ls-files=3192; checked README.md, SECURITY.md, CONTRIBUTING.md, package.json and LICENSE; SECURITY.md points to Bugcrowd VDP and security@cline.bot; retained for structural claims, not current product-boundary/count claims"
+  - "[NPM:cli] npm view cline queried 2026-07-17; version=3.0.42, license=Apache-2.0, dist.unpackedSize=33436"
+  - "[NPM:sdk] npm view @cline/sdk queried 2026-07-17; version=0.0.62, engines.node=>=22, license=Apache-2.0"
+  - "[Docs:index] https://docs.cline.bot/llms.txt extracted 2026-07-17; docs map now explicitly includes Agent Teams, connectors, scheduling, SDK plugin/permission APIs, MCP, IDE/CLI/TUI/Kanban, enterprise controls and observability"
   - "[Docs:install] https://docs.cline.bot/getting-started/installing-cline extracted 2026-05-20; installation paths include IDE Extension, CLI, Kanban preview and SDK"
   - "[Docs:tui] https://docs.cline.bot/usage/tui extracted 2026-05-20; TUI supports interactive terminal workflows, Plan/Act toggle, auto-approve toggle, slash commands and @file mentions; page also distinguishes TUI from headless JSON/piped stdin/stdout/CI-script workflows"
   - "[Docs:checkpoints] https://docs.cline.bot/core-workflows/checkpoints extracted 2026-05-20; checkpoints are enabled by default and use a shadow Git repository separate from the project Git history"
@@ -59,7 +61,8 @@ sources:
 
 > 多入口 autonomous coding agent：以 VS Code/IDE extension 为核心，同时提供 CLI/TUI、SDK、Kanban、MCP、plugins、checkpoints 与多模型 provider 接入。
 >
-> **状态**: `active` · **总分**: 4.1/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 4.0/5 · **推荐度**: 4/5
+> **核验版本**: CLI/npm `3.0.42`；GitHub API、README、advisories 与官方 docs index 快照 2026-07-17
 
 ## 一句话总结
 
@@ -67,33 +70,33 @@ Cline 是当前开源 coding-agent 生态里功能面最宽的一类项目之一
 
 ## 总体评价
 
-`cline/cline` 的仓库描述是“Autonomous coding agent as an SDK, IDE extension, or CLI assistant”，README 与 package metadata 也明确其能力包括创建/编辑文件、运行命令、使用浏览器，并在每一步保留用户批准语义 [GH:api][GH:local-scan][NPM:cli]。官方文档进一步把 Cline 拆成 IDE、CLI、TUI、Kanban、SDK、API、MCP、plugins、hooks、skills、rules、subagents、enterprise 等多个 surface [Docs:index][Docs:install]。
+`cline/cline` 当前 README 将 Cline 定义为“IDE 与 terminal 中的 open source coding agent”，产品矩阵包括 CLI、VS Code、JetBrains、SDK 与独立的 `cline/kanban` 仓库；CLI/SDK 继续覆盖创建或编辑文件、执行命令、浏览器、headless automation 等能力 [GH:readme][NPM:cli]。官方文档还把它扩展为 TUI、MCP、plugins、hooks、skills、rules、agent teams、scheduling、connectors 与 enterprise controls 等多个 surface [Docs:index]。需要分清：核心仓库是 Apache-2.0，但 README 明示 JetBrains plugin 当前不开放源码，因此“Cline 产品线开源”不等于每个客户端 surface 都可审计 [GH:readme]。
 
 这使 Cline 与 Claude Code / Codex / Gemini CLI 这种“官方模型生态 agent”不同：Cline 更像一个 multi-provider、editor-first、tool-rich 的 agent runtime。它不是单纯 chat sidebar，而是试图把文件修改、终端命令、浏览器、MCP、插件和任务编排纳入 IDE/CLI workflow [Docs:index][Docs:plugins]。
 
-高分来自功能广度、文档、社区和扩展性：6 万+ stars、first-page contributors 达 100、GitHub community profile health 100%，官方 docs 的信息架构也很完整 [GH:api][GH:contributors][GH:community][Docs:index]。主要扣分来自成熟度和安全：项目创建于 2024-07，版本快速滚动，open PR/issue backlog 很大；同时 2026-05 有 Kanban cross-origin WebSocket hijack 的 critical advisory，另有 CLI npm unauthorized publish 事件 [GH:issues][GH:releases][GH:advisories]。
+高分来自功能广度、文档、社区和扩展性：6.4 万+ stars、GitHub community profile health 100%，官方 docs 的信息架构也很完整 [GH:api][GH:community][Docs:index]。主要扣分来自成熟度和安全：项目创建于 2024-07，版本快速滚动，open issues=635、open PRs=626；除既有 Kanban critical advisory 与 npm unauthorized publish 外，2026-06 又披露 Cline Hub dashboard `/browser` 的 high severity cross-origin WebSocket hijack [GH:issues][GH:releases][GH:advisories][GH:advisory:hub]。
 
 ## 推荐度：4/5
 
 **定位**：适合想在 IDE / terminal 中使用多模型 autonomous coding agent，并愿意显式治理 agent 权限、插件、MCP、自动批准策略的开发者或小团队。
 
-推荐它，是因为 Cline 的能力面确实宽：IDE extension、CLI/TUI、headless automation、Kanban preview、SDK、MCP、plugins、checkpoints、subagents 这些组合，使它既能作为个人 coding copilot，也能作为 agent workflow 实验平台 [Docs:index][Docs:install][Docs:tui][Docs:plugins]。
+推荐它，是因为 Cline 的能力面确实宽：IDE extension、CLI/TUI、headless automation、独立 Kanban、SDK、MCP、plugins、checkpoints、subagents/agent teams 这些组合，使它既能作为个人 coding copilot，也能作为 agent workflow 实验平台 [GH:readme][Docs:index][Docs:tui][Docs:plugins]。
 
-不直接给 5，是因为安全风险不可忽略。Cline 会读写文件、运行命令、使用浏览器和 MCP tools，权限面天然大；Kanban server 已出现 critical advisory，CLI 包也出现过 unauthorized publish 事件 [GH:advisories]。换言之，它很有价值，但不适合无治理的团队级 rollout，也不应在敏感仓库里无边界开启 auto-approve / YOLO 式使用。
+不直接给 5，是因为安全风险不可忽略。Cline 会读写文件、运行命令、使用浏览器和 MCP tools，权限面天然大；Kanban 与 Hub dashboard 均出现过 cross-origin WebSocket hijack，CLI 包也发生过 unauthorized publish [GH:advisories][GH:advisory:hub]。换言之，它很有价值，但不适合无治理的团队级 rollout，也不应在敏感仓库里无边界开启 auto-approve / YOLO 式使用。
 
 ## 优势
 
-1. **能力面极宽**：IDE、CLI、TUI、Kanban、SDK、API、MCP、plugins、hooks、skills、subagents 都在官方 docs 中形成体系 [Docs:index][Docs:install]。
+1. **能力面极宽**：IDE、CLI、TUI、Kanban、SDK、API、MCP、plugins、hooks、skills、subagents、agent teams、scheduling 与 connectors 都在 README/docs 中形成体系 [GH:readme][Docs:index]。
 2. **editor-first 体验完整**：VS Code package metadata 描述其能创建/编辑文件、运行命令、使用 browser，并强调每一步批准；walkthrough 中也强调计划、理解代码库、MCP、用户控制 [GH:local-scan]。
 3. **多模型与工具生态**：package keywords 和 docs 都显示 Cline 支持 Anthropic、Gemini、OpenAI、OpenRouter、本地模型/MCP 等多种接入路径 [GH:local-scan][Docs:index]。
 4. **安全回滚机制有设计**：checkpoints 默认启用，用 shadow Git repository 捕获 agent 修改后的项目状态，可 rollback 文件而保留 conversation [Docs:checkpoints]。
 5. **扩展机制强**：plugins 可从 Git/npm/local path 安装，扩展 custom tools、lifecycle hooks、slash commands；MCP、rules、skills、hooks 又提供另一层定制面 [Docs:plugins][Docs:index]。
-6. **社区关注度高**：6 万+ stars、6 千+ forks、100 个 first-page contributors，且 release 更新非常频繁 [GH:api][GH:contributors][GH:releases]。
+6. **社区关注度高**：6.4 万+ stars、6.9k forks，仓库在 2026-07-16 仍有 push，latest CLI release 为 3.0.42 [GH:api][GH:releases]。
 
 ## 劣势
 
 1. **安全风险高于普通 IDE 插件**：Cline 的核心能力就是改文件、跑命令、接工具和浏览器；这意味着 prompt injection、工具误用、secret 泄露和供应链风险都更现实 [NPM:cli][GH:advisories]。
-2. **已有 critical advisory**：GHSA-5c57-rqjx-35g2/CVE-2026-44211 涉及 Kanban server cross-origin WebSocket hijack；这会显著压低 security 评分 [GH:advisories]。
+2. **已有 critical/high advisories**：GHSA-5c57-rqjx-35g2 涉及 Kanban server，GHSA-3cj3-hqcr-g934 涉及 Cline Hub dashboard `/browser`；后者 API 标记影响 `cline <=3.0.24`，但没有给出 `patched_versions`，运维时不能仅凭“当前版本号更高”替代 advisory-level 核验 [GH:advisories][GH:advisory:hub]。
 3. **快速演进带来稳定性成本**：CLI release 和 extension release 高频滚动，open issues/PRs 较多；团队标准化部署需要锁版本和验证升级 [GH:issues][GH:releases]。
 4. **多 surface 增加理解成本**：IDE、CLI、TUI、Kanban、SDK、API、plugins、MCP、hooks、skills 并存，初学者容易混淆哪些能力在哪个入口可用 [Docs:index][Docs:install]。
 5. **checkpoints 不是万能安全边界**：shadow Git 能 rollback 文件修改，但不能撤销外部命令副作用、网络调用、数据库修改、泄露的 secrets 或第三方服务状态变化 [Docs:checkpoints]。
@@ -127,17 +130,17 @@ Cline 是当前开源 coding-agent 生态里功能面最宽的一类项目之一
 | Continue | 开源 AI coding assistant / checks | Continue 更偏 coding assistant + CI checks；Cline 更强调 autonomous action、commands、MCP 和 checkpoints |
 | Aider | terminal pair-programming assistant | Aider 更轻、更专注 git/code editing；Cline 更重、更产品化、能力面更宽 |
 
-上述项目按 `ai-programs/coding-agents` 同类范围做定位级对比，未按同一 10 维度框架深审。
+上述项目按 `ai-programs/agents/coding-agents` 同类范围做定位级对比，未按同一 10 维度框架深审。
 
 ---
 
 ## 它能做什么
 
-评分 5/5。
+评分 4/5。
 
-Cline 覆盖 coding agent 的主要能力：读写代码、运行命令、使用浏览器、多模型 provider、IDE extension、CLI、TUI、headless automation、SDK embedding、Kanban preview、MCP、plugins、hooks、rules、skills、subagents、checkpoints 和 slash commands [GH:local-scan][Docs:index][Docs:install][Docs:tui][Docs:plugins][Docs:checkpoints]。
+Cline 覆盖 coding agent 的主要能力：读写代码、运行命令、使用浏览器、多模型 provider、IDE extension、CLI、TUI、headless automation、SDK embedding、独立 Kanban、MCP、plugins、hooks、rules、skills、subagents、agent teams、scheduled agents、messaging connectors、checkpoints 和 slash commands [GH:readme][Docs:index][Docs:tui][Docs:plugins][Docs:checkpoints]。
 
-给 5 不是说每个 surface 都成熟无缺陷，而是说“能力广度”在同类中非常高；它几乎把当前 coding-agent 产品应有的入口和扩展点都纳入了。
+Cline 的覆盖面在同类中仍然很高，因此 capability=4；但项目创建时间较短，各 surface 成熟度不均，Kanban 位于独立仓库，JetBrains client 又不开放源码。本轮没有对所有入口做同深度生产验证，不能把产品线广度直接等同于单一仓库的满分能力。
 
 ## 运行环境与资源占用
 
@@ -158,7 +161,7 @@ Cline 覆盖 coding agent 的主要能力：读写代码、运行命令、使用
 
 评分 4/5。
 
-安装路径清晰：IDE extension 可从 VS Code/Cursor/Windsurf/VSCodium/Antigravity 或 JetBrains Marketplace 安装；CLI 通过 `npm install -g cline`，SDK 通过 `npm install @cline/sdk`，Kanban 通过 `npx kanban` preview 入口 [Docs:install]。TUI 文档给出了 `cline` / `cline -i`、slash commands、Plan/Act toggle、auto-approve toggle 和 `@file` context 入口 [Docs:tui]。
+安装路径清晰：VS Code extension、JetBrains Marketplace、CLI `npm install -g cline`、SDK `npm install @cline/sdk` 与独立 `cline/kanban` 的 `npx kanban@latest` 均有明确入口；但 JetBrains plugin 当前不开放源码 [GH:readme][Docs:install]。TUI 文档给出了 `cline` / `cline -i`、slash commands、Plan/Act toggle、auto-approve toggle 和 `@file` context 入口 [Docs:tui]。
 
 不给 5，是因为 Cline 的产品面非常大，用户必须理解 provider、approval、MCP、plugins、rules、skills、hooks、checkpoints、Kanban、TUI/headless 等差异。基础上手快，但安全/治理正确上手不轻。
 
@@ -190,17 +193,17 @@ README 较短但足够定位，仓库内 SECURITY/CONTRIBUTING 也齐全 [GH:loc
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 5/5 | stars/forks 高，first-page contributors=100，community health=100，release 高频 [GH:api][GH:contributors][GH:community][GH:releases] |
-| 成熟度 | 3/5 | 创建于 2024-07，版本和 surface 仍快速演化；CLI v3 与 extension v3.x 高频发布，Kanban 等能力仍有 preview 色彩 [GH:api][GH:releases][Docs:install] |
+| 社区活跃度 | 5/5 | 64k+ stars、6.9k forks、community health=100、仓库与 release 高频更新；但 635 open issues / 626 open PRs 说明治理压力很高 [GH:api][GH:issues][GH:community][GH:releases] |
+| 成熟度 | 3/5 | 创建于 2024-07，版本和 surface 仍快速演化；CLI 3.0.42、独立 Kanban、agent teams、scheduling、connectors 与 SDK surfaces 同时推进 [GH:api][GH:releases][GH:readme][Docs:index] |
 
 ## 安全与风险
 
 评分 2/5。
 
-Cline 的安全风险来自两层：一是 coding agent 天然会读写文件、运行命令、接 browser/MCP/tools；二是项目已有明确 advisory 记录。GitHub advisories 返回 critical 的 Kanban cross-origin WebSocket hijack，以及 low severity 的 unauthorized npm publish 事件 [GH:advisories]。SECURITY.md 有 Bugcrowd VDP 和 security@cline.bot 报告路径，这是好事，但不能抵消已有高危风险 [GH:local-scan]。
+Cline 的安全风险来自两层：一是 coding agent 天然会读写文件、运行命令、接 browser/MCP/tools；二是项目已有明确 advisory 记录。本轮 endpoint 返回 3 条：critical Kanban WebSocket hijack、high Hub dashboard WebSocket hijack、low unauthorized npm publish [GH:advisories]。其中 Hub advisory 的 API metadata 给出受影响范围 `<=3.0.24` 却未给 patched version；latest 3.0.42 高于该范围，但 branch/package 语义仍需按 advisory 核验，不能写成“已明确在 3.0.25 修复” [GH:advisory:hub]。SECURITY.md 有 Bugcrowd VDP 和 security@cline.bot 报告路径，这是好事，但不能抵消已有高危风险 [GH:local-scan]。
 
 使用建议：敏感仓库默认关闭高风险 auto-approve；MCP/plugin 来源白名单；锁定 CLI/extension 版本；检查 `.clineignore`、secrets、环境变量和 shell command approval；把 checkpoints 理解为 rollback 机制而非 sandbox [Docs:checkpoints][Docs:plugins]。
 
 ## 学习价值
 
-Cline 的学习价值很高：它展示了现代 coding agent 如何从“IDE chat extension”演化为多入口 runtime。值得重点观察的主题包括：Plan/Act UX、approval policy、checkpoint shadow Git、MCP/plugin capability design、SDK embedding、TUI/headless 双模式、Kanban multi-agent 任务板、provider abstraction 与 enterprise governance。
+Cline 的学习价值很高：它展示了现代 coding agent 如何从“IDE chat extension”演化为多入口 runtime。值得重点观察的主题包括：Plan/Act UX、approval policy、checkpoint shadow Git、MCP/plugin capability design、SDK embedding、TUI/headless 双模式、独立 Kanban worktree 任务板、agent teams、scheduling/connectors、provider abstraction 与 enterprise governance；同时也要研究为何 dashboard/WebSocket 与 auto-approve 的组合会放大本地攻击面 [GH:advisory:hub]。

@@ -6,7 +6,7 @@ created: 2026-05-14
 updated: 2026-07-12
 type: repository-analysis
 repo_url: "https://github.com/zeroclaw-labs/zeroclaw"
-category: "ai-programs/assistant-agents"
+category: "ai-programs/agents/assistant-agents"
 tags: ["ai-assistant", "agent-runtime", "rust", "edge", "open-source"]
 primary_language: "Rust"
 license: "Apache-2.0 / MIT"
