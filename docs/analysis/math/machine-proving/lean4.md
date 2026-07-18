@@ -13,7 +13,7 @@ primary_language: "Lean/C++"
 license: "Apache-2.0"
 stars: 8061
 forks: 844
-last_checked: 2026-05-21
+last_checked: 2026-07-18
 last_verified: 2026-05-21
 evidence: "GitHub API + official docs + local repository scan; not built locally because compiler bootstrap/build is large"
 archived_reason: ""

@@ -13,7 +13,7 @@ primary_language: "JavaScript/TypeScript/Lua"
 license: "MIT"
 stars: 5654
 forks: 437
-last_checked: 2026-05-21
+last_checked: 2026-07-18
 last_verified: 2026-05-21
 evidence: "GitHub API + official docs extraction + local repository scan; CLI not smoke-tested in this run"
 archived_reason: ""

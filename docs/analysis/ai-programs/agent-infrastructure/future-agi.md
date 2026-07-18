@@ -12,7 +12,7 @@ primary_language: "Python"
 license: "Apache-2.0"
 stars: 1061
 forks: 217
-last_checked: 2026-05-31
+last_checked: 2026-07-18
 last_verified: 2026-05-31
 evidence: "GitHub REST + GraphQL metadata, official docs extraction, and local shallow clone source/docs scan at commit 959d11e5dcc9450f63a67a56853cf5efa4057922. No Docker stack, SDK example, benchmark, eval run, or gateway traffic test was executed; performance and feature claims are treated as documentation/source claims unless explicitly marked as local scan facts."
 archived_reason: ""

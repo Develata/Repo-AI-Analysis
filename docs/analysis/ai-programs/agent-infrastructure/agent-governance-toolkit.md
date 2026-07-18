@@ -12,7 +12,7 @@ primary_language: "Python"
 license: "MIT"
 stars: 3431
 forks: 497
-last_checked: 2026-05-31
+last_checked: 2026-07-18
 last_verified: 2026-05-31
 evidence: "GitHub API + GraphQL metadata + official docs/PyPI extraction + local shallow clone source/docs scan. No dependency installation or full test suite was executed because the monorepo is large and multi-language; claims about package behavior are based on source/docs inspection, not runtime validation. Dockerfile exists but was only verified as a dev/integrated environment path, not as a mature production deployment image."
 archived_reason: ""

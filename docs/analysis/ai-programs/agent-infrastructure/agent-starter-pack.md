@@ -12,7 +12,7 @@ primary_language: "Python"
 license: "Apache-2.0"
 stars: 6454
 forks: 1482
-last_checked: 2026-05-31
+last_checked: 2026-07-18
 last_verified: 2026-05-31
 evidence: "GitHub REST/API + GraphQL metadata, official README/docs/successor migration docs, and local shallow clone scan. No generated project was created, no Terraform/Cloud Run/Agent Engine deployment was executed, and no Docker image was built; generated-template behavior is inferred from docs and source/templates."
 archived_reason: ""

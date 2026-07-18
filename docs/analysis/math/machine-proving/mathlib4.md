@@ -13,7 +13,7 @@ primary_language: "Lean"
 license: "Apache-2.0"
 stars: 3315
 forks: 1332
-last_checked: 2026-05-21
+last_checked: 2026-07-18
 last_verified: 2026-05-21
 evidence: "GitHub API + official README/docs + local repository scan; not fully built locally because mathlib build is large"
 archived_reason: ""
