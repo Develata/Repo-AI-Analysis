@@ -12,7 +12,7 @@ primary_language: "Rust"
 license: "Apache-2.0 OR MIT"
 stars: 17685
 forks: 2255
-last_checked: 2026-05-31
+last_checked: 2026-07-19
 last_verified: 2026-05-31
 evidence: "GitHub REST + GraphQL metadata, local shallow clone source/docs scan, and official repo docs. No binary install, Docker run, cargo build/test, desktop launch, or live agent execution was performed; README benchmark/test/security claims are treated as source/documentation claims unless separately verified by local file scan."
 archived_reason: ""

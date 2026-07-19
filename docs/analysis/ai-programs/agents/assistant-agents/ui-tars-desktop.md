@@ -20,7 +20,7 @@ primary_language: "TypeScript"
 license: "Apache-2.0"
 stars: 35752
 forks: 3600
-last_checked: 2026-05-31
+last_checked: 2026-07-19
 last_verified: 2026-05-31
 evidence: "GitHub API metadata + local shallow clone source scan + README/docs/changelog/security review; not runtime tested"
 archived_reason: ""

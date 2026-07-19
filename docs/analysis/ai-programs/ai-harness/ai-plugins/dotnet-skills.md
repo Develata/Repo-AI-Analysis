@@ -1,7 +1,7 @@
 ---
 title: ".NET Agent Skills"
 created: 2026-05-31
-updated: 2026-05-31
+updated: 2026-07-19
 type: repository-analysis
 repo_url: "https://github.com/dotnet/skills"
 category: "ai-programs/ai-harness/ai-plugins"
@@ -10,54 +10,58 @@ previous_repo: ""
 successor: ""
 primary_language: "C# / Markdown"
 license: "MIT"
-stars: 3192
-forks: 237
-last_checked: 2026-05-31
-last_verified: 2026-05-31
-evidence: "GitHub API metadata + local clone scan + workflow/source review + official Agent Skills/Codex docs review"
+stars: 4660
+forks: 344
+last_checked: 2026-07-19
+last_verified: 2026-07-19
+evidence: "GitHub REST/GraphQL metadata + current local clone/source/eval/workflow scan at ab72985132b79adcc4818d1fc5c41d9543f12498 + official Agent Skills/Codex docs review; no SkillValidator or model eval was executed locally"
 archived_reason: ""
 docker_support: false
 gpu_required: false
 estimated_cpu: "N/A for skill files; .NET SDK required for validator/evals"
 estimated_memory: "N/A for skill files; validator/evals depend on fixture and model run"
-estimated_storage: "~20 MB repo checkout excluding git history; tests/fixtures dominate"
+estimated_storage: "~15 MB tracked file bytes excluding git history; tests/fixtures dominate"
 status: active
 ratings:
   capability: 4
   usability: 3
   performance: 3
-  code_quality: 3
+  code_quality: 4
   documentation: 3
   community: 3
   maturity: 3
   extensibility: 4
   security: 3
   recommendation: 3
-overall_score: 3.2
+overall_score: 3.3
 sources:
-  - "[GH] https://github.com/dotnet/skills — GitHub REST/GraphQL checked 2026-05-31: created_at=2026-02-03T22:51:09Z, pushed_at=2026-05-29T21:56:07Z, stars=3192, forks=237, open issues=81, open PRs=37, commits=463, releases=skill-validator-nightly prerelease and v1.0.0, primary language=C#, license=MIT"
-  - "[GH:local-scan] /opt/data/tmp/repo-wiki-trending-2026-05-31/repos/dotnet-skills cloned 2026-05-31 at 4f78daf583208d85026199a8fef6a1ee6031cebd: 2114 files, 577 dirs, 92 SKILL.md under plugins, 93 eval.yaml, 16 agent markdown files, 14 plugin.json, 26 workflows, 25 skill-validator test files, workflow action refs: 394 commit-SHA pinned and 0 v-tag refs in local scan"
-  - "[GH:readme] https://github.com/dotnet/skills/blob/main/README.md — .NET team curated core skills and custom agents; installation for Copilot CLI/Claude Code, VS Code preview, Cursor, Codex CLI"
-  - "[GH:claude-marketplace] https://github.com/dotnet/skills/blob/main/.claude-plugin/marketplace.json — dotnet-agent-skills marketplace with 13 plugins and owner name `.NET Team at Microsoft`"
-  - "[GH:cursor-marketplace] https://github.com/dotnet/skills/blob/main/.cursor-plugin/marketplace.json — Cursor marketplace with same plugin list"
-  - "[GH:contributing] https://github.com/dotnet/skills/blob/main/CONTRIBUTING.md — high contribution bar, CODEOWNERS requirement, progressive disclosure guidance, eval.yaml requirement"
-  - "[GH:security] https://github.com/dotnet/skills/blob/main/SECURITY.md — Microsoft MSRC reporting process and Coordinated Vulnerability Disclosure policy"
-  - "[GH:validator-workflow] https://github.com/dotnet/skills/blob/main/.github/workflows/skill-validator.yml — builds/tests/packages SkillValidator across linux/windows/macos RIDs; actions are commit-SHA pinned in local scan"
-  - "[GH:evaluation-workflow] https://github.com/dotnet/skills/blob/main/.github/workflows/evaluation.yml — daily and /evaluate gated skill evaluation workflow using claude-opus-4.6 judge/model"
-  - "[GH:validator-csproj] https://github.com/dotnet/skills/blob/main/eng/skill-validator/src/SkillValidator.csproj — packages Microsoft.DotNet.SkillValidator 1.0.0; pins Nerdbank.MessagePack 1.1.62 to address GHSA-2cwq-pwfr-wcw3 transitive issue"
-  - "[GH:release] https://github.com/dotnet/skills/releases/tag/v1.0.0 — v1.0.0 release page checked 2026-05-31"
+  - "[GH] https://github.com/dotnet/skills — GitHub REST/GraphQL queried 2026-07-19: created_at=2026-02-03, default_branch=main, main=ab72985132b79adcc4818d1fc5c41d9543f12498 dated 2026-07-18, stars=4660, forks=344, open issues=128, open PRs=47, releases=3, latest release=v1.0.0, primary_language=C#, license=MIT"
+  - "[GH:community] GitHub community profile queried 2026-07-19: health_percentage=87; README/LICENSE/CONTRIBUTING/CODE_OF_CONDUCT/SECURITY/PR template detected; issue template not detected"
+  - "[GH:advisories] GitHub repository security-advisories API queried 2026-07-19; returned []"
+  - "[GH:local-scan] Local shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/repos/dotnet-skills at ab72985132b79adcc4818d1fc5c41d9543f12498: tracked files=2351, tracked bytes=15191017, markdown=637, SKILL.md=106, eval.yaml=98, agent markdown=17, workflows=26, SkillValidator test files=28, plugin.json=47, Claude marketplace entries=15, Codex plugin manifests=16; workflow uses refs=491 commit-SHA pinned / 0 v-tags; no validator/eval command executed"
+  - "[GH:readme] README.md at ab729851 checked 2026-07-19: .NET team curated core skills/custom agents; documents plugin installation for GitHub Copilot CLI, Claude Code, Cursor and Codex; Claude/Cursor marketplace now contains 15 plugins"
+  - "[GH:claude-marketplace] .claude-plugin/marketplace.json checked 2026-07-19: 15 .NET Team plugins — dotnet, dotnet-data, dotnet-advanced, dotnet-diag, dotnet-msbuild, dotnet-nuget, dotnet-upgrade, dotnet-test-migration, dotnet-maui, dotnet-ai, dotnet-template-engine, dotnet-test, dotnet-aspnetcore, dotnet-blazor and dotnet11"
+  - "[GH:cursor-marketplace] .cursor-plugin/marketplace.json checked 2026-07-19: same 15-plugin catalog for Cursor"
+  - "[GH:codex-plugins] Root `.codex-plugin/plugin.json` plus per-plugin manifests checked 2026-07-19: 16 Codex plugin manifests provide native installable distribution rather than only manual skill copying"
+  - "[GH:contributing] CONTRIBUTING.md checked 2026-07-19: high contribution bar, CODEOWNERS requirement, progressive disclosure, eval.yaml and good/bad fixtures, validator/evaluation commands and model-based grading guidance"
+  - "[GH:coc] CODE_OF_CONDUCT.md checked 2026-07-19; Microsoft Open Source Code of Conduct and reporting contacts are now present"
+  - "[GH:security] SECURITY.md checked 2026-07-19: Microsoft MSRC reporting process and Coordinated Vulnerability Disclosure policy"
+  - "[GH:validator-workflow] .github/workflows/skill-validator.yml checked 2026-07-19: builds/tests/packages SkillValidator across linux/windows/macos RIDs; workflow action refs remain commit-SHA pinned in current scan"
+  - "[GH:evaluation-workflow] .github/workflows/evaluation.yml checked 2026-07-19: daily and `/evaluate`-gated model evaluation with same-repo/fork trust split; workflow inspected but not executed locally"
+  - "[GH:validator-csproj] eng/skill-validator/src/SkillValidator.csproj checked 2026-07-19: packages Microsoft.DotNet.SkillValidator 1.0.0 and retains explicit Nerdbank.MessagePack pin for GHSA-2cwq-pwfr-wcw3 mitigation"
+  - "[GH:release] https://github.com/dotnet/skills/releases/tag/v1.0.0 checked 2026-07-19; v1.0.0 remains latest stable release"
   - "[Docs:agentskills] https://agentskills.io/specification — Agent Skills specification for SKILL.md and optional resources"
-  - "[Docs:codex-skills] https://developers.openai.com/codex/skills/ — Codex docs: skills are authoring format, plugins are installable distribution unit; progressive disclosure and initial skill-list budget"
-  - "[Docs:cursor-plugins] https://cursor.com/docs/plugins — Cursor docs: plugin bundles can include rules, skills, agents, commands, MCP servers, hooks"
-  - "[GH:anthropic-skills] https://github.com/anthropics/skills — same-category official Agent Skills reference, existing local analysis under ai-programs/agent-skills/anthropic-skills.md"
-  - "[GH:cursor-plugins] https://github.com/cursor/plugins — adjacent official Cursor plugin marketplace, existing local analysis in this batch"
+  - "[Docs:codex-skills] https://developers.openai.com/codex/skills/ — Codex docs for skills/plugins and progressive disclosure"
+  - "[Docs:cursor-plugins] https://cursor.com/docs/plugins — Cursor plugin component model"
+  - "[GH:anthropic-skills] https://github.com/anthropics/skills — same-category official Agent Skills reference; existing local analysis under ai-programs/ai-harness/skills/anthropic-skills.md"
+  - "[GH:cursor-plugins] https://github.com/cursor/plugins — adjacent official Cursor plugin marketplace; existing local analysis under ai-programs/ai-harness/ai-plugins/cursor-plugins.md"
 ---
 
 # .NET Agent Skills
 
 > Microsoft/.NET 团队维护的 .NET coding-agent skills 与插件 marketplace：覆盖 .NET、MSBuild、NuGet、test、ASP.NET、Blazor、MAUI、AI/ML、upgrade 等方向，并附带较重的 eval/validator 基础设施。
 >
-> **状态**: `active` · **总分**: 3.2/5 · **推荐度**: 3/5
+> **状态**: `active` · **总分**: 3.3/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
@@ -65,11 +69,11 @@ sources:
 
 ## 总体评价
 
-这是一个**领域型 Agent Skills/Plugins 仓库**。README 明确说它包含 .NET 团队 curated core skills and custom agents for coding agents，并指向 Agent Skills 标准；插件覆盖 dotnet、dotnet-data、dotnet-diag、dotnet-msbuild、dotnet-nuget、dotnet-upgrade、dotnet-maui、dotnet-ai、dotnet-template-engine、dotnet-test、dotnet-aspnet、dotnet-blazor、dotnet11 等 13 个方向 [GH:readme] [GH:claude-marketplace]。
+这是一个**领域型 Agent Skills/Plugins 仓库**。README 明确说它包含 .NET 团队 curated core skills and custom agents for coding agents，并指向 Agent Skills 标准；Claude/Cursor marketplace 当前覆盖 15 个方向，新版加入 `dotnet-advanced`、`dotnet-test-migration`，并将 ASP.NET 插件明确为 `dotnet-aspnetcore` [GH:readme][GH:claude-marketplace][GH:cursor-marketplace]。
 
-相比 Batch 2 的 `anthropics/skills` 和 Batch 4 的 `cursor/plugins`，它最突出的不是 marketplace 形态本身，而是**验证基础设施**：本地扫描确认有 92 个 `SKILL.md`、93 个 `eval.yaml`、16 个 agent definitions、26 个 workflows、25 个 SkillValidator 测试文件；`evaluation.yml` 还区分 same-repo/fork PR，采用 `/evaluate` gated workflow，daily schedule 全量评估，并用 `claude-opus-4.6` 作为 model/judge [GH:local-scan] [GH:evaluation-workflow]。这说明维护者把 skill 当作需要评测的工程资产，而不是静态提示词。
+相比 Batch 2 的 `anthropics/skills` 和 Batch 4 的 `cursor/plugins`，它最突出的不是 marketplace 形态本身，而是**验证基础设施**：本地扫描确认有 106 个 `SKILL.md`、98 个 `eval.yaml`、17 个 agent definitions、26 个 workflows、28 个 SkillValidator 测试文件；`evaluation.yml` 还区分 same-repo/fork PR，采用 `/evaluate` gated workflow 与 daily schedule [GH:local-scan][GH:evaluation-workflow]。这说明维护者把 skill 当作需要评测的工程资产，而不是静态提示词。
 
-但仍需保守。仓库创建于 2026-02，公开时间短；GitHub 显示 open issues=81、open PRs=37；v1.0.0 release 于 2026-04 发布，GraphQL metadata 还显示 `skill-validator-nightly` prerelease，但这不等价于长期稳定生态 [GH] [GH:release]。本地环境没有 `dotnet` CLI，无法实际跑 `dotnet test eng/skill-validator/SkillValidator.slnx`，本轮只做源码/工作流/元数据审查，未执行 validator/eval pipeline。因此总体评分 3.3，推荐度保守 3。
+但仍需保守。仓库创建于 2026-02，公开时间短；GitHub 显示 open issues=128、open PRs=47；v1.0.0 仍是 latest stable，不能等价为长期稳定生态 [GH][GH:release]。本地环境仍没有 `dotnet` CLI，本轮只做源码、工作流和元数据审查，未执行 validator/eval pipeline。因此 `code_quality` 按已成形的 eval/validator/ownership 基础设施给 4，但推荐度仍保守为 3。
 
 ## 推荐度：3/5
 
@@ -78,7 +82,7 @@ sources:
 推荐理由：
 - 领域权威性强：来自 Microsoft/.NET 团队，覆盖 .NET 生态核心任务 [GH:readme]。
 - 质量门槛清楚：CONTRIBUTING 要求 CODEOWNERS、progressive disclosure、验证步骤、eval.yaml、失败模式与 recovery guidance [GH:contributing]。
-- 工程验证明显重于同类：93 个 eval.yaml、SkillValidator 工具、daily/gated evaluation workflow，是 agent skills 生态中较少见的系统化质量设施 [GH:local-scan] [GH:evaluation-workflow]。
+- 工程验证明显重于同类：98 个 eval.yaml、SkillValidator 工具、daily/gated evaluation workflow，是 agent skills 生态中较少见的系统化质量设施 [GH:local-scan][GH:evaluation-workflow]。
 - 分发面广：README 给出 Copilot CLI/Claude Code、VS Code preview、Cursor、Codex CLI 等安装/兼容路径 [GH:readme]。
 
 保留意见：
@@ -92,11 +96,11 @@ sources:
 
 1. **官方领域团队维护**：README 称其为 .NET team curated skills，marketplace owner 为 `.NET Team at Microsoft`；内容覆盖 .NET 平台实际开发任务，领域背书强 [GH:readme] [GH:claude-marketplace]。
 2. **覆盖面完整**：MSBuild、NuGet、test、upgrade、ASP.NET、Blazor、MAUI、AI/ML、diagnostics、template engine 等都有独立 plugin [GH:readme]。
-3. **验证体系重**：93 个 `eval.yaml`、SkillValidator、daily/gated evaluation workflow，说明 skill 效果被纳入工程评测而非只靠人工阅读 [GH:local-scan] [GH:evaluation-workflow]。
+3. **验证体系重**：98 个 `eval.yaml`、SkillValidator、daily/gated evaluation workflow，说明 skill 效果被纳入工程评测而非只靠人工阅读 [GH:local-scan][GH:evaluation-workflow]。
 4. **贡献规范成熟**：要求 CODEOWNERS、每个 skill/agent 有 owner、描述必须包含 when/when not、正文建议 validation/common pitfalls，且 `SKILL.md` body 超 500 行需拆 references [GH:contributing]。
-5. **供应链细节较严谨**：本地扫描 26 个 workflows 中 action refs 为 394 个 commit-SHA pin、0 个 `@vN` tag refs；`SkillValidator.csproj` 明确 pin `Nerdbank.MessagePack` 修补 transitive vulnerability [GH:validator-workflow] [GH:validator-csproj]。
-6. **跨客户端分发**：同时有 `.claude-plugin`、`.cursor-plugin`、`.github/plugin` marketplace manifest，并声明 Codex/Agent Skills 标准兼容 [GH:readme]。
-7. **安全报告路径清楚**：使用 Microsoft MSRC 与 Coordinated Vulnerability Disclosure 流程 [GH:security]。
+5. **供应链细节较严谨**：本地扫描 26 个 workflows 中 491 个 action refs 全部 commit-SHA pinned；`SkillValidator.csproj` 明确 pin `Nerdbank.MessagePack` 修补 transitive vulnerability [GH:local-scan][GH:validator-workflow][GH:validator-csproj]。
+6. **跨客户端分发**：同时有 `.claude-plugin`、`.cursor-plugin`、`.github/plugin` 和 `.codex-plugin` manifests；当前 16 个 Codex manifests 说明 Codex 已从“文档兼容”发展为原生可安装分发面 [GH:readme][GH:codex-plugins]。
+7. **治理文件补齐**：除 Microsoft MSRC/CVD 安全报告路径外，当前仓库也已有 Microsoft Open Source Code of Conduct [GH:security][GH:coc][GH:community]。
 
 ## 劣势
 
@@ -104,8 +108,8 @@ sources:
 2. **领域强绑定**：非 .NET 用户直接收益有限；对 Develata 当前 Rust/Hermes/数学研究场景，主要价值在治理范式而非现成技能。
 3. **本地实测受限**：当前环境无 `dotnet` CLI，无法运行 SkillValidator tests；本轮对 eval/validator 的判断来自源码和 workflow，而非本机执行结果。
 4. **评测依赖模型和 judge**：`evaluation.yml` 使用 `claude-opus-4.6` 作为 model/judge；模型版本、成本、可用性和判分偏差都会影响 eval 结论 [GH:evaluation-workflow]。
-5. **仓库体量偏大**：2114 files 中 tests/fixtures 占多数；对只想阅读/安装少量 skills 的用户，认知负担较高 [GH:local-scan]。
-6. **开放 issue/PR 不低**：open issues=81、open PRs=37，说明仍在快速建设与消化反馈 [GH]。
+5. **仓库体量偏大**：2351 tracked files 中 tests/fixtures 占多数；对只想阅读/安装少量 skills 的用户，认知负担较高 [GH:local-scan]。
+6. **开放 issue/PR 不低**：open issues=128、open PRs=47，说明仍在快速建设与消化反馈 [GH]。
 7. **插件语义跨平台仍需验证**：README 声称支持 Copilot/Claude Code/VS Code/Cursor/Codex，但每个平台的 plugin/skill 语义、工具权限、context budget 并不完全相同 [GH:readme] [Docs:codex-skills] [Docs:cursor-plugins]。
 
 ---
@@ -139,23 +143,25 @@ sources:
 
 ## 它能做什么
 
-按 README 和 marketplace，本仓库当前包含 13 个主要插件 [GH:readme] [GH:claude-marketplace]：
+按 README 和 marketplace，本仓库当前包含 15 个主要插件 [GH:readme][GH:claude-marketplace]：
 
 1. `dotnet`：通用 .NET coding tasks。
 2. `dotnet-data`：.NET data access 与 Entity Framework。
-3. `dotnet-diag`：性能调查、debugging、incident analysis。
-4. `dotnet-msbuild`：MSBuild/build failure diagnosis、性能优化、modernization。
-5. `dotnet-nuget`：包管理、dependency modernization。
-6. `dotnet-upgrade`：框架版本、语言特性、兼容性迁移。
-7. `dotnet-maui`：MAUI 环境、诊断、navigation、data binding、DI、layout、theming。
-8. `dotnet-ai`：.NET AI/ML、LLM integration、agentic workflows、RAG、MCP、ML.NET。
-9. `dotnet-template-engine`：template discovery、scaffolding、template authoring。
-10. `dotnet-test`：测试运行、诊断、迁移、filtering、platform detection、MSTest。
-11. `dotnet-aspnet`：ASP.NET Core middleware、endpoints、real-time communication、API patterns。
-12. `dotnet-blazor`：Blazor components、interactivity、web app patterns。
-13. `dotnet11`：新 .NET 11 APIs 与语言特性。
+3. `dotnet-advanced`：高级 .NET runtime、performance、unsafe/native interop 等主题。
+4. `dotnet-diag`：性能调查、debugging、incident analysis。
+5. `dotnet-msbuild`：MSBuild/build failure diagnosis、性能优化、modernization。
+6. `dotnet-nuget`：包管理、dependency modernization。
+7. `dotnet-upgrade`：框架版本、语言特性、兼容性迁移。
+8. `dotnet-test-migration`：测试框架/平台迁移。
+9. `dotnet-maui`：MAUI 环境、诊断、navigation、data binding、DI、layout、theming。
+10. `dotnet-ai`：.NET AI/ML、LLM integration、agentic workflows、RAG、MCP、ML.NET。
+11. `dotnet-template-engine`：template discovery、scaffolding、template authoring。
+12. `dotnet-test`：测试运行、诊断、filtering、platform detection、MSTest。
+13. `dotnet-aspnetcore`：ASP.NET Core middleware、endpoints、real-time communication、API patterns。
+14. `dotnet-blazor`：Blazor components、interactivity、web app patterns。
+15. `dotnet11`：新 .NET 11 APIs 与语言特性。
 
-本地扫描确认还有 16 个 agent definition、92 个 skills、93 个 eval scenarios 文件，说明它不只是 skills 列表，也包含 custom agents 与测试 fixtures [GH:local-scan]。
+本地扫描确认还有 17 个 agent definitions、106 个 skills、98 个 eval scenario 文件，以及 16 个 Codex plugin manifests；它不只是 skills 列表，也包含 custom agents、测试 fixtures 与多客户端原生分发面 [GH:local-scan][GH:codex-plugins]。
 
 ## 运行环境与资源占用
 
@@ -178,29 +184,29 @@ README 给出多平台安装路径 [GH:readme]：
 - Copilot CLI / Claude Code：`/plugin marketplace add dotnet/skills` 后 `/plugin install <plugin>@dotnet-agent-skills`。
 - VS Code / VS Code Insiders preview：启用 `chat.plugins.enabled` 与 `chat.plugins.marketplaces`。
 - Cursor：在 Cursor marketplace 搜索 `.NET` 或从本地 checkout 导入。
-- Codex CLI：用 `skill-installer install https://github.com/dotnet/skills/tree/main/plugins/<plugin>/skills/<skill-name>` 安装单个 skill。
+- Codex CLI v0.121.0+：推荐先 `codex plugin marketplace add dotnet/skills`，再通过 `/plugins` 安装；也可用 `skill-installer` 单独安装一个 skill [GH:readme][GH:codex-plugins]。
 
 优点是路径多；缺点是每个平台的 plugin/skill 机制不同，用户需要知道自己 agent 的安装语义。Codex 文档还说明 skills 与 plugins 分工不同，skills 是 authoring format，plugins 是 installable distribution unit；初始 skill list 有 context budget，过多 skills 可能被截短或省略，这会造成 skill-selection failure 或相关技能未进入初始上下文 [Docs:codex-skills]。
 
 ## 代码质量
 
-评分 3/5。
+评分 4/5。
 
-这是本批次中工程治理信号较强的技能库之一；这里的 code_quality 主要评价基础设施质量，不等于 92 个 skills 的任务正确性都已被独立证明。证据包括：
+这是本批次中工程治理信号较强的技能库之一；这里的 code_quality 主要评价基础设施质量，不等于 106 个 skills 的任务正确性都已被独立证明。证据包括：
 
-- 92 个 `SKILL.md` 与 93 个 `eval.yaml` 基本一一配套，tests/fixtures 体量大 [GH:local-scan]。
-- CONTRIBUTING 明确要求每个 plugin/skill/agent 有 CODEOWNERS，且新增 plugin 要同步三个 marketplace manifests [GH:contributing]。
+- 106 个 `SKILL.md` 与 98 个 `eval.yaml`、大量 tests/fixtures 共同构成内容与行为验证面 [GH:local-scan]。
+- CONTRIBUTING 明确要求每个 plugin/skill/agent 有 CODEOWNERS，且新增 plugin 要同步各客户端 marketplace/plugin manifests [GH:contributing]。
 - SkillValidator 是实际 .NET tool project，打包为 `Microsoft.DotNet.SkillValidator`，有 unit tests，并在 workflow 中跨 RID build/test/pack [GH:validator-csproj] [GH:validator-workflow]。
-- 本地扫描 26 个 workflows 中 action refs 为 394 个 commit-SHA pin、0 个 `@vN` tag refs；供应链卫生明显强于一般示例库 [GH:local-scan] [GH:validator-workflow]。
+- 本地扫描 26 个 workflows 中 491 个 action refs 全部 commit-SHA pinned；供应链卫生明显强于一般示例库 [GH:local-scan][GH:validator-workflow]。
 - `SkillValidator.csproj` 明确记录并 pin transitive vulnerable dependency 的修复版本，说明维护者关注依赖安全细节 [GH:validator-csproj]。
 
-扣分原因：本轮未能执行 .NET tests；仓库年轻；eval 依赖模型判分，不能完全替代真实用户任务验证。按评分边界，未运行 validator/tests 时不宜把 workflow 配置和目录结构直接记为 4。
+不给 5 的原因：本轮未执行 .NET tests/evals；仓库年轻；model/judge 评测不能完全替代真实用户任务验证。4 分来自 current main 上可审计的 validator tests、eval corpus、ownership、跨 RID workflow 与全 SHA-pin actions，而非把“workflow 存在”当成运行通过证明。
 
 ## 可扩展性
 
 评分 4/5。
 
-扩展路径很清楚：新增 plugin 需要 `plugins/<plugin>/plugin.json`、`skills/`、对应 tests、CODEOWNERS，并同步 `.github/plugin/marketplace.json`、`.claude-plugin/marketplace.json`、`.cursor-plugin/marketplace.json` [GH:contributing]。新增 skill 需 `SKILL.md`，建议包含 purpose、when/when not、inputs、workflow、validation、common pitfalls；大文件用 progressive disclosure 拆 references [GH:contributing] [Docs:agentskills]。
+扩展路径很清楚：新增 plugin 需要 manifests、`skills/`、对应 tests、CODEOWNERS，并同步 Copilot/Claude/Cursor/Codex 的 catalog/plugin declarations [GH:contributing][GH:codex-plugins]。新增 skill 需 `SKILL.md`，建议包含 purpose、when/when not、inputs、workflow、validation、common pitfalls；大文件用 progressive disclosure 拆 references [GH:contributing][Docs:agentskills]。
 
 限制：这套体系为 .NET 团队实践优化；迁移到其他语言生态，需要重写 eval fixtures、validator assumptions 和 domain ownership。跨平台分发虽广，但不同 agent 对 tools、context、plugins、agents 的支持仍不完全一致。
 
@@ -216,8 +222,8 @@ README 清楚列出插件、安装方式、平台兼容与 dashboard 链接 [GH:
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 3/5 | 3192 stars、237 forks、open issues=81、open PRs=37，Microsoft/.NET 团队维护，2026-05-29 有 push [GH]。 |
-| 成熟度 | 3/5 | 有 v1.0.0 release、nightly SkillValidator prerelease、463 commits；但仓库创建于 2026-02，生态仍年轻 [GH] [GH:release]。 |
+| 社区活跃度 | 3/5 | 4660 stars、344 forks、open issues=128、open PRs=47，Microsoft/.NET 团队维护，main 于 2026-07-18 有提交；community health=87%，但 backlog 仍高 [GH][GH:community]。 |
+| 成熟度 | 3/5 | 有 v1.0.0 stable release、15 个 marketplace plugins 与成形的 eval/validator；但仓库创建于 2026-02，生态仍年轻 [GH][GH:release][GH:local-scan]。 |
 
 ## 安全与风险
 
@@ -225,9 +231,10 @@ README 清楚列出插件、安装方式、平台兼容与 dashboard 链接 [GH:
 
 正面信号：
 - Microsoft SECURITY.md 提供 MSRC 报告路径和 Coordinated Vulnerability Disclosure policy [GH:security]。
+- Microsoft Open Source Code of Conduct 已补齐，community profile health=87% [GH:coc][GH:community]。
 - Workflows 使用 commit SHA pin，减少 GitHub Action tag hijack 风险 [GH:validator-workflow]。
 - `SkillValidator.csproj` 对已知 transitive vulnerability 做显式 pin [GH:validator-csproj]。
-- 本地 `gh api repos/dotnet/skills/security-advisories` 返回 0；只能说明暂无 published advisories [GH]。
+- GitHub repository-advisory API 本轮返回空；只能说明此次未查到 published advisories，不能推出无漏洞 [GH:advisories]。
 
 保守风险：skills/agents 会影响 coding agent 行为，可能引导大规模代码修改、升级、测试迁移、NuGet 依赖变更；错误 skill 可能造成工程回归。eval workflow 还涉及模型调用、judge 输出和 CI token 权限；fork PR 安全模型虽有注释说明，但任何 evaluation pipeline 都需要持续审计 [GH:evaluation-workflow]。因此安全给 3，而非仅因 Microsoft 背书给 4；它更像 better-governed early ecosystem artifact，不是已证明生产安全的成熟技能库。
 
@@ -240,7 +247,7 @@ README 清楚列出插件、安装方式、平台兼容与 dashboard 链接 [GH:
 1. **Skill 需要 eval，而不是只写得漂亮**：`eval.yaml` 与 fixtures 是把 agent skill 工程化的关键。
 2. **Ownership 是治理基础**：每个 plugin/skill/agent 都要求 CODEOWNERS，避免无人负责的能力包漂流。
 3. **Progressive disclosure 有具体工程规则**：frontmatter description 短而精准，正文超过 500 行拆 references。
-4. **Marketplace 多端同步需要防漂移**：Claude/Cursor/GitHub plugin manifests 要一致，CONTRIBUTING 明确要求同步更新。
+4. **Marketplace 多端同步需要防漂移**：Claude/Cursor/Copilot/Codex manifests/catalogs 要一致，CONTRIBUTING 明确要求同步更新。
 5. **安全细节可落地**：commit-SHA-pinned actions、MSRC、transitive vuln pin 都是可迁移的治理动作。
 6. **评测也要有安全模型**：fork PR、issue_comment `/evaluate`、secret access 与 untrusted skill/test content 的边界需要文档化 [GH:evaluation-workflow]。
 7. **结构验证与行为验证分离**：validator/eval workflow 的存在只说明仓库有质量流程；每个具体 skill 在目标 repo、目标 agent、目标权限下仍需单独试跑。

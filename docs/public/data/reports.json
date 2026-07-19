@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 157,
+  "count": 158,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -3650,6 +3650,43 @@
       "summary": "Understand Anything 是面向 coding agents 的 code-understanding infrastructure：它不是单纯画图工具，而是把仓库扫描、LLM 语义分析、增量更新、agent skills 和本地 Dashboard 组合成一层“代码知识图谱 substrate”。"
     },
     {
+      "slug": "ai-programs/ai-harness/ai-plugins/agent-skills",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/agent-skills",
+      "title": "Agent Skills",
+      "repo_url": "https://github.com/addyosmani/agent-skills",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
+      "tags": [
+        "agent-skills",
+        "coding-agent",
+        "claude-code",
+        "cursor",
+        "codex",
+        "gemini-cli",
+        "engineering-workflow",
+        "non-software"
+      ],
+      "primary_language": "JavaScript / Shell / Markdown",
+      "stars": 79134,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.4,
+      "last_checked": "2026-07-19",
+      "updated": "2026-07-19",
+      "summary": "Agent Skills 是一组面向 AI coding agents 的 工程纪律注入包：24 个 skills、8 个 lifecycle slash commands、4 个 specialist personas、7 个 reference checklists，覆盖 Claude Code、Cursor、Gemini CLI、OpenCode、Co"
+    },
+    {
       "slug": "ai-programs/ai-chat-platforms/cherry-studio",
       "route": "/analysis/ai-programs/ai-chat-platforms/cherry-studio",
       "title": "Cherry Studio",
@@ -4064,7 +4101,7 @@
         "legacy"
       ],
       "primary_language": "Python",
-      "stars": 11412,
+      "stars": 12156,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -4079,8 +4116,8 @@
         "recommendation": 3
       },
       "overall_score": 3.4,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
+      "last_checked": "2026-07-19",
+      "updated": "2026-07-19",
       "summary": "PR-Agent 是 AI PR review 自动化的经典开源项目，功能面和平台覆盖仍有研究/自托管价值；但 README 明确称其为 Qodo 的 community-maintained legacy project，生产采用时应把治理、维护连续性、LLM 数据流与误报风险放在推荐度之前 [GH:readme][Docs:index]。"
     },
     {
@@ -4159,41 +4196,39 @@
       "summary": "Vibe Kanban 适合已经使用多个 coding-agent CLI、并想用 kanban board 管理任务、workspace、diff review 和 PR flow 的开发者；但由于 bloop 公司已关闭、项目转为 open-source/community maintained，它更适合作为 agent workflow infrast"
     },
     {
-      "slug": "ai-programs/ai-harness/ai-plugins/agent-skills",
-      "route": "/analysis/ai-programs/ai-harness/ai-plugins/agent-skills",
-      "title": "Agent Skills",
-      "repo_url": "https://github.com/addyosmani/agent-skills",
+      "slug": "ai-programs/ai-harness/ai-plugins/dotnet-skills",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/dotnet-skills",
+      "title": ".NET Agent Skills",
+      "repo_url": "https://github.com/dotnet/skills",
       "category": "ai-programs/ai-harness/ai-plugins",
       "directory": "ai-programs/ai-harness/ai-plugins",
       "tags": [
+        "dotnet",
+        "csharp",
         "agent-skills",
         "coding-agent",
-        "claude-code",
-        "cursor",
-        "codex",
-        "gemini-cli",
-        "engineering-workflow",
-        "non-software"
+        "evaluation",
+        "microsoft"
       ],
-      "primary_language": "Shell / JavaScript / Markdown",
-      "stars": 47150,
+      "primary_language": "C# / Markdown",
+      "stars": 4660,
       "status": "active",
       "ratings": {
         "capability": 4,
-        "usability": 4,
+        "usability": 3,
         "performance": 3,
-        "code_quality": 3,
-        "documentation": 4,
+        "code_quality": 4,
+        "documentation": 3,
         "community": 3,
-        "maturity": 2,
+        "maturity": 3,
         "extensibility": 4,
         "security": 3,
         "recommendation": 3
       },
       "overall_score": 3.3,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
-      "summary": "Agent Skills 是一组面向 AI coding agents 的 工程纪律注入包：23 个 skills、7 个 lifecycle slash commands、3 个 specialist personas、4 个 reference checklists，覆盖 Claude Code、Cursor、Gemini CLI、OpenCode、Co"
+      "last_checked": "2026-07-19",
+      "updated": "2026-07-19",
+      "summary": "`dotnet/skills` 是目前 agent-skills 生态中少见的“官方领域团队 + 大规模 eval fixtures + 跨 Copilot/Claude/Cursor/Codex 分发”的技能库；它对 .NET/C# 开发者有实用价值，对 Develata/Hermes 更大的价值是学习其 skill quality gate、CODEOW"
     },
     {
       "slug": "ai-programs/agents/assistant-agents/autogpt",
@@ -4521,41 +4556,6 @@
       "summary": "Superpowers 是一套把「软件工程纪律」编码为 agent skill 的框架——brainstorm → spec → plan → TDD → subagent-driven dev → review → ship，全链路流程由 skill 自动触发，而非靠 agent 自觉遵守。适合希望 agent 像 senior engineer 一样工作"
     },
     {
-      "slug": "ai-programs/ai-harness/ai-plugins/dotnet-skills",
-      "route": "/analysis/ai-programs/ai-harness/ai-plugins/dotnet-skills",
-      "title": ".NET Agent Skills",
-      "repo_url": "https://github.com/dotnet/skills",
-      "category": "ai-programs/ai-harness/ai-plugins",
-      "directory": "ai-programs/ai-harness/ai-plugins",
-      "tags": [
-        "dotnet",
-        "csharp",
-        "agent-skills",
-        "coding-agent",
-        "evaluation",
-        "microsoft"
-      ],
-      "primary_language": "C# / Markdown",
-      "stars": 3192,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 3,
-        "performance": 3,
-        "code_quality": 3,
-        "documentation": 3,
-        "community": 3,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.2,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
-      "summary": "`dotnet/skills` 是目前 agent-skills 生态中少见的“官方领域团队 + 大规模 eval fixtures + 跨 Copilot/Claude/Cursor/Codex 分发”的技能库；它对 .NET/C# 开发者有实用价值，对 Develata/Hermes 更大的价值是学习其 skill quality gate、CODEOW"
-    },
-    {
       "slug": "ai-programs/agents/assistant-agents/aionui",
       "route": "/analysis/ai-programs/agents/assistant-agents/aionui",
       "title": "AionUi",
@@ -4773,7 +4773,7 @@
         "recommendation": 3
       },
       "overall_score": 3.2,
-      "last_checked": "2026-05-31",
+      "last_checked": "2026-07-19",
       "updated": "2026-05-31",
       "summary": "UI-TARS Desktop / Agent TARS 是一个能力很强、工程投入也真实的 multimodal computer-use agent stack：它把视觉定位、浏览器控制、MCP 工具、桌面 GUI 操作和 Web UI/CLI 包进一个 TypeScript monorepo；但版本仍在 0.3.0、issue 积压高、远程 operat"
     },
@@ -4808,7 +4808,7 @@
         "recommendation": 3
       },
       "overall_score": 3.1,
-      "last_checked": "2026-05-31",
+      "last_checked": "2026-07-19",
       "updated": "2026-05-31",
       "summary": "12-Factor Agents 是一份值得收录的 agent 工程方法论：它不是可直接部署的框架，而是把 production LLM software 的关键纪律整理成 12 条可讨论、可迁移、可落地的原则 [GH:readme]。"
     },
@@ -4932,7 +4932,7 @@
         "supply-chain"
       ],
       "primary_language": "Python / Markdown / TypeScript",
-      "stars": 28762,
+      "stars": 32294,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -4947,8 +4947,8 @@
         "recommendation": 3
       },
       "overall_score": 3.1,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
+      "last_checked": "2026-07-19",
+      "updated": "2026-07-19",
       "summary": "`anthropics/claude-plugins-official` 是值得作为样本跟踪的 Claude Code plugin marketplace：它展示了 Anthropic 如何把 skills、agents、hooks、MCP servers、commands 和外部 git sources 组织成官方插件目录；但它不是“安全白名单”，REA"
     },
     {
@@ -4986,7 +4986,7 @@
         "recommendation": 3
       },
       "overall_score": 3.1,
-      "last_checked": "2026-05-31",
+      "last_checked": "2026-07-19",
       "updated": "2026-05-31",
       "summary": "OpenFang 是 OpenClaw / ZeroClaw 这一类自托管个人 agent assistant 的 Rust-heavy 变体：它把 autonomous scheduled agents、multi-channel adapters、skills、desktop app、MCP/A2A 和安全控制面整合成一个“Agent OS”，值得收录跟"
     },
@@ -5011,8 +5011,8 @@
         "docker",
         "sandbox"
       ],
-      "primary_language": "Python",
-      "stars": 81564,
+      "primary_language": "Go",
+      "stars": 85335,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -5027,8 +5027,8 @@
         "recommendation": 3
       },
       "overall_score": 3.1,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
+      "last_checked": "2026-07-19",
+      "updated": "2026-07-19",
       "summary": "RAGFlow 是一个把 deep document understanding、知识库、RAG workflow、agent canvas、sandbox code execution、MCP/API 与多数据源连接器收束到同一平台里的大型 RAG/agentic workflow repo；它值得收录，但不是“轻量 RAG 库”，也不应在未审计、未加固的"
     },
     {
@@ -5282,7 +5282,7 @@
         "recommendation": 3
       },
       "overall_score": 3,
-      "last_checked": "2026-05-31",
+      "last_checked": "2026-07-19",
       "updated": "2026-05-31",
       "summary": "`anthropics/knowledge-work-plugins` 是 Anthropic 将 Claude Cowork 从“通用 agent”推向“角色化知识工作 agent”的样板库：每个 plugin 用 markdown/JSON 文件声明 skills、commands、MCP connectors 和角色流程，让 Claude 更像某个业务"
     },
@@ -5607,7 +5607,7 @@
         "recommendation": 3
       },
       "overall_score": 2.9,
-      "last_checked": "2026-05-31",
+      "last_checked": "2026-07-19",
       "updated": "2026-05-31",
       "summary": "`cursor/plugins` 值得加入 wiki，不是因为它已经是成熟生态，而是因为它展示了 Cursor 对「coding agent 能力包」的官方形态：一个 Git 仓库作为 marketplace，根 manifest 列出插件，每个插件再携带 `.cursor-plugin/plugin.json`、`skills/`、`agents/`、`r"
     },
@@ -5719,6 +5719,41 @@
       "last_checked": "2026-06-07",
       "updated": "2026-06-07",
       "summary": "OpenAI 官方 Codex plugin examples 仓库，展示 `.codex-plugin/plugin.json` manifest、skills、MCP、commands、hooks 等分发形态；适合作为格式样本，不适合无审查批量安装。 [GH:readme]"
+    },
+    {
+      "slug": "ai-programs/ai-harness/guides/agent-engineering/schema-harness",
+      "route": "/analysis/ai-programs/ai-harness/guides/agent-engineering/schema-harness",
+      "title": "Schema Harness",
+      "repo_url": "https://github.com/schema-harness/schema-harness.github.io",
+      "category": "ai-programs/ai-harness/guides/agent-engineering",
+      "directory": "ai-programs/ai-harness/guides/agent-engineering",
+      "tags": [
+        "agent-harness",
+        "world-model",
+        "program-synthesis",
+        "arc-agi-3",
+        "mechanism-discovery",
+        "non-software"
+      ],
+      "primary_language": "HTML",
+      "stars": 4,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 2,
+        "documentation": 4,
+        "community": 1,
+        "maturity": 1,
+        "extensibility": 1,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 2.6,
+      "last_checked": "2026-07-20",
+      "updated": "2026-07-20",
+      "summary": "Schema Harness 适合正在设计 verification-first agent workflow、希望把“belief → prediction → falsification → planning → controlled action”做成硬约束的研究者；它当前最值得采用的是方法，不是代码，因为公开 GitHub repository 只有"
     }
   ]
 }

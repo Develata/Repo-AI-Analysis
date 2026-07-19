@@ -12,7 +12,7 @@ primary_language: "TypeScript / Markdown"
 license: "MIT per plugin directories; GitHub API root license field unavailable"
 stars: 1416
 forks: 116
-last_checked: 2026-05-31
+last_checked: 2026-07-19
 last_verified: 2026-05-31
 evidence: "GitHub API metadata + local clone scan + schema validation + Cursor plugin docs review"
 archived_reason: ""

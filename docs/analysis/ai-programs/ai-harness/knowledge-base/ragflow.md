@@ -1,20 +1,20 @@
 ---
 title: "RAGFlow"
 created: 2026-05-31
-updated: 2026-05-31
+updated: 2026-07-19
 type: repository-analysis
 repo_url: "https://github.com/infiniflow/ragflow"
 category: "ai-programs/ai-harness/knowledge-base"
 tags: ["rag", "agentic-workflow", "context-engine", "document-understanding", "knowledge-base", "ai-search", "self-hosted", "python", "typescript", "go", "docker", "sandbox"]
 previous_repo: ""
 successor: ""
-primary_language: "Python"
+primary_language: "Go"
 license: "Apache-2.0"
-stars: 81564
-forks: 9371
-last_checked: 2026-05-31
-last_verified: 2026-05-31
-evidence: "GitHub REST/GraphQL metadata, repository security-advisory API, local shallow clone source/docs scan, README/pyproject/docker/security/contributing review, and local docs/ guide inspection at commit cd18cfab79578bc0e2797b2614afde44f1e0a411. No Docker Compose stack, web UI, ingestion pipeline, document parsing, agent workflow, sandbox, MCP server, API call, benchmark, or security regression test was executed."
+stars: 85335
+forks: 9969
+last_checked: 2026-07-19
+last_verified: 2026-07-19
+evidence: "GitHub REST/GraphQL metadata, repository security-advisory API, v0.26.4 release notes, and local shallow clone source/docs scan at b8d06d02e6f0e5ad3591e0c8e63cdaca3ee6697c. No Docker Compose stack, web UI, ingestion pipeline, document parsing, agent workflow, sandbox, MCP server, API call, benchmark, Go/Python test suite, or security regression test was executed."
 archived_reason: ""
 docker_support: true
 gpu_required: false
@@ -36,21 +36,21 @@ ratings:
 overall_score: 3.1
 sources:
   - "[GH] https://github.com/infiniflow/ragflow"
-  - "[GH:api] GitHub REST/repo snapshot 2026-05-31: stars=81564, forks=9371, open_issues_count=3186 including PRs, created_at=2023-12-12, pushed_at=2026-05-29, primary_language=Python, license=Apache-2.0, homepage=https://ragflow.io, latest_release=v0.25.6"
-  - "[GH:graphql] GitHub GraphQL snapshot 2026-05-31: default branch main commit=cd18cfab79578bc0e2797b2614afde44f1e0a411, commits=6462, open issues=2947, open PRs=239, merged PRs=6489, releases=47, discussions=591, security policy enabled"
-  - "[GH:languages] GitHub languages API snapshot 2026-05-31: Python=9870337, TypeScript=6071640, Go=4054760, C++=1578137, C=162468, Shell=61656, Less=41916, CSS=17283, Dockerfile=11946, JavaScript=10865"
-  - "[GH:community] GitHub community profile snapshot 2026-05-31: health_percentage=62; README, LICENSE and PR template detected; CODE_OF_CONDUCT, contributing and issue_template not detected by community API; contributors first page returned 100"
-  - "[GH:advisories] GitHub repository security-advisories API snapshot 2026-05-31: 7 advisories returned; sampled advisories are reported by the repository advisory API as SSTI/RCE-class issues, including GHSA-wpg4-h5g2-jxm6 / CVE-2026-45312 affecting <=0.24.0 and GHSA-vvwj-fvwh-4whx / CVE-2026-28797 for v0.24.0; API output did not list patched_versions for the sampled advisories, and this analysis did not reproduce or independently verify exploitability on latest v0.25.6"
-  - "[GH:local-scan] Local shallow clone /opt/data/tmp/repo-wiki-trending-2026-05-31/batch10/repos/ragflow at commit cd18cfab79578bc0e2797b2614afde44f1e0a411 dated 2026-05-29; git ls-files=3231, workflows=2, test-ish files=449, markdown=203; LOC heuristic Python~253k, Go~140k, TSX~107k, TS~71k; Dockerfile/compose files found for root, docker/, agent/sandbox and executor-manager paths; checked README.md, pyproject.toml, docker/docker-compose.yml, SECURITY.md, docs/develop/contributing.md and docs/guides/agent/*"
-  - "[GH:readme] README.md local scan 2026-05-31: positions RAGFlow as open-source RAG engine/context layer with Agent capabilities; documents cloud, self-host, latest updates, DeepDoc, chunking, citations, heterogeneous sources, automated RAG workflow and prerequisites CPU>=4 cores/RAM>=16GB/Disk>=50GB/Docker>=24/Compose>=2.26.1/Python>=3.13/gVisor for code executor"
-  - "[GH:pyproject] pyproject.toml local scan 2026-05-31: package ragflow 0.25.6, Python >=3.13,<3.15, very broad dependencies including browser-use, crawl4ai, mcp, litellm, many model/provider/data-source clients, document parsers, vector/search/database clients and test dependency group"
-  - "[GH:docker] docker/docker-compose.yml local scan 2026-05-31: includes docker-compose-base, ragflow-cpu/gpu services, admin server command, ports 80/443/9380/9381/9382/9384/9383, env_file .env, service_conf and entrypoint mounts, and commented MCP server command flags"
-  - "[GH:security-file] SECURITY.md local scan 2026-05-31: file contains a stale/default supported-version table and a detailed report about restricted_loads/numpy pickle RCE risk rather than a clean coordinated disclosure policy"
-  - "[GH:contributing] docs/develop/contributing.md local scan 2026-05-31: documents issue reporting, PR workflow, splitting large PRs, adding tests for new features and requiring CI tests before merge"
-  - "[Docs:agent-intro] docs/guides/agent/agent_introduction.md local scan 2026-05-31: page is marked DEPRECATED; describes RAGFlow v0.8.0 agent mechanism as no-code workflow editor plus graph-based task orchestration on top of RAG, with templates such as Deep research"
-  - "[Docs:sandbox] docs/guides/agent/agent_quickstarts/sandbox_quickstart.md local scan 2026-05-31: CodeExec component needs sandbox provider; providers include self_managed/local/ssh/aliyun_codeinterpreter/e2b; prerequisites include gVisor, Docker 25+, Compose 2.26.1 and uv; local provider should be used only in trusted development environments; self-managed uses Docker/gVisor-style isolated containers"
-  - "[Docs:dataset] Local docs scan 2026-05-31: dataset guides cover configuring knowledge bases, metadata, auto-metadata, RAPTOR, knowledge graph, PageIndex/table-of-contents extraction, retrieval tests and data sources including Google Drive/Notion/Discord/GitHub/Confluence/Bitbucket"
-  - "[Docs:api] Local docs scan 2026-05-31: docs/references/http_api_reference.md and python_api_reference.md exist; web_extract against several ragflow.io/docs/dev URLs returned 404 in this run, so this analysis relies on repo-local docs for official documentation evidence"
+  - "[GH:api] GitHub REST/GraphQL snapshot 2026-07-19: main=b8d06d02e6f0e5ad3591e0c8e63cdaca3ee6697c dated 2026-07-18, stars=85335, forks=9969, open issues=1782, open PRs=368, releases=58, latest=v0.26.4 published 2026-07-16, primary_language=Go, license=Apache-2.0, security policy enabled"
+  - "[GH:languages] GitHub languages API snapshot 2026-07-19: Go=16607821, Python=12784165, TypeScript=6054997, C++=2608704, Svelte=539076, C=162911, Shell=68631, Less=41916, CSS=17611, Dockerfile=13765, JavaScript=10865; Go has become the largest GitHub language, but the repo remains multi-language"
+  - "[GH:community] GitHub community profile snapshot 2026-07-19: health_percentage=62; README, LICENSE and PR template detected; CODE_OF_CONDUCT, issue template and clean API-detected contribution surface remain incomplete despite repo-local contributing docs"
+  - "[GH:advisories] GitHub repository security-advisories API snapshot 2026-07-19: 7 advisories returned, unchanged in count from the 2026-05 audit; sampled RCE/SSTI-class entries include GHSA-wpg4-h5g2-jxm6 / CVE-2026-45312 and GHSA-vvwj-fvwh-4whx / CVE-2026-28797; API output does not provide a clean current-version safety conclusion, and no exploit or regression test was reproduced"
+  - "[GH:release] https://github.com/infiniflow/ragflow/releases/tag/v0.26.4 checked 2026-07-19: latest patch adds language-aware stemming for multi-language full-text retrieval; this release alone does not explain the broader Go growth"
+  - "[GH:local-scan] Local shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/repos/ragflow at b8d06d02e6f0e5ad3591e0c8e63cdaca3ee6697c: tracked files=3862, tracked bytes=53880242, markdown=223, workflows=5, test-ish files=566, Dockerfiles=7; Go=566 files/15236094 bytes, Python=1488 files/11909527 bytes, TypeScript=714 files/5097832 bytes; no build/test/runtime command executed"
+  - "[GH:readme] README.md at b8d06d02 checked 2026-07-19: positions RAGFlow as open-source RAG engine with Agent capabilities; documents cloud/self-host, DeepDoc, chunking/citations, heterogeneous sources, automated RAG workflow and prerequisites CPU>=4/RAM>=16GB/Disk>=50GB/Docker>=24/Compose>=2.26.1/Python>=3.13/gVisor for code executor"
+  - "[GH:pyproject] pyproject.toml checked 2026-07-19: package ragflow 0.26.4, Python >=3.13,<3.15, broad dependencies spanning browser/crawl/MCP/LiteLLM/model providers/data sources/document parsers/vector-search/database clients and tests"
+  - "[GH:docker] docker/docker-compose.yml checked 2026-07-19: includes base services plus ragflow-cpu/gpu, exposes web/API/admin/MCP and Go HTTP/admin ports 80/443/9380/9381/9382/9384/9383, mounts env/config/log paths, and retains commented MCP server examples"
+  - "[GH:security-file] SECURITY.md checked 2026-07-19: still contains a stale/default supported-version table followed by a restricted_loads/numpy-pickle RCE report rather than a clean coordinated disclosure policy"
+  - "[GH:contributing] docs/develop/contributing.md checked 2026-07-19: issue/PR workflow, splitting large changes, adding tests for features and design detail for breaking/API changes"
+  - "[Docs:agent-intro] docs/guides/agent/agent_introduction.md checked 2026-07-19: legacy page remains marked DEPRECATED; describes no-code graph workflow mechanism and Deep research template"
+  - "[Docs:sandbox] docs/guides/agent/agent_quickstarts/sandbox_quickstart.md checked 2026-07-19: CodeExec needs a sandbox provider; local is for trusted development only, while self-managed uses Docker/gVisor-style isolation and external providers are also supported"
+  - "[Docs:dataset] Current repo-local dataset docs checked 2026-07-19: knowledge-base configuration, metadata/auto-metadata, RAPTOR, knowledge graph, PageIndex/TOC extraction, retrieval tests and multiple data-source connectors"
+  - "[Docs:api] Current repo-local docs/references/http_api_reference.md and python_api_reference.md checked 2026-07-19; API docs include multiple explicit deprecation markers, so clients should pin and regression-test the version they operate"
 ---
 
 # RAGFlow
@@ -58,7 +58,7 @@ sources:
 > 大而全的 RAG / context-engine / agentic workflow 平台：文档理解和知识库能力很强，适合研究企业级 RAG platform 形态；但资源重、issue backlog 极高、历史 RCE advisory 严重，生产采用必须先过安全与运维审计。
 >
 > **状态**: `active` · **总分**: 3.1/5 · **推荐度**: 3/5
-> **核验版本**: commit `cd18cfab79578bc0e2797b2614afde44f1e0a411`；GitHub / local clone / repo-local docs 快照 2026-05-31
+> **核验版本**: commit `b8d06d02e6f0e5ad3591e0c8e63cdaca3ee6697c`；GitHub / local clone / repo-local docs 快照 2026-07-19
 > **验证边界**: 本轮未启动 Docker Compose、未登录 Web UI、未跑文档解析/索引/检索、未执行 Agent/CodeExec/sandbox/MCP/API、未复现安全 advisory 或 benchmark；所有能力与资源判断均来自 README/docs/source scan。
 
 ## 一句话总结
@@ -71,7 +71,9 @@ RAGFlow 是一个把 deep document understanding、知识库、RAG workflow、ag
 
 它与 Dify/Flowise 同属低代码/平台化 agent workflow 大类，但 RAGFlow 的重心更偏 **RAG quality and context engine**：文档理解、chunking、metadata、RAPTOR、knowledge graph、PageIndex、retrieval tests、grounded citations、多源同步等都围绕“把复杂材料变成可检索上下文”展开 [Docs:dataset]。
 
-正面看，RAGFlow 能力广、社区热、迭代快、Apache-2.0 许可边界相对清晰，且 README 给出的 self-host 资源要求、Docker Compose、gVisor sandbox prerequisite 都比较具体 [GH:api][GH:readme]。负面看，它是大型多语言多服务系统：open issues=2947、open PRs=239、历史 security advisories=7，且 sampled advisories 被 repository advisory API 报告为 authenticated SSTI/RCE 类问题 [GH:graphql][GH:advisories]。高 stars 不能抵消安全、维护和运维风险。
+正面看，RAGFlow 能力广、社区热、迭代快、Apache-2.0 许可边界相对清晰，且 README 给出的 self-host 资源要求、Docker Compose、gVisor sandbox prerequisite 都比较具体 [GH:api][GH:readme]。负面看，它是大型多语言多服务系统：open issues=1782、open PRs=368、历史 security advisories=7，且 sampled advisories 被 repository advisory API 报告为 SSTI/RCE 类问题 [GH:api][GH:advisories]。issue 数较前次下降，但 PR backlog 上升且绝对积压仍大；高 stars 不能抵消安全、维护和运维风险。
+
+本轮另一项实质变化是语言重心：GitHub 当前把 Go 列为 primary language，languages API 中 Go 约 16.6 MB，高于 Python 约 12.8 MB；本地 tracked bytes 也显示 Go 已超过 Python [GH:languages][GH:local-scan]。这不能直接推出“Python 后端迁移完成”——仓库仍有更多 Python 文件、Python 3.13 runtime 和庞大 Python dependency surface——但说明 Go 服务层已从配角变成主要代码体量之一，迁移/并存期的接口与运维复杂度必须纳入评估。
 
 所以结论是：值得分析、值得跟踪、可在隔离环境 POC；生产采用需要像审 Dify/Flowise 一样审权限、网络、tenant、sandbox、LLM key、文件数据、升级路径和漏洞修复状态。
 
@@ -92,19 +94,20 @@ RAGFlow 是一个把 deep document understanding、知识库、RAG workflow、ag
 
 1. **RAG 能力面很宽**：DeepDoc 文档理解、template chunking、grounded citations、多格式数据源、metadata、RAPTOR、knowledge graph、PageIndex 等构成完整 context pipeline [GH:readme][Docs:dataset]。
 2. **平台化完整**：Web UI、knowledge base、chat、agent canvas、HTTP/Python API、Docker Compose、admin server、MCP command flags、sandbox provider 都可见 [GH:docker][Docs:api][Docs:sandbox]。
-3. **工程体量真实**：本地扫描有 3231 tracked files，Python/TypeScript/Go/C++ 多语言，test-ish files=449，Docker/sandbox/executor-manager 路径齐全 [GH:local-scan]。
-4. **社区与维护活跃**：81k+ stars、9k+ forks、merged PRs=6489、releases=47、discussions=591，说明项目可见度和维护吞吐都高 [GH:api][GH:graphql]。
+3. **工程体量真实**：本地扫描有 3862 tracked files，Go/Python/TypeScript/C++ 多语言，test-ish files=566，Docker/sandbox/executor-manager 路径齐全 [GH:local-scan]。
+4. **社区与维护活跃**：85k+ stars、9.9k+ forks、58 releases，main 持续更新；这是可见度与维护活动信号，但不是生产质量证明 [GH:api]。
 5. **Apache-2.0 许可边界相对清晰**：GitHub API 报告 license=Apache-2.0，便于初步评估代码采用边界 [GH:api]。
 6. **资源/部署文档比较具体**：README 明确 CPU/RAM/Disk/Docker/Python/gVisor 前提，避免了“看似轻量”的错觉 [GH:readme]。
 
 ## 劣势
 
-1. **安全历史问题严重**：sampled advisories 被 repository advisory API 报告为 SSTI/RCE-class issues，且涉及 Agent workflow / prompt generator / Text Processing / Message component 这类核心路径；本轮未复现，也未独立确认 latest v0.25.6 是否完全不受影响 [GH:advisories]。
-2. **issue backlog 极高**：GraphQL 快照显示 open issues=2947、open PRs=239；这对平台可靠性和维护响应都是强负面信号 [GH:graphql]。
+1. **安全历史问题严重**：sampled advisories 被 repository advisory API 报告为 SSTI/RCE-class issues；本轮未复现，也未独立确认 latest v0.26.4 是否完全不受影响 [GH:advisories]。
+2. **维护 backlog 仍极高**：快照显示 open issues=1782、open PRs=368；issue 数下降不抵消 PR 积压上升和绝对规模，这仍是平台可靠性与响应能力的强负面信号 [GH:api]。
 3. **系统很重**：README 要求 CPU >=4 cores、RAM >=16GB、Disk >=50GB，Docker stack 又包含数据库、对象存储、Redis、搜索/vector、nginx、admin/MCP/Go ports 等 [GH:readme][GH:docker]。
 4. **Agent 文档有迁移痕迹**：agent introduction 页面标注 DEPRECATED，说明 agent workflow 文档/机制可能正处于重写或迭代中 [Docs:agent-intro]。
 5. **SECURITY.md 状态不理想**：文件保留默认 supported versions 文案，并夹有具体 RCE 报告内容，不像成熟项目的协调披露政策 [GH:security-file]。
 6. **依赖面极宽**：pyproject 覆盖模型 provider、爬虫、browser-use、MCP、文档解析、数据库/vector、企业协作 SaaS 等大量依赖，功能强但供应链和升级复杂度高 [GH:pyproject]。
+7. **语言重心正在变化**：Go 已成为 GitHub primary language，但 Python runtime/dependencies 仍是核心；跨语言接口、部署、observability 与回归测试复杂度上升 [GH:languages][GH:local-scan][GH:pyproject]。
 
 ---
 
@@ -180,9 +183,9 @@ README 的 quickstart 很明确：clone repo、进入 docker 目录、检查 `vm
 
 评分 3/5。
 
-正面信号：大项目结构清楚，api/rag/deepdoc/agent/web/docker/sdk/test 等路径可见；本地扫描有 449 个 test-ish 文件、2 个 workflows、Python/TypeScript/Go/C++ 多语言实现；CONTRIBUTING 要求新功能加测试并通过 CI [GH:local-scan][GH:contributing]。
+正面信号：大项目结构清楚，api/rag/deepdoc/agent/web/docker/sdk/test 等路径可见；本地扫描有 566 个 test-ish 文件、5 个 workflows、Go/Python/TypeScript/C++ 多语言实现；CONTRIBUTING 要求新功能加测试并通过 CI [GH:local-scan][GH:contributing]。
 
-扣分也明显：open issues=2947、open PRs=239；SECURITY.md 不规范；历史 RCE/SSTI advisories 指向核心 agent/prompt/template 代码路径；依赖面极宽，维护复杂度高 [GH:graphql][GH:advisories][GH:pyproject]。本轮没有运行测试或覆盖率审计，因此只能给 3。
+扣分也明显：open issues=1782、open PRs=368；SECURITY.md 不规范；历史 RCE/SSTI advisories 指向高风险处理路径；依赖面极宽，且 Go/Python 重心变化增加过渡复杂度 [GH:api][GH:advisories][GH:pyproject][GH:languages]。本轮没有运行任何测试或覆盖率审计；按活跃跨语言演进的保守边界，代码质量维持 3。
 
 ## 可扩展性
 
@@ -204,8 +207,8 @@ README、repo-local docs、HTTP/Python API references、sandbox quickstart、dat
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | 81k+ stars、9k+ forks、merged PRs=6489、releases=47、discussions=591、contributors first page=100；可见度和维护活动很强 [GH:api][GH:graphql][GH:community] |
-| 成熟度 | 2/5 | latest v0.25.6、nightly prerelease、open issues=2947、open PRs=239、critical RCE advisories、Agent docs deprecated；平台仍在快速演进且风险未低 [GH:graphql][GH:advisories][Docs:agent-intro] |
+| 社区活跃度 | 4/5 | 85335 stars、9969 forks、58 releases，main 持续更新；可见度和维护活动很强，但 community health=62%、open PRs=368，治理负载仍重 [GH:api][GH:community] |
+| 成熟度 | 2/5 | latest v0.26.4、open issues=1782、open PRs=368、7 个 repository advisories、Agent docs deprecated、语言重心变化；平台仍在快速演进且风险未低 [GH:api][GH:advisories][GH:languages][Docs:agent-intro] |
 
 社区给 4，不给 5：community profile 62%，缺 CODE_OF_CONDUCT/issue template，SECURITY.md 不规范。成熟度给 2，是因为大型平台的成熟度要看稳定性、漏洞姿态、issue 压力和升级风险，不能被 stars 冲淡。
 
@@ -215,7 +218,7 @@ README、repo-local docs、HTTP/Python API references、sandbox quickstart、dat
 
 RAGFlow 的安全问题必须放在推荐之前，而不是附录。
 
-正面信号：GitHub API 显示 security policy enabled；存在 security advisories 机制；sandbox docs 明确 local provider 只应在 trusted development environments 使用，并给出 gVisor/self-managed container 前提 [GH:graphql][Docs:sandbox]。
+正面信号：GitHub API 显示 security policy enabled；存在 security advisories 机制；sandbox docs 明确 local provider 只应在 trusted development environments 使用，并给出 gVisor/self-managed container 前提 [GH:api][Docs:sandbox]。
 
 主要风险：
 

@@ -12,7 +12,7 @@ primary_language: "Python / Markdown"
 license: "Apache-2.0"
 stars: 18199
 forks: 2140
-last_checked: 2026-05-31
+last_checked: 2026-07-19
 last_verified: 2026-05-31
 evidence: "GitHub API metadata + local clone scan + official Anthropic Cowork/product docs review"
 archived_reason: ""

@@ -12,7 +12,7 @@ primary_language: "TypeScript / Markdown"
 license: "Apache-2.0 code + CC-BY-SA-4.0 README/content notice"
 stars: 22835
 forks: 1739
-last_checked: 2026-05-31
+last_checked: 2026-07-19
 last_verified: 2026-05-31
 evidence: "GitHub API metadata + local shallow clone scan + content review; methodology not production-benchmarked in this run"
 archived_reason: ""
