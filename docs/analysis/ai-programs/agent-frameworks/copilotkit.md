@@ -1,26 +1,26 @@
 ---
 title: "CopilotKit"
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-07-21
 type: repository-analysis
 repo_url: "https://github.com/CopilotKit/CopilotKit"
 category: "ai-programs/agent-frameworks"
-tags: [agent-framework, generative-ui, ag-ui, react, frontend-sdk, human-in-the-loop, typescript, nx]
+tags: [agent-framework, generative-ui, ag-ui, react, frontend-sdk, human-in-the-loop, channels, typescript, nx]
 previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
 license: "MIT"
-stars: 33135
-forks: 4234
-last_checked: 2026-06-07
-last_verified: 2026-06-07
-evidence: "GitHub API metadata + official README/docs/examples + local shallow clone scan of monorepo structure, package scripts, CONTRIBUTING and SECURITY; no app/runtime smoke test, package build, or AG-UI integration run was performed"
+stars: 31116
+forks: 4314
+last_checked: 2026-07-21
+last_verified: 2026-07-21
+evidence: "GitHub REST/GraphQL metadata, official docs, release/advisory APIs and local repository scan at commit d2a4beddb9a4c27f4a275ae0b40ab24d88720e2f; Node/pnpm install, build, tests, examples, Channels adapters and hosted Cloud paths were not executed"
 archived_reason: ""
 docker_support: false
 gpu_required: false
 estimated_cpu: "Heuristic: ordinary Node/TypeScript build/runtime; app-specific backend/model cost external"
-estimated_memory: "Heuristic: moderate for development monorepo; runtime footprint depends on host app and agent backend, not measured"
-estimated_storage: "Local clone scan: 17010 files, about 122 MB excluding .git"
+estimated_memory: "Heuristic: moderate for development monorepo; runtime footprint depends on host app, agent backend, memory and channels, not measured"
+estimated_storage: "Local scan: 18,381 tracked paths; checkout bytes omitted because assets/LFS materialization can distort the number"
 status: active
 ratings:
   capability: 4
@@ -30,179 +30,156 @@ ratings:
   documentation: 4
   community: 4
   maturity: 3
-  extensibility: 5
+  extensibility: 4
   security: 3
   recommendation: 4
-overall_score: 3.8
+overall_score: 3.7
 sources:
   - "[GH] https://github.com/CopilotKit/CopilotKit"
-  - "[GH:api] GitHub REST/GraphQL snapshot on 2026-06-07: stars=33135, forks=4234, created_at=2023-06-19, pushed_at=2026-06-06, primary language=TypeScript, license=MIT, GraphQL open issues=320, open PRs=211, REST open_issues_count=531, commits=10809, latest sampled releases include v1.59.5/v1.59.4/v1.59.3."
-  - "[GH:languages] GitHub languages API on 2026-06-07: TypeScript=31759219 bytes, MDX=3273029, Python=2552150, CSS=531103, C#=322441, Vue=278085, Shell=269464, Java=269305, Ruby=268652, HTML=266469, JavaScript=170570, Dockerfile=82532."
-  - "[GH:community] GitHub community profile API on 2026-06-07: README, MIT license, Code of Conduct, CONTRIBUTING and PR template present; securityPolicyUrl=https://github.com/CopilotKit/CopilotKit/security/policy."
-  - "[GH:advisories] GitHub repository security-advisories API returned 0 advisories on 2026-06-07; absence of advisories is not proof of absence of vulnerabilities."
-  - "[GH:readme] README.md fetched/local clone checked 2026-06-07: CopilotKit positions itself as SDK for full-stack agentic applications, Generative UI and chat; supports React/Next.js GA plus Angular/Vue/React Native; features include chat UI, backend tool rendering, generative UI, shared state, HITL, early-access self-learning; quick start uses npx copilotkit@latest create/init; AG-UI protocol is central."
-  - "[Docs:home] https://docs.copilotkit.ai/ extracted 2026-06-07: docs position CopilotKit as frontend stack for agentic UX; provides chat components, headless UI, generative UI and AG-UI-compatible backend integrations including built-in agent, LangGraph, Deep Agents, Google ADK, AWS Strands, Mastra, PydanticAI, Microsoft Agent Framework, AG2, Agno, LlamaIndex and CrewAI."
-  - "[Docs:ag-ui] https://docs.copilotkit.ai/ag-ui-protocol extracted 2026-06-07: AG-UI is a lightweight event-based protocol standardizing how AI agents connect to user-facing applications; developed by CopilotKit team and agent framework partners."
-  - "[Docs:examples] https://www.copilotkit.ai/examples extracted 2026-06-07: examples include Chat with your data, Travel Planner, State Machine Copilot, Form Filling Copilot, Project Manager and Research Canvas."
-  - "[Source:local-scan] Local shallow clone at /opt/data/tmp/repo_wiki_trending_20260607/repos/CopilotKit, checked 2026-06-07: 17010 files, about 122 MB excluding .git; root includes AGENTS.md, package.json, pnpm-workspace.yaml, nx.json, packages/, examples/, showcase/, docs/, sdk-python/, SECURITY.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md and 39 GitHub workflow files."
-  - "[Source:agents] AGENTS.md local clone checked 2026-06-07: describes CopilotKit as AI agent framework with Frontend -> Runtime -> Agent layers communicating via AG-UI event-based SSE; Nx monorepo; packages under packages/; references architecture/hooks/workflow docs."
-  - "[Source:package] package.json local clone checked 2026-06-07: private Nx/pnpm monorepo; scripts include build, build:examples, check-types, lint, format, test, test:coverage, Storybook, docs, publint, package checks, plugin-skills checks and parity verification; engines Node >=18; packageManager pnpm@10.33.4; pnpm overrides pin many vulnerable transitive dependency ranges."
-  - "[Source:contributing] CONTRIBUTING.md local clone checked 2026-06-07: asks contributors to reach out before significant work; docs for live site are under showcase/shell-docs/src/content while top-level docs/ is retired; development prerequisites Node 20+ and pnpm; branch/commit conventions documented."
-  - "[Source:security] SECURITY.md local clone checked 2026-06-07: security@copilotkit.ai disclosure path, acknowledgement target within 48 hours, investigation within 5 business days, resolution target within 30 days."
+  - "[GH:api] GitHub REST/GraphQL snapshot 2026-07-21: archived=false, disabled=false, default_branch=main, head=d2a4beddb9a4c27f4a275ae0b40ab24d88720e2f, pushed_at=2026-07-20T22:00:27Z, stars=31116, forks=4314, open issues=250, open PRs=82, primary_language=TypeScript, license=MIT"
+  - "[GH:languages] GitHub languages API snapshot 2026-07-21: TypeScript=26823674, Python=3970584, MDX=2335924, JavaScript=2294135, CSS=2074084, Shell=51977, Vue=14809, HTML=8965"
+  - "[GH:community] GitHub community/profile and contributors endpoints queried 2026-07-21: health_percentage=100, first-page contributors=100, CONTRIBUTING/CODE_OF_CONDUCT/SECURITY/PR template/license/readme present"
+  - "[GH:advisories] GitHub repository security-advisories API queried 2026-07-21; returned [] in this check"
+  - "[GH:readme] README.md local scan 2026-07-21: framework centers generative/headless UI, shared state/context, frontend actions, HITL and AG-UI interoperability; README also advertises Channels beyond browser as early access"
+  - "[GH:releases] GitHub releases API snapshot 2026-07-21: 562 release objects; latest core v1.63.1 published 2026-07-16; Channels v0.2.1 published 2026-07-17; v1.62.3 adds user-scoped long-term memory, stateless suggestions and Threads Drawer redesign; Channels v0.2.0 publishes synchronized Slack/Teams/Discord/Telegram/WhatsApp adapters"
+  - "[GH:security-release] CopilotKit v1.61.1 release notes published 2026-06-23: react-ui sanitizes raw HTML in Markdown renderer to close an XSS injection path; current latest core release is v1.63.1"
+  - "[Docs:home] https://docs.copilotkit.ai/ extracted 2026-07-21: docs cover generative UI, chat, actions, HITL, shared state, suggestions, agent integrations, self-hosting and observability"
+  - "[Docs:ag-ui] https://docs.copilotkit.ai/ag-ui-protocol extracted 2026-06-07; retained as a historical protocol-definition source: AG-UI is an event-based protocol for connecting agent backends to user-facing applications; current docs home separately rechecked 2026-07-21"
+  - "[Source:local-scan] Local shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/evidence/repos/CopilotKit at commit d2a4beddb9a4c27f4a275ae0b40ab24d88720e2f: git ls-files=18381, markdown/MDX=3079, workflows=43, test-ish paths=2103; inspected package.json, pnpm-workspace.yaml, SECURITY.md, packages/channels/README.md, packages/ and examples/; no build/tests executed"
+  - "[Source:package] root package.json inspected 2026-07-21: Node >=18, pnpm 10.33.4, Nx 22.7.5, Vitest 4.1.3, Oxlint/Oxfmt, build/typecheck/test/storybook/package-verification and Channels verification scripts"
+  - "[Source:channels] packages/channels/README.md inspected 2026-07-21: JSX-first multi-platform channel engine with adapters for Slack, Teams, Discord, Telegram and WhatsApp; core and adapters can also be installed selectively"
+  - "[Source:security] SECURITY.md inspected 2026-07-21: security@copilotkit.ai disclosure path, 48-hour acknowledgement target, 5-business-day investigation target and 30-day resolution target"
   - "[L1:autogen] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/agent-frameworks/autogen.md"
   - "[L1:crewai] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/agent-frameworks/crewai.md"
+  - "[L1:semantic-kernel] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/agent-frameworks/semantic-kernel.md"
 ---
 
 # CopilotKit
 
-> Agent-native frontend stack：把 chat UI、Generative UI、shared state、human-in-the-loop 和 AG-UI protocol 接到 React/Next/Angular/Vue/React Native 等用户界面上；Slack/Teams 属于 README 中提到的 beyond-the-browser/early-access 方向，采用前需单独确认边界。
+> Agent-native frontend stack：把 chat、Generative UI、shared state、HITL、AG-UI、memory 和 multi-platform Channels 接到真实产品界面。
 >
-> **状态**: `active` · **总分**: 3.8/5 · **推荐度**: 4/5
->
-> **验证边界**：本次检查了 GitHub API、README、官方 docs/examples、SECURITY/CONTRIBUTING、package scripts 与本地浅克隆结构；没有运行 `npx copilotkit@latest create/init`，没有 build monorepo，也没有接入真实 LangGraph/CrewAI/Mastra/AG-UI backend 做 smoke test [GH:api][GH:readme][Docs:home][Source:local-scan]。
+> **状态**: `active` · **总分**: 3.7/5 · **推荐度**: 4/5
+> **核验版本**: commit `d2a4beddb9a4c27f4a275ae0b40ab24d88720e2f` / core `v1.63.1` / Channels `v0.2.1`；GitHub/API 快照 2026-07-21
+> **验证边界**: 本轮未运行 scaffolder、monorepo build/tests、真实 AG-UI backend、memory tenancy 或 Channels adapter；结论来自官方 source/docs/release surface。
 
 ## 一句话总结
 
-CopilotKit 是给 agent 应用补“用户界面层”的 TypeScript/React 主线框架：当你的 agent backend 已经存在，但还缺 chat surface、generative UI、shared state、HITL 和跨前端框架接入时，它正好站在 agent runtime 与最终用户之间 [GH:readme][Docs:home]。
+CopilotKit 是给 agent 应用补“用户交互层”的强候选：浏览器内覆盖 chat、generative UI、shared state、frontend actions 和 HITL，浏览器外开始以 Channels 0.2.x 覆盖 Slack、Teams、Discord、Telegram、WhatsApp；能力广，但 monorepo、release line 与安全边界同样复杂 [GH:readme][GH:releases][Source:channels]。
 
 ## 总体评价
 
-在 agent framework 生态里，CopilotKit 的定位不是 AutoGen/CrewAI/LangGraph 那类“怎么编排 agent 推理”，而是“怎么把 agent 的交互搬进真实产品 UI”。README 把它定义为 SDK for full-stack agentic applications、Generative UI、chat applications，并强调同一个 agent 可以进入 web、mobile、Slack/Teams 等用户已有 surface [GH:readme]。
+它的中心不是 AutoGen/CrewAI/LangGraph 那类“如何编排 agent reasoning”，而是 Frontend → Runtime → Agent 之间如何通信、展示、确认和接管。AG-UI 把 backend events 标准化，CopilotKit 在其上提供 React/Next 等 UI primitives、state/actions/HITL 与 agent integrations [Docs:home][Docs:ag-ui]。
 
-这使它在 `ai-programs/agent-frameworks` 中很有辨识度：它连接 Frontend、Runtime、Agent 三层，通过 AG-UI event-based protocol/SSE 通信；官方 docs 也把 CopilotKit 写成 AG-UI-compatible backend 的 frontend stack，列出 LangGraph、Mastra、PydanticAI、Microsoft Agent Framework、CrewAI 等后端入口 [Docs:home][Docs:ag-ui][Source:agents]。
+2026-07 的变化具有分析后果：core v1.62.3 加入 user-scoped long-term memory、stateless suggestions 和 Threads Drawer 重构；Channels v0.2.0/0.2.1 把五个平台 adapter 统一为可发布 package family [GH:releases][Source:channels]。因此，“Slack/Teams 只是一句 early-access 宣传”的旧判断已不完整；更准确的说法是：README 仍把 beyond-browser 标为 early access，但 repo 与 registry release surface 已经公开，稳定性要按独立 0.2.x 版本线评估。
 
-优点是生态位清楚、文档和 examples 很强、monorepo 工程化程度高；主要风险是 open issues/PR backlog 很高，功能面扩张快，AG-UI/Generative UI/early-access self-learning 等边界仍在演进。它适合“我要给 agent 做产品 UI”的团队，不适合把它误当成通用 multi-agent runtime。
+工程面很强：18,381 tracked paths、43 workflows、2,103 test-ish paths，Nx/pnpm、typecheck/test/coverage、Storybook、publint、attw 与 package verifier 都在 [Source:local-scan][Source:package]。代价是体量和集成矩阵很大，不能把“示例丰富”外推为所有 backend/channel 组合已成熟。
 
 ## 推荐度：4/5
 
-**目标角色**：适合正在构建 agent-native Web/Mobile/enterprise app 的前端或全栈团队，尤其是已有 LangGraph/CrewAI/Mastra/PydanticAI/Microsoft Agent Framework 等 agent backend，但希望快速接入 chat、generative UI、shared state 和 human-in-the-loop 的开发者；Slack/Teams 等 beyond-the-browser surface 需按 early-access/商业边界另行验证。
+**目标角色**：已有 agent backend、需要构建 agent-native Web/Mobile/enterprise UI，或需要把同一 agent 交互延伸到 team messaging channels 的前端/全栈团队。
 
-推荐理由：agent 应用的难点不只是 backend reasoning，还是“如何把不确定的 agent 行为呈现为可控、可交互、可确认的 UI”。CopilotKit 正面处理这个问题：Chat components、Headless UI、Generative UI、AG-UI、HITL 和 shared state 都围绕产品交互层设计 [GH:readme][Docs:home]。
+推荐它作为 agent UX 层 shortlist：生态位清楚、能力完整、AG-UI 互操作和工程资产都强。生产采用需 pin core 与 Channels 两条版本线，优先 self-host runtime，给 tools/actions 做 server-side authorization 和 allowlist，为 memory 做 tenant/user isolation，为 channel identity 做绑定与审计。
 
-保守项：如果你的需求是研究 multi-agent planning、任务分解、工具调用策略，CopilotKit 不是第一站；如果你只想做简单 chatbot，它可能偏重。生产采用前还要审查 AG-UI backend、LLM provider、tool rendering、user data、enterprise/cloud/self-learning 的边界。
-
-结论：**值得收录和试用；对 agent product UI 是强候选，对底层 agent orchestration 只是相邻组件。**
+若只需简单 streaming chat，或者需求核心是 multi-agent planning/runtime，它偏重且不在中心位置。
 
 ## 优势
 
-1. **生态位明确**：不是又一个 agent runtime，而是 agent UX/frontend stack；这个层次在 agent 产品化里非常关键 [Docs:home][Source:agents]。
-2. **AG-UI protocol 加持**：AG-UI 被定义为 lightweight event-based protocol，用来标准化 agent backend 与 user-facing app 的连接 [Docs:ag-ui]。
-3. **UI primitives 丰富**：chat components、headless UI、generative UI、shared state、HITL、backend tool rendering 都是实际产品中高频需要的能力 [GH:readme][Docs:home]。
-4. **多框架/多后端覆盖**：README 声称 React/Next.js GA，Angular/Vue/React Native supported；docs 还列出多种 agent backend integration [GH:readme][Docs:home]。
-5. **工程化 monorepo**：Nx/pnpm、check-types、lint、format、test、coverage、Storybook、publint、parity verification、39 个 GitHub workflow 等，显示维护体系较成熟 [Source:package][Source:local-scan]。
-6. **治理文件齐全**：CONTRIBUTING、CODE_OF_CONDUCT、SECURITY 都存在，security response 目标写得清楚 [GH:community][Source:security][Source:contributing]。
+1. **生态位明确**：专注 agent UX/frontend，而非重复造 orchestration runtime [Docs:home][Docs:ag-ui]。
+2. **UI primitives 完整**：chat/headless UI、Generative UI、shared state、frontend actions、HITL 都是产品级高频需求 [GH:readme][Docs:home]。
+3. **backend 互操作广**：AG-UI 对接多种 agent framework，降低前端与特定 runtime 的耦合 [Docs:home][Docs:ag-ui]。
+4. **新增 memory 与 channels**：user-scoped long-term memory 进入 core；Channels 同步发布五个平台 adapter [GH:releases][Source:channels]。
+5. **工程治理强**：大型 monorepo 具备丰富 tests/workflows、package verification、SECURITY 与社区文件 [Source:local-scan][Source:package][GH:community]。
 
 ## 劣势
 
-1. **backlog 很高**：2026-06-07 GraphQL 显示 open issues=320、open PRs=211；REST open_issues_count=531，与两者相加一致，说明维护压力真实存在 [GH:api]。
-2. **产品边界复杂**：open-source SDK、AG-UI protocol、CopilotKit Cloud/Intelligence/Enterprise、Slack/Teams early access/self-learning 等混在同一叙事中，采用时必须分清 repo 可审计能力与商业产品能力 [GH:readme]。
-3. **monorepo 体量大**：本地浅克隆 17010 files、约 122 MB；对只想嵌一个小 chat 组件的人，工程复杂度不低 [Source:local-scan]。
-4. **性能未实测**：没有运行示例或测 bundle/runtime；Generative UI、shared state、SSE 和多后端连接的真实性能取决于具体 app 与 backend。
-5. **agent UI 的安全面大**：tool rendering、generative UI、HITL、user context、backend tools 和 LLM output 共同进入前端，必须防 prompt injection、权限误触发和数据泄露。
+1. **backlog 仍高**：当前 250 open issues、82 open PRs；活跃维护不能抹去 triage/compatibility 压力 [GH:api]。
+2. **monorepo 与产品边界复杂**：OSS SDK、AG-UI、Cloud/Enterprise/Intelligence、memory 与 Channels 混在同一生态叙事中。
+3. **两条 release line**：core v1.63.x 与 Channels v0.2.x 需分别 pin、升级和回归；Channels 0.2.0 还包含 clean-break rename [GH:releases]。
+4. **性能未实测**：bundle、SSE、state sync、memory 和各 channel adapter 的运行成本取决于实际 app/backend。
+5. **安全面大**：LLM output、dynamic UI、tools/actions、state、memory、channel identity 与 observability 都跨越 trust boundary。
 
 ---
 
 ## 适合什么场景
 
-- 已有 agent backend，需要接入产品前端 UI。
-- React/Next.js 项目要加入 copilot chat/sidebar/popup、headless agent UI 或 generative UI [GH:readme][Docs:home]。
-- 希望用 AG-UI 统一 LangGraph、Mastra、CrewAI、PydanticAI 等不同 agent backend 的 user-facing interface [Docs:home][Docs:ag-ui]。
-- 需要 human-in-the-loop approvals、shared state、tool-rendered UI 的企业内部 agent app。
-- 研究 agent UX / generative UI / AG-UI protocol 这一层的工程设计。
+- 已有 LangGraph/CrewAI/Mastra/PydanticAI 等 backend，需要接入用户界面。
+- React/Next 项目要加入 chat、headless UI、generative UI、shared state 与 HITL。
+- 要用统一 channel abstraction 接 Slack、Teams、Discord、Telegram、WhatsApp。
+- 研究 AG-UI、agent UX、memory 和 human-control patterns。
 
 ## 不适合什么场景
 
-- 只想构建底层 multi-agent orchestration、planner、memory 或 tool runtime。
-- 纯后端 batch agent，没有用户交互界面的工作流。
-- 极简 chatbot，无法接受 monorepo/SDK/协议复杂度。
-- 高安全环境中尚未建立前端 tool rendering 与 backend action 的 least-privilege/human confirmation policy。
-- 不愿处理 JS/TypeScript/Nx/pnpm 工程栈的团队。
+- 只构建底层 multi-agent planner/runtime，没有用户交互面。
+- 极简 chatbot，无法接受 SDK/protocol/monorepo 复杂度。
+- 无法建立 action allowlist、server authorization、memory tenancy 与 channel identity policy 的高安全系统。
+- 不愿维护 Node/TypeScript/Nx/pnpm 工程栈的团队。
 
 ## 与类似项目对比
 
 | 项目 | 定位 | 相对本项目 |
-|------|------|-----------|
-| CopilotKit | agent UX/frontend stack + AG-UI | 更偏用户界面、Generative UI、HITL、shared state 与多前端接入 |
-| AutoGen | conversational/multi-agent framework | AutoGen 更偏 agent runtime/AgentChat/Core 历史线；CopilotKit 更偏把 agent 接到产品 UI [L1:autogen] |
-| CrewAI | role-based agents + Crews/Flows | CrewAI 管 agent/team/workflow 建模；CopilotKit 管这些 agent 如何被用户在前端使用 [L1:crewai] |
-| LangGraph | stateful graph agent workflow | LangGraph 更偏图状态与控制流；CopilotKit 常作为它的前端交互层 |
-| AG-UI protocol | agent-user interaction protocol | AG-UI 是协议/生态参照项，不是本条深审的同一 GitHub repo；CopilotKit 是围绕 AG-UI 的产品级 SDK [Docs:ag-ui] |
+|------|------|------------|
+| AutoGen | conversational/multi-agent runtime | AutoGen 更偏 agent runtime；CopilotKit 更偏最终用户 UI 与 interaction protocol [L1:autogen] |
+| CrewAI | role-based agents + Crews/Flows | CrewAI 管 team/workflow；CopilotKit 管这些 agent 如何进入产品交互面 [L1:crewai] |
+| Semantic Kernel | enterprise agent/application SDK | Semantic Kernel 更偏 backend orchestration/connectors；CopilotKit 更偏 frontend/AG-UI interaction [L1:semantic-kernel] |
 
-上述项目按 `ai-programs/agent-frameworks` 同类/相邻范围做定位级对比；AutoGen/CrewAI 基于本地 wiki 已收录条目，LangGraph/AG-UI 仅作生态 positioning 参照，未在本条目重新深审。
+以上为同类目录内的定位级比较，三项均使用本地 wiki 条目；本轮没有重新按同一 10 维框架审计比较对象，表格不构成相对质量 benchmark。
 
 ---
 
 ## 它能做什么
 
-- 提供 chat UI primitives：CopilotChat、CopilotSidebar、CopilotPopup、Headless UI 等 [Docs:home]。
-- 支持 Generative UI：agent 可以动态生成/更新 UI components，backend tools 也可以返回 UI rendering [GH:readme]。
-- 提供 shared state：agent 与 UI components 可以读写同步状态 [GH:readme]。
-- 支持 human-in-the-loop：agent 在执行前请求用户输入、确认或编辑 [GH:readme]。
-- 通过 AG-UI 接入多种 agent backend，包括官方 docs 列出的 LangGraph、Mastra、PydanticAI、Microsoft Agent Framework、CrewAI 等 [Docs:home][Docs:ag-ui]。
-- 提供 examples：Chat with your data、Travel Planner、State Machine Copilot、Form Filling Copilot、Project Manager、Research Canvas 等 [Docs:examples]。
+capability 评分 4/5：
+
+- 提供 chat/headless/generative UI components [GH:readme][Docs:home]。
+- 让 agent 读取/修改 shared state，调用 frontend actions，并插入 HITL checkpoints [GH:readme][Docs:home]。
+- 通过 AG-UI 接多种 agent backend [Docs:ag-ui]。
+- 提供 user-scoped long-term memory 的 runtime endpoints、React hook 与 inspector surface [GH:releases]。
+- 通过 Channels 用 JSX-first API 接 Slack、Teams、Discord、Telegram、WhatsApp [Source:channels]。
+- 提供 examples、self-hosting、Cloud/observability 路径 [Docs:home]。
+
+不给 5：这些代表广度，不代表每个 backend/channel/memory boundary 都已稳定并实测。
 
 ## 运行环境与资源占用
 
 | 场景 | CPU | 内存 | 存储 | 说明 |
 |------|-----|------|------|------|
-| SDK 使用 | 普通 Node/前端开发环境 | 取决于宿主 app | npm/pnpm 依赖体量未实测 | React/Next 等项目内嵌使用，LLM/backend 资源外置 |
-| Monorepo 开发 | 普通开发机，建议多核 | 中等到偏高，未实测 | clone 约 122 MB excluding .git | Nx/pnpm monorepo，packages/examples/docs/showcase 很多 [Source:local-scan] |
+| SDK 使用 | 普通 Node/前端环境 | 随宿主 app/backend | npm/pnpm 依赖未实测 | 模型成本通常外置 |
+| Monorepo 开发 | 建议多核 | 中等至偏高 | 18,381 tracked paths | packages/examples/docs 很大 [Source:local-scan] |
 
-- **运行时**：Node >=18；CONTRIBUTING 建议 Node 20+、pnpm；packageManager 为 pnpm@10.33.4 [Source:package][Source:contributing]。
-- **操作系统**：普通 JS/TS 前端开发环境；Windows 需 Developer Mode 以支持 symlink [Source:contributing]。
-- **Docker**：repo 有 Dockerfile 语言占比，但本次未验证官方一等 Docker self-host 路径，因此 frontmatter 设为 `docker_support: false` [GH:languages]。
-- **GPU**：不需要；模型推理资源由后端/provider 决定。
-- **外部依赖**：具体 agent backend、LLM provider、SSE/runtime、可能的 CopilotKit Cloud/enterprise 服务。
+- **运行时**：Node >=18，packageManager `pnpm@10.33.4` [Source:package]。
+- **Docker**：仓库虽含 Docker-related files，但本轮未验证官方 published image 为主用户路径，故 `docker_support: false`。
+- **GPU**：SDK 不需要；模型推理由 backend/provider 决定。
+- **存储口径**：不使用当前 clone bytes，因为 assets/LFS materialization 会扭曲比较 [Source:local-scan]。
 
 ## 上手体验
 
-评分 4/5。
-
-README 的 quick start 很直接：新项目 `npx copilotkit@latest create -f <framework>`，已有项目 `npx copilotkit@latest init`；docs 也按 chat components/headless UI/generative UI/backend integrations 分入口 [GH:readme][Docs:home]。对 React/Next.js 用户，上手路径清晰。
-
-扣分点在于真实场景不只是安装 SDK：你还要选 agent backend、处理 AG-UI 事件流、定义 tools/actions、做权限确认、把 UI 状态与 agent 状态对齐。对前端团队是合理复杂度；对只想快速搭 demo 的个人可能偏重。
+评分 4/5。scaffolder、prebuilt UI、docs 和 examples 提供清楚入口 [GH:readme][Docs:home]。真实产品仍要设计 AG-UI transport、tools/actions、auth、state/memory ownership 与 error recovery；对前端团队是合理复杂度，对 demo 用户可能偏重。本轮未实际运行 quick start。
 
 ## 代码质量
 
-评分 4/5。
-
-工程信号较强：Nx monorepo、pnpm workspace、typed packages、lint/format/test/coverage、Storybook、publint、parity verification、plugin skill check、39 个 workflow、SECURITY/CONTRIBUTING/CODE_OF_CONDUCT 都存在 [Source:package][Source:local-scan][GH:community]。package.json 还用 pnpm overrides 固定大量存在已知漏洞范围的 transitive dependency，这至少说明依赖风险治理在做 [Source:package]。
-
-不打 5：本次没有执行 build/test；open PR/issue backlog 高，且 monorepo 跨 TypeScript/MDX/Python/C#/Vue/Java/Ruby 等语言，维护复杂度实际很高 [GH:api][GH:languages]。
+评分 4/5。Nx/pnpm、typed packages、Vitest、typecheck/lint/format/coverage、Storybook、publint/attw、Channels verification、43 workflows 和 2,103 test-ish paths构成较强静态工程信号 [Source:package][Source:local-scan]。不给 5：未执行 build/tests，跨语言和 18k+ path 的维护复杂度高，backlog 仍显著 [GH:api][GH:languages]。
 
 ## 可扩展性
 
-评分 5/5。
-
-CopilotKit 的核心价值就在扩展面：AG-UI 抽象 agent backend，前端 primitives 抽象用户界面，docs 还列出大量 backend framework integrations [Docs:home][Docs:ag-ui]。在应用层，开发者可以从 prebuilt chat 到 headless UI，再到 generative UI 和 custom tools/state/HITL 逐级深入。
-
-这个 5/5 是按“API/integration surface 的广度”给的，不表示任意 backend adapter 的可靠性都已被验证，也不表示本次实际跑通过所有集成；具体能力仍取决于其 AG-UI adapter 和应用自身设计。
+评分 4/5。AG-UI 抽象 backend，headless/components 抽象 frontend，custom state/actions/HITL/memory 扩展应用行为，Channels core/adapters 允许整体或 selective install [Docs:ag-ui][GH:readme][Source:channels]。扩展面很宽，但 Channels 仍是 0.2.x，本轮也未运行任何 adapter/backend integration；因此不按 5 计。
 
 ## 文档质量
 
-评分 4/5。
-
-README、docs home、AG-UI protocol 页面和 examples 页面共同给出清晰入口：什么是 CopilotKit、如何开始、支持哪些 UI primitives、接哪些 backend、有何 examples [GH:readme][Docs:home][Docs:ag-ui][Docs:examples]。CONTRIBUTING 对 live docs 路径也有清楚说明，避免误改退休 docs/ [Source:contributing]。
-
-扣分点：产品/协议/商业平台/early access 能力叙事混杂，新读者需要辨别哪些能力是开源 repo 直接可审计，哪些属于 CopilotKit Cloud/Intelligence/Enterprise 或未来集成。
+评分 4/5。README、docs、examples、AG-UI protocol、SECURITY 与 Channels README 覆盖了从概念到 integration 的主要路径 [GH:readme][Docs:home][Docs:ag-ui][Source:channels]。扣分点是 OSS/Cloud/Enterprise/early-access 与多版本线叙事混杂，读者必须核对具体 package/release。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | 2026-06-07 snapshot 显示 33.1k stars、4.2k forks、10k+ commits、快速 release；但 320 open issues + 211 open PRs 表明维护压力大 [GH:api] |
-| 成熟度 | 3/5 | 项目从 2023-06 持续至今，已非 early toy；但 v1.59.x 快速迭代、v1/v2 兼容结构、AG-UI/generative UI/Cloud 能力仍在演进 [GH:api][Source:agents] |
-
-REST `open_issues_count=531` 与 GraphQL open issues=320/open PRs=211 对齐；这里不能把 531 误读成纯 issue 数 [GH:api]。
+| 社区活跃度 | 4/5 | 31,116 stars、4,314 forks、first-page contributors=100、community profile=100%，250 open issues、82 open PRs；可见度和维护活动强，但 backlog 真实 [GH:api][GH:community] |
+| 成熟度 | 3/5 | 2023 年创建、562 个 release objects、core v1.63.1；已非 early toy，但 core/Channels/memory surface 仍快速扩张 [GH:releases] |
 
 ## 安全与风险
 
-评分 3/5。
+评分 3/5。本轮 repository advisory endpoint 返回空，只是负面查找结果 [GH:advisories]。v1.61.1 release notes 则明确记录 `react-ui` Markdown renderer 的 raw-HTML XSS 修复；这是已修历史漏洞，生产至少应使用 `>=1.61.1`，当前 latest core 为 v1.63.1 [GH:security-release][GH:releases]。
 
-仓库有 SECURITY.md，声明 security@copilotkit.ai、48 小时 acknowledgment、5 个工作日 investigation、30 天 resolution target；security-advisories API 在本次检查返回 0，含义只是本次未发现已发布的仓库 advisory，不代表项目天然安全或无漏洞 [Source:security][GH:advisories]。这些是正面但有限的信号。
-
-但 agent UI 框架的攻击面天然不小：LLM output 进入 UI，tools 可能触发 backend action，Generative UI 可能渲染动态内容，HITL 若设计不当会变成“看似确认、实际越权”。生产环境必须做 action allowlist、least privilege、server-side authorization、prompt injection 防护、敏感数据隔离和审计日志。
+主要风险包括 dynamic UI/Markdown XSS、prompt injection 诱导 tools/actions、state/memory 跨 tenant 泄漏、channel identity spoofing、Cloud telemetry/trace retention。建议 self-host runtime、server-side authorize 每个 action、schema validate/escape output、隔离 memory tenant/user、绑定 channel identity、限制 telemetry，并按 SECURITY policy 报告漏洞 [Source:security]。
 
 ## 学习价值
 
-很高。CopilotKit 的学习价值不在“又一个 React component library”，而在它把 agent application 的边界讲清楚：backend agent 只是系统的一半，另一半是用户如何观察、纠正、确认、接管 agent 行为。AG-UI 作为 agent-user interaction protocol，也值得和 MCP、A2A、LangGraph runtime、CrewAI flows 分层比较。
+很高。它适合学习 Frontend–Runtime–Agent 分层、event protocol、Generative UI、HITL、state/memory ownership，以及如何把同一 agent interaction model 扩展到 browser 与 messaging channels。可与 MCP（agent-to-tool）和 A2A（agent-to-agent）分层比较。

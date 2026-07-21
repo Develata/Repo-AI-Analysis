@@ -12,7 +12,7 @@ primary_language: "Python / Markdown"
 license: "Mixed per-skill licenses; GitHub API root license unavailable"
 stars: 20902
 forks: 1401
-last_checked: 2026-05-31
+last_checked: 2026-07-21
 last_verified: 2026-05-31
 evidence: "GitHub REST/GraphQL metadata + local clone scan + official OpenAI Codex skills docs + Agent Skills standard docs"
 archived_reason: ""

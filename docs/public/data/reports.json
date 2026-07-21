@@ -1890,43 +1890,6 @@
       "summary": "Context7 是典型的 Agent Infrastructure：它解决“agent 写代码时如何获得当前版本 API 文档”这一 context grounding 问题，而不是一个普通搜索工具或单纯文档站。"
     },
     {
-      "slug": "ai-programs/agent-frameworks/copilotkit",
-      "route": "/analysis/ai-programs/agent-frameworks/copilotkit",
-      "title": "CopilotKit",
-      "repo_url": "https://github.com/CopilotKit/CopilotKit",
-      "category": "ai-programs/agent-frameworks",
-      "directory": "ai-programs/agent-frameworks",
-      "tags": [
-        "agent-framework",
-        "generative-ui",
-        "ag-ui",
-        "react",
-        "frontend-sdk",
-        "human-in-the-loop",
-        "typescript",
-        "nx"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 33135,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 3,
-        "extensibility": 5,
-        "security": 3,
-        "recommendation": 4
-      },
-      "overall_score": 3.8,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
-      "summary": "CopilotKit 是给 agent 应用补“用户界面层”的 TypeScript/React 主线框架：当你的 agent backend 已经存在，但还缺 chat surface、generative UI、shared state、HITL 和跨前端框架接入时，它正好站在 agent runtime 与最终用户之间 [GH:readme][Docs"
-    },
-    {
       "slug": "developer-resources/free-tier-catalogs/free-for-dev",
       "route": "/analysis/developer-resources/free-tier-catalogs/free-for-dev",
       "title": "free-for-dev",
@@ -2225,6 +2188,44 @@
       "last_checked": "2026-07-16",
       "updated": "2026-07-16",
       "summary": "Codex 是适合 OpenAI / ChatGPT 生态用户的官方开源 coding agent，优势是 Rust 实现、Apache-2.0、沙箱/审批模型和多 surface 文档，主要风险是项目仍年轻、issue backlog 大且外部贡献受限。"
+    },
+    {
+      "slug": "ai-programs/agent-frameworks/copilotkit",
+      "route": "/analysis/ai-programs/agent-frameworks/copilotkit",
+      "title": "CopilotKit",
+      "repo_url": "https://github.com/CopilotKit/CopilotKit",
+      "category": "ai-programs/agent-frameworks",
+      "directory": "ai-programs/agent-frameworks",
+      "tags": [
+        "agent-framework",
+        "generative-ui",
+        "ag-ui",
+        "react",
+        "frontend-sdk",
+        "human-in-the-loop",
+        "channels",
+        "typescript",
+        "nx"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 31116,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.7,
+      "last_checked": "2026-07-21",
+      "updated": "2026-07-21",
+      "summary": "CopilotKit 是给 agent 应用补“用户交互层”的强候选：浏览器内覆盖 chat、generative UI、shared state、frontend actions 和 HITL，浏览器外开始以 Channels 0.2.x 覆盖 Slack、Teams、Discord、Telegram、WhatsApp；能力广，但 monorepo、rel"
     },
     {
       "slug": "ai-programs/agent-infrastructure/hcom",
@@ -2776,45 +2777,6 @@
       "summary": "ForgeCode 是功能扎实、provider-neutral、社区真实活跃的 Rust coding agent，但 restricted policy 默认并不收紧、MCP 绕过该 policy，且 optional semantic sync 会上传文件内容，采用前必须主动配置安全边界。"
     },
     {
-      "slug": "ai-programs/ai-harness/mcp/github-mcp-server",
-      "route": "/analysis/ai-programs/ai-harness/mcp/github-mcp-server",
-      "title": "GitHub MCP Server",
-      "repo_url": "https://github.com/github/github-mcp-server",
-      "category": "ai-programs/ai-harness/mcp",
-      "directory": "ai-programs/ai-harness/mcp",
-      "tags": [
-        "mcp",
-        "github",
-        "github-api",
-        "coding-agents",
-        "copilot",
-        "tooling",
-        "go",
-        "oauth",
-        "pat",
-        "docker"
-      ],
-      "primary_language": "Go",
-      "stars": 30296,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.6,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
-      "summary": "GitHub MCP Server 是 agent 访问 GitHub 的官方 tool bridge：它覆盖 repo/issue/PR/Actions/security/project 等大量 API，并提供 read-only、toolsets、exclude-tools、lockdown、scope filtering 等治理开关；值得重点收录，但生"
-    },
-    {
       "slug": "ai-programs/agent-infrastructure/herdr",
       "route": "/analysis/ai-programs/agent-infrastructure/herdr",
       "title": "Herdr",
@@ -3286,6 +3248,45 @@
       "summary": "curl-impersonate 适合需要研究或复现浏览器 TLS/HTTP 指纹差异的开发者；在爬虫工程中通常作为底层 HTTP client/诊断工具，而不是主框架。"
     },
     {
+      "slug": "ai-programs/ai-harness/mcp/github-mcp-server",
+      "route": "/analysis/ai-programs/ai-harness/mcp/github-mcp-server",
+      "title": "GitHub MCP Server",
+      "repo_url": "https://github.com/github/github-mcp-server",
+      "category": "ai-programs/ai-harness/mcp",
+      "directory": "ai-programs/ai-harness/mcp",
+      "tags": [
+        "mcp",
+        "github",
+        "github-api",
+        "coding-agents",
+        "copilot",
+        "tooling",
+        "go",
+        "oauth",
+        "pat",
+        "docker"
+      ],
+      "primary_language": "Go",
+      "stars": 31580,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.5,
+      "last_checked": "2026-07-21",
+      "updated": "2026-07-21",
+      "summary": "GitHub MCP Server 是 agent 访问 GitHub 的官方 tool bridge：它覆盖 repo/issue/PR/Actions/security/project 等大量 API，并提供 read-only、toolsets、exclude-tools、lockdown、scope filtering 等治理开关；值得重点收录，但生"
+    },
+    {
       "slug": "ai-programs/ai-harness/memory/graphiti",
       "route": "/analysis/ai-programs/ai-harness/memory/graphiti",
       "title": "Graphiti",
@@ -3739,7 +3740,7 @@
         "puppeteer"
       ],
       "primary_language": "TypeScript",
-      "stars": 42341,
+      "stars": 47259,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -3754,8 +3755,8 @@
         "recommendation": 3
       },
       "overall_score": 3.4,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
+      "last_checked": "2026-07-21",
+      "updated": "2026-07-21",
       "summary": "Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugging substrate：它把 Chrome DevTools、Puppeteer、Lighthouse/performance trace、console/network/screenshot/heap snapshot 等能力"
     },
     {
@@ -3970,7 +3971,7 @@
         "recommendation": 3
       },
       "overall_score": 3.4,
-      "last_checked": "2026-05-31",
+      "last_checked": "2026-07-21",
       "updated": "2026-05-31",
       "summary": "MarkItDown 是 document-processing 板块中值得优先分析和试用的轻量 Markdown 转换器：许可友好、入口简单、MCP 适配直接，但复杂 PDF/OCR 能力不应高估 [GH][GH:mcp-local]。"
     },
@@ -4315,13 +4316,14 @@
       "tags": [
         "career",
         "job-search",
-        "claude-code",
-        "agent-skills",
+        "agent-workspace",
         "automation",
-        "resume"
+        "resume",
+        "interview",
+        "playwright"
       ],
-      "primary_language": "JavaScript / Go",
-      "stars": 49236,
+      "primary_language": "JavaScript / TypeScript",
+      "stars": 1290,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -4336,9 +4338,9 @@
         "recommendation": 3
       },
       "overall_score": 3.3,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
-      "summary": "Career-Ops 把 Claude Code/OpenCode/Gemini CLI 变成 job-search command center：职位评估、定制 CV、portal scan、batch processing 和 dashboard。 [GH:readme]"
+      "last_checked": "2026-07-21",
+      "updated": "2026-07-21",
+      "summary": "Career-Ops 已从“Markdown 求职模板”成长为有 CLI、ATS scanner、browser autofill、plugins、interview modes、experimental web UI 与 84 个 release objects 的 career workflow product；方法论和自动化边界很有价值，但两个月内从 "
     },
     {
       "slug": "ai-programs/ai-harness/hooks/destructive-command-guard",
@@ -4445,6 +4447,44 @@
       "last_checked": "2026-07-14",
       "updated": "2026-05-21",
       "summary": "Kirara AI 适合想要一个可 DIY、多模态、带工作流和插件机制的聊天机器人框架，但能接受 v3 alpha/快速重构状态的个人开发者与 bot 爱好者。"
+    },
+    {
+      "slug": "document-processing/document-conversion/liteparse",
+      "route": "/analysis/document-processing/document-conversion/liteparse",
+      "title": "LiteParse",
+      "repo_url": "https://github.com/run-llama/liteparse",
+      "category": "document-processing/document-conversion",
+      "directory": "document-processing/document-conversion",
+      "tags": [
+        "document-processing",
+        "pdf",
+        "ocr",
+        "bounding-boxes",
+        "rust",
+        "python",
+        "typescript",
+        "wasm",
+        "llamaindex"
+      ],
+      "primary_language": "Rust",
+      "stars": 11702,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-07-21",
+      "updated": "2026-07-21",
+      "summary": "LiteParse 已从“轻量本地解析 + bbox”扩展为可输出 Markdown、做 complexity routing、提供 native Python/Node/Rust/WASM bindings 的本地 parser；它值得用于 agent/RAG 前处理试验，但项目仍很新，质量与性能需用真实文档验证。"
     },
     {
       "slug": "dev-tools/package-managers/nix",
@@ -4626,44 +4666,6 @@
       "last_checked": "2026-06-13",
       "updated": "2026-06-13",
       "summary": "面向 autonomous coding agents 的 portable memory layer / CLI，local-first，且 Hermes 内置 ByteRover provider 作为 brv CLI 接入层；但 Elastic License 与年轻系统风险必须前置 [Hermes:provider]。 该判断基于 GitHub AP"
-    },
-    {
-      "slug": "document-processing/document-conversion/liteparse",
-      "route": "/analysis/document-processing/document-conversion/liteparse",
-      "title": "LiteParse",
-      "repo_url": "https://github.com/run-llama/liteparse",
-      "category": "document-processing/document-conversion",
-      "directory": "document-processing/document-conversion",
-      "tags": [
-        "document-processing",
-        "pdf",
-        "ocr",
-        "bounding-boxes",
-        "rust",
-        "python",
-        "typescript",
-        "wasm",
-        "llamaindex"
-      ],
-      "primary_language": "Rust",
-      "stars": 7788,
-      "status": "active",
-      "ratings": {
-        "capability": 3,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 3,
-        "documentation": 4,
-        "community": 3,
-        "maturity": 2,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.2,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
-      "summary": "LiteParse 值得作为 document-processing 板块的“轻量本地解析 + bbox”代表跟踪和试验；它可能适合 agent/RAG 前处理，但项目很新，成熟度和推荐度都必须保守。"
     },
     {
       "slug": "ai-programs/agents/coding-agents/open-interpreter",
@@ -4878,7 +4880,7 @@
         "recommendation": 3
       },
       "overall_score": 3.1,
-      "last_checked": "2026-05-31",
+      "last_checked": "2026-07-21",
       "updated": "2026-05-31",
       "summary": "`anthropics/skills` 的价值不在于提供一个独立软件，而在于给出 Anthropic 官方认可的 Agent Skills 目录结构、`SKILL.md` 写法、Claude Code plugin marketplace 接入方式，以及 docx/pdf/pptx/xlsx 等复杂文档技能的参考材料 [GH] [GH:marketplace"
     },
@@ -5119,7 +5121,7 @@
         "read-only-scanner"
       ],
       "primary_language": "Go",
-      "stars": 3968,
+      "stars": 4822,
       "status": "active",
       "ratings": {
         "capability": 3,
@@ -5134,8 +5136,8 @@
         "recommendation": 3
       },
       "overall_score": 3,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
+      "last_checked": "2026-07-21",
+      "updated": "2026-07-21",
       "summary": "Bumblebee 是一个很窄但很有价值的安全工具：它不做通用 EDR，也不做 SBOM 生成，而是用只读方式扫描开发者机器上的包管理器元数据、编辑器/浏览器扩展和 MCP 配置，在供应链攻击响应中给出可汇总的 endpoint exposure inventory [GH][GH:readme][GH:inventory]。"
     },
     {
@@ -5410,7 +5412,7 @@
         "mcp"
       ],
       "primary_language": "TypeScript / Python",
-      "stars": 7574,
+      "stars": 9122,
       "status": "active",
       "ratings": {
         "capability": 3,
@@ -5425,8 +5427,8 @@
         "recommendation": 3
       },
       "overall_score": 3,
-      "last_checked": "2026-05-31",
-      "updated": "2026-05-31",
+      "last_checked": "2026-07-21",
+      "updated": "2026-07-21",
       "summary": "Presenton 是一个值得观察的开源 AI presentation engine：它把“生成 slide deck”做成 UI + API + Docker + Electron + MCP 的完整产品形态，但当前 beta、依赖重、攻击面宽，不宜仅凭 README 的 Gamma/Beautiful AI alternative 叙事高估成熟度 [G"
     },
     {
@@ -5681,7 +5683,7 @@
         "recommendation": 3
       },
       "overall_score": 2.8,
-      "last_checked": "2026-05-31",
+      "last_checked": "2026-07-21",
       "updated": "2026-05-31",
       "summary": "`openai/skills` 值得收录，因为 OpenAI 也开始以官方仓库和 Codex 文档形式采用 Agent Skills 机制；但它当前更像年轻的官方 catalog 与示例集合，不是成熟、版本化、可无审查批量安装的工程依赖 [GH] [GH:readme] [Docs:openai-skills]。"
     },

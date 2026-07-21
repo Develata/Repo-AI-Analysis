@@ -1,7 +1,7 @@
 ---
 title: "Chrome DevTools MCP"
 created: 2026-05-31
-updated: 2026-05-31
+updated: 2026-07-21
 type: repository-analysis
 repo_url: "https://github.com/ChromeDevTools/chrome-devtools-mcp"
 category: "ai-programs/ai-harness/mcp"
@@ -10,11 +10,11 @@ previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
 license: "Apache-2.0"
-stars: 42341
-forks: 2709
-last_checked: 2026-05-31
-last_verified: 2026-05-31
-evidence: "GitHub API metadata, repository advisory API, official Chrome blog extraction, README/docs/package scan, npm metadata, and local shallow clone scan at commit 2e039c09e1a273581d9b51081a0feb8a57791947. No npm install, no Chrome launch, no MCP client integration, no Lighthouse/trace run, and no CLI smoke test was executed."
+stars: 47259
+forks: 3160
+last_checked: 2026-07-21
+last_verified: 2026-07-21
+evidence: "GitHub REST/GraphQL metadata, repository advisory API, official Chrome blog, release notes, README/docs/package scan, and local shallow clone scan at commit dcbaf495183a34d9bb0e3d9e8f3e566de6b425f8. No npm install, Chrome launch, MCP-client integration, Lighthouse/trace run, CLI smoke test, or benchmark was executed."
 archived_reason: ""
 docker_support: false
 gpu_required: false
@@ -36,17 +36,22 @@ ratings:
 overall_score: 3.4
 sources:
   - "[GH] https://github.com/ChromeDevTools/chrome-devtools-mcp"
-  - "[GH:api] GitHub repo snapshot 2026-05-31: stars=42341, forks=2709, open issues=64, open PRs=14, created_at=2025-09-11, pushed_at=2026-05-28, primary_language=TypeScript, GitHub API license=null, latest_release=chrome-devtools-mcp-v1.1.1, security_policy_url present"
-  - "[GH:languages] GitHub languages API snapshot 2026-05-31: TypeScript=997102, JavaScript=46414, HTML=290"
-  - "[GH:releases] GitHub releases API snapshot 2026-05-31: latest sample includes chrome-devtools-mcp-v1.1.1 published 2026-05-27, v1.1.0 published 2026-05-26, v1.0.1/v1.0.0 published 2026-05-18; sampled releases were not prereleases"
-  - "[GH:advisories] GitHub repository security-advisories API snapshot 2026-05-31: returned 0 advisories"
-  - "[GH:local-scan] Local shallow clone /opt/data/tmp/repo-wiki-trending-2026-05-31/batch11/repos/ChromeDevTools__chrome-devtools-mcp at commit 2e039c09e1a273581d9b51081a0feb8a57791947; git ls-files=264, markdown=26, workflows=6, test-ish files=89; checked README.md, docs/{tool-reference,slim-tool-reference,cli,design-principles,troubleshooting}.md, package.json, SECURITY.md, CONTRIBUTING.md, LICENSE, AGENTS.md, .github/dependabot.yml; no Dockerfile found; LICENSE file is Apache License 2.0"
-  - "[GH:readme] README.md local scan 2026-05-31: project exposes Chrome/DevTools/Puppeteer capabilities to MCP clients; documents sensitive-browser-data disclaimer, Chrome/Chrome for Testing support, CrUX lookups opt-out via --no-performance-crux, usage-statistics opt-out via --no-usage-statistics or env/CI, npx MCP setup, slim/headless mode and many MCP client examples"
-  - "[GH:tools] docs/tool-reference.md local scan 2026-05-31: auto-generated reference lists 45 tools across input automation, navigation, emulation, performance, network, debugging, memory, extensions, third-party and WebMCP categories; examples include evaluate_script, lighthouse_audit, performance traces, screenshots, heap snapshots and extension management"
-  - "[GH:cli] docs/cli.md local scan 2026-05-31: experimental chrome-devtools CLI uses a background daemon, auto-starts browser/server, persists browser state/cookies across commands, supports JSON output, and defaults headless/isolated unless userDataDir is provided"
-  - "[GH:design] docs/design-principles.md local scan 2026-05-31: design guidelines emphasize agent-agnostic MCP API, token-optimized semantic summaries, small deterministic blocks, self-healing errors, human-agent collaboration, progressive complexity and reference-over-value for heavy assets"
-  - "[GH:package] package.json and npm view snapshot 2026-05-31: npm package name chrome-devtools-mcp version 1.1.1, bin entries chrome-devtools-mcp and chrome-devtools, scripts include build/typecheck/test/format/docs generation/eval/count-tokens, npm reports license=Apache-2.0 and modified=2026-05-27"
-  - "[GH:security] SECURITY.md local scan 2026-05-31: provides contact path via GitHub Product Security; asks for advisory-style report with description, reproduction steps, impact and configuration details"
+  - "[GH:api] GitHub REST/GraphQL snapshot 2026-07-21: canonical repo=ChromeDevTools/chrome-devtools-mcp, archived=false, disabled=false, default_branch=main, head=dcbaf495183a34d9bb0e3d9e8f3e566de6b425f8, pushed_at=2026-07-20T15:44:54Z, stars=47259, forks=3160, open issues=71, open PRs=37, primary_language=TypeScript, license=Apache-2.0, security policy present"
+  - "[GH:languages] GitHub languages API snapshot 2026-07-21: TypeScript=1132565, JavaScript=48870, HTML=290"
+  - "[GH:releases] GitHub releases API snapshot 2026-07-21: 57 releases; latest chrome-devtools-mcp-v1.6.0 published 2026-07-14; v1.2.0 through v1.6.0 add structured-output experiments, published skills and expanded heap-snapshot analysis; sampled releases were not prereleases"
+  - "[GH:advisories] GitHub repository security-advisories API snapshot 2026-07-21: GHSA-3pvj-jv98-qhjq / CVE-2026-53765 medium, daemon.pid symlink-following in /tmp fallback, affected >=0.20.0 <=1.0.1, patched 1.1.0; GHSA-8qf9-62x2-82pp / CVE-2026-53766 medium, validatePath symlink canonicalization, affected >=0.24.0 <=1.0.1, patched 1.1.0; both published and not withdrawn"
+  - "[GH:local-scan] Local shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/evidence/repos/chrome-devtools-mcp at commit dcbaf495183a34d9bb0e3d9e8f3e566de6b425f8; git ls-files=273, markdown/MDX=26, workflows=6, test-ish paths=115, SKILL.md=6; checked README.md, docs/{tool-reference,slim-tool-reference,cli,design-principles,troubleshooting}.md, package.json, SECURITY.md, CONTRIBUTING.md and LICENSE; no Dockerfile found"
+  - "[GH:readme] README.md local scan 2026-07-21: project exposes Chrome/DevTools/Puppeteer capabilities to MCP clients; documents sensitive-browser-data disclaimer, Chrome/Chrome for Testing support, CrUX opt-out, default-on usage-statistics opt-out, update-check opt-out, npx setup and slim/headless mode"
+  - "[GH:tools] docs/tool-reference.md local scan 2026-07-21: auto-generated reference contains 52 tool headings; surface includes input/navigation/emulation/performance/network/debugging/memory/extensions/third-party/WebMCP, with expanded heap-snapshot close/details/dominators/retainers/comparison/duplicate-string operations"
+  - "[GH:cli] docs/cli.md local scan 2026-07-21: experimental chrome-devtools CLI uses a background daemon, auto-starts browser/server, persists browser state/cookies across commands, supports JSON output, and defaults headless/isolated unless userDataDir is provided"
+  - "[GH:design] docs/design-principles.md local scan 2026-07-21: design guidelines emphasize agent-agnostic MCP API, token-optimized summaries, small deterministic blocks, self-healing errors, human-agent collaboration, progressive complexity and file references for heavy assets"
+  - "[GH:package] package.json local scan 2026-07-21: package version=1.6.0, Apache-2.0, Node engines ^20.19.0 || ^22.12.0 || >=23, bin entries chrome-devtools-mcp and chrome-devtools, published files include skills, and scripts cover build/typecheck/test/format/docs/eval/package verification"
+  - "[GH:security] SECURITY.md local scan 2026-07-21: provides GitHub Product Security reporting path and requests description, reproduction steps, impact and configuration details"
+  - "[L1:browser-use] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/agent-infrastructure/browser-use.md"
+  - "[L1:firecrawl] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/agent-infrastructure/firecrawl.md"
+  - "[L1:context7] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/ai-harness/mcp/context7.md"
+  - "[L1:mcp-servers] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/ai-harness/mcp/mcp-servers.md"
+  - "[L1:cli-anything] Local wiki comparison source: /opt/data/wiki/github-repo-wiki/ai-programs/agent-infrastructure/cli-anything.md"
   - "[Blog:chrome] https://developer.chrome.com/blog/chrome-devtools-mcp extracted 2026-05-31; Chrome announced Chrome DevTools MCP public preview on 2025-09-23, describing use cases for verifying code changes, diagnosing network/console errors, simulating user behavior, debugging layout, and performance audits"
 ---
 
@@ -55,7 +60,7 @@ sources:
 > 面向 coding agents 的 Chrome DevTools bridge：让 agent 通过 MCP/CLI 观察、操纵和调试真实 Chrome 页面；非常值得关注，但应按高权限浏览器调试工具治理。
 >
 > **状态**: `active` · **总分**: 3.4/5 · **推荐度**: 3/5
-> **核验版本**: commit `2e039c09e1a273581d9b51081a0feb8a57791947`；GitHub / npm / Chrome blog / local clone 快照 2026-05-31
+> **核验版本**: commit `dcbaf495183a34d9bb0e3d9e8f3e566de6b425f8` / package `1.6.0`；GitHub / Chrome blog / local clone 快照 2026-07-21
 > **验证边界**: 本轮未安装 npm package、未启动 Chrome、未接入真实 MCP client、未运行 Lighthouse/trace、未做 CLI smoke test；能力与性能结论来自官方文档、源码结构和元数据，非实测 benchmark。
 
 ## 一句话总结
@@ -66,7 +71,7 @@ Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugg
 
 这个仓库应归入 `ai-programs/ai-harness/mcp`。它不是终端 coding agent 本体，也不是通用网页采集 API，而是 agent runtime 中的 **browser inspection and debugging layer**：当 agent 修改前端、排查 console/network 错误、验证交互流程、运行性能分析时，它需要真实浏览器反馈；Chrome DevTools MCP 正是把这层反馈以 MCP tool 形式开放给 Claude Code、Codex、Gemini CLI、Cursor、Copilot 等客户端 [GH:readme][Blog:chrome]。
 
-从工程信号看，项目虽年轻但并非玩具：本地扫描有 264 个 tracked files、6 个 workflows、89 个 test-ish 文件，package scripts 覆盖 build/typecheck/test/format/docs generation，工具文档由脚本生成，设计原则也清楚强调小而确定的工具块和 token-optimized summaries [GH:local-scan][GH:package][GH:design]。v1.0.0 与 v1.1.1 已在 2026-05 发布，说明从 public preview 走向更正式的版本轨道 [GH:releases]。
+从工程信号看，项目虽年轻但并非玩具：当前扫描有 273 个 tracked files、6 个 workflows、115 个 test-ish paths，package scripts 覆盖 build/typecheck/test/format/docs generation，工具文档由脚本生成，设计原则也强调小而确定的工具块和 token-optimized summaries [GH:local-scan][GH:package][GH:design]。项目已从 v1.1.1 推进到 v1.6.0，并把 6 个 `SKILL.md` 随 package 发布；但这仍是 2025 年才创建、快速扩张中的高权限工具 [GH:releases][GH:local-scan]。
 
 风险同样明确：它暴露的是浏览器和 DevTools 能力。README 直接警告 MCP clients 可以 inspect、debug、modify browser/DevTools 中的数据，避免共享敏感或个人信息 [GH:readme]。此外 usage statistics 默认开启，performance tools 可能向 Google CrUX API 发送 trace URL，虽然都有 opt-out，但这类默认网络/遥测路径必须在高敏环境中关闭和审查 [GH:readme]。
 
@@ -81,7 +86,7 @@ Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugg
 ## 优势
 
 1. **抽象层正确**：把 Chrome DevTools 的 console、network、performance、screenshot、DOM snapshot、heap snapshot 等能力暴露成 agent 可调用工具，而不是让 agent 靠静态代码猜运行结果 [GH:tools][Blog:chrome]。
-2. **工具面完整**：tool reference 列出 45 个工具，覆盖 input/navigation/emulation/performance/network/debugging/memory/extensions/third-party/WebMCP 等类别 [GH:tools]。
+2. **工具面完整**：tool reference 当前列出 52 个工具，覆盖 input/navigation/emulation/performance/network/debugging/memory/extensions/third-party/WebMCP，并已增加 heap snapshot comparison、dominators、retainers 和 duplicate strings 等内存诊断能力 [GH:tools][GH:releases]。
 3. **上手路径简单**：README 给出 `npx -y chrome-devtools-mcp@latest` 的 MCP 配置，并提供 slim/headless 例子和多个 MCP client 配置片段 [GH:readme]。
 4. **CLI 形态有价值**：experimental CLI 可自动启动后台 daemon 和浏览器、持久化页面状态/cookies、支持 JSON 输出，适合 agent 生成脚本或人类快速调试 [GH:cli]。
 5. **工程治理信号较好**：TypeScript 项目有 build/typecheck/test/format/docs generation 脚本、Dependabot、SECURITY/CONTRIBUTING、AGENTS 规则和多 workflow [GH:local-scan][GH:package]。
@@ -90,7 +95,7 @@ Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugg
 
 1. **浏览器权限面高**：MCP client 能观察、调试和修改浏览器/DevTools 中的数据；若连接真实主浏览器或登录态 profile，风险接近“把浏览器交给 agent” [GH:readme][GH:cli]。
 2. **默认遥测需注意**：usage statistics 默认开启；performance tools 可能查询 CrUX，向 Google CrUX API 发送 trace URLs；虽然可 opt out，但高敏环境不能忽略 [GH:readme]。
-3. **成熟度仍有限**：Chrome blog 将其称为 public preview；仓库创建于 2025-09，本轮最新 v1.1.1，稳定年限不足 [Blog:chrome][GH:api][GH:releases]。
+3. **成熟度仍有限**：2025 年 Chrome announcement 将其称为 public preview；当前虽已到 v1.6.0，但本轮没有找到独立的 GA 声明，稳定年限仍短 [Blog:chrome][GH:api][GH:releases]。
 4. **Chrome-only 边界**：README 明确官方只支持 Google Chrome 和 Chrome for Testing，其他 Chromium-based browsers 不保证 [GH:readme]。
 5. **性能不是免费午餐**：MCP server 本身轻，但 Chrome、Lighthouse、trace、heap snapshot、screenshot/video 可能很重；本轮未实测资源占用。
 
@@ -101,7 +106,7 @@ Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugg
 - 前端/coding agent 在修改 UI 后验证页面实际行为。
 - 自动诊断 console error、network failure、CORS、资源加载失败和 source-mapped stack traces [GH:readme][Blog:chrome]。
 - 运行 Lighthouse audit、Chrome performance trace、LCP/性能问题排查 [GH:tools][Blog:chrome]。
-- 让 agent 执行低风险网页交互流程：打开页面、点击、填表、截图、读取 DOM snapshot。
+- 让 agent 执行低风险网页交互流程：打开页面、点击、填表、截图、读取 DOM snapshot [GH:tools]。
 - 学习“agent browser debugging tool”如何设计：小工具粒度、token-optimized summaries、heavy assets 返回路径而非塞进上下文 [GH:design]。
 
 ## 不适合什么场景
@@ -116,11 +121,11 @@ Chrome DevTools MCP 是 Chrome 官方渠道发布的 coding-agent browser-debugg
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| Browser Use | browser-control library/cloud browser product | Browser Use 更偏让 agent 完成网页任务；Chrome DevTools MCP 更偏让 coding agent 观察和调试 Chrome/DevTools 运行时 |
-| Firecrawl | Web data ingestion / scrape / crawl / parse API | Firecrawl 把开放 Web 转成 LLM-ready data；Chrome DevTools MCP 把真实浏览器调试能力给 agent |
-| Context7 | 文档上下文 grounding layer | Context7 提供库/API 文档事实；Chrome DevTools MCP 提供浏览器运行时事实 |
-| MCP Servers | MCP reference server 集合 | MCP Servers 是通用 MCP server 样板集合；Chrome DevTools MCP 是具体的 Chrome/DevTools tool provider |
-| CLI-Anything | agent tool-access harness | CLI-Anything 让 agent 包装任意 CLI；Chrome DevTools MCP 专注浏览器调试与自动化工具面 |
+| Browser Use | browser-control library/cloud browser product | Browser Use 更偏 agent 网页任务；Chrome DevTools MCP 更偏 coding-agent runtime debugging [L1:browser-use] |
+| Firecrawl | Web data ingestion / scrape / crawl / parse API | Firecrawl 更偏把 Web 内容转为可消费数据；Chrome DevTools MCP 更偏浏览器调试 [L1:firecrawl] |
+| Context7 | 文档上下文 grounding layer | Context7 提供库/API 文档上下文；Chrome DevTools MCP 提供浏览器运行时上下文 [L1:context7] |
+| MCP Servers | MCP reference server 集合 | MCP Servers 是通用样板集合；Chrome DevTools MCP 是具体的 Chrome/DevTools provider [L1:mcp-servers] |
+| CLI-Anything | agent tool-access harness | CLI-Anything 偏通用 CLI wrapping；Chrome DevTools MCP 专注浏览器调试工具面 [L1:cli-anything] |
 
 上述项目按 `ai-programs/ai-harness/mcp` 同类或相邻 agent infrastructure 范围做粗略定位级对比，未按同一 10 维度框架深审。比较行只表达功能层位置，不比较未重新审计的质量、速度、安全性或社区规模。
 
@@ -168,7 +173,7 @@ performance 给 3：wrapper 轻，但真实成本由 Chrome 和 DevTools artifac
 
 评分 3/5。
 
-正面信号：仓库有 264 个 tracked files、6 个 workflows、89 个 test-ish 文件；package scripts 包含 build、typecheck、test、format、docs generation、npm package verification；AGENTS.md 明确 TypeScript 规则，禁止 `any`、`as`、非空断言和 ts-ignore 等松散写法 [GH:local-scan][GH:package]。
+正面信号：仓库有 273 个 tracked files、6 个 workflows、115 个 test-ish paths；package scripts 包含 build、typecheck、test、format、docs generation、package verification；AGENTS.md 对 TypeScript 写法有严格约束 [GH:local-scan][GH:package]。
 
 但本轮未运行 `npm install`、测试、Chrome 启动、CLI smoke test 或 MCP client integration；项目仍 public preview 且工具面很宽，Chrome/DevTools/Puppeteer/MCP/client 组合会带来边界复杂度。按评分边界，静态结构足以说明“有治理信号”，但不足以给 4。
 
@@ -192,23 +197,24 @@ README、tool reference、slim tool reference、CLI docs、design principles、t
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 3/5 | GitHub 快照显示 42k+ stars、2.7k+ forks、64 open issues、14 open PRs；有 SECURITY/CONTRIBUTING、Dependabot 和多 workflow；Chrome 官方 blog 明确征集反馈 [GH:api][GH:local-scan][Blog:chrome]。但这些主要是可见度与官方渠道信号，本轮未审查 issue/PR 响应速度或第三方生态成熟度，因此不按 4 计。 |
-| 成熟度 | 3/5 | 仓库创建于 2025-09，Chrome blog 称 public preview；虽已发布 v1.1.1，但稳定年限短，browser-agent/MCP 生态仍快速变化 [Blog:chrome][GH:api][GH:releases] |
+| 社区活跃度 | 3/5 | GitHub 快照显示 47.2k+ stars、3.1k+ forks、71 open issues、37 open PRs；有 SECURITY/CONTRIBUTING 和多 workflow [GH:api][GH:local-scan]。这些主要是可见度与官方渠道信号，本轮未审查 issue/PR 响应速度，故不按 4 计。 |
+| 成熟度 | 3/5 | 仓库创建于 2025-09，当前已到 v1.6.0；版本与工具面推进很快，但稳定年限短，browser-agent/MCP 生态仍在变化 [GH:api][GH:releases] |
 
 ## 安全与风险
 
 评分 3/5。
 
-本轮 GitHub repository security-advisories API 未发现 advisory；这只是“本次未查到公开 GitHub advisory”，不是安全审计证明 [GH:advisories]。
+本轮查到两个已修复的 medium GitHub advisories：`daemon.pid` 在 `/tmp` fallback runtime directory 跟随 symlink，以及 `validatePath()` 未在 root enforcement 前 canonicalize symlink；API 元数据显示二者影响至 `1.0.1`、patched version 为 `1.1.0`，当前核验的 `1.6.0` 高于该修复版本 [GH:advisories]。这说明历史版本确有本地路径/daemon 攻击面；生产使用仍应 pin 当前版本，而不能把“官方工具”当作天然安全。
 
 更重要的是 attack surface：
 
 - **浏览器数据暴露**：README 明确说 MCP clients 可 inspect/debug/modify browser 或 DevTools 中的数据；不要把敏感或个人信息暴露给 MCP clients [GH:readme]。
 - **遥测与外部请求**：usage statistics 默认开启，可用 `--no-usage-statistics` 或环境变量/CI 禁用；performance tools 可能把 trace URLs 发给 Google CrUX API，可用 `--no-performance-crux` 禁用 [GH:readme]。
 - **强工具能力**：`evaluate_script`、file upload、extension management、heap snapshot、network inspection 等能力都可能触达 secrets、cookies、DOM、headers 或本地文件路径 [GH:tools]。
+- **历史本地路径漏洞**：两个 2026-06 advisories 均已在 1.1.0 修复，但直接提醒部署者不要运行旧版，并应避免把 daemon/runtime path 放在不受控的共享目录 [GH:advisories]。
 - **CLI 持久化状态**：CLI daemon 会持久复用浏览器状态和 cookies；若未使用隔离 profile，便利性会变成持久风险 [GH:cli]。
 
-因此 security 给 3：项目有 SECURITY policy 和明确 disclaimer，没有查到公开 advisory；但它本质上是高权限 browser/DevTools bridge，只能在隔离浏览器、低权限账号、禁用遥测、必要时网络隔离的前提下使用。
+因此 security 仍给 3：项目有 SECURITY policy、明确 disclaimer，两个已知 medium advisories 也已有 patched version；但历史漏洞和高权限 browser/DevTools bridge 的固有攻击面都要求使用当前版本、隔离浏览器、低权限账号、禁用不必要遥测，并在高敏环境限制网络。
 
 ## 学习价值
 
