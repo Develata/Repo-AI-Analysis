@@ -1,7 +1,7 @@
 ---
 title: "PaddleOCR"
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-07-22
 type: repository-analysis
 repo_url: "https://github.com/PaddlePaddle/PaddleOCR"
 category: "document-processing"
@@ -10,10 +10,10 @@ previous_repo: ""
 successor: ""
 primary_language: "Python / C++ / TypeScript"
 license: "Apache-2.0"
-stars: 80910
-forks: 10654
-last_checked: 2026-06-07
-last_verified: 2026-06-07
+stars: 85967
+forks: 11053
+last_checked: 2026-07-22
+last_verified: 2026-07-22
 evidence: "GitHub REST/GraphQL metadata + README snapshot + GitHub tree/local-style API scan; not installed or smoke-tested"
 archived_reason: ""
 docker_support: true
@@ -35,27 +35,27 @@ ratings:
   recommendation: 5
 overall_score: 4.2
 sources:
-  - "[GH] https://github.com/PaddlePaddle/PaddleOCR — GitHub REST/GraphQL snapshot 2026-06-07: created_at=2020-05-08T10:38:16Z, pushed_at=2026-06-04T18:21:43Z, default_branch=main, commit=1e5aa0ad31bc8a82cd8e1daef7adc24e577d2534, stars=80910, forks=10654, open issues=141, open PRs=64, commits=6906, license=Apache-2.0, primary_language=Python, diskUsageKB=1928460"
-  - "[GH:readme] Local README snapshot /opt/data/tmp/repo_wiki_trending_20260607_remaining/paddlepaddle-paddleocr/README.md checked 2026-06-07; total_lines=302; analysis uses README-described capabilities only and did not run the project"
-  - "[GH:local-scan] GitHub tree/API scan checked 2026-06-07: files=2314, languages=Python=3918047, C++=677366, TypeScript=346259, Shell=262500, Java=55080, Go=52716, workflow_count=9, workflows_sample=.github/workflows/build_publish_develop_docs.yml, .github/workflows/build_publish_release_docs.yml, .github/workflows/close_inactive_issues.yml, .github/workflows/codestyle.yml, .github/workflows/docs_anchor_check.yml, .github/workflows/link_check.yml, .github/workflows/python_publish.yml, .github/workflows/test_gpu.yml, test-ish files=100, docs-ish files=771, community_files={'code_of_conduct': None, 'code_of_conduct_file': None, 'contributing': None, 'issue_template': None, 'pull_request_template': None, 'license': 'https://api.github.com/licenses/apache-2.0', 'readme': 'https://api.github.com/repos/PaddlePaddle/PaddleOCR/contents/README.md'}"
-  - "[GH:release] GitHub releases endpoint checked 2026-06-07: sampled latest tags=v3.6.0, v3.5.0, v3.4.1, v3.4.0, v3.3.3; sample_count=10"
-  - "[GH:security-advisories] GitHub security-advisories endpoint checked 2026-06-07: returned 0; absence only means no advisory returned by this endpoint in this check, not proof of safety"
+  - "[GH] https://github.com/PaddlePaddle/PaddleOCR — GitHub REST/GraphQL queried 2026-07-22: created_at=2020-05-08, pushed_at=2026-07-15, default_branch=main, commit=211989f046cc1878460f9e65574690c00a127a1a, stars=85967, forks=11053, open issues=144, open PRs=70, primary_language=Python, license=Apache-2.0, diskUsageKB=1959107"
+  - "[GH:readme] README.md at 211989f046cc1878460f9e65574690c00a127a1a checked 2026-07-22; current project description covers PaddleOCR-VL-1.6, PP-StructureV3, PP-OCRv6, 100+ language ecosystem, Markdown/JSON output and CPU/GPU/XPU/NPU paths; benchmark and speed numbers remain first-party claims not reproduced in this audit"
+  - "[GH:local-scan] GitHub tree/API scan at 211989f046cc1878460f9e65574690c00a127a1a on 2026-07-22: files=2490, workflows=9, test-ish files=129, docs/Markdown-ish files=771; languages Python=4185876, C++=677366, TypeScript=356743, Shell=307694, Swift=218043, Kotlin=122741, Go=62328, Java=55080, Dockerfile=45219 and additional build languages"
+  - "[GH:release] https://github.com/PaddlePaddle/PaddleOCR/releases/tag/v3.7.0 checked 2026-07-22; v3.7.0 published 2026-06-11 releases PP-OCRv6 with tiny/small/medium tiers and a unified 50-language model; accuracy and 5.2x OpenVINO/6.1x Apple M4/A100 speed figures are first-party release claims, not independently reproduced"
+  - "[GH:security-advisories] https://api.github.com/repos/PaddlePaddle/PaddleOCR/security-advisories?per_page=100 queried 2026-07-22; returned [] — no published repository advisory found in this check, not proof of safety; community profile did not surface a SECURITY policy"
 ---
 
 # PaddleOCR
 
-> PaddleOCR 是面向 OCR、PDF/图片结构化解析和 LLM-ready Markdown/JSON 输出的 Document AI toolkit，覆盖 100+ 语言和 PaddleOCR-VL/PP-Structure 系列。
+> PaddleOCR 是面向 OCR、PDF/图片结构化解析和 LLM-ready Markdown/JSON 输出的 Document AI toolkit，覆盖 PaddleOCR-VL、PP-StructureV3、PP-OCRv6 与 100+ 语言生态。
 >
 > **状态**: `active` · **总分**: 4.2/5 · **推荐度**: 5/5
 > **验证边界**: 本轮只做 GitHub metadata、README 与 tree/API scan；未安装、未构建、未运行、未复现实测 benchmark。
 
 ## 一句话总结
 
-PaddleOCR 是面向 OCR、PDF/图片结构化解析和 LLM-ready Markdown/JSON 输出的 Document AI toolkit，覆盖 100+ 语言和 PaddleOCR-VL/PP-Structure 系列。 [GH:readme]
+PaddleOCR 是面向 OCR、PDF/图片结构化解析和 LLM-ready Markdown/JSON 输出的 Document AI toolkit，覆盖 PaddleOCR-VL、PP-StructureV3、PP-OCRv6 与 100+ 语言生态。 [GH:readme]
 
 ## 总体评价
 
-README 的功能与 benchmark claim 很强：PaddleOCR-VL、PP-StructureV3、多语言识别、PDF/Office 到 Markdown/JSON/DOCX。本轮未复现实测 benchmark；性能分数因此不按 README 的 SOTA 声称直接给满。 截至 2026-06-07 的 GitHub 快照显示：stars=80910、forks=10654、open issues=141、open PRs=64、最近采样 release=v3.6.0, v3.5.0, v3.4.1 [GH] [GH:release]。
+README 的功能与 benchmark claim 很强：PaddleOCR-VL-1.6、PP-StructureV3、多语言识别、PDF/Office 到 Markdown/JSON/DOCX；v3.7.0 又发布 tiny/small/medium 三档 PP-OCRv6 和 50-language unified model。本轮未复现实测准确率或 5.2x/6.1x speed claims，performance 因此维持 3/5。2026-07-22 快照为 stars=85967、forks=11053、open issues=144、open PRs=70、latest=v3.7.0 [GH][GH:release]。
 
 评分采取保守口径：README/docs claim 只证明项目设计目标和公开描述，本轮没有实测运行效果；local scan 只证明文件结构、语言、workflow/test/docs 线索，不证明业务正确性、安全边界或性能数字 [GH:readme] [GH:local-scan]。
 
@@ -64,7 +64,7 @@ README 的功能与 benchmark claim 很强：PaddleOCR-VL、PP-StructureV3、多
 **角色定位**：适合对 `document-processing` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
 推荐理由：
-- 能力面与主题匹配：README 声称 PP-OCRv5、PaddleOCR-VL、PP-StructureV3、100+ languages、Markdown/JSON/DOCX 等；local scan 显示 docs_count 771、workflows 9、tests_count 100。 [GH:readme]。
+- 能力面与主题匹配：当前 README/release 覆盖 PP-OCRv6、PaddleOCR-VL-1.6、PP-StructureV3、100+ languages、Markdown/JSON/DOCX，以及多档 edge/server OCR 模型 [GH:readme][GH:release]。
 - 工程可审计性：仓库结构、语言分布、workflow/test/docs 数量已记录到 source 层，便于后续深挖 [GH:local-scan]。
 - 风险前置：本条不把 star 数、官方品牌或 README benchmark 当作独立生产采用证据 [GH]。
 
@@ -72,14 +72,14 @@ README 的功能与 benchmark claim 很强：PaddleOCR-VL、PP-StructureV3、多
 
 ## 优势
 
-1. **定位清晰**：PaddleOCR 是面向 OCR、PDF/图片结构化解析和 LLM-ready Markdown/JSON 输出的 Document AI toolkit，覆盖 100+ 语言和 PaddleOCR-VL/PP-Structure 系列。 [GH:readme]
-2. **工程信号可见**：本轮 tree/API scan 记录 files=2314、workflow_count=9、test-ish files=100、docs-ish files=771 [GH:local-scan]。
-3. **社区/关注度信号强**：截至 2026-06-07 快照 stars=80910、forks=10654；这只说明可见度，不直接证明质量或生产采用 [GH]。
+1. **定位清晰**：PaddleOCR 是面向 OCR、PDF/图片结构化解析和 LLM-ready Markdown/JSON 输出的 Document AI toolkit，覆盖 PaddleOCR-VL、PP-StructureV3、PP-OCRv6 与 100+ 语言生态。 [GH:readme]
+2. **工程信号可见**：当前 tree/API scan 记录 files=2490、workflow_count=9、test-ish files=129、docs-ish files=771 [GH:local-scan]。
+3. **PP-OCRv6 分层更完整**：v3.7.0 提供 5M/14M/30M tiny-small-medium 与 50-language unified model；但发布说明中的 accuracy/latency 数字仍只作 first-party evidence [GH:release]。
 
 ## 劣势
 
 1. **验证边界**：本轮没有安装、构建、运行、benchmark 或端到端 smoke test；README 能力均按“文档声称/仓库可见设计面”处理 [GH:readme]。
-2. **维护/稳定性需看上下文**：open issues=141、open PRs=64 是点时快照；大项目/语言核心仓库不能简单等同 bug 密度 [GH]。
+2. **维护/稳定性需看上下文**：open issues=144、open PRs=70 是点时快照；大模型、硬件和语言矩阵增加回归面，不能把 backlog 简化为单一 bug-density 指标 [GH]。
 3. **安全结论保守**：security-advisories endpoint 没返回的项目也不能视作安全；高权限、模型、浏览器、账号或文件处理场景仍需独立 threat model [GH:security-advisories]。
 
 ---
@@ -110,9 +110,9 @@ README 的功能与 benchmark claim 很强：PaddleOCR-VL、PP-StructureV3、多
 
 ## 它能做什么
 
-README 声称 PP-OCRv5、PaddleOCR-VL、PP-StructureV3、100+ languages、Markdown/JSON/DOCX 等；local scan 显示 docs_count 771、workflows 9、tests_count 100。 [GH:readme]
+当前 README/release 覆盖 PP-OCRv6、PaddleOCR-VL-1.6、PP-StructureV3、100+ languages、Markdown/JSON/DOCX，以及 CPU/GPU/XPU/NPU 与多档 edge/server model 路径 [GH:readme][GH:release]。
 
-可见的仓库层面能力线索包括：primary_language=Python、topics=ocr, chineseocr, pdf2markdown, pp-ocr, pp-structure, document-parsing, document-translation, kie, ai4science, pdf-extractor-rag, pdf-parser, rag, paddleocr-vl、files=2314、docs-ish files=771、test-ish files=100 [GH] [GH:local-scan]。
+可见的仓库层面能力线索包括：primary_language=Python、OCR/KIE/PDF-to-Markdown/RAG/document-parsing/PaddleOCR-VL 等 topics，当前 files=2490、docs-ish files=771、test-ish files=129 [GH][GH:local-scan]。
 
 ## 运行环境与资源占用
 
@@ -137,7 +137,7 @@ README 声称 PP-OCRv5、PaddleOCR-VL、PP-StructureV3、100+ languages、Markdo
 
 评分 4/5。
 
-依据：语言/文件结构、workflow_count=9、test-ish files=100、docs-ish files=771、release 信号和项目年龄 [GH:local-scan] [GH:release]。这个分数是静态仓库质量判断，不等于功能正确性或覆盖率实测。
+依据：Python/C++/TypeScript 等多语言代码，workflow_count=9、test-ish files=129、docs-ish files=771，以及持续 release 信号 [GH:local-scan][GH:release]。这是静态工程判断；本轮未执行测试，不能把文件数量当覆盖率。
 
 ## 可扩展性
 
@@ -155,14 +155,14 @@ README/docs-ish files=771；README 对核心定位、安装或功能说明的清
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 5/5 | stars=80910、forks=10654、open issues=141、open PRs=64 是点时可见度和维护负载信号，不单独证明质量 [GH] |
-| 成熟度 | 4/5 | created_at=2020-05-08T10:38:16Z，sampled releases=v3.6.0, v3.5.0, v3.4.1, v3.4.0, v3.3.3；成熟度按项目年龄、release/CI/test/docs 和稳定性声明综合判断 [GH] [GH:release] |
+| 社区活跃度 | 5/5 | stars=85967、forks=11053、open issues=144、open PRs=70；长期规模与活跃生态支持高分，但 star 数不等于质量证明 [GH] |
+| 成熟度 | 4/5 | 创建于 2020，当前 v3.7.0；核心 OCR 生态成熟，但 VLM/PP-OCRv6 与硬件矩阵仍在活跃演进，未按“完全冻结稳定”给 5 [GH][GH:release] |
 
 ## 安全与风险
 
 评分 3/5。
 
-GitHub security-advisories endpoint 本轮返回结果已记录，但“无 advisory 返回”不是安全证明 [GH:security-advisories]。实际采用时至少检查：权限范围、账号/cookie/token 暴露面、依赖供应链、模型/文档数据上传路径、sandbox/隔离边界、license 与商业使用限制。
+GitHub repository security-advisories endpoint 本轮返回 `[]`，且 community profile 未 surfaced SECURITY policy；这只说明此次查询未发现项目发布的 GHSA，不是安全证明 [GH:security-advisories]。实际采用时仍要审计不可信 PDF/图片/Office 输入、模型权重与下载源、深度学习依赖、临时文件/输出目录、服务 API 和 GPU/container 权限。Apache-2.0 许可明确，但模型资产与第三方依赖仍需逐项核对。
 
 ## 学习价值
 

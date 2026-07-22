@@ -12,7 +12,7 @@ primary_language: TypeScript
 license: MIT
 stars: 14902
 forks: 2119
-last_checked: 2026-06-07
+last_checked: 2026-07-22
 last_verified: 2026-06-07
 evidence: "GitHub API + README/docs + repository local scan + prior community-discussion review; not freshly installed by Develata"
 archived_reason: ""

@@ -86,7 +86,7 @@
         "c"
       ],
       "primary_language": "C",
-      "stars": 30661,
+      "stars": 31183,
       "status": "active",
       "ratings": {
         "capability": 5,
@@ -101,8 +101,8 @@
         "recommendation": 5
       },
       "overall_score": 4.8,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
+      "last_checked": "2026-07-22",
+      "updated": "2026-07-22",
       "summary": "NGINX 官方开源仓库：Web server、reverse proxy、load balancer、API gateway 与 content cache 的长期成熟基础设施。 [GH:readme]"
     },
     {
@@ -810,7 +810,7 @@
         "python"
       ],
       "primary_language": "Python / C++ / TypeScript",
-      "stars": 80910,
+      "stars": 85967,
       "status": "active",
       "ratings": {
         "capability": 5,
@@ -825,9 +825,9 @@
         "recommendation": 5
       },
       "overall_score": 4.2,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
-      "summary": "PaddleOCR 是面向 OCR、PDF/图片结构化解析和 LLM-ready Markdown/JSON 输出的 Document AI toolkit，覆盖 100+ 语言和 PaddleOCR-VL/PP-Structure 系列。 [GH:readme]"
+      "last_checked": "2026-07-22",
+      "updated": "2026-07-22",
+      "summary": "PaddleOCR 是面向 OCR、PDF/图片结构化解析和 LLM-ready Markdown/JSON 输出的 Document AI toolkit，覆盖 PaddleOCR-VL、PP-StructureV3、PP-OCRv6 与 100+ 语言生态。 [GH:readme]"
     },
     {
       "slug": "document-processing/editors/quarto-cli",
@@ -1042,7 +1042,7 @@
         "recommendation": 5
       },
       "overall_score": 4.1,
-      "last_checked": "2026-06-07",
+      "last_checked": "2026-07-22",
       "updated": "2026-06-07",
       "summary": "Whisper 是 OpenAI 的通用语音识别模型，覆盖多语言 ASR、speech translation、language identification 和 CLI/Python 调用。 [GH:readme]"
     },
@@ -2353,7 +2353,7 @@
         "claude-code"
       ],
       "primary_language": "Python",
-      "stars": 54210,
+      "stars": 57568,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -2368,8 +2368,8 @@
         "recommendation": 3
       },
       "overall_score": 3.7,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
+      "last_checked": "2026-07-22",
+      "updated": "2026-07-22",
       "summary": "MemPalace 是一个「verbatim-first」的 AI memory substrate：它不先让 LLM 摘要你说过什么，而是把原文保存为 drawer，再用结构化 palace taxonomy、semantic search、temporal graph 和 MCP 工具把记忆重新交给 agent。"
     },
     {
@@ -2388,7 +2388,7 @@
         "podcast"
       ],
       "primary_language": "TypeScript / Python",
-      "stars": 26551,
+      "stars": 35832,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -2403,8 +2403,8 @@
         "recommendation": 3
       },
       "overall_score": 3.7,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
+      "last_checked": "2026-07-22",
+      "updated": "2026-07-22",
       "summary": "Open Notebook 是 self-hosted、privacy-focused 的 NotebookLM 替代品，面向多模态资料组织、检索、对话和 podcast 生成。 [GH:readme]"
     },
     {
@@ -3339,7 +3339,7 @@
         "non-software"
       ],
       "primary_language": "Python",
-      "stars": 28691,
+      "stars": 52989,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -3354,8 +3354,8 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
+      "last_checked": "2026-07-22",
+      "updated": "2026-07-22",
       "summary": "last30days 是一个 agent skill 形态的 recency research engine：它不试图替代 Google，而是让 AI agent 用“最近 30 天的社区互动、社媒帖子、视频 transcript、预测市场和 GitHub 活动”来回答“现在大家真实在说什么” [GH:readme][Source:skill]。"
     },
     {
@@ -4077,7 +4077,7 @@
         "recommendation": 3
       },
       "overall_score": 3.4,
-      "last_checked": "2026-06-07",
+      "last_checked": "2026-07-22",
       "updated": "2026-06-07",
       "summary": "PAI 是一套基于 Claude Code 的「个人 AI 操作系统」——将你的身份、目标、知识图谱注入 AI 上下文，让 AI 不只是回答问题，而是「知道你是谁、你要去哪」的数字助手。"
     },
@@ -4576,7 +4576,7 @@
         "workflow"
       ],
       "primary_language": "Shell / JavaScript",
-      "stars": 219583,
+      "stars": 258699,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -4591,8 +4591,8 @@
         "recommendation": 3
       },
       "overall_score": 3.3,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
+      "last_checked": "2026-07-22",
+      "updated": "2026-07-22",
       "summary": "Superpowers 是一套把「软件工程纪律」编码为 agent skill 的框架——brainstorm → spec → plan → TDD → subagent-driven dev → review → ship，全链路流程由 skill 自动触发，而非靠 agent 自觉遵守。适合希望 agent 像 senior engineer 一样工作"
     },
     {
@@ -5496,7 +5496,7 @@
         "recommendation": 3
       },
       "overall_score": 3,
-      "last_checked": "2026-06-07",
+      "last_checked": "2026-07-22",
       "updated": "2026-06-07",
       "summary": "VibeVoice 是 Microsoft 开源 voice AI 模型家族，覆盖长音频 ASR、TTS 和 realtime TTS；但 TTS 代码曾因 misuse concern 被移除，采用风险必须前置。 [GH:readme]"
     },
@@ -5614,6 +5614,41 @@
       "summary": "`cursor/plugins` 值得加入 wiki，不是因为它已经是成熟生态，而是因为它展示了 Cursor 对「coding agent 能力包」的官方形态：一个 Git 仓库作为 marketplace，根 manifest 列出插件，每个插件再携带 `.cursor-plugin/plugin.json`、`skills/`、`agents/`、`r"
     },
     {
+      "slug": "ai-programs/ai-harness/ai-plugins/openai-plugins",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/openai-plugins",
+      "title": "OpenAI Plugins",
+      "repo_url": "https://github.com/openai/plugins",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
+      "tags": [
+        "openai",
+        "codex",
+        "plugins",
+        "marketplace",
+        "agent-skills",
+        "mcp"
+      ],
+      "primary_language": "JavaScript / Python / Markdown",
+      "stars": 4650,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 2,
+        "community": 2,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 2.9,
+      "last_checked": "2026-07-22",
+      "updated": "2026-07-22",
+      "summary": "OpenAI Plugins 已不只是若干格式 examples：它同时承载 Codex official default marketplace 的 registry metadata 和 180 个可发现 plugin；官方分发降低 discovery 摩擦，但每个插件的认证、外部服务、代码与许可仍需单独审计 [GH:readme][GH:marketp"
+    },
+    {
       "slug": "ai-programs/agent-infrastructure/future-agi",
       "route": "/analysis/ai-programs/agent-infrastructure/future-agi",
       "title": "Future AGI",
@@ -5686,41 +5721,6 @@
       "last_checked": "2026-07-21",
       "updated": "2026-05-31",
       "summary": "`openai/skills` 值得收录，因为 OpenAI 也开始以官方仓库和 Codex 文档形式采用 Agent Skills 机制；但它当前更像年轻的官方 catalog 与示例集合，不是成熟、版本化、可无审查批量安装的工程依赖 [GH] [GH:readme] [Docs:openai-skills]。"
-    },
-    {
-      "slug": "ai-programs/ai-harness/ai-plugins/openai-plugins",
-      "route": "/analysis/ai-programs/ai-harness/ai-plugins/openai-plugins",
-      "title": "OpenAI Plugins",
-      "repo_url": "https://github.com/openai/plugins",
-      "category": "ai-programs/ai-harness/ai-plugins",
-      "directory": "ai-programs/ai-harness/ai-plugins",
-      "tags": [
-        "openai",
-        "codex",
-        "plugins",
-        "agent-skills",
-        "examples",
-        "mcp"
-      ],
-      "primary_language": "JavaScript / Python / Markdown",
-      "stars": 1735,
-      "status": "active",
-      "ratings": {
-        "capability": 3,
-        "usability": 3,
-        "performance": 3,
-        "code_quality": 3,
-        "documentation": 2,
-        "community": 2,
-        "maturity": 1,
-        "extensibility": 4,
-        "security": 2,
-        "recommendation": 3
-      },
-      "overall_score": 2.6,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
-      "summary": "OpenAI 官方 Codex plugin examples 仓库，展示 `.codex-plugin/plugin.json` manifest、skills、MCP、commands、hooks 等分发形态；适合作为格式样本，不适合无审查批量安装。 [GH:readme]"
     },
     {
       "slug": "ai-programs/ai-harness/guides/agent-engineering/schema-harness",

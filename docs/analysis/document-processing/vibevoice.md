@@ -12,7 +12,7 @@ primary_language: "Python"
 license: "MIT"
 stars: 48435
 forks: 5389
-last_checked: 2026-06-07
+last_checked: 2026-07-22
 last_verified: 2026-06-07
 evidence: "GitHub REST/GraphQL metadata + README snapshot + GitHub tree/local-style API scan; not installed or smoke-tested"
 archived_reason: ""
