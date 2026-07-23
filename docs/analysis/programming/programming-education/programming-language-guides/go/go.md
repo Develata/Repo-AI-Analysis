@@ -12,7 +12,7 @@ primary_language: "Go / Assembly"
 license: "BSD-3-Clause"
 stars: 134496
 forks: 19089
-last_checked: 2026-06-07
+last_checked: 2026-07-23
 last_verified: 2026-06-07
 evidence: "GitHub REST/GraphQL metadata + README snapshot + GitHub tree/local-style API scan; not installed or smoke-tested"
 archived_reason: ""

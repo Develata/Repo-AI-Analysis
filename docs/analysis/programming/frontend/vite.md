@@ -1,7 +1,7 @@
 ---
 title: "Vite"
 created: 2026-06-07
-updated: 2026-06-07
+updated: 2026-07-23
 type: repository-analysis
 repo_url: "https://github.com/vitejs/vite"
 category: "programming/frontend"
@@ -10,17 +10,17 @@ previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
 license: "MIT"
-stars: 81151
-forks: 8274
-last_checked: 2026-06-07
-last_verified: 2026-06-07
-evidence: "GitHub REST/GraphQL metadata + README snapshot + GitHub tree/local-style API scan; not installed or smoke-tested"
+stars: 82036
+forks: 8520
+last_checked: 2026-07-23
+last_verified: 2026-07-23
+evidence: "GitHub REST/GraphQL metadata + current README/changelog/manifests + GitHub tree/community/API scan; not installed, built, or smoke-tested"
 archived_reason: ""
 docker_support: false
 gpu_required: false
 estimated_cpu: "开发服务器和 build 随项目规模增长；设计目标是快速 dev server/HMR"
 estimated_memory: "普通前端开发机可用；大型 monorepo 构建会增加内存"
-estimated_storage: "node_modules/cache 较大；GitHub diskUsage≈70 MB"
+estimated_storage: "node_modules/cache 较大；GitHub API repository size≈73 MB"
 status: active
 ratings:
   capability: 5
@@ -35,11 +35,12 @@ ratings:
   recommendation: 5
 overall_score: 4.9
 sources:
-  - "[GH] https://github.com/vitejs/vite — GitHub REST/GraphQL snapshot 2026-06-07: created_at=2020-04-21T05:03:57Z, pushed_at=2026-06-06T19:40:09Z, default_branch=main, commit=c13a37b53ec673e5a9053355fce3b9c4528fd917, stars=81151, forks=8274, open issues=513, open PRs=223, commits=9309, license=MIT, primary_language=TypeScript, diskUsageKB=70353"
-  - "[GH:readme] Local README snapshot /opt/data/tmp/repo_wiki_trending_20260607_remaining/vitejs-vite/README.md checked 2026-06-07; total_lines=67; analysis uses README-described capabilities only and did not run the project"
-  - "[GH:local-scan] GitHub tree/API scan checked 2026-06-07: files=2656, languages=TypeScript=2455679, JavaScript=285875, HTML=135127, CSS=81781, Vue=6450, Svelte=5659, workflow_count=13, workflows_sample=.github/workflows/ci.yml, .github/workflows/copilot-setup-steps.yml, .github/workflows/ecosystem-ci-trigger.yml, .github/workflows/issue-close-require.yml, .github/workflows/issue-labeled.yml, .github/workflows/issue-template-check.yml, .github/workflows/lock-closed-issues.yml, .github/workflows/preview-release.yml, test-ish files=454, docs-ish files=192, community_files={'code_of_conduct': 'https://api.github.com/repos/vitejs/vite/community/code_of_conduct', 'code_of_conduct_file': 'https://api.github.com/repos/vitejs/.github/contents/CODE_OF_CONDUCT.md', 'contributing': 'https://api.github.com/repos/vitejs/vite/contents/CONTRIBUTING.md', 'issue_template': None, 'pull_request_template': 'https://api.github.com/repos/vitejs/vite/contents/.github/PULL_REQUEST_TEMPLATE.md', 'license': 'https://api.github.com/licenses/mit', 'readme': 'https://api.github.com/repos/vitejs/vite/contents/README.md'}"
-  - "[GH:release] GitHub releases endpoint checked 2026-06-07: sampled latest tags=v8.0.16, v8.0.15, v7.3.5, v6.4.3, v8.0.14; sample_count=10"
-  - "[GH:security-advisories] GitHub security-advisories endpoint checked 2026-06-07: returned 19; absence only means no advisory returned by this endpoint in this check, not proof of safety"
+  - "[GH] https://github.com/vitejs/vite — authenticated GitHub REST/GraphQL snapshot 2026-07-23: created_at=2020-04-21T05:03:57Z, pushed_at=2026-07-22T14:51:13Z, default_branch=main, commit=428bda3b98886708006f4f2f409095f89d705df1, stars=82036, forks=8520, open issues=489, open PRs=239, license=MIT, primary_language=TypeScript, sizeKB=72662"
+  - "[GH:readme] https://github.com/vitejs/vite/blob/428bda3b98886708006f4f2f409095f89d705df1/README.md — inspected through GitHub contents API 2026-07-23; describes dev server, build command, plugin interface and typed JavaScript API; project was not installed or run"
+  - "[GH:changelog] https://github.com/vitejs/vite/blob/428bda3b98886708006f4f2f409095f89d705df1/packages/vite/CHANGELOG.md — inspected 2026-07-23: stable v8.1.5; v8.1 added import.meta.glob caseSensitive, chunk import maps, Lightning CSS plugin dependency and additional HTML asset sources; v8.2.0-beta.0 adds input/config/CSS/optimizer/Wasm work and bundled-dev changes"
+  - "[GH:local-scan] GitHub tree/languages/community API scan at 428bda3b98886708006f4f2f409095f89d705df1 on 2026-07-23: files=2769, languages=TypeScript=2587476, JavaScript=295965, HTML=140984, CSS=82283, workflow_count=13, test-ish files=520, docs-ish files=177, community_health=87, contributors endpoint returned 100 entries; static structure only, no test execution"
+  - "[GH:release] GitHub releases API checked 2026-07-23: latest stable Vite release=v8.1.5 published 2026-07-16; v8.2.0-beta.0 published 2026-07-22 is prerelease; sampled endpoint also returned v8.1.4, v8.1.3, v8.1.2 and v8.1.1"
+  - "[GH:security-advisories] GitHub repository security-advisories API checked 2026-07-23: returned 19 published advisories; newest was GHSA-fx2h-pf6j-xcff (high, server.fs.deny bypass on Windows alternate paths), whose returned affected ranges end at Vite 8.0.15 / 7.3.4 / 6.4.2; advisory absence or current-version range comparison is not a complete safety assessment"
 ---
 
 # Vite
@@ -55,7 +56,7 @@ Vite 是现代前端构建工具：native ESM dev server、快速 HMR、生产 b
 
 ## 总体评价
 
-Vite 是成熟前端基础设施。README 对核心部件表述清楚：dev server + build command + extensible plugin/JS API；local scan 的 CI、release、tests 和 docs 信号强。 截至 2026-06-07 的 GitHub 快照显示：stars=81151、forks=8274、open issues=513、open PRs=223、最近采样 release=v8.0.16, v8.0.15, v7.3.5 [GH] [GH:release]。
+Vite 是成熟前端基础设施。README 对核心部件表述清楚：dev server + build command + extensible plugin/JS API；当前稳定版为 v8.1.5，v8.2.0-beta.0 已进入预发布。8.1 增加了 glob 大小写控制、chunk import maps、Lightning CSS 插件依赖与额外 HTML asset source 等能力，但不改变本条的总体定位或评分 [GH:readme] [GH:changelog] [GH:release]。
 
 评分采取保守口径：README/docs claim 只证明项目设计目标和公开描述，本轮没有实测运行效果；local scan 只证明文件结构、语言、workflow/test/docs 线索，不证明业务正确性、安全边界或性能数字 [GH:readme] [GH:local-scan]。
 
@@ -64,7 +65,7 @@ Vite 是成熟前端基础设施。README 对核心部件表述清楚：dev serv
 **角色定位**：适合对 `programming/frontend` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
 推荐理由：
-- 能力面与主题匹配：README 列出 instant server start、fast HMR、optimized build、universal plugin interface、typed APIs；local scan 看到 13 workflows、454 test-ish 文件。 [GH:readme]。
+- 能力面与主题匹配：README 列出 dev server、生产 build、plugin interface 与 typed API；8.1 changelog 继续扩展 glob、CSS、HTML asset 和 build surfaces [GH:readme] [GH:changelog]。
 - 工程可审计性：仓库结构、语言分布、workflow/test/docs 数量已记录到 source 层，便于后续深挖 [GH:local-scan]。
 - 风险前置：本条不把 star 数、官方品牌或 README benchmark 当作独立生产采用证据 [GH]。
 
@@ -73,14 +74,14 @@ Vite 是成熟前端基础设施。README 对核心部件表述清楚：dev serv
 ## 优势
 
 1. **定位清晰**：Vite 是现代前端构建工具：native ESM dev server、快速 HMR、生产 build、Plugin API 与 typed JavaScript API。 [GH:readme]
-2. **工程信号可见**：本轮 tree/API scan 记录 files=2656、workflow_count=13、test-ish files=454、docs-ish files=192 [GH:local-scan]。
-3. **社区/关注度信号强**：截至 2026-06-07 快照 stars=81151、forks=8274；这只说明可见度，不直接证明质量或生产采用 [GH]。
+2. **工程信号可见**：本轮 tree/API scan 记录 files=2769、workflow_count=13、test-ish files=520、docs-ish files=177 [GH:local-scan]。
+3. **维护活跃**：截至 2026-07-23 快照 stars=82036、forks=8520、open issues=489、open PRs=239；这些是可见度与维护负载信号，不直接证明质量 [GH]。
 
 ## 劣势
 
 1. **验证边界**：本轮没有安装、构建、运行、benchmark 或端到端 smoke test；README 能力均按“文档声称/仓库可见设计面”处理 [GH:readme]。
-2. **维护/稳定性需看上下文**：open issues=513、open PRs=223 是点时快照；大项目/语言核心仓库不能简单等同 bug 密度 [GH]。
-3. **安全结论保守**：security-advisories endpoint 没返回的项目也不能视作安全；高权限、模型、浏览器、账号或文件处理场景仍需独立 threat model [GH:security-advisories]。
+2. **维护负载不低**：open issues=489、open PRs=239 是点时快照；不能把大项目 backlog 直接等同 bug 密度，但升级仍应读 changelog 并跑应用级回归 [GH]。
+3. **开发服务器是安全边界**：advisory 历史多次涉及 dev server 文件访问与 `server.fs.deny` 绕过；即使当前稳定版本不落在最新 advisory 返回的 affected range，也不应把 dev server 暴露到不可信网络 [GH:security-advisories]。
 
 ---
 
@@ -110,15 +111,15 @@ Vite 是成熟前端基础设施。README 对核心部件表述清楚：dev serv
 
 ## 它能做什么
 
-README 列出 instant server start、fast HMR、optimized build、universal plugin interface、typed APIs；local scan 看到 13 workflows、454 test-ish 文件。 [GH:readme]
+README 列出 dev server、生产 build、plugin interface 与 typed API；v8.1 changelog 还增加 glob case sensitivity、chunk import maps、Lightning CSS plugin dependency 与 additional HTML asset sources [GH:readme] [GH:changelog]。
 
-可见的仓库层面能力线索包括：primary_language=TypeScript、topics=vite, hmr, frontend, build-tool, dev-server、files=2656、docs-ish files=192、test-ish files=454 [GH] [GH:local-scan]。
+可见的仓库层面能力线索包括：primary_language=TypeScript、topics=vite, hmr, frontend, build-tool, dev-server、files=2769、docs-ish files=177、test-ish files=520 [GH] [GH:local-scan]。
 
 ## 运行环境与资源占用
 
 | 场景 | CPU | 内存 | 存储 | 说明 |
 |------|-----|------|------|------|
-| 最小 | 开发服务器和 build 随项目规模增长；设计目标是快速 dev server/HMR | 普通前端开发机可用；大型 monorepo 构建会增加内存 | node_modules/cache 较大；GitHub diskUsage≈70 MB | 基于 README/依赖栈和仓库规模的启发式估计，非实测 |
+| 最小 | 开发服务器和 build 随项目规模增长；设计目标是快速 dev server/HMR | 普通前端开发机可用；大型 monorepo 构建会增加内存 | node_modules/cache 较大；GitHub API repository size≈73 MB | 基于 README/依赖栈和仓库规模的启发式估计，非实测 |
 | 推荐 | 按生产输入规模预留余量 | 按模型/浏览器/数据库/worker 数调整 | 数据、缓存、模型权重或构建产物另计 | 本轮未跑 benchmark |
 
 - **运行时**：以 README/项目类型为准；本轮未实际启动。
@@ -137,7 +138,7 @@ README 列出 instant server start、fast HMR、optimized build、universal plug
 
 评分 5/5。
 
-依据：语言/文件结构、workflow_count=13、test-ish files=454、docs-ish files=192、release 信号和项目年龄 [GH:local-scan] [GH:release]。这个分数是静态仓库质量判断，不等于功能正确性或覆盖率实测。
+依据：语言/文件结构、workflow_count=13、test-ish files=520、docs-ish files=177、release 信号和项目年龄 [GH:local-scan] [GH:release]。这个分数是静态仓库质量判断，不等于功能正确性或覆盖率实测。
 
 ## 可扩展性
 
@@ -149,20 +150,20 @@ README 列出 instant server start、fast HMR、optimized build、universal plug
 
 评分 5/5。
 
-README/docs-ish files=192；README 对核心定位、安装或功能说明的清晰度支撑该评分 [GH:readme] [GH:local-scan]。若项目另有外部文档，本轮未系统抓取完整站点，后续深审可补。
+README、仓库 docs 与 177 个 docs-ish 文件支撑该评分；changelog 对 8.1/8.2 的 feature/fix 分类也足够细 [GH:readme] [GH:changelog] [GH:local-scan]。本轮未系统抓取完整外部文档站点。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 5/5 | stars=81151、forks=8274、open issues=513、open PRs=223 是点时可见度和维护负载信号，不单独证明质量 [GH] |
-| 成熟度 | 5/5 | created_at=2020-04-21T05:03:57Z，sampled releases=v8.0.16, v8.0.15, v7.3.5, v6.4.3, v8.0.14；成熟度按项目年龄、release/CI/test/docs 和稳定性声明综合判断 [GH] [GH:release] |
+| 社区活跃度 | 5/5 | stars=82036、forks=8520、open issues=489、open PRs=239 是 2026-07-23 点时可见度和维护负载信号；community API health=87，contributors endpoint 首页已满 100 条 [GH] [GH:local-scan] |
+| 成熟度 | 5/5 | 项目创建于 2020 年；当前稳定版 v8.1.5，v8.2.0-beta.0 与主线持续迭代，但 release、CI、tests 与文档链仍完整 [GH] [GH:release] [GH:local-scan] |
 
 ## 安全与风险
 
 评分 4/5。
 
-GitHub security-advisories endpoint 本轮返回结果已记录，但“无 advisory 返回”不是安全证明 [GH:security-advisories]。实际采用时至少检查：权限范围、账号/cookie/token 暴露面、依赖供应链、模型/文档数据上传路径、sandbox/隔离边界、license 与商业使用限制。
+GitHub repository security-advisories endpoint 本轮返回 19 条。最新返回项 GHSA-fx2h-pf6j-xcff 是 Windows alternate-path 下的 `server.fs.deny` 绕过；API 返回的 Vite 8 affected range 截止 8.0.15，因此当前稳定版 8.1.5 不在该范围内，但这只说明版本元数据的点时比较，不是完整安全证明 [GH:security-advisories]。实际采用时应保持最新 patch、限制 dev server 监听面，并把第三方插件与前端依赖纳入供应链审计。
 
 ## 学习价值
 

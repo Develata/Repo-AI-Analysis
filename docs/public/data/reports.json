@@ -32,7 +32,7 @@
         "recommendation": 5
       },
       "overall_score": 4.9,
-      "last_checked": "2026-06-07",
+      "last_checked": "2026-07-23",
       "updated": "2026-06-07",
       "summary": "Go 语言官方源码镜像：simple, reliable, efficient software 的语言、编译器、标准库和工具链核心。 [GH:readme]"
     },
@@ -51,7 +51,7 @@
         "typescript"
       ],
       "primary_language": "TypeScript",
-      "stars": 81151,
+      "stars": 82036,
       "status": "active",
       "ratings": {
         "capability": 5,
@@ -66,8 +66,8 @@
         "recommendation": 5
       },
       "overall_score": 4.9,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
+      "last_checked": "2026-07-23",
+      "updated": "2026-07-23",
       "summary": "Vite 是现代前端构建工具：native ESM dev server、快速 HMR、生产 build、Plugin API 与 typed JavaScript API。 [GH:readme]"
     },
     {
@@ -135,7 +135,7 @@
         "recommendation": 5
       },
       "overall_score": 4.6,
-      "last_checked": "2026-06-07",
+      "last_checked": "2026-07-23",
       "updated": "2026-06-07",
       "summary": "Svelte 是 compiler-first 前端框架：把声明式组件编译为直接更新 DOM 的 JavaScript，兼具成熟生态与清晰的开发体验。 [GH:readme]"
     },
@@ -245,42 +245,6 @@
       "last_checked": "2026-06-18",
       "updated": "2026-06-18",
       "summary": "Hello Algo 是中文语境下极强的 DSA 入门资源：对初学者几乎可直接推荐；但 CC BY-NC-SA 4.0 的非商业/相同方式共享限制需要明确。"
-    },
-    {
-      "slug": "programming/security/trivy",
-      "route": "/analysis/programming/security/trivy",
-      "title": "Trivy",
-      "repo_url": "https://github.com/aquasecurity/trivy",
-      "category": "programming/security",
-      "directory": "programming/security",
-      "tags": [
-        "security",
-        "scanner",
-        "container",
-        "kubernetes",
-        "sbom",
-        "iac",
-        "go"
-      ],
-      "primary_language": "Go",
-      "stars": 35983,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 5,
-        "documentation": 5,
-        "community": 5,
-        "maturity": 4,
-        "extensibility": 4,
-        "security": 4,
-        "recommendation": 5
-      },
-      "overall_score": 4.5,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
-      "summary": "Trivy 是综合安全扫描器，覆盖 container image、filesystem、Git repo、VM image、Kubernetes，并扫描 CVE、misconfig、secrets、SBOM 与 license。 [GH:readme]"
     },
     {
       "slug": "dev-tools/scrcpy",
@@ -678,6 +642,42 @@
       "summary": "Semantic Kernel 是 `ai-programs/agent-frameworks` 中的 enterprise app orchestration / plugin-first agent SDK：它不追求“纯 agent 自主性”，而是把模型调用、function calling、企业 API、OpenAPI/MCP 插件、agent col"
     },
     {
+      "slug": "programming/security/trivy",
+      "route": "/analysis/programming/security/trivy",
+      "title": "Trivy",
+      "repo_url": "https://github.com/aquasecurity/trivy",
+      "category": "programming/security",
+      "directory": "programming/security",
+      "tags": [
+        "security",
+        "scanner",
+        "container",
+        "kubernetes",
+        "sbom",
+        "iac",
+        "go"
+      ],
+      "primary_language": "Go",
+      "stars": 37021,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 4,
+        "code_quality": 5,
+        "documentation": 5,
+        "community": 5,
+        "maturity": 4,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 4.3,
+      "last_checked": "2026-07-23",
+      "updated": "2026-07-23",
+      "summary": "Trivy 是综合安全扫描器，覆盖 container image、filesystem、Git repo、VM image、Kubernetes，并扫描 CVE、misconfig、secrets、SBOM 与 license。 [GH:readme]"
+    },
+    {
       "slug": "document-processing/document-conversion/docling",
       "route": "/analysis/document-processing/document-conversion/docling",
       "title": "Docling",
@@ -992,7 +992,7 @@
         "roboflow"
       ],
       "primary_language": "Python",
-      "stars": 43416,
+      "stars": 48283,
       "status": "active",
       "ratings": {
         "capability": 5,
@@ -1007,8 +1007,8 @@
         "recommendation": 4
       },
       "overall_score": 4.1,
-      "last_checked": "2026-06-10",
-      "updated": "2026-06-10",
+      "last_checked": "2026-07-23",
+      "updated": "2026-07-23",
       "summary": "Supervision 是 Roboflow 维护的 Python computer-vision 工具库，主打检测、分割、跟踪、标注、指标和数据处理中的 reusable utilities。 [GH:readme]"
     },
     {
@@ -3158,7 +3158,7 @@
         "linux"
       ],
       "primary_language": "Swift",
-      "stars": 28841,
+      "stars": 48188,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -3173,8 +3173,8 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-06-10",
-      "updated": "2026-06-10",
+      "last_checked": "2026-07-23",
+      "updated": "2026-07-23",
       "summary": "Apple Container 是 Apple 官方 Swift 工具，用 lightweight virtual machines 在 Apple Silicon Mac 上创建和运行 Linux containers。 [GH:readme]"
     },
     {
@@ -3450,7 +3450,7 @@
         "stealth"
       ],
       "primary_language": "Rust",
-      "stars": 14629,
+      "stars": 19586,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -3465,8 +3465,8 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-06-09",
-      "updated": "2026-06-09",
+      "last_checked": "2026-07-23",
+      "updated": "2026-07-23",
       "summary": "Obscura 是一个 Rust 写的 headless browser substrate：它试图在“普通 HTTP 抓取太弱”和“完整 Headless Chrome 太重”之间，给 agents / scraping workloads 提供 V8 JavaScript、DOM、CDP、MCP、Puppeteer/Playwright 兼容与低资源占用"
     },
     {
@@ -4743,6 +4743,41 @@
       "summary": "`mattpocock/skills` 适合已经有 agent harness、希望研究“如何把 alignment、domain language、spec、vertical slices、TDD、debugging 与 review 写成可组合 skills”的工程师；对现有成熟 workflow，应按概念和局部 skill 选择性吸收，不宜全量覆盖安装"
     },
     {
+      "slug": "document-processing/editors/tolaria",
+      "route": "/analysis/document-processing/editors/tolaria",
+      "title": "Tolaria",
+      "repo_url": "https://github.com/refactoringhq/tolaria",
+      "category": "document-processing/editors",
+      "directory": "document-processing/editors",
+      "tags": [
+        "markdown",
+        "knowledge-base",
+        "desktop-app",
+        "typescript",
+        "notes",
+        "agpl"
+      ],
+      "primary_language": "TypeScript / Rust",
+      "stars": 18813,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-07-23",
+      "updated": "2026-07-23",
+      "summary": "Tolaria 是用于管理 markdown knowledge bases 的桌面应用，定位接近本地笔记/知识库管理器。 [GH:readme]"
+    },
+    {
       "slug": "ai-programs/agents/assistant-agents/ui-tars-desktop",
       "route": "/analysis/ai-programs/agents/assistant-agents/ui-tars-desktop",
       "title": "UI-TARS Desktop / Agent TARS",
@@ -4954,6 +4989,76 @@
       "summary": "`anthropics/claude-plugins-official` 是值得作为样本跟踪的 Claude Code plugin marketplace：它展示了 Anthropic 如何把 skills、agents、hooks、MCP servers、commands 和外部 git sources 组织成官方插件目录；但它不是“安全白名单”，REA"
     },
     {
+      "slug": "ai-programs/ai-harness/skills/google-skills",
+      "route": "/analysis/ai-programs/ai-harness/skills/google-skills",
+      "title": "Google Skills",
+      "repo_url": "https://github.com/google/skills",
+      "category": "ai-programs/ai-harness/skills",
+      "directory": "ai-programs/ai-harness/skills",
+      "tags": [
+        "agent-skills",
+        "google",
+        "google-cloud",
+        "prompts",
+        "workflows",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 15033,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-07-23",
+      "updated": "2026-07-23",
+      "summary": "Google Skills 是 Google 产品与技术相关的 agent skills 集合，偏技能包/流程素材，而不是传统软件库。 [GH:readme]"
+    },
+    {
+      "slug": "programming/security/microsoft-mxc",
+      "route": "/analysis/programming/security/microsoft-mxc",
+      "title": "Microsoft eXecution Container",
+      "repo_url": "https://github.com/microsoft/mxc",
+      "category": "programming/security",
+      "directory": "programming/security",
+      "tags": [
+        "sandbox",
+        "containment",
+        "untrusted-code",
+        "rust",
+        "typescript",
+        "microsoft"
+      ],
+      "primary_language": "Rust / TypeScript",
+      "stars": 1144,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 2,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-07-23",
+      "updated": "2026-07-23",
+      "summary": "MXC 是 Microsoft 早期预览的跨平台 untrusted code sandbox system，统一 JSON schema/TypeScript SDK 包装 ProcessContainer、LXC、Bubblewrap、Seatbelt、MicroVM 等 backend；README 明确警告当前不能当安全边界。 [GH:readme]"
+    },
+    {
       "slug": "ai-programs/agents/assistant-agents/openfang",
       "route": "/analysis/ai-programs/agents/assistant-agents/openfang",
       "title": "OpenFang",
@@ -5034,41 +5139,6 @@
       "summary": "RAGFlow 是一个把 deep document understanding、知识库、RAG workflow、agent canvas、sandbox code execution、MCP/API 与多数据源连接器收束到同一平台里的大型 RAG/agentic workflow repo；它值得收录，但不是“轻量 RAG 库”，也不应在未审计、未加固的"
     },
     {
-      "slug": "document-processing/editors/tolaria",
-      "route": "/analysis/document-processing/editors/tolaria",
-      "title": "Tolaria",
-      "repo_url": "https://github.com/refactoringhq/tolaria",
-      "category": "document-processing/editors",
-      "directory": "document-processing/editors",
-      "tags": [
-        "markdown",
-        "knowledge-base",
-        "desktop-app",
-        "typescript",
-        "notes",
-        "agpl"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 14746,
-      "status": "active",
-      "ratings": {
-        "capability": 3,
-        "usability": 3,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 3,
-        "maturity": 2,
-        "extensibility": 3,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.1,
-      "last_checked": "2026-06-10",
-      "updated": "2026-06-10",
-      "summary": "Tolaria 是用于管理 markdown knowledge bases 的桌面应用，定位接近本地笔记/知识库管理器。 [GH:readme]"
-    },
-    {
       "slug": "programming/security/android-privacy-tools/universal-android-debloater-next-generation",
       "route": "/analysis/programming/security/android-privacy-tools/universal-android-debloater-next-generation",
       "title": "Universal Android Debloater Next Generation",
@@ -5139,41 +5209,6 @@
       "last_checked": "2026-07-21",
       "updated": "2026-07-21",
       "summary": "Bumblebee 是一个很窄但很有价值的安全工具：它不做通用 EDR，也不做 SBOM 生成，而是用只读方式扫描开发者机器上的包管理器元数据、编辑器/浏览器扩展和 MCP 配置，在供应链攻击响应中给出可汇总的 endpoint exposure inventory [GH][GH:readme][GH:inventory]。"
-    },
-    {
-      "slug": "ai-programs/ai-harness/skills/google-skills",
-      "route": "/analysis/ai-programs/ai-harness/skills/google-skills",
-      "title": "Google Skills",
-      "repo_url": "https://github.com/google/skills",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
-      "tags": [
-        "agent-skills",
-        "google",
-        "google-cloud",
-        "prompts",
-        "workflows",
-        "python"
-      ],
-      "primary_language": "Python",
-      "stars": 13113,
-      "status": "active",
-      "ratings": {
-        "capability": 3,
-        "usability": 3,
-        "performance": 3,
-        "code_quality": 3,
-        "documentation": 4,
-        "community": 3,
-        "maturity": 2,
-        "extensibility": 3,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3,
-      "last_checked": "2026-06-10",
-      "updated": "2026-06-10",
-      "summary": "Google Skills 是 Google 产品与技术相关的 agent skills 集合，偏技能包/流程素材，而不是传统软件库。 [GH:readme]"
     },
     {
       "slug": "ai-programs/agents/coding-agents/grok-build",
@@ -5287,41 +5322,6 @@
       "last_checked": "2026-07-19",
       "updated": "2026-05-31",
       "summary": "`anthropics/knowledge-work-plugins` 是 Anthropic 将 Claude Cowork 从“通用 agent”推向“角色化知识工作 agent”的样板库：每个 plugin 用 markdown/JSON 文件声明 skills、commands、MCP connectors 和角色流程，让 Claude 更像某个业务"
-    },
-    {
-      "slug": "programming/security/microsoft-mxc",
-      "route": "/analysis/programming/security/microsoft-mxc",
-      "title": "Microsoft eXecution Container",
-      "repo_url": "https://github.com/microsoft/mxc",
-      "category": "programming/security",
-      "directory": "programming/security",
-      "tags": [
-        "sandbox",
-        "containment",
-        "untrusted-code",
-        "rust",
-        "typescript",
-        "microsoft"
-      ],
-      "primary_language": "Rust / TypeScript",
-      "stars": 549,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 2,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 3,
-        "maturity": 1,
-        "extensibility": 4,
-        "security": 2,
-        "recommendation": 3
-      },
-      "overall_score": 3,
-      "last_checked": "2026-06-07",
-      "updated": "2026-06-07",
-      "summary": "MXC 是 Microsoft 早期预览的跨平台 untrusted code sandbox system，统一 JSON schema/TypeScript SDK 包装 ProcessContainer、LXC、Bubblewrap、Seatbelt、MicroVM 等 backend；README 明确警告当前不能当安全边界。 [GH:readme]"
     },
     {
       "slug": "ai-programs/agents/assistant-agents/openclaw",
