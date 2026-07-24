@@ -1,7 +1,7 @@
 ---
 title: "Graphiti"
 created: 2026-06-13
-updated: 2026-06-13
+updated: 2026-07-24
 type: repository-analysis
 repo_url: "https://github.com/getzep/graphiti"
 category: "ai-programs/ai-harness/memory"
@@ -10,11 +10,11 @@ previous_repo: ""
 successor: ""
 primary_language: "Python"
 license: "Apache-2.0"
-stars: 27358
-forks: 2734
-last_checked: 2026-06-13
-last_verified: 2026-06-13
-evidence: "GitHub API + GitHub Search API + release/community/advisory endpoints + local shallow clone scan; not deployed in production by Develata"
+stars: 29114
+forks: 2934
+last_checked: 2026-07-24
+last_verified: 2026-07-24
+evidence: "current GitHub API + release/README/security/governance review + fresh shallow clone scan; historical GHSA status verified, no production deployment or end-to-end smoke test"
 archived_reason: ""
 docker_support: true
 gpu_required: false
@@ -26,14 +26,14 @@ ratings:
   capability: 4
   usability: 3
   performance: 3
-  code_quality: 4
+  code_quality: 3
   documentation: 4
   community: 4
-  maturity: 3
+  maturity: 2
   extensibility: 4
   security: 3
   recommendation: 3
-overall_score: 3.5
+overall_score: 3.3
 sources:
   - "[GH] https://github.com/getzep/graphiti"
   - "[GH:api] https://api.github.com/repos/getzep/graphiti queried 2026-06-13; stars=27358, forks=2734, open_issues_count=372 (GitHub REST counts issues plus PRs), created_at=2024-08-08T22:08:30Z, pushed_at=2026-06-12T22:16:03Z, license=Apache-2.0, default_branch=main"
@@ -44,40 +44,47 @@ sources:
   - "[GH:advisories] https://api.github.com/repos/getzep/graphiti/security-advisories?per_page=10 queried 2026-06-13; returned 1 advisories; absence of returned advisories is not a security proof"
   - "[GH:local-scan] Local clone /opt/data/tmp/repo_wiki_memory_batch/clones/graphiti at commit 0ed90b72505c2a6a4f3ee953939888fb56572944 dated 2026-06-11T20:03:40Z; git ls-files=352, ext_counts={\".example\": 6, \".ini\": 4, \".json\": 5, \".lock\": 4, \".md\": 23, \".py\": 255, \".sh\": 3, \".toml\": 4, \".txt\": 3, \".yaml\": 5, \".yml\": 23, \"[noext]\": 7}, workflows=15, test/spec-ish files=71, manifests=[\"pyproject.toml\", \"docker-compose.yml\", \"Dockerfile\", \"README.md\", \"AGENTS.md\", \"CONTRIBUTING.md\", \"SECURITY.md\", \"CODE_OF_CONDUCT.md\", \"LICENSE\"]"
   - "[README] README.md from https://github.com/getzep/graphiti local clone inspected 2026-06-13; product claims in this analysis are based on README/docs unless explicitly smoke-tested"
+  - "[GH:current] GitHub GraphQL/API queried 2026-07-24: getzep/graphiti exists, active/non-disabled, default_branch=main, head=40dae460407be737e70d5c185995bfdcb892c0c0 committed 2026-07-23, primary_language=Python, license=Apache-2.0, stars=29114, forks=2934, open issues=266, open PRs=167. Counts are separate GraphQL totals."
+  - "[GH:release-current] GitHub releases checked 2026-07-24: latest graphiti-core release remains v0.29.2 published 2026-06-08; release notes describe FalkorDB/Docker/provider fixes and dependency alert cleanup. No newer stable release was found in this check."
+  - "[GH:issues-current] Open issue/PR sample checked 2026-07-24: 266 open issues and 167 open PRs. Sampled issues include #1676 concurrent multi-group FalkorDB processing corrupting cross-graph data, #1651 MCP get/delete querying the wrong FalkorDB graph, #1662 swapped source/target edges, and #1646 pre-assigned episode IDs failing creation. https://github.com/getzep/graphiti/issues/1676 https://github.com/getzep/graphiti/issues/1651 https://github.com/getzep/graphiti/issues/1662 https://github.com/getzep/graphiti/issues/1646"
+  - "[README:current] Current README at 40dae460 inspected 2026-07-24: explicitly separates open-source Graphiti from proprietary managed Zep; Graphiti is self-hosted and brings a third-party graph database. Neo4j, FalkorDB/FalkorDB Lite and Amazon Neptune are documented; Kuzu is deprecated because upstream is unmaintained. README also documents MCP and Docker Compose. Product claims were not smoke-tested."
+  - "[GH:docker-current] Current repository docs inspected 2026-07-24: server/README.md names official user-facing image zepai/graphiti:latest; mcp_server Docker Compose names zepai/knowledge-graph-mcp images. This supports docker_support=true, but images were not pulled or run."
+  - "[GH:local-scan-current] Fresh shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/clones/graphiti at 40dae460407be737e70d5c185995bfdcb892c0c0 inspected 2026-07-24: tracked_files=354, workflows=15, conservative path-based test/spec-ish count=67; README, SECURITY, CONTRIBUTING, CODE_OF_CONDUCT, LICENSE, Docker/Compose, MCP/server and pyproject manifests present. pyproject reports graphiti-core 0.29.2. No tests were run."
+  - "[GH:advisory-current] GitHub repository advisories endpoint checked 2026-07-24 returned GHSA-gg5m-55jj-8m5g / CVE-2026-32247, High, published 2026-03-11: Cypher injection via unsanitized node_labels in search filters; affected pip graphiti-core <=0.28.1, patched in 0.28.2, not withdrawn. Current release 0.29.2 is newer than the patched version. https://github.com/getzep/graphiti/security/advisories/GHSA-gg5m-55jj-8m5g"
 ---
 
 # Graphiti
 
 > 面向 AI agents 的实时/时序知识图谱 memory engine，擅长记录事实随时间变化的上下文，但作为 Hermes 外置 memory 需要额外集成和图存储运维。
 >
-> **状态**: `active` · **总分**: 3.5/5 · **推荐度**: 3/5
+> **状态**: `active` · **总分**: 3.3/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
-面向 AI agents 的实时/时序知识图谱 memory engine，擅长记录事实随时间变化的上下文，但作为 Hermes 外置 memory 需要额外集成和图存储运维。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端到端 smoke test [GH:api][README][GH:local-scan]。
+面向 AI agents 的 temporal context graph engine；当前支持面和产品边界更清晰，但 0.x、266 issues/167 PRs 与公开报告中的 FalkorDB correctness concerns 使它仍需隔离评估 [GH:current][README:current][GH:issues-current]。
 
 ## 总体评价
 
-Graphiti 属于 `ai-programs/ai-harness/memory`：它服务于 agent 的长期记忆、上下文组织、知识图谱或状态管理，而不是普通聊天 UI。仓库当前公开、未归档，最近仍有 push；GitHub API 快照显示 stars=27358、forks=2734，说明可见度较高，但 REST `open_issues_count=372` 还需和 Search API 拆分的 open issues=241、open PRs=131 一起理解 [GH:api][GH:search]。
+Graphiti 属于 `ai-programs/ai-harness/memory`：它服务于 agent 的时序事实、episode/entity/edge 关系与 context retrieval，而不是普通聊天 UI。当前 README 明确区分：Graphiti 是 Apache-2.0、自托管、需自带第三方 graph database 的 engine；Zep 则是使用 proprietary Context Graph Engine 的 managed product [README:current]。分析不能把 Zep 的 scale/SLA/治理能力归给本仓库。
 
-它的核心价值在于把“agent 如何跨 session 记住事实、上下文、用户/项目状态”产品化或工程化；主要风险是 memory 层天然涉及隐私、事实更新、删除语义、prompt injection、长期成本和数据治理。对于 Develata 的 Hermes 部署，应优先看 local-first、低耦合、可关停、可审计和成本可控，而不是只看 star 数或 benchmark 宣称。
+核心价值仍是 temporal fact management 与可替换 graph/LLM/provider surface；FalkorDB Lite 降低了本地试验门槛，Kuzu 则已被明确 deprecated [README:current]。但当前 266 issues/167 PRs 中有公开 issue 报告 cross-graph corruption、wrong-graph MCP operations 和 edge-direction concerns；本轮未复现这些报告，但 backlog/breadth 足以使 `code_quality` 与 `maturity` 分别降至 3/2 [GH:issues-current]。
 
 ## 推荐度：3/5
 
-适合需要 temporal knowledge graph 的 agent/RAG 团队；对个人 Hermes 记忆插件来说偏重，推荐度 3/5。 评分没有因 star 数直接上调：memory 基础设施的采用风险主要在数据治理、运行面复杂度和与现有 agent runtime 的耦合，而不是功能列表长度。
+适合需要 temporal knowledge graph、能固定 graphiti-core 版本并自行运维 Neo4j/FalkorDB/Neptune 的 agent/RAG 团队；对个人 Hermes 记忆插件仍偏重，推荐度 3/5。若使用旧版本，必须至少升级到 0.28.2 以避开已修复的 Cypher injection GHSA [GH:advisory-current]。
 
 ## 优势
 
 1. **方向切中 agent 长期痛点**：memory/context layer 是长周期 agent 的基础能力，能减少重复说明和跨 session 断裂 [README]。
-2. **仓库有工程结构，活跃度需结合近期信号判断**：本地扫描显示 git ls-files=352、workflow=15、test/spec-ish 文件=71，不是 README-only 项目 [GH:local-scan]。
-3. **生态可见度高**：stars/forks 和近期 merged PR 信号说明项目至少有持续关注和开发活动 [GH:api][GH:search]。
-4. **适合学习 memory 设计边界**：无论最终是否采用，仓库都提供了观察 agent memory 如何组织事实、检索、上下文注入和持久化的样本 [README][GH:local-scan]。
+2. **工程结构仍完整**：当前 scan 为 354 tracked files、15 workflows、67 个保守口径 test/spec-ish paths，并有 core、MCP、REST server、Docker 与多 backend 代码 [GH:local-scan-current]。
+3. **生态可见度高**：当前 stars/forks 很高；2026-06-13 历史快照记录此前一个月 43 个 merged PR，只用来说明当时有持续开发活动，不外推为当前响应时效 [GH:current][GH:search]。
+4. **产品/开源边界写得更清楚**：README 直接解释 Zep 与 Graphiti 的 database、deployment、governance 与 scale 差异，降低了把商业产品能力误算到 OSS engine 的风险 [README:current]。
 
 ## 劣势
 
 1. **memory 层风险高于普通工具**：会处理用户偏好、项目事实、对话历史或实体关系，必须考虑删除、过期、租户隔离和泄漏 [README]。
-2. **README 能力不等于本地验证能力**：本轮未部署运行，所有产品能力声明只按 README/docs 与仓库结构记为证据，不当作生产实测 [README][GH:local-scan]。
-3. **活跃 backlog 需要消化**：Search API 显示 open issues=241、open PRs=131；这既说明活跃，也说明维护压力 [GH:search]。
+2. **README 能力不等于本地验证能力**：本轮未启动 graph DB、MCP/server 或 LLM pipeline，所有行为仍只按官方 docs、release 与结构证据表述 [README:current][GH:local-scan-current]。
+3. **correctness backlog 很重**：266 issues/167 PRs，公开 issue 样本报告 graph routing、并发隔离、edge orientation 与 episode creation concerns；本轮没有独立复现 [GH:issues-current]。
 4. **对 Hermes 的耦合度需单独评估**：除 Hermes 内置 provider 外，外部 memory 平台通常需要 MCP/API/provider glue，可能增加系统 prompt、工具面和运行故障点。
 
 ---
@@ -110,9 +117,9 @@ Graphiti 属于 `ai-programs/ai-harness/memory`：它服务于 agent 的长期�
 
 ## 它能做什么
 
-根据 README 和仓库结构，Graphiti 提供 agent memory/context 相关能力：持久化上下文、检索、服务/API/CLI 或平台集成，具体形态以该项目 README 为准 [README]。对 Graphiti，重点是 temporal context graph / episode-to-entity/edge 的图谱化 memory，而不是轻量 key-value profile。本地扫描显示主要语言为 Python，语言统计包括 Python, Dockerfile, Shell, Makefile，说明其实现面并非单一脚本 [GH:languages][GH:local-scan]。
+根据当前 README 和仓库结构，Graphiti 提供 episode ingestion、temporal entity/edge graph、hybrid retrieval、Neo4j/FalkorDB/Neptune backends、FalkorDB Lite、MCP 与 REST surfaces；Kuzu driver 仍在但已 deprecated [README:current][GH:local-scan-current]。能力评分针对 OSS engine，不包含 Zep managed service 的 proprietary database 与 enterprise guarantees。
 
-能力评分 4/5。给分依据是功能覆盖与 agent-memory 相关性；未给满分的原因通常是需要额外部署、框架锁入、或 README 声称未被本轮实测。
+能力评分 4/5：temporal graph、hybrid retrieval、多 graph backends、MCP/REST 与 provider abstractions 已覆盖主要 agent-memory use cases；未给满分是因为它仍需外部 graph DB/LLM/embedding，0.x backend matrix 也未在本轮端到端验证 [README:current][GH:local-scan-current]。
 
 ## 运行环境与资源占用
 
@@ -121,21 +128,21 @@ Graphiti 属于 `ai-programs/ai-harness/memory`：它服务于 agent 的长期�
 | 最小评估 | medium | medium-to-high with graph database/backends | grows with episodes/entities/edges | 只读 README/本地 clone 或最小 CLI/API 试用 |
 | 推荐部署 | medium | medium-to-high with graph database/backends | grows with episodes/entities/edges | 按 README 启动完整 memory/context 工作流，实际依赖模型、数据库和数据量 |
 
-- **运行时**：以仓库 manifest 为准；本地扫描发现 pyproject.toml, docker-compose.yml, Dockerfile, README.md, AGENTS.md, CONTRIBUTING.md, SECURITY.md, CODE_OF_CONDUCT.md [GH:local-scan]。
+- **运行时**：Python `>=3.10,<4`，graphiti-core 当前 0.29.2；需 LLM/embedding provider 和受支持 graph backend [GH:local-scan-current][README:current]。
 - **操作系统**：通常适合 Linux/macOS；Docker 支持为 `true`，未实测。
-- **Docker**：若存在 Dockerfile/compose，仅说明仓库提供部署线索，不代表本轮生产验证 [GH:local-scan]。
+- **Docker**：server 与 MCP docs 分别给出 `zepai/graphiti`、`zepai/knowledge-graph-mcp` images，满足官方 image 支持定义；本轮未运行 [GH:docker-current]。
 - **GPU**：本轮未发现硬性 GPU 要求；若使用本地 embedding/LLM，则另按模型决定。
 - **外部依赖**：memory 项目常依赖 LLM、embedding、vector/graph DB 或云 API；是否可本地化需按具体配置核验 [README]。
 
-performance 评分 3/5：它衡量资源效率，不是能力强弱。memory/graph/context 平台越重，分数越难高。
+performance 评分 3/5：资源效率依赖 graph backend、episode volume、LLM/embedding 与 search mode；FalkorDB Lite 可降低试验门槛，但本轮没有可比 benchmark，故维持平均档而非从功能广度推断高性能 [README:current]。
 
 ## 上手体验
 
-评分 3/5。README 提供了入门路径，但从“能启动 demo”到“接入 Hermes 并长期安全使用”之间仍有距离 [README]。如果需要额外 daemon、数据库、API key、MCP 配置或 provider glue，上手分会被压低；如果 CLI/SDK 边界清晰则相对加分。
+评分 3/5。README、official images、Compose 与 FalkorDB Lite 提供了多条明确入口；但最小完整路径仍涉及 graph backend、LLM/embedding credentials 与 MCP/server configuration，本轮也未做首次运行验证 [README:current][GH:docker-current]。
 
 ## 代码质量
 
-评分 4/5。本地扫描显示仓库有 15 个 GitHub Actions workflow、71 个 test/spec-ish 文件和多个 manifest，说明至少存在工程化组织 [GH:local-scan]。扣分来自本轮未跑测试、未审源码深层架构、以及 memory 项目通常涉及多服务/多语言边界。
+评分 3/5。15 workflows 与 67 个保守口径 test/spec-ish paths 是正面工程信号，但公开 issues 报告 multi-group corruption、wrong-graph MCP query 与 swapped edge 方向等问题；虽未在本轮复现，仍说明多 backend/namespace 边界需要额外回归 [GH:local-scan-current][GH:issues-current]。
 
 ## 可扩展性
 
@@ -143,18 +150,18 @@ performance 评分 3/5：它衡量资源效率，不是能力强弱。memory/gra
 
 ## 文档质量
 
-评分 4/5。README 和仓库文档覆盖了基本定位与使用路径；community profile health=87，本地扫描也发现相关文档/治理文件 ['pyproject.toml', 'docker-compose.yml', 'Dockerfile', 'README.md', 'AGENTS.md', 'CONTRIBUTING.md', 'SECURITY.md', 'CODE_OF_CONDUCT.md', 'LICENSE'] [GH:community][GH:local-scan]。扣分点是复杂生产治理、成本模型、隐私删除语义和 Hermes 适配通常需要额外阅读。
+评分 4/5。README 对 Graphiti/Zep split、backend choices、Kuzu deprecation、MCP/REST 与 Docker 的说明较完整，治理文件也在 [README:current][GH:local-scan-current]。不足仍是 production isolation、迁移和 graph correctness 需要结合 issues/源码自行判断。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | stars=27358、forks=2734、open issues=241、open PRs=131、近 30 天 merged PR=43；star 是可见度信号，不等于质量证明 [GH:api][GH:search] |
-| 成熟度 | 3/5 | created_at=2024-08-08T22:08:30Z，latest release=v0.29.2；memory 生态整体快速迭代，API/数据模型稳定性需按版本观察 [GH:api][GH:release] |
+| 社区活跃度 | 4/5 | 2026-07-24 为 29114 stars、2934 forks、266 open issues、167 open PRs；提交与 issue/PR 互动活跃，但 backlog 很重 [GH:current][GH:issues-current]。 |
+| 成熟度 | 2/5 | 当前仍为 0.29.2，backend architecture 与 docs 在快速变化，Kuzu 已进入 deprecation，且公开报告中的多 backend correctness backlog 尚待收敛 [GH:release-current][README:current][GH:issues-current]。 |
 
 ## 安全与风险
 
-评分 3/5。License 为 Apache-2.0 [GH:api]。GitHub Security Advisories API 本次检查结果见 sources；未返回 advisory 只能说明本次未查到公开 advisory，不能证明项目安全 [GH:advisories]。
+评分 3/5。Apache-2.0、`SECURITY.md` 与已发布修复是正面信号。GitHub advisory 明确记录 GHSA-gg5m-55jj-8m5g / CVE-2026-32247（High）：`graphiti-core <=0.28.1` 的 search filter `node_labels` 可导致 Cypher injection，0.28.2 已修复；当前 0.29.2 高于 patched version [GH:advisory-current][GH:release-current]。这是历史已修复漏洞，不应写成当前版本仍受影响，也不能写成“未返回 advisory”。
 
 主要风险是 memory 层自身：长期保存用户/项目事实、可能自动摄取对话、可能把召回内容注入 prompt，还可能接触 API keys、代码、文档和个人偏好。实际采用前应明确：本地/云边界、保留期限、删除接口、租户隔离、日志内容、prompt injection 防护和最小权限。
 

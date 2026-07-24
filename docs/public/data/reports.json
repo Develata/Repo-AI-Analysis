@@ -2332,7 +2332,7 @@
         "recommendation": 3
       },
       "overall_score": 3.7,
-      "last_checked": "2026-06-10",
+      "last_checked": "2026-07-24",
       "updated": "2026-06-10",
       "summary": "Maigret 是 username-based OSINT 工具，用一个用户名在 3000+ sites 上收集公开账号线索并生成 dossier。 [GH:readme]"
     },
@@ -3287,41 +3287,6 @@
       "summary": "GitHub MCP Server 是 agent 访问 GitHub 的官方 tool bridge：它覆盖 repo/issue/PR/Actions/security/project 等大量 API，并提供 read-only、toolsets、exclude-tools、lockdown、scope filtering 等治理开关；值得重点收录，但生"
     },
     {
-      "slug": "ai-programs/ai-harness/memory/graphiti",
-      "route": "/analysis/ai-programs/ai-harness/memory/graphiti",
-      "title": "Graphiti",
-      "repo_url": "https://github.com/getzep/graphiti",
-      "category": "ai-programs/ai-harness/memory",
-      "directory": "ai-programs/ai-harness/memory",
-      "tags": [
-        "memory",
-        "knowledge-graph",
-        "temporal-graph",
-        "python",
-        "mcp",
-        "self-hosted"
-      ],
-      "primary_language": "Python",
-      "stars": 27358,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 3,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.5,
-      "last_checked": "2026-06-13",
-      "updated": "2026-06-13",
-      "summary": "面向 AI agents 的实时/时序知识图谱 memory engine，擅长记录事实随时间变化的上下文，但作为 Hermes 外置 memory 需要额外集成和图存储运维。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端到端 smoke test [GH:api][README][GH:local-scan]。"
-    },
-    {
       "slug": "ai-programs/ai-harness/skills/last30days",
       "route": "/analysis/ai-programs/ai-harness/skills/last30days",
       "title": "last30days",
@@ -3388,7 +3353,7 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-06-13",
+      "last_checked": "2026-07-24",
       "updated": "2026-06-13",
       "summary": "完整 stateful agent 平台，memory 是 agent runtime 的内生部分；能力强但框架锁入明显，不适合作为 Hermes 的低耦合外置 memory 第一选择。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端到端 smoke test [GH:api][README][GH:local-s"
     },
@@ -3538,40 +3503,6 @@
       "last_checked": "2026-07-07",
       "updated": "2026-07-07",
       "summary": "Scrapling 适合愿意试用现代反爬/自适应抽取能力的 Python 爬虫开发者；不适合把 README 的“bypass anti-bot”当作生产保证。"
-    },
-    {
-      "slug": "ai-programs/ai-harness/memory/supermemory",
-      "route": "/analysis/ai-programs/ai-harness/memory/supermemory",
-      "title": "Supermemory",
-      "repo_url": "https://github.com/supermemoryai/supermemory",
-      "category": "ai-programs/ai-harness/memory",
-      "directory": "ai-programs/ai-harness/memory",
-      "tags": [
-        "memory",
-        "context-engine",
-        "typescript",
-        "mcp",
-        "local-first"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 26897,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 3,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.5,
-      "last_checked": "2026-06-13",
-      "updated": "2026-06-13",
-      "summary": "面向 AI 时代的 memory/context engine，生态热度高，Hermes 也内置了 Supermemory provider；但云/API 产品边界与本地自托管边界需要分清 [Hermes:provider]。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端到端 smoke test [GH:api"
     },
     {
       "slug": "ai-programs/agents/coding-agents/tabby",
@@ -3798,76 +3729,6 @@
       "summary": "CLI-Anything 是典型的 agent infrastructure：它解决“agent 如何可靠调用现有软件”这一 tool access layer 问题，方向非常重要；GitHub release 线最新为 v0.4.0，PyPI `cli-anything-hub` 包已到 0.4.1，但项目仍只有数月历史，成熟度必须保守看待 [GH][Py"
     },
     {
-      "slug": "ai-programs/ai-harness/memory/cognee",
-      "route": "/analysis/ai-programs/ai-harness/memory/cognee",
-      "title": "Cognee",
-      "repo_url": "https://github.com/topoteretes/cognee",
-      "category": "ai-programs/ai-harness/memory",
-      "directory": "ai-programs/ai-harness/memory",
-      "tags": [
-        "memory",
-        "knowledge-graph",
-        "rag",
-        "python",
-        "typescript",
-        "self-hosted"
-      ],
-      "primary_language": "Python",
-      "stars": 17802,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 3,
-        "performance": 2,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.4,
-      "last_checked": "2026-06-13",
-      "updated": "2026-06-13",
-      "summary": "开源 AI memory platform，把数据管道、图谱和检索组织成 agent 可用的长期记忆；适合知识图谱/RAG memory 系统，不适合最低耦合个人插件。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端到端 smoke test [GH:api][README][GH:local-scan]。"
-    },
-    {
-      "slug": "ai-programs/ai-harness/memory/hindsight",
-      "route": "/analysis/ai-programs/ai-harness/memory/hindsight",
-      "title": "Hindsight",
-      "repo_url": "https://github.com/vectorize-io/hindsight",
-      "category": "ai-programs/ai-harness/memory",
-      "directory": "ai-programs/ai-harness/memory",
-      "tags": [
-        "memory",
-        "knowledge-graph",
-        "entity-resolution",
-        "local-embedded",
-        "python",
-        "typescript"
-      ],
-      "primary_language": "Python",
-      "stars": 16228,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 3,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 2,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.4,
-      "last_checked": "2026-06-13",
-      "updated": "2026-06-13",
-      "summary": "“Agent Memory That Learns”的 memory system，支持 cloud、local embedded 与 graph/entity recall；能力强但项目很新，local embedded 比轻量 SQLite provider 重。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端"
-    },
-    {
       "slug": "ai-programs/ai-harness/memory/honcho",
       "route": "/analysis/ai-programs/ai-harness/memory/honcho",
       "title": "Honcho",
@@ -3898,7 +3759,7 @@
         "recommendation": 3
       },
       "overall_score": 3.4,
-      "last_checked": "2026-06-13",
+      "last_checked": "2026-07-24",
       "updated": "2026-06-13",
       "summary": "AI-native memory infrastructure，核心是 peer/session/user representation 与 dialectic reasoning；Hermes 内置 Honcho provider，且配置面覆盖 context/dialectic cadence；但 cloud/self-host 与 AGPL 边界需要治"
     },
@@ -4122,42 +3983,6 @@
       "summary": "PR-Agent 是 AI PR review 自动化的经典开源项目，功能面和平台覆盖仍有研究/自托管价值；但 README 明确称其为 Qodo 的 community-maintained legacy project，生产采用时应把治理、维护连续性、LLM 数据流与误报风险放在推荐度之前 [GH:readme][Docs:index]。"
     },
     {
-      "slug": "programming/data/vector-search/turbovec",
-      "route": "/analysis/programming/data/vector-search/turbovec",
-      "title": "turbovec",
-      "repo_url": "https://github.com/RyanCodrai/turbovec",
-      "category": "programming/data/vector-search",
-      "directory": "programming/data/vector-search",
-      "tags": [
-        "vector-search",
-        "ann",
-        "quantization",
-        "rust",
-        "python",
-        "rag",
-        "simd"
-      ],
-      "primary_language": "Python/Rust",
-      "stars": 10625,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 3,
-        "maturity": 2,
-        "extensibility": 3,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.4,
-      "last_checked": "2026-06-10",
-      "updated": "2026-06-10",
-      "summary": "turbovec 适合想在本地或私有环境里做轻量 compressed vector search、且愿意接受早期项目风险的 RAG/embedding 工程使用者。"
-    },
-    {
       "slug": "ai-programs/agent-infrastructure/vibe-kanban",
       "route": "/analysis/ai-programs/agent-infrastructure/vibe-kanban",
       "title": "Vibe Kanban",
@@ -4343,6 +4168,41 @@
       "summary": "Career-Ops 已从“Markdown 求职模板”成长为有 CLI、ATS scanner、browser autofill、plugins、interview modes、experimental web UI 与 84 个 release objects 的 career workflow product；方法论和自动化边界很有价值，但两个月内从 "
     },
     {
+      "slug": "ai-programs/ai-harness/memory/cognee",
+      "route": "/analysis/ai-programs/ai-harness/memory/cognee",
+      "title": "Cognee",
+      "repo_url": "https://github.com/topoteretes/cognee",
+      "category": "ai-programs/ai-harness/memory",
+      "directory": "ai-programs/ai-harness/memory",
+      "tags": [
+        "memory",
+        "knowledge-graph",
+        "rag",
+        "python",
+        "typescript",
+        "self-hosted"
+      ],
+      "primary_language": "Python",
+      "stars": 29211,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-07-24",
+      "updated": "2026-07-24",
+      "summary": "开源 AI memory platform，把数据管道、图谱、MCP 与检索组织成 agent 可用的长期记忆；当前部署面更完整，但快速 release 与 226 issues/394 PRs 的 backlog 要求生产采用保持审慎 [GH:current][README:current][GH:issues-current]。"
+    },
+    {
       "slug": "ai-programs/ai-harness/hooks/destructive-command-guard",
       "route": "/analysis/ai-programs/ai-harness/hooks/destructive-command-guard",
       "title": "destructive_command_guard",
@@ -4412,6 +4272,41 @@
       "last_checked": "2026-07-14",
       "updated": "2026-05-19",
       "summary": "面向 Windows 单机玩家的 trainer 管理器：把 Fling、XiaoXing、Cheat Tables、GCM/社区上传 trainer 聚合到一个桌面 dashboard 中，降低“到处找修改器”的摩擦，但安全信任边界天然较重。"
+    },
+    {
+      "slug": "ai-programs/ai-harness/memory/graphiti",
+      "route": "/analysis/ai-programs/ai-harness/memory/graphiti",
+      "title": "Graphiti",
+      "repo_url": "https://github.com/getzep/graphiti",
+      "category": "ai-programs/ai-harness/memory",
+      "directory": "ai-programs/ai-harness/memory",
+      "tags": [
+        "memory",
+        "knowledge-graph",
+        "temporal-graph",
+        "python",
+        "mcp",
+        "self-hosted"
+      ],
+      "primary_language": "Python",
+      "stars": 29114,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-07-24",
+      "updated": "2026-07-24",
+      "summary": "面向 AI agents 的 temporal context graph engine；当前支持面和产品边界更清晰，但 0.x、266 issues/167 PRs 与公开报告中的 FalkorDB correctness concerns 使它仍需隔离评估 [GH:current][README:current][GH:issues-current]。"
     },
     {
       "slug": "ai-programs/agents/assistant-agents/kirara-ai",
@@ -4663,9 +4558,44 @@
         "recommendation": 3
       },
       "overall_score": 3.2,
-      "last_checked": "2026-06-13",
+      "last_checked": "2026-07-24",
       "updated": "2026-06-13",
       "summary": "面向 autonomous coding agents 的 portable memory layer / CLI，local-first，且 Hermes 内置 ByteRover provider 作为 brv CLI 接入层；但 Elastic License 与年轻系统风险必须前置 [Hermes:provider]。 该判断基于 GitHub AP"
+    },
+    {
+      "slug": "ai-programs/ai-harness/memory/hindsight",
+      "route": "/analysis/ai-programs/ai-harness/memory/hindsight",
+      "title": "Hindsight",
+      "repo_url": "https://github.com/vectorize-io/hindsight",
+      "category": "ai-programs/ai-harness/memory",
+      "directory": "ai-programs/ai-harness/memory",
+      "tags": [
+        "memory",
+        "knowledge-graph",
+        "entity-resolution",
+        "local-embedded",
+        "python",
+        "typescript"
+      ],
+      "primary_language": "Python",
+      "stars": 18733,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 2,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-07-24",
+      "updated": "2026-07-24",
+      "summary": "“Agent Memory That Learns”的 memory system，支持 hosted、official Docker、external Postgres 与 Python embedded；集成面继续扩大，但 0.8.x 快速迭代与公开 issue 中的 correctness/resource reports 仍要求谨慎 [GH:rele"
     },
     {
       "slug": "ai-programs/agents/coding-agents/open-interpreter",
@@ -4704,6 +4634,43 @@
       "last_checked": "2026-07-16",
       "updated": "2026-07-16",
       "summary": "Open Interpreter 适合研究“同一模型在不同 coding-agent harness 下为何表现不同”，但当前 Rust rewrite 只有 `0.0.26`，其 6.6 万 stars 主要代表长期项目品牌与历史积累，不能当作新 Rust 版本已经成熟的证明。"
+    },
+    {
+      "slug": "ai-programs/ai-harness/memory/openviking",
+      "route": "/analysis/ai-programs/ai-harness/memory/openviking",
+      "title": "OpenViking",
+      "repo_url": "https://github.com/volcengine/OpenViking",
+      "category": "ai-programs/ai-harness/memory",
+      "directory": "ai-programs/ai-harness/memory",
+      "tags": [
+        "context-database",
+        "memory",
+        "resources",
+        "skills",
+        "python",
+        "rust",
+        "typescript",
+        "self-hosted"
+      ],
+      "primary_language": "Python",
+      "stars": 27141,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 2
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-07-24",
+      "updated": "2026-07-24",
+      "summary": "Volcengine 的 Agent context database 已扩展到官方 image、server、Helper 与多 coding-agent integrations；上手面改善，但系统重量、AGPL 主体许可与快速变动仍使个人 Hermes memory 不宜优先 [GH:releases-current][README:current]。"
     },
     {
       "slug": "ai-programs/ai-harness/skills/mattpocock-skills",
@@ -5357,43 +5324,6 @@
       "summary": "OpenClaw 是一个自托管的单用户 AI 代理框架，通过消息应用作为交互入口，让 LLM 代表你在本地执行任务。定位：全局统筹型 AI 助理——适合作为多个 AI 工具的统一调度层，不适合垂类任务。"
     },
     {
-      "slug": "ai-programs/ai-harness/memory/openviking",
-      "route": "/analysis/ai-programs/ai-harness/memory/openviking",
-      "title": "OpenViking",
-      "repo_url": "https://github.com/volcengine/OpenViking",
-      "category": "ai-programs/ai-harness/memory",
-      "directory": "ai-programs/ai-harness/memory",
-      "tags": [
-        "context-database",
-        "memory",
-        "resources",
-        "skills",
-        "python",
-        "rust",
-        "typescript",
-        "self-hosted"
-      ],
-      "primary_language": "Python",
-      "stars": 25573,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 2,
-        "performance": 2,
-        "code_quality": 4,
-        "documentation": 3,
-        "community": 4,
-        "maturity": 2,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 2
-      },
-      "overall_score": 3,
-      "last_checked": "2026-06-13",
-      "updated": "2026-06-13",
-      "summary": "Volcengine 的 AI Agent context database，把 memory、resources、skills 组织成文件系统式上下文层；能力面大但系统重、AGPL、年轻，个人 Hermes memory 不宜优先。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端到端 smoke test [GH"
-    },
-    {
       "slug": "document-processing/editors/presenton",
       "route": "/analysis/document-processing/editors/presenton",
       "title": "Presenton",
@@ -5464,6 +5394,40 @@
       "last_checked": "2026-07-12",
       "updated": "2026-07-12",
       "summary": "RTK（Rust Token Killer）是一个 CLI 输出代理：拦截 coding agent 发出的 shell 命令并压缩结果，README 宣称常见开发命令节省 60–90% token、代理开销 <10 ms。项目已发布到 v0.43.0，但 774 open issues、792 open PRs、仍开放的数据覆盖 bug 与三项已发布 se"
+    },
+    {
+      "slug": "ai-programs/ai-harness/memory/supermemory",
+      "route": "/analysis/ai-programs/ai-harness/memory/supermemory",
+      "title": "Supermemory",
+      "repo_url": "https://github.com/supermemoryai/supermemory",
+      "category": "ai-programs/ai-harness/memory",
+      "directory": "ai-programs/ai-harness/memory",
+      "tags": [
+        "memory",
+        "context-engine",
+        "typescript",
+        "mcp",
+        "local-first"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 28563,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 2,
+        "documentation": 3,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 2
+      },
+      "overall_score": 3,
+      "last_checked": "2026-07-24",
+      "updated": "2026-07-24",
+      "summary": "面向 AI 的 hosted/local memory/context engine，Hermes 也有 API provider；但 self-hosted 0.0.x 的公开 issue 样本报告 auth availability、migration、ingestion 与 crash problems，使采用建议降为 2/5 [Hermes:prov"
     },
     {
       "slug": "document-processing/vibevoice",
@@ -5721,6 +5685,42 @@
       "last_checked": "2026-07-21",
       "updated": "2026-05-31",
       "summary": "`openai/skills` 值得收录，因为 OpenAI 也开始以官方仓库和 Codex 文档形式采用 Agent Skills 机制；但它当前更像年轻的官方 catalog 与示例集合，不是成熟、版本化、可无审查批量安装的工程依赖 [GH] [GH:readme] [Docs:openai-skills]。"
+    },
+    {
+      "slug": "programming/data/vector-search/turbovec",
+      "route": "/analysis/programming/data/vector-search/turbovec",
+      "title": "turbovec",
+      "repo_url": "https://github.com/RyanCodrai/turbovec",
+      "category": "programming/data/vector-search",
+      "directory": "programming/data/vector-search",
+      "tags": [
+        "vector-search",
+        "ann",
+        "quantization",
+        "rust",
+        "python",
+        "rag",
+        "simd"
+      ],
+      "primary_language": "Python/Rust",
+      "stars": 13833,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 1,
+        "extensibility": 3,
+        "security": 2,
+        "recommendation": 2
+      },
+      "overall_score": 2.7,
+      "last_checked": "2026-07-24",
+      "updated": "2026-07-24",
+      "summary": "turbovec 仍是值得研究的 compressed vector index，但截至 2026-07-24 的 bug/backlog 信号使它更适合可重建数据上的实验，而非默认生产依赖。"
     },
     {
       "slug": "ai-programs/ai-harness/guides/agent-engineering/schema-harness",

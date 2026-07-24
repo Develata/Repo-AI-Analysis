@@ -12,7 +12,7 @@ primary_language: "Python"
 license: "Apache-2.0"
 stars: 23297
 forks: 2480
-last_checked: 2026-06-13
+last_checked: 2026-07-24
 last_verified: 2026-06-13
 evidence: "GitHub API + GitHub Search API + release/community/advisory endpoints + local shallow clone scan; not deployed in production by Develata"
 archived_reason: ""

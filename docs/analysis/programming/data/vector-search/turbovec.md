@@ -1,7 +1,7 @@
 ---
 title: "turbovec"
 created: 2026-06-10
-updated: 2026-06-10
+updated: 2026-07-24
 type: repository-analysis
 repo_url: "https://github.com/RyanCodrai/turbovec"
 category: "programming/data/vector-search"
@@ -10,11 +10,11 @@ previous_repo: ""
 successor: ""
 primary_language: "Python/Rust"
 license: "MIT"
-stars: 10625
-forks: 909
-last_checked: 2026-06-10
-last_verified: 2026-06-10
-evidence: "official GitHub/PyPI/crates.io metadata + local source scan + cargo check + installed-wheel smoke test; no independent benchmark rerun"
+stars: 13833
+forks: 1235
+last_checked: 2026-07-24
+last_verified: 2026-07-24
+evidence: "current GitHub/PyPI/crates.io metadata + release/README/security/governance review + fresh local source scan; retains 2026-06 installed-wheel smoke evidence, no current independent benchmark rerun"
 archived_reason: ""
 docker_support: false
 gpu_required: false
@@ -24,16 +24,16 @@ estimated_storage: "small library package; persisted .tv/.tvim index size grows 
 status: active
 ratings:
   capability: 4
-  usability: 4
-  performance: 4
-  code_quality: 4
-  documentation: 4
+  usability: 3
+  performance: 3
+  code_quality: 3
+  documentation: 3
   community: 3
-  maturity: 2
+  maturity: 1
   extensibility: 3
-  security: 3
-  recommendation: 3
-overall_score: 3.4
+  security: 2
+  recommendation: 2
+overall_score: 2.7
 sources:
   - "[GH:repo] https://api.github.com/repos/RyanCodrai/turbovec checked 2026-06-10: stars=10625, forks=909, subscribers=47, created_at=2026-03-26, pushed_at=2026-06-09, open_issues_count=8 (= open issues + PRs in REST), topics include ann/faiss/quantization/rag/rust/simd/vector-search, license=MIT, has_discussions=false."
   - "[GH:readme] https://github.com/RyanCodrai/turbovec README checked via local clone fcc1eb8e06c52764907b677128845995309219e0 on 2026-06-10; claims TurboQuant-based Rust vector index with Python bindings, says it is built on Google Research's TurboQuant algorithm, no train phase, 2-4 bit compression, NEON/AVX-512BW kernels, search-time filters, Python/Rust APIs, framework integrations, and benchmark tables."
@@ -50,47 +50,52 @@ sources:
   - "[arXiv] https://arxiv.org/abs/2504.19874 checked 2026-06-10: TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate; subjects cs.LG/cs.AI/cs.DB/cs.DS; 25 pages; DOI 10.48550/arXiv.2504.19874."
   - "[Local:verify] Local verification on 2026-06-10: cargo check -p turbovec --all-targets PASS with two warnings (unused n_byte_groups, dead avx2_block_epilogue); cargo test -p turbovec --lib --tests failed at link because local system lacks -lopenblas, while CI installs libopenblas-dev on Linux; installed PyPI wheel turbovec==0.7.1 with uv and smoke-tested TurboQuantIndex search (2,5) and IdMapIndex allowlist search (2,3)."
   - "[GH:comparisons] GitHub API checked 2026-06-10 for positioning only: facebookresearch/faiss stars=40254 license=MIT language=C++; qdrant/qdrant stars=32002 license=Apache-2.0 language=Rust; milvus-io/milvus stars=44718 license=Apache-2.0 language=Go; lancedb/lancedb stars=10566 license=Apache-2.0."
+  - "[GH:current] GitHub GraphQL/API queried 2026-07-24: repository exists at RyanCodrai/turbovec, active/non-disabled, default_branch=main, primary_language=Python, license=MIT, stars=13833, forks=1235, open issues=66, open PRs=7; default-branch head=1e7200cfd8f26c92ce2855652db64bc7f85bc039 committed 2026-06-10, while repository pushed_at=2026-07-23 reflects activity on any ref."
+  - "[GH:release-current] GitHub releases remained empty in the 2026-07-24 check; PyPI JSON reported turbovec=0.8.0 uploaded 2026-06-10 with Python >=3.9, and crates.io reported newest_version=0.9.0 updated 2026-06-10. The repository CHANGELOG describes these as a security-audit release."
+  - "[GH:issues-current] Open-issue/PR APIs checked 2026-07-24: 66 open issues and 7 open PRs. Sampled issues include #121 'Python bindings never release the GIL', #137 x86-64-v3 wheels defeating scalar fallback and risking SIGILL on pre-AVX2 CPUs, #160 understated integration dependency floors, #163 release-process test gaps, and #169 persisted data reappearing after Agno drop(); sampled PRs #170-#177 propose documentation, integration, I/O, input-validation and core hardening fixes. https://github.com/RyanCodrai/turbovec/issues/121 https://github.com/RyanCodrai/turbovec/issues/137 https://github.com/RyanCodrai/turbovec/issues/160 https://github.com/RyanCodrai/turbovec/issues/163 https://github.com/RyanCodrai/turbovec/issues/169"
+  - "[GH:local-scan-current] Fresh shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/clones/turbovec at 1e7200cfd8f26c92ce2855652db64bc7f85bc039 inspected 2026-07-24: tracked_files=128, workflows=3, conservative path-based test/spec-ish count=23; README, CHANGELOG, CONTRIBUTING, SECURITY.md, LICENSE, Cargo workspace and Python/Rust package manifests present. No tests or benchmark were rerun in this freshness revision."
+  - "[GH:advisories-current] https://api.github.com/repos/RyanCodrai/turbovec/security-advisories checked 2026-07-24 returned []; this means no published repository advisory was found in this check, not that the project or its binary/file-loading boundary is safe."
 ---
 
 # turbovec
 
 > TurboQuant-based compressed vector index：Rust core + Python bindings，主打本地 RAG/embedding search 的 2–4 bit quantization、低内存与 SIMD search。
 >
-> **状态**: `active` · **总分**: 3.4/5 · **推荐度**: 3/5
+> **状态**: `active` · **总分**: 2.7/5 · **推荐度**: 2/5
 
 ## 一句话总结
 
-turbovec 适合想在本地或私有环境里做轻量 compressed vector search、且愿意接受早期项目风险的 RAG/embedding 工程使用者。
+turbovec 仍是值得研究的 compressed vector index，但截至 2026-07-24 的 bug/backlog 信号使它更适合可重建数据上的实验，而非默认生产依赖。
 
 ## 总体评价
 
-turbovec 的吸引力非常明确：它不是完整向量数据库，而是一个小而锋利的 compressed vector index。README 将其定位为 Google Research TurboQuant 算法的工程化实现，提供 Rust crate 与 Python bindings，支持 2–4 bit compression、无训练 ingest、SIMD search、filtered search、持久化，以及 LangChain/LlamaIndex/Haystack/Agno 等框架替换层 [GH:readme][GH:docs]。
+turbovec 的吸引力仍很明确：它不是完整向量数据库，而是一个小而锋利的 compressed vector index。项目 README 自述其基于 Google Research 的 TurboQuant 算法，提供 Rust crate 与 Python bindings，支持 2–4 bit compression、无训练 ingest、SIMD search、filtered search、持久化，以及 LangChain/LlamaIndex/Haystack/Agno 等框架替换层 [GH:readme][GH:docs]；本轮没有独立验证实现与论文的一致性。
 
-但它仍是 2026-03 才创建、PyPI classifier 仍标为 `Development Status :: 3 - Alpha` 的新项目 [GH:repo][PyPI]。近期 changelog 与 open issues 显示维护者在快速修 bug：重复 id orphan vector、upsert 失败导致旧数据删除、NaN/Inf/大数输入校验、scalar fallback 正确性、`.tv` load integer overflow 等都在近期被修复或被公开讨论 [GH:changelog][GH:issues]。这说明维护响应积极，也说明 API/实现边界仍在硬化中。
+但风险信号已明显变差：默认分支自 2026-06-10 的 0.8.0/0.9.0 security-audit release 后没有新提交，而 open issues 已从上次快照的 8 增至 66，并有 7 个尚未合并的 hardening PR。样本涉及 Python GIL、pre-AVX2 wheel 的 SIGILL、integration dependency floors、持久化删除语义和 release-process test gaps [GH:current][GH:release-current][GH:issues-current]。这不是普通 star 漂移，而是会改变采用边界的 correctness、portability 与维护吞吐问题。
 
-结论：如果目标是研究 TurboQuant、做本地 RAG 原型、或在内存敏感场景中试用 compressed ANN，它值得重点关注；如果目标是生产级多租户向量数据库、稳定 SLA、复杂 metadata/filter/query planner，则应优先看 Qdrant/Milvus/LanceDB 等成熟系统。
+结论：如果目标是研究 TurboQuant、验证低比特向量压缩，或在可重建索引上做隔离实验，它仍有学习价值；如果目标是生产 RAG、跨 CPU 分发 wheel、稳定 framework integration 或不可丢失的数据链路，应等待 backlog 被合并并重新做版本级回归，或优先选择成熟系统。
 
-## 推荐度：3/5
+## 推荐度：2/5
 
-推荐给 RAG/embedding 工程师、Rust/Python 性能库研究者、以及需要本地低内存向量检索的实验性项目；前提是你能接受 alpha-stage 风险，并愿意用自己的数据重跑 recall/latency benchmark。
+适合 Rust/Python 性能库研究者、TurboQuant 学习者和能随时重建索引的隔离实验；不建议把当前版本直接放进核心生产检索链路。
 
-给 3 而不是 4 的原因是：它的技术方向和工程包装值得跟踪，本轮 PyPI wheel smoke test 也可用 [Local:verify]；但作为“采用推荐”而不是“收录推荐”，它仍过早。仓库太新，PyPI classifier 仍为 Alpha，近期 correctness/data-safety/security-adjacent 修复密集，且没有独立复现 benchmark。用于研究、试验、小规模可重建索引是合理的；用于替代成熟 vector database 或进入核心生产链路，则需要更长观察期。
+给 2 的原因不是算法方向失去价值，而是当前 66 个 open issues 与 7 个 hardening PR 中已有多项直接触及 correctness、platform compatibility、data lifecycle 和 packaging。2026-06 的 wheel smoke test 只能证明当时的窄路径可运行，不能覆盖当前暴露出的边界 [Local:verify][GH:issues-current]。在这些修复进入正式版本并通过目标 CPU/框架/数据集回归前，采用推荐应低于“可谨慎试用”。
 
 ## 优势
 
 1. **定位清晰**：不是包罗万象的 vector DB，而是压缩向量索引库，目标函数是 memory/latency/privacy/local deployment [GH:readme]。
 2. **算法卖点强**：基于 TurboQuant paper，主张 data-oblivious quantizer、无 separate train phase，并将 2–4 bit quantization 落到 Rust/Python API [GH:readme][arXiv]。
 3. **工程表面完整**：Rust core、Python bindings、PyPI/crates.io 双发布、CI matrix、docs/api、benchmark 目录、integration docs 与 changelog 都存在 [GH:local-scan][GH:ci][PyPI][crates.io]。
-4. **本地验证可跑**：本轮通过 PyPI wheel 安装后，`TurboQuantIndex` 与 `IdMapIndex` 的基本 search/allowlist smoke test 成功 [Local:verify]。
-5. **维护响应快**：近期 commit/release 密集，0.7.0/0.8.0 的 audit-driven release 与 0.7.1/0.8.1 bug-fix release 都直接处理 correctness 和 integration 问题 [GH:changelog]。
+4. **历史窄路径验证可跑**：2026-06 通过 PyPI wheel 安装后，`TurboQuantIndex` 与 `IdMapIndex` 的基本 search/allowlist smoke test 成功；本轮没有把该结果外推为当前生产验证 [Local:verify][GH:release-current]。
+5. **安全报告通道已补齐**：当前仓库有 `SECURITY.md` 与 GitHub private reporting 路径，较上次 local scan 的“未发现”状态更完整 [GH:local-scan-current]。
 
 ## 劣势
 
-1. **成熟度低**：仓库创建于 2026-03，PyPI 仍标 Alpha，版本与边界仍在快速变化 [GH:repo][PyPI]。
+1. **仍处 alpha 风险区间**：仓库创建于 2026-03，版本与边界仍在快速变化，成熟度按评分边界降至 1/5 [GH:repo][GH:release-current]。
 2. **单核心维护者特征明显**：contributors API 显示 4 名贡献者，RyanCodrai 贡献 147 次，其余各 1 次；CONTRIBUTING 明确采用 invitation-only PR、只有作者合并到 main [GH:community]。
-3. **近期 bug 暴露较多**：open issues 与 changelog 包含 scalar fallback correctness、security fixes、integration orphan vectors、upsert data-safety 等问题；这是年轻性能库常见状态，但不应忽视 [GH:issues][GH:changelog]。
+3. **bug/backlog 已成为硬负面信号**：66 个 open issues 与 7 个 open PR 中，样本覆盖 GIL、SIGILL、input validation、integration lifecycle、dependency floors 与发布测试缺口 [GH:issues-current]。
 4. **不是完整数据库**：没有服务端、多租户、复制、分片、复杂 metadata index、权限系统或 cloud control plane；这些要由上层系统承担 [GH:docs]。
-5. **性能结论需自证**：README benchmark 很有价值，但本轮没有复现实验；生产采用前必须在目标 CPU、embedding 维度、bit_width、filter selectivity 和 recall threshold 下重测 [GH:readme][Local:verify]。
+5. **性能与可移植性都需自证**：README benchmark 很有价值，但本轮没有复现实验；同时 #137 指出发布 wheel 的 target-cpu 配置可能使 pre-AVX2 fallback 失效，目标 CPU 验证已成为 correctness 前置条件 [GH:readme][GH:issues-current]。
 
 ---
 
@@ -105,7 +110,7 @@ turbovec 的吸引力非常明确：它不是完整向量数据库，而是一�
 ## 不适合什么场景
 
 - **需要成熟向量数据库的生产系统**：例如多租户权限、分片复制、在线 schema/metadata filtering、备份恢复、observability、SLA。
-- **不能容忍早期 bug 的核心链路**：近期 changelog/issue 已显示 correctness/data-safety 类问题仍在被发现和修复 [GH:issues][GH:changelog]。
+- **不能容忍早期 bug 的核心链路**：当前 issue/PR 样本显示 correctness、data lifecycle、packaging 与 portability 问题尚在等待修复 [GH:issues-current]。
 - **需要 GPU ANN 或分布式索引**：turbovec 是 CPU/SIMD-oriented library，不是 GPU/distributed vector database [GH:readme]。
 - **非 Python/Rust 生态**：Node.js binding 仍只是 open issue/proposal，不是已发布能力 [GH:issues]。
 - **必须依赖官方 release assets 的流程**：GitHub releases API 本轮返回 0；实际版本主要从 PyPI、crates.io 与 changelog 追踪 [GH:releases][PyPI][crates.io][GH:changelog]。
@@ -142,29 +147,29 @@ turbovec 的吸引力非常明确：它不是完整向量数据库，而是一�
 | 最小 | 普通 CPU；无 GPU | 随向量数、维度、bit_width 线性增长 | wheel/crate 很小，索引文件随数据增长 | 本轮 PyPI wheel smoke test 在 Linux/Python 3.13 成功 [Local:verify]。 |
 | 推荐 | 支持 AVX2/AVX-512BW 的 x86_64 或 NEON ARM | 按目标 recall/bit_width 预算；README 声称 10M float32 31GB 可压到约 4GB | `.tv`/`.tvim` 按压缩向量、scale、id map 增长 | README benchmark claim 未在本轮复现，应按目标机器重测 [GH:readme]。 |
 
-- **运行时**：Rust crate + Python extension；Python package requires `>=3.9`，本轮安装到 Python 3.13 [PyPI][Local:verify]。
+- **运行时**：Rust crate + Python extension；当前官方 registry 版本为 PyPI 0.8.0、crates.io 0.9.0，Python requires `>=3.9` [GH:release-current]。
 - **操作系统**：PyPI classifier 包含 macOS 与 POSIX/Linux；CI 覆盖 Ubuntu、macOS、Windows [PyPI][GH:ci]。
 - **Docker**：无官方 Docker 形态；作为 library 使用。
 - **GPU**：不要求 GPU；性能依赖 CPU SIMD path。
 - **外部依赖**：Rust crate 依赖 ndarray/rayon/faer/statrs 等；Linux 从源码测试/构建涉及 OpenBLAS link，CI 明确安装 `libopenblas-dev` [GH:ci][Local:verify]。
 
-性能评分 4/5：设计目标、压缩率与 SIMD 路径都强，且 README benchmark 具体；但本轮未复现 FAISS 对比，且源码测试在本地因缺 OpenBLAS 未跑完，只能给 4 而非 5。
+性能评分 3/5：设计目标、压缩率与 SIMD 路径有吸引力，但本轮未复现 FAISS 对比；#121 报告 Python bindings 不释放 GIL，意味着并行 Python workload 可能无法充分利用 native kernels。#137 的 CPU compatibility 报告计入 correctness/portability，而不作为资源效率证据 [GH:issues-current]。
 
 ## 上手体验
 
-评分 4/5。
+评分 3/5。
 
-Python 路径非常顺：`pip install turbovec` 后可直接 `from turbovec import TurboQuantIndex, IdMapIndex`，本轮用 `uv` 创建 venv、安装 wheel 并完成基本 search smoke test [Local:verify]。README 首屏给出 Python add/search/write/load 与 stable id 示例，docs/api 补充 method semantics、filtering 与 file formats [GH:readme][GH:docs]。
+Python 的 happy path 仍短：`pip install turbovec` 后可直接导入核心类型，2026-06 的基本 search smoke test 成功 [Local:verify]。但当前 issues 表明 framework integration 的依赖下限、示例 API、GIL 与参数校验存在多处落差，因此不能再给“少量配置即可稳定获得价值”的 4 分 [GH:issues-current]。
 
 Rust 路径也有 `cargo add turbovec`，crate 标明 MSRV 1.70 [crates.io]。不过源码构建/测试在 Linux 上需要 OpenBLAS；本地没装 `-lopenblas` 时 `cargo test` 链接失败，而 CI 通过安装 `libopenblas-dev` 处理 [GH:ci][Local:verify]。这对普通 Python 用户影响不大，对源码贡献者是一个需要注意的环境坑。
 
 ## 代码质量
 
-评分 4/5。
+评分 3/5。
 
-仓库结构清晰：`turbovec/` 为 Rust core，`turbovec-python/` 为 PyO3/maturin bindings，`docs/`、`benchmarks/`、`examples/`、CI workflows 与 changelog 分工明确 [GH:local-scan]。源码中可见对并发 search、OnceLock cache、NaN/Inf/大数输入、file format version、SIMD path 与 scalar fallback 的显式注释和错误建模 [GH:local-scan][GH:changelog]。CI 覆盖三大 OS，Python wheel build、integration extras、pytest 与 downstream smoke 都在流程内 [GH:ci]。
+仓库结构仍清晰：Rust core、PyO3/maturin bindings、docs、benchmarks、examples、3 个 workflows 与 changelog 分工明确 [GH:local-scan-current]。但代码质量评分必须受真实 bug density 约束：当前样本中的 GIL、SIGILL、panic/input validation、integration persistence 与 release-process gaps，说明 CI 和 audit release 尚未把关键边界压住 [GH:issues-current]。
 
-扣分点也明确：本轮 `cargo check -p turbovec --all-targets` 虽通过，但仍有 unused variable/dead code warning；`cargo test` 未能在当前环境完成，因为缺系统 OpenBLAS [Local:verify]。此外近期 changelog 集中修复多个 correctness/data-safety bug，说明测试体系正在快速补强，但不能视为已完全成熟 [GH:changelog]。
+2026-06 的 `cargo check` 通过和 wheel smoke 仍是正面历史证据，但本轮没有重跑；在 7 个 hardening PR 合并并形成新版本前，不能让静态结构和 CI theater 覆盖当前缺陷信号 [Local:verify][GH:issues-current]。
 
 ## 可扩展性
 
@@ -176,9 +181,9 @@ turbovec 的扩展性主要体现在 library API 和 integration wrappers：Pyth
 
 ## 文档质量
 
-评分 4/5。
+评分 3/5。
 
-README、docs/api、integration docs、benchmark 目录、CONTRIBUTING、CHANGELOG 都存在，且 API semantics 写得比较具体：例如 `swap_remove`、`IdMapIndex`、allowlist/mask output shape、`.tv/.tvim` file formats 都有明确说明 [GH:docs][GH:local-scan]。CHANGELOG 也记录了 bug-fix release 的背景与影响，便于判断版本风险 [GH:changelog]。
+README、docs/api、integration docs、benchmark 目录、CONTRIBUTING、SECURITY 与 CHANGELOG 都存在 [GH:local-scan-current]。但 #160、#162、#164、#168 分别指出 dependency floors、rustdoc、Agno 示例与 API semantics 漂移；文档已经不再满足“只缺少边缘场景”的 4 分边界 [GH:issues-current]。
 
 不足是文档仍偏项目内自述，独立部署/production hardening 指南较少；性能 benchmark 虽详，但本轮未看到可直接替代生产评估的外部复现实验。对 alpha library 来说已经优秀，但不是成熟数据库级别的完整运维文档。
 
@@ -186,18 +191,18 @@ README、docs/api、integration docs、benchmark 目录、CONTRIBUTING、CHANGEL
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 3/5 | stars/forks 增长很强，GitHub API 本轮为 10625 stars、909 forks；维护者响应快，open PR=0。但 contributors 仍明显集中，Discussions 未开启，CONTRIBUTING 采用 invitation-only PR，community health=71 [GH:repo][GH:community]。 |
-| 成熟度 | 2/5 | 仓库创建于 2026-03，PyPI classifier 为 Alpha，近期仍有 correctness/security-fix 相关 issues 和 bug-fix releases；适合 tracking/trial，不宜视为长期稳定基础设施 [GH:repo][PyPI][GH:issues][GH:changelog]。 |
+| 社区活跃度 | 3/5 | 2026-07-24 快照为 13833 stars、1235 forks、66 open issues、7 open PRs；外部报告/补丁活跃，但合并权集中且默认分支自 2026-06-10 未推进，响应吞吐尚不足以升至 4 [GH:current][GH:issues-current]。 |
+| 成熟度 | 1/5 | 2026-03 创建、当前版本仍处早期，且 0.8.0/0.9.0 后迅速累积多类 correctness/packaging/compatibility 问题；符合“alpha/API 与行为边界随时可能变化”的 1 分边界 [GH:current][GH:release-current][GH:issues-current]。 |
 
 社区与成熟度必须分开看：可见度很高，但制度化社区与生产成熟度仍早。所谓“名满天下者，未必器成也”；stars 是发现信号，不是质量证明。
 
 ## 安全与风险
 
-评分 3/5。
+评分 2/5。
 
-正面信号：无网络服务端、无托管控制面，作为本地 library 使用时攻击面小；MIT license 简单；GitHub repository security advisories 本轮查询为 0；代码近期加入/讨论了非有限输入、大数输入、`.tv` load overflow 等安全/数据完整性修复 [GH:advisories][GH:changelog][GH:issues]。
+正面信号：无网络服务端、无托管控制面，本仓库代码标为 MIT，且当前已有 `SECURITY.md` 与 private reporting 路径；依赖、集成框架、数据/模型与上层产品仍适用各自条款，不能由该 MIT 字段一并推出。2026-07-24 未查到 published repository advisory [GH:local-scan-current][GH:advisories-current]。
 
-风险点：它处理二进制索引文件 `.tv/.tvim`、NumPy buffers、SIMD unsafe code、Python extension 边界和外部输入向量；open issue #105 标题直接指向 `.tv` load integer overflow 与 Python NaN query validation，说明安全边界仍在硬化 [GH:issues]。没有 SECURITY.md；无 published advisory 只能说明本轮没查到公开 advisory，不能说明没有漏洞 [GH:advisories][GH:community]。
+风险点：它处理二进制索引文件、NumPy buffers、SIMD/CPU feature 边界和 Python extension 输入；当前 open issue/PR 样本报告 malformed input panic、pre-AVX2 SIGILL、持久化数据生命周期问题，并提出 I/O hardening 修复 [GH:issues-current]。这些尚待确认或合并的安全相关报告足以把未经独立审计的 alpha native extension 压到 2 分，但不等于本轮已复现漏洞。无 published advisory 只表示本轮未查到公开 GHSA，不能证明安全 [GH:advisories-current]。
 
 生产建议：不要加载不可信 `.tv/.tvim` 文件；对输入 embedding 做 finite/shape/dim 校验；固定版本并跑回归；如果用于多租户服务，把 turbovec 放在外层权限与资源限制之后。
 

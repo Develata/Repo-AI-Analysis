@@ -1,7 +1,7 @@
 ---
 title: "OpenViking"
 created: 2026-06-13
-updated: 2026-06-13
+updated: 2026-07-24
 type: repository-analysis
 repo_url: "https://github.com/volcengine/OpenViking"
 category: "ai-programs/ai-harness/memory"
@@ -10,30 +10,30 @@ previous_repo: ""
 successor: ""
 primary_language: "Python"
 license: "AGPL-3.0"
-stars: 25573
-forks: 1973
-last_checked: 2026-06-13
-last_verified: 2026-06-13
-evidence: "GitHub API + GitHub Search API + release/community/advisory endpoints + local shallow clone scan; not deployed in production by Develata"
+stars: 27141
+forks: 2135
+last_checked: 2026-07-24
+last_verified: 2026-07-24
+evidence: "current GitHub API + release/README/security/governance review + fresh shallow clone scan; no production deployment, image run or end-to-end smoke test by Develata"
 archived_reason: ""
 docker_support: true
 gpu_required: false
-estimated_cpu: "medium-to-high"
-estimated_memory: "medium-to-high"
+estimated_cpu: "unknown; configuration-dependent and not benchmarked in this audit"
+estimated_memory: "unknown; configuration-dependent and not benchmarked in this audit"
 estimated_storage: "context DB/resources/skills grow with workload"
 status: active
 ratings:
   capability: 4
-  usability: 2
-  performance: 2
-  code_quality: 4
-  documentation: 3
+  usability: 3
+  performance: 3
+  code_quality: 3
+  documentation: 4
   community: 4
   maturity: 2
   extensibility: 4
   security: 3
   recommendation: 2
-overall_score: 3.0
+overall_score: 3.2
 sources:
   - "[GH] https://github.com/volcengine/OpenViking"
   - "[GH:api] https://api.github.com/repos/volcengine/OpenViking queried 2026-06-13; stars=25573, forks=1973, open_issues_count=228 (GitHub REST counts issues plus PRs), created_at=2026-01-05T07:11:17Z, pushed_at=2026-06-12T18:35:59Z, license=AGPL-3.0, default_branch=main"
@@ -44,40 +44,47 @@ sources:
   - "[GH:advisories] https://api.github.com/repos/volcengine/OpenViking/security-advisories?per_page=10 queried 2026-06-13; returned 0 advisories; absence of returned advisories is not a security proof"
   - "[GH:local-scan] Local clone /opt/data/tmp/repo_wiki_memory_batch/clones/OpenViking at commit 402d51f7c0ef4e612ac9b470b98eb5a42a0520f2 dated 2026-06-12T18:36:54+08:00; git ls-files=2748, ext_counts={\".cc\": 75, \".cpp\": 61, \".h\": 250, \".md\": 280, \".png\": 48, \".py\": 1337, \".rs\": 88, \".sh\": 50, \".ts\": 132, \".tsx\": 84, \".yaml\": 70, \"[noext]\": 49}, workflows=22, test/spec-ish files=721, manifests=[\"pyproject.toml\", \"Cargo.toml\", \"docker-compose.yml\", \"Dockerfile\", \"README.md\", \"CONTRIBUTING.md\", \"SECURITY.md\", \"LICENSE\"]"
   - "[README] README.md from https://github.com/volcengine/OpenViking local clone inspected 2026-06-13; product claims in this analysis are based on README/docs unless explicitly smoke-tested"
+  - "[GH:current] GitHub GraphQL/API queried 2026-07-24: volcengine/OpenViking exists, active/non-disabled, default_branch=main, head=27debfe7a8c26d5b937ccc2fe9fde46c33d2d6d4 committed 2026-07-23, primary_language=Python, license=AGPL-3.0, stars=27141, forks=2135, open issues=91, open PRs=326. Counts are separate GraphQL totals."
+  - "[GH:releases-current] GitHub releases API checked 2026-07-24: v0.4.9 (2026-07-13), v0.4.10 (2026-07-16) and v0.4.11 (2026-07-23) followed the prior v0.3.24 snapshot. Official notes describe more coding-agent integrations, image-query support, reindex/session/MCP/resource reliability work, strict AND tag semantics, optional cuVS micro-batching, Lark import and SDK observability. These are release claims, not local benchmark results."
+  - "[GH:issues-current] Open issue/PR sample checked 2026-07-24: 91 open issues and 326 open PRs. Sampled issues include #3484 Gemini api_base being ignored, #3306 timed-out resource import losing task_id, #3396 reindex jobs stuck RUNNING without cancel/timeout, and #3373 apply_str_patch replacing every duplicate SEARCH block. https://github.com/volcengine/OpenViking/issues/3484 https://github.com/volcengine/OpenViking/issues/3306 https://github.com/volcengine/OpenViking/issues/3396 https://github.com/volcengine/OpenViking/issues/3373"
+  - "[README:current] Current README at 27debfe7 inspected 2026-07-24: documents ov init/doctor, provider configuration, local/server quickstarts, agent integrations, a beta macOS/Windows OpenViking Helper, production HTTP deployment, official Docker image, security reporting, and split licenses (main AGPLv3; ov_cli/examples Apache-2.0). Product behavior was not smoke-tested."
+  - "[GH:docker-current] Current README and deploy/helm/README.md inspected 2026-07-24: official image is ghcr.io/volcengine/openviking:latest and the Helm chart uses it by default; README says the image bundles VikingBot. This supports docker_support=true, but the image was not pulled or run."
+  - "[GH:local-scan-current] Fresh shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/clones/OpenViking at 27debfe7a8c26d5b937ccc2fe9fde46c33d2d6d4 inspected 2026-07-24: tracked_files=3493, workflows=25, conservative path-based test/spec-ish count=929; Python/Rust/C++/TypeScript/Go surfaces, SDKs, bot, web studio, Docker/Helm, many agent integrations, SECURITY/CONTRIBUTING/LICENSE and benchmark trees present. No tests or benchmarks were run."
+  - "[GH:advisories-current] https://api.github.com/repos/volcengine/OpenViking/security-advisories checked 2026-07-24 returned []; this only means no published repository advisory was found in this check, not that its server, plugins, secrets or memory data are safe."
 ---
 
 # OpenViking
 
 > Volcengine 的 AI Agent context database，把 memory、resources、skills 组织成文件系统式上下文层；能力面大但系统重、AGPL、年轻，个人 Hermes memory 不宜优先。
 >
-> **状态**: `active` · **总分**: 3.0/5 · **推荐度**: 2/5
+> **状态**: `active` · **总分**: 3.2/5 · **推荐度**: 2/5
 
 ## 一句话总结
 
-Volcengine 的 AI Agent context database，把 memory、resources、skills 组织成文件系统式上下文层；能力面大但系统重、AGPL、年轻，个人 Hermes memory 不宜优先。 该判断基于 GitHub API、README 和本地浅克隆结构检查；本轮未做生产部署或端到端 smoke test [GH:api][README][GH:local-scan]。
+Volcengine 的 Agent context database 已扩展到官方 image、server、Helper 与多 coding-agent integrations；上手面改善，但系统重量、AGPL 主体许可与快速变动仍使个人 Hermes memory 不宜优先 [GH:releases-current][README:current]。
 
 ## 总体评价
 
-OpenViking 属于 `ai-programs/ai-harness/memory`：它服务于 agent 的长期记忆、上下文组织、知识图谱或状态管理，而不是普通聊天 UI。仓库当前公开、未归档，最近仍有 push；GitHub API 快照显示 stars=25573、forks=1973，说明可见度较高，但 REST `open_issues_count=228` 还需和 Search API 拆分的 open issues=65、open PRs=163 一起理解 [GH:api][GH:search]。
+OpenViking 属于 `ai-programs/ai-harness/memory`：它把 memory、resources、skills 与 session context 组织成 filesystem-like context database，并延伸到 CLI/server、SDK、VikingBot、web studio、agent hooks/plugins 与可选 GPU cuVS path [README:current][GH:releases-current][GH:local-scan-current]。v0.4.9—v0.4.11 的官方 notes 记录 integrations、query、reindex/session/MCP/resource reliability 与 cuVS 等变更 [GH:releases-current]。
 
-它的核心价值在于把“agent 如何跨 session 记住事实、上下文、用户/项目状态”产品化或工程化；主要风险是 memory 层天然涉及隐私、事实更新、删除语义、prompt injection、长期成本和数据治理。对于 Develata 的 Hermes 部署，应优先看 local-first、低耦合、可关停、可审计和成本可控，而不是只看 star 数或 benchmark 宣称。
+正面变化是 `ov init/doctor`、官方 image、production server docs、macOS/Windows Helper 与更广的 agent integrations，使 usability/documentation 分别上调到 3/4 [README:current][GH:docker-current]。负面是 91 issues/326 PRs，公开 issue 样本报告卡死任务、task_id 丢失、patch 误替换等问题；这些报告本轮未复现，但 backlog/velocity 仍使 code_quality 为 3、maturity 维持 2 [GH:current][GH:issues-current]。
 
 ## 推荐度：2/5
 
-适合评估 agent context database 架构；对低耦合个人部署不推荐直接采用，推荐度 2/5。 评分没有因 star 数直接上调：memory 基础设施的采用风险主要在数据治理、运行面复杂度和与现有 agent runtime 的耦合，而不是功能列表长度。
+适合评估 agent context database、统一 resources/memory/skills 与多 agent integration 的团队；对低耦合个人 Hermes deployment 仍不推荐直接采用，推荐度 2/5。只有在明确接受 AGPL/组件许可、服务运维、模型成本与快速版本回归时，才适合做隔离试点 [README:current][GH:releases-current]。
 
 ## 优势
 
 1. **方向切中 agent 长期痛点**：memory/context layer 是长周期 agent 的基础能力，能减少重复说明和跨 session 断裂 [README]。
-2. **仓库有工程结构，活跃度需结合近期信号判断**：本地扫描显示 git ls-files=2748、workflow=22、test/spec-ish 文件=721，不是 README-only 项目 [GH:local-scan]。
-3. **生态可见度高**：stars/forks 和近期 merged PR 信号说明项目至少有持续关注和开发活动 [GH:api][GH:search]。
-4. **适合学习 memory 设计边界**：无论最终是否采用，仓库都提供了观察 agent memory 如何组织事实、检索、上下文注入和持久化的样本 [README][GH:local-scan]。
+2. **工程覆盖很广**：当前 scan 为 3493 tracked files、25 workflows、929 个保守口径 test/spec-ish paths，包含 Python/Rust/C++ core、SDKs、bot、web studio、Docker/Helm 与 agent integrations [GH:local-scan-current]。
+3. **生态可见度高**：当前 stars/forks 很高；2026-06-13 历史快照记录此前一个月 344 个 merged PR，只用于说明当时的开发活动，不外推为 2026-07-24 的响应时效 [GH:current][GH:search]。
+4. **上手与部署文档已增强**：init/doctor、official image、server deployment、Helper 与多 provider examples 明显改善早期项目的入口 [README:current][GH:docker-current]。
 
 ## 劣势
 
 1. **memory 层风险高于普通工具**：会处理用户偏好、项目事实、对话历史或实体关系，必须考虑删除、过期、租户隔离和泄漏 [README]。
-2. **README 能力不等于本地验证能力**：本轮未部署运行，所有产品能力声明只按 README/docs 与仓库结构记为证据，不当作生产实测 [README][GH:local-scan]。
-3. **活跃 backlog 需要消化**：Search API 显示 open issues=65、open PRs=163；这既说明活跃，也说明维护压力 [GH:search]。
+2. **README/release 能力不等于本地验证**：本轮未启动 image、server、Helper、cuVS 或任何 agent plugin，全部行为按官方文档与结构证据表述 [README:current][GH:local-scan-current]。
+3. **PR backlog 极大**：91 issues/326 PRs；活跃不等于已收敛，公开 issue 报告中的 background job lifecycle、SDK gateway 与 patch semantics concerns 都应在试点中回归 [GH:issues-current]。
 4. **对 Hermes 的耦合度需单独评估**：除 Hermes 内置 provider 外，外部 memory 平台通常需要 MCP/API/provider glue，可能增加系统 prompt、工具面和运行故障点。
 
 ---
@@ -110,32 +117,32 @@ OpenViking 属于 `ai-programs/ai-harness/memory`：它服务于 agent 的长期
 
 ## 它能做什么
 
-根据 README 和仓库结构，OpenViking 提供 agent memory/context 相关能力：持久化上下文、检索、服务/API/CLI 或平台集成，具体形态以该项目 README 为准 [README]。对 OpenViking，重点是把 memory、resources、skills 统一为文件系统式 context database。本地扫描显示主要语言为 Python，语言统计包括 Python, Rust, TypeScript, C++，说明其实现面并非单一脚本 [GH:languages][GH:local-scan]。
+根据当前 README/releases 与仓库结构，OpenViking 提供 filesystem-like context DB、memory/resources/skills、CLI/server/SDK、official image/Helm、VikingBot/web UI、agent hooks/plugins、multimodal import/search、reindex/snapshot 和可选 cuVS [README:current][GH:releases-current][GH:local-scan-current]。能力评分仍为 4：广度高，但项目年轻且多条路径未在本轮实测。
 
-能力评分 4/5。给分依据是功能覆盖与 agent-memory 相关性；未给满分的原因通常是需要额外部署、框架锁入、或 README 声称未被本轮实测。
+能力评分 4/5：context DB、resources/memory/skills、server/SDK、bot/UI、integrations 与 optional cuVS 覆盖广；未给满分是因为项目仍年轻，多条 deployment/integration path 未在本轮端到端验证 [README:current][GH:releases-current]。
 
 ## 运行环境与资源占用
 
 | 场景 | CPU | 内存 | 存储 | 说明 |
 |------|-----|------|------|------|
-| 最小评估 | medium-to-high | medium-to-high | context DB/resources/skills grow with workload | 只读 README/本地 clone 或最小 CLI/API 试用 |
-| 推荐部署 | medium-to-high | medium-to-high | context DB/resources/skills grow with workload | 按 README 启动完整 memory/context 工作流，实际依赖模型、数据库和数据量 |
+| 最小评估 | unknown; not benchmarked | unknown; not benchmarked | context DB/resources/skills grow with workload | 只读 README/本地 clone；本轮未执行最小运行 |
+| 推荐部署 | configuration-dependent; not benchmarked | configuration-dependent; not benchmarked | context DB/resources/skills grow with workload | 实际取决于 provider、parser、storage、语料与可选 cuVS，需目标配置实测 |
 
-- **运行时**：以仓库 manifest 为准；本地扫描发现 pyproject.toml, Cargo.toml, docker-compose.yml, Dockerfile, README.md, CONTRIBUTING.md, SECURITY.md, LICENSE [GH:local-scan]。
-- **操作系统**：通常适合 Linux/macOS；Docker 支持为 `true`，未实测。
-- **Docker**：若存在 Dockerfile/compose，仅说明仓库提供部署线索，不代表本轮生产验证 [GH:local-scan]。
+- **运行时**：仓库主要语言为 Python，当前 tree 还包含 Rust/C++ core-related surfaces、Go/TypeScript/Python SDK directories 与 Rust CLI code；本轮只核实代码/manifest surface，不据此断言最低 Python 版本或各 SDK 的独立发布状态 [GH:current][GH:local-scan-current]。
+- **操作系统**：server/CLI 以 docs 为准；beta Helper 当前提供 macOS arm64/x64 与 Windows x64 downloads [README:current]。
+- **Docker**：官方 `ghcr.io/volcengine/openviking:latest` 与 Helm chart 已核实，满足 official image 定义；本轮未运行 [GH:docker-current]。
 - **GPU**：本轮未发现硬性 GPU 要求；若使用本地 embedding/LLM，则另按模型决定。
-- **外部依赖**：memory 项目常依赖 LLM、embedding、vector/graph DB 或云 API；是否可本地化需按具体配置核验 [README]。
+- **外部依赖**：README 的 provider configuration、server/storage 与可选 cuVS paths 表明实际资源和云边界取决于所选模型/provider 与 deployment configuration；本轮未验证任一完整组合 [README:current][GH:releases-current]。
 
-performance 评分 2/5：它衡量资源效率，不是能力强弱。memory/graph/context 平台越重，分数越难高。
+performance 评分 3/5：context DB、parser/embedding/model calls、server/storage 与 optional GPU path 使资源占用高度依赖配置；本轮没有运行 benchmark，也没有精确资源缺陷证据，因此只能给“平均、需目标部署实测”的 3 分，不能仅凭 architecture complexity 压到 2 [README:current][GH:local-scan-current]。
 
 ## 上手体验
 
-评分 2/5。README 提供了入门路径，但从“能启动 demo”到“接入 Hermes 并长期安全使用”之间仍有距离 [README]。如果需要额外 daemon、数据库、API key、MCP 配置或 provider glue，上手分会被压低；如果 CLI/SDK 边界清晰则相对加分。
+评分 3/5。`ov init/doctor`、official image、server quickstart 与 beta Helper 已把首次配置从“文档拼装”推进到较明确的 guided path [README:current]。仍不能给 4：完整系统涉及 provider、server、storage、agent plugins 与可选 GPU backend，且本轮没有首次运行验证。
 
 ## 代码质量
 
-评分 4/5。本地扫描显示仓库有 22 个 GitHub Actions workflow、721 个 test/spec-ish 文件和多个 manifest，说明至少存在工程化组织 [GH:local-scan]。扣分来自本轮未跑测试、未审源码深层架构、以及 memory 项目通常涉及多服务/多语言边界。
+评分 3/5。25 workflows 与 929 个保守口径 test/spec-ish paths 显示大量工程投入，但 91 issues/326 PRs 与公开报告中的 job lifecycle、patch semantics、gateway compatibility concerns 表明快速扩张的多语言/多服务边界仍需额外回归；本轮未执行测试 [GH:local-scan-current][GH:issues-current]。
 
 ## 可扩展性
 
@@ -143,18 +150,18 @@ performance 评分 2/5：它衡量资源效率，不是能力强弱。memory/gra
 
 ## 文档质量
 
-评分 3/5。README 和仓库文档覆盖了基本定位与使用路径；community profile health=75，本地扫描也发现相关文档/治理文件 ['pyproject.toml', 'Cargo.toml', 'docker-compose.yml', 'Dockerfile', 'README.md', 'CONTRIBUTING.md', 'SECURITY.md', 'LICENSE'] [GH:community][GH:local-scan]。扣分点是复杂生产治理、成本模型、隐私删除语义和 Hermes 适配通常需要额外阅读。
+评分 4/5。当前 README/docs 覆盖 init/doctor、provider configuration、agent integrations、official Docker/Helm、production server、Helper、security 与 split licensing；release notes 也较具体 [README:current][GH:releases-current][GH:docker-current]。扣分点是体系庞大、版本快，文档正确性仍需结合具体 release 回归。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | stars=25573、forks=1973、open issues=65、open PRs=163、近 30 天 merged PR=344；star 是可见度信号，不等于质量证明 [GH:api][GH:search] |
-| 成熟度 | 2/5 | created_at=2026-01-05T07:11:17Z，latest release=v0.3.24；memory 生态整体快速迭代，API/数据模型稳定性需按版本观察 [GH:api][GH:release] |
+| 社区活跃度 | 4/5 | 2026-07-24 为 27141 stars、2135 forks、91 open issues、326 open PRs；提交/release/贡献活跃，但 PR 积压很重 [GH:current][GH:issues-current]。 |
+| 成熟度 | 2/5 | 2026-01 创建、从 v0.3.24 快速推进到 v0.4.11，部署/agent/SDK/存储面仍高频变化；本轮证据尚不能建立稳定 API 边界 [GH:current][GH:releases-current]。 |
 
 ## 安全与风险
 
-评分 3/5。License 为 AGPL-3.0，修改后的网络服务可能触发源码提供义务；hosted/internal service 部署前需确认法律边界 [GH:api]。GitHub Security Advisories API 本次检查结果见 sources；未返回 advisory 只能说明本次未查到公开 advisory，不能证明项目安全 [GH:advisories]。
+评分 3/5。主项目为 AGPLv3，`ov_cli` 与 examples 为 Apache-2.0；部署/再分发前必须按组件确认许可，而不能把整个 monorepo 简化成单一宽松许可证 [README:current]。`SECURITY.md` 提供 ByteDance 报告渠道，本轮未查到 published repository advisory；`[]` 不证明 server、plugins、secrets 或 memory data 安全 [GH:local-scan-current][GH:advisories-current]。
 
 主要风险是 memory 层自身：长期保存用户/项目事实、可能自动摄取对话、可能把召回内容注入 prompt，还可能接触 API keys、代码、文档和个人偏好。实际采用前应明确：本地/云边界、保留期限、删除接口、租户隔离、日志内容、prompt injection 防护和最小权限。
 
