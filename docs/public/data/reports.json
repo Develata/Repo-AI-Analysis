@@ -242,7 +242,7 @@
         "recommendation": 5
       },
       "overall_score": 4.5,
-      "last_checked": "2026-06-18",
+      "last_checked": "2026-07-25",
       "updated": "2026-06-18",
       "summary": "Hello Algo 是中文语境下极强的 DSA 入门资源：对初学者几乎可直接推荐；但 CC BY-NC-SA 4.0 的非商业/相同方式共享限制需要明确。"
     },
@@ -416,7 +416,7 @@
         "recommendation": 5
       },
       "overall_score": 4.3,
-      "last_checked": "2026-06-18",
+      "last_checked": "2026-07-25",
       "updated": "2026-06-18",
       "summary": "freeCodeCamp 是编程教育领域的标志性开源平台；作为学习入口和教育平台研究对象强烈推荐，但它不是轻量教材 repo，安全与本地开发复杂度也不能忽略。"
     },
@@ -1559,7 +1559,7 @@
         "recommendation": 4
       },
       "overall_score": 3.9,
-      "last_checked": "2026-06-18",
+      "last_checked": "2026-07-25",
       "updated": "2026-06-18",
       "summary": "EasyTier 是一个能力很完整、工程推进很快的自托管/半自托管 mesh VPN；对个人 homelab、远程访问、游戏联机和多地小网络很值得试，但不应把它当作已经被大规模企业生产验证的 Tailscale/ZeroTier 替代品。"
     },
@@ -1635,7 +1635,7 @@
         "recommendation": 4
       },
       "overall_score": 3.9,
-      "last_checked": "2026-06-18",
+      "last_checked": "2026-07-25",
       "updated": "2026-06-18",
       "summary": "iroh 适合需要 P2P / NAT traversal / QUIC 连接抽象的 Rust 项目：它把“连接到某个设备/节点”从 IP 地址与端口细节中抽出来，改成按 public key dial，并在直连失败时回退 relay。"
     },
@@ -2075,7 +2075,7 @@
         "recommendation": 4
       },
       "overall_score": 3.8,
-      "last_checked": "2026-06-18",
+      "last_checked": "2026-07-25",
       "updated": "2026-06-18",
       "summary": "Unciv 适合想在手机或普通桌面设备上玩轻量、开源、可 mod 的 Civilization V-like 4X 策略游戏的人。"
     },
@@ -2495,7 +2495,7 @@
         "mcp"
       ],
       "primary_language": "Clojure",
-      "stars": 50014,
+      "stars": 57295,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -2510,9 +2510,9 @@
         "recommendation": 4
       },
       "overall_score": 3.7,
-      "last_checked": "2026-06-18",
-      "updated": "2026-06-18",
-      "summary": "Penpot 是少数真正成熟的开源设计平台之一，适合需要自托管、开放格式、设计系统和 design-code collaboration 的团队；但近期多个高危/严重 GHSA 使安全评分必须保守。"
+      "last_checked": "2026-07-25",
+      "updated": "2026-07-25",
+      "summary": "Penpot 是少数真正成熟的开源设计平台之一，适合需要自托管、开放格式、设计系统和 design-code collaboration 的团队；但已披露的多个高危/严重 GHSA 使安全评分必须保守。"
     },
     {
       "slug": "ai-programs/agents/coding-agents/plandex",
@@ -3390,7 +3390,7 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-06-18",
+      "last_checked": "2026-07-25",
       "updated": "2026-06-18",
       "summary": "Meshery 是一个雄心很大的 cloud-native management plane：适合研究平台工程、Kubernetes 资源建模和扩展架构；但功能面过宽、仓库极大、issue/PR backlog 很高，采用推荐度应保守。"
     },
@@ -3780,7 +3780,7 @@
         "developer-tools"
       ],
       "primary_language": "Rust",
-      "stars": 171,
+      "stars": 431,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -3795,9 +3795,9 @@
         "recommendation": 3
       },
       "overall_score": 3.4,
-      "last_checked": "2026-06-16",
-      "updated": "2026-06-16",
-      "summary": "kache 是一个很年轻但目标明确的 Rust build cache：本地 Rust 缓存和 S3 同步已经有完整形态，适合 Rust-heavy 项目试点；但 0.x/rc、远程 planner preview、C/C++ caching experimental，使它还不宜被当作保守生产默认项。"
+      "last_checked": "2026-07-25",
+      "updated": "2026-07-25",
+      "summary": "kache 是一个进展很快、工程验证意识强的 Rust/C/C++ build cache；适合 Rust-heavy 项目和愿意固定版本、做 A/B 验证的团队试点，但项目只有数月历史、仍处 0.x，远程 planner 也仍是 preview。"
     },
     {
       "slug": "document-processing/document-conversion/markitdown",
@@ -4435,7 +4435,7 @@
         "agpl"
       ],
       "primary_language": "TypeScript",
-      "stars": 51185,
+      "stars": 54989,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -4450,9 +4450,9 @@
         "recommendation": 3
       },
       "overall_score": 3.3,
-      "last_checked": "2026-06-18",
-      "updated": "2026-06-18",
-      "summary": "Plane 值得作为自托管项目管理平台候选和工程治理样本收录，但近期安全 advisories 多、issue/PR backlog 高，生产采用推荐度只能给谨慎的 3/5。"
+      "last_checked": "2026-07-25",
+      "updated": "2026-07-25",
+      "summary": "Plane 值得作为自托管项目管理平台候选和工程治理样本收录，但完整查询返回 16 个 published GHSA，preview branch 又在 v1.3.1 后加入密集 security hardening；生产采用仍只能给谨慎的 3/5。"
     },
     {
       "slug": "ai-programs/ai-harness/ai-plugins/superpowers",
@@ -5137,7 +5137,7 @@
         "recommendation": 3
       },
       "overall_score": 3.1,
-      "last_checked": "2026-06-18",
+      "last_checked": "2026-07-25",
       "updated": "2026-06-18",
       "summary": "UAD-ng 是有实际用途的 Android 隐私/清理工具，但它会改变设备系统包状态；适合懂 ADB、愿意备份和可回滚操作的用户，不适合“点点点就删干净”的心态。"
     },

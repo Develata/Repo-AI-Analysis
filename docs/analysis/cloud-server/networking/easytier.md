@@ -12,7 +12,7 @@ primary_language: "Rust"
 license: "LGPL-3.0"
 stars: 12039
 forks: 1187
-last_checked: 2026-06-18
+last_checked: 2026-07-25
 last_verified: 2026-06-18
 evidence: "GitHub authenticated API + README/docs + releases + community profile + shallow local scan + attempted local compile-only check; no real VPN/NAT traversal smoke test or benchmark run"
 archived_reason: ""

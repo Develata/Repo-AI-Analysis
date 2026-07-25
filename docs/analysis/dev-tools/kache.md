@@ -1,7 +1,7 @@
 ---
 title: "kache"
 created: 2026-06-16
-updated: 2026-06-16
+updated: 2026-07-25
 type: repository-analysis
 repo_url: "https://github.com/kunobi-ninja/kache"
 category: "dev-tools"
@@ -10,11 +10,11 @@ previous_repo: ""
 successor: ""
 primary_language: "Rust"
 license: "Apache-2.0"
-stars: 171
-forks: 6
-last_checked: 2026-06-16
-last_verified: 2026-06-16
-evidence: "GitHub API + local repository scan + README/docs/CI/security files + release/advisory queries; no independent benchmark or production deployment in this run"
+stars: 431
+forks: 21
+last_checked: 2026-07-25
+last_verified: 2026-07-25
+evidence: "GitHub authenticated API + current README/docs/releases/CI/security files + shallow local scan + primary-package compile-only check; no test execution, independent benchmark, or production deployment"
 archived_reason: ""
 docker_support: false
 gpu_required: false
@@ -36,92 +36,92 @@ ratings:
 overall_score: 3.4
 sources:
   - "[GH] https://github.com/kunobi-ninja/kache"
-  - "[GH:api] GitHub CLI/API queried 2026-06-16; repo=kunobi-ninja/kache, createdAt=2026-02-15T19:43:57Z, pushedAt=2026-06-16T07:36:40Z, stars=171, forks=6, watchers=4, open issues=38, open PRs=1, default branch=main, primary language=Rust, license=Apache-2.0, archived=false"
-  - "[GH:issues] GitHub issue list sampled 2026-06-16; open issue titles sampled include #348 Windows GitHub runner prefetch slowness, #336 replay compiler diagnostics on hit, #335 cache-trust verifier, #332 local restore content verification, #326 cross-process GC lock, #324 key/fingerprint/content-hash hardening"
-  - "[GH:releases] GitHub releases queried 2026-06-16; latest non-prerelease shown by API=v0.5.0 published 2026-06-05; release list includes prerelease v0.6.0-rc.1 published 2026-06-11; local Cargo.toml version=0.6.0-rc.1; git tags count=53"
-  - "[GH:local-scan] Local clone /opt/data/tmp/repo_wiki_kache/kache at commit d2521f78f14016f249ecb354d25457803935589b inspected 2026-06-16; workspace packages kache, kache-core, kache-e2e, kache-service all version 0.6.0-rc.1; Rust 2024, rust-version=1.95; local line summary: Rust 92 files/58493 lines, total tracked text summary 202 files/65911 lines excluding .git/target/tmp"
-  - "[GH:readme] README.md inspected locally 2026-06-16; describes zero-copy content-addressed Rust build cache, RUSTC_WRAPPER, BLAKE3 keys, reflink/hardlink/copy fallback, optional S3 sync, stable local/S3 cache, preview remote planner, experimental C/C++ caching, command list and benchmark caveats"
-  - "[GH:docs] docs/how-it-works/architecture.mdx and docs/how-it-works/cache-key.mdx inspected locally 2026-06-16; docs describe wrapper/store/daemon flow, SQLite WAL store, content-addressed blobs, daemon RPC, key inputs, path normalization and why-miss debugging"
-  - "[GH:ci] .github/workflows/ci.yml and Justfile inspected locally 2026-06-16; CI has Linux check, version consistency, Nix package, Linux/macOS/Windows e2e smoke, macOS tests, coverage threshold 35%, release workflows; recent GitHub Actions sampled 2026-06-16 with latest main run d2521f7 success"
-  - "[GH:local-build] Local command `cargo test --workspace --no-run` completed successfully on 2026-06-16 after compiling test targets; tests were compiled but not executed"
-  - "[GH:security] SECURITY.md inspected locally 2026-06-16; supports latest release only, private advisory/email reporting, claims hardened tar extraction, no credential logging, no shell invocation and atomic extraction"
-  - "[GH:audit] .cargo/audit.toml inspected locally 2026-06-16; explicitly ignores RUSTSEC-2023-0071 rsa Marvin timing sidechannel via transitive deps with no fixed release, and RUSTSEC-2023-0089 atomic-polyfill unmaintained warning via surrealdb/geo/rstar/heapless"
-  - "[GH:advisories] GitHub security advisories endpoint repos/kunobi-ninja/kache/security-advisories queried 2026-06-16; returned [] in this check"
-  - "[GH:community] GitHub contributors endpoint queried 2026-06-16; 5 contributors sampled: jleni=266, emmanuelm41=32, ainhoa-a=3, DaniPopes=1, Karrq=1; CONTRIBUTING.md present; no CODE_OF_CONDUCT file reported by GitHub API"
-  - "[Docs:kache-action] https://github.com/kunobi-ninja/kache-action extracted 2026-06-16; action installs kache, sets RUSTC_WRAPPER and persists cache via GitHub Actions cache by default or S3 when configured"
-  - "[Docs:sccache] https://github.com/mozilla/sccache extracted 2026-06-16; sccache described as ccache-like shared compilation cache with local/remote storage, multiple compiler/language support and distributed compilation"
-  - "[Docs:ccache] https://ccache.dev/ extracted 2026-06-16; ccache is a long-running C/C++ compiler cache with local/remote caching, BLAKE3, reflink/hardlink options and documented limitations"
+  - "[GH:api] GitHub REST/search APIs queried 2026-07-25; repo=kunobi-ninja/kache, created_at=2026-02-15T19:43:57Z, pushed_at=2026-07-24T08:25:48Z, stars=431, forks=21, subscribers=4, REST open_issues_count=55, separate search open issues=50 and open PRs=5, default branch=main, primary language=Rust, license=Apache-2.0, archived=false, disabled=false"
+  - "[GH:issues] GitHub open issues sampled 2026-07-25; titles/URLs include #559 thin local-only wrapper/process weight, #552 warm-hit overhead tracking, #586 OpenDAL storage support, #565 daemon-owned local key/lookup path, #582 manifest overwrite/build-order loss, #580 unsupported --include causing passthrough, #564 remote negative-result TTL"
+  - "[GH:releases] GitHub releases API queried 2026-07-25; latest stable v0.11.0 published 2026-07-21; sampled progression includes v0.8.0 Windows ReFS/self-healing, v0.9.0 read-only remote mode and supply-chain hardening, v0.10.0 download-dedup fixes, v0.11.0 broader compiler/filesystem coverage"
+  - "[GH:release-0.11] https://github.com/kunobi-ninja/kache/releases/tag/v0.11.0 inspected via GitHub API 2026-07-25; notes describe target-prefixed cross-compilers and cargo-zigbuild recognition, libc-aware Linux keys, CUDA refusal instead of unsafe caching, hardlink fallback, background GC, RemoteBackend extraction, and key/cross-compilation fixes"
+  - "[GH:local-scan] Local shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/repos/kache at commit 2ec52a4df1425e9a0c15c30141c4e7b65f77e049 inspected 2026-07-25; git ls-files=401, markdown/rst/adoc files=12, test/spec/bench-ish paths=50, GitHub workflows=5; Cargo.toml version=0.11.0, Rust edition=2024, rust-version=1.95"
+  - "[GH:readme] README.md at commit 2ec52a4d inspected 2026-07-25; describes working local Rust and local C/C++ object caching, direct S3 sync for Rust artifacts, conservative passthrough limits, remote planner preview, package-manager installs, command surface, benchmark caveats and service/chart preview"
+  - "[GH:ci] .github/workflows/ci.yml inspected 2026-07-25; CI includes Linux verification, version consistency, dependency audit, Nix packaging, Linux/macOS/Windows E2E, negative control, platform tests/clippy and an 88% line-coverage gate; latest sampled main CI run for 2ec52a4d succeeded, while a separate scheduled Bench run on 0d64702c failed"
+  - "[GH:local-build] Local `CARGO_BUILD_JOBS=2 cargo test -p kache --no-run` completed successfully on 2026-07-25; primary-package unit/integration test targets compiled but tests were not executed. A preceding `cargo test --workspace --no-run` attempt was SIGKILLed while compiling surrealdb-core in this constrained environment and is not treated as a project failure or workspace-pass result"
+  - "[GH:security] SECURITY.md inspected 2026-07-25; only latest release is supported, private GitHub advisory/email reporting is documented, and the file states hardened tar extraction, credential-log avoidance, no shell invocation and atomic extraction"
+  - "[GH:audit] deny.toml and CI inspected 2026-07-25; cargo-deny runs per workspace member, yanked dependencies and wildcard registry dependencies are denied, and one explicit advisory ignore remains: RUSTSEC-2023-0071 for rsa 0.9.x via service dependencies with no fixed release; SurrealDB BUSL-1.1 exceptions are scoped to named service crates"
+  - "[GH:advisories] GitHub security advisories endpoint repos/kunobi-ninja/kache/security-advisories queried 2026-07-25; returned [] in this check"
+  - "[GH:community] Contributors/community endpoints queried 2026-07-25; contributors page returned 15 entries, led by jleni=338 and emmanuelm41=99; community health=75%, CONTRIBUTING and PR template present, Code of Conduct and issue template absent"
+  - "[Docs:kache-action] https://github.com/kunobi-ninja/kache-action fetched 2026-07-25; action installs kache, sets RUSTC_WRAPPER, uses GitHub Actions cache by default or S3 when configured, verifies release checksums, and documents Linux/macOS/Windows x64/arm64 runners"
+  - "[Docs:sccache] https://github.com/mozilla/sccache fetched 2026-07-25; sccache describes local/multi-level remote storage, Rust/C/C++/CUDA/HIP support and optional authenticated, encrypted, sandboxed distributed compilation"
+  - "[Docs:ccache] https://ccache.dev/ fetched 2026-07-25; ccache 4.13.6 describes mature C/C++-family compiler caching, local/remote multi-level caches, BLAKE3, reflink/hardlink options and explicit correctness caveats"
 ---
 
 # kache
 
-> Zero-copy, content-addressed Rust build cache — 一个面向 Rust 编译产物的 `RUSTC_WRAPPER` 缓存器，重点押注 reflink/hardlink、本地去重和 S3 共享。
+> Zero-copy, content-addressed build cache — 一个以 Rust 为主、已扩展到本地 C/C++ object compile 的编译缓存器，重点押注正确的 cache key、reflink/hardlink、内容去重与 S3 共享。
 >
 > **状态**: `active` · **总分**: 3.4/5 · **推荐度**: 3/5
-> **核验版本**: local clone commit `d2521f78f14016f249ecb354d25457803935589b`；GitHub/API 快照 2026-06-16
+> **核验版本**: `v0.11.0`；local clone commit `2ec52a4df1425e9a0c15c30141c4e7b65f77e049`；GitHub/API 快照 2026-07-25
 
 ## 一句话总结
 
-kache 是一个很年轻但目标明确的 Rust build cache：本地 Rust 缓存和 S3 同步已经有完整形态，适合 Rust-heavy 项目试点；但 0.x/rc、远程 planner preview、C/C++ caching experimental，使它还不宜被当作保守生产默认项。
+kache 是一个进展很快、工程验证意识强的 Rust/C/C++ build cache；适合 Rust-heavy 项目和愿意固定版本、做 A/B 验证的团队试点，但项目只有数月历史、仍处 0.x，远程 planner 也仍是 preview。
 
 ## 总体评价
 
-kache 的核心定位是作为 `RUSTC_WRAPPER` 拦截 `rustc`/`clippy-driver` 调用，对 normalized rustc invocation、源码、依赖产物和编译环境等输入做 BLAKE3 cache key，命中时用 reflink、hardlink 或 copy 将产物恢复到 `target/`；本地 store 是 content-addressed blobs + SQLite index，daemon 负责远程检查、S3 上传和预取 [GH:readme][GH:docs]。
+kache 作为 `RUSTC_WRAPPER` 拦截 Rust 编译，同时可作为 `cc` / `c++` wrapper 缓存单源 C/C++ object compile。它对 normalized compiler inputs 做 BLAKE3 key，命中时按文件系统能力使用 reflink、hardlink 或 copy 恢复；本地 store 是 content-addressed blobs + SQLite index，daemon 处理 S3 检查、异步上传与 prefetch [GH:readme]。
 
-它与传统 `sccache` 的差别不在“也能缓存 Rust 编译”这一表层，而在更强调 Rust-specific key normalization、content-addressed local store、zero-copy restore、`why-miss` 诊断和 S3 manifest/prefetch workflow。README 明确说 local caching 和 direct S3 sync 稳定；远程 planner service 仍是 preview；C/C++ object caching 还是 experimental，并且很多复杂 invocation 会 passthrough [GH:readme]。
+与 2026-06 的 0.6.0-rc.1 快照相比，变化已经具有分析意义：v0.8 增加 Windows ReFS block cloning 与 index self-healing，v0.9 增加 remote read-only consumer mode 和 supply-chain hardening，v0.10 修复并发下载去重，v0.11 扩大 cross-compiler/zigcc 与非 reflink 文件系统覆盖，并补 libc-aware keys、CUDA refusal 和多项 key correctness 修复 [GH:releases][GH:release-0.11]。C/C++ 路径现在由 README 表述为 working today，而非简单的 experimental headline；但它仍是 local-only、只缓存受支持的单源 object compile，未分类形态会保守 passthrough [GH:readme]。
 
-一句话判词：**值得作为 Rust 编译缓存新方向观察和小规模试点，但由于项目创建于 2026-02、当前主线版本仍是 0.6.0-rc.1，成熟度短板应压过 README 展示的能力。**
+一句话判词：**能力增长是真实的，但版本号跃迁与修复密度同时说明系统仍在快速硬化；对 build cache 这种会复用编译产物的基础设施，成熟度应继续从严。**
 
 ## 推荐度：3/5
 
-**定位**：面向 Rust-heavy 项目、CI 时间成本明显、愿意接受 0.x 工具试点风险的开发者或团队。
+**定位**：面向 Rust-heavy 项目、CI 编译成本明显、愿意固定版本并验证 hit correctness/rollback 的开发者或团队。
 
-推荐度给 3：如果项目大量重复 clean build、CI cache 维护成本高，kache 值得在非关键路径或单仓库 CI 中试用，尤其是希望研究 Rust artifact cache key、zero-copy restore 和 S3 shared cache 的场景。它的安装入口、`kache init`、`kache doctor`、GitHub Action 与文档都比较完整 [GH:readme][Docs:kache-action]。
+推荐度维持 3。kache 已有 `kache init`、`doctor`、monitor/report、GitHub Action、S3、跨平台 E2E 与多种包管理器入口，试点摩擦比一个月前更低 [GH:readme][GH:ci][Docs:kache-action]。如果团队大量重复 clean build，或希望研究 Rust artifact key、跨 worktree 复用和 zero-copy restore，它值得进入候选集。
 
-不提高到 4 的原因是成熟度：仓库创建时间短，版本仍在 rc，open issues 有 38 个且近期 issue sample 包含 Windows runner prefetch slowness、diagnostics replay、cache-trust verifier、local restore verification、GC lock、key/fingerprint hardening 等议题；remote planner 和 C/C++ caching 也被项目自己标注为 preview/experimental [GH:api][GH:issues][GH:releases][GH:readme]。对 build cache 而言，false hit/under-keying/remote trust 的风险比普通 CLI 更重，采用门槛应更保守。
+不提高到 4 的原因不是功能不足，而是风险与时间：仓库创建于 2026-02，当前仍为 0.11.0；remote planner 明示 preview，C/C++ remote sharing 尚未提供；50 个 open issues 中仍有 warm-hit overhead、wrapper process weight、manifest overwrite、S3 negative-result TTL 和 flag passthrough 等基础问题 [GH:api][GH:issues][GH:readme]。采用时应先在非关键 CI job 中记录 hit/miss、错误回退和磁盘行为，再决定是否扩大。
 
 ## 优势
 
-1. **Rust-specific 设计明确**：围绕 `RUSTC_WRAPPER`、rustc 输入、dependency artifact hash、path normalization 和 `why-miss` 诊断设计，而非简单套用通用 C/C++ cache 模型 [GH:docs]。
-2. **本地资源效率思路好**：content-addressed blob store + reflink/hardlink/copy fallback，目标是避免重复存储和重复复制 [GH:readme][GH:docs]。
-3. **S3/CI 路径完整**：README 与 `kache-action` 都给出 GitHub Actions cache / S3-backed cache 的入口，适合 CI 试点 [GH:readme][Docs:kache-action]。
-4. **工程验证意识强**：仓库含 e2e harness、benchmark scenarios、negative control、coverage threshold、Linux/macOS/Windows smoke paths；最近 main CI 采样为 success [GH:ci]。
-5. **文档透明列出边界**：README 对 Firefox benchmark、C/C++ caching、remote planner preview 和 passthrough 范围有较诚实的 caveat，不是只写 headline speedup [GH:readme]。
+1. **Rust 主线与 C/C++ 本地路径都已成形**：Rust local/S3、C/C++ local object cache、保守 passthrough 和跨平台 wrapper 入口有明确边界 [GH:readme]。
+2. **cache correctness 被当作一等问题**：v0.11 对 libc、CUDA、多种 wrapper/cross-compiler、target/workspace roots 与 key locking 做专门修复，而不是只追求 hit rate [GH:release-0.11]。
+3. **本地资源效率思路清楚**：content-addressed dedup + reflink/hardlink/copy fallback，Windows ReFS 与非 reflink 文件系统也有专门路径 [GH:readme][GH:releases]。
+4. **CI 与可证伪测试较强**：平台 E2E、negative control、dependency audit、coverage gate 和当前成功 main CI 都是正面工程信号 [GH:ci]。
+5. **安装与 CI 分发已显著完善**：mise、Cargo、Homebrew、APT、winget、Scoop、Chocolatey、AUR 与 `kache-action@v1` 降低试点门槛 [GH:readme][Docs:kache-action]。
 
 ## 劣势
 
-1. **非常年轻**：GitHub 创建于 2026-02，当前 Cargo.toml 为 `0.6.0-rc.1`，release/tag 节奏很快，API 稳定性和长周期可靠性尚未证明 [GH:api][GH:releases]。
-2. **cache correctness 风险天然高**：build cache 的错误不是普通失败，而可能是错误产物被复用；README 与 issue 标题也显示项目仍在修补 key、fingerprint、GC、diagnostics 等硬问题 [GH:readme][GH:api]。
-3. **C/C++ 缓存仍实验性**：只覆盖 single-source `-c` object compiles，link、multi-source、response-file、PCH/modules/coverage/split-DWARF 等都 passthrough；clang-cl 还限制为 machine-local key [GH:readme]。
-4. **社区和 bus factor 有限**：171 stars、5 contributors，贡献集中在核心维护者；这不否定质量，但限制了生产采用信心 [GH:api][GH:community]。
-5. **远程 planner 仍 preview**：daemon 已能调用 planner，但 hosted service 和 server-side 部署模型仍在 hardening；不能把它当成成熟分布式 cache 平台 [GH:readme][GH:docs]。
+1. **项目仍非常年轻且版本变化快**：五个月左右从早期 rc 演进到 0.11.0，长期兼容与生产稳定性没有时间证明 [GH:api][GH:releases]。
+2. **cache correctness 的失败代价高**：false hit、under-keying、remote artifact trust 或恢复竞态可能生成“看似成功”的错误产物；近期 release 仍持续修 key correctness [GH:release-0.11]。
+3. **C/C++ 覆盖仍有限**：local-only；link、multi-source、response file、PCH/modules、coverage、split-DWARF 等会 passthrough [GH:readme]。
+4. **远程产品面尚未成熟**：S3 direct sync 可用，但 hosted planner/service、部署/auth/HA 仍被 README 标成 preview/soon [GH:readme]。
+5. **社区规模仍小**：贡献者已从早期少数人扩到 15 个，但提交仍高度集中在两位核心维护者 [GH:community]。
 
 ---
 
 ## 适合什么场景
 
-- Rust workspace 的本地重复构建、`cargo clean && cargo build` 后快速恢复已缓存 artifact。
-- 单仓库或小团队 CI 中试点 `kunobi-ninja/kache-action@v1`，先用 GitHub Actions cache，再评估 S3 backend [Docs:kache-action]。
-- 研究 Rust build cache 的 key design、path normalization、content-addressed store、reflink/hardlink 策略和 cache miss diagnostics。
-- 对 remote cache 有需求，但愿意从只读/非关键 job 开始，逐步扩大到主 CI。
-- 作为 `sccache`/`ccache` 之外的 Rust-specific cache 方案进行 A/B 对比。
+- Rust workspace 的本地重复构建与 clean-build artifact 恢复。
+- 在非关键 GitHub Actions job 中试点 `kunobi-ninja/kache-action@v1`，先用 GHA cache，再按需要评估 S3 [Docs:kache-action]。
+- 需要 remote read-only consumer 的 fork/PR CI，或希望避免让低权限 job 上传 cache 的场景 [GH:releases]。
+- C/C++ 单源 object compile 的本地缓存实验，且能接受不支持形态自动 passthrough。
+- 研究 compiler cache key、path normalization、content-addressed store、zero-copy restore、diagnostics 与 falsifiable E2E。
 
 ## 不适合什么场景
 
-- 需要“默认安全、长期稳定、无需反复 babysit”的生产构建基础设施。
-- 安全/合规要求不能接受 remote build artifact trust boundary 的环境。
-- C/C++ 为主要构建耗时来源、且需要成熟完整 C/C++ compiler cache 的项目；此时 ccache/sccache 的覆盖面更成熟 [Docs:sccache][Docs:ccache]。
-- 需要 distributed compilation，而不只是 remote artifact cache 的场景；sccache 明确有 distributed compilation 模式，kache 的 remote planner 目前仍是 preview [Docs:sccache][GH:readme]。
-- 不愿固定版本、监控 regression、保留快速回滚路径并承担持续维护成本的团队。
+- 需要长期稳定、低变更、无持续 babysitting 的生产构建基础设施。
+- 无法接受 remote artifact trust boundary，或没有 cache purge/rollback/固定版本策略的环境。
+- C/C++ 为主且需要成熟 remote cache、response files、完整 compiler family 或 distributed compilation；sccache/ccache 的覆盖更成熟 [Docs:sccache][Docs:ccache]。
+- 想把 preview planner/service 当成成熟多租户远程 cache 平台的团队。
+- 不愿监控命中正确性、passthrough 原因、磁盘增长和 benchmark regression 的用户。
 
 ## 与类似项目对比
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| sccache | ccache-like shared compilation cache，支持 Rust、C/C++、CUDA/HIP 等，多 remote backend 与 distributed compilation | sccache 更成熟、覆盖语言更多；kache 更 Rust-specific，突出 zero-copy/content-addressed store、Rust key normalization 与 S3 manifest/prefetch 路径 [Docs:sccache] |
-| ccache | 长期维护的 C/C++ compiler cache，支持 GCC/Clang/MSVC、BLAKE3、remote storage、reflink/hardlink | ccache 是 C/C++ 生态老牌工具；kache 主要解决 Rust artifact cache，C/C++ 路径仍 experimental [Docs:ccache][GH:readme] |
-| GitHub Actions cache / cargo cache | CI cache primitives，通常缓存 `target/` 或 registry/git cache | 原生 cache 更简单但粒度粗；kache 试图缓存编译 artifact 并解释 miss/hit，更精细但风险和复杂度更高 [GH:readme][Docs:kache-action] |
-| sccache-action / mozilla-actions/sccache-action | 在 CI 中安装和配置 sccache | kache-action 更贴合 kache 的 S3 manifest/prefetch 与 PR comment workflow；生态成熟度仍弱于 sccache 方向 [Docs:kache-action][Docs:sccache] |
+| sccache | 多语言 shared compilation cache，可使用多级 remote storage 和 distributed compilation | sccache 语言/backend/分布式覆盖更成熟；kache 更强调 Rust-specific normalization、content-addressed local store、zero-copy restore 与 `why-miss`/trace 可观测性 [Docs:sccache] |
+| ccache | 长期维护的 C/C++ compiler cache，支持 direct/depend mode、本地与多级 remote cache | ccache 是 C/C++ 老牌方案；kache 的 Rust 主线更强，但 C/C++ 仍只覆盖保守的本地 object compile 子集 [Docs:ccache][GH:readme] |
+| GitHub Actions cache / cargo cache | 对 `target/`、registry 或 git cache 做目录级持久化 | 原生 cache 更简单、粒度粗；kache 做 compiler-artifact key 与诊断，潜在复用更精细，但正确性与运维复杂度更高 [Docs:kache-action] |
+| sccache-action / kache-action | 在 CI 中安装 compiler cache 并持久化状态 | kache-action 对 kache 的 manifest/shard/S3/report workflow 更贴合；成熟生态与广泛验证仍偏向 sccache [Docs:kache-action][Docs:sccache] |
 
 上述项目按 `dev-tools` 同类范围做定位级对比，未按同一 10 维度框架深审；比较仅用于说明采用边界。
 
@@ -131,90 +131,86 @@ kache 的核心定位是作为 `RUSTC_WRAPPER` 拦截 `rustc`/`clippy-driver` �
 
 capability 评分 4/5。
 
-kache 当前覆盖的核心能力包括：
+kache 当前覆盖：
 
-- 作为 `RUSTC_WRAPPER` 缓存 Rust 编译 artifact；
-- local cache hit/miss/dup 记录，命中后通过 reflink/hardlink/copy restore；
-- content-addressed blob store + SQLite index；
-- optional daemon，负责 S3 remote checks、async uploads、prefetch；
-- `kache init`、`doctor`、`monitor`、`stats`、`list`、`why-miss`、`report`、`sync`、`gc`、`clean`、`config`、`daemon` 等 CLI；
-- GitHub Action 集成；
-- C/C++ single-source object compile caching 的实验路径；
-- remote planner service preview 与 Helm chart [GH:readme][GH:docs][Docs:kache-action]。
+- Rust `RUSTC_WRAPPER` artifact cache，本地 content-addressed store 与 S3 sharing；
+- 本地 C/C++ single-source object compile cache，识别 gcc/clang/clang-cl、versioned 和 target-prefixed compiler、cargo-zigbuild wrapper；
+- reflink、hardlink、copy fallback，含 Windows ReFS block cloning；
+- daemon remote checks/uploads/prefetch，以及 remote read-only consumer mode；
+- `init`、`doctor`、`monitor`、`stats`、`list`、`why-miss`、`report`、`sync`、`gc`、`clean`、`config`、`daemon` 等 CLI；
+- GitHub Action、S3-compatible backend、build manifest/shards 和多种包管理器安装；
+- scenario/E2E/Firefox/Substrate/LLVM benchmark harness；
+- preview remote planner service 与 Helm chart [GH:readme][GH:releases][Docs:kache-action]。
 
-扣到 4 而非 5：Rust local/S3 主线功能完整，但 C/C++、planner、server-side 还不是成熟全覆盖；与 sccache/ccache 相比，语言覆盖和生态验证仍窄 [GH:readme][Docs:sccache][Docs:ccache]。
+不给 5：C/C++ remote sharing、link/multi-source/response-file 等形态未覆盖，planner/service 仍 preview，也没有本轮独立 benchmark 或生产验证。
 
 ## 运行环境与资源占用
 
 | 场景 | CPU | 内存 | 存储 | 说明 |
 |------|-----|------|------|------|
-| 最小本地使用 | 1-2 cores | 低 | 数百 MB 起 | wrapper/daemon 本身轻，实际编译资源由 cargo/rustc 决定 |
-| Rust-heavy workspace | 2-8 cores | 随项目增长 | 数 GB 到数十 GB | cache store、target 和 dependency graph 决定实际占用 |
-| 大型 benchmark | 8+ cores | 大 | 20-50 GB+ | README 的 substrate/firefox scenario 明示 tens of min 到 hours、20-50 GB scratch [GH:readme] |
+| 最小本地使用 | 1-2 cores | 低 | 数百 MB 起 | wrapper/daemon 本身较轻，编译资源主要由 workload 决定 |
+| Rust-heavy workspace | 2-8 cores | 随项目增长 | 数 GB 到数十 GB | cache store、`target/` 与 dependency graph 决定实际占用 |
+| 大型 benchmark | 8+ cores | 高 | 20-50 GB+ | README 的 Substrate/Firefox scenario 明示大 scratch 与长运行时间 [GH:readme] |
 
-- **运行时**：Rust CLI + optional daemon；daemon down 时 local cache 仍可工作，remote/prefetch 降级 [GH:readme][GH:docs]。
-- **操作系统**：CI/e2e workflow 覆盖 Linux、macOS、Windows；README 也描述 APFS、btrfs、XFS-with-reflink 等平台差异 [GH:ci][GH:readme]。
-- **Docker**：仓库含 service Dockerfile、docker-bake 和 Helm chart；这主要服务 remote planner/service preview，不是普通本地 wrapper 必需。本次检查未确认有官方发布的 Docker image，因此 frontmatter `docker_support` 记为 `false` [GH:local-scan][GH:readme]。
+- **运行时**：Rust CLI + optional daemon；daemon 不运行时 local cache 仍工作，remote/prefetch 降级 [GH:readme]。
+- **操作系统**：CI/E2E 明确覆盖 Linux、macOS、Windows；不同文件系统决定 reflink/hardlink/copy 路径 [GH:ci][GH:readme]。
+- **Docker**：仓库有 remote service image/chart 路径，但它服务 preview planner，不是普通 wrapper 的官方用户-facing 容器分发；因此 `docker_support: false`。
 - **GPU**：不需要。
-- **外部依赖**：Rust toolchain；S3 backend 需要 AWS/S3-compatible credentials；benchmark scenarios 可能需要 clang、cmake、pkg-config、protoc 等 workload-specific 工具 [GH:readme]。
+- **外部依赖**：Rust toolchain；S3 路径需要 AWS/S3-compatible credentials；大型 scenario 需要 workload-specific 编译工具 [GH:readme]。
 
-performance 评分 4/5。zero-copy restore、content-addressed dedup 和 BLAKE3 key 设计在资源效率上有明确优势方向；但本轮没有复现实测 benchmark，也未验证它实际优于 sccache/ccache 等同类工具，且 README 自己承认 Firefox 端到端 speedup 受 C/C++ 未成熟路径限制，因此只能评价为“设计上资源效率较好”，不评 5 [GH:readme]。
+performance 评分 4/5。zero-copy restore、content-addressed dedup、read-only remote mode 与 v0.10 并发下载去重都指向合理资源效率；但本轮未复现项目 benchmark，且 open issues 仍跟踪 warm-hit process/pre-pass overhead，因此不能评 5 [GH:issues][GH:releases]。
 
 ## 上手体验
 
 评分 4/5。
 
-安装路径清楚：mise、cargo install、cargo-binstall 都被 README 列出；`kache init` 可以交互式或 `-y` 非交互式配置 `~/.cargo/config.toml`、安装/启动 daemon，`kache doctor` 用于验证 [GH:readme]。CI 路径也比较顺：`- uses: kunobi-ninja/kache-action@v1` 是非常低摩擦的试点入口 [Docs:kache-action]。
+安装入口已经很完整：README 提供 mise、Cargo、Homebrew、APT、winget、Scoop、Chocolatey、AUR；`kache init` 支持交互和 `-y`，`doctor` 可检查配置，GitHub Action 一行即可试点 [GH:readme][Docs:kache-action]。
 
-扣 1 分主要因为 adoption 前必须理解 `RUSTC_WRAPPER`、daemon、cache store、S3 credentials、incremental compilation disabled、remote trust boundary 等概念。对普通 Rust 初学者，它不是“装了就无脑永远更快”的工具；对需要诊断 miss 的团队，仍需要阅读 cache-key/why-miss 文档 [GH:readme][GH:docs]。
+扣 1 分是因为正确采用仍需理解 `RUSTC_WRAPPER`、daemon、S3 credentials、local/remote trust、incremental compilation、C/C++ passthrough 和版本固定。它比一个月前更易安装，不等于可以无条件替换成熟 build cache。
 
 ## 代码质量
 
 评分 4/5。
 
-本地扫描显示仓库是 Rust 2024 workspace，含 `kache`、`kache-core`、`kache-e2e`、`kache-service` 四个 workspace package；代码规模约 92 个 Rust 文件/58493 行，配有 integration tests、scenario harness、benchmark scenarios、CI workflows、Justfile、CONTRIBUTING、SECURITY 和 docs [GH:local-scan][GH:ci]。
+当前 shallow scan 是 Rust 2024 workspace，401 个 tracked files、50 个 test/spec/bench-ish paths、5 个 workflows；CI 中有 dependency audit、88% line-coverage gate、跨平台 E2E、negative control、version consistency 与 platform tests [GH:local-scan][GH:ci]。本轮 `cargo test -p kache --no-run` 成功编译 primary package 的测试 targets，但没有执行测试；完整 workspace compile-only 尝试在本地编译 `surrealdb-core` 时被 SIGKILL，故不能表述为 workspace pass [GH:local-build]。
 
-CI 设计比较认真：Linux check、version consistency、Nix package、Linux/macOS/Windows e2e smoke、negative control、sccache fallback check、macOS test、coverage threshold 35% 等都有显式 workflow；最近 main run 采样为 success [GH:ci]。本轮本地 `cargo test --workspace --no-run` 能完成编译，但没有执行测试断言 [GH:local-build]。Cargo.toml 也显式处理 rustls provider、cross-compile、RUSTSEC 注释等 dependency/security 细节 [GH:local-scan]。
-
-不评 5 的原因：项目仍很年轻，coverage threshold 35% 不是高覆盖；issue sample 中仍有 cache key、GC、diagnostics、Windows runner slowness 等近期 hardening 项；贡献集中度也使长期维护质量尚待观察 [GH:api][GH:issues][GH:community]。
+不给 5：项目仍快速变化，最新 issue 继续跟踪 wrapper overhead、manifest correctness、remote request amplification 与 compiler flag coverage；CI/coverage 是强信号，但不替代长期生产反馈 [GH:issues]。
 
 ## 可扩展性
 
 评分 3/5。
 
-kache 的扩展性主要体现在配置、CLI、scenario benchmark、remote service 与 S3-compatible backend，而不是传统 plugin API。用户可以通过环境变量/config、`.kache.toml` extra inputs、S3 endpoint、manifest key、scenario TOML 等方式调整行为 [GH:readme][GH:docs]。
+可扩展面主要是配置、CLI、scenario harness、S3-compatible storage 和 remote transport abstraction。v0.11 抽出了 `RemoteBackend` trait，为 filesystem 等 backend 留出结构性入口；`.kache.toml`、环境变量、manifest/shard 和 scenario TOML 也提供可配置面 [GH:release-0.11][GH:readme]。
 
-但若要支持新的 compiler family、复杂 flag classifier、remote planner 策略或 artifact layout，基本需要改源码而不是加载插件。因此作为开发者工具可定制性尚可，作为框架式扩展平台只属中等。
+但它不是 plugin platform。新 compiler family、复杂 flag classifier、artifact layout、远程 planner policy 仍多半需要修改源码；因此是“可二次开发”，不是“用户无 fork 扩展”。
 
 ## 文档质量
 
 评分 4/5。
 
-README 非常长而信息密度高，覆盖安装、quick start、CI、C/C++ caching、benchmarks、commands、remote cache/configuration、architecture、remote service；`docs/how-it-works/cache-key.mdx` 与 `architecture.mdx` 对 key 输入、path normalization、wrapper/store/daemon 流程解释清楚 [GH:readme][GH:docs]。虽然文档把 roadmap、benchmark caveat 与 reference 混在一起，但核心路径和风险边界均有说明，因此保留 4 而不降到 3。
+README 覆盖安装、quick start、CI、C/C++ scope、benchmark methodology、commands、remote cache/config、架构和 service preview；并且明确列出 passthrough、C/C++ local-only、planner preview 与 benchmark caveat [GH:readme]。这种边界透明度比单纯展示 hit-rate headline 更重要。
 
-优点是 caveat 诚实：C/C++ caching 的不支持范围、Firefox benchmark 的结构性瓶颈、remote planner preview 都写得很明白 [GH:readme]。不足是项目变化很快，README 同时承载产品文档、benchmark notes、roadmap 和 caveats，新用户可能需要较长时间消化；正式 API/reference 信息仍在快速演进。
+不足是项目变化极快，README 同时承担 product page、reference、benchmark guide 与 roadmap；用户仍需沿 docs 查 key/config/sync 细节，且 release 之间的行为变化需要持续跟踪。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 3/5 | 171 stars、6 forks、38 open issues、1 open PR；contributors endpoint 显示 5 名贡献者，贡献集中在 jleni=266 与 emmanuelm41=32。维护活跃，但社区规模仍小 [GH:api][GH:community]。 |
-| 成熟度 | 2/5 | 仓库创建于 2026-02，当前 Cargo.toml 为 0.6.0-rc.1，GitHub release list 仍有大量 rc/prerelease；README 将 remote planner 标注为 preview、C/C++ caching 标注为 experimental。作为 build cache 基础设施，成熟度不能只看 release 频率 [GH:api][GH:releases][GH:readme]。 |
+| 社区活跃度 | 3/5 | 431 stars、21 forks、50 open issues、5 open PRs；contributors endpoint 返回 15 个条目，但贡献仍集中在 jleni 与 emmanuelm41。活跃且正在扩展，规模仍有限 [GH:api][GH:community]。 |
+| 成熟度 | 2/5 | 仓库创建于 2026-02，仍为 0.x，并在一个月内从 0.6 rc 快速推进到 0.11；remote planner/service 仍 preview，release 也持续修 key correctness。局部能力已可试点，不等于基础设施已获得长期稳定性 [GH:api][GH:releases][GH:readme]。 |
 
 ## 安全与风险
 
 评分 3/5。
 
-安全正面信号：仓库有 SECURITY.md，支持 GitHub Security Advisories 私密报告；文档声称 tar extraction hardened against path traversal/absolute paths/symlinks，S3 credentials 不记录日志，subprocess 调用不用 shell，artifact extraction 采用 temp dir + atomic rename [GH:security]。本次 GitHub security advisories endpoint 查询返回 []，表示本次检查未发现已发布的 GitHub Security Advisory [GH:advisories]。
+正面信号：SECURITY.md 有私密报告路径和响应目标；CI 按 workspace member 运行 cargo-deny；v0.9 开始 immutable GitHub release、SHA-pinned Actions 与 supply-chain hardening；v0.11 遇到 CUDA key 不可靠时选择拒绝缓存，而非冒险命中 [GH:security][GH:audit][GH:releases][GH:release-0.11]。GitHub repository advisories endpoint 本次返回 `[]`，只表示本次未查到已发布的项目 GHSA [GH:advisories]。
 
-安全负面/限制信号：仓库存在 `.cargo/audit.toml`，显式 ignore `RUSTSEC-2023-0071`（rsa Marvin timing sidechannel，transitive deps，当前无 fixed release）和 `RUSTSEC-2023-0089`（atomic-polyfill unmaintained warning）。这不是本项目自身已发布 GHSA，但说明依赖面并非“无 advisory/无风险” [GH:audit]。
+限制信号：`deny.toml` 仍显式 ignore `RUSTSEC-2023-0071`，原因是 service 路径的 rsa 0.9.x transitive dependency 尚无 fixed release；planner service 还引入 SurrealDB BUSL-1.1 的 scoped license/trust boundary [GH:audit]。这不是 kache 自身公开 GHSA，也不能被“endpoint 为空”抹去。
 
-主要风险来自项目类型本身：build cache 处理的是编译产物、dependency artifacts、remote S3 blobs 和 restore path。false positive cache hit、under-keying、remote artifact poisoning、credential handling、tar extraction、GC race 都可能造成比普通 CLI 更隐蔽的后果。issue sample 和 README 也显示项目仍在围绕 key hardening、fingerprint、restore verification、remote trust 做持续 work [GH:issues][GH:readme]。
-
-因此安全不给 4：不是因为本次 GitHub advisory 查询发现了项目自身公开严重 GHSA；相反，本次只确认 GitHub Security Advisory endpoint 返回空列表。扣分来自依赖 audit ignore 项存在、攻击面和正确性风险高、项目年龄短、远程共享 cache 的信任边界需要使用者额外治理。
+更根本的风险来自 build cache 类型：key under-modeling、remote artifact poisoning、credential handling、archive extraction、GC/download race 都可能影响构建可信度。安全给 3，表示项目已有认真 hardening，但年龄、远程信任面和仍在修正的 key/transport 边界不足以支持 4。
 
 ## 学习价值
 
-学习价值较高。kache 是研究 Rust 构建缓存的好样本：它把 cache key correctness、path normalization、artifact hashing、SQLite WAL 并发、content-addressed blob store、reflink/hardlink restore、daemon/IPC、S3 remote sync、CI e2e negative control 等工程问题集中在一个较小但真实的 repo 中 [GH:docs][GH:ci]。
+kache 很适合研究“compiler cache 为什么难”：cache key 必须建模哪些输入、怎样在错误命中与保守 passthrough 之间取舍、如何跨 path/worktree 归一化、如何用 content-addressed store 与 reflink/hardlink 降低复制、怎样让 E2E 具有 negative control，以及 remote cache 如何引入供应链与凭据边界 [GH:ci][GH:release-0.11]。
 
-即使不立刻采用，它也值得作为“怎样设计 build cache 才不容易错”的案例阅读。尤其适合对比 sccache/ccache：前者展示成熟通用缓存器，kache 展示 Rust-specific path 的新尝试；两者优劣之辨，正在“广覆盖但通用”与“窄领域但深入”之间。
+即使不立刻采用，它也值得与 sccache/ccache 对照阅读：成熟通用方案展示长期兼容面，kache 展示 Rust-specific 深挖和快速实验。其可贵处不只在“更快”，更在于把 miss、passthrough、key correctness 和 benchmark 可证伪性摆到台面上。

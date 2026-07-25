@@ -12,7 +12,7 @@ primary_language: "Rust"
 license: "GPL-3.0"
 stars: 7615
 forks: 326
-last_checked: 2026-06-18
+last_checked: 2026-07-25
 last_verified: 2026-06-18
 evidence: "GitHub authenticated API + README + GitHub wiki docs + releases + shallow local scan; no local build/run/device smoke test"
 archived_reason: ""

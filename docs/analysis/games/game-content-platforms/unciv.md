@@ -12,7 +12,7 @@ primary_language: "Kotlin"
 license: "MPL-2.0"
 stars: 10629
 forks: 1842
-last_checked: 2026-06-18
+last_checked: 2026-07-25
 last_verified: 2026-06-18
 evidence: "GitHub API metadata + README + official docs + local shallow clone scan at 66ee6cf + release/changelog/security-advisory checks. No hands-on gameplay benchmark or multiplayer stress test in this review."
 archived_reason: ""

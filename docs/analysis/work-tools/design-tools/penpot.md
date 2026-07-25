@@ -1,7 +1,7 @@
 ---
 title: "Penpot"
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-25
 type: repository-analysis
 repo_url: "https://github.com/penpot/penpot"
 category: "work-tools/design-tools"
@@ -10,11 +10,11 @@ previous_repo: ""
 successor: ""
 primary_language: "Clojure"
 license: "MPL-2.0"
-stars: 50014
-forks: 3232
-last_checked: 2026-06-18
-last_verified: 2026-06-18
-evidence: "GitHub authenticated API + README + official help/docs + GitHub advisories + shallow local scan; no local build/test/self-hosting smoke test run"
+stars: 57295
+forks: 3796
+last_checked: 2026-07-25
+last_verified: 2026-07-25
+evidence: "GitHub authenticated API + current README/releases/official docs + GitHub advisories + shallow local scan; no local build/test/self-hosting or collaboration smoke test run"
 archived_reason: ""
 docker_support: true
 gpu_required: false
@@ -36,15 +36,16 @@ ratings:
 overall_score: 3.7
 sources:
   - "[GH] https://github.com/penpot/penpot"
-  - "[GH:api] https://api.github.com/repos/penpot/penpot queried 2026-06-18 via gh auth; stars=50014, forks=3232, open_issues_count=696, created_at=2015-12-29, pushed_at=2026-06-17, default_branch=develop, license=MPL-2.0, primary_language=Clojure"
-  - "[GH:issues-prs] GitHub search API queried 2026-06-18; open issues=617, open PRs=78; REST open_issues_count=696 includes PRs"
-  - "[GH:releases] https://api.github.com/repos/penpot/penpot/releases?per_page=5 queried 2026-06-18; latest 2.16.0 published 2026-06-11; previous releases 2.15.4, 2.15.3, 2.15.2, 2.15.1"
-  - "[GH:community] https://api.github.com/repos/penpot/penpot/community/profile queried 2026-06-18; health_percentage=87; README, license, code_of_conduct, CONTRIBUTING, SECURITY, issue templates and PR template present"
-  - "[GH:advisories] https://api.github.com/repos/penpot/penpot/security-advisories?per_page=10 queried 2026-06-18; returned 4 published advisories: GHSA-4937-35vc-hqjj critical account takeover, API metadata reports vulnerable_version_range <=2.15.0 and patched_versions 2.14.5 (version/branch semantics should be checked against the advisory before operations); GHSA-22qr-rp27-j9wm high unauthenticated MCP /execute RCE affected penpot-mcp all patched 2.15.0; GHSA-35g2-w7f6-8v9h high authenticated SSRF affected <=v2.14.0 patched 2.15.0; GHSA-xp3f-g8rq-9px2 high arbitrary file read affected <2.13.2 patched 2.13.2"
-  - "[GH:local-scan] local shallow clone /opt/data/tmp/repo_wiki_trending_20260618_round2/penpot-penpot at commit 9a3023e5d0582c29c5bc323973144cb3b9e8854b; git ls-files=5739, markdown/rst/adoc files=165, test/spec-ish files=710, GitHub workflows=20; inspected README.md, LICENSE, SECURITY.md, CONTRIBUTING.md, deps.edn, package.json, pnpm-lock.yaml, AGENTS.md"
-  - "[Docs:self-host] https://help.penpot.app/technical-guide/getting-started/ extracted 2026-06-18; official self-hosting guide lists docker compose, Kubernetes/Helm/OpenShift/Rancher, Elestio and Truenas options, and notes SaaS/self-hosted experience equivalence"
-  - "[Docs:architecture] https://help.penpot.app/technical-guide/developer/architecture/ extracted 2026-06-18; official architecture says SPA frontend in ClojureScript/React served from static web server, backend in Clojure/JVM, PostgreSQL persistence, shared code/data structures"
-  - "[Docs:MCP] https://help.penpot.app/mcp/ extracted 2026-06-18; official MCP docs describe AI client access to Penpot files, read/write tools and safety recommendations around reversible changes and disconnecting MCP"
+  - "[GH:api] https://api.github.com/repos/penpot/penpot queried 2026-07-25 via gh auth; stars=57295, forks=3796, subscribers=279, REST open_issues_count=714, created_at=2015-12-29, pushed_at=2026-07-24T12:28:54Z, default_branch=develop, license=MPL-2.0, primary_language=Clojure, archived=false, disabled=false"
+  - "[GH:issues-prs] GitHub search API queried 2026-07-25; open issues=638, open PRs=75; REST open_issues_count includes PRs but differed by one from the separately indexed search totals at query time"
+  - "[GH:releases] https://api.github.com/repos/penpot/penpot/releases queried 2026-07-25; latest 2.17.0 published 2026-07-22; previous sampled releases 2.16.2, 2.16.1, 2.16.0"
+  - "[GH:release-2.17] https://github.com/penpot/penpot/releases/tag/2.17.0 inspected via GitHub API 2026-07-25; highlights include WASM/Skia prototype-viewer rendering instead of SVG, plugin API variant retrieval, token/design enhancements, CORS hardening and an MCP plugin-communication concurrency limiter"
+  - "[GH:community] https://api.github.com/repos/penpot/penpot/community/profile queried 2026-07-25; health_percentage=87; README, license, code_of_conduct, CONTRIBUTING and PR template present; issue template absent in profile"
+  - "[GH:advisories] https://api.github.com/repos/penpot/penpot/security-advisories?per_page=100 queried 2026-07-25; returned the same 4 published advisories: GHSA-4937-35vc-hqjj critical account takeover, API metadata reports vulnerable_version_range <=2.15.0 and patched_versions 2.14.5 (version/branch semantics need advisory-level checking before operations); GHSA-22qr-rp27-j9wm high unauthenticated MCP /execute RCE patched 2.15.0; GHSA-35g2-w7f6-8v9h high authenticated SSRF patched 2.15.0; GHSA-xp3f-g8rq-9px2 high arbitrary file read patched 2.13.2"
+  - "[GH:local-scan] local shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/repos/penpot at commit 66bb6a11dfb1fc708a5c8165f8eaa4222e233bb2 inspected 2026-07-25; git ls-files=5969, markdown/rst/adoc files=156, test/spec/bench-ish paths=671, GitHub workflows=23; inspected README.md, LICENSE, SECURITY.md, CONTRIBUTING.md and project manifests"
+  - "[Docs:self-host] https://help.penpot.app/technical-guide/getting-started/ fetched 2026-07-25; official guide lists Docker Compose, official Helm/Kubernetes/OpenShift/Rancher, Elestio and TrueNAS, notes cloud/self-hosted experience equivalence and that images follow SaaS updates"
+  - "[Docs:architecture] https://help.penpot.app/technical-guide/developer/architecture/ fetched 2026-07-25; official architecture describes ClojureScript/React SPA served statically, Clojure/JVM backend, PostgreSQL persistence and shared front/back code/data structures"
+  - "[Docs:MCP] https://help.penpot.app/mcp/ fetched 2026-07-25; official docs describe remote/local MCP, MCP keys, currently focused page/active-tab semantics, read/write tools and explicit advice to start read-only and make small reversible changes"
 ---
 
 # Penpot
@@ -55,15 +56,15 @@ sources:
 
 ## 一句话总结
 
-Penpot 是少数真正成熟的开源设计平台之一，适合需要自托管、开放格式、设计系统和 design-code collaboration 的团队；但近期多个高危/严重 GHSA 使安全评分必须保守。
+Penpot 是少数真正成熟的开源设计平台之一，适合需要自托管、开放格式、设计系统和 design-code collaboration 的团队；但已披露的多个高危/严重 GHSA 使安全评分必须保守。
 
 ## 总体评价
 
 Penpot 的定位非常清楚：open-source design platform for teams that build digital products at scale，强调 self-hosting、open standards（SVG/CSS/HTML/JSON）、real-time collaboration、design tokens、plugin system、API/webhooks 与 MCP server [GH]。它不是单纯画图工具，而是“设计基础设施”：设计、代码、AI workflow、团队协作和自托管治理交织在一起。
 
-技术上，它也有辨识度。官方 architecture 文档说 Penpot 是典型 SPA：ClojureScript + React frontend，由 static web server 提供；Clojure backend 运行在 JVM 上，数据持久化在 PostgreSQL，前后端可共享代码和数据结构 [Docs:architecture]。local scan 显示仓库规模 5739 files、710 test/spec-ish files、20 workflows，并包含 backend、frontend、common、exporter、render-wasm、plugins、mcp 等目录 [GH:local-scan]。
+技术上，它也有辨识度。官方 architecture 文档说 Penpot 是典型 SPA：ClojureScript + React frontend，由 static web server 提供；Clojure backend 运行在 JVM 上，数据持久化在 PostgreSQL，前后端可共享代码和数据结构 [Docs:architecture]。current local scan 显示 5969 tracked files、671 test/spec/bench-ish paths、23 workflows，并包含 backend、frontend、common、exporter、render-wasm、plugins、mcp 等目录 [GH:local-scan]。
 
-成熟度和社区都强：2015 建仓，50k stars，2.16.0 于 2026-06-11 发布，官方 docs/self-hosting/community/contributing 都比较完整 [GH:api][GH:releases][Docs:self-host]。但安全面不能美化：本次 GitHub Security Advisories 查到 4 个 published advisories，其中包括 critical account takeover、高危 MCP unauthenticated `/execute` RCE、高危 SSRF 和 arbitrary file read；虽然均记录 patched versions，但这些说明 Penpot 的协作平台 + 插件/MCP + 文件/媒体处理攻击面真实存在 [GH:advisories]。
+成熟度和社区都强：2015 建仓，2026-07 快照有 57k stars，2.17.0 于 2026-07-22 发布 [GH:api][GH:releases]。这次 release 把 prototype viewer 从 SVG renderer 切到 WASM/Skia，同时扩展 token/plugin API，并加入 CORS 与 MCP 通信 hardening [GH:release-2.17]。但安全面不能美化：本次 GitHub Security Advisories 仍查到 4 个 published advisories，其中包括 critical account takeover、高危 MCP unauthenticated `/execute` RCE、高危 SSRF 和 arbitrary file read；虽然均记录 patched versions，但这些说明 Penpot 的协作平台 + 插件/MCP + 文件/媒体处理攻击面真实存在 [GH:advisories]。
 
 ## 推荐度：4/5
 
@@ -71,7 +72,7 @@ Penpot 的定位非常清楚：open-source design platform for teams that build 
 
 给 4 的理由：Penpot 在开源设计工具里稀缺且成熟，MPL-2.0 许可较友好，自托管路径官方化，文档和社区都较完整；对设计-代码协作场景，open standards 与 developer-friendly inspect/API/plugin/MCP 是明确差异点 [GH][Docs:self-host][Docs:MCP]。
 
-不直接给 5：一是 Figma 级产品能力和生态仍需要实际团队试用验证；二是近期安全 advisories 级别很高；三是自托管设计协作平台的运维、升级、备份、权限和外部暴露面都不可忽略。
+不直接给 5：一是 Figma 级产品能力和生态仍需要实际团队试用验证；二是已披露安全 advisories 的级别很高；三是自托管设计协作平台的运维、升级、备份、权限和外部暴露面都不可忽略。
 
 ## 优势
 
@@ -79,11 +80,11 @@ Penpot 的定位非常清楚：open-source design platform for teams that build 
 2. **设计-代码桥梁强**：Inspect mode、SVG/CSS/HTML、Design Tokens、API/webhooks、plugin system、MCP server 都服务于 design-code workflow [GH][Docs:MCP]。
 3. **自托管选项明确**：官方 self-hosting guide 提供 Docker Compose、Kubernetes/Helm、OpenShift/Rancher、Elestio、Truenas 等路径 [Docs:self-host]。
 4. **架构可研究**：Clojure/ClojureScript + JVM backend + PostgreSQL + shared code/data structures，是大型产品里相对少见的函数式技术栈样本 [Docs:architecture]。
-5. **社区和维护活跃**：50k stars、3232 forks、近期 releases、community profile 87%，README 链接 community、learning center、contributing guide [GH:api][GH:releases][GH:community]。
+5. **社区和维护活跃**：57k stars、3796 forks、近期 releases、community profile 87%，README 链接 community、learning center、contributing guide [GH:api][GH:releases][GH:community]。
 
 ## 劣势
 
-1. **安全历史较重**：近期 4 个 GHSA 包含 critical account takeover 和 MCP RCE，说明攻击面不能轻视 [GH:advisories]。
+1. **安全历史较重**：本次查询到的 4 个 GHSA 包含 critical account takeover 和 MCP RCE，说明攻击面不能轻视 [GH:advisories]。
 2. **自托管不是轻量服务**：JVM backend、frontend/exporter、PostgreSQL、媒体/资产、实时协作都需要容量规划和备份。
 3. **产品替代成本高**：设计工具高度依赖团队习惯、文件兼容、插件生态、协作性能和迁移路径；不能只凭开源属性替代 Figma。
 4. **MCP 带来高权限设计变更面**：官方 MCP docs 明确 AI client 可执行 create/rename/move/delete/restyle 等写操作，需要谨慎连接和小步可逆 [Docs:MCP]。
@@ -131,6 +132,7 @@ Penpot 能提供：
 - inspect mode 输出 SVG/CSS/HTML，帮助 design-code handoff [GH]；
 - plugin system、API/webhooks、access tokens 和 integrations [GH]；
 - MCP server，把 AI agents 接入当前 Penpot file/page，执行读取和写入设计结构的操作 [Docs:MCP]；
+- 2.17.0 的 WASM/Skia prototype viewer 与扩展后的 token/plugin-API surface [GH:release-2.17]；
 - Docker Compose、Kubernetes/Helm、OpenShift/Rancher 等部署路径 [Docs:self-host]。
 
 不给 5：本条没有验证其与 Figma 全功能差距、复杂文件性能、企业治理、插件生态质量和迁移可靠性。
@@ -148,7 +150,7 @@ Penpot 能提供：
 - **GPU**：不需要。
 - **外部依赖**：PostgreSQL、对象/媒体存储、邮件/认证、反向代理/TLS、备份、MCP/AI client（若启用）。
 
-performance 评分 3/5。Clojure/JVM + web collaboration 是可行的大型产品路线，但资源效率通常不如轻量原生工具；本条没有做复杂文件/多人协作 benchmark。
+performance 评分 3/5。2.17.0 把 prototype viewer 从 SVG renderer 切到 WASM/Skia，是值得关注的渲染架构变化；但 release note 不等于独立性能实测，复杂文件、多人协作与 exporter/backend 资源占用仍未 benchmark，因此不调整评分 [GH:release-2.17]。
 
 ## 上手体验
 
@@ -162,7 +164,7 @@ README 对 product value、self-hosting、community、resources、license 给出
 
 评分 4/5。
 
-仓库结构大而有序：backend、frontend、common、exporter、render-wasm、plugins、mcp、docs 等模块清晰；local scan 显示 5739 tracked files、710 test/spec-ish files、20 workflows，并有 CONTRIBUTING、SECURITY、CODE_OF_CONDUCT、deps.edn、package.json、pnpm-lock.yaml [GH:local-scan][GH:community]。
+仓库结构大而有序：backend、frontend、common、exporter、render-wasm、plugins、mcp、docs 等模块清晰；current local scan 显示 5969 tracked files、671 test/spec/bench-ish paths、23 workflows，并有 CONTRIBUTING、SECURITY、CODE_OF_CONDUCT 与项目 manifests [GH:local-scan][GH:community]。
 
 不给 5：本条未运行测试、构建或审查关键协作/权限/MCP 代码；近期 advisories 也说明权限边界曾出现严重缺陷。
 
@@ -186,14 +188,14 @@ README、user guide、technical guide、architecture、self-hosting、contributi
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | 50k stars、3232 forks、open issues 617 / open PRs 78、community profile 87%，外部 community 与 social links 完整 [GH:api][GH:issues-prs][GH:community] |
-| 成熟度 | 4/5 | 2015 建仓，release 活跃，2.16.0 于 2026-06-11 发布；作为产品已经较成熟，但 issue backlog 和安全历史仍需关注 [GH:api][GH:releases][GH:advisories] |
+| 社区活跃度 | 4/5 | 57k stars、3796 forks、open issues 638 / open PRs 75、community profile 87%，外部 community 与 social links 完整 [GH:api][GH:issues-prs][GH:community] |
+| 成熟度 | 4/5 | 2015 建仓，release 活跃，2.17.0 于 2026-07-22 发布；作为产品已经较成熟，但 issue backlog、安全历史与渲染栈持续演进仍需关注 [GH:api][GH:releases][GH:release-2.17][GH:advisories] |
 
 ## 安全与风险
 
 评分 2/5。
 
-这里必须保守：本次 GitHub Security Advisories endpoint 返回 4 个 published advisories，包括：critical pre-authenticated account takeover、high unauthenticated MCP `/execute` RCE、high authenticated SSRF、high arbitrary file read；虽然记录了 patched versions，但它们都是设计协作平台关键攻击面上的严重信号 [GH:advisories]。
+这里必须保守：本次 GitHub Security Advisories endpoint 仍返回 4 个 published advisories，包括：critical pre-authenticated account takeover、high unauthenticated MCP `/execute` RCE、high authenticated SSRF、high arbitrary file read；虽然记录了 patched versions，但它们都是设计协作平台关键攻击面上的严重信号 [GH:advisories]。2.17.0 的 CORS hardening 与 MCP concurrency limiter 是正面变化，却不能抹去这段历史，也不能替代部署级版本核验 [GH:release-2.17]。
 
 Penpot 的安全风险来自多个方向：多租户/团队权限、文件和媒体导入、插件/API token、MCP write operations、self-hosted deployment、PostgreSQL/asset storage、public web exposure。生产采用时，必须固定版本、快速升级、审查 MCP/插件权限、备份数据库和资产、配置 TLS/SSO/邮件、限制管理面暴露。安全评分 2/5 并非说最新版必然有已知未修漏洞，而是表示历史漏洞严重度和攻击面要求高度谨慎。
 

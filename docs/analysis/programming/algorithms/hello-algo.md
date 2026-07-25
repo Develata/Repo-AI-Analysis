@@ -12,7 +12,7 @@ primary_language: "Java"
 license: "CC BY-NC-SA 4.0"
 stars: 127417
 forks: 15175
-last_checked: 2026-06-18
+last_checked: 2026-07-25
 last_verified: 2026-06-18
 evidence: "GitHub authenticated API + README + official site + contribution docs + release page + shallow local scan; non-software scoring applied; no local build/run validation"
 archived_reason: ""

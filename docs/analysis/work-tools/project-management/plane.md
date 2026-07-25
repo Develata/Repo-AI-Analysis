@@ -1,7 +1,7 @@
 ---
 title: "Plane"
 created: 2026-06-18
-updated: 2026-06-18
+updated: 2026-07-25
 type: repository-analysis
 repo_url: "https://github.com/makeplane/plane"
 category: "work-tools/project-management"
@@ -10,11 +10,11 @@ previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
 license: "AGPL-3.0"
-stars: 51185
-forks: 4558
-last_checked: 2026-06-18
-last_verified: 2026-06-18
-evidence: "GitHub authenticated API + README + official docs/developer docs + GitHub advisories + shallow local scan; no local build/test/self-hosting smoke test run"
+stars: 54989
+forks: 5098
+last_checked: 2026-07-25
+last_verified: 2026-07-25
+evidence: "GitHub authenticated API + current README/releases/official docs + full repository-advisory query + shallow local scan and security-commit review; no local build/test/self-hosting smoke test run"
 archived_reason: ""
 docker_support: true
 gpu_required: false
@@ -36,16 +36,18 @@ ratings:
 overall_score: 3.3
 sources:
   - "[GH] https://github.com/makeplane/plane"
-  - "[GH:api] https://api.github.com/repos/makeplane/plane queried 2026-06-18 via gh auth; stars=51185, forks=4558, open_issues_count=908, created_at=2022-11-19, pushed_at=2026-06-17, default_branch=preview, license=AGPL-3.0, primary_language=TypeScript"
-  - "[GH:issues-prs] GitHub search API queried 2026-06-18; open issues=771, open PRs=137; REST open_issues_count=908 includes PRs"
-  - "[GH:releases] https://api.github.com/repos/makeplane/plane/releases?per_page=5 queried 2026-06-18; latest v1.3.1 published 2026-05-14; previous releases v1.3.0, v1.2.3, v1.2.2, v1.2.1"
-  - "[GH:community] https://api.github.com/repos/makeplane/plane/community/profile queried 2026-06-18; health_percentage=100; README, license, code_of_conduct, CONTRIBUTING, SECURITY, issue templates and PR template present"
-  - "[GH:advisories] https://api.github.com/repos/makeplane/plane/security-advisories?per_page=10 queried 2026-06-18; returned 10 published advisories including high SSRF GHSA-9fr2-pprw-pp9j patched 1.3.0, high cross-workspace asset authorization bypass GHSA-qw87-v5w3-6vxx affected v1.2.3 patched 1.3.1, high webhook SSRF GHSA-fpx8-73gf-7x73 patched 1.2.3, high unauthenticated workspace member information disclosure GHSA-87x4-j8vh-p5qf patched 1.2.2, and additional medium/low IDOR/PII/ORM issues"
-  - "[GH:local-scan] local shallow clone /opt/data/tmp/repo_wiki_trending_20260618_round2/makeplane-plane at commit 53a323d559cb27d87f7440b2fc8514147cf7e542; git ls-files=5404, markdown/rst/adoc files=31, test/spec-ish files=59, GitHub workflows=9; inspected README.md, SECURITY.md, CONTRIBUTING.md, package.json, docker-compose.yml, docker-compose-test.yml, AGENTS.md"
-  - "[Docs:self-host] https://developers.plane.so/self-hosting/overview extracted 2026-06-18; developer docs describe self-hosting for data sovereignty/control/compliance, Docker Compose/Kubernetes, instance admin/God Mode, authentication, email, external databases/storage"
-  - "[Docs:docker] https://developers.plane.so/self-hosting/methods/docker-compose extracted 2026-06-18; Docker Compose docs list 2 CPU cores, 4GB RAM minimum, 8GB production recommendation, Ubuntu/Debian/CentOS/Amazon Linux/macOS/Windows WSL2, and production recommendation to use external database and storage"
-  - "[Docs:product] https://docs.plane.so/ extracted 2026-06-18; product docs cover workspaces, projects, work items, cycles/modules, pages/wiki, integrations, import/export, developers/API/self-hosting"
-  - "[GH:contributing] /opt/data/tmp/repo_wiki_trending_20260618_round2/makeplane-plane/CONTRIBUTING.md inspected 2026-06-18; local development requirements include Docker, Node.js 20+, Python 3.8+, Redis 6.2.7, PostgreSQL 15, and 12GB RAM recommended"
+  - "[GH:api] https://api.github.com/repos/makeplane/plane queried 2026-07-25 via gh auth; stars=54989, forks=5098, subscribers=172, REST open_issues_count=1035, created_at=2022-11-19, pushed_at=2026-07-24T12:17:49Z, default_branch=preview, license=AGPL-3.0, primary_language=TypeScript, archived=false, disabled=false"
+  - "[GH:issues-prs] GitHub search API queried 2026-07-25; open issues=830, open PRs=205; REST open_issues_count=1035 equals the separate issue+PR totals"
+  - "[GH:releases] https://api.github.com/repos/makeplane/plane/releases queried 2026-07-25; latest GitHub release remains v1.3.1 published 2026-05-14; previous sampled releases v1.3.0, v1.2.3, v1.2.2, v1.2.1"
+  - "[GH:community] https://api.github.com/repos/makeplane/plane/community/profile queried 2026-07-25; health_percentage=100; README, license, code_of_conduct, CONTRIBUTING and PR template present; issue template absent in profile"
+  - "[GH:advisories] https://api.github.com/repos/makeplane/plane/security-advisories?per_page=100 queried 2026-07-25; returned 16 published advisories, not the prior per_page=10 sample. IDs/classes: GHSA-9fr2-pprw-pp9j high SSRF; GHSA-qw87-v5w3-6vxx high cross-workspace asset authorization bypass; GHSA-93x3-ghh7-72j3 ORM field injection; GHSA-4q54-h4x9-m329 IDOR; GHSA-fpx8-73gf-7x73 high webhook SSRF; GHSA-rfj3-8c85-g46j asset IDOR; GHSA-87x4-j8vh-p5qf high unauthenticated member disclosure; GHSA-jcc6-f9v6-f7jw high SSRF; GHSA-7qx6-6739-c7qr guest member disclosure; GHSA-8rvg-7w43-p2w2 PII exposure; plus older GHSA-6fj7-xgpg-mj6f and GHSA-rwjc-xhh3-m9m9 XSS, GHSA-cjh4-q763-cc48 insecure permissions, GHSA-rcg8-g69v-x23j SVG XSS, and critical SSRF GHSA-39gx-38xf-c348 / GHSA-j77v-w36v-63v6. API metadata records patched versions for all rows"
+  - "[GH:security-commits] Default preview branch commits sampled 2026-07-25 include July authz/input hardening after v1.3.1: #9380 scopes page-version reads, #9375 scopes member permission reads, #9372 scopes workspace assets, #9347 blocks ORM grouping injection, #9312 blocks stored XSS via SVG, #9367 enforces member activation authz, #9349 scopes cycle reassignment, #9348 sanitizes order_by, #9333 validates project invitations, #9313 normalizes links, #9308 validates invite tokens, #9289 rejects unverified OAuth emails"
+  - "[GH:local-scan] local shallow clone /opt/data/tmp/github-repo-wiki-freshness-audit/repos/plane at commit a8e53b6ac7b87bd8e3e931d21188f7679c7ab6c4 inspected 2026-07-25; git ls-files=5250, markdown/rst/adoc files=31, test/spec/bench-ish paths=84, GitHub workflows=9; inspected README.md, SECURITY.md, CONTRIBUTING.md and deployment/project manifests"
+  - "[Docs:self-host] https://developers.plane.so/self-hosting/overview fetched 2026-07-25; developer docs describe data sovereignty/control/compliance and deployment from Docker to Kubernetes with instance configuration/governance"
+  - "[Docs:docker] https://developers.plane.so/self-hosting/methods/docker-compose fetched 2026-07-25; commercial-edition Docker prerequisites list 2 CPU cores, 4GB RAM and 8GB recommended for production, while Community Edition has a separate setup flow; production guidance recommends external database and storage"
+  - "[Docs:product] https://docs.plane.so/ fetched 2026-07-25; product docs cover workspaces, projects/work items/cycles/modules, pages/wiki, integrations, import/export and developer/API/MCP/custom-integration paths"
+  - "[GH:contributing] CONTRIBUTING.md at commit a8e53b6a inspected 2026-07-25; local development requires Docker, Node.js 20+, Python 3.8+, PostgreSQL 14, Redis 6.2.7 and recommends at least 12GB RAM; contribution rules say feature/bug changes need specs"
+  - "[GH:security] SECURITY.md at commit a8e53b6a inspected 2026-07-25; documents security@plane.so reporting, prohibited testing, response within three business days and coordinated disclosure expectations"
 ---
 
 # Plane
@@ -56,7 +58,7 @@ sources:
 
 ## 一句话总结
 
-Plane 值得作为自托管项目管理平台候选和工程治理样本收录，但近期安全 advisories 多、issue/PR backlog 高，生产采用推荐度只能给谨慎的 3/5。
+Plane 值得作为自托管项目管理平台候选和工程治理样本收录，但完整查询返回 16 个 published GHSA，preview branch 又在 v1.3.1 后加入密集 security hardening；生产采用仍只能给谨慎的 3/5。
 
 ## 总体评价
 
@@ -64,13 +66,13 @@ Plane 的产品定位很直接：track issues、run cycles、manage product road
 
 工程上，Plane 是现代 web product 典型组合：README 标注 React Router、Django、Node.js；local scan 看到 apps、packages、deployments、docker-compose.yml、pnpm workspace、Turbo、OxLint/OxFmt、Django/pytest test compose 等 [GH][GH:local-scan]。Self-hosting docs 提供 Docker Compose 和 Kubernetes，并明确外部 database/storage 更适合生产 [Docs:self-host][Docs:docker]。
 
-但本条的评价必须比 stars 更冷静。GitHub API 显示 51k stars / 4558 forks，同时也有 open issues 771 / open PRs 137；Security Advisories endpoint 返回 10 个 published advisories，包含多个 high SSRF、cross-workspace asset authorization bypass、unauthenticated workspace member information disclosure、IDOR 等 [GH:api][GH:issues-prs][GH:advisories]。这说明它很活跃、很受关注，也说明权限/多租户/API/导入链接等攻击面仍在快速修补。
+但本条的评价必须比 stars 更冷静。当前快照显示 54k stars / 5098 forks，同时有 open issues 830 / open PRs 205；完整的 `per_page=100` advisory 查询返回 16 个 published advisories，而不是先前 10-row sample [GH:api][GH:issues-prs][GH:advisories]。preview branch 又在 7 月加入多项 cross-project/workspace authz、invite-token、SVG XSS、ORM/order parameter 与 OAuth email trust 修复 [GH:security-commits]。这是积极 remediation，也说明权限/多租户/API/input boundary 仍是活跃风险面。
 
 ## 推荐度：3/5
 
 对目标用户——愿意自托管、需要 Jira/Linear-style issue/cycle/roadmap 管理、能承担升级和安全运维的小团队——推荐度是 3/5。
 
-给 3 而不是 4：Plane 功能面和社区很强，但 open issue/PR backlog 高，安全 advisories 数量和严重度较重；default branch 是 `preview`，项目仍快速演进 [GH:api][GH:issues-prs][GH:advisories]。它适合试点、评估和学习自托管 SaaS 架构；生产核心项目管理系统采用前，需要版本固定、升级流程、备份、权限测试和外网暴露面审查。
+给 3 而不是 4：Plane 功能面和社区很强，但 backlog 高、advisory history 较重，default branch 还是 `preview` [GH:api][GH:issues-prs][GH:advisories]。更关键的是，latest GitHub release 仍是 5 月的 v1.3.1，而本轮核验的 preview branch 已包含多项 7 月安全修复；operators 必须确认具体 image/channel 包含所需 fixes，不能把“latest release”直接等同于“全部当前 hardening” [GH:releases][GH:security-commits]。
 
 如果只把它作为本地/小团队 kanban + issue tracker 试用，可以积极；若作为组织级生产治理平台，则要谨慎。
 
@@ -78,17 +80,17 @@ Plane 的产品定位很直接：track issues、run cycles、manage product road
 
 1. **功能定位完整**：Work Items、Cycles、Modules、Views、Pages、Analytics 覆盖项目管理核心路径 [GH][Docs:product]。
 2. **自托管主线清楚**：官方 developer docs 支持 Docker Compose、Kubernetes，并讨论 instance admin/God Mode、authentication、email、external services [Docs:self-host]。
-3. **社区可见度很高**：51k stars、4558 forks、release 活跃，community profile 100% [GH:api][GH:releases][GH:community]。
+3. **社区可见度很高**：54k stars、5098 forks、开发活跃，community profile 100% [GH:api][GH:community]。
 4. **现代 monorepo 工程栈**：React/Django/Node、pnpm workspace、Turbo、OxLint/OxFmt、Docker Compose、pytest test stack 都是可研究的 SaaS 工程材料 [GH][GH:local-scan]。
-5. **AGPL-3.0 明确保护开源网络服务边界**：对希望避免闭源 SaaS 吸收开源成果的人，这是正面信号。
+5. **AGPL-3.0 的网络 copyleft 明确**：修改后的程序通过网络向用户提供服务时，可能触发向这些用户提供 corresponding source 的义务；对重视 reciprocal openness 的团队，这是正面信号。
 
 ## 劣势
 
-1. **安全历史压力大**：10 个 GHSA，且包含 high SSRF、跨 workspace asset authorization bypass、信息泄露、IDOR 等，直接关联多租户项目管理平台核心风险 [GH:advisories]。
-2. **backlog 很高**：open issues 771、open PRs 137，说明维护面宽、产品复杂度高 [GH:issues-prs]。
+1. **安全历史压力大**：完整查询返回 16 个 published GHSA，包含 critical/high SSRF、跨 workspace authorization bypass、信息泄露、XSS 和 IDOR 等 [GH:advisories]。
+2. **backlog 很高**：open issues 830、open PRs 205，说明维护面宽、产品复杂度高 [GH:issues-prs]。
 3. **自托管运维不轻**：需要 Docker、PostgreSQL/Redis、对象存储/附件、邮件、认证、备份、升级和日志监控 [Docs:self-host][Docs:docker]。
-4. **测试扫描信号不算强**：local scan 5404 files 但 test/spec-ish 只有 59；这只是粗略文件名扫描，不等于真实覆盖率低，但足以提醒不要高估测试证据 [GH:local-scan]。
-5. **AGPL-3.0 对商业集成有合规要求**：网络服务修改和分发边界需要法律/合规评估。
+4. **release 与 hardening branch 之间有核验成本**：v1.3.1 后的 preview branch 已出现密集安全修复，本轮未确认这些修复对应的下一稳定 image/version [GH:releases][GH:security-commits]。
+5. **AGPL-3.0 对商业集成有合规要求**：修改程序并通过网络向用户提供服务时，可能触发 corresponding-source offer；具体集成方式应做法律/合规评估。
 
 ---
 
@@ -140,7 +142,7 @@ Plane 提供：
 | 场景 | CPU | 内存 | 存储 | 说明 |
 |------|-----|------|------|------|
 | Docker Compose baseline | 2 cores | 4GB minimum / 8GB production recommended | PostgreSQL/Redis/storage | 官方 Docker docs 给出的基础要求 [Docs:docker] |
-| 本地开发 | 中等到高 | 12GB recommended | node/pnpm/Docker/cache | CONTRIBUTING 对开发环境更重，尤其 Docker build/start 与依赖安装 [GH:contributing] |
+| 本地开发 | 中等到高 | 12GB recommended | node/pnpm/Docker/cache | CONTRIBUTING 当前列出 Node 20+、Python 3.8+、PostgreSQL 14、Redis 6.2.7，尤其 Docker build/start 与依赖安装较重 [GH:contributing] |
 | 生产团队 | 中等到高 | 中等到高 | 高 | 附件、数据库、备份、日志、外部 storage 和并发用户决定容量 |
 
 - **运行时**：React Router / Node frontend packages，Django/Python backend，PostgreSQL、Redis、Docker 生态 [GH][GH:contributing]。
@@ -163,9 +165,9 @@ README 对 Cloud 和 Self-host 的入口很直观；Docker Compose docs 给出�
 
 评分 3/5。
 
-正面：monorepo 结构清楚，apps/packages/deployments/docs 分层；AGENTS.md 记录 pnpm build/check/lint/type/test conventions；CONTRIBUTING 给出 Docker、Node、Python、Redis、PostgreSQL 和内存要求 [GH:local-scan][GH:contributing]。community profile 100% 也说明治理文件齐备 [GH:community]。
+正面：monorepo 结构清楚，apps/packages/deployments/docs 分层；current local scan 有 5250 tracked files、84 test/spec/bench-ish paths 和 9 workflows；CONTRIBUTING 给出 Docker、Node、Python、Redis、PostgreSQL 和内存要求 [GH:local-scan][GH:contributing]。community profile 100% 也是治理正信号 [GH:community]。
 
-保守点：5404 files 但粗略 test/spec-ish 只有 59；安全 advisories 数量较多，说明权限、SSRF、IDOR 等关键边界曾出现多次缺陷 [GH:local-scan][GH:advisories]。本条未运行 `pnpm check`、pytest 或 Docker test stack。
+保守点：filename scan 不是 coverage measurement，本条也未运行 `pnpm check`、pytest 或 Docker test stack。更重要的是，16 个 published advisories 与 7 月 authz/input-hardening series 显示 permissions、SSRF、IDOR/XSS 和 query-parameter boundary 曾反复出现缺陷 [GH:advisories][GH:security-commits]。
 
 ## 可扩展性
 
@@ -187,16 +189,16 @@ Plane 有 integrations、API/self-host developer docs、import/export，以及 G
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | 51k stars、4558 forks、open issues 771 / open PRs 137、community health 100%，讨论区和论坛入口存在 [GH:api][GH:issues-prs][GH:community] |
-| 成熟度 | 3/5 | 2022 建仓，已到 v1.3.1 且 release 活跃；但 backlog 高、安全 advisories 多、default branch 为 preview，仍处于快速演进产品期 [GH:api][GH:releases][GH:advisories] |
+| 社区活跃度 | 4/5 | 54k stars、5098 forks、open issues 830 / open PRs 205、community health 100%，讨论区和论坛入口存在 [GH:api][GH:issues-prs][GH:community] |
+| 成熟度 | 3/5 | 2022 建仓，latest GitHub release 为 v1.3.1；但 backlog 高、default branch 为 preview，且 release 后仍有密集 security hardening，产品仍快速演进 [GH:api][GH:releases][GH:security-commits] |
 
 ## 安全与风险
 
 评分 2/5。
 
-Plane 的安全评分必须低。GitHub Security Advisories 本次返回 10 个 published advisories，涉及 high SSRF、cross-workspace asset authorization bypass、webhook SSRF、unauthenticated workspace member information disclosure，以及多个 IDOR/PII/ORM 相关问题 [GH:advisories]。这些不是边缘依赖告警，而是项目管理平台核心攻击面：workspace 隔离、资产权限、外部链接/webhook、成员信息、bulk update 和 analytics 参数。
+Plane 的安全评分必须低。完整 GitHub Security Advisories 查询返回 16 个 published advisories，包含历史 critical/high SSRF、cross-workspace asset authorization bypass、webhook SSRF、unauthenticated member disclosure、XSS，以及多个 IDOR/PII/ORM 问题 [GH:advisories]。这些不是边缘依赖告警，而是项目管理平台核心攻击面：workspace isolation、asset permissions、external links/webhooks、member data、uploads 和 query parameters。
 
-这不等于最新版一定有未修漏洞；多个 advisory 记录了 1.2.2/1.2.3/1.3.0/1.3.1 等 patched versions。但对于生产自托管，安全实践必须包括：固定最新 patched release、快速升级、限制 webhook/外部 URL、审查 workspace 权限、备份、日志审计、SSO/OAuth/SMTP 配置、数据库和 object storage 隔离。若团队不能维持这些，Plane 不宜作为核心生产系统。
+这不等于最新版一定有未修漏洞；API 中各 advisory 记录了 patched-version metadata，历史数量也不能直接等同于当前 exposure。另一方面，preview branch 在 v1.3.1 后出现一组新的 authz/input hardening commits，而本轮未见更晚 GitHub release [GH:releases][GH:security-commits]。因此生产自托管不能只写“follow latest”：必须核验具体 image/tag/commit 是否包含所需修复，并维持快速升级、workspace 权限测试、webhook/URL 限制、备份、日志审计、SSO/OAuth/SMTP 与 database/object-storage isolation。
 
 ## 学习价值
 

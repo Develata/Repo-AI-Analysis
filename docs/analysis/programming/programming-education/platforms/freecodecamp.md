@@ -12,7 +12,7 @@ primary_language: "TypeScript"
 license: "BSD-3-Clause for software; curriculum content has separate copyright/license notes in README"
 stars: 449095
 forks: 45086
-last_checked: 2026-06-18
+last_checked: 2026-07-25
 last_verified: 2026-06-18
 evidence: "GitHub authenticated API + README + local scan + GitHub advisories; official docs pages attempted but web_extract failed for hash-routed contribute/learn pages; no local build/test run"
 archived_reason: ""
