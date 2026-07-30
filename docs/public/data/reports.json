@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 158,
+  "count": 160,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -5430,6 +5430,43 @@
       "summary": "面向 AI 的 hosted/local memory/context engine，Hermes 也有 API provider；但 self-hosted 0.0.x 的公开 issue 样本报告 auth availability、migration、ingestion 与 crash problems，使采用建议降为 2/5 [Hermes:prov"
     },
     {
+      "slug": "work-tools/web-browsers/thorium",
+      "route": "/analysis/work-tools/web-browsers/thorium",
+      "title": "Thorium",
+      "repo_url": "https://github.com/Alex313031/thorium",
+      "category": "work-tools/web-browsers",
+      "directory": "work-tools/web-browsers",
+      "tags": [
+        "web-browser",
+        "chromium",
+        "performance",
+        "simd",
+        "privacy",
+        "linux",
+        "cross-platform",
+        "cpp"
+      ],
+      "primary_language": "C++",
+      "stars": 7372,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 2,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 2
+      },
+      "overall_score": 3,
+      "last_checked": "2026-07-31",
+      "updated": "2026-07-31",
+      "summary": "Thorium 适合愿意自行核验下载来源、接受 Chromium fork 更新滞后与维护交接风险、想要 CPU-specific optimizations 和经典/扩展浏览器特性的技术用户；不适合作为敏感账号、企业受管环境或高安全需求场景的默认主浏览器。"
+    },
+    {
       "slug": "document-processing/vibevoice",
       "route": "/analysis/document-processing/vibevoice",
       "title": "VibeVoice",
@@ -5721,6 +5758,43 @@
       "last_checked": "2026-07-24",
       "updated": "2026-07-24",
       "summary": "turbovec 仍是值得研究的 compressed vector index，但截至 2026-07-24 的 bug/backlog 信号使它更适合可重建数据上的实验，而非默认生产依赖。"
+    },
+    {
+      "slug": "dev-tools/package-managers/ant",
+      "route": "/analysis/dev-tools/package-managers/ant",
+      "title": "Ant",
+      "repo_url": "https://github.com/theMackabu/ant",
+      "category": "dev-tools/package-managers",
+      "directory": "dev-tools/package-managers",
+      "tags": [
+        "javascript",
+        "typescript",
+        "runtime",
+        "package-manager",
+        "nodejs",
+        "c",
+        "jit",
+        "wintertc"
+      ],
+      "primary_language": "C (runtime/engine), Zig (package manager), JavaScript/TypeScript",
+      "stars": 1064,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 1,
+        "extensibility": 3,
+        "security": 2,
+        "recommendation": 2
+      },
+      "overall_score": 2.6,
+      "last_checked": "2026-07-30",
+      "updated": "2026-07-30",
+      "summary": "面向 JavaScript runtime/VM 研究者、系统程序员和可接受实验性风险的原型开发者：Ant 已把自研引擎、JIT、Web/Node API、npm package manager 与嵌入接口装进小型原生二进制，但语言一致性、Node compatibility、GC safety、release integrity 与自动化验收仍不足以支撑生"
     },
     {
       "slug": "ai-programs/ai-harness/guides/agent-engineering/schema-harness",
