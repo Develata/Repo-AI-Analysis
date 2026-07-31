@@ -5464,7 +5464,7 @@
       "overall_score": 3,
       "last_checked": "2026-07-31",
       "updated": "2026-07-31",
-      "summary": "Thorium 适合愿意自行核验下载来源、接受 Chromium fork 更新滞后与维护交接风险、想要 CPU-specific optimizations 和经典/扩展浏览器特性的技术用户；不适合作为敏感账号、企业受管环境或高安全需求场景的默认主浏览器。"
+      "summary": "Thorium 适合接受 Chromium fork 更新滞后、维护交接与公开 binary provenance 当前不可独立认证，且想研究 CPU-specific optimizations 和经典/扩展浏览器特性的技术用户；不适合作为敏感账号、企业受管环境或高安全需求场景的默认主浏览器。"
     },
     {
       "slug": "document-processing/vibevoice",

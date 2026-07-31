@@ -41,16 +41,17 @@ sources:
   - "[GH:transition] Main-repo M144 and M150 release bodies inspected 2026-07-31: both explicitly say they are notification releases with no new binaries/assets; maintainer Alex lacked time, collaborator gz83 performed experimental/beta upgrades in gz83/thorium branches and planned later PR/review; both main-repo releases have assets_count=0 and prerelease=false despite Beta wording"
   - "[GH:M138-assets] https://github.com/Alex313031/thorium/releases/tag/M138.0.7204.303 inspected 2026-07-31: 19 Linux .deb/.rpm/.zip/AppImage assets across SSE3/SSE4/AVX/AVX2/i386; sampled AVX .deb size=161382052 bytes; no checksum/signature companion asset name was found; release says it includes upstream M138 security fixes and several crash/WebRTC/package fixes"
   - "[GH:M150-assets] https://github.com/gz83/thorium/releases/tag/M150.0.7871.101 inspected 2026-07-31: collaborator release is marked prerelease=true and hosts Linux/Windows/macOS/Android assets from gz83/thorium M150-LTS; no checksum/signature companion asset name was found; this is not the canonical main branch"
+  - "[GH:M150-performance-scan] gz83/thorium M150-LTS branch inspected 2026-07-31 at commit 979d6e9211a153795eb18a0f727b2e77ebf95502: README makes ThinLTO, PGO and architecture-aware SIMD profiles first-class release goals; args.gn uses thorium_x86_profile=avx, ThinLTO, text-section splitting, chrome PGO phase 2, optimized V8 tiers and WebAssembly SIMD revectorization; recursive tree had 1361 paths, 154 .patch files, no benchmark/Speedometer/JetStream/Octane-named path, and only two GitHub workflows for PAK binaries and macOS icons; TODO still asks for optimized/non-optimized Thorium versus same-revision Chromium/Chrome testing"
   - "[GH:issues] GitHub issue/search snapshot 2026-07-31: sampled open reports include #1230 Windows crash, #1231 Ubuntu hardware acceleration failure, #1216/#1246 site login failures, #1199 password-manager failure, #1197 AppImage extension-update failure, #1220 ARM package architecture mismatch, and #1259 Android background-resume GPU/rendering failure; titles are issue reports, not independently reproduced findings"
   - "[GH:apt-issue] https://github.com/Alex313031/thorium/issues/1164 inspected 2026-07-31: open report documents missing InRelease/Release.gpg and trusted=yes; collaborator said it was planned for upcoming stable M144 and advised against company end-user deployment"
   - "[GH:advisories] https://api.github.com/repos/Alex313031/thorium/security-advisories queried 2026-07-31 and returned []; this only means no published repository advisories were found in that endpoint check"
   - "[GH:community] GitHub community/profile and contents queried 2026-07-31: health_percentage=85; README, BSD-3-Clause license, CODE_OF_CONDUCT and three issue templates present; CONTRIBUTING and PR template absent; contributor API returned 13 entries, heavily concentrated at 4905 contributions for Alex313031 versus 18 for each of the next two"
   - "[GH:SECURITY] https://github.com/Alex313031/thorium/blob/main/SECURITY.md inspected at HEAD 91b29e1: Chromium flaws are referred upstream; Thorium flaws go to public issues or maintainer email for major/zero-day reports; listed fixed major vulnerabilities stop at CVE-2024-4671 fixed in M124"
-  - "[Local:scan] Sparse shallow clone /opt/data/tmp/repo_wiki_thorium/clone at commit 91b29e10e3c934ae187d9e7106fc88db64560eea inspected 2026-07-31: git tree has 1546 tracked paths and submodules thorium-libjxl plus infra/upgrader; 52 .patch files; GitHub tree scan found no .github/workflows entries; inspected README, SECURITY, docs, build/version/setup scripts, GN args and known-bugs/TODO material"
+  - "[Local:scan] Sparse shallow clone /opt/data/tmp/repo_wiki_thorium/clone at commit 91b29e10e3c934ae187d9e7106fc88db64560eea inspected 2026-07-31: git ls-tree -r --name-only HEAD counted 1546 tracked paths, the same command scoped to src counted 593 paths, and suffix counting found 52 .patch files; submodules are thorium-libjxl and infra/upgrader; GitHub tree scan found no .github/workflows entries; inspected README, SECURITY, TODO, infra/BUGS.md, build/version/setup scripts, GN args, and docs including ABOUT_GN_ARGS, ABOUT_RELEASES, BUILDING variants, PATCHES, REBASING and CMDLINE_FLAGS_LIST; infra/BUGS.md's final dated section is 2022, while README links docs/TH_24.md but the tracked file is docs/TH24.md"
   - "[Local:version-build] version.sh at canonical HEAD hardcodes THOR_VER=138.0.7204.306; setup.sh overlays Thorium files and many git-apply patches onto an external Chromium checkout and repeatedly assumes ~/thorium; args.gn enables CFI, stack zeroing, ThinLTO/PGO and SIMD/media options, while treat_warnings_as_errors=false; BUILDING.md points users to Chromium test targets but no project CI execution was found"
   - "[Docs:README] https://github.com/Alex313031/thorium/blob/main/README.md inspected 2026-07-31: Chrome-like Chromium fork; Linux in main repo, other platforms in separate repos; CPU-specific builds; codecs/Widevine/JPEG XL/FTP/privacy/UI/Chromedriver/content-shell features and patch sources"
   - "[Docs:FAQ] https://github.com/Alex313031/thorium/blob/main/docs/FAQ.md inspected 2026-07-31: Google Sync/DRM limitations, one-major-behind LTS rationale, manual rebase/build burden, three-person maintenance model, and explicit statement that Thorium is not fully de-Googled"
-  - "[Docs:PATCHES] https://github.com/Alex313031/thorium/blob/main/docs/PATCHES.md inspected 2026-07-31: compiler, media, privacy, UI, sandbox and compatibility patch inventory; includes optional flags for local file access/disable web security and portable-profile encryption changes, which are capabilities requiring careful use"
+  - "[Docs:PATCHES] https://github.com/Alex313031/thorium/blob/main/docs/PATCHES.md inspected 2026-07-31: compiler, media, privacy, UI, sandbox, installer/packaging and compatibility patch inventory; documents Thorium/content-shell desktop integration and many command-line/feature flags, including optional local file access/disable web security and portable-profile encryption changes that require careful use"
   - "[Docs:BUILDING] https://github.com/Alex313031/thorium/blob/main/docs/BUILDING.md inspected 2026-07-31: Linux build requires at least 8GB RAM, 16GB recommended, 75GB free storage, depot_tools plus an external Chromium checkout; FAQ separately says the checkout is 100+GB and a maintainer build takes about five hours on the cited machine"
   - "[Docs:performance] https://thorium.rocks/performance fetched 2026-07-31: project-authored screenshots report Speedometer 2.1, Octane and JetStream2 gains on an AMD FX-8370/24GB DDR3/GTX 970/Ubuntu 22.04.1 machine; browser versions, run distributions and current same-revision reproduction are not supplied; repository TODO still asks to test optimized/non-optimized Thorium and Chromium/Chrome at the same revision"
   - "[Docs:APT] https://thorium.rocks/ fetched 2026-07-31: official page tells users to download thorium.list over plain HTTP with wget --no-hsts and then apt install; the served list contains deb [trusted=yes arch=amd64] https://dl.thorium.rocks/debian/ stable main"
@@ -60,7 +61,7 @@ sources:
 
 # Thorium
 
-> 以 Chromium 为底、围绕 SIMD/PGO/LTO、媒体格式、经典 UI 与隐私默认值做深度定制的跨平台浏览器；特色鲜明，但当前 canonical source、beta binaries 与更新责任分散，且 Linux APT 信任链存在已实证缺口。
+> 以 Chromium 为底、围绕 SIMD/PGO/LTO、媒体格式、经典 UI 与隐私默认值做深度定制的跨平台浏览器；特色鲜明，但当前 canonical source、beta binaries 与更新责任分散，且 Linux APT 签名信任链缺失并被 `trusted=yes` 绕过。
 >
 > **状态**: `active` · **总分**: 3.0/5 · **推荐度**: 2/5
 >
@@ -68,19 +69,19 @@ sources:
 
 ## 一句话总结
 
-Thorium 适合愿意自行核验下载来源、接受 Chromium fork 更新滞后与维护交接风险、想要 CPU-specific optimizations 和经典/扩展浏览器特性的技术用户；不适合作为敏感账号、企业受管环境或高安全需求场景的默认主浏览器。
+Thorium 适合接受 Chromium fork 更新滞后、维护交接与公开 binary provenance 当前不可独立认证，且想研究 CPU-specific optimizations 和经典/扩展浏览器特性的技术用户；不适合作为敏感账号、企业受管环境或高安全需求场景的默认主浏览器。
 
 ## 总体评价
 
-Thorium 不是一个轻量 Chromium theme，而是一套 patch-overlay browser distribution。它在 Chromium 之上加入 SSE/AVX 分档、ThinLTO/PGO、媒体 codec、JPEG XL、FTP、经典 UI、隐私默认值、Chromedriver 与 content shell，并把 Windows、macOS、Android、Raspberry Pi、legacy 等 build 分散到多个仓库 [Docs:README][Docs:PATCHES]。在“保留 Chrome-like usability，同时做 performance/UI/media customization”这条路线中，它有清晰辨识度。
+Thorium 不是一个轻量 Chromium theme，而是一套 patch-overlay browser distribution；**性能优化也不是附带 marketing，而是它的工程 center of gravity**。canonical 与 M150-LTS README 都把 architecture-aware SIMD、ThinLTO、PGO 放在顶层定位，GN args 也实际启用了 AVX profile、Chrome/V8 PGO、优化 JIT tiers 与 WebAssembly SIMD revectorization [Docs:README][Local:version-build][GH:M150-performance-scan]。在此基础上，它还加入媒体 codec、JPEG XL、FTP、经典 UI、隐私默认值、Chromedriver 与 content shell，并把 Windows、macOS、Android、Raspberry Pi、legacy 等 build 分散到多个仓库 [Docs:README][Docs:PATCHES]。在“保留 Chrome-like usability，同时做 performance/UI/media customization”这条路线中，它有清晰辨识度。
 
-真正决定采用结论的却是 2026 年的维护与供应链状态。canonical main 的 `version.sh` 仍指向 M138.0.7204.306；主仓库 M144/M150 release 明说只是通知入口、没有 assets，实际 beta code/binaries 在 collaborator `gz83/thorium`；main release 元数据还把这些 Beta 通知标成非 prerelease [Local:version-build][GH:transition][GH:M150-assets]。这不是“项目已死”——issues、discussions 和 collaborator 都仍活跃——但意味着版本、源码、二进制与责任边界尚未重新收敛。
+真正决定采用结论的却是 2026 年的维护与供应链状态。canonical main 的 `version.sh` 仍指向 M138.0.7204.306；主仓库 M144/M150 release 明说只是通知入口、没有 assets，实际 beta code/binaries 在 collaborator `gz83/thorium`；main release 元数据还把这些 Beta 通知标成非 prerelease [Local:version-build][GH:transition][GH:M150-assets]。这不是“项目已死”——issues、discussions 和 collaborator 都仍活跃——但意味着版本、源码、二进制与责任边界尚未重新收敛。此处 `status: active` 仅表示 canonical repo 与 collaborator/community 活动仍在继续，不表示 release handoff 已稳定。
 
 更严重的是 Linux 官方安装链：官网让用户经 plain HTTP + `wget --no-hsts` 获取 source-list，文件内使用 `trusted=yes`；本轮 live probe 再次确认 `InRelease` 与 `Release.gpg` 均为 404，而 unsigned `Release` 为 200 [Docs:APT][Local:apt-probe]。对浏览器这种高攻击面软件，这是 adoption blocker，不应被“速度快”掩盖。
 
 ## 推荐度：2/5
 
-**角色定位**：只推荐给能把 Thorium 当作隔离的 secondary browser / benchmark-and-feature trial、会手工核验来源并愿意追踪 upstream security cadence 的技术用户。
+**角色定位**：只推荐给能把 Thorium 当作隔离的 secondary browser / benchmark-and-feature trial、理解“找到明确 release URL”不等于 cryptographic artifact verification，并愿意追踪 upstream security cadence 的技术用户；若不能从 pinned source reproducibly self-build，或取得独立受信的签名分发通道，就应把现有公开 binary provenance 视为不可验证。
 
 给 2 而不是 1：项目有真实功能、长期 release 历史、完整 build/patch 文档、较大的用户可见度和仍在工作的 collaborator；M138 release 也确实包含大量平台包与针对 crash/WebRTC/package 的修复 [GH:api][GH:M138-assets]。作为 Chromium customization、SIMD build matrix、codec/UI patching 的研究对象，它很有价值。
 
@@ -96,7 +97,7 @@ Thorium 不是一个轻量 Chromium theme，而是一套 patch-overlay browser d
 
 ## 劣势
 
-1. **官方 Linux APT 信任链失效**：`trusted=yes`、unsigned metadata、plain-HTTP source-list 下载是直接的供应链风险 [Docs:APT][Local:apt-probe]。
+1. **官方 Linux APT 签名信任链缺失并被绕过**：`trusted=yes`、unsigned metadata、plain-HTTP source-list 下载是直接的供应链风险 [Docs:APT][Local:apt-probe]。
 2. **canonical/source/binary 分裂**：主仓库最新 Beta release 只是无 asset 通知，真正 M150 code 和 binaries 在 collaborator fork，尚未证明已 merge/review 回 canonical main [GH:transition][GH:M150-assets]。
 3. **维护高度集中**：贡献数据与 FAQ 都显示核心 rebase/build 依赖极少数人；Alex 暂时无暇更新时，项目立即进入外部分支接管状态 [GH:community][Docs:FAQ]。
 4. **项目级自动化证据弱**：本轮没发现 GitHub Actions workflows；构建是高成本的手工 Chromium overlay，tests 主要借用 upstream targets，没有可见的 canonical release CI gate [Local:scan][Local:version-build][Docs:BUILDING]。
@@ -163,9 +164,11 @@ Thorium 首先是完整 Chromium-family desktop/mobile browser，而不是开发
 - **GPU**：`gpu_required=false`，但正常浏览器渲染/视频会使用 hardware acceleration；open issues 显示 GPU/driver/platform 差异仍可能影响稳定性 [GH:issues]。
 - **外部依赖**：Chromium/Web platform、Google services（部分功能）、Widevine/codec、OS sandbox/keyring、GPU drivers、package/update distribution。
 
-performance 评分 3/5。官方 performance page 给出了 Thorium 在旧版 Speedometer/Octane/JetStream 上优于 Chromium/Chrome/Brave/Vivaldi 的 project-authored screenshots；但测试机器是 FX-8370 + DDR3 + GTX 970 + Ubuntu 22.04.1，页面没有提供 browser versions、run variance、统计方法或当前 same-revision reproduction [Docs:performance]。repo TODO 仍把同 revision 的 optimized/non-optimized/Chromium/Chrome 对照列为待办 [Docs:performance]。
+先区分 **项目定位** 与本 wiki 的 **performance 评分语义**。在项目定位上，性能优化毫无疑问是一等目标：M150-LTS README 把 ThinLTO、PGO 与 architecture-aware SIMD profiles 放在最前列，`args.gn` 也启用 AVX profile、Chrome PGO phase 2、V8 optimized tiers、WebAssembly SIMD revectorization、ThinLTO 与 text-section splitting [GH:M150-performance-scan]。这足以证明“主打性能”不是空标签。
 
-更重要的是，本维度评估 resource efficiency，不等于单一 JS benchmark 分数。Thorium 用更大 binary/更激进编译换性能，runtime memory、energy、startup、tab-heavy workload 与 modern Speedometer 结果均未实测，因此不给 4。
+但本维度评分的是**已证实的资源效率与实际性能**，不是项目在性能上投入了多少。官方 performance page 给出了 Thorium 在旧版 Speedometer/Octane/JetStream 上优于 Chromium/Chrome/Brave/Vivaldi 的 project-authored screenshots；测试机器是 FX-8370 + DDR3 + GTX 970 + Ubuntu 22.04.1，但页面没有提供 browser versions、run variance、统计方法或当前 same-revision reproduction [Docs:performance]。进一步补查 M150-LTS 后，递归 tree 里仍没有 benchmark/Speedometer/JetStream/Octane-named path，TODO 也继续把 optimized/non-optimized Thorium 与 same-revision Chromium/Chrome 对照列为待办 [GH:M150-performance-scan]。
+
+因此 performance 仍评 3/5，而不是 4/5。本轮只确认 sampled M138 AVX `.deb` 为 161382052 bytes、Installed-Size 为 770977 KiB；没有 same-platform Chromium package comparator，也未测 runtime memory、energy、startup、tab-heavy workload 或 modern Speedometer [GH:M138-assets][Local:apt-probe]。若未来提供 current same-revision、multiple-run、公开配置的 benchmark，并证明加速没有以明显更高 RAM/energy/storage 为代价，可上调到 4；要到 5，还需跨代表性硬件与真实 workload 的稳定优势。
 
 ## 上手体验
 
@@ -189,7 +192,7 @@ Thorium 的工程难点不是从零写 browser，而是把 52 个 patch、593 �
 
 评分 4/5。
 
-作为 Chromium-family browser，Thorium 继承 Chrome extension surface、command-line flags、DevTools/Chromedriver、profiles/policies 和 source-level patchability；项目还额外暴露大量 Thorium flags、`thorium_shell`、`pak`、CPU/build variants 与 GN configuration [Docs:README][Docs:PATCHES]。对 power users 和 fork maintainers，可改面很广。
+作为 Chromium-family browser，Thorium 面向 Chrome extension 使用，并公开 command-line/feature flags、Chromedriver、`thorium_shell`、`pak`、CPU/build variants、GN configuration 与 source-level patchability [Docs:README][Docs:PATCHES]。对 power users 和 fork maintainers，可改面很广。
 
 不给 5：扩展能力并非一个稳定、独立版本化的 Thorium plugin API；很多深度定制依赖继续 fork Chromium 或启用实验 flags。`disable web security`、local-file access、portable profile encryption changes 等扩展项也会放大误配置风险，不能把“开关多”简单等同于“安全可扩展” [Docs:PATCHES]。
 
@@ -197,7 +200,7 @@ Thorium 的工程难点不是从零写 browser，而是把 52 个 patch、593 �
 
 评分 4/5。
 
-README、FAQ、BUILDING、platform-specific build guides、ABOUT_GN_ARGS、ABOUT_RELEASES、PATCHES、REBASING、command-line flag list、website docs 覆盖了普通用户、builder 与 patch maintainer 的主要问题 [Docs:README][Docs:FAQ][Docs:BUILDING][Docs:PATCHES]。尤其 FAQ 对 Google Sync、Widevine/VMP、版本滞后和人力成本并不回避，这是有价值的 honesty。
+README、FAQ、BUILDING、platform-specific build guides、ABOUT_GN_ARGS、ABOUT_RELEASES、PATCHES、REBASING、command-line flag list、website docs 覆盖了普通用户、builder 与 patch maintainer 的主要问题 [Docs:README][Docs:FAQ][Docs:BUILDING][Docs:PATCHES][Local:scan]。尤其 FAQ 对 Google Sync、Widevine/VMP、版本滞后和人力成本并不回避，这是有价值的 honesty。
 
 未给 5：维护交接后的 canonical release/source 边界没有被统一文档化；known-bugs 文档只覆盖到早期条目，部分 README 相对链接与现有文件名存在漂移；performance page 使用旧 benchmark/hardware 且缺版本和统计方法；安全文档列出的 major CVE 修复止于 2024/M124 [Docs:performance][GH:SECURITY][Local:scan]。
 
@@ -226,7 +229,7 @@ maturity 不给 4：浏览器 fork 必须持续跟随 Chromium security/ABI/plat
 4. canonical main 与 current beta artifacts 分属不同 repo/branch，增加“审了哪份 source、下载了哪份 binary”的 provenance ambiguity [GH:transition]。
 5. 浏览器自身又拥有密码/cookies、摄像头/麦克风、下载、extensions、local files、GPU/media parsers 等巨大攻击面；版本合流与安全 patch cadence 不能靠普通 app 的风险容忍度处理。
 
-open issue #1164 的 maintainer-side回复也把修复 unsigned APT repo 放到未来 stable M144，并明确不建议公司 end-user deployment [GH:apt-issue]。在 signed repository/release、canonical merge、security release SLA 与可验证 provenance 完成前：不要用于 production accounts、payment、cloud consoles、internal production systems；若仅实验，使用 disposable profile、隔离 OS account/VM、最小 extensions，并从明确 commit/release 手工核验 artifact。
+open issue #1164 的 maintainer-side回复也把修复 unsigned APT repo 放到未来 stable M144，并明确不建议公司 end-user deployment [GH:apt-issue]。在 signed repository/release、canonical merge、security release SLA 与可验证 provenance 完成前：不要用于 production accounts、payment、cloud consoles、internal production systems；若仅实验，使用 disposable profile、隔离 OS account/VM、最小 extensions。sampled public binaries 当前不能靠“选对 release URL”完成 cryptographic verification；可信路径应是从 pinned source 可复现 self-build，或等待独立受信的签名分发与 provenance 证明。
 
 此外，Thorium 明确不是 fully de-Googled；即使关闭部分 telemetry/field trials，仍会因 Sync/search/location 等功能连接 Google services [Docs:FAQ]。这属于 privacy boundary，不应被 README 的 privacy patches 误读为 anonymous browser guarantee。
 
