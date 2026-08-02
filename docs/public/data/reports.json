@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 160,
+  "count": 164,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -3909,6 +3909,45 @@
       "summary": "对需要自托管协作式 LaTeX、且所有用户都可信的实验室或研究团队，Overleaf Community Edition 是本次评估中最成熟的开源选择之一；若需要用户隔离、Sandbox Compiles 或企业身份治理，应评估 Server Pro 或 SaaS，而不是把 CE 暴露给不可信用户 [Docs]。"
     },
     {
+      "slug": "document-processing/document-conversion/pdfmathtranslate-next",
+      "route": "/analysis/document-processing/document-conversion/pdfmathtranslate-next",
+      "title": "PDFMathTranslate-next",
+      "repo_url": "https://github.com/PDFMathTranslate-next/PDFMathTranslate-next",
+      "category": "document-processing/document-conversion",
+      "directory": "document-processing/document-conversion",
+      "tags": [
+        "document-processing",
+        "pdf",
+        "translation",
+        "scientific-literature",
+        "layout",
+        "babeldoc",
+        "llm",
+        "python",
+        "webui",
+        "docker"
+      ],
+      "primary_language": "Python",
+      "stars": 2863,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.4,
+      "last_checked": "2026-08-02",
+      "updated": "2026-08-02",
+      "summary": "PDFMathTranslate-next 适合愿意使用 v2/BabelDOC 路线、需要公式/图表/版面尽量保留的科研 PDF 翻译用户；但它仍应按“可信本地文档 + 真实 corpus 验收”的工具处理，而不是无审计的公网 PDF 服务底座。"
+    },
+    {
       "slug": "ai-programs/agents/assistant-agents/personal-ai-infrastructure",
       "route": "/analysis/ai-programs/agents/assistant-agents/personal-ai-infrastructure",
       "title": "Personal AI Infrastructure (PAI)",
@@ -4416,6 +4455,44 @@
       "last_checked": "2026-07-13",
       "updated": "2026-05-27",
       "summary": "面向基础设施工程师的可复现包管理器，基于函数式编程范式实现原子升级/回滚、声明式系统配置和跨机器环境复制——功能极其强大，但学习曲线极其陡峭。"
+    },
+    {
+      "slug": "document-processing/document-conversion/pdfmathtranslate",
+      "route": "/analysis/document-processing/document-conversion/pdfmathtranslate",
+      "title": "PDFMathTranslate",
+      "repo_url": "https://github.com/PDFMathTranslate/PDFMathTranslate",
+      "category": "document-processing/document-conversion",
+      "directory": "document-processing/document-conversion",
+      "tags": [
+        "document-processing",
+        "pdf",
+        "translation",
+        "scientific-literature",
+        "layout",
+        "math",
+        "llm",
+        "mcp",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 35903,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-08-02",
+      "updated": "2026-08-02",
+      "summary": "PDFMathTranslate 适合需要“翻译正文而尽量保留公式、图表与版面”的科研读者做可信 PDF 试用；但当前仓库是稳定 v1 与实验性 v2 bridge 并存的过渡载体，扫描件、复杂排版与服务化安全都不能免测。"
     },
     {
       "slug": "work-tools/project-management/plane",
@@ -5615,6 +5692,44 @@
       "summary": "`cursor/plugins` 值得加入 wiki，不是因为它已经是成熟生态，而是因为它展示了 Cursor 对「coding agent 能力包」的官方形态：一个 Git 仓库作为 marketplace，根 manifest 列出插件，每个插件再携带 `.cursor-plugin/plugin.json`、`skills/`、`agents/`、`r"
     },
     {
+      "slug": "ai-programs/ai-harness/skills/khazix-skills",
+      "route": "/analysis/ai-programs/ai-harness/skills/khazix-skills",
+      "title": "Khazix Skills",
+      "repo_url": "https://github.com/KKKKhazix/khazix-skills",
+      "category": "ai-programs/ai-harness/skills",
+      "directory": "ai-programs/ai-harness/skills",
+      "tags": [
+        "agent-skills",
+        "skills",
+        "claude-code",
+        "codex",
+        "knowledge-governance",
+        "deep-research",
+        "writing",
+        "storage-analysis",
+        "ai-news"
+      ],
+      "primary_language": "Markdown / Python / Shell",
+      "stars": 18916,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 2,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 2.9,
+      "last_checked": "2026-08-02",
+      "updated": "2026-08-02",
+      "summary": "Khazix Skills 适合中文 Agent power user 和 skill author 挑选其中一两个方法做审查后试用；它有少数很具体、很有产品感的实现，但整个仓库仍是年轻的单人 skill pack，不宜被近 1.9 万 stars 诱导为“整包可信、跨 40+ Agent 行为一致”。"
+    },
+    {
       "slug": "ai-programs/ai-harness/ai-plugins/openai-plugins",
       "route": "/analysis/ai-programs/ai-harness/ai-plugins/openai-plugins",
       "title": "OpenAI Plugins",
@@ -5648,6 +5763,44 @@
       "last_checked": "2026-07-22",
       "updated": "2026-07-22",
       "summary": "OpenAI Plugins 已不只是若干格式 examples：它同时承载 Codex official default marketplace 的 registry metadata 和 180 个可发现 plugin；官方分发降低 discovery 摩擦，但每个插件的认证、外部服务、代码与许可仍需单独审计 [GH:readme][GH:marketp"
+    },
+    {
+      "slug": "document-processing/document-conversion/zotero-pdf2zh",
+      "route": "/analysis/document-processing/document-conversion/zotero-pdf2zh",
+      "title": "Zotero PDF2zh",
+      "repo_url": "https://github.com/guaguastandup/zotero-pdf2zh",
+      "category": "document-processing/document-conversion",
+      "directory": "document-processing/document-conversion",
+      "tags": [
+        "document-processing",
+        "zotero",
+        "pdf",
+        "translation",
+        "pdf2zh",
+        "llm",
+        "python",
+        "typescript",
+        "plugin"
+      ],
+      "primary_language": "Python / TypeScript",
+      "stars": 5407,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 2,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 2.9,
+      "last_checked": "2026-08-02",
+      "updated": "2026-08-02",
+      "summary": "Zotero PDF2zh 适合已经把 Zotero 作为论文库、希望右键生成中文/双语 PDF 的个人研究者；它的价值在 Zotero 工作流集成，而不是比 PDFMathTranslate-next 本身更强的翻译内核或服务化安全。"
     },
     {
       "slug": "ai-programs/agent-infrastructure/future-agi",
