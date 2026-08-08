@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 164,
+  "count": 167,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -1079,6 +1079,43 @@
       "last_checked": "2026-07-11",
       "updated": "2026-05-27",
       "summary": "AGENTS.md 是 coding agents 的 repo-local instruction convention：把“这个仓库该怎么被 agent 操作”的知识从 README、prompt history 和人脑中抽出来，放到一个稳定、可发现、可版本控制的位置 [Site:agents][GH:readme]。"
+    },
+    {
+      "slug": "ai-programs/ai-cost-manager/cc-switch",
+      "route": "/analysis/ai-programs/ai-cost-manager/cc-switch",
+      "title": "CC Switch",
+      "repo_url": "https://github.com/farion1231/cc-switch",
+      "category": "ai-programs/ai-cost-manager",
+      "directory": "ai-programs/ai-cost-manager",
+      "tags": [
+        "ai-account-management",
+        "coding-agent",
+        "claude-code",
+        "codex",
+        "hermes-agent",
+        "provider-routing",
+        "tauri",
+        "rust"
+      ],
+      "primary_language": "Rust",
+      "stars": 125662,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 5,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 4,
+        "recommendation": 3
+      },
+      "overall_score": 4,
+      "last_checked": "2026-08-08",
+      "updated": "2026-08-08",
+      "summary": "CC Switch 是当前很强的 personal coding-agent control plane：它把 provider、账号、路由、config、MCP/skill/prompt 与 usage 合进一套跨平台桌面应用，并对 deep link、sync、proxy 和日志泄露做了相当扎实的安全 hardening；但它仍是会改写凭据与 clien"
     },
     {
       "slug": "ai-programs/ai-cost-manager/ccusage",
@@ -3287,43 +3324,6 @@
       "summary": "GitHub MCP Server 是 agent 访问 GitHub 的官方 tool bridge：它覆盖 repo/issue/PR/Actions/security/project 等大量 API，并提供 read-only、toolsets、exclude-tools、lockdown、scope filtering 等治理开关；值得重点收录，但生"
     },
     {
-      "slug": "ai-programs/ai-harness/skills/last30days",
-      "route": "/analysis/ai-programs/ai-harness/skills/last30days",
-      "title": "last30days",
-      "repo_url": "https://github.com/mvanhorn/last30days-skill",
-      "category": "ai-programs/ai-harness/skills",
-      "directory": "ai-programs/ai-harness/skills",
-      "tags": [
-        "agent-skills",
-        "research-agent",
-        "social-search",
-        "claude-code",
-        "codex",
-        "cursor",
-        "openclaw",
-        "non-software"
-      ],
-      "primary_language": "Python",
-      "stars": 52989,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 2,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.5,
-      "last_checked": "2026-07-22",
-      "updated": "2026-07-22",
-      "summary": "last30days 是一个 agent skill 形态的 recency research engine：它不试图替代 Google，而是让 AI agent 用“最近 30 天的社区互动、社媒帖子、视频 transcript、预测市场和 GitHub 活动”来回答“现在大家真实在说什么” [GH:readme][Source:skill]。"
-    },
-    {
       "slug": "ai-programs/ai-harness/memory/letta",
       "route": "/analysis/ai-programs/ai-harness/memory/letta",
       "title": "Letta",
@@ -3798,6 +3798,41 @@
       "last_checked": "2026-07-25",
       "updated": "2026-07-25",
       "summary": "kache 是一个进展很快、工程验证意识强的 Rust/C/C++ build cache；适合 Rust-heavy 项目和愿意固定版本、做 A/B 验证的团队试点，但项目只有数月历史、仍处 0.x，远程 planner 也仍是 preview。"
+    },
+    {
+      "slug": "ai-programs/ai-harness/skills/last30days",
+      "route": "/analysis/ai-programs/ai-harness/skills/last30days",
+      "title": "last30days",
+      "repo_url": "https://github.com/mvanhorn/last30days-skill",
+      "category": "ai-programs/ai-harness/skills",
+      "directory": "ai-programs/ai-harness/skills",
+      "tags": [
+        "agent-skills",
+        "recency-research",
+        "multi-source-research",
+        "social-search",
+        "hermes",
+        "high-permission"
+      ],
+      "primary_language": "Python",
+      "stars": 57644,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.4,
+      "last_checked": "2026-08-08",
+      "updated": "2026-08-08",
+      "summary": "last30days 值得作为“近期社区脉搏”研究工具隔离试用：其工程化程度和测试证据强于普通 prompt pack，但它同时是一个上下文很重、外部依赖多、可接触 token/cookie/本地文件的高权限 agent skill，不应当把社媒聚合当作事实核查，也不应无审查地装进敏感主环境 [Source:skill][Local:test][GH:iss"
     },
     {
       "slug": "document-processing/document-conversion/markitdown",
@@ -5033,6 +5068,43 @@
       "summary": "`anthropics/claude-plugins-official` 是值得作为样本跟踪的 Claude Code plugin marketplace：它展示了 Anthropic 如何把 skills、agents、hooks、MCP servers、commands 和外部 git sources 组织成官方插件目录；但它不是“安全白名单”，REA"
     },
     {
+      "slug": "ai-programs/ai-cost-manager/cockpit-tools",
+      "route": "/analysis/ai-programs/ai-cost-manager/cockpit-tools",
+      "title": "Cockpit Tools",
+      "repo_url": "https://github.com/jlcodes99/cockpit-tools",
+      "category": "ai-programs/ai-cost-manager",
+      "directory": "ai-programs/ai-cost-manager",
+      "tags": [
+        "ai-account-management",
+        "coding-agent",
+        "codex",
+        "multi-account",
+        "quota-monitoring",
+        "tauri",
+        "rust",
+        "desktop"
+      ],
+      "primary_language": "Rust",
+      "stars": 15395,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 2
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-08-08",
+      "updated": "2026-08-08",
+      "summary": "Cockpit Tools 是能力极强但权限面也极宽的 AI 账号与本地配置控制台：它能替你管理多平台身份、隔离实例与本地路由，却会触碰 OAuth/API 凭据、官方客户端配置、子进程和本机网络接口；适合隔离环境中的高级试用，不应直接成为主力开发机或 Hermes 主 profile 的默认 control plane [Local:README][Loc"
+    },
+    {
       "slug": "ai-programs/ai-harness/skills/google-skills",
       "route": "/analysis/ai-programs/ai-harness/skills/google-skills",
       "title": "Google Skills",
@@ -5728,6 +5800,44 @@
       "last_checked": "2026-08-02",
       "updated": "2026-08-02",
       "summary": "Khazix Skills 适合中文 Agent power user 和 skill author 挑选其中一两个方法做审查后试用；它有少数很具体、很有产品感的实现，但整个仓库仍是年轻的单人 skill pack，不宜被近 1.9 万 stars 诱导为“整包可信、跨 40+ Agent 行为一致”。"
+    },
+    {
+      "slug": "ai-programs/ai-harness/memory/memorix",
+      "route": "/analysis/ai-programs/ai-harness/memory/memorix",
+      "title": "Memorix",
+      "repo_url": "https://github.com/AVIDS2/memorix",
+      "category": "ai-programs/ai-harness/memory",
+      "directory": "ai-programs/ai-harness/memory",
+      "tags": [
+        "memory",
+        "mcp",
+        "cross-agent-memory",
+        "coding-agents",
+        "typescript",
+        "sqlite",
+        "local-first",
+        "hooks",
+        "orchestration"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 617,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 2
+      },
+      "overall_score": 2.9,
+      "last_checked": "2026-08-08",
+      "updated": "2026-08-08",
+      "summary": "Memorix 是一个有清晰 agent-memory 方向、较广 coding-agent integration surface 的项目级记忆层；但当前 production lockfile audit 有 4 个 high findings，HTTP control plane 又缺少可见的 HTTP authentication gate，因此它值"
     },
     {
       "slug": "ai-programs/ai-harness/ai-plugins/openai-plugins",
