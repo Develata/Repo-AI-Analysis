@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 167,
+  "count": 169,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -3071,6 +3071,43 @@
       "summary": "RomM 是目前功能面最完整的 self-hosted ROM manager 之一；适合已有合法 ROM library、愿意维护 Docker/数据库/备份的 homelab 用户，但 5.0 重写期与 2026-07 查询到的高危 advisory 版本范围，使它暂不适合未经核验就直接暴露公网。"
     },
     {
+      "slug": "work-tools/remote-access/rustdesk",
+      "route": "/analysis/work-tools/remote-access/rustdesk",
+      "title": "RustDesk",
+      "repo_url": "https://github.com/rustdesk/rustdesk",
+      "category": "work-tools/remote-access",
+      "directory": "work-tools/remote-access",
+      "tags": [
+        "remote-desktop",
+        "remote-control",
+        "self-hosting",
+        "p2p",
+        "rust",
+        "flutter",
+        "cross-platform",
+        "file-transfer"
+      ],
+      "primary_language": "Rust",
+      "stars": 119914,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 4,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.6,
+      "last_checked": "2026-08-09",
+      "updated": "2026-08-09",
+      "summary": "RustDesk 值得作为个人、家庭或受控团队的开源远程桌面候选，尤其当你希望掌握 rendezvous/relay 所在的 server 与 client 配置；但“自托管”不是只安装本仓库客户端，高权限能力和独立 server 的网络边界必须先按生产系统处理。"
+    },
+    {
       "slug": "ai-programs/agent-infrastructure/agent-reach",
       "route": "/analysis/ai-programs/agent-infrastructure/agent-reach",
       "title": "Agent Reach",
@@ -4783,6 +4820,44 @@
       "last_checked": "2026-07-24",
       "updated": "2026-07-24",
       "summary": "Volcengine 的 Agent context database 已扩展到官方 image、server、Helper 与多 coding-agent integrations；上手面改善，但系统重量、AGPL 主体许可与快速变动仍使个人 Hermes memory 不宜优先 [GH:releases-current][README:current]。"
+    },
+    {
+      "slug": "games/game-content-platforms/pumpkin",
+      "route": "/analysis/games/game-content-platforms/pumpkin",
+      "title": "Pumpkin",
+      "repo_url": "https://github.com/Pumpkin-MC/Pumpkin",
+      "category": "games/game-content-platforms",
+      "directory": "games/game-content-platforms",
+      "tags": [
+        "minecraft",
+        "minecraft-server",
+        "rust",
+        "java-edition",
+        "bedrock-edition",
+        "wasm",
+        "plugins",
+        "docker",
+        "game-server"
+      ],
+      "primary_language": "Rust",
+      "stars": 10625,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 1,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-08-09",
+      "updated": "2026-08-09",
+      "summary": "Pumpkin 适合 Rust/Minecraft protocol 研究者、插件作者和愿意承受 pre-release 变化的测试服管理员；若目标是稳定生产服或即插即用的成熟插件生态，现在应继续观望。"
     },
     {
       "slug": "ai-programs/ai-harness/skills/mattpocock-skills",
