@@ -27,9 +27,6 @@ export default defineConfig({
     siteTitle: 'Repo-AI-Analysis',
     nav,
     sidebar,
-    search: {
-      provider: 'local',
-    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Develata/Repo-AI-Analysis' },
     ],

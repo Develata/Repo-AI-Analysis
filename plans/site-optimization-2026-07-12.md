@@ -7,9 +7,9 @@ Preserve Repo-AI-Analysis as a static, Markdown-first VitePress site while impro
 ## Invariants
 
 1. `docs/analysis/**/*.md` remains the canonical report source.
-2. `docs/public/data/reports.json` is a generated, minimal UI projection; it must not become a second evidence store.
+2. `docs/public/data/reports.json` and `search-quick.json` are generated, minimal UI/search projections; they must not become a second evidence store.
 3. Home, Analysis, Compare, report pages, RSS, sidebar, and Roll use stable generated/report contracts rather than duplicated literals.
-4. No database, account system, runtime backend, or heavyweight UI/search dependency is introduced.
+4. No database, account system, runtime backend, or heavyweight client search runtime is introduced; Pagefind remains a build-only static indexer with query-relevant shards loaded on demand.
 5. Existing report routes and GitHub Pages base-path behavior remain valid.
 6. Sync/import deletion is explicit, previewable, and never silently inferred by the UI.
 
@@ -18,6 +18,8 @@ Preserve Repo-AI-Analysis as a static, Markdown-first VitePress site while impro
 - Invalid report frontmatter fails with a source-path diagnostic.
 - Generated report data omits evidence-only fields and is runtime-validated before use.
 - Loading, load failure, empty corpus, and empty filter states are visible and recoverable.
+- Home report data is server-rendered from a route-local build-time summary no larger than 10 KiB gzip and never waits for a client-side reports request.
+- Unified search returns quick repository matches from a projection no larger than 35 KiB gzip, then progressively enriches results from chunked Pagefind full text without emitting VitePress's monolithic local-search index.
 - Home taxonomy links open the corresponding Analysis filter.
 - Analysis filters/sort/page are URL-restorable; result pages are bounded.
 - Compare exposes selected repositories, limits comparison cardinality, has a legend/text alternative, and supports shareable URL state.

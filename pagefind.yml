@@ -1,0 +1,4 @@
+site: docs/.vitepress/dist
+output_subdir: pagefind
+root_selector: "#VPContent"
+include_characters: "+#"

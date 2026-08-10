@@ -1,51 +1,30 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
+import { computed, ref, watch } from 'vue';
 import { withBase } from 'vitepress';
+import { data as homeData, type HomeReport } from '../../data/home.data';
 import DimensionsRadar from './DimensionsRadar.vue';
-import ReportDataState from './ReportDataState.vue';
-import { useReports } from '../composables/useReports';
 import {
-  averageRatings,
   dimensionKeys,
   dimensionLabels,
   excerpt,
   formatScore,
   reportDate,
   reportLink,
-  type Report,
 } from './reportData';
 
-const LATEST_PAGE_SIZE = 4;
-const LATEST_PAGE_LIMIT = 3;
-
-const { reports, loading, started, error, ensureReports } = useReports();
 const selectedSlug = ref('');
 const latestPage = ref(1);
 
-type CategorySummary = {
-  path: string;
-  label: string;
-  count: number;
-  averageScore: number;
-  latestDate: string;
-  top: Report;
-};
-
-const latestPool = computed(() => reports.value
-  .slice()
-  .sort((a, b) => reportTimestamp(b) - reportTimestamp(a) || Number(b.overall_score) - Number(a.overall_score))
-  .slice(0, LATEST_PAGE_SIZE * LATEST_PAGE_LIMIT));
-const latestPageCount = computed(() => Math.ceil(latestPool.value.length / LATEST_PAGE_SIZE));
+const latestPageCount = computed(() => Math.ceil(homeData.latest.length / homeData.page_size));
 const latestPages = computed(() => Array.from({ length: latestPageCount.value }, (_, index) => index + 1));
 const latest = computed(() => {
-  const start = (latestPage.value - 1) * LATEST_PAGE_SIZE;
-  return latestPool.value.slice(start, start + LATEST_PAGE_SIZE);
+  const start = (latestPage.value - 1) * homeData.page_size;
+  return homeData.latest.slice(start, start + homeData.page_size);
 });
-const average = computed(() => averageRatings(reports.value));
 const selectedReport = computed(() => latest.value.find((report) => report.slug === selectedSlug.value) ?? latest.value[0]);
 const radarSeries = computed(() => [{
   label: selectedReport.value?.title ?? '平均值',
-  ratings: selectedReport.value?.ratings ?? average.value,
+  ratings: selectedReport.value?.ratings ?? {},
 }]);
 const rankedDimensions = computed(() => {
   const report = selectedReport.value;
@@ -56,46 +35,9 @@ const rankedDimensions = computed(() => {
 });
 const strengths = computed(() => rankedDimensions.value.slice(0, 2));
 const risks = computed(() => rankedDimensions.value.slice(-2).reverse());
-const categorySummaries = computed<CategorySummary[]>(() => {
-  const buckets = new Map<string, Report[]>();
+const categorySummaries = homeData.categories;
 
-  for (const report of reports.value) {
-    const path = topLevelCategory(report);
-    const bucket = buckets.get(path) ?? [];
-    bucket.push(report);
-    buckets.set(path, bucket);
-  }
-
-  return [...buckets.entries()]
-    .map(([path, items]) => ({
-      path,
-      label: formatCategoryLabel(path),
-      count: items.length,
-      averageScore: items.reduce((sum, report) => sum + Number(report.overall_score || 0), 0) / items.length,
-      latestDate: items.map(reportDate).sort().at(-1) ?? '',
-      top: items
-        .slice()
-        .sort((left, right) => Number(right.overall_score) - Number(left.overall_score)
-          || reportTimestamp(right) - reportTimestamp(left)
-          || left.title.localeCompare(right.title, 'en'))[0],
-    }))
-    .filter((item): item is CategorySummary => Boolean(item.top))
-    .sort((left, right) => right.count - left.count || left.label.localeCompare(right.label, 'en'));
-});
-
-function topLevelCategory(report: Report): string {
-  return String(report.directory || report.category || 'uncategorized').split('/').filter(Boolean)[0] ?? 'uncategorized';
-}
-
-function formatCategoryLabel(path: string): string {
-  return path
-    .split('-')
-    .filter(Boolean)
-    .map((part) => part.slice(0, 1).toUpperCase() + part.slice(1))
-    .join(' ');
-}
-
-function selectReport(report: Report) {
+function selectReport(report: HomeReport) {
   selectedSlug.value = report.slug;
 }
 
@@ -103,17 +45,8 @@ function setLatestPage(page: number) {
   latestPage.value = Math.min(Math.max(1, page), latestPageCount.value || 1);
 }
 
-function reportTimestamp(report: Report): number {
-  const timestamp = Date.parse(reportDate(report));
-  return Number.isFinite(timestamp) ? timestamp : 0;
-}
-
 function categoryLink(path: string): string {
   return withBase(`/analysis/?category=${encodeURIComponent(path)}`);
-}
-
-function load() {
-  void ensureReports().catch(() => undefined);
 }
 
 watch(latestPageCount, (count) => {
@@ -124,19 +57,10 @@ watch(latest, (items) => {
   if (!items.length) return;
   if (!items.some((report) => report.slug === selectedSlug.value)) selectedSlug.value = items[0].slug;
 }, { immediate: true });
-
-onMounted(load);
 </script>
 
 <template>
-  <ReportDataState
-    :loading="loading || !started"
-    :error="error"
-    :empty="started && !loading && !error && reports.length === 0"
-    @retry="load"
-  />
-
-  <section v-if="reports.length > 0 && !error" class="raia-home raia-home-v2">
+  <section v-if="homeData.count > 0" class="raia-home raia-home-v2">
     <div class="raia-home-radar-panel raia-panel">
       <div class="raia-panel-head">
         <h2>当前报告画像</h2>
@@ -169,7 +93,7 @@ onMounted(load);
     <aside class="raia-panel raia-home-latest-panel">
       <div class="raia-panel-head">
         <h2>最近更新</h2>
-        <span>{{ latest.length }} / {{ latestPool.length }} reports</span>
+        <span>{{ latest.length }} / {{ homeData.latest.length }} reports</span>
       </div>
       <div class="raia-latest-list">
         <article
@@ -247,4 +171,7 @@ onMounted(load);
       </div>
     </section>
   </section>
+  <div v-else class="raia-data-state" role="status">
+    <strong>暂无报告。</strong>
+  </div>
 </template>

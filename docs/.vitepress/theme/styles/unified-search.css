@@ -1,0 +1,326 @@
+.raia-search-dialog {
+  width: min(760px, calc(100vw - 32px));
+  max-height: min(760px, calc(100vh - 80px));
+  padding: 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 24%);
+  overflow: hidden;
+}
+
+.raia-search-dialog::backdrop {
+  background: rgb(0 0 0 / 42%);
+  backdrop-filter: blur(6px);
+}
+
+.raia-search-shell {
+  display: flex;
+  flex-direction: column;
+  max-height: min(760px, calc(100vh - 80px));
+}
+
+.raia-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 10px 12px 10px 20px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.raia-modal-search-icon {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--vp-c-text-2);
+  border-radius: 50%;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.raia-modal-search-icon::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  bottom: -3px;
+  width: 7px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--vp-c-text-2);
+  transform: rotate(45deg);
+}
+
+.raia-search-bar input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--vp-c-text-1);
+  font: 500 17px/1.4 var(--vp-font-family-base);
+}
+
+.raia-search-bar input::placeholder {
+  color: var(--vp-c-text-2);
+}
+
+.raia-search-bar input::-webkit-search-cancel-button {
+  display: none;
+  appearance: none;
+}
+
+.raia-search-close {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 9px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  font: 12px/1 var(--vp-font-family-base);
+}
+
+.raia-search-close:hover,
+.raia-search-close:focus-visible {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-text-1);
+  outline: 0;
+}
+
+.raia-close-mobile {
+  display: none;
+}
+
+.raia-search-start {
+  padding: 28px 24px 22px;
+}
+
+.raia-search-start p {
+  margin: 0 0 12px;
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
+.raia-search-start > strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--vp-c-text-1);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.raia-search-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.raia-search-suggestions button {
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+  cursor: pointer;
+  font: 500 13px/1 var(--vp-font-family-base);
+}
+
+.raia-search-suggestions button:hover,
+.raia-search-suggestions button:focus-visible {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  outline: 0;
+}
+
+.raia-search-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  padding: 11px 20px;
+  border-bottom: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+}
+
+.raia-search-meta .is-warning {
+  color: var(--vp-c-warning-1);
+}
+
+.raia-search-results {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.raia-search-result {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 12px;
+  min-height: 76px;
+  padding: 13px 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.raia-search-result:hover,
+.raia-search-result:focus-visible,
+.raia-search-result.is-selected {
+  border-color: color-mix(in srgb, var(--vp-c-brand-1) 30%, var(--vp-c-divider));
+  background: var(--vp-c-brand-soft);
+  outline: 0;
+}
+
+.raia-result-source {
+  margin-top: 2px;
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: var(--vp-c-default-soft);
+  color: var(--vp-c-text-2);
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.raia-result-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.raia-result-copy strong {
+  color: var(--vp-c-text-1);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.raia-result-copy small {
+  overflow: hidden;
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.raia-result-copy > span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.raia-result-arrow {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
+.raia-search-empty {
+  padding: 36px 24px;
+  color: var(--vp-c-text-2);
+  text-align: center;
+}
+
+.raia-search-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+  font-size: 11px;
+}
+
+.raia-search-footer span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.raia-search-footer kbd {
+  padding: 3px 5px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 5px;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+  font: inherit;
+}
+
+@media (max-width: 640px) {
+  .raia-search-dialog {
+    width: 100vw;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .raia-search-shell {
+    height: 100dvh;
+    max-height: none;
+  }
+
+  .raia-search-bar {
+    min-height: 68px;
+    padding-left: 18px;
+  }
+
+  .raia-search-close {
+    min-width: 56px;
+  }
+
+  .raia-close-desktop {
+    display: none;
+  }
+
+  .raia-close-mobile {
+    display: inline;
+  }
+
+  .raia-search-result {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .raia-result-source {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .raia-result-copy {
+    grid-column: 1;
+  }
+
+  .raia-result-arrow {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+
+  .raia-search-footer {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .raia-search-dialog::backdrop {
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .raia-search-dialog::backdrop {
+    background: rgb(0 0 0 / 68%);
+    backdrop-filter: none;
+  }
+}

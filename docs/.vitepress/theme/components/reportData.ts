@@ -49,15 +49,15 @@ export function formatScore(value: unknown): string {
   return Number.isFinite(number) ? number.toFixed(1) : '-';
 }
 
-export function reportDate(report: Report): string {
+export function reportDate(report: Pick<Report, 'updated' | 'last_checked'>): string {
   return report.updated || report.last_checked || '';
 }
 
-export function excerpt(report: Report): string {
+export function excerpt(report: Pick<Report, 'summary' | 'title'>): string {
   return report.summary || report.title;
 }
 
-export function reportLink(report: Report): string {
+export function reportLink(report: Pick<Report, 'route'>): string {
   return withBase(report.route);
 }
 

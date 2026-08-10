@@ -2,7 +2,7 @@
 
 Structured AI-assisted analyses of open-source GitHub repositories.
 
-This repository is a VitePress GitHub Pages site. Reports live as Markdown files under `docs/analysis/`; `scripts/build-index.mjs` scans them and writes `docs/public/data/reports.json`, which powers the Home and Compare views.
+This repository is a VitePress GitHub Pages site. Reports live as Markdown files under `docs/analysis/`; `scripts/build-index.mjs` scans them and writes `docs/public/data/reports.json` plus the lightweight `docs/public/data/search-quick.json` repository-search projection. The production build also generates a chunked Pagefind full-text index under `docs/.vitepress/dist/pagefind/`.
 The VitePress build also emits RSS feeds at `rss.xml` and `rss/analysis.xml`, limited to the 20 latest dated analyses.
 
 ## Workflow
@@ -16,7 +16,7 @@ npm run check
 
 This runs Node contract tests, `vue-tsc`, the production build, and generated-route/RSS/asset validation.
 
-3. Commit `docs/analysis/`, `docs/public/data/reports.json`, and the relevant source changes.
+3. Commit `docs/analysis/`, both generated JSON projections under `docs/public/data/`, and the relevant source changes.
 
 For a direct import from a local or mounted server directory:
 
@@ -37,5 +37,7 @@ For local development:
 npm run build
 npm run docs:dev
 ```
+
+`docs:dev` provides the quick repository search. To exercise the generated Pagefind full-text shards, run `npm run build` followed by `npm run docs:preview`.
 
 GitHub Pages should publish the generated VitePress output from `docs/.vitepress/dist`.

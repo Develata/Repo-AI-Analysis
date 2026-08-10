@@ -17,6 +17,10 @@ export const DIMENSION_KEYS = [
   'security',
   'recommendation',
 ];
+export const HOME_SUMMARY_SCHEMA_VERSION = 1;
+export const HOME_LATEST_PAGE_SIZE = 4;
+export const HOME_LATEST_PAGE_LIMIT = 3;
+export const QUICK_SEARCH_INDEX_SCHEMA_VERSION = 1;
 
 function fail(sourcePath, message) {
   throw new Error(`[reports-index] ${sourcePath}: ${message}`);
@@ -147,10 +151,109 @@ export function parseReportFile(file, { root, analysisDir }) {
   };
 }
 
+function reportDate(report) {
+  return report.updated || report.last_checked || '';
+}
+
+function reportTimestamp(report) {
+  const timestamp = Date.parse(reportDate(report));
+  return Number.isFinite(timestamp) ? timestamp : 0;
+}
+
+function topLevelCategory(report) {
+  return String(report.directory || report.category || 'uncategorized').split('/').filter(Boolean)[0] ?? 'uncategorized';
+}
+
+function formatCategoryLabel(category) {
+  return category
+    .split('-')
+    .filter(Boolean)
+    .map((part) => part.slice(0, 1).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+function projectHomeReport(report) {
+  return {
+    slug: report.slug,
+    route: report.route,
+    title: report.title,
+    category: report.category,
+    directory: report.directory,
+    ratings: Object.fromEntries(DIMENSION_KEYS.map((key) => [key, report.ratings[key]])),
+    overall_score: report.overall_score,
+    last_checked: report.last_checked,
+    updated: report.updated,
+    summary: report.summary,
+  };
+}
+
+export function buildHomeSummary(reports) {
+  if (!Array.isArray(reports)) throw new TypeError('[home-summary] reports must be an array');
+
+  const latest = reports
+    .slice()
+    .sort((left, right) => reportTimestamp(right) - reportTimestamp(left)
+      || Number(right.overall_score) - Number(left.overall_score)
+      || left.title.localeCompare(right.title, 'en'))
+    .slice(0, HOME_LATEST_PAGE_SIZE * HOME_LATEST_PAGE_LIMIT)
+    .map(projectHomeReport);
+
+  const buckets = new Map();
+  for (const report of reports) {
+    const category = topLevelCategory(report);
+    const bucket = buckets.get(category) ?? [];
+    bucket.push(report);
+    buckets.set(category, bucket);
+  }
+
+  const categories = [...buckets.entries()]
+    .map(([category, items]) => {
+      const top = items
+        .slice()
+        .sort((left, right) => Number(right.overall_score) - Number(left.overall_score)
+          || reportTimestamp(right) - reportTimestamp(left)
+          || left.title.localeCompare(right.title, 'en'))[0];
+      return {
+        path: category,
+        label: formatCategoryLabel(category),
+        count: items.length,
+        averageScore: items.reduce((sum, report) => sum + Number(report.overall_score || 0), 0) / items.length,
+        latestDate: items.map(reportDate).sort().at(-1) ?? '',
+        top: projectHomeReport(top),
+      };
+    })
+    .sort((left, right) => right.count - left.count || left.label.localeCompare(right.label, 'en'));
+
+  return {
+    schema_version: HOME_SUMMARY_SCHEMA_VERSION,
+    count: reports.length,
+    page_size: HOME_LATEST_PAGE_SIZE,
+    latest,
+    categories,
+  };
+}
+
+export function buildQuickSearchIndex(reports) {
+  if (!Array.isArray(reports)) throw new TypeError('[quick-search] reports must be an array');
+  return {
+    schema_version: QUICK_SEARCH_INDEX_SCHEMA_VERSION,
+    count: reports.length,
+    items: reports.map((report) => ({
+      route: report.route,
+      title: report.title,
+      directory: report.directory || report.category,
+      tags: report.tags,
+      language: report.primary_language,
+      summary: report.summary,
+    })),
+  };
+}
+
 export function buildReportIndex({
   root = process.cwd(),
   analysisDir = path.join(root, 'docs', 'analysis'),
   outputFile = path.join(root, 'docs', 'public', 'data', 'reports.json'),
+  quickSearchOutputFile = path.join(root, 'docs', 'public', 'data', 'search-quick.json'),
   write = true,
 } = {}) {
   const reports = listReportFiles(analysisDir)
@@ -174,7 +277,9 @@ export function buildReportIndex({
 
   if (write) {
     fs.mkdirSync(path.dirname(outputFile), { recursive: true });
+    fs.mkdirSync(path.dirname(quickSearchOutputFile), { recursive: true });
     fs.writeFileSync(outputFile, `${JSON.stringify(payload, null, 2)}\n`);
+    fs.writeFileSync(quickSearchOutputFile, `${JSON.stringify(buildQuickSearchIndex(reports))}\n`);
   }
   return payload;
 }
@@ -184,5 +289,5 @@ if (import.meta.url === invokedPath) {
   const root = process.cwd();
   const outputFile = path.join(root, 'docs', 'public', 'data', 'reports.json');
   const payload = buildReportIndex({ root, outputFile });
-  console.log(`Indexed ${payload.count} report(s) -> ${toPosixPath(path.relative(root, outputFile))}`);
+  console.log(`Indexed ${payload.count} report(s) -> ${toPosixPath(path.relative(root, outputFile))} + search-quick.json`);
 }

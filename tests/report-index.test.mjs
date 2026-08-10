@@ -4,7 +4,10 @@ import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
+import zlib from 'node:zlib';
 import {
+  buildHomeSummary,
+  buildQuickSearchIndex,
   buildReportIndex,
   DIMENSION_KEYS,
   makeSummary,
@@ -62,6 +65,20 @@ test('buildReportIndex emits the minimal versioned UI contract', () => withTempA
   assert.equal('sources' in payload.reports[0], false);
   assert.equal('source_path' in payload.reports[0], false);
   assert.equal('forks' in payload.reports[0], false);
+
+  const home = buildHomeSummary(payload.reports);
+  assert.equal(home.count, 1);
+  assert.equal(home.page_size, 4);
+  assert.equal(home.latest[0].slug, 'ai/example/repo');
+  assert.equal(home.categories[0].path, 'ai');
+  assert.equal('repo_url' in home.latest[0], false);
+  assert.equal('tags' in home.latest[0], false);
+
+  const quick = buildQuickSearchIndex(payload.reports);
+  assert.equal(quick.count, 1);
+  assert.deepEqual(quick.items[0].tags, ['agent', 'C++']);
+  assert.equal(quick.items[0].language, 'Rust');
+  assert.equal('ratings' in quick.items[0], false);
 }));
 
 test('invalid ratings fail with a source-path diagnostic', () => withTempAnalysis(({ root, analysisDir }) => {
@@ -84,4 +101,17 @@ test('the checked-in corpus satisfies the report contract', () => {
   assert.equal(payload.count, payload.reports.length);
   assert.equal(new Set(payload.reports.map((item) => item.slug)).size, payload.count);
   assert.ok(payload.reports.every((item) => !('sources' in item)));
+
+  const home = buildHomeSummary(payload.reports);
+  const gzipBytes = zlib.gzipSync(JSON.stringify(home), { level: 9 }).byteLength;
+  assert.equal(home.count, payload.count);
+  assert.equal(home.latest.length, Math.min(payload.count, 12));
+  assert.ok(home.categories.length > 0);
+  assert.ok(gzipBytes <= 10 * 1024, `home summary exceeds 10 KiB gzip budget: ${gzipBytes} bytes`);
+
+  const quick = buildQuickSearchIndex(payload.reports);
+  const quickGzipBytes = zlib.gzipSync(JSON.stringify(quick), { level: 9 }).byteLength;
+  assert.equal(quick.count, payload.count);
+  assert.ok(quick.items.every((item) => item.route.startsWith('/analysis/')));
+  assert.ok(quickGzipBytes <= 35 * 1024, `quick search index exceeds 35 KiB gzip budget: ${quickGzipBytes} bytes`);
 });

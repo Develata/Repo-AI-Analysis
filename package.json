@@ -12,7 +12,8 @@
     "validate:build": "node scripts/validate-build.mjs",
     "import": "node scripts/import-from-server.mjs",
     "docs:dev": "node scripts/build-index.mjs && vitepress dev docs --host 127.0.0.1",
-    "docs:build": "node scripts/build-index.mjs && vitepress build docs",
+    "docs:build": "node scripts/build-index.mjs && vitepress build docs && npm run build:pagefind",
+    "build:pagefind": "pagefind",
     "docs:preview": "vitepress preview docs --host 127.0.0.1"
   },
   "engines": {
@@ -22,6 +23,7 @@
     "@types/node": "^22.20.1",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.3.0",
+    "pagefind": "1.5.2",
     "typescript": "^6.0.3",
     "vitepress": "^1.6.4",
     "vue": "^3.5.39",

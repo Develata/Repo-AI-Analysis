@@ -47,8 +47,14 @@ jobs:
       - name: Build with VitePress
         run: npm run build
 
-      - name: Verify generated reports index is committed
-        run: git diff --exit-code -- docs/public/data/reports.json
+      - name: Verify generated search data is committed
+        run: |
+          git ls-files --error-unmatch -- \
+            docs/public/data/reports.json \
+            docs/public/data/search-quick.json >/dev/null
+          git diff --exit-code -- \
+            docs/public/data/reports.json \
+            docs/public/data/search-quick.json
 
       - name: Validate generated site and RSS
         run: npm run validate:build
