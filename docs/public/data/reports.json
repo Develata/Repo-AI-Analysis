@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 169,
+  "count": 170,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -4710,6 +4710,45 @@
       "last_checked": "2026-07-24",
       "updated": "2026-06-13",
       "summary": "面向 autonomous coding agents 的 portable memory layer / CLI，local-first，且 Hermes 内置 ByteRover provider 作为 brv CLI 接入层；但 Elastic License 与年轻系统风险必须前置 [Hermes:provider]。 该判断基于 GitHub AP"
+    },
+    {
+      "slug": "ai-programs/agent-infrastructure/cloudflare-computer",
+      "route": "/analysis/ai-programs/agent-infrastructure/cloudflare-computer",
+      "title": "Cloudflare Computer",
+      "repo_url": "https://github.com/cloudflare/computer",
+      "category": "ai-programs/agent-infrastructure",
+      "directory": "ai-programs/agent-infrastructure",
+      "tags": [
+        "agent-infrastructure",
+        "cloudflare-workers",
+        "durable-objects",
+        "virtual-filesystem",
+        "sandbox",
+        "code-execution",
+        "fuse",
+        "typescript",
+        "capnweb",
+        "ai-sdk"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 8045,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 1,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-08-14",
+      "updated": "2026-08-14",
+      "summary": "Cloudflare Computer 不是一个终端 agent，也不是把容器 API 包一层；它是一个 Cloudflare-native 的持久工作区与执行路由层：Durable Object SQLite 持有文件权威状态，`workspace.runtime.exec()` 再选择适合的 shell 或 ECMAScript backend，让 ag"
     },
     {
       "slug": "ai-programs/ai-harness/memory/hindsight",
