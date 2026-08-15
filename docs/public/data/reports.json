@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 170,
+  "count": 174,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -4314,6 +4314,40 @@
       "summary": "开源 AI memory platform，把数据管道、图谱、MCP 与检索组织成 agent 可用的长期记忆；当前部署面更完整，但快速 release 与 226 issues/394 PRs 的 backlog 要求生产采用保持审慎 [GH:current][README:current][GH:issues-current]。"
     },
     {
+      "slug": "ai-programs/agents/assistant-agents/deepseek-harness",
+      "route": "/analysis/ai-programs/agents/assistant-agents/deepseek-harness",
+      "title": "DeepSeek Harness",
+      "repo_url": "https://github.com/deepseek-ai/deepseek-harness",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
+      "tags": [
+        "ai-agent",
+        "agent-harness",
+        "plugin-architecture",
+        "self-hosted",
+        "typescript"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 111393,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 1,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-08-15",
+      "updated": "2026-08-15",
+      "summary": "DeepSeek Harness 适合想在隔离环境中试验可替换 agent runtime 的资深开发者：其 plugin/composition 设计很强，但当前仍是 `0.1.0-rc.5` developer preview，不能把源码整洁、Release workflow 或超高 star 数误读为可默认托管真实凭据与生产 workspace 的成熟"
+    },
+    {
       "slug": "ai-programs/ai-harness/hooks/destructive-command-guard",
       "route": "/analysis/ai-programs/ai-harness/hooks/destructive-command-guard",
       "title": "destructive_command_guard",
@@ -4786,6 +4820,41 @@
       "summary": "“Agent Memory That Learns”的 memory system，支持 hosted、official Docker、external Postgres 与 Python embedded；集成面继续扩大，但 0.8.x 快速迭代与公开 issue 中的 correctness/resource reports 仍要求谨慎 [GH:rele"
     },
     {
+      "slug": "document-processing/editors/latexsnipper",
+      "route": "/analysis/document-processing/editors/latexsnipper",
+      "title": "LaTeXSnipper",
+      "repo_url": "https://github.com/SakuraMathcraft/LaTeXSnipper",
+      "category": "document-processing/editors",
+      "directory": "document-processing/editors",
+      "tags": [
+        "latex",
+        "math-ocr",
+        "desktop",
+        "office",
+        "mathlive",
+        "onnx"
+      ],
+      "primary_language": "Python / C#",
+      "stars": 845,
+      "status": "stable",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 3,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-08-15",
+      "updated": "2026-08-15",
+      "summary": "对愿意先试跑、尤其使用 Windows desktop Office 的数学写作者，LaTeXSnipper 是少见地把“截图/手写/PDF → LaTeX/Markdown → 编辑/导出/Office”串成单机 workflow 的开源候选；但最终 LTS、首次依赖与模型准备、当前 Office installer 报错，以及许可证文档冲突，意味着它更适"
+    },
+    {
       "slug": "ai-programs/agents/coding-agents/open-interpreter",
       "route": "/analysis/ai-programs/agents/coding-agents/open-interpreter",
       "title": "Open Interpreter",
@@ -5144,6 +5213,40 @@
       "last_checked": "2026-07-07",
       "updated": "2026-07-07",
       "summary": "AutoScraper 适合快速从结构简单、变化不大的网页里抽一类重复字段；不适合复杂站点、大规模爬取或反爬对抗。"
+    },
+    {
+      "slug": "backend/chhoto-url",
+      "route": "/analysis/backend/chhoto-url",
+      "title": "Chhoto URL",
+      "repo_url": "https://github.com/SinTan1729/chhoto-url",
+      "category": "backend",
+      "directory": "backend",
+      "tags": [
+        "rust",
+        "url-shortener",
+        "self-hosted",
+        "actix-web",
+        "sqlite"
+      ],
+      "primary_language": "Rust",
+      "stars": 940,
+      "status": "stable",
+      "ratings": {
+        "capability": 3,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 4,
+        "extensibility": 2,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-08-15",
+      "updated": "2026-08-15",
+      "summary": "Chhoto URL 适合愿意自己维护 TLS、数据库备份和容器配置的技术用户，作为个人或小团队的低复杂度短链接服务；它不适合作为多租户、匿名公开或零运维的 URL-shortening platform。[Local:product-2026-08-15][Local:compose-validation-2026-08-15]"
     },
     {
       "slug": "ai-programs/ai-harness/ai-plugins/claude-plugins-official",
@@ -6025,6 +6128,41 @@
       "last_checked": "2026-08-02",
       "updated": "2026-08-02",
       "summary": "Zotero PDF2zh 适合已经把 Zotero 作为论文库、希望右键生成中文/双语 PDF 的个人研究者；它的价值在 Zotero 工作流集成，而不是比 PDFMathTranslate-next 本身更强的翻译内核或服务化安全。"
+    },
+    {
+      "slug": "ai-programs/agent-infrastructure/boss-zhipin-scraper",
+      "route": "/analysis/ai-programs/agent-infrastructure/boss-zhipin-scraper",
+      "title": "boss-zhipin-scraper",
+      "repo_url": "https://github.com/eatmoreduck/boss-zhipin-scraper",
+      "category": "ai-programs/agent-infrastructure",
+      "directory": "ai-programs/agent-infrastructure",
+      "tags": [
+        "web-scraping",
+        "job-data",
+        "browser-automation",
+        "chrome-cdp",
+        "python",
+        "hermes-skill"
+      ],
+      "primary_language": "Python",
+      "stars": 1110,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 2,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 2.8,
+      "last_checked": "2026-08-15",
+      "updated": "2026-08-15",
+      "summary": "它只适合具备本地 Python/浏览器排障能力、已自行确认使用许可、并愿意把账号和输出数据隔离的个人做低频岗位研究；不适合做通用 scraper、无监督 Agent 能力或组织级数据管道。"
     },
     {
       "slug": "ai-programs/agent-infrastructure/future-agi",
