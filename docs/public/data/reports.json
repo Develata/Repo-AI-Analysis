@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 174,
+  "count": 176,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -5077,6 +5077,43 @@
       "summary": "UI-TARS Desktop / Agent TARS 是一个能力很强、工程投入也真实的 multimodal computer-use agent stack：它把视觉定位、浏览器控制、MCP 工具、桌面 GUI 操作和 Web UI/CLI 包进一个 TypeScript monorepo；但版本仍在 0.3.0、issue 积压高、远程 operat"
     },
     {
+      "slug": "ustc/proxy/ustc-iwan-docker",
+      "route": "/analysis/ustc/proxy/ustc-iwan-docker",
+      "title": "ustc-iwan-docker",
+      "repo_url": "https://github.com/Develata/ustc-iwan-docker",
+      "category": "ustc/proxy",
+      "directory": "ustc/proxy",
+      "tags": [
+        "ustc",
+        "iwan",
+        "proxy",
+        "socks5",
+        "docker",
+        "compose",
+        "ghcr",
+        "wrapper"
+      ],
+      "primary_language": "Shell",
+      "stars": 0,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 2,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-08-22",
+      "updated": "2026-08-22",
+      "summary": "ustc-iwan-docker 适合希望用 Docker Compose 在宿主机或其他容器旁边提供一个本地 SOCKS5 入口的 USTC/iWAN 用户，但它是个人维护的非官方部署封装，安全与兼容性最终受上游 `yyy1mu/ustc-iwan` 约束 [GH:readme][GH:upstream]。"
+    },
+    {
       "slug": "ai-programs/ai-harness/guides/agent-engineering/12-factor-agents",
       "route": "/analysis/ai-programs/ai-harness/guides/agent-engineering/12-factor-agents",
       "title": "12-Factor Agents",
@@ -5506,6 +5543,43 @@
       "last_checked": "2026-07-25",
       "updated": "2026-06-18",
       "summary": "UAD-ng 是有实际用途的 Android 隐私/清理工具，但它会改变设备系统包状态；适合懂 ADB、愿意备份和可回滚操作的用户，不适合“点点点就删干净”的心态。"
+    },
+    {
+      "slug": "ustc/proxy/ustc-iwan",
+      "route": "/analysis/ustc/proxy/ustc-iwan",
+      "title": "ustc-iwan",
+      "repo_url": "https://github.com/yyy1mu/ustc-iwan",
+      "category": "ustc/proxy",
+      "directory": "ustc/proxy",
+      "tags": [
+        "ustc",
+        "iwan",
+        "proxy",
+        "socks5",
+        "tun",
+        "oidc",
+        "rust",
+        "networking"
+      ],
+      "primary_language": "Rust",
+      "stars": 30,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-08-22",
+      "updated": "2026-08-22",
+      "summary": "ustc-iwan 适合有授权 USTC iWAN 账号、希望在 Linux 上做选择性 TUN 路由，或在 macOS/Windows/Linux 上以 rootless SOCKS5 方式访问指定 TCP/IPv4 目标的用户 [GH:readme]。"
     },
     {
       "slug": "programming/security/bumblebee",
