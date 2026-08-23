@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 176,
+  "count": 178,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -2338,6 +2338,46 @@
       "summary": "Hermes Agent 是一个自托管、自进化的 AI 代理框架，内置闭环学习系统——从经验中创建技能、自我修正、跨 session 记忆、持续构建用户模型。定位：会越用越聪明的个人 AI 助理——适合追求长期积累效应、需要多工具统一调度的技术用户。"
     },
     {
+      "slug": "ai-programs/agent-infrastructure/llmfit",
+      "route": "/analysis/ai-programs/agent-infrastructure/llmfit",
+      "title": "llmfit",
+      "repo_url": "https://github.com/AlexsJones/llmfit",
+      "category": "ai-programs/agent-infrastructure",
+      "directory": "ai-programs/agent-infrastructure",
+      "tags": [
+        "agent-infrastructure",
+        "local-llm",
+        "model-fit",
+        "hardware-detection",
+        "model-selection",
+        "inference",
+        "rust",
+        "tui",
+        "mcp",
+        "rest-api",
+        "benchmarking"
+      ],
+      "primary_language": "Rust",
+      "stars": 33606,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.7,
+      "last_checked": "2026-08-23",
+      "updated": "2026-08-23",
+      "summary": "面向需要在本地工作站、节点或 agent runtime 中回答“哪些 LLM 适合这台硬件”的开发者，llmfit 是一个能力面很宽的 Rust model-fit / model-selection infrastructure；它提供估算和规划，不等于实际推理引擎或性能真值源 [GH:readme][Docs:how-it-works]。"
+    },
+    {
       "slug": "programming/security/maigret",
       "route": "/analysis/programming/security/maigret",
       "title": "Maigret",
@@ -4672,6 +4712,44 @@
       "last_checked": "2026-07-22",
       "updated": "2026-07-22",
       "summary": "Superpowers 是一套把「软件工程纪律」编码为 agent skill 的框架——brainstorm → spec → plan → TDD → subagent-driven dev → review → ship，全链路流程由 skill 自动触发，而非靠 agent 自觉遵守。适合希望 agent 像 senior engineer 一样工作"
+    },
+    {
+      "slug": "ai-programs/ai-harness/memory/tencentdb-agent-memory",
+      "route": "/analysis/ai-programs/ai-harness/memory/tencentdb-agent-memory",
+      "title": "TencentDB Agent Memory",
+      "repo_url": "https://github.com/TencentCloud/TencentDB-Agent-Memory",
+      "category": "ai-programs/ai-harness/memory",
+      "directory": "ai-programs/ai-harness/memory",
+      "tags": [
+        "memory",
+        "team-memory",
+        "agent",
+        "ai-agent",
+        "coding-agent",
+        "long-term-memory",
+        "knowledge-graph",
+        "proxy",
+        "typescript"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 23813,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-08-22",
+      "updated": "2026-08-22",
+      "summary": "面向需要把多个 coding agent 的跨会话经验、团队知识与工作流程统一沉淀的工程团队，TencentDB Agent Memory 提供 Chat Memory、Skill、Wiki、CodeGraph、Memory Hub、Memory Proxy 和 SDK；适合隔离试用与架构研究，不宜在未审计权限、版本与数据治理前直接承载生产唯一记忆副本 [G"
     },
     {
       "slug": "ai-programs/agents/assistant-agents/aionui",
