@@ -1,7 +1,7 @@
 ---
 title: "llmfit"
 created: 2026-08-23
-updated: 2026-08-23
+updated: 2026-08-24
 type: repository-analysis
 repo_url: "https://github.com/AlexsJones/llmfit"
 category: "ai-programs/agent-infrastructure"
@@ -50,6 +50,7 @@ sources:
   - "[GH:local-scan] shallow clone of main at commit 3f44fd30a43d2619146f7bc0aa66c90aa54d78e6 on 2026-08-23: 238 tracked files and 7 .github/workflows files; inspected AGENTS.md, README variants, CONTRIBUTING.md, Cargo manifests, Rust core/TUI code, API/MCP server, docs, Dockerfile, Python wrapper and Web source. CODE_OF_CONDUCT.md exists; SECURITY.md was not present in the clone."
   - "[GH:ci] .github/workflows/ci.yml local scan: matrix tests on Ubuntu/macOS/Windows, Rust tests/build, Web npm build plus Vitest, Python pytest, rustfmt, clippy, cargo check, Ruff and ty checks; path filters can skip some jobs for unrelated changes."
   - "[GH:docker] Dockerfile and .github/workflows/docker.yml local scan: multi-stage Rust build, Debian runtime, non-root llmfit user, GHCR multi-arch publishing for linux/amd64 and linux/arm64; Dockerfile builds the Rust workspace but does not copy/build llmfit-web, so full React dashboard embedding is not verified for the image."
+  - "[GH:commit] local shallow clone HEAD 3f44fd30a43d2619146f7bc0aa66c90aa54d78e6 read back with `git show -s` on 2026-08-24: commit date 2026-08-22, subject `bench: community results for intel-arc-graphics-130v-140v-integrated (#918)`; this is direct evidence of a recent community-benchmark-related commit, not a benchmark run performed in this analysis."
   - "[Local:catalog] local command `cargo run -q -p llmfit -- --no-dashboard --json list` executed 2026-08-23 returned 11271 catalog models; this is a point-in-time binary/catalog observation, not a permanent model-count claim."
   - "[Local:verification] local verification on 2026-08-23: `cargo test` passed 565 tests with 1 ignored; `python3 scripts/test_api.py --spawn` passed all 9 REST checks; `uv run pytest -vv` in llmfit-python passed 4 tests; `cargo fmt --all -- --check` passed; `cargo clippy --all-targets --all-features` exited 0 but emitted warnings including dead code, doc comments, complexity and style; no actual provider or model inference was run."
   - "[Local:web] local `npm ci && npm run build` in llmfit-web passed on 2026-08-23 and emitted a 192.33 kB JS bundle / 20.53 kB CSS bundle before gzip; `npm test -- --run` passed api/i18n tests (7 tests) but 7 App tests failed because Header.jsx reads undefined `window.localStorage` in this jsdom execution environment."
@@ -202,7 +203,7 @@ README 提供英/中/日入口，docs 进一步拆出 how-it-works、TUI、CLI�
 
 | 维度 | 评分 | 说明 |
 |------|------|------|
-| 社区活跃度 | 4/5 | API snapshot 为 33606 stars、2101 forks；最近 commit 到 2026-08-22，当前 open issues=51、open PRs=34，且有 benchmark/community PR 流入 [GH:api][GH:issues][GH:contributors] |
+| 社区活跃度 | 4/5 | API snapshot 为 33606 stars、2101 forks；最近推送到 2026-08-22，当前 open issues=51、open PRs=34；本地 shallow clone 的 HEAD 是 community benchmark results 相关提交 [GH:api][GH:commit][GH:issues][GH:contributors] |
 | 成熟度 | 3/5 | 仓库创建于 2026-02-15，已发布到 v1.1.10，测试与跨平台 CI 具备；但项目不足一年、feature surface 仍快速扩张，issue/PR 与 provider/catalog 变化要求 pinning 和回归验证 [GH:api][GH:release][GH:ci] |
 
 社区不能只看 star：contributors first page 的最高贡献者主要是维护者与 automation，公开生态仍处在迅速形成阶段 [GH:contributors]。因此 community 可以给 4，maturity 仍保守给 3；二者不可混为一谈。

@@ -2374,7 +2374,7 @@
       },
       "overall_score": 3.7,
       "last_checked": "2026-08-23",
-      "updated": "2026-08-23",
+      "updated": "2026-08-24",
       "summary": "面向需要在本地工作站、节点或 agent runtime 中回答“哪些 LLM 适合这台硬件”的开发者，llmfit 是一个能力面很宽的 Rust model-fit / model-selection infrastructure；它提供估算和规划，不等于实际推理引擎或性能真值源 [GH:readme][Docs:how-it-works]。"
     },
     {
