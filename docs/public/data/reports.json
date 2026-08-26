@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 178,
+  "count": 179,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -6018,6 +6018,44 @@
       "last_checked": "2026-07-22",
       "updated": "2026-06-07",
       "summary": "VibeVoice 是 Microsoft 开源 voice AI 模型家族，覆盖长音频 ASR、TTS 和 realtime TTS；但 TTS 代码曾因 misuse concern 被移除，采用风险必须前置。 [GH:readme]"
+    },
+    {
+      "slug": "dev-tools/wsl-dashboard",
+      "route": "/analysis/dev-tools/wsl-dashboard",
+      "title": "WSL Dashboard",
+      "repo_url": "https://github.com/owu/wsl-dashboard",
+      "category": "dev-tools",
+      "directory": "dev-tools",
+      "tags": [
+        "rust",
+        "slint",
+        "windows",
+        "wsl",
+        "wsl2",
+        "desktop",
+        "usbipd",
+        "networking",
+        "disk-management"
+      ],
+      "primary_language": "Rust",
+      "stars": 3594,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 2,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3,
+      "last_checked": "2026-08-26",
+      "updated": "2026-08-26",
+      "summary": "WSL Dashboard 适合希望用 GUI 管理 Windows WSL 发行版的开发者和 power user：功能面很宽、原生发布路径清楚、资源效率目标鲜明，但项目创建不足一年、贡献集中在单一维护者，且多个操作会通过 UAC/PowerShell/`cmd.exe` 改写主机状态，因此更适合个人开发机试用而非未经隔离的生产主机。"
     },
     {
       "slug": "ai-programs/agent-infrastructure/agent-governance-toolkit",
