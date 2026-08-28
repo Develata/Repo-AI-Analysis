@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 179,
+  "count": 184,
   "reports": [
     {
       "slug": "programming/programming-education/programming-language-guides/go/go",
@@ -4208,6 +4208,45 @@
       "summary": "`dotnet/skills` 是目前 agent-skills 生态中少见的“官方领域团队 + 大规模 eval fixtures + 跨 Copilot/Claude/Cursor/Codex 分发”的技能库；它对 .NET/C# 开发者有实用价值，对 Develata/Hermes 更大的价值是学习其 skill quality gate、CODEOW"
     },
     {
+      "slug": "ai-programs/agents/math-agents/archon-horizon",
+      "route": "/analysis/ai-programs/agents/math-agents/archon-horizon",
+      "title": "Archon Horizon",
+      "repo_url": "https://github.com/frenzymath/Archon-Horizon",
+      "category": "ai-programs/agents/math-agents",
+      "directory": "ai-programs/agents/math-agents",
+      "tags": [
+        "ai-for-math",
+        "math-agent",
+        "lean4",
+        "long-horizon-agent",
+        "workspace",
+        "multi-agent",
+        "ledger",
+        "codex",
+        "claude-code",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 24,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 2,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 2,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "Archon Horizon 把 Archon 的单项目自动化扩展成“多个 team 在一个数学 workspace 中持续工作”的 orchestration layer；它最有价值的不是单轮 proof prompt，而是 durable state、provenance、budget、resume、freeze 与跨 run 协作 [GH:readme"
+    },
+    {
       "slug": "ai-programs/agents/assistant-agents/autogpt",
       "route": "/analysis/ai-programs/agents/assistant-agents/autogpt",
       "title": "AutoGPT",
@@ -5297,6 +5336,44 @@
       "summary": "`anthropics/skills` 的价值不在于提供一个独立软件，而在于给出 Anthropic 官方认可的 Agent Skills 目录结构、`SKILL.md` 写法、Claude Code plugin marketplace 接入方式，以及 docx/pdf/pptx/xlsx 等复杂文档技能的参考材料 [GH] [GH:marketplace"
     },
     {
+      "slug": "ai-programs/agents/math-agents/archon",
+      "route": "/analysis/ai-programs/agents/math-agents/archon",
+      "title": "Archon",
+      "repo_url": "https://github.com/frenzymath/Archon",
+      "category": "ai-programs/agents/math-agents",
+      "directory": "ai-programs/agents/math-agents",
+      "tags": [
+        "ai-for-math",
+        "math-agent",
+        "lean4",
+        "autoformalization",
+        "theorem-proving",
+        "multi-agent",
+        "codex",
+        "claude-code",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 209,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 2,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 4
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "Archon 不是做单题 benchmark 的 tactic wrapper，而是让 Claude Code 或 Codex 在完整 Lean 4 项目里规划依赖图、并行填补 proofs、运行 `lake build`、复核并持续提交；它的强项是把长程 autoformalization 工程化，代价是复杂、昂贵且默认权限很高 [GH:readme][G"
+    },
+    {
       "slug": "ai-programs/agent-infrastructure/autoscraper",
       "route": "/analysis/ai-programs/agent-infrastructure/autoscraper",
       "title": "AutoScraper",
@@ -5437,6 +5514,42 @@
       "summary": "Cockpit Tools 是能力极强但权限面也极宽的 AI 账号与本地配置控制台：它能替你管理多平台身份、隔离实例与本地路由，却会触碰 OAuth/API 凭据、官方客户端配置、子进程和本机网络接口；适合隔离环境中的高级试用，不应直接成为主力开发机或 Hermes 主 profile 的默认 control plane [Local:README][Loc"
     },
     {
+      "slug": "ai-programs/agents/math-agents/danus",
+      "route": "/analysis/ai-programs/agents/math-agents/danus",
+      "title": "Danus",
+      "repo_url": "https://github.com/frenzymath/Danus",
+      "category": "ai-programs/agents/math-agents",
+      "directory": "ai-programs/agents/math-agents",
+      "tags": [
+        "ai-for-math",
+        "math-agent",
+        "multi-agent",
+        "fact-graph",
+        "automated-reasoning",
+        "codex",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 358,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 2,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 2,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 4
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "Danus 把“多个 agent 找证明”收束为一条可审计的流水线：主 agent 分解问题，worker 逐条提交命题与证明，冷启动 verifier 决定是否写入 fact graph；它很适合研究 AI4Math orchestration，但 verified 在这里仍指 LLM 审核通过，不是 Lean/Coq kernel certificate"
+    },
+    {
       "slug": "ai-programs/ai-harness/skills/google-skills",
       "route": "/analysis/ai-programs/ai-harness/skills/google-skills",
       "title": "Google Skills",
@@ -5470,6 +5583,43 @@
       "last_checked": "2026-07-23",
       "updated": "2026-07-23",
       "summary": "Google Skills 是 Google 产品与技术相关的 agent skills 集合，偏技能包/流程素材，而不是传统软件库。 [GH:readme]"
+    },
+    {
+      "slug": "ai-programs/agents/math-agents/iteris",
+      "route": "/analysis/ai-programs/agents/math-agents/iteris",
+      "title": "Iteris",
+      "repo_url": "https://github.com/frenzymath/iteris",
+      "category": "ai-programs/agents/math-agents",
+      "directory": "ai-programs/agents/math-agents",
+      "tags": [
+        "ai-for-math",
+        "math-agent",
+        "computational-mathematics",
+        "research-agent",
+        "long-horizon-agent",
+        "codex",
+        "claude-code",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 53,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 2,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 2,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 4
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "Iteris 面向的不是单次“请证明”，而是计算数学研究循环：agent 读文献、提出/执行实验、沉淀 facts、分派后续任务、做多种 verification，再把结果组织成报告；它的研究方法很有启发，但最终正确性仍要求专家审查，且运行 agent 默认拥有广泛 workspace 权限 [GH:readme][Paper:Iteris]。"
     },
     {
       "slug": "programming/security/microsoft-mxc",
@@ -6535,6 +6685,42 @@
       "last_checked": "2026-07-20",
       "updated": "2026-07-20",
       "summary": "Schema Harness 适合正在设计 verification-first agent workflow、希望把“belief → prediction → falsification → planning → controlled action”做成硬约束的研究者；它当前最值得采用的是方法，不是代码，因为公开 GitHub repository 只有"
+    },
+    {
+      "slug": "ai-programs/agents/math-agents/rethlas",
+      "route": "/analysis/ai-programs/agents/math-agents/rethlas",
+      "title": "Rethlas",
+      "repo_url": "https://github.com/frenzymath/Rethlas",
+      "category": "ai-programs/agents/math-agents",
+      "directory": "ai-programs/agents/math-agents",
+      "tags": [
+        "ai-for-math",
+        "math-agent",
+        "proof-generation",
+        "llm-verifier",
+        "codex",
+        "mcp",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 313,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 2,
+        "performance": 2,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 2,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 2.5,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "Rethlas 是一套容易读懂的双 agent 数学推理原型：generation agent 生成 informal proof blueprint，verification agent 通过 HTTP 返回结构化 LLM verdict；它适合学习最小 worker–verifier loop，但不能把 `blueprint_verified.md` 理"
     }
   ]
 }
