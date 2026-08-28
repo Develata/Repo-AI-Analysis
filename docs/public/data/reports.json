@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "count": 184,
+  "count": 189,
   "reports": [
     {
-      "slug": "programming/programming-education/programming-language-guides/go/go",
-      "route": "/analysis/programming/programming-education/programming-language-guides/go/go",
+      "slug": "education-resourses/programming/programming-language-guides/go/go",
+      "route": "/analysis/education-resourses/programming/programming-language-guides/go/go",
       "title": "Go",
       "repo_url": "https://github.com/golang/go",
-      "category": "programming/programming-education/programming-language-guides/go",
-      "directory": "programming/programming-education/programming-language-guides/go",
+      "category": "education-resourses/programming/programming-language-guides/go",
+      "directory": "education-resourses/programming/programming-language-guides/go",
       "tags": [
         "go",
         "golang",
@@ -281,12 +281,12 @@
       "summary": "scrcpy 适合需要从电脑控制、录制、调试或自动化 Android 真机的开发者；在移动数据采集链路中，它是基础设施而非解析器。"
     },
     {
-      "slug": "programming/programming-education/programming-language-guides/rust/rust-book",
-      "route": "/analysis/programming/programming-education/programming-language-guides/rust/rust-book",
+      "slug": "education-resourses/programming/programming-language-guides/rust/rust-book",
+      "route": "/analysis/education-resourses/programming/programming-language-guides/rust/rust-book",
       "title": "The Rust Programming Language (TRPL)",
       "repo_url": "https://github.com/rust-lang/book",
-      "category": "programming/programming-education/programming-language-guides/rust",
-      "directory": "programming/programming-education/programming-language-guides/rust",
+      "category": "education-resourses/programming/programming-language-guides/rust",
+      "directory": "education-resourses/programming/programming-language-guides/rust",
       "tags": [
         "rust",
         "book",
@@ -385,12 +385,12 @@
       "summary": "Crawlee 适合 Node.js/TypeScript 团队构建长期维护的 crawler，而不是只做一次性网页转 Markdown 的轻脚本。"
     },
     {
-      "slug": "programming/programming-education/platforms/freecodecamp",
-      "route": "/analysis/programming/programming-education/platforms/freecodecamp",
+      "slug": "education-resourses/programming/platforms/freecodecamp",
+      "route": "/analysis/education-resourses/programming/platforms/freecodecamp",
       "title": "freeCodeCamp",
       "repo_url": "https://github.com/freeCodeCamp/freeCodeCamp",
-      "category": "programming/programming-education/platforms",
-      "directory": "programming/programming-education/platforms",
+      "category": "education-resourses/programming/platforms",
+      "directory": "education-resourses/programming/platforms",
       "tags": [
         "education",
         "curriculum",
@@ -1267,12 +1267,12 @@
       "summary": "Gemini CLI 是 Google/Gemini 生态的官方 coding agent，能力面和文档非常强，但项目仍年轻、版本仍在 0.x、高速迭代且存在 headless/CI 信任模型安全历史，因此适合积极试用和学习，不宜无治理地生产放权。"
     },
     {
-      "slug": "programming/programming-education/platforms/machine-learning-systems",
-      "route": "/analysis/programming/programming-education/platforms/machine-learning-systems",
+      "slug": "education-resourses/programming/platforms/machine-learning-systems",
+      "route": "/analysis/education-resourses/programming/platforms/machine-learning-systems",
       "title": "Machine Learning Systems",
       "repo_url": "https://github.com/harvard-edge/cs249r_book",
-      "category": "programming/programming-education/platforms",
-      "directory": "programming/programming-education/platforms",
+      "category": "education-resourses/programming/platforms",
+      "directory": "education-resourses/programming/platforms",
       "tags": [
         "machine-learning-systems",
         "textbook",
@@ -1377,12 +1377,12 @@
       "summary": "n8n 的主分类在本次 taxonomy 中改为 `ai-programs/agent-workflows`：它原本是 workflow automation / integration platform，但在 2026 的语境下，AI nodes、LangChain nodes、agent、memory、human-in-the-loop 已经成为其重要能"
     },
     {
-      "slug": "programming/programming-education/programming-language-guides/rust/rust-book-brown",
-      "route": "/analysis/programming/programming-education/programming-language-guides/rust/rust-book-brown",
+      "slug": "education-resourses/programming/programming-language-guides/rust/rust-book-brown",
+      "route": "/analysis/education-resourses/programming/programming-language-guides/rust/rust-book-brown",
       "title": "Rust Book (Brown Experimental)",
       "repo_url": "https://github.com/cognitive-engineering-lab/rust-book",
-      "category": "programming/programming-education/programming-language-guides/rust",
-      "directory": "programming/programming-education/programming-language-guides/rust",
+      "category": "education-resourses/programming/programming-language-guides/rust",
+      "directory": "education-resourses/programming/programming-language-guides/rust",
       "tags": [
         "rust",
         "book",
@@ -1712,6 +1712,41 @@
       "last_checked": "2026-07-14",
       "updated": "2026-05-19",
       "summary": "面向 Linux 玩家和游戏保存/运行需求者的开放游戏平台，把 Wine、模拟器、engine reimplementation、商店库同步和用户安装脚本统一到一个桌面客户端中。"
+    },
+    {
+      "slug": "education-resourses/english/keyboard/monkeytype",
+      "route": "/analysis/education-resourses/english/keyboard/monkeytype",
+      "title": "Monkeytype",
+      "repo_url": "https://github.com/monkeytypegame/monkeytype",
+      "category": "education-resourses/english/keyboard",
+      "directory": "education-resourses/english/keyboard",
+      "tags": [
+        "typing-practice",
+        "english-learning",
+        "wpm",
+        "touch-typing",
+        "leaderboard",
+        "typescript"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 20625,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 5,
+        "maturity": 4,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 4
+      },
+      "overall_score": 3.9,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "Monkeytype 是这组项目里最完整的通用 typing-test platform：适合想练英文输入速度、准确率、节奏和长期统计的人，但它不是以词义记忆或系统英语课程为第一目标。[GH:readme]"
     },
     {
       "slug": "ai-programs/ai-harness/ai-plugins/oh-my-claudecode",
@@ -2891,6 +2926,41 @@
       "summary": "Herdr 把 tmux/Zellij 式持久终端与 coding-agent 状态、session resume、worktree、socket automation 结合得很完整；适合人工同时管理多个 CLI agents 的 power user，但它创建仅约四个月、仍是 0.7.x，Windows 和 live handoff 仍在 beta/exp"
     },
     {
+      "slug": "education-resourses/english/keyboard/keybr-com",
+      "route": "/analysis/education-resourses/english/keyboard/keybr-com",
+      "title": "keybr.com",
+      "repo_url": "https://github.com/aradzie/keybr.com",
+      "category": "education-resourses/english/keyboard",
+      "directory": "education-resourses/english/keyboard",
+      "tags": [
+        "touch-typing",
+        "adaptive-learning",
+        "keyboard",
+        "english-learning",
+        "typescript",
+        "self-hosted"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 4665,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.6,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "keybr.com 是这组项目里最纯粹、算法目标最清晰的 touch-typing tutor：它不先教词义，而是根据每个键的实际表现生成下一步练习。[GH:readme]"
+    },
+    {
       "slug": "dev-tools/ops-monitoring/probes/komari",
       "route": "/analysis/dev-tools/ops-monitoring/probes/komari",
       "title": "Komari",
@@ -3546,6 +3616,41 @@
       "last_checked": "2026-06-19",
       "updated": "2026-06-19",
       "summary": "`ponytail` 适合已经被 AI coding agent 过度工程化伤过的人：它不是新 agent framework，而是一套可安装到 Claude Code、Codex、Copilot CLI、Cursor/Windsurf/Cline/OpenCode/OpenClaw 等宿主里的“少写代码”工程规训 [GH:readme] [Local:sk"
+    },
+    {
+      "slug": "education-resourses/english/keyboard/qwerty-learner",
+      "route": "/analysis/education-resourses/english/keyboard/qwerty-learner",
+      "title": "Qwerty Learner",
+      "repo_url": "https://github.com/RealKai42/qwerty-learner",
+      "category": "education-resourses/english/keyboard",
+      "directory": "education-resourses/english/keyboard",
+      "tags": [
+        "english-learning",
+        "typing-practice",
+        "vocabulary",
+        "dictation",
+        "react",
+        "self-hosted"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 22872,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.5,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "Qwerty Learner 适合想同时巩固英语词汇与英文键盘肌肉记忆的非母语键盘工作者，尤其适合考试词汇和程序员常用词练习；它不是以排行榜或纯字母自适应为核心的 typing benchmark。[GH:readme]"
     },
     {
       "slug": "ai-programs/agent-infrastructure/scrapling",
@@ -5157,6 +5262,41 @@
       "summary": "Tolaria 是用于管理 markdown knowledge bases 的桌面应用，定位接近本地笔记/知识库管理器。 [GH:readme]"
     },
     {
+      "slug": "education-resourses/english/keyboard/typewords",
+      "route": "/analysis/education-resourses/english/keyboard/typewords",
+      "title": "TypeWords",
+      "repo_url": "https://github.com/zyronon/TypeWords",
+      "category": "education-resourses/english/keyboard",
+      "directory": "education-resourses/english/keyboard",
+      "tags": [
+        "english-learning",
+        "typing-practice",
+        "vocabulary",
+        "article-memorization",
+        "nuxt",
+        "spaced-repetition"
+      ],
+      "primary_language": "Vue",
+      "stars": 9019,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 2,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 3,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "TypeWords 适合希望把“背英语单词/文章”和“正确敲出英语”放在同一条学习流中的用户；它比单纯 WPM test 更重记忆，比单词卡片工具更重实际输入。[GH:readme]"
+    },
+    {
       "slug": "ai-programs/agents/assistant-agents/ui-tars-desktop",
       "route": "/analysis/ai-programs/agents/assistant-agents/ui-tars-desktop",
       "title": "UI-TARS Desktop / Agent TARS",
@@ -5407,12 +5547,12 @@
       "summary": "AutoScraper 适合快速从结构简单、变化不大的网页里抽一类重复字段；不适合复杂站点、大规模爬取或反爬对抗。"
     },
     {
-      "slug": "backend/chhoto-url",
-      "route": "/analysis/backend/chhoto-url",
+      "slug": "cloud-server/URLshortener/chhoto-url",
+      "route": "/analysis/cloud-server/URLshortener/chhoto-url",
       "title": "Chhoto URL",
       "repo_url": "https://github.com/SinTan1729/chhoto-url",
-      "category": "backend",
-      "directory": "backend",
+      "category": "cloud-server/URLshortener",
+      "directory": "cloud-server/URLshortener",
       "tags": [
         "rust",
         "url-shortener",
@@ -6577,6 +6717,42 @@
       "last_checked": "2026-07-21",
       "updated": "2026-05-31",
       "summary": "`openai/skills` 值得收录，因为 OpenAI 也开始以官方仓库和 Codex 文档形式采用 Agent Skills 机制；但它当前更像年轻的官方 catalog 与示例集合，不是成熟、版本化、可无审查批量安装的工程依赖 [GH] [GH:readme] [Docs:openai-skills]。"
+    },
+    {
+      "slug": "education-resourses/english/keyboard/earthworm",
+      "route": "/analysis/education-resourses/english/keyboard/earthworm",
+      "title": "Earthworm",
+      "repo_url": "https://github.com/cuixueshe/earthworm",
+      "category": "education-resourses/english/keyboard",
+      "directory": "education-resourses/english/keyboard",
+      "tags": [
+        "english-learning",
+        "sentence-construction",
+        "typing-practice",
+        "course-platform",
+        "nestjs",
+        "vue",
+        "self-hosted"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 11005,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 2,
+        "performance": 2,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 2.7,
+      "last_checked": "2026-08-28",
+      "updated": "2026-08-28",
+      "summary": "Earthworm 更像“带键盘输入的句子构造英语课程平台”，适合研究英语句法/连词和课程型学习流，不应被误当作 Monkeytype 或 keybr.com 那类纯 typing tutor。[GH:readme]"
     },
     {
       "slug": "programming/data/vector-search/turbovec",

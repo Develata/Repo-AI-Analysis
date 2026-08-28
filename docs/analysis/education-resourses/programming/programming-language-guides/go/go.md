@@ -4,7 +4,7 @@ created: 2026-06-07
 updated: 2026-06-07
 type: repository-analysis
 repo_url: "https://github.com/golang/go"
-category: "programming/programming-education/programming-language-guides/go"
+category: "education-resourses/programming/programming-language-guides/go"
 tags: [go, golang, programming-language, compiler, standard-library]
 previous_repo: ""
 successor: ""
@@ -61,7 +61,7 @@ README 明确 GitHub 是 go.googlesource.com 的镜像。作为语言核心仓�
 
 ## 推荐度：5/5
 
-**角色定位**：适合对 `programming/programming-education/programming-language-guides/go` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
+**角色定位**：适合对 `education-resourses/programming/programming-language-guides/go` 方向已有明确需求、愿意按 README 与源码边界自行验证的人。
 
 推荐理由：
 - 能力面与主题匹配：语言、标准库、runtime、compiler、工具链和文档都在核心生态内；local scan 显示 15k+ files、5k+ test-ish 文件、66k+ commits。 [GH:readme]。
@@ -104,7 +104,7 @@ README 明确 GitHub 是 go.googlesource.com 的镜像。作为语言核心仓�
 | python/cpython | Python 官方解释器参照项 | CPython 偏动态语言生态核心；Go 偏静态编译与云原生服务 |
 | ziglang/zig | 系统语言参照项 | Zig 更年轻且底层控制更强；Go 更成熟稳定 |
 
-上述项目按 `programming/programming-education/programming-language-guides/go` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
+上述项目按 `education-resourses/programming/programming-language-guides/go` 或相邻生态做定位级对比，未在本条中按同一 10 维度框架重审；表格不构成优劣 benchmark。
 
 ---
 
@@ -166,4 +166,4 @@ GitHub security-advisories endpoint 本轮返回结果已记录，但“无 advi
 
 ## 学习价值
 
-学习价值主要在三个层面：一是理解 `programming/programming-education/programming-language-guides/go` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。
+学习价值主要在三个层面：一是理解 `education-resourses/programming/programming-language-guides/go` 这一类项目当前如何组织能力；二是用 README claim 与 local scan 对照，训练“文档声称 vs 可审计事实”的边界感；三是把它与同类项目做定位级 comparison，而不是被 star 数或品牌牵引 [GH] [GH:readme] [GH:local-scan]。

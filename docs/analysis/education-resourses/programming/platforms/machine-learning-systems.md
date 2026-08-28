@@ -4,7 +4,7 @@ created: 2026-07-11
 updated: 2026-07-11
 type: repository-analysis
 repo_url: "https://github.com/harvard-edge/cs249r_book"
-category: "programming/programming-education/platforms"
+category: "education-resourses/programming/platforms"
 tags: ["machine-learning-systems", "textbook", "curriculum", "tinytorch", "interactive-labs", "mlsysim", "hardware", "education"]
 previous_repo: ""
 successor: ""
@@ -50,7 +50,7 @@ sources:
   - "[GH:labs] labs/README.md inspected at local commit; 34 Marimo/Pyodide browser labs, Design Ledger and local pytest path; explicitly marked early release"
   - "[GH:mlsysim] mlsysim/README.md inspected at local commit; PyPI package, first-principles ML systems models, CLI/JSON/YAML, stated accuracy limits and Apache-2.0 code license; explicitly marked early release"
   - "[GH:kits] kits/README.md inspected at local commit; embedded ML labs for Arduino Nicla Vision, ESP32S3, Grove Vision AI V2 and Raspberry Pi; explicitly marked early release"
-  - "[Wiki:freecodecamp] github-repo-wiki/programming/programming-education/platforms/freecodecamp.md — local same-category analysis read 2026-07-11"
+  - "[Wiki:freecodecamp] github-repo-wiki/education-resourses/programming/platforms/freecodecamp.md — local same-category analysis read 2026-07-11"
   - "[GH:d2l] https://github.com/d2l-ai/d2l-en and repository API queried 2026-07-11; positioning-level comparison only"
 ---
 
@@ -66,7 +66,7 @@ sources:
 
 ## 总体评价
 
-`harvard-edge/cs249r_book` 已经不只是一本书。根目录把 textbook、TinyTorch、Co-Labs、Hardware Kits、MLSys·im、MLPerf EDU、StaffML/interview materials、instructor resources、slides 与统一网站组织在同一个 monorepo 中 [GH][GH:local-scan]。因此它属于 `programming/programming-education/platforms`：内容、交互实验、可执行软件、教师资源和发布平台共同构成课程系统，而不是一个单独 PDF。
+`harvard-edge/cs249r_book` 已经不只是一本书。根目录把 textbook、TinyTorch、Co-Labs、Hardware Kits、MLSys·im、MLPerf EDU、StaffML/interview materials、instructor resources、slides 与统一网站组织在同一个 monorepo 中 [GH][GH:local-scan]。因此它属于 `education-resourses/programming/platforms`：内容、交互实验、可执行软件、教师资源和发布平台共同构成课程系统，而不是一个单独 PDF。
 
 课程最大的优点是机制链条完整：书解释系统约束；34 个 browser labs 要求先预测再实验；TinyTorch 让学习者从 NumPy 实现 tensor、autograd、CNN、attention、quantization 与 benchmarking；MLSys·im 用 workload/hardware/topology/infrastructure model 做 first-principles design-space reasoning；Hardware Kits 再把内存、功耗和延迟约束落到真实设备 [GH:labs][GH:tinytorch][GH:mlsysim][GH:kits]。
 
@@ -135,7 +135,7 @@ sources:
 | freeCodeCamp | 大规模通用编程教育平台与职业路径 | freeCodeCamp 范围更广、入门与认证生态更成熟；本项目更窄但在 ML systems 深度、大学课程结构和定量机制上更强 [Wiki:freecodecamp] |
 
 
-这些比较限定在 `programming/programming-education/platforms/` 的课程/学习平台语境；除本地 freeCodeCamp 条目外，竞品未按同一 10 维度深审。
+这些比较限定在 `education-resourses/programming/platforms/` 的课程/学习平台语境；除本地 freeCodeCamp 条目外，竞品未按同一 10 维度深审。
 
 ---
 

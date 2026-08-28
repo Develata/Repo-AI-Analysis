@@ -4,7 +4,7 @@ created: 2026-08-15
 updated: 2026-08-15
 type: repository-analysis
 repo_url: "https://github.com/SinTan1729/chhoto-url"
-category: "backend"
+category: "cloud-server/URLshortener"
 tags:
   - rust
   - url-shortener
@@ -116,7 +116,7 @@ Chhoto URL 适合愿意自己维护 TLS、数据库备份和容器配置的技�
 | Shlink | 自托管 URL shortener | 同属 backend web-service 类定位参照；Chhoto 的已审源码重心是 Rust + SQLite 单节点服务，而不是在此表中声称功能或质量胜负。 |
 | Kutt | 现代 free URL shortener | 同属 URL-shortener 产品参照；本条目只比较对象范围，不把未重审的 Kutt 事实折算为分数。 |
 
-上述项目按 `backend/` 的 backend web-service 范围做定位级对比；Shlink 与 Kutt 是外部 GitHub 参照项，未按同一 10 维度框架深审。[GH:comparisons-2026-08-15]
+上述项目按 `cloud-server/URLshortener/` 的 URL-shortener web-service 范围做定位级对比；Shlink 与 Kutt 是外部 GitHub 参照项，未按同一 10 维度框架深审。[GH:comparisons-2026-08-15]
 
 ---
 
@@ -137,8 +137,8 @@ Chhoto URL 适合愿意自己维护 TLS、数据库备份和容器配置的技�
 | 最小 | 1 vCPU（启发式） | 128MiB（启发式） | 少量 SQLite + backups | 单实例、低流量、由 reverse proxy 终止 TLS；这些不是实测容量保证。 |
 | 推荐 | 1-2 vCPU（启发式） | 256MiB+（启发式） | 数据目录 + 独立备份空间 | 为 SQLite WAL、自动备份、访问峰值和容器运行留余量；应按真实流量压测。 |
 
-- **运行时**：Rust 1.96+（`Cargo.toml` 的 `rust-version`），Actix Web、SQLite/rusqlite；当前包版本 7.5.0。[Local:product-2026-08-15]
-- **操作系统**：官方镜像面向 Linux OCI；release workflow 构建 amd64、arm64、arm/v7、riscv64 的 musl targets。[GH:release-ci-2026-08-15]
+- **运行时**：Rust 2024-era toolchain（`Cargo.toml` 的版本约束需以当前 checkout 为准），Actix Web、SQLite/rusqlite；当前包版本 7.5.0。[Local:product-2026-08-15]
+- **操作系统**：官方镜像面向 Linux OCI；release workflow 展示 multi-architecture musl targets。[GH:release-ci-2026-08-15]
 - **Docker**：`true`。官方 README/docs、release workflow、Containerfile 和 Compose 文件均存在；但 `docker compose config` 已证明当前 sample 不是可直接运行的有效配置。[Local:container-2026-08-15][Local:compose-validation-2026-08-15]
 - **GPU**：不需要。
 - **外部依赖**：SQLite 数据目录、HTTPS reverse proxy（建议 Caddy/Nginx 等）和安全的 password/API key 管理；无 LLM 或外部数据库必需项。[Local:security-2026-08-15]
