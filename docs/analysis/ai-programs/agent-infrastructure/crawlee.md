@@ -1,7 +1,7 @@
 ---
 title: "Crawlee"
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-10
 type: repository-analysis
 repo_url: "https://github.com/apify/crawlee"
 category: "ai-programs/agent-infrastructure"
@@ -10,17 +10,17 @@ previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
 license: "Apache-2.0"
-stars: 24532
-forks: 1527
-last_checked: 2026-07-07
-last_verified: 2026-07-07
-evidence: "docs + GitHub API + local shallow scan; not deployed or benchmarked"
+stars: 25707
+forks: 1658
+last_checked: 2026-09-10
+last_verified: 2026-09-10
+evidence: "GitHub metadata/releases/advisories, README/manifests and official v4 migration guide static review 2026-09-10; stable v3 and prerelease v4 explicitly separated; no crawl/test/benchmark or migration execution"
 archived_reason: ""
 docker_support: false
 gpu_required: false
-estimated_cpu: "1-2 cores for small crawls; more for browser concurrency"
-estimated_memory: "512MB-4GB depending on crawler/browser count"
-estimated_storage: "hundreds of MB plus browser/cache/dataset storage"
+estimated_cpu: "HTTP mode lighter; browser concurrency dominates"
+estimated_memory: "crawler pools and browser workloads dominate; not measured"
+estimated_storage: "dependencies, browser binaries and crawler datasets/queues/cache"
 status: active
 ratings:
   capability: 5
@@ -29,125 +29,123 @@ ratings:
   code_quality: 4
   documentation: 4
   community: 4
-  maturity: 5
+  maturity: 4
   extensibility: 5
-  security: 4
+  security: 3
   recommendation: 4
-overall_score: 4.3
+overall_score: 4.1
 sources:
-  - "[GH] https://github.com/apify/crawlee"
-  - "[GH:api] GitHub REST snapshot 2026-07-07: stars=24532, forks=1527, REST open_issues_count=173, Search API open issues=130 and open PRs=38, language=TypeScript, license=Apache-2.0, latest_release=v3.17.0, releases_count observed as 134 in REST pagination check, created_at=2016-08-26, pushed_at=2026-07-06"
-  - "[GH:advisory] GitHub repository security-advisories API queried 2026-07-07; returned []"
-  - "[GH:local-scan] Local shallow clone /opt/data/tmp/repo-wiki-crawler-batch-2026-07-07/repos/crawlee at commit cd1d13606444eeba5b9621295b7c6aa6a16fee0f dated 2026-07-06; git ls-files=2745, test/spec-ish files=447, workflows=8, Docker-related files=62, docs/governance-ish files=227; checked README.md, package.json and CONTRIBUTING.md"
-  - "[Docs] https://crawlee.dev/ extracted 2026-07-07; describes JavaScript and Python crawling libraries, CLI creation flow, Playwright crawler example, blocking/proxy/browser handling"
+  - "[GH:api] https://api.github.com/repos/apify/crawlee checked 2026-09-10 UTC+8: canonical unchanged, archived=false, disabled=false, branch=master, pushed_at=2026-09-09T16:36:13Z, TypeScript, Apache-2.0, stars=25707, forks=1658, created_at=2016-08-26; separate search open issues=96, open PRs=44"
+  - "[GH:release] https://api.github.com/repos/apify/crawlee/releases/latest and releases?per_page=10 checked 2026-09-10: latest stable=v3.18.1 published 2026-08-12T15:39:11Z, prerelease=false; v4.0.0-rc.0 published 2026-08-13 is prerelease, not stable. v3.18.0 release notes add typed router/schema validation and Puppeteer25 support, fix storage directory escape (#3715), social-email ReDoS (#3845), redirect domain filters and queue issues; 3.18.1 fixes in-use storage purging (#3988), Cloudflare markup and maxCrawlDepth."
+  - "[GH:readme] https://github.com/apify/crawlee/blob/master/README.md inspected 2026-09-10 via contents API: HTTP/browser interface, persistent queues, pluggable storage, scaling, proxy/session/hooks, CLI and separate crawlee-python repository; README still says Node16+ and describes Dockerfiles rather than a verified framework-specific user image"
+  - "[GH:package] https://github.com/apify/crawlee/blob/v3.18.1/packages/core/package.json read via contents API 2026-09-10: version3.18.1, Node>=16.0.0; current master packages/core/package.json Node>=22.0.0. Master tree snapshot 00eac9563b9e11ee7fc0de9ed27739e77d0dd42b (3039 blob paths); root package includes vitest/e2e/typecheck/coverage tooling. No tests executed."
+  - "[Docs:v4] https://crawlee.dev/js/docs/next/upgrading/upgrading-to-v4 read 2026-09-10: native ESM, Node22+, TypeScript5.8+, changed storage/request/response interfaces, shared ConcurrencySystem, explicit collaborator disposal, transactional handler storage claims and native optional dependencies. This is next-version migration documentation, not proof v4 is stable or every documented behavior is in rc.0."
+  - "[GH:advisories] https://api.github.com/repos/apify/crawlee/security-advisories?per_page=100 checked 2026-09-10 returned []; no published repository GHSA found, separate from security-relevant fixes in release notes or dependency vulnerabilities"
+  - "[WikiLocal:comparison] Local crawl4ai/AutoScraper analyses consulted for Python LLM-output versus narrow extraction positioning, not an equal-depth competitor benchmark"
 ---
 
 # Crawlee
 
-> Apify 维护的 JS/TS 工业级 web scraping/browser automation 框架：功能完整、工程成熟，是十个 repo 里最接近“长期生产爬虫框架”的选择之一。
+> JS/TS 抓取框架，适合长期维护队列与浏览器工作负载；当前稳定版 3.18.1 与 v4 预发布必须分开选型。
 >
-> **状态**: `active` · **总分**: 4.3/5 · **推荐度**: 4/5
+> **状态**: `active` · **总分**: 4.1/5 · **推荐度**: 4/5
 
 ## 一句话总结
 
-Crawlee 适合 Node.js/TypeScript 团队构建长期维护的 crawler，而不是只做一次性网页转 Markdown 的轻脚本。
+Crawlee 适合需要 queue、retry、session、storage 和 browser orchestration 的 JS/TS 团队；新部署先明确选择稳定 v3 还是试验 v4，不要混用两代文档 [GH:release][Docs:v4]。
 
 ## 总体评价
 
-它覆盖 HTTP crawling、Cheerio/JSDOM/LinkeDOM、Playwright/Puppeteer、proxy/session、queue/storage、CLI 模板、Apify platform 部署等完整链路 [GH][Docs]。相比若干“AI ready”新项目，Crawlee 的优势是成熟工程和可扩展 crawler 架构；劣势是 Node/TS 生态与框架复杂度，对只会 Python 的用户不如 crawl4ai/Scrapling 顺手。
+它的价值在于组织长期爬虫工程，而非只把一个网页变成 Markdown。HTTP 和浏览器 crawler、存储、队列、路由和代理/session 都在框架主域 [GH:readme]。
+
+本轮有实质版本边界：stable 为 **3.18.1**，**4.0.0-rc.0** 仍是 prerelease；next migration 文档已描述 Node22/ESM 和多项接口变化 [GH:release][Docs:v4]。成熟度从 5 调为 4：框架有长期维护史，但处在明确的大版本迁移阶段。安全从 4 调为 3：公开 GHSA 为空不能掩盖 release 中目录越界/ReDoS 修复，也没有本轮依赖审计 [GH:release][GH:advisories]。
 
 ## 推荐度：4/5
 
-**目标角色**：需要长期运行、可扩展、可测试、可部署的爬虫工程团队。若技术栈接受 TypeScript，Crawlee 是强候选；若目标是“给 LLM 喂 Markdown”，Firecrawl/crawl4ai 可能更短路径。推荐度不给 5 的原因是：大规模反爬仍依赖代理、账号、指纹、浏览器与合规策略，框架本身不是万能解锁器。
+**目标角色**：需要长期运行、可测试、可扩展爬虫系统的 Node.js/TypeScript 团队。稳定 v3 仍是合理候选；v4 应在独立分支验证存储、队列、重试、超时和 session 行为，再迁移生产数据。
+
+框架不能保证绕过验证码、登录风控或平台限制。若只需小型 Python 抽取，Crawlee 的工程成本可能高于收益。
 
 ## 优势
 
-1. **能力完整**：HTTP 与 real browser crawler 都有，且与 Playwright/Puppeteer 同接口整合 [GH]。
-2. **工程成熟**：2016 年创建，release 历史长，本地浅扫显示文件/测试规模都已经是成熟 monorepo 级别 [GH:api][GH:local-scan]。
-3. **测试和 monorepo 结构扎实**：本地浅扫有 447 个 test/spec-ish 文件、8 个 workflows [GH:local-scan]。
-4. **可扩展性强**：request queue、storage、session/proxy、crawler 类型和模板体系让生产工程可组织。
+1. HTTP/浏览器、queue/storage、retry/session 在一个框架中组织 [GH:readme]。
+2. CLI 示例与可插拔生命周期有利于从原型演进到长期任务 [GH:readme]。
+3. v3 继续修复真实存储/队列行为，v4 有详细迁移说明 [GH:release][Docs:v4]。
+4. 项目分清 JS 仓库与独立 Crawlee Python，不必把跨语言产品混为一谈 [GH:readme]。
 
 ## 劣势
 
-1. **学习曲线高于“一键数据”工具**：需要理解 crawler lifecycle、request queue、browser crawler、storage 等概念。
-2. **Node/TS 技术栈约束**：Python 用户虽可看 Crawlee Python，但此 repo 的主体是 JS/TS。
-3. **browser 模式仍吃资源**：Playwright/Puppeteer 并发不是轻量 HTTP client。
-4. **open issues 不少**：130 open issues 说明工程面复杂，需要关注升级和兼容性 [GH:api]。
-
----
+1. 浏览器、代理和并发池仍有真实资源成本。
+2. v4 不是只改 package version；Node、ESM、storage 和 request interfaces 都有变化 [Docs:v4]。
+3. 对结果存储和队列生命周期的错误可能表现为丢失或重复，而不只是抓取失败 [GH:release]。
+4. 本轮无 crawl、迁移或 benchmark 执行，不能承诺吞吐和反爬成功率。
 
 ## 适合什么场景
 
-- 长期维护的网页采集系统。
-- 需要 request queue、重试、session/proxy、browser automation、dataset export 的生产爬虫。
-- JS/TS 团队或已经使用 Apify platform 的团队。
+- 长期维护的 JS/TS 网页数据流水线。
+- 需要 queue、retry、session/proxy、browser pool 和数据存储。
+- 对 v3→v4 生命周期/存储迁移有测试预算的团队。
 
 ## 不适合什么场景
 
-- 一次性抓几个页面、只想几行 Python。
-- 对安装体积和学习曲线极敏感的小脚本。
-- 期待框架自动绕过所有 CAPTCHA/账号风控的场景。
+- 一次性少量静态 HTML 抽取。
+- 不能升级 Node 却直接采用 v4/next 的环境。
+- 期待框架自动解决 CAPTCHA、认证、合规或账号风控。
 
 ## 与类似项目对比
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| Scrapy | Python 传统工业级爬虫框架 | Scrapy 更轻、更稳定、Python 生态；Crawlee 对 browser automation 与 JS/TS crawler 模板更现代。 |
-| crawl4ai | LLM-friendly Python crawler/scraper | crawl4ai 更贴近 Markdown/RAG 输出；Crawlee 更像通用生产 crawler 框架。 |
-| Scrapling | Python adaptive scraping + stealth | Scrapling 更强调 selector 适应和 anti-bot；Crawlee 更强调队列、存储、工程化 crawler 生命周期。 |
-| Firecrawl | API-first web data infrastructure | Firecrawl 把爬取封成服务/API；Crawlee 是开发者框架。 |
+| crawl4ai | Python/LLM-friendly 输出 | 更直接提供 Markdown/抽取结果；Crawlee 更偏完整 crawler 生命周期。 |
+| AutoScraper | 样例驱动字段抽取 | 范围更窄、依赖更轻；Crawlee 管理队列、存储及浏览器工作负载。 |
 
-上述项目按 `ai-programs/agent-infrastructure` web-data substrate 做定位级对比，未按同一轮 10 维度深审。
-
----
+仅比较中心用途，未把不同核验深度当作统一质量排名 [WikiLocal:comparison]。
 
 ## 它能做什么
 
-- 以 Cheerio/JSDOM/LinkeDOM 做轻量 HTML crawling。
-- 以 Playwright/Puppeteer 做真实浏览器 crawling。
-- 管理 request queue、dataset/storage、retry、session、proxy rotation。
-- 通过 CLI 生成模板项目，或部署到 Apify platform [GH][Docs]。
+能力 **5/5** 指 crawler framework 主域的广度：HTTP/browser、队列、存储、代理/session、hooks、路由和重试 [GH:readme]。v3.18.0 加入 typed router/schema validation 和 Puppeteer25 支持 [GH:release]。
+
+v4 next 文档描述 shared concurrency、事务化 handler storage 等新语义；这里是未来代际/开发文档证据，不当作当前 stable 功能，也不保证全部已经包含于 rc.0 [Docs:v4]。
 
 ## 运行环境与资源占用
 
-| 场景 | CPU | 内存 | 存储 | 说明 |
-|------|-----|------|------|------|
-| HTTP/HTML crawler | 1-2 cores | 512MB+ | 项目与数据集空间 | Cheerio 等轻量模式资源效率好。 |
-| Browser crawler | 2-8 cores | 2-8GB+ | 浏览器缓存和输出 | 并发 Playwright/Puppeteer 是主要成本。 |
+| 项目 | 判断 |
+|------|------|
+| v3.18.1 | core package 声明 Node>=16；这是包兼容下限，不是建议运行已失去安全支持的 Node |
+| v4/当前 master | Node>=22；next 文档要求 ESM、TypeScript5.8+ |
+| HTTP 模式 | 相比浏览器路径更轻；依赖具体 client/parser |
+| Browser 模式 | 并发、浏览器进程和页面主导内存/CPU |
+| Docker | 有构建模板，未验证框架自身官方用户 image，保持 false |
+| GPU/存储 | 基础任务不需 GPU；queue/dataset/browser cache 需预算 |
 
-- **运行时**：Node.js 16+；README 示例包含 `npm install crawlee playwright` [GH]。
-- **操作系统**：Node/Playwright 支持的主流平台。
-- **Docker**：仓库有 Dockerfile/template/e2e 文件，但本轮未验证官方用户向 Docker image；`docker_support` 设为 false。
-- **GPU**：不需要。
-- **外部依赖**：目标网站、可选代理、浏览器二进制、Apify platform 可选。
+资源效率 **4/5** 是模式分层和资源管理设计判断。v4 增加 native optional dependencies，不能盲目 `--omit=optional`；框架的并发控制也不能代替实际负载测量 [GH:package][Docs:v4]。
 
 ## 上手体验
 
-评分 4/5。CLI 模板和文档降低了入门成本；但要写好 crawler 仍需理解异步、队列、浏览器上下文、代理和数据存储，非零学习曲线。
+**4/5**。CLI create 和示例便于开始；写好长期 crawler 仍需理解 async handlers、重试和存储。README 的 Node16 口径与 master Node22 并存，按版本查 manifest 是必要步骤，不应宣称 README 已统一更新 [GH:readme][GH:package]。
 
 ## 代码质量
 
-评分 4/5。TypeScript monorepo、8 个 workflows、447 个 test/spec-ish 文件、vitest/e2e 脚本、贡献规范都说明工程质量较高 [GH:local-scan]。扣分来自规模大、依赖面广，本轮未实际跑 test/benchmark。
+**4/5**。TypeScript monorepo 有 vitest、e2e、typecheck 和 coverage tooling；本轮未运行它们 [GH:package]。v3 release 的存储清理、队列和域过滤修补是比文件数更有意义的质量信号；仍需回归验收，不给 5 [GH:release]。
 
 ## 可扩展性
 
-评分 5/5。crawler 类型、request handler、queue/storage、session/proxy、templates、Apify 平台衔接形成完整扩展面，是其核心强项。
+**5/5**。crawler 类型、handler、storage、queue、session/proxy 和 lifecycle hooks 形成完整框架扩展面 [GH:readme]。v4 的 interface 重整进一步强调自定义实现，但也意味着已有扩展不能默认源码兼容，必须按 migration contract 改造 [Docs:v4]。
 
 ## 文档质量
 
-评分 4/5。官网和 README 提供 quickstart、JS/Python 入口、crawler 示例与指南 [Docs]。对复杂生产问题仍需深入阅读多章节，不是一页说明能掌握。
+**4/5**。quickstart、框架指南和按使用面组织的 v4 migration 具体；扣分在于稳定/next 文档混用风险，以及 README 与 master manifest 的 Node 口径不一致 [GH:readme][GH:package][Docs:v4]。
 
 ## 社区与成熟度
 
-| 维度 | 评分 | 说明 |
-|------|------|------|
-| 社区活跃度 | 4/5 | 24k 星、1.5k fork、issue/PR 活跃，背后有 Apify 维护 [GH:api]。 |
-| 成熟度 | 5/5 | 2016 年创建、134 releases、长期维护，属于成熟 crawler framework [GH:api]。 |
+社区 **4/5**，成熟度 **4/5**。快照 25707 stars、1658 forks、96 issues、44 PRs；2016 年起的长期历史与稳定版持续修复支撑成熟框架判断 [GH:api][GH:release]。但新大版本仍预发布，不能以仓库年龄证明未来迁移无破坏。
 
 ## 安全与风险
 
-评分 4/5。GitHub repository advisories 本轮返回空，并不等于无风险；browser automation/proxy/目标站登录态天然有权限与合规风险 [GH:advisory]。相较 crawl4ai，这里未见项目级高危公告，但使用时仍应限制 cookie、账号权限、代理出口和数据落盘。
+安全 **3/5**。本轮 GHSA endpoint 空不等于没有安全相关缺陷：v3.18.0 release 列出 storage name 越出目录和 social-email 正则 ReDoS 修复 [GH:release][GH:advisories]。本轮未独立复现、未查全量依赖漏洞范围，不能把这些修补扩写成任意旧版都受影响的 CVE 结论。
+
+限制输出目录、URL/重定向范围、cookies、代理和远程浏览器权限；把网页数据当作不可信输入。登录态和反爬策略还涉及平台条款，不由框架代为授权。
 
 ## 学习价值
 
-很高。若想研究“生产级 crawler 框架应该如何抽象 request queue、autoscaling、browser pool、storage、session/proxy”，Crawlee 是比短平快 scraping 库更值得读的工程样本。
+值得学习 queue/storage/session 与资源控制的生命周期；v4 则适合研究接口迁移如何影响资源 ownership、超时和失败时的数据提交。最好在能观察重复/丢失的固定测试数据上验证，而非只看抓取任务返回成功。

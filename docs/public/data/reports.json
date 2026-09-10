@@ -351,40 +351,6 @@
       "summary": "Typst 是目前很值得数学写作者认真试用的 LaTeX 替代候选：0.15 已从高质量 PDF 排版继续推进到 MathML HTML 与实验性多文件 bundle，但它仍不是 TeX/期刊生态的完全替代。"
     },
     {
-      "slug": "ai-programs/agent-infrastructure/crawlee",
-      "route": "/analysis/ai-programs/agent-infrastructure/crawlee",
-      "title": "Crawlee",
-      "repo_url": "https://github.com/apify/crawlee",
-      "category": "ai-programs/agent-infrastructure",
-      "directory": "ai-programs/agent-infrastructure",
-      "tags": [
-        "web-scraping",
-        "crawler",
-        "browser-automation",
-        "typescript",
-        "nodejs"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 24532,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 5,
-        "extensibility": 5,
-        "security": 4,
-        "recommendation": 4
-      },
-      "overall_score": 4.3,
-      "last_checked": "2026-07-07",
-      "updated": "2026-07-07",
-      "summary": "Crawlee 适合 Node.js/TypeScript 团队构建长期维护的 crawler，而不是只做一次性网页转 Markdown 的轻脚本。"
-    },
-    {
       "slug": "education-resourses/programming/platforms/freecodecamp",
       "route": "/analysis/education-resourses/programming/platforms/freecodecamp",
       "title": "freeCodeCamp",
@@ -531,45 +497,6 @@
       "summary": "Ollama 是 Agent Infrastructure 中的 local model runtime layer：它主要给 agent 提供可本地运行、可 API 调用、兼容部分 OpenAI API 的模型后端。v0.30–v0.32 又增加 `ollama launch` 与内置 coding-agent，但这层交互入口并未把它变成多租户 agent"
     },
     {
-      "slug": "dev-tools/puppeteer",
-      "route": "/analysis/dev-tools/puppeteer",
-      "title": "Puppeteer",
-      "repo_url": "https://github.com/puppeteer/puppeteer",
-      "category": "dev-tools",
-      "directory": "dev-tools",
-      "tags": [
-        "browser-automation",
-        "headless-browser",
-        "chrome",
-        "firefox",
-        "cdp",
-        "webdriver-bidi",
-        "testing",
-        "web-scraping",
-        "typescript",
-        "nodejs"
-      ],
-      "primary_language": "TypeScript",
-      "stars": 95076,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 5,
-        "documentation": 5,
-        "community": 5,
-        "maturity": 4,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 4
-      },
-      "overall_score": 4.3,
-      "last_checked": "2026-06-19",
-      "updated": "2026-06-19",
-      "summary": "Puppeteer 是给 Node.js/TypeScript 程序控制 Chrome 或 Firefox 的高层 API：适合浏览器自动化、端到端测试、截图/PDF、抓取和 DevTools 协议研究；如果你需要的是“稳定控制真实浏览器”，它是长期维护且证据充分的优先评估对象之一 [Docs:home][GH:api][GH:release][GH:pac"
-    },
-    {
       "slug": "ai-programs/agent-infrastructure/scrapy",
       "route": "/analysis/ai-programs/agent-infrastructure/scrapy",
       "title": "Scrapy",
@@ -713,47 +640,6 @@
       "last_checked": "2026-07-17",
       "updated": "2026-07-17",
       "summary": "Docling 仍是 document-processing 板块中最值得先试的项目之一：格式覆盖广、文档强、MIT 许可清晰，并且直接面向 RAG/agentic AI 文档入口；但 2026-06 集中披露的 6 条 parser/download advisories 证明其不可信文档攻击面不能再按低风险处理。"
-    },
-    {
-      "slug": "dev-tools/gitea",
-      "route": "/analysis/dev-tools/gitea",
-      "title": "Gitea",
-      "repo_url": "https://github.com/go-gitea/gitea",
-      "category": "dev-tools",
-      "directory": "dev-tools",
-      "tags": [
-        "git",
-        "git-hosting",
-        "self-hosted",
-        "devops",
-        "code-review",
-        "issues",
-        "packages",
-        "ci-cd",
-        "github-actions-compatible",
-        "go",
-        "typescript",
-        "docker"
-      ],
-      "primary_language": "Go",
-      "stars": 56681,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 4,
-        "documentation": 5,
-        "community": 5,
-        "maturity": 4,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 4
-      },
-      "overall_score": 4.2,
-      "last_checked": "2026-07-05",
-      "updated": "2026-07-05",
-      "summary": "Gitea 是一个 Go 主体实现的 self-hosted GitHub-like development service：从 Git hosting、code review、issues/projects/wiki，到 package registry 和 GitHub Actions-compatible CI/CD 都在主路径里；如果 Develat"
     },
     {
       "slug": "ai-programs/agent-infrastructure/llama-cpp",
@@ -905,6 +791,40 @@
       "summary": "vLLM 是 Agent Infrastructure 中的 high-throughput model serving layer：它不直接编排 agent，而是为 agent、RAG、IDE assistant、batch inference 和 API products 提供可扩展的 OpenAI-compatible / multimodal / d"
     },
     {
+      "slug": "ai-programs/agent-infrastructure/crawlee",
+      "route": "/analysis/ai-programs/agent-infrastructure/crawlee",
+      "title": "Crawlee",
+      "repo_url": "https://github.com/apify/crawlee",
+      "category": "ai-programs/agent-infrastructure",
+      "directory": "ai-programs/agent-infrastructure",
+      "tags": [
+        "web-scraping",
+        "crawler",
+        "browser-automation",
+        "typescript",
+        "nodejs"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 25707,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 4,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 4,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 4.1,
+      "last_checked": "2026-09-10",
+      "updated": "2026-09-10",
+      "summary": "Crawlee 适合需要 queue、retry、session、storage 和 browser orchestration 的 JS/TS 团队；新部署先明确选择稳定 v3 还是试验 v4，不要混用两代文档 [GH:release][Docs:v4]。"
+    },
+    {
       "slug": "ai-programs/agent-frameworks/crewai",
       "route": "/analysis/ai-programs/agent-frameworks/crewai",
       "title": "CrewAI",
@@ -941,6 +861,43 @@
       "summary": "CrewAI 是 role-based multi-agent framework 的主线代表之一：它用 `Agents + Tasks + Crews` 表达“角色协作”，再用 `Flows` 给生产系统补上事件驱动、状态、路由与可控性 [GH:readme][Docs:concepts]。"
     },
     {
+      "slug": "dev-tools/gitea",
+      "route": "/analysis/dev-tools/gitea",
+      "title": "Gitea",
+      "repo_url": "https://github.com/go-gitea/gitea",
+      "category": "dev-tools",
+      "directory": "dev-tools",
+      "tags": [
+        "git",
+        "git-hosting",
+        "self-hosted",
+        "devops",
+        "packages",
+        "ci-cd",
+        "go",
+        "docker"
+      ],
+      "primary_language": "Go",
+      "stars": 57912,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 4,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 4,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 4.1,
+      "last_checked": "2026-09-10",
+      "updated": "2026-09-10",
+      "summary": "Gitea 适合愿意承担升级和备份责任的个人/小团队，统一管理 Git、PR、issues、packages 与 CI；它不是装好就能长期忽略的代码保险箱 [GH:source][GH:release]。"
+    },
+    {
       "slug": "math/machine-proving/lean4",
       "route": "/analysis/math/machine-proving/lean4",
       "title": "Lean4",
@@ -974,6 +931,42 @@
       "last_checked": "2026-07-18",
       "updated": "2026-05-21",
       "summary": "Lean4 是 mathlib4 之“器”：若 mathlib4 是形式化数学的图书馆，Lean4 就是定义“何为证明、何为程序、何为可检查对象”的语言与内核。"
+    },
+    {
+      "slug": "dev-tools/puppeteer",
+      "route": "/analysis/dev-tools/puppeteer",
+      "title": "Puppeteer",
+      "repo_url": "https://github.com/puppeteer/puppeteer",
+      "category": "dev-tools",
+      "directory": "dev-tools",
+      "tags": [
+        "browser-automation",
+        "chrome",
+        "firefox",
+        "cdp",
+        "webdriver-bidi",
+        "typescript",
+        "nodejs"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 95560,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 4,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 4,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 4.1,
+      "last_checked": "2026-09-10",
+      "updated": "2026-09-10",
+      "summary": "Puppeteer 适合 Node.js/TypeScript 开发者做真实浏览器自动化、截图/PDF 和页面调试；它是控制浏览器的库，不是隔离不可信自动化的安全沙箱 [GH:readme][GH:security]。"
     },
     {
       "slug": "ai-programs/computer-vision/supervision",
@@ -1994,7 +1987,7 @@
         "recommendation": 4
       },
       "overall_score": 3.8,
-      "last_checked": "2026-07-01",
+      "last_checked": "2026-09-10",
       "updated": "2026-07-01",
       "summary": "free-for-dev 是查找开发者免费层服务时非常有用的第一站；它适合发现和初筛，不适合作为计费、合规或安全决策的唯一事实来源。"
     },
@@ -2309,17 +2302,15 @@
       "tags": [
         "agent-infrastructure",
         "multi-agent",
-        "coding-agents",
         "terminal",
         "cli",
-        "orchestration",
         "hooks",
         "sqlite",
         "relay",
         "rust"
       ],
       "primary_language": "Rust",
-      "stars": 356,
+      "stars": 486,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -2334,9 +2325,9 @@
         "recommendation": 4
       },
       "overall_score": 3.7,
-      "last_checked": "2026-06-24",
-      "updated": "2026-06-24",
-      "summary": "hcom 适合多个 terminal agent 需要长期并发、彼此通信、观察、唤醒和管理生命周期的场景；如果只是 Claude/Hermes 调 Codex CLI 做一次 review 或 second opinion，skill + CLI 的单次主从调用更简单、更稳，也更符合最小复杂度原则。"
+      "last_checked": "2026-09-10",
+      "updated": "2026-09-10",
+      "summary": "hcom 适合高级个人开发者连接多个长期 agent session；采用应基于修复已知 hook-trust 问题的版本，并把 relay 当作高权限共享信任域，而非普通聊天通道 [GH:advisory][GH:readme]。"
     },
     {
       "slug": "ai-programs/agents/assistant-agents/hermes-agent",
@@ -3144,6 +3135,40 @@
       "summary": "OpenList 是一个面向个人和小团队的 self-hosted file listing / WebDAV / multi-storage gateway：它继承 AList 的多网盘聚合能力，并以 AGPL-3.0、社区维护、治理透明作为与原项目区分的核心叙事 [GH:readme]。"
     },
     {
+      "slug": "ai-programs/ai-harness/ai-plugins/ponytail",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/ponytail",
+      "title": "Ponytail",
+      "repo_url": "https://github.com/DietrichGebert/ponytail",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
+      "tags": [
+        "agent-skills",
+        "prompt-engineering",
+        "claude-code-plugin",
+        "codex-plugin",
+        "yagni"
+      ],
+      "primary_language": "JavaScript / Markdown / Python",
+      "stars": 133237,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 4,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 4
+      },
+      "overall_score": 3.6,
+      "last_checked": "2026-09-10",
+      "updated": "2026-09-10",
+      "summary": "Ponytail 适合想抑制 coding-agent 过度工程化的个人开发者和小团队；先试用规则、审查 hooks，再决定是否长期激活 [GH:readme]。"
+    },
+    {
       "slug": "games/game-content-platforms/romm",
       "route": "/analysis/games/game-content-platforms/romm",
       "title": "RomM",
@@ -3229,13 +3254,12 @@
         "web-data",
         "mcp",
         "cli",
-        "scraping",
         "social-media",
         "tool-router",
         "python"
       ],
       "primary_language": "Python",
-      "stars": 51965,
+      "stars": 79041,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -3250,9 +3274,9 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-07-07",
-      "updated": "2026-07-07",
-      "summary": "Agent Reach 很适合把个人 agent 环境快速补齐 web/social/video/GitHub/RSS 读取能力；但它的价值来自“聚合与路由不断变化的上游工具”，不是稳定官方 API，因此推荐为个人研究/信息获取 harness，不建议无隔离地接入生产账号或高价值平台。"
+      "last_checked": "2026-09-10",
+      "updated": "2026-09-10",
+      "summary": "Agent Reach 适合个人研究环境补齐网页、社媒、视频与 GitHub/RSS 工具入口；不要把安装/doctor 的成功等同所有平台真实可用，更不要默认授予账号和系统修改权限 [Docs:install][GH:diff]。"
     },
     {
       "slug": "ai-programs/agent-infrastructure/cal-diy",
@@ -3289,42 +3313,6 @@
       "last_checked": "2026-07-14",
       "updated": "2026-05-21",
       "summary": "cal.diy 适合需要自托管预约、可用性与 calendar integration 的个人或小团队；若把 agent autonomous scheduling 视为基础能力，它是一个强但偏重、且明确不推荐生产商用的 scheduling infrastructure 选项。"
-    },
-    {
-      "slug": "ai-programs/ai-harness/mcp/codebase-memory-mcp",
-      "route": "/analysis/ai-programs/ai-harness/mcp/codebase-memory-mcp",
-      "title": "codebase-memory-mcp",
-      "repo_url": "https://github.com/DeusData/codebase-memory-mcp",
-      "category": "ai-programs/ai-harness/mcp",
-      "directory": "ai-programs/ai-harness/mcp",
-      "tags": [
-        "mcp",
-        "code-intelligence",
-        "knowledge-graph",
-        "tree-sitter",
-        "c",
-        "coding-agents",
-        "local-first"
-      ],
-      "primary_language": "C",
-      "stars": 23343,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 3,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 2,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 3
-      },
-      "overall_score": 3.5,
-      "last_checked": "2026-07-01",
-      "updated": "2026-07-01",
-      "summary": "codebase-memory-mcp 是值得持续跟踪和局部试验的 code intelligence MCP：方向非常对，但项目年轻、claim 极强、权限面深，采用上应先审计和隔离 benchmark。"
     },
     {
       "slug": "dev-tools/apple-ecosystem/container",
@@ -3376,7 +3364,7 @@
         "browser-automation"
       ],
       "primary_language": "Python",
-      "stars": 71187,
+      "stars": 82046,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -3391,9 +3379,9 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-07-07",
-      "updated": "2026-07-07",
-      "summary": "crawl4ai 适合需要把网页快速转成 LLM-ready Markdown 的 Python/agent 开发者；若要自托管 API server，必须先按安全迁移文档加固。"
+      "last_checked": "2026-09-10",
+      "updated": "2026-09-10",
+      "summary": "crawl4ai 适合 Python/RAG 开发者在受控环境获取网页内容；处理不可信 PDF 或提供 Docker API 时，应优先核对 0.9.3 安全修复和部署边界，而不是仅满足旧版 0.9.0 迁移要求 [GH:changes][GH:advisories]。"
     },
     {
       "slug": "programming/security/curl-impersonate",
@@ -3580,42 +3568,6 @@
       "last_checked": "2026-07-23",
       "updated": "2026-07-23",
       "summary": "Obscura 是一个 Rust 写的 headless browser substrate：它试图在“普通 HTTP 抓取太弱”和“完整 Headless Chrome 太重”之间，给 agents / scraping workloads 提供 V8 JavaScript、DOM、CDP、MCP、Puppeteer/Playwright 兼容与低资源占用"
-    },
-    {
-      "slug": "ai-programs/ai-harness/ai-plugins/ponytail",
-      "route": "/analysis/ai-programs/ai-harness/ai-plugins/ponytail",
-      "title": "Ponytail",
-      "repo_url": "https://github.com/DietrichGebert/ponytail",
-      "category": "ai-programs/ai-harness/ai-plugins",
-      "directory": "ai-programs/ai-harness/ai-plugins",
-      "tags": [
-        "agent-skills",
-        "prompt-engineering",
-        "claude-code-plugin",
-        "cursor-rules",
-        "codex-plugin",
-        "yagni",
-        "developer-tools"
-      ],
-      "primary_language": "JavaScript / Markdown / Python",
-      "stars": 38817,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 3,
-        "documentation": 4,
-        "community": 4,
-        "maturity": 1,
-        "extensibility": 4,
-        "security": 3,
-        "recommendation": 4
-      },
-      "overall_score": 3.5,
-      "last_checked": "2026-06-19",
-      "updated": "2026-06-19",
-      "summary": "`ponytail` 适合已经被 AI coding agent 过度工程化伤过的人：它不是新 agent framework，而是一套可安装到 Claude Code、Codex、Copilot CLI、Cursor/Windsurf/Cline/OpenCode/OpenClaw 等宿主里的“少写代码”工程规训 [GH:readme] [Local:sk"
     },
     {
       "slug": "education-resourses/english/keyboard/qwerty-learner",
@@ -4461,6 +4413,42 @@
       "last_checked": "2026-07-21",
       "updated": "2026-07-21",
       "summary": "Career-Ops 已从“Markdown 求职模板”成长为有 CLI、ATS scanner、browser autofill、plugins、interview modes、experimental web UI 与 84 个 release objects 的 career workflow product；方法论和自动化边界很有价值，但两个月内从 "
+    },
+    {
+      "slug": "ai-programs/ai-harness/mcp/codebase-memory-mcp",
+      "route": "/analysis/ai-programs/ai-harness/mcp/codebase-memory-mcp",
+      "title": "codebase-memory-mcp",
+      "repo_url": "https://github.com/DeusData/codebase-memory-mcp",
+      "category": "ai-programs/ai-harness/mcp",
+      "directory": "ai-programs/ai-harness/mcp",
+      "tags": [
+        "mcp",
+        "code-intelligence",
+        "knowledge-graph",
+        "tree-sitter",
+        "c",
+        "coding-agents",
+        "local-first"
+      ],
+      "primary_language": "C",
+      "stars": 42775,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-09-10",
+      "updated": "2026-09-10",
+      "summary": "适合高级 coding-agent 用户在隔离仓库比较结构化代码探索的收益；优先验证图谱正确性、安装兼容与多会话生命周期，再讨论替代既有工具 [GH:readme][GH:regressions]。"
     },
     {
       "slug": "ai-programs/ai-harness/memory/cognee",
@@ -5542,7 +5530,7 @@
         "recommendation": 3
       },
       "overall_score": 3.1,
-      "last_checked": "2026-07-07",
+      "last_checked": "2026-09-10",
       "updated": "2026-07-07",
       "summary": "AutoScraper 适合快速从结构简单、变化不大的网页里抽一类重复字段；不适合复杂站点、大规模爬取或反爬对抗。"
     },

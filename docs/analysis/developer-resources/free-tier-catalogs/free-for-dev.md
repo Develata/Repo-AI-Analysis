@@ -12,7 +12,7 @@ primary_language: "HTML"
 license: "not specified / no LICENSE file found"
 stars: 127521
 forks: 13325
-last_checked: 2026-07-01
+last_checked: 2026-09-10
 last_verified: 2026-07-01
 evidence: "GitHub authenticated API + README/site extraction + CONTRIBUTING/CODE_OF_CONDUCT/PR template + local clone scan; non-software curated list, no independent verification of every listed free-tier service"
 archived_reason: ""

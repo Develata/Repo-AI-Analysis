@@ -1,26 +1,26 @@
 ---
 title: "Agent Reach"
 created: 2026-06-07
-updated: 2026-07-07
+updated: 2026-09-10
 type: repository-analysis
 repo_url: "https://github.com/Panniantong/Agent-Reach"
 category: "ai-programs/agent-infrastructure"
-tags: ["agent-infrastructure", "web-data", "mcp", "cli", "scraping", "social-media", "tool-router", "python"]
+tags: [agent-infrastructure, web-data, mcp, cli, social-media, tool-router, python]
 previous_repo: ""
 successor: ""
 primary_language: "Python"
 license: "MIT"
-stars: 51965
-forks: 4175
-last_checked: 2026-07-07
-last_verified: 2026-07-07
-evidence: "GitHub API + README/install/update docs + releases + community profile snapshot from prior check + shallow local scan + local pytest via uv; no authenticated platform smoke test and no live channel doctor run"
+stars: 79041
+forks: 6803
+last_checked: 2026-09-10
+last_verified: 2026-09-10
+evidence: "GitHub API/releases/advisories, README/install/update/manifest review and official compare diff against prior source revision 2026-09-10; no current install, doctor, authenticated channel smoke or test run; June release and September main distinguished"
 archived_reason: ""
 docker_support: false
 gpu_required: false
-estimated_cpu: "low for the agent-reach CLI itself; actual cost depends on upstream tools such as yt-dlp, OpenCLI/browser-backed channels, transcription and search backends"
-estimated_memory: "low for configuration/doctor/routing; browser/OpenCLI, downloads, transcription and large page/video processing can raise memory use"
-estimated_storage: "small Python package; ~/.agent-reach config/tokens/tool checkouts, caches, cookies and downloaded media are workload-dependent"
+estimated_cpu: "CLI overhead low; upstream browser/download/transcription tools dominate"
+estimated_memory: "backend and media workload dependent; unmeasured"
+estimated_storage: "Python package, private config/cookies, tool installs and media/cache"
 status: active
 ratings:
   capability: 4
@@ -35,153 +35,126 @@ ratings:
   recommendation: 3
 overall_score: 3.5
 sources:
-  - "[GH] https://github.com/Panniantong/Agent-Reach"
-  - "[GH:api] https://api.github.com/repos/Panniantong/Agent-Reach queried 2026-07-07; created_at=2026-02-24T02:10:24Z, pushed_at=2026-07-03T06:57:59Z, default_branch=main, stars=51965, forks=4175, subscribers=149, open_issues_count=136 (= issues + PRs), license=MIT, primary_language=Python, has_discussions=false, has_wiki=true, topics include agent-infrastructure, ai-agent, ai-search, automation, bilibili, claude-code, cli, cursor, free-api, llm-tools, mcp, python, reddit-scraper, twitter-scraper, web-scraper, xiaohongshu, youtube-transcript"
-  - "[GH:issues-prs] GitHub search API queried 2026-07-07; open issues=54, open PRs=82; sampled recent open issue #484 reports inability to connect to Twitter/LinkedIn/Reddit/Instagram, sampled open PR #483 fixes SKILL.md metadata for OpenCode compatibility, and #480 addresses Cloudflare block detection/fallback"
-  - "[GH:community] https://api.github.com/repos/Panniantong/Agent-Reach/community/profile queried 2026-06-18 and retained as prior snapshot in 2026-07-07 refresh after unauthenticated re-query was blocked; health_percentage=71; README, license, CONTRIBUTING present; Code of Conduct, issue template and PR template absent; documentation points to docs/"
-  - "[GH:advisories] https://api.github.com/repos/Panniantong/Agent-Reach/security-advisories?per_page=10 queried 2026-07-07; returned []"
-  - "[GH:releases] https://api.github.com/repos/Panniantong/Agent-Reach/releases?per_page=5 queried 2026-07-07; sampled releases v1.5.0 published 2026-06-11, v1.4.2 2026-06-10, v1.4.1 2026-06-10, v1.4.0 2026-03-31, v1.3.0 2026-03-04; no release assets in sampled releases"
-  - "[GH:release-1.5.0] v1.5.0 release notes inspected via GitHub API 2026-07-07; describes shift from tool collection to capability layer, multi-backend routing, real doctor checks, OpenCLI desktop backend, route changes for XHS/Reddit/Bilibili/Twitter, and install/update experience"
-  - "[GH:release-1.4.2] v1.4.2 release notes inspected via GitHub API 2026-07-07; removed Douyin/Weibo/WeChat channels because upstreams were unmaintained/unreliable or anti-bot blocked, added transcribe and doctor --json, and improved skill trigger descriptions"
-  - "[GH:release-1.4.1] v1.4.1 release notes inspected via GitHub API 2026-07-07; fixed source-install failure caused by duplicate wheel entries and added a wheel-build gate that builds/install-smokes the wheel in CI"
-  - "[GH:local-scan] local shallow clone /opt/data/tmp/repo_wiki_agent_reach_2026-07-07 at commit e825f6740d24c6c315c3b0dc41907e6c87ff39a5 dated 2026-07-03 inspected 2026-07-07; git ls-files=93, markdown/rst/adoc files=26, test/spec-ish paths=18, GitHub workflows=1; root files include README.md, SECURITY.md, CONTRIBUTING.md, LICENSE, CLAUDE.md, CHANGELOG.md, constraints.txt, llms.txt, pyproject.toml, test.sh; root dirs include agent_reach, config, docs, scripts, tests"
-  - "[GH:pyproject] pyproject.toml local scan 2026-07-07; package name=agent-reach, version=1.5.0, Python>=3.10, MIT, Development Status :: 4 - Beta; dependencies include requests, feedparser, python-dotenv, loguru, pyyaml, rich, yt-dlp; optional deps include playwright, browser-cookie3, mcp optional cli; dev deps include pytest, ruff, mypy"
-  - "[GH:ci] .github/workflows/pytest.yml local scan 2026-07-07; CI runs pytest on Python 3.10/3.11/3.12/3.13 and has a wheel-gate job that builds the wheel, checks no duplicate entries, verifies SKILL.md/guides/scripts/references are present, smoke-installs the wheel in a clean venv and runs agent-reach version"
-  - "[GH:security] SECURITY.md local scan 2026-07-07; supported version is latest; vulnerability reporting uses GitHub private security advisory; response timeline says acknowledgement within 48h, status update within 7 days, fix timeline within 14 days; scope includes auth bypass, RCE, path traversal/arbitrary file read, SSRF, injection and sensitive data exposure"
-  - "[Local:test] local command `uv run --extra dev pytest -q` in /opt/data/tmp/repo_wiki_agent_reach_2026-07-07 on 2026-07-07 installed project/dev deps into .venv and returned 196 passed in 8.71s. This exercises package tests, not live authenticated channel availability."
-  - "[Docs:install] https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/install.md extracted/local-scanned 2026-07-07; install guide states Agent Reach is selector/installer/health-checker/router, not wrapper; zero-config defaults include Web via Jina, YouTube, GitHub, RSS, Exa Search, V2EX, Bilibili basic; warns agents not to sudo without approval, not modify system files outside ~/.agent-reach, not install unlisted packages, and keep workspace clean"
-  - "[Docs:update] https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/update.md extracted/local-scanned 2026-07-07; update guide says to check version, upgrade package, refresh already-installed upstream tools, not uninstall old tools automatically, run agent-reach version and doctor, and report channel/backend status and required human actions"
-  - "[GH:readme] README.md local/web scan 2026-07-07; README positions Agent Reach as capability layer that selects, installs, checks and routes upstream tools rather than wrapping them; README says compatible with Claude Code, OpenClaw, Cursor, Windsurf and any command-running agent; supported table includes web pages, YouTube, RSS, Exa search, GitHub, Twitter/X, Bilibili, Reddit, Facebook, Instagram, XiaoHongShu, LinkedIn, V2EX, Xueqiu, Xiaoyuzhou; README recommends local browser login/OpenCLI or Cookie-Editor-style handling for cookie/login-based platforms, warns to use dedicated small accounts because cookie automation can trigger bans, and claims tools/APIs are free while noting server proxies may cost money; default install registers SKILL.md for agents"
+  - "[GH:api] https://api.github.com/repos/Panniantong/Agent-Reach checked 2026-09-10 UTC+8: canonical unchanged, archived=false, disabled=false, main, pushed_at=2026-09-01T08:09:58Z, Python, MIT, stars=79041, forks=6803, created_at=2026-02-24; separate GitHub search open issues=76, open PRs=54"
+  - "[GH:releases] https://api.github.com/repos/Panniantong/Agent-Reach/releases?per_page=10 checked 2026-09-10: latest remains v1.5.0 published 2026-06-11T12:29:59Z, multi-backend capability layer; v1.4.2 removed Douyin/Weibo/WeChat channels; v1.4.1 repaired wheel packaging. Unchanged release number does not imply unchanged default branch."
+  - "[GH:main] https://github.com/Panniantong/Agent-Reach/blob/main/README.md and pyproject.toml read via contents API 2026-09-10; tree snapshot da5044d26fc6adddb6554d5679c94ac22e76e428, 120 blob paths; manifest still version1.5.0/Python>=3.10/Beta, now yt-dlp default extra >=2026.07.04; web/social/video/GitHub/RSS tool selection and routing. README's zero-config/free claims not independently verified."
+  - "[Docs:install] https://github.com/Panniantong/Agent-Reach/blob/main/docs/install.md inspected 2026-09-10: install --env=auto now check-only by default; --system explicitly permits external/system installs and configuration writes after approval; --safe compatibility alias; --dry-run preview. Twitter Cookie-Editor input, platform-scoped browser imports for supported channels, XHS existing user-controlled Chrome session or manual Cookie-Editor/MCP path; no automated XHS login/browser-cookie reading. LinkedIn guide switches to mcp-server-linkedin via uvx/stdio."
+  - "[GH:diff] https://api.github.com/repos/Panniantong/Agent-Reach/compare/e825f6740d24c6c315c3b0dc41907e6c87ff39a5...main checked 2026-09-10, 69 commits in comparison: agent_reach/backends/opencli.py uses loopback /status rather than mutating CLI daemon-status command, ready requires live extension connection; channels/_opencli_site.py/bilibili.py no longer mark platform usable from bridge alone; github.py inspects executable/config rather than gh auth status; exa_search.py configuration presence returns warn not usable. Includes URL/domain matching, private-file writes, scoped credentials and Windows CI additions. Static diff only, no dynamic validation."
+  - "[Docs:update] https://github.com/Panniantong/Agent-Reach/blob/main/docs/update.md read 2026-09-10: update package and selected existing upstream tools, offer OpenCLI rather than silently install, do not automatically uninstall old tools, report pending human actions; explicit --system and manual XHS authentication boundaries"
+  - "[GH:advisories] https://api.github.com/repos/Panniantong/Agent-Reach/security-advisories?per_page=100 checked 2026-09-10 returned []; only no published repository GHSA found; SECURITY.md and CONTRIBUTING.md retrieved for current governance review"
+  - "[Local:historical-test] Prior wiki record 2026-07-07 at e825f6740d24c6c315c3b0dc41907e6c87ff39a5: uv run --extra dev pytest -q returned 196 passed in 8.71s. This is old package-test evidence, not current main or live-channel validation."
+  - "[WikiLocal:comparison] Current local crawl4ai/Crawlee analyses consulted for tool-router versus crawler-engine positioning; comparison not an equal-depth benchmark"
 ---
 
 # Agent Reach
 
-> 给 AI/coding agent 配一层“互联网能力路由器”：负责选择、安装、体检和路由 Jina、yt-dlp、gh、Exa/MCP、OpenCLI、twitter-cli、bili-cli、rdt-cli 等上游工具，让 agent 能读网页、搜社媒、看视频、读 GitHub/RSS；实用性强，但账号/cookie、上游反爬和自动安装边界必须谨慎。
+> 为 agent 选择、配置和诊断互联网工具；当前 main 默认 install 只检查，doctor 也更谨慎地区分“配置存在”和“平台可用”。
 >
 > **状态**: `active` · **总分**: 3.5/5 · **推荐度**: 3/5
 
 ## 一句话总结
 
-Agent Reach 很适合把个人 agent 环境快速补齐 web/social/video/GitHub/RSS 读取能力；但它的价值来自“聚合与路由不断变化的上游工具”，不是稳定官方 API，因此推荐为个人研究/信息获取 harness，不建议无隔离地接入生产账号或高价值平台。
+Agent Reach 适合个人研究环境补齐网页、社媒、视频与 GitHub/RSS 工具入口；不要把安装/doctor 的成功等同所有平台真实可用，更不要默认授予账号和系统修改权限 [Docs:install][GH:diff]。
 
 ## 总体评价
 
-Agent Reach 的定位比普通 scraper 更高一层。README 和安装文档都强调：它是 selector / installer / health checker / router，不是每个平台的 wrapper；安装后 agent 主要直接调用上游工具，例如 Jina Reader、yt-dlp、GitHub CLI、Exa/MCP、OpenCLI、twitter-cli、bili-cli、rdt-cli 等 [Docs:install][GH:readme]。这很符合当前 AI agent 的现实痛点：agent 能写代码，却常常缺少可维护的互联网读取/search/channel routing 能力。分类上仍放在 `ai-programs/agent-infrastructure`，因为它的中心对象是安装、诊断、路由和配置多种 agent-facing internet tools，而不是单一 MCP server、skill pack、memory 或 knowledge-base harness。
+它仍是 selector/installer/health-checker/router，而不是每个平台的完整实现。核心价值在管理上游工具和配置的复杂性，不在承诺平台限制永远消失 [GH:main]。
 
-从 2026-07 的当前状态看，它已经比 6 月初那版更成熟：GitHub API 显示 stars=51965、forks=4175，v1.5.0 将项目叙事升级为“能力层”，引入多后端路由、真 doctor、OpenCLI 桌面后端；v1.4.1 增加 wheel-build gate；本地运行 `uv run --extra dev pytest -q` 得到 196 passed [GH:api][GH:release-1.5.0][GH:release-1.4.1][Local:test]。
-
-但它仍然是一个年轻、高变动、高外部依赖项目。v1.4.2 明确移除了抖音、微博、微信公众号，因为上游停更、不可用或反爬增强；v1.5.0 又调整了小红书、Reddit、B站、Twitter 的后端顺序 [GH:release-1.4.2][GH:release-1.5.0]。这不是缺点本身，而是说明这类工具的真实边界：平台会封、CLI 会停更、cookie 会过期、浏览器/代理/登录态会变。Agent Reach 的核心价值是把这种变化集中治理，而不是让变化消失。
+本轮最重要的反例是：**latest release 仍为 v1.5.0，不代表没有实质变化。** 当前 main 的 install 默认从自动安装改成只检查，系统改动要求 `--system`；doctor 不再把存在配置或浏览器桥接直接宣称为实际平台可用 [GH:releases][Docs:install][GH:diff]。这些会改变授权与验收方式，不能以版本号不动判 no_change。
 
 ## 推荐度：3/5
 
-对目标用户——个人 agent 用户、Claude Code / Cursor / OpenClaw 等命令行 agent 环境、信息检索/视频摘要/社媒调研/开源 repo 阅读 workflow——推荐度是 3/5。
+**目标角色**：愿意管理上游工具、低价值账号、浏览器会话与平台波动的个人 agent 用户。建议先在隔离环境检查依赖，明确批准具体系统修改，再对真正要用的渠道做小规模实测。
 
-给 3 的理由：它很有用，且本地测试和 CI 信号比早期版本强；但是它处理的是高权限、高波动的互联网渠道。Twitter/X、小红书、Reddit 等平台需要 cookie 或登录态，OpenCLI 复用浏览器会话，Exa/MCP、mcporter、gh、yt-dlp 等上游工具也会改变行为 [GH:readme][Docs:install][Docs:update]。这类能力应放在个人隔离环境、低风险账号和可回滚的 agent sandbox 里试用。
-
-不提高到 4：本轮没有运行 `agent-reach doctor`，也没有配置任何真实平台账号、cookie、OpenCLI 扩展或 MCP search 后端；因此不能独立确认每个 channel 的当前可用性。对 Develata，可收录、可观察、可按需试，但不要当成稳定基础设施默认安装到所有环境。
+保留 3/5：默认安全化值得肯定，但本轮没有运行 doctor 或真实渠道，不因文档承诺减少就宣称运行已可靠。main 与六月 release 的代码也应分别锁定，不能仅凭 `version=1.5.0` 判断安装到的是哪一套行为 [GH:main]。
 
 ## 优势
 
-1. **问题定义准确**：把“agent 缺互联网读取/search 能力”拆成安装、诊断、路由和技能提示，而不是只写一个单平台 scraper [GH:readme][Docs:install]。
-2. **多后端路由思路务实**：v1.5.0 明确每个平台有首选/备选后端，doctor 会报告 active_backend；这比硬绑定一个随时失效的上游更可靠 [GH:release-1.5.0]。
-3. **安全边界开始显式化**：install guide 要求不经用户批准不 sudo、不改 workspace、不安装未列包；SECURITY.md 给出漏洞报告入口和响应时间 [Docs:install][GH:security]。
-4. **工程质量信号提升**：Python 3.10-3.13 CI、wheel gate、clean venv smoke install、196 个本地 pytest 通过，说明项目已经补过一次 packaging 事故后的结构性防线 [GH:ci][GH:release-1.4.1][Local:test]。
-5. **对中文/海外平台覆盖都强**：README 支持表覆盖 YouTube、GitHub、RSS、Exa search、Twitter/X、B站、小红书、Reddit、Facebook、Instagram、LinkedIn、V2EX、雪球、小宇宙等 [GH:readme]。
+1. 把工具选择、安装、状态检查和路由集中管理，减少逐个平台重复配置 [GH:main]。
+2. 默认检查与显式 `--system` 将系统改动变成可见授权点 [Docs:install]。
+3. doctor 逐步区分可执行、配置存在、桥接连接与实际渠道验证，减少误报全绿 [GH:diff]。
+4. 安装/更新文档对账号、Cookie 和上游共存有具体约束 [Docs:install][Docs:update]。
 
 ## 劣势
 
-1. **成熟度仍低**：created_at=2026-02-24，到本轮检查只有约 4.5 个月；release 很频繁，但这也说明渠道和上游仍在快速变化 [GH:api][GH:releases]。
-2. **平台可用性高度外部化**：很多能力依赖上游 CLI、浏览器登录态、cookie、代理、反爬策略、MCP 配置和第三方服务；项目本身不能保证平台长期可用 [GH:release-1.4.2][GH:readme]。
-3. **安全风险天然高**：cookie/token、本地技能目录、MCP config、GitHub CLI、OpenCLI/browser session、下载/转写工具都可能扩大 agent 权限面 [Docs:install][Docs:update][GH:security]。
-4. **官方 API/SLA 不存在**：README 强调免费/零 API 费，但这也意味着不少能力依赖非官方或易变路径，不适合企业稳定 workflow [GH:readme]。
-5. **本轮未做真实 channel smoke test**：pytest 只能证明包内单元测试/契约测试通过，不能证明 Twitter/XHS/Reddit/B站/Facebook/Instagram 等真实平台当下可用；近期 issue 也能看到用户报告部分社媒渠道连接失败 [Local:test][GH:issues-prs]。
+1. 平台可用性仍依赖 CLI、登录态、代理、反爬与外部服务。
+2. 一个包的版本号不能完整表达 main 配置/安全行为的变化 [GH:main][GH:releases]。
+3. README 的“一键全网/完全免费”叙事比真实渠道验收条件更宽 [GH:main]。
+4. Cookie、MCP 配置、下载与转写程序仍有高权限及供应链风险。
 
 ## 适合什么场景
 
-1. **个人 AI research agent**：网页、YouTube、RSS、GitHub、V2EX、B站基础等低风险读取能力可以作为 agent 信息入口。
-2. **临时调研/舆情/开源项目阅读**：需要让 agent 快速搜索、读取和总结多平台内容，而不是手动给每个平台配工具。
-3. **OpenClaw / Claude Code / Cursor 环境的能力 bootstrap**：把安装说明交给 agent，让它按 `docs/install.md` 建立基础工具链 [Docs:install]。
-4. **工具路由设计学习**：可以观察多后端、doctor、safe/dry-run、skill auto-install、MCP config 这类 agent harness 设计。
-5. **低价值账号、隔离环境里的 cookie/login-based 平台试验**：如小红书/Reddit/Twitter/Facebook/Instagram 搜索，但应使用可丢弃账号和明确隔离。
+- 隔离个人研究环境的 web/social/video 工具配置和诊断。
+- 需要跨多个渠道，但能接受逐项配置和失败报告的信息工作流。
+- 学习只读 doctor、显式系统授权和真实状态分层设计。
 
 ## 不适合什么场景
 
-1. **生产账号和高价值后台**：不要把主力 Twitter/GitHub/LinkedIn 等账号 cookie 交给不受控 agent 环境。
-2. **企业级稳定数据 pipeline**：上游平台和非官方 CLI 的变动频率太高，难以承诺 SLA。
-3. **需要法律/合规确定性的采集**：平台 ToS、反爬和数据使用边界必须另审，Agent Reach 本身不解决合规问题。
-4. **无 sandbox 的自动执行环境**：它的安装/更新涉及 pip/pipx/npm/mcporter/gh/OpenCLI 等工具，必须有权限边界。
-5. **不愿维护 cookie/代理/浏览器扩展的人**：对部分平台，human-in-the-loop 仍不可避免 [Docs:install][Docs:update]。
+- 生产主账号、支付或管理后台的无人值守自动化。
+- 要求稳定数据 SLA 或把第三方平台条款视为自动获得授权。
+- 不愿维护 Cookie、代理、浏览器扩展与上游版本的用户。
 
 ## 与类似项目对比
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| Firecrawl | Web crawling / extraction API or self-hosted service | Firecrawl 更偏通用网页抓取与结构化抽取；Agent Reach 更偏 agent 本地能力层和多平台 CLI 路由。 |
-| browser-use / BrowserAct | 浏览器自动化/网页操作 agent substrate | 浏览器自动化能“操作网页”；Agent Reach 主要解决“读/search/安装上游工具”，README 也把操作网页视为相邻能力 [GH:readme]。 |
-| github-mcp-server | GitHub MCP server | github-mcp-server 深做 GitHub；Agent Reach 覆盖 GitHub 之外的社媒、视频、RSS、网页和搜索。 |
-| mcporter / MCP search setups | MCP 工具安装与配置 | Agent Reach 会使用/配置这类工具，但其主对象是跨平台互联网能力路由，而不是单个 MCP server。 |
-| 单平台 CLI 如 twitter-cli / bili-cli / rdt-cli | 单渠道读取工具 | Agent Reach 的价值是选择、安装、体检和路由这些上游 CLI，而不是替代所有单平台工具实现。 |
+| crawl4ai | Python 网页抓取/LLM 输出 | 提供抓取引擎；Agent Reach 更偏选择和管理多个上游工具。 |
+| Crawlee | JS/TS crawler framework | 管理 crawler 生命周期与数据；Agent Reach 管理跨平台能力入口。 |
 
-上述对比是定位级比较，未对竞品按同一 10 维度框架重审。
+仅比较中心对象，不以本轮不同证据深度判断谁“更可靠” [WikiLocal:comparison]。
 
 ## 它能做什么
 
-Agent Reach 能安装和维护一个面向 agent 的互联网读取工具层。默认基础渠道包括 Web via Jina、YouTube、GitHub、RSS、Exa Search、V2EX、Bilibili basic；可选渠道包括 OpenCLI、Twitter/X、小红书、Reddit、Facebook、Instagram、B站完整版、LinkedIn、雪球、小宇宙等 [Docs:install][GH:readme]。
+能力 **4/5**。文档覆盖网页、YouTube、RSS、GitHub、搜索及多个社媒渠道的工具入口；实际操作主要由上游 CLI/MCP 完成 [GH:main]。
 
-核心动作包括：
+当前 main 安装模式应读作：
+- `agent-reach install --env=auto`：只读检查。
+- `--system`：显式批准外部/系统安装与配置写入后使用。
+- `--safe`：兼容旧安全参数，保持检查模式。
+- `--dry-run`：预览系统模式将做什么 [Docs:install]。
 
-- `agent-reach install --env=auto` 安装基础能力；
-- `--safe` 只检查、不自动安装系统包；
-- `--dry-run` 预览变更；
-- `agent-reach doctor` 体检 channel；
-- `doctor --json` 输出 machine-readable channel/backend 状态；
-- `agent-reach uninstall` 清理 `~/.agent-reach/`、tokens/cookies、skill files、MCP config；
-- update guide 中刷新已安装上游工具，但明确不要自动卸载旧工具 [Docs:install][Docs:update]。
+doctor 的 `warn`/未验证是正常诚实状态，不应强行改成 ok。仅连接 OpenCLI bridge 不证明某个平台登录态和命令已验证 [GH:diff]。
 
 ## 运行环境与资源占用
 
-Agent Reach 自身是 Python CLI，小型包，资源消耗低；`pyproject.toml` 要求 Python >=3.10，依赖 requests、feedparser、python-dotenv、loguru、pyyaml、rich、yt-dlp，optional deps 包括 Playwright、browser-cookie3、mcp optional cli [GH:pyproject]。
+| 项目 | 判断 |
+|------|------|
+| 运行时 | Python>=3.10；manifest 仍为1.5.0/Beta |
+| 主要依赖 | requests/feedparser/PyYAML/rich/yt-dlp，额外 browser/MCP/cookie 功能按需 |
+| CPU/内存 | 上游浏览器、视频/转写与网络任务主导 |
+| 存储 | 包、工具、配置、Cookie 和媒体/cache |
+| Docker/GPU | 未验证本项目官方用户向 Docker image；基础配置/诊断不要求 GPU |
 
-真实资源占用由上游决定：YouTube/yt-dlp 可能下载字幕或媒体，OpenCLI 复用浏览器，音频转写可能使用外部转写后端，MCP/Exa/GitHub/Reddit/Twitter/B站等工具各有网络和缓存成本 [GH:readme][Docs:install][Docs:update]。
-
-本项目没有官方 Docker 主路径；frontmatter `docker_support=false` 表示没有把 Docker 作为官方用户安装/运行入口。本轮也未运行真实 channel doctor，因此不报告平台成功率。
+资源效率 **3/5**：本体不重，但它管理的能力层无法用单个 CLI 内存概括；当前 yt-dlp 依赖带 default extra，安装足迹也随上游变化 [GH:main]。
 
 ## 上手体验
 
-上手体验给 4。README 的主路径非常面向 agent：用户复制一句“帮我安装 Agent Reach: docs/install.md”给 agent，agent 按指南安装；也提供 safe mode、dry-run、pipx/venv、Windows Python alias、可选渠道菜单和 doctor [Docs:install][GH:readme]。
-
-扣分点是它仍依赖 agent 执行 shell，并且有些步骤只能人来做，例如 Chrome 扩展点击、Cookie-Editor 导出、登录态配置、服务器代理选择等 [Docs:install][Docs:update]。因此它降低了配置成本，但不是零人工成本。
+**4/5**。安装/更新文档面向 agent，有模式、配置和人工步骤说明；默认只检查降低初次误改系统的风险 [Docs:install]。但安全默认不是“一键已装全”，Cookie、浏览器扩展及真实渠道操作仍需用户参与。
 
 ## 代码质量
 
-代码质量给 4。可见工程信号包括：清晰的 Python package、`agent_reach/channels/` 每个平台单文件、`doctor.py`、`probe.py`、`integrations/mcp_server.py`、`skill/`、`guides/`；CI 覆盖 Python 3.10-3.13；wheel gate 防止打包文件缺失/重复；本地 dev extra 下 196 个 pytest 通过 [GH:local-scan][GH:ci][Local:test]。
-
-不直接给 5：项目非常年轻，且 v1.4.1 release 说明刚经历过源码安装/wheel 重复打包事故；这次已通过 CI gate 修复，但说明 packaging 和上游集成仍在快速演化 [GH:release-1.4.1]。
+**4/5**。channels/backends/probe 与配置安全 helper 分层可见；compare diff 包括 Windows CI、严格域名匹配、私有文件原子写入及只读诊断改造 [GH:diff]。旧 196 tests 通过只保留为历史，当前这些改造未在本轮运行 [Local:historical-test]，不据此宣称无副作用或无漏洞。
 
 ## 可扩展性
 
-可扩展性给 4。设计上每个平台是 channel/backends，`CLAUDE.md` 记录 channel contract 要实现 `can_handle(url)`, `read(url)`, `search(query)`, `check()`；README 和 release notes 也强调多后端有序列表和 active_backend [GH:local-scan][GH:release-1.5.0]。这对新增平台、替换失效后端和 agent skill 集成都很有利。
-
-扣分点是 extensibility 很依赖外部工具生态，新增平台往往不是写一段纯代码，而是处理上游 CLI、登录态、cookie、代理、反爬和平台策略变化。
+**4/5**。channel/backends 与指导文档能替换失效上游，但新增平台真正困难往往在账号、Cookie、反爬和真实状态检查，而非多写一个 adapter [GH:main][GH:diff]。
 
 ## 文档质量
 
-文档质量给 4。README、install/update docs、SECURITY、CONTRIBUTING、CHANGELOG、llms.txt、多语言 README 和 packaged guides 都存在；安装文档还明确安全边界、目录规则、safe/dry-run、optional channel 询问和 doctor 修复路径 [GH:local-scan][Docs:install][Docs:update][GH:security]。
-
-不足是文档本身也承载了大量“当前推荐路线”，而这些路线会随上游变化快速变动。对用户而言，必须经常更新并跑 `doctor`，不能只看某一版 README 作为长期事实。
+**4/5**。install/update 对默认检查、`--system`、Cookie 范围与人工操作较具体 [Docs:install][Docs:update]。不足是 README 的强可用性营销与 doctor 的保守状态之间仍有张力，采用时以具体文档、代码和真实命令结果为准。
 
 ## 社区与成熟度
 
-社区给 4，成熟度给 2。社区可见度非常高：stars=51965、forks=4175，短期增长强；GitHub community health=71，README、CONTRIBUTING、SECURITY、license 都有 [GH:api][GH:community][GH:security]。但没有 Discussions，Code of Conduct、issue template、PR template 缺失，open issues=54、open PRs=82 对一个 4.5 个月项目也不算轻 [GH:issues-prs][GH:community]。
-
-成熟度保守给 2，因为项目对象是“跟随互联网平台变化的 agent capability layer”。v1.4.2 删除若干渠道，v1.5.0 又切换后端路线，这说明项目响应快，但也说明稳定边界仍在形成 [GH:release-1.4.2][GH:release-1.5.0]。
+社区 **4/5**，成熟度 **2/5**。2026-02 创建，快照 79041 stars、6803 forks、76 issues、54 PRs；本轮比较显示 release 不动而 main 有大量行为变更 [GH:api][GH:diff]。持续维护是正面信号，但账号/平台依赖和变化的授权语义仍不足以支持长期稳定承诺。
 
 ## 安全与风险
 
-安全给 3。正面信号是：SECURITY.md 存在并给出 private advisory 报告路径和响应时间；install guide 要求不经用户明确批准不 sudo、不改 workspace、不安装未列包；safe/dry-run/uninstall/update 边界也写得比较清楚 [GH:security][Docs:install][Docs:update]。
+安全 **3/5**。本轮没在项目 GHSA endpoint 查到公开公告，不代表工具、依赖或所调用平台安全 [GH:advisories]。
 
-风险在于能力面本身：cookie、token、browser session、MCP config、agent skill files、GitHub CLI、OpenCLI、下载/转写工具都可能被 agent 调用。如果 prompt injection 或恶意网页诱导 agent 使用这些能力，风险远高于普通 Python CLI。GitHub Security Advisories 返回空只表示本次未查到 published GHSA，不等于项目或依赖安全 [GH:advisories]。实际采用应使用隔离账户、隔离机器/容器、最小权限 token、禁用自动 sudo，并把 cookie 当成敏感凭据管理。
+现文档要求 Twitter 采用用户明确导出的 Cookie；部分可浏览器导入的平台需要指定范围，小红书只使用已有且用户控制的会话或手动 Cookie 配置，不替用户自动登录 [Docs:install]。这些是项目边界说明，本轮未动态验证所有代码路径。
+
+秘密应通过受控输入配置，不粘贴到普通聊天/日志；`--system` 也不等于无限 sudo 授权。不要把上游工具收录当成对它的供应链担保，亦不要把“已配置”写成“在线可用” [GH:diff]。
 
 ## 学习价值
 
-Agent Reach 的学习价值很高：它是“agent harness 不是模型能力，而是工具治理能力”的典型样本。它展示了如何把平台工具选择、安装、体检、多后端路由、skill 注入、MCP config、safe mode、doctor JSON 和更新策略组织成一个 agent-facing capability layer。对 Develata 来说，它值得跟踪，但更适合作为个人 agent lab 的可控组件，而非默认全局安装的基础设施。
+最值得学的是能力诊断的证据层级：文件存在、可执行、配置存在、bridge 已连、平台请求成功，是不同状态。把它们分开并减少诊断副作用，比增加一个平台 logo 更能提升 agent 工具治理质量 [GH:diff]。

@@ -1,239 +1,153 @@
 ---
 title: "Puppeteer"
 created: 2026-06-19
-updated: 2026-06-19
+updated: 2026-09-10
 type: repository-analysis
 repo_url: "https://github.com/puppeteer/puppeteer"
 category: "dev-tools"
-tags: ["browser-automation", "headless-browser", "chrome", "firefox", "cdp", "webdriver-bidi", "testing", "web-scraping", "typescript", "nodejs"]
+tags: [browser-automation, chrome, firefox, cdp, webdriver-bidi, typescript, nodejs]
 previous_repo: ""
 successor: ""
 primary_language: "TypeScript"
 license: "Apache-2.0"
-stars: 95076
-forks: 9454
-last_checked: 2026-06-19
-last_verified: 2026-06-19
-evidence: "GitHub REST/search/community/security-advisory API snapshots, official docs extraction, local shallow clone static scan at commit ec3daa9af14cb9f4155854c2afeb1c71e235b712, package metadata review, and a minimal npm import smoke test for puppeteer-core@25.1.0. No full puppeteer install, no browser download, no Chromium/Firefox launch, no end-to-end automation task, and no benchmark was executed."
+stars: 95560
+forks: 9571
+last_checked: 2026-09-10
+last_verified: 2026-09-10
+evidence: "GitHub API/releases/security/README/manifests and official Docker/BiDi docs static review 2026-09-10; no current browser install/launch/e2e/benchmark; June import-only smoke retained as historical"
 archived_reason: ""
 docker_support: true
 gpu_required: false
-estimated_cpu: "low for library import/orchestration; real automation cost dominated by launched Chrome/Firefox instances and page workload"
-estimated_memory: "small for Node library alone; roughly one browser-process footprint per active browser/session, with concurrency and page complexity dominating"
-estimated_storage: "package footprint plus browser cache; full puppeteer downloads compatible Chrome, puppeteer-core does not; Docker image/browser cache can reach hundreds of MB or more depending on image/browser versions"
+estimated_cpu: "library overhead modest; browser rendering and concurrency dominate"
+estimated_memory: "browser processes and page workload dominate; unmeasured"
+estimated_storage: "npm packages plus managed browser cache and output artifacts"
 status: active
 ratings:
   capability: 5
   usability: 4
   performance: 4
-  code_quality: 5
+  code_quality: 4
   documentation: 5
-  community: 5
+  community: 4
   maturity: 4
   extensibility: 4
   security: 3
   recommendation: 4
-overall_score: 4.3
+overall_score: 4.1
 sources:
-  - "[GH] https://github.com/puppeteer/puppeteer"
-  - "[GH:api] GitHub REST snapshot 2026-06-19: repo created_at=2017-05-09, pushed_at=2026-06-18T17:22:00Z, stars=95076, forks=9454, REST open_issues_count=268 includes issues+PRs, search open issues=248, search open PRs=19, closed PRs=7518, primary_language=TypeScript, license=Apache-2.0, default_branch=main, homepage=https://pptr.dev, archived=false, topics include automation/chrome/chromium/developer-tools/firefox/headless-chrome/testing/web"
-  - "[GH:release] GitHub releases endpoint checked 2026-06-19: sampled latest releases puppeteer-v25.1.0, puppeteer-core-v25.1.0, browsers-v3.0.4 published 2026-05-26; puppeteer-v25.0.4 and puppeteer-v25.0.3 published 2026-05-18"
-  - "[GH:community] GitHub community profile checked 2026-06-19: health_percentage=75; README, docs/contributing.md, .github/PULL_REQUEST_TEMPLATE.md and LICENSE detected; CODE_OF_CONDUCT and issue_template not detected by community API"
-  - "[GH:contributors] GitHub contributors endpoint first page checked 2026-06-19: top contributors include OrKoN=1179, aslushnikov=914, dependabot[bot]=803, Lightning00Blade=639, jrandolf-google=430 contributions"
-  - "[GH:issues] GitHub search checked 2026-06-19: open issue search=248, open PR search=19; open issue title search for Bug-style titles=134; sampled issues include #15116 skipDownload/version-resolution bug, #15005 js coverage reset, #14493 existing-browser current-page feature, #14259 Firefox postData unsupported over BiDi, #12379 Chrome Canary/Firefox Nightly test results, and #14898 Puppeteer v26 planning with deprecated API removals"
-  - "[GH:advisory] GitHub repository security-advisories API checked 2026-06-19: returned [] for published repository advisories in this endpoint check; absence here is not proof that all dependency/browser/runtime risks are absent"
-  - "[GH:local-scan] Local shallow clone /opt/data/tmp/repo_wiki_puppeteer/puppeteer checked 2026-06-19 at commit ec3daa9af14cb9f4155854c2afeb1c71e235b712; git ls-files=2193, markdown=1393, test/spec/e2e/fixture/mock/golden/snapshot heuristic files=428, TypeScript files=385, JavaScript files=94, workflows=12; root files include README.md, SECURITY.md, LICENSE, CHANGELOG.md, package.json, package-lock.json, .nvmrc, eslint.config.mjs, prettier.config.js, tsdoc.json, versions.json; Docker-related files include docker/Dockerfile, docker/README.md, docker/test/smoke-test.js, docs/guides/docker.md"
-  - "[GH:package] Local package metadata checked 2026-06-19: root package scripts include build/check/lint/docs/doctest/test/test:chrome/test:firefox/test-types/validate-licenses/validate-deps; packages/puppeteer and packages/puppeteer-core version 25.1.0 require Node >=22.12.0; puppeteer depends on @puppeteer/browsers 3.0.4, chromium-bidi 16.0.1, devtools-protocol 0.0.1638949, puppeteer-core 25.1.0, typed-query-selector, lilconfig; puppeteer-core exports browser and Node entrypoints and depends on webdriver-bidi-protocol and ws"
-  - "[GH:ci] .github/workflows/ci.yml local scan 2026-06-19: default permissions read-all; required inspect-code job runs npm ci with PUPPETEER_SKIP_DOWNLOAD=true, npm run check, validate-licenses, build, test-types, validate-deps, lint, docs and generated-doc diff check; additional workflows exist for changed packages, docs deploy and platform/browser test matrix"
-  - "[GH:security] SECURITY.md local scan 2026-06-19: reports should follow Chromium security process; scope states Puppeteer has powerful browser installation/automation/inspection capabilities, calling code is responsible for safe use, and APIs can intentionally write files or load extensions; local MITM/browser-download manipulation is not considered a Puppeteer vulnerability"
-  - "[GH:test-docs] test/README.md local scan 2026-06-19: tests use Mocha and Expect; helper state includes browser/page/context/test servers; documented commands include npm test, build-before-test, test:chrome:headful, test:chrome:headless and test:firefox"
-  - "[Docs:home] https://pptr.dev/ extracted 2026-06-19: official version 25.1.0; Puppeteer is a JavaScript library exposing high-level API to control Chrome or Firefox over DevTools Protocol or WebDriver BiDi; installs via npm/yarn/pnpm/bun; puppeteer downloads compatible Chrome while puppeteer-core skips browser download; README example uses locator APIs and page automation"
-  - "[Docs:docker] https://pptr.dev/guides/docker extracted 2026-06-19: official GHCR image ghcr.io/puppeteer/puppeteer includes Chrome for Testing and pre-installed Puppeteer; latest and version tags available; image is meant for browser sandbox mode and requires SYS_ADMIN; recommends --init to manage browser child processes"
-  - "[Docs:troubleshooting] https://pptr.dev/troubleshooting extracted 2026-06-19: documents browser cache under ~/.cache/puppeteer since v19, PUPPETEER_CACHE_DIR, blocked install scripts requiring npx puppeteer browsers install or allowScripts, Chrome HTTP navigation block behavior, Windows sandbox permission issues, Linux dependency checks, and Linux arm64 binary caveat"
-  - "[Docs:bidi] https://pptr.dev/webdriver-bidi extracted 2026-06-19: WebDriver BiDi support covers Chrome and Firefox; Firefox launches with BiDi by default, Chrome uses CDP by default unless protocol='webDriverBiDi'; unsupported BiDi features throw UnsupportedOperation; unsupported areas include Accessibility, Coverage and Tracing plus several CDP-specific APIs"
-  - "[Local:smoke] /opt/data/tmp/repo_wiki_puppeteer/smoke checked 2026-06-19: Node v22.22.3 and npm 10.9.8; npm init; PUPPETEER_SKIP_DOWNLOAD=true npm install puppeteer-core@25.1.0 --no-audit --no-fund added 26 packages in 2s; dynamic import of puppeteer-core succeeded and launch/connect exports were functions. No browser was downloaded or launched."
+  - "[GH:api] https://api.github.com/repos/puppeteer/puppeteer checked 2026-09-10 UTC+8: canonical unchanged, archived=false, disabled=false, main, pushed_at=2026-09-09T16:25:33Z, TypeScript, Apache-2.0, stars=95560, forks=9571, created_at=2017-05-09; separate GitHub search open issues=245, open PRs=11"
+  - "[GH:release] https://api.github.com/repos/puppeteer/puppeteer/releases?per_page=10 checked 2026-09-10: puppeteer/puppeteer-core v25.10.0 and browsers v3.2.2 published 2026-09-03. core notes add video-stream-based page.record() (#15387), Firefox 155, websocket dead-connection detection and userDataDir error distinctions; browsers v3.2.2 reverts detached Windows launch for flakiness. No release capability was executed locally."
+  - "[GH:readme] https://github.com/puppeteer/puppeteer/blob/main/README.md inspected 2026-09-10 via contents API; tree snapshot 499c713ae7256c4322dc3f760f223ead2afcb0a3. High-level Chrome/Firefox CDP/BiDi API, puppeteer versus puppeteer-core browser-download split, blocked installation-script warning, npx puppeteer browsers install, experimental WebMCP and separate chrome-devtools-mcp pointer"
+  - "[GH:package] https://github.com/puppeteer/puppeteer/blob/main/package.json and packages/puppeteer/package.json / packages/puppeteer-core/package.json inspected 2026-09-10: Node>=22.12.0; monorepo scripts for Chrome/Firefox tests, types, docs, dependency/license validation. Recursive tree has 1558 blob paths; no current test or coverage run."
+  - "[GH:security] https://github.com/puppeteer/puppeteer/blob/main/SECURITY.md and https://api.github.com/repos/puppeteer/puppeteer/security-advisories?per_page=100 inspected 2026-09-10; advisory endpoint returned []; security policy describes powerful browser installation/automation/inspection and caller responsibility, intentional file writes/extensions"
+  - "[Docs:docker] https://pptr.dev/guides/docker read 2026-09-10: official ghcr.io/puppeteer/puppeteer includes Chrome for Testing and Puppeteer, version tags; documented sandbox image requires SYS_ADMIN; not pulled or run"
+  - "[Docs:bidi] https://pptr.dev/webdriver-bidi read 2026-09-10: Firefox defaults to BiDi, Chrome defaults to CDP; Chrome BiDi opt-in; unsupported operations throw UnsupportedOperation; no assertion of complete cross-protocol parity"
+  - "[Local:historical-smoke] Historical 2026-06-19 wiki record: puppeteer-core@25.1.0 npm import succeeded, launch/connect exports were functions; no browser download or launch. Not v25.10.0 runtime evidence."
+  - "[WikiLocal:comparison] Existing Puppeteer analysis used Playwright and Selenium WebDriver as browser-automation positioning comparators; no fresh competitor ten-dimension audit"
 ---
 
 # Puppeteer
 
-> JavaScript/TypeScript 生态中长期维护、文档完整、社区规模很大的 Chrome/Firefox browser automation library：能力很强；但它控制的对象是真浏览器，权限面和运行时摩擦不能低估。
+> 长期维护的 Chrome/Firefox 高层控制库；25.10.0 增加 page.record()，但浏览器权限、安装脚本和协议差异仍由调用方管理。
 >
-> **状态**: `active` · **总分**: 4.3/5 · **推荐度**: 4/5
-> **核验版本**: repo commit `ec3daa9af14cb9f4155854c2afeb1c71e235b712`；Puppeteer / puppeteer-core `25.1.0`；GitHub / docs / local clone 快照 2026-06-19
-> **验证边界**: 本轮只做静态源码/文档/API 核验与 `puppeteer-core` import smoke test；未下载 Chrome、未启动浏览器、未跑 automation e2e、未测 benchmark。
+> **状态**: `active` · **总分**: 4.1/5 · **推荐度**: 4/5
 
 ## 一句话总结
 
-Puppeteer 是给 Node.js/TypeScript 程序控制 Chrome 或 Firefox 的高层 API：适合浏览器自动化、端到端测试、截图/PDF、抓取和 DevTools 协议研究；如果你需要的是“稳定控制真实浏览器”，它是长期维护且证据充分的优先评估对象之一 [Docs:home][GH:api][GH:release][GH:package]。
+Puppeteer 适合 Node.js/TypeScript 开发者做真实浏览器自动化、截图/PDF 和页面调试；它是控制浏览器的库，不是隔离不可信自动化的安全沙箱 [GH:readme][GH:security]。
 
 ## 总体评价
 
-Puppeteer 的核心价值在于：把 Chrome DevTools Protocol（CDP）和 WebDriver BiDi 的复杂低层协议，封装成 `Browser` / `Page` / `Frame` / `Locator` / `HTTPRequest` 等相对稳定的 JavaScript API。官方文档明确说它可控制 Chrome 或 Firefox，Chrome 默认走 CDP，Firefox 默认走 BiDi，Chrome BiDi 需显式设置 `protocol: 'webDriverBiDi'` [Docs:home][Docs:bidi]。
+核心抽象仍是 Browser/Page/Frame/Locator 等高层对象，下面连接 CDP 或 WebDriver BiDi。Chrome 与 Firefox 默认协议不同，不应假定同一 API 在所有协议组合上等价 [Docs:bidi]。
 
-从工程信号看，这是一个成熟、长期维护且高可见度的浏览器基础设施仓库：GitHub 快照显示 95k+ stars、9.4k+ forks、2017 年创建、2026-06-18 仍有 push；本地 shallow clone 有 2193 个 tracked files、428 个 test-ish 文件、12 个 workflows，根包 scripts 覆盖 build/check/lint/docs/test/test:chrome/test:firefox/test-types/validate-licenses/validate-deps [GH:api][GH:local-scan][GH:package]。CI 的 required inspect-code job 还包括 license validation、type tests、docs generation 和 generated-doc diff check [GH:ci]。
-
-它的短板不在“能力不够”，而在浏览器自动化天然复杂：浏览器下载、cache、Linux/Windows sandbox、容器权限、Chrome for Testing 行为变化、BiDi/CDP 功能差异、网络/请求拦截 race、真实账号副作用，都会进入使用者的 operational surface [Docs:troubleshooting][Docs:docker][Docs:bidi][GH:security]。所以它是强工具，不是低风险工具。
+本轮从旧 25.1.0 更新到最新 release **25.10.0**，实质新增包括视频流录制 `page.record()`；当前 README 还指出安装脚本被 package manager 阻止时，需要单独安装浏览器 [GH:release][GH:readme]。代码质量和社区从旧 5/5 校准为 4/5：没有本轮覆盖率或响应时延证据支撑最高档，不把 TypeScript/CI/星数当成满分证明。
 
 ## 推荐度：4/5
 
-**角色定位**：适合需要在 Node.js/TypeScript 中稳定控制 Chrome/Firefox 的开发者、测试工程师、爬虫/自动化工程师，以及研究 browser automation / CDP / BiDi / MCP browser tooling 的人。
+**目标角色**：接受现代 Node 运行时、能维护浏览器版本和部署环境的测试/自动化工程师。受控测试、截图、PDF 和 DevTools 研究值得优先评估；高价值账号或不可信网页自动化应先设计账号、出口和文件权限边界。
 
-推荐度 4/5。若任务是浏览器自动化，Puppeteer 属于优先评估对象：API 成熟、文档完整、生态巨大、Docker 镜像官方提供，代码和测试治理信号很强 [Docs:home][Docs:docker][GH:local-scan][GH:ci]。在 browser-agent infrastructure 语境中，它也很适合作为底层参照：官方首页已指向 Puppeteer-based `chrome-devtools-mcp`，AI browser tools、Playwright/BiDi 生态都可以拿它校准抽象边界 [Docs:home][Docs:bidi]。
-
-不给 5 的原因主要是 operational risk：
-
-1. **真浏览器成本与环境摩擦**：`puppeteer` 默认下载兼容 Chrome；blocked install scripts、cache path、Linux dependency、Windows sandbox、Docker `SYS_ADMIN` 等都可能成为部署坑 [Docs:troubleshooting][Docs:docker]。
-2. **BiDi/CDP 功能不完全等价**：WebDriver BiDi 虽已支持 Chrome/Firefox，但 Accessibility、Coverage、Tracing、CDP session、若干 emulation/network/input API 仍有 unsupported list；跨浏览器自动化不能假定“同一 API 全部等价” [Docs:bidi]。
-3. **权限面高**：安全策略明确说 Puppeteer 可安装/控制/检查浏览器，调用方负责安全使用；写文件、下载、截图、加载扩展等是 intentional features，不应当被误当成安全边界 [GH:security]。
-4. **issue backlog 仍需接受**：搜索快照有 248 个 open issues、19 个 open PRs，标题搜索中 Bug-style open issue titles 有 134 个；这对如此大且活跃的项目不算异常，但说明边缘场景和浏览器版本漂移会持续存在 [GH:issues]。
-
-结论：用于测试、截图、PDF、受控抓取、浏览器协议研究，推荐；用于高价值账号、支付、内网管理后台或无法隔离的生产自动化，应先做 threat model、最小权限、容器/账号隔离和失败回滚。
+不评 5 的原因不是功能弱，而是浏览器系统依赖、sandbox、缓存、录制资源和协议差异都是真实运维成本。本轮未运行浏览器，不能用旧 import smoke 宣称新功能可用 [Local:historical-smoke]。
 
 ## 优势
 
-1. **浏览器控制能力极全**：页面导航、DOM 查询、locator、输入、截图、PDF、请求拦截、DevTools/BiDi 协议桥接、browser download/launch 都在主路径内 [Docs:home][Docs:bidi][GH:package]。
-2. **工程成熟度高**：TypeScript monorepo、`puppeteer` / `puppeteer-core` / `@puppeteer/browsers` 分包清晰，CI 覆盖 build/check/lint/docs/type tests/license/deps validation [GH:package][GH:ci]。
-3. **文档和 troubleshooting 完整**：安装、配置、Docker、cache、Linux/Windows 问题、BiDi unsupported matrix 都有官方文档 [Docs:home][Docs:troubleshooting][Docs:docker][Docs:bidi]。
-4. **社区和生态强**：95k+ stars、7.5k+ closed PRs、贡献者与自动化维护信号强，且官方文档已连接 Puppeteer-based `chrome-devtools-mcp` 生态 [GH:api][GH:contributors][Docs:home]。
-5. **官方 Docker 路径存在**：GHCR image 包含 Chrome for Testing 与预装 Puppeteer，适合把浏览器依赖封装进容器镜像 [Docs:docker]。
+1. 导航、页面输入、locator、截图/PDF 和网络控制有统一库入口 [GH:readme]。
+2. `puppeteer-core` 可由调用方自行管理浏览器，避免把下载策略绑死 [GH:readme]。
+3. 官方 Docker 和 BiDi 文档明确交付与协议边界 [Docs:docker][Docs:bidi]。
+4. 版本持续跟进浏览器，25.10.0 加入新录制能力并修复连接/启动问题 [GH:release]。
 
 ## 劣势
 
-1. **浏览器运行环境不是“纯 npm 包”问题**：库本身可轻量安装，但真实运行需要浏览器 binary、系统依赖、sandbox 权限、cache 管理和 init process [Docs:troubleshooting][Docs:docker]。
-2. **跨浏览器一致性有边界**：Firefox/BiDi 支持持续进步，但 BiDi unsupported features 仍然不少，尤其是 tracing/coverage/accessibility/CDP-specific areas [Docs:bidi]。
-3. **安全边界外移到调用方**：Puppeteer 可写文件、下载、加载扩展、访问页面内容；项目安全策略明确把安全使用责任放到调用代码 [GH:security]。
-4. **大项目 issue backlog 客观存在**：248 个 open issues、134 个 Bug-style open issue title search 结果说明边缘 bug、浏览器回归、配置问题会长期伴随 [GH:issues]。
-5. **Node 版本要求偏新**：当前包 metadata 要求 Node `>=22.12.0`，老 Node 环境会成为升级门槛 [GH:package]。
-
----
+1. 真正成本在浏览器，不是 `npm install` 的库大小。
+2. CDP/BiDi 与 Chrome/Firefox 并不完整等价 [Docs:bidi]。
+3. 安装脚本受阻可能造成库已装、浏览器未装的假完成 [GH:readme]。
+4. Docker 示例的 SYS_ADMIN 是高权限配置，应审查而非默认复制 [Docs:docker]。
 
 ## 适合什么场景
 
-- Web app E2E / smoke test，尤其是需要真实 Chrome 行为的测试。
-- 截图、PDF、网页渲染、页面性能/网络行为检查。
-- 受控爬取、表单自动化、内部低权限后台自动化。
-- 研究 CDP、WebDriver BiDi、Chrome for Testing、browser automation API 设计。
-- 为 MCP browser tools、AI agents、网页调试工具提供底层浏览器控制能力。
+- Node/TypeScript 浏览器 smoke、E2E、截图和 PDF。
+- 受控网页抓取、网络行为调试、CDP/BiDi 研究。
+- 给上层 agent/MCP 或自动化服务提供浏览器底座。
 
 ## 不适合什么场景
 
-- 只需要 HTTP 抓取或 HTML 解析的轻量任务；直接 HTTP client / parser 更简单、更省资源。
-- 需要跨浏览器规范级一致性的严肃测试矩阵；此时通常要比较 Playwright / Selenium / WebDriver grid。
-- 不允许下载浏览器 binary、不能安装系统依赖、不能授予容器 sandbox 所需权限的环境。
-- 高价值账号、支付、云控制台、公司内网后台的无人值守自动化，除非已完成账号隔离、网络隔离、审计和回滚设计。
-- Linux arm64 上依赖默认 Chrome binary 的路径；官方 troubleshooting 明确提示 Chrome 当前不提供 Linux arm64 binaries，需另行设计 [Docs:troubleshooting]。
+- 纯 HTTP/HTML 解析即可完成的轻任务。
+- 不允许浏览器二进制或系统依赖的环境。
+- 无隔离的主账号、支付或云控制台无人值守操作。
 
 ## 与类似项目对比
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| Playwright | 多浏览器自动化与测试框架 | Playwright 更强调 cross-browser testing 与 test runner；Puppeteer 更像 Chrome/CDP 传统核心生态的高层控制库 |
-| Selenium WebDriver | 老牌跨语言 WebDriver automation | Selenium 覆盖语言和浏览器生态更广；Puppeteer 在 Node/Chrome DevTools 场景更直接、API 更现代 |
-| Chrome DevTools Protocol client | 低层浏览器协议客户端 | CDP client 更贴近协议、控制更细；Puppeteer 提供更高层对象模型和使用体验 |
-| chrome-devtools-mcp | 面向 AI agents 的 Chrome DevTools MCP server | chrome-devtools-mcp 是 agent-facing MCP 封装；Puppeteer 是其可依赖的 browser automation library 之一 |
+| Playwright | 多浏览器自动化与测试框架 | 更偏测试框架与测试矩阵；Puppeteer 更偏浏览器控制库。 |
+| Selenium WebDriver | 多语言 WebDriver 生态 | 更偏跨语言/标准协议体系；Puppeteer 面向 JavaScript 高层 API。 |
 
-上述项目按 `dev-tools` / browser automation 相邻范围做定位级对比，未在本轮按同一 10 维度框架重审；表格不构成优劣 benchmark。
-
----
+仅沿用浏览器自动化邻域定位，未做同轮质量排名或 benchmark [WikiLocal:comparison]。
 
 ## 它能做什么
 
-能力广度评分 5/5。
+能力 **5/5** 是相对于浏览器控制库主域：浏览器生命周期、页面/输入、DOM/locator、截图/PDF、网络与协议会话覆盖广 [GH:readme][GH:package]。25.10.0 发布说明新增 `page.record()`，不要把它混同旧 screencast 接口；本轮未验视频编码、浏览器兼容或资源消耗 [GH:release]。
 
-Puppeteer 可以通过 JavaScript/TypeScript 控制浏览器生命周期、页面、frame、DOM、输入、网络、截图、PDF 与 DevTools/BiDi protocol integration。官方首页示例展示了启动浏览器、打开页面、设置 viewport、键盘输入、locator 查询、点击、读取文本并关闭浏览器的完整路径 [Docs:home]。
-
-仓库层面还有三个重要分包：
-
-- `puppeteer`：包含 browser download/postinstall 与完整用户入口。
-- `puppeteer-core`：作为 library 使用，不自动下载 Chrome，适合外部管理 browser executable 的场景。
-- `@puppeteer/browsers`：负责 browser download / launch 管理 [GH:package]。
-
-给 5 的边界是“Node browser automation 主域内能力覆盖极广”，不是“跨协议/跨浏览器完全等价”。WebDriver BiDi 支持是当前能力演化重点之一：Firefox launch 默认 BiDi，Chrome 默认 CDP 但可显式切换；unsupported features 会抛 `UnsupportedOperation`，这比静默失败更好，但也要求使用者理解协议差异 [Docs:bidi]。
+实验性 WebMCP 是当前 README 标注的实验接口，不是稳定性承诺；`chrome-devtools-mcp` 是独立项目，不能与本库合并算交付 [GH:readme]。
 
 ## 运行环境与资源占用
 
-资源效率评分 4/5。
+| 项目 | 判断 |
+|------|------|
+| Node | 包要求 >=22.12.0 |
+| 浏览器 | puppeteer 可安装兼容浏览器；core 不负责自动下载 |
+| CPU/内存 | 页面负载、并发、视频/PDF 主导，未测量 |
+| 存储 | npm 包、浏览器缓存、截图/视频/trace 输出 |
+| Docker | 官方 GHCR image；文档 sandbox 路径要求 SYS_ADMIN |
+| GPU | 不是基础 API 必要条件，渲染/录制性能另测 |
 
-| 场景 | CPU | 内存 | 存储 | 说明 |
-|------|-----|------|------|------|
-| 最小 | Node import / API orchestration 很轻 | Node library 本身较小 | `puppeteer-core` npm install 本轮 added 26 packages | 本轮只验证 import，未启动浏览器 [Local:smoke] |
-| 典型 | 取决于 Chrome/Firefox 页面负载 | 每个 browser/session 都有真实浏览器进程成本 | `puppeteer` 会下载兼容 Chrome，cache 默认在 `~/.cache/puppeteer` | 实际资源由页面、并发、截图/PDF/视频/trace 决定 [Docs:troubleshooting] |
-| 容器 | 需为浏览器 sandbox 与 child processes 预留资源 | 多 session 并发需按浏览器进程估算 | 官方 GHCR image 包含 Chrome for Testing 与 Puppeteer | 官方 Docker 路径要求 `--init`，sandbox 模式需 `SYS_ADMIN` [Docs:docker] |
-
-- **运行时**：当前 package metadata 要求 Node `>=22.12.0` [GH:package]。
-- **操作系统**：跨平台使用，但 Linux/Windows 依赖和 sandbox 问题需按 troubleshooting 处理 [Docs:troubleshooting]。
-- **Docker**：`docker_support=true`，因为官方文档提供 GHCR image `ghcr.io/puppeteer/puppeteer`，并说明 version tags 与 sandbox 权限 [Docs:docker]。
-- **GPU**：`gpu_required=false`；浏览器渲染可使用硬件加速，但 Puppeteer 主路径不要求 GPU。
-- **外部依赖**：Chrome/Firefox、系统库、字体、dbus、网络代理、证书、容器权限和 init process 可能影响真实运行 [Docs:troubleshooting][Docs:docker]。
-
-给 4 而不是 5：Puppeteer library orchestration 层相对轻，本轮 `puppeteer-core` import 只安装少量 npm packages 并成功加载；但真实自动化成本主要来自 Chrome/Firefox 进程，且本轮未实测并发内存、启动耗时或吞吐 [Local:smoke][Docs:troubleshooting]。因此它在“浏览器自动化工具”同类中资源效率合理，但不能按普通 HTTP client 的轻量级标准给满分。
+资源效率 **4/5** 是库层控制开销相对合理的判断，不与轻量 HTTP client 比占用，也不报告本轮吞吐 [GH:package][Docs:docker]。
 
 ## 上手体验
 
-评分 4/5。
-
-Puppeteer 的 happy path 很短：`npm i puppeteer` 后直接 `puppeteer.launch()`；若不想自动下载浏览器，可用 `puppeteer-core` 并自行传入 executable。官方文档首页、API、FAQ、troubleshooting、Docker 和 configuration 路径清楚，本轮 `puppeteer-core@25.1.0` import smoke test 也顺利通过 [Docs:home][Local:smoke]。
-
-扣 1 分在于安装/运行常有环境分叉：现代 package managers 可能 block install scripts，导致浏览器没有自动下载；Docker sandbox 需 `SYS_ADMIN`；Windows/Linux sandbox 和依赖问题不罕见；`puppeteer-core` 又会忽略 Puppeteer configuration files and environment variables 的一部分语义，需要使用者理解 `puppeteer` 与 `puppeteer-core` 的差异 [Docs:troubleshooting][Docs:docker]。
+**4/5**。README 的 launch→locator→读取→close 示例直观；但应核验安装脚本是否执行，必要时按官方指导运行浏览器安装，而不是扩大所有依赖脚本权限 [GH:readme]。用户自己管理 executable 时选择 core，并验版本兼容。
 
 ## 代码质量
 
-评分 5/5。
-
-静态工程信号很强：TypeScript 主语言，分包清晰，root scripts 覆盖 build/check/lint/docs/doctest/test/test:chrome/test:firefox/test-types/validate-licenses/validate-deps；本地扫描有 428 个 test-ish 文件、12 个 workflows、1393 个 markdown/docs-ish 文件 [GH:local-scan][GH:package]。CI 的 required job 使用 read-only default permissions，并运行 check、license validation、build、type tests、dependency validation、lint、docs generation 和 generated-doc diff check [GH:ci]。
-
-本轮没有运行 full test suite，因此这个 5/5 是基于成熟项目结构、CI/test/docs 密度和长期维护信号的代码质量判断，不表示“所有浏览器版本和所有边缘场景都实测无 bug”。
+**4/5**。分包、类型检查、Chrome/Firefox suites、文档与依赖/许可验证给出维护结构证据 [GH:package]。本轮没有运行 tests、覆盖率或 browser e2e，不能维持仅靠 CI 密度支撑的 5。release 中 Windows launch 回滚也提醒平台回归是长期任务 [GH:release]。
 
 ## 可扩展性
 
-评分 4/5。
-
-Puppeteer 的扩展性来自几个层面：一是高层 API 暴露 page/browser/network/input/locator 等对象；二是可在 CDP 场景下创建低层 DevTools session；三是可通过 `puppeteer-core` 嵌入到更大系统，由外部管理浏览器 binary、缓存、proxy、profile 和生命周期；四是生态上可被 MCP server、测试框架、爬虫、截图服务等封装 [Docs:home][Docs:bidi][GH:package]。
-
-没有给 5，是因为 Puppeteer 不是“插件平台”意义上的 extensibility-first framework；深度跨浏览器抽象、test runner、cluster orchestration、stealth/proxy/captcha 等通常要在上层生态或自有代码中完成。BiDi unsupported matrix 也意味着某些扩展在跨协议时会遇到硬边界 [Docs:bidi]。
+**4/5**。core 可嵌入自有浏览器生命周期系统，协议和页面 API 可供上层测试、截图和 agent 服务调用 [GH:readme][Docs:bidi]。它不是完整 crawler/cluster/test-runner 平台，队列、账号管理和审计通常仍在上层实现。
 
 ## 文档质量
 
-评分 5/5。
-
-官方文档覆盖 install、API、FAQ、configuration、Docker、troubleshooting、WebDriver BiDi、request interception 等实际使用会碰到的关键路径 [Docs:home][Docs:troubleshooting][Docs:docker][Docs:bidi]。尤其 troubleshooting 不是泛泛而谈，而是直接列出 browser cache、blocked install scripts、HTTP navigation block、Windows sandbox、Linux dependencies、Linux arm64 binary 等具体坑 [Docs:troubleshooting]。
-
-本地 repo 还将 docs 纳入 CI：生成 docs 并检查 autogenerated docs diff，说明文档不是完全手工漂移的附属物 [GH:ci]。
+**5/5**。官方入口覆盖 API、FAQ、troubleshooting、Docker 与 BiDi，安装失败和协议限制都有具体说明 [GH:readme][Docs:docker][Docs:bidi]。评分针对文档组织与关键问题覆盖，不意味着每一页最新能力均在本地验证。
 
 ## 社区与成熟度
 
-| 维度 | 评分 | 说明 |
-|------|------|------|
-| 社区活跃度 | 5/5 | 95k+ stars、9.4k+ forks、7.5k+ closed PRs、top contributors 多人且有 bot automation；2026-06 仍持续 push/release [GH:api][GH:contributors][GH:release] |
-| 成熟度 | 4/5 | 2017 年创建，长期使用语境明显，API 与文档成熟；但仍频繁随 Chrome/BiDi/Node 生态演进，Node `>=22.12.0` 和 v26 planning 说明仍有持续破坏性/迁移压力 [GH:api][GH:package][GH:issues] |
-
-成熟度不给 5 的关键理由是：浏览器自动化库不是“完成态基础设施”。它必须追随 Chrome for Testing、DevTools Protocol、WebDriver BiDi、Firefox、Node/npm package manager 行为变化。open issue #14898 的 Puppeteer v26 planning 包含移除 deprecated APIs，说明未来仍会有迁移事项 [GH:issues]。
+社区 **4/5**，成熟度 **4/5**。2017 年创建，2026-09 仍有发布；快照 95560 stars、9571 forks、245 open issues、11 PRs [GH:api][GH:release]。长期维护有力，但仅靠这些数量无法证明快速响应或无破坏升级。浏览器、Node 和协议的变化决定它仍需要持续升级测试。
 
 ## 安全与风险
 
-评分 3/5。
+安全 **3/5**。本轮未在 repository advisories endpoint 查到公开 GHSA，不能推论 Chrome、Firefox、Node 或依赖没有漏洞 [GH:security]。
 
-这个分数主要反映 browser automation 的能力风险与运行环境风险，不是说 Puppeteer 当前存在已知严重 repository advisory。
-
-GitHub repository security-advisories API 本轮返回 `[]`，这只能表示此次 endpoint check 没有返回 published repository advisories，不能证明依赖、Chrome、Node、用户代码或运行环境没有漏洞 [GH:advisory]。
-
-Puppeteer 的真正风险来自能力本身：安全策略写得很明白，它提供 browser installation、automation、inspection 等强能力，调用代码负责安全使用；写文件、browser downloads、screenshots、动态加载 Chrome extensions 等是 intentional documented features，不属于项目自身漏洞 [GH:security]。换言之：Puppeteer 不应被当成 sandbox，它是操纵 sandboxed browser 的工具；边界要由调用方、容器、账号、网络、文件系统和审计层建立。
-
-生产使用建议：
-
-- 不要在高权限主账号上跑无人值守脚本；用低权限测试账号。
-- Docker 中优先保留 browser sandbox；若使用 `--no-sandbox`，必须有外层隔离补偿。
-- 对下载、上传、截图、PDF、扩展加载、文件路径和网络访问做 allowlist。
-- 对 request interception 异步 handler 保持谨慎，避免 race 造成安全或正确性误判。
-- 依赖与浏览器版本随 Chrome/Node/npm 生态更新，需纳入常规 patch cadence。
+Puppeteer 可以安装/控制浏览器、读页面、写文件、加载扩展；调用方必须隔离账号、可访问网络和文件路径。官方容器的 sandbox 要求 SYS_ADMIN，不能把授予这项 capability 理解为整个容器更低权限；也不要为排错随意用 `--no-sandbox` [Docs:docker]。限制远程调试端口、下载/上传路径和不可信页面操作，才有可审计边界。
 
 ## 学习价值
 
-学习价值很高。Puppeteer 是理解现代浏览器自动化的经典入口：它展示了如何在高层对象模型和低层协议之间折中，如何把浏览器 binary 管理、Node package、CI、docs、cross-browser protocol、Docker sandbox、测试矩阵放进同一个工程体系。
-
-对 Develata 特别有价值的学习点：
-
-1. **CDP vs WebDriver BiDi 的抽象边界**：哪些 API 能跨协议，哪些必须承认 unsupported。
-2. **浏览器自动化的 failure modes**：下载失败、cache、sandbox、OS dependency、HTTP warning、request interception race。
-3. **AI browser tools 的底层参照**：很多 MCP/agent browser 项目最终都要面对 Puppeteer/Playwright/Selenium 这类底层库的能力边界。
-4. **成熟 TypeScript monorepo 治理**：分包、generated docs、license validation、type tests、browser matrix 和 release automation 都值得参考。
+适合研究高层 Page API 与底层 CDP/BiDi 如何共存，以及库、浏览器、包管理脚本和容器权限怎样共同决定真实可用性。旧 import smoke 只能证明模块可加载，不能替代新版本页面任务，这也是测试设计的重要边界。
