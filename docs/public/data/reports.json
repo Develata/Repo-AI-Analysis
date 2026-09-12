@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 189,
+  "count": 191,
   "reports": [
     {
       "slug": "education-resourses/programming/programming-language-guides/go/go",
@@ -4810,6 +4810,44 @@
       "summary": "Plane 值得作为自托管项目管理平台候选和工程治理样本收录，但完整查询返回 16 个 published GHSA，preview branch 又在 v1.3.1 后加入密集 security hardening；生产采用仍只能给谨慎的 3/5。"
     },
     {
+      "slug": "ai-programs/ai-harness/ai-plugins/ruflo",
+      "route": "/analysis/ai-programs/ai-harness/ai-plugins/ruflo",
+      "title": "Ruflo",
+      "repo_url": "https://github.com/ruvnet/ruflo",
+      "category": "ai-programs/ai-harness/ai-plugins",
+      "directory": "ai-programs/ai-harness/ai-plugins",
+      "tags": [
+        "agent-harness",
+        "multi-agent",
+        "orchestration",
+        "claude-code",
+        "codex",
+        "hermes",
+        "mcp",
+        "memory",
+        "typescript"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 72200,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 5,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.3,
+      "last_checked": "2026-09-12",
+      "updated": "2026-09-12",
+      "summary": "Ruflo 适合愿意以较高复杂度和权限风险换取「多 agent 编排 + 记忆 + 插件 + 跨主机协作」一体化能力的 agentic-engineering 研究者与 power users；它值得拆解、隔离试用，但当前不宜无边界接管敏感生产仓库。"
+    },
+    {
       "slug": "ai-programs/ai-harness/ai-plugins/superpowers",
       "route": "/analysis/ai-programs/ai-harness/ai-plugins/superpowers",
       "title": "Superpowers",
@@ -5101,6 +5139,44 @@
       "last_checked": "2026-07-16",
       "updated": "2026-07-16",
       "summary": "Open Interpreter 适合研究“同一模型在不同 coding-agent harness 下为何表现不同”，但当前 Rust rewrite 只有 `0.0.26`，其 6.6 万 stars 主要代表长期项目品牌与历史积累，不能当作新 Rust 版本已经成熟的证明。"
+    },
+    {
+      "slug": "work-tools/design-tools/open-design",
+      "route": "/analysis/work-tools/design-tools/open-design",
+      "title": "OpenDesign",
+      "repo_url": "https://github.com/nexu-io/open-design",
+      "category": "work-tools/design-tools",
+      "directory": "work-tools/design-tools",
+      "tags": [
+        "design-tool",
+        "prototyping",
+        "local-first",
+        "desktop-app",
+        "design-systems",
+        "agent-skills",
+        "deepseek-harness",
+        "dsh-plugin",
+        "typescript"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 95705,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-09-12",
+      "updated": "2026-09-12",
+      "summary": "OpenDesign 面向希望借助已有 agent/model 制作原型、落地页、演示稿和媒体素材的开发者与产品设计者；它含真实 DeepSeek Harness 插件接入，但当前 DSH 版本兼容性不能仅凭“已连接”判断。[Docs][DSH:bundle][DSH:compat]"
     },
     {
       "slug": "ai-programs/ai-harness/memory/openviking",
