@@ -4,7 +4,7 @@
 title: "AutoGen"
 created: 2026-05-20
 updated: 2026-05-27
-last_checked: 2026-07-11
+last_checked: 2026-09-15
 type: repository-analysis
 repo_url: "https://github.com/microsoft/autogen"
 category: "ai-programs/agent-frameworks"

@@ -1878,7 +1878,7 @@
         "recommendation": 4
       },
       "overall_score": 3.9,
-      "last_checked": "2026-07-07",
+      "last_checked": "2026-09-15",
       "updated": "2026-07-07",
       "summary": "USTC-Network-Resources 适合作为 USTC 新生和低年级同学认识校园网络服务的索引，但使用任何具体链接前都应做当年可用性复核。"
     },
@@ -2760,7 +2760,7 @@
         "recommendation": 2
       },
       "overall_score": 3.6,
-      "last_checked": "2026-07-11",
+      "last_checked": "2026-09-15",
       "updated": "2026-05-27",
       "summary": "AutoGen 是 multi-agent framework 历史线上的关键项目：它把 multi-agent conversation、AgentChat、Core runtime、Extensions、Studio、Magentic-One 等概念系统化；但它现在已经进入 maintenance mode，新项目应转向 Microsoft Agent "
     },
@@ -3415,7 +3415,7 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-07-07",
+      "last_checked": "2026-09-15",
       "updated": "2026-07-07",
       "summary": "curl-impersonate 适合需要研究或复现浏览器 TLS/HTTP 指纹差异的开发者；在爬虫工程中通常作为底层 HTTP client/诊断工具，而不是主框架。"
     },

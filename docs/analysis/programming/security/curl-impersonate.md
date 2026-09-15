@@ -12,7 +12,7 @@ primary_language: "Python"
 license: "MIT"
 stars: 6467
 forks: 510
-last_checked: 2026-07-07
+last_checked: 2026-09-15
 last_verified: 2026-07-07
 evidence: "GitHub API + README + local shallow scan; not deployed or benchmarked"
 archived_reason: ""

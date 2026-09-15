@@ -12,7 +12,7 @@ primary_language: "Markdown"
 license: "MIT"
 stars: 342
 forks: 44
-last_checked: 2026-07-07
+last_checked: 2026-09-15
 last_verified: 2026-07-07
 evidence: "GitHub API + README/local scan; no live verification of campus resource URLs"
 archived_reason: ""
