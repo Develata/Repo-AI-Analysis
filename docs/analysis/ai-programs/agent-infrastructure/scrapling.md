@@ -1,7 +1,7 @@
 ---
 title: "Scrapling"
 created: 2026-07-07
-updated: 2026-07-07
+updated: 2026-09-16
 type: repository-analysis
 repo_url: "https://github.com/D4Vinci/Scrapling"
 category: "ai-programs/agent-infrastructure"
@@ -12,8 +12,8 @@ primary_language: "Python"
 license: "BSD-3-Clause"
 stars: 68399
 forks: 6775
-last_checked: 2026-07-07
-last_verified: 2026-07-07
+last_checked: 2026-09-16
+last_verified: 2026-09-16
 evidence: "docs + GitHub API + local shallow scan; not deployed or benchmarked"
 archived_reason: ""
 docker_support: true
@@ -35,6 +35,8 @@ ratings:
   recommendation: 3
 overall_score: 3.5
 sources:
+  - "[GH:refresh] https://api.github.com/repos/D4Vinci/Scrapling — checked 2026-09-16 UTC+8: canonical unchanged, archived=false, disabled=false, main, pushed_at=2026-09-14T19:47:52Z, Python, BSD-3-Clause; separate Search queries open issues=2, open PRs=4; security-advisories=[] (negative lookup only). Current README, LICENSE, pyproject.toml, CONTRIBUTING.md, CODE_OF_CONDUCT.md, CHANGELOG.md and repository tree fetched through GitHub API. Earlier local scan is historical; no tests or benchmark rerun."
+  - "[GH:release-current] https://github.com/D4Vinci/Scrapling/releases/tag/v0.4.15 — published 2026-08-23T19:43:24Z, checked 2026-09-16: breaking MCP redesign (13 tools; get renamed make_request; persistent HTTP and browser sessions), localhost default/authentication requirement for HTTP transport; --auth-token or SCRAPLING_MCP_AUTH_TOKEN, explicit --no-auth opt-out; Response.markdown(), SiteToMarkdownSpider, reusable browser tabs and close_pages(). v0.4.13 notes unpin Playwright/Patchright and introduce AI_POLICY.md; v0.4.14 fixes uv prerelease dependency resolution. Security/auth change references #413/#414; browser and selector fixes reference #411/#422/#410/#417."
   - "[GH] https://github.com/D4Vinci/Scrapling"
   - "[GH:api] GitHub REST snapshot 2026-07-07: stars=68399, forks=6775, REST open_issues_count=2, Search API open issues=1 and open PRs=1, language=Python, license=BSD-3-Clause, latest_release=v0.4.10, created_at=2024-10-13, pushed_at=2026-07-06"
   - "[GH:advisory] GitHub repository security-advisories API queried 2026-07-07; returned []"
@@ -54,7 +56,7 @@ Scrapling 适合愿意试用现代反爬/自适应抽取能力的 Python 爬虫�
 
 ## 总体评价
 
-Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里有 parser、Fetcher、DynamicFetcher、StealthyFetcher、Spider、ProxyRotator、CLI、MCP 和 Docker image 叙事 [GH][Docs:readme]。它比 AutoScraper 宽得多，比 Scrapy 激进得多；但项目创建于 2024-10，版本仍在 0.x，star 激增与极低 open issue 数并不能直接证明成熟生产质量。
+Scrapling 把 parser、HTTP/browser fetch、proxy、spider、CLI/MCP 集中在 Python 工具包内。最新 v0.4.15 已加入直接 Markdown/RAG 输出、持久会话和浏览器 tab 复用，并对 MCP 工具及 HTTP 鉴权做了破坏性变更；不能因版本号只是 patch 就视为无迁移成本 [GH:release-current]。功能广度维持 4/5，生产采用仍需按目标站与权限边界验证。
 
 ## 推荐度：3/5
 
@@ -63,7 +65,7 @@ Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里
 ## 优势
 
 1. **现代能力集中**：parser、HTTP fetch、browser fetch、stealth、proxy、spider、CLI/MCP 都在同一项目内 [Docs:readme]。
-2. **上手不重**：基本 parser/HTTP 可以较轻安装，browser extras 单独启用 [GH:local-scan]。
+2. **安装分层**：当前 README 区分 parser 与 fetchers/AI/RAG 等 extras；浏览器组件按需安装。这是依赖组织说明，不是本轮安装耗时测试 [GH:refresh]。
 3. **测试与类型治理有意识**：本地浅扫 57 个 test/spec-ish 文件，CONTRIBUTING 称约 90-92% coverage 且有 PyRight/MyPy 流程；本轮未复测 [GH:local-scan][Docs:readme]。
 4. **文档和多语言 README 友好**：ReadTheDocs、README、示例和 Docker 入口齐全 [GH]。
 
@@ -72,7 +74,7 @@ Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里
 1. **成熟度有限**：2024 年 10 月创建，latest release 仍是 0.4.x [GH:api]。
 2. **安全/合规风险天然高**：stealth、Cloudflare/Turnstile、proxy、browser automation 都属于高敏感能力，误用空间大 [Docs:readme]。
 3. **性能 claim 需复测**：README 有 benchmark 表，但本条目未复跑，不能当作独立验证。
-4. **社区质量难仅由星数判断**：68k 星但 Used by 规模远低于 Scrapy/Crawlee；需观察长期贡献者和真实 adopters。
+4. **升级接口不稳**：MCP 工具改名、会话配置重分工、HTTP 默认鉴权和 AI 贡献披露政策都需要调用方/贡献者适配，低 backlog 不能证明成熟生产质量 [GH:refresh][GH:release-current]。
 
 ---
 
@@ -92,12 +94,12 @@ Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里
 
 | 项目 | 定位 | 相对本项目 |
 |------|------|-----------|
-| Scrapy | 成熟 Python crawler framework | Scrapy 更稳、更传统；Scrapling 更现代、更激进。 |
-| Crawlee | JS/TS crawler/browser automation framework | Crawlee 工程成熟度更高；Scrapling 对 Python 用户和 adaptive parser 更友好。 |
-| crawl4ai | LLM-friendly web-to-Markdown crawler | crawl4ai 更偏 LLM/RAG 输出；Scrapling 更偏 scraping/anti-bot/toolkit。 |
+| Scrapy | Python crawler framework | 以 spider/pipeline 架构为中心；Scrapling 更强调 adaptive selector 与 stealth |
+| Crawlee | JS/TS crawler/browser automation framework | 语言与生态路线不同；Scrapling 提供 Python 内的 parser/fetcher 组合 |
+| crawl4ai | LLM-friendly web-to-Markdown crawler | 两者在 Markdown/RAG 输出上已有交集；Scrapling 仍以 selector、fetcher 与 scraping toolkit 为核心 [GH:release-current]。 |
 | AutoScraper | 样例驱动轻量抽取 | AutoScraper 窄而轻；Scrapling 宽而复杂。 |
 
-上述项目按 `ai-programs/agent-infrastructure` web-data substrate 做定位级对比，未按同一轮 10 维度深审。
+以上每行均为未做同等竞品审计的定性定位，不构成性能、成熟度或安全排名；本轮主要核验 Scrapling 侧的新接口与安全边界 [GH:refresh][GH:release-current]。
 
 ---
 
@@ -108,8 +110,11 @@ Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里
 - 通过 DynamicFetcher/StealthyFetcher 使用浏览器自动化处理动态/受保护页面。
 - Spider 框架、proxy rotation、session routing、CLI extraction、MCP server。
 - Docker image 包含 extras 和浏览器依赖 [Docs:readme]。
+- v0.4.15 的 `Response.markdown()` 和 `SiteToMarkdownSpider` 面向页面清洗与 RAG 语料；MCP 将 one-shot 与 session tools 分开，`get` 改为 `make_request`，并加入 HTTP 会话工具。此处是 release 声明，未做 MCP runtime smoke [GH:release-current]。
 
 ## 运行环境与资源占用
+
+下表是按 parser/HTTP/browser 工作负载作的粗略预算估计，不是测量结果或官方最低配置；performance 3/5 保留未实测的不确定性。
 
 | 场景 | CPU | 内存 | 存储 | 说明 |
 |------|-----|------|------|------|
@@ -117,7 +122,7 @@ Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里
 | fetcher/spider | 1-4 cores | 1GB+ | 中 | 取决于并发、代理和输出。 |
 | browser stealth | 2+ cores | 2GB+ | 大 | Playwright/Chrome 与 fingerprint 依赖增加成本。 |
 
-- **运行时**：Python >=3.10；browser extras 依赖 Playwright 1.61.0 等 [GH:local-scan]。
+- **运行时**：Python >=3.10；v0.4.13 已取消 Playwright/Patchright 和浏览器版本固定，升级后需按 release 指引刷新浏览器，不应沿用旧分析中的 Playwright 1.61.0 锁定假设 [GH:refresh][GH:release-current]。
 - **操作系统**：Python/Playwright 支持平台。
 - **Docker**：README 提供 DockerHub/GHCR image 入口，视为官方 Docker support [Docs:readme]。
 - **GPU**：不需要。
@@ -125,7 +130,7 @@ Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里
 
 ## 上手体验
 
-评分 4/5。README 示例丰富，parser-only 与 browser extras 分层合理；但 stealth/browser/proxy 组合本身复杂，且真实成功率必须按目标站验证。
+评分 4/5。README 示例和分层 extras 降低入口成本，但 MCP 旧配置必须按 v0.4.15 迁移。v0.4.14 还专门修复 uv 因 prerelease 依赖回退旧版本的问题；安装成功后应核对实际版本 [GH:release-current]。
 
 ## 代码质量
 
@@ -133,7 +138,7 @@ Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里
 
 ## 可扩展性
 
-评分 4/5。Fetcher、session、spider、proxy、CLI、MCP 形成丰富扩展面。但这些扩展点是否长期稳定仍需观察 1.x 前后的 API 演进。
+评分 4/5。Fetcher、session、spider、proxy、CLI、MCP 形成丰富扩展面；新增 Markdown spider 和持久 HTTP 会话扩展用途，但 v0.4.15 的 MCP breaking changes 是接口不稳定的直接证据 [GH:release-current]。
 
 ## 文档质量
 
@@ -148,7 +153,7 @@ Scrapling 在十个 repo 中最像“现代 scraping 工具包”：同一库里
 
 ## 安全与风险
 
-评分 3/5。本轮 GitHub advisory API 返回空，但这只说明未发现发布的 repo-level advisory [GH:advisory]。stealth、proxy、browser automation、Cloudflare/Turnstile 相关能力天然涉及账号、合规和高权限浏览器运行风险；生产使用应隔离 profile、限制 cookie/token、禁止处理敏感账号，并审计目标站 ToS。
+评分 3/5。本轮 repository advisories 为空，只是该接口未发现公告 [GH:refresh]。v0.4.15 的 HTTP transport 默认绑定 localhost 并要求配置认证，显式 `--no-auth` 才放弃认证；不要把它理解成自动生成安全 token，或把 `--host 0.0.0.0` 当作普通便利选项 [GH:release-current]。清除隐藏 HTML 内容不等于消除 prompt injection；持久浏览器/HTTP 会话会保留敏感状态。应隔离 cookie/profile、限制网络与目标域、按需关闭 tabs，并独立核对目标站使用条款。
 
 ## 学习价值
 

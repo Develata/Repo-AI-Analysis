@@ -1,222 +1,152 @@
 ---
-
-
 title: "AutoGPT"
 created: 2026-05-20
-updated: 2026-07-11
-last_checked: 2026-07-11
-last_verified: 2026-07-11
+updated: 2026-09-16
+last_checked: 2026-09-16
+last_verified: 2026-09-16
 type: repository-analysis
 repo_url: "https://github.com/Significant-Gravitas/AutoGPT"
 category: "ai-programs/agents/assistant-agents"
-tags: ["autonomous-agents", "agent-history", "agent-platform", "workflow-automation", "low-code-agents", "python", "typescript"]
+tags: [autonomous-agents, agent-history, agent-platform, workflow-automation, python]
+primary_language: Python
+stars: 187439
+license: "Polyform Shield (autogpt_platform) + MIT (rest)"
+status: active
+docker_support: true
+gpu_required: false
+estimated_cpu: "self-host workload dependent; not benchmarked"
+estimated_memory: "platform services plus model/tool workload; no current measured minimum"
+estimated_storage: "container images, database and workflow assets; not measured"
+evidence: "2026-09-16 authenticated GitHub API, README, LICENSE, SECURITY, CONTRIBUTING, Classic README, releases and repository tree; no deployment, image pull, runtime test or dependency audit"
 ratings:
-  capability: 5
+  capability: 4
   usability: 3
   performance: 3
   code_quality: 3
   documentation: 4
-  community: 5
+  community: 4
   maturity: 3
   extensibility: 4
   security: 2
   recommendation: 1
-
-overall_score: 3.3
-recommendation: "强烈建议作为 autonomous-agent 历史线收录；若作为今天的生产平台采用，应先审许可证边界、历史安全公告、Classic 弃用状态与 autogpt_platform 的部署复杂度。"
-status: active-platform-classic-deprecated
-license: "Polyform Shield + MIT"
-language: "Python / TypeScript"
-stars: 185457
-forks: 46113
-docker_support: true
-self_hostable: true
-enterprise_ready: false
-security_score: 2
-last_evaluated: 2026-07-11
-evidence: "GitHub API + GraphQL issue/PR counts + releases/contributors/advisories + official docs/site + local shallow clone scan; no runtime smoke test was performed."
+overall_score: 3.1
 sources:
-  - "[GH:refresh-2026-07-11] GitHub REST/GraphQL snapshot for Significant-Gravitas/AutoGPT on 2026-07-11: canonical repository exists and is not archived/disabled; default_branch=master, pushed_at=2026-07-11T02:32:15Z, primary language=Python, GitHub license metadata=NOASSERTION, stars=185457, forks=46113, open issues=285, open PRs=208, releases=110."
-  - "[GH:releases-2026-07-11] GitHub Releases checked 2026-07-11: latest release autogpt-platform-beta-v0.6.66 published 2026-07-09; preceding stable beta tags v0.6.65/v0.6.64/v0.6.63/v0.6.62 were published from 2026-05-28 through 2026-06-25."
-  - "[GH:advisories-2026-07-11] GitHub repository security-advisories endpoint returned 32 published advisories on 2026-07-11. New post-audit examples include GHSA-rq9m-xvc7-v9h6 (medium webhook IDOR, patched 0.6.64), GHSA-j2cp-jg5q-38wj (high signup XSS/open redirect, patched 0.6.62), and GHSA-8qc5-rhmg-r6r6 (high SSRF bypass, patched 0.6.52). These are historical/patched-version records, not proof that v0.6.66 remains vulnerable."
-  - "[Docs:refresh-2026-07-11] https://docs.agpt.co/ extracted 2026-07-11: current docs still position AutoGPT Platform as low-code continuous-agent workflows with Server/Frontend, cloud and self-host paths, and a dual-license split of MIT for most of the repo versus Polyform Shield for autogpt_platform."
-  - "[GH:api] GitHub REST API snapshot for Significant-Gravitas/AutoGPT on 2026-05-20: stars=184425, forks=46228, watchers=1534, open_issues_count=424, created_at=2023-03-16, pushed_at=2026-05-20, default_branch=master, language=Python, topics include autonomous-agents/agentic-ai/llm/openai, GitHub license spdx_id=NOASSERTION."
-  - "[GH:graphql] GitHub GraphQL query on 2026-05-20: open issues=260, open PRs=164, releases=105, latest tag autogpt-platform-beta-v0.6.61 dated 2026-05-20."
-  - "[GH:contributors] GitHub contributors API first page on 2026-05-20: 100 contributors returned; top contributor Auto-GPT-Bot with 1076 commits."
-  - "[GH:releases] GitHub releases API first page on 2026-05-20: latest release autogpt-platform-beta-v0.6.61 published 2026-05-20; recent releases are autogpt-platform-beta series."
-  - "[GH:community] GitHub community profile API on 2026-05-20: health_percentage=100; README, code of conduct, contributing, issue template, PR template, license files present."
-  - "[GH:advisories] GitHub repository security-advisories API on 2026-05-20 returned 21 advisories; sample recent advisories include GHSA-8pjg-mfqm-vrhr medium credit bypass patched in v0.6.59, GHSA-q58p-v9r9-7gqj high session hijacking patched in 0.6.51, GHSA-rfg2-37xq-w4m9 high Redis pickle deserialization/RCE patched in 0.6.52, GHSA-4crw-9p35-9x54 critical disabled-block RCE patched in v0.6.48."
-  - "[GH:local-scan] Local shallow clone /tmp/repo-wiki-batch9/autogpt at commit aa1d12ba23e3c21f9c0bad2c3bae6dfe1b2cafd5 dated 2026-05-20; git ls-files=3904; du=102M; checked README.md, LICENSE, SECURITY.md, CONTRIBUTING.md, AGENTS.md, classic/README.md, docs/integrations/README.md."
-  - "[GH:readme] README.md local clone: AutoGPT is positioned as a platform to create/deploy/manage continuous AI agents; self-hosting requires Docker, Docker Compose, Git, Node/npm, VS Code or editor, 4+ CPU cores recommended, 8GB minimum/16GB recommended RAM, 10GB storage; platform frontend offers low-code agent builder/workflow management/deployment/monitoring; server runs deployed agents and triggers."
-  - "[GH:license] LICENSE local clone: autogpt_platform folder is under Polyform Shield License; everything outside autogpt_platform is under MIT, including original stand-alone AutoGPT Agent, Forge, agbenchmark and Classic GUI."
-  - "[GH:security] SECURITY.md local clone: latest release and development commits are supported; classic/ folder is deprecated, unsupported, out of scope for security reports, and should not be used; disclosure window asks 90 days before public disclosure and 30 days after patch."
-  - "[GH:classic] classic/README.md local clone: AutoGPT Classic was an experimental project demonstrating autonomous GPT-4 operation, one of the first implementations of autonomous AI agents, now unsupported with dependencies not updated."
-  - "[GH:integrations] docs/integrations/README.md local clone: modular workflow blocks; custom blocks; integrations/triggers include Airtable, Discord, GitHub, Slack, Telegram, Twitter, Stagehand web actions, webhooks and other utility blocks."
-  - "[Docs:platform] https://docs.agpt.co/ extracted 2026-05-20: AutoGPT Platform creates, deploys and manages continuous AI agents; agents are workflows built from blocks; supports low-code workflows, triggers, marketplace/frontend/server concepts and wide LLM provider list."
-  - "[Web:home] https://agpt.co/ extracted 2026-05-20: public site positions AutoGPT as platform for continuously running AI assistants, low-code workflows and digital-task automation."
+  - "[GH:stars] https://api.github.com/repos/Significant-Gravitas/AutoGPT — queried 2026-09-19 UTC+8; stargazers_count=187439. Metadata-only repair of the omitted stars field; no new full freshness audit."
+  - "[GH:current] https://api.github.com/repos/Significant-Gravitas/AutoGPT — queried 2026-09-16 UTC+8: canonical unchanged, archived=false, disabled=false, master, pushed_at=2026-09-15T18:57:54Z, Python, license API=NOASSERTION; separate Search queries open issues=312, open PRs=260; repository advisories returned 40 published records. Metadata, community profile and tree checked."
+  - "[GH:readme] https://github.com/Significant-Gravitas/AutoGPT/blob/master/README.md — read 2026-09-16: four product surfaces AutoPilot/Agents/Marketplace/Build; hosted Platform publicly available and paid with usage-based runs; self-host needs own infrastructure/model keys and Docker/configuration. Marketing behavior not independently deployed."
+  - "[GH:license] https://github.com/Significant-Gravitas/AutoGPT/blob/master/LICENSE and README license table — read 2026-09-16: autogpt_platform uses Polyform Shield, rest MIT; API NOASSERTION does not override the file-level license split. CONTRIBUTING.md requires a CLA for platform contributions. Polyform Shield is source-available with competitive-use restrictions, not ordinary permissive open source."
+  - "[GH:release] https://github.com/Significant-Gravitas/AutoGPT/releases/tag/autogpt-platform-beta-v0.7.4 — published 2026-09-04T12:11:43Z, checked 2026-09-16. Latest product release checked separately from preview-seed-fixture; adds per-expert integration scope, workflow/expert features, activity log, Codex HTTP transport replacing bundled CLI, and auth/runtime fixes. v0.7.1 notes single-container distribution and publishing single-container images (#13758/#13994/#13995). No image pull or deployment verified."
+  - "[GH:security] https://github.com/Significant-Gravitas/AutoGPT/blob/master/SECURITY.md and classic/README.md — read 2026-09-16. Classic remains unsupported/deprecated; current platform security policy, disclosure and support boundaries inspected. Do not infer Classic support from occasional dependency cleanup or new Classic advisories."
+  - "[GH:webhook-advisory] https://github.com/Significant-Gravitas/AutoGPT/security/advisories/GHSA-349p-3c3r-8mjr — published 2026-08-05T04:10:41Z, updated 2026-08-11T14:30:17Z; API inspected 2026-09-16: webhook provider path confusion bypasses generic webhook secret verification; state=published, withdrawn_at=null, affected package Significant-Gravitas/AutoGPT autogpt_platform, range <autogpt-platform-beta-v0.6.70, patched autogpt-platform-beta-v0.6.70, CVSS v3 score 8.2. Historical patched exposure, not proof v0.7.4 is vulnerable."
+  - "[GH:structure] https://github.com/Significant-Gravitas/AutoGPT — current recursive tree, README, LICENSE, SECURITY.md, CONTRIBUTING.md, CODE_OF_CONDUCT.md and classic/README.md inspected 2026-09-16; platform and classic remain separate areas. Release notes show runtime/dependency changes, but this is not code execution or test-coverage evidence."
 ---
 
 # AutoGPT
 
+> 自主 agent 历史的重要项目，当前已是持续运行的 agent/workflow 平台。收录价值与生产采用价值严格分开。
+>
+> **状态**: `active` · **总分**: 3.1/5 · **生产采用推荐度**: 1/5
+
+> **验证边界**：本轮未部署 Docker stack、拉取镜像、运行 agent 或测试 hosted service；Polyform Shield 平台许可与 MIT 历史部分须分开审查。
+
 ## 一句话总结
 
-AutoGPT 是 autonomous-agent 史上必须收录的项目：Classic 把“让 GPT-4 自主拆解并执行任务”的想象推到大众视野，今天的仓库则转向带低代码 workflow、blocks、server/frontend、marketplace 设想的 AutoGPT Platform [GH:classic][GH:readme][Docs:platform]。
+适合研究 autonomous-agent 向 workflow 产品演化的人；对于寻求低维护、低权限风险生产依赖的用户，仍不推荐直接采用 [GH:readme][GH:security]。
 
 ## 总体评价
 
-它的历史价值远高于今天的默认生产推荐。`Significant-Gravitas/AutoGPT` 拥有 18.4 万 stars、4.6 万 forks，是 2023 年自主智能体热潮的标志物；但当前主线已不是原来的 Classic agent，而是 `autogpt_platform`：一个连续运行 agent/workflow 的平台 [GH:api][GH:readme]。
+当前产品 release 是 `autogpt-platform-beta-v0.7.4`，不是列表中的 `preview-seed-fixture`。后者是预览数据库测试素材，不是用户平台版本。README 已将 AutoPilot、Agents、Marketplace、Build 列为四个产品入口，并明确 hosted Platform 公开可用且收费；旧条目的 waitlist 叙述已失效 [GH:readme][GH:release]。
 
-这个转向带来两重判断；2026-07 的复核没有改变结论，只进一步强化了安全审计要求：
-
-- 作为 **agent history / 2023 autonomous-agent wave landmark**：分量很重。
-- 作为 **today's deployable platform**：要非常谨慎，因为 autogpt_platform 使用 Polyform Shield，Classic 已明确 deprecated/unsupported，且截至 2026-07-11 仓库有 32 条 published GitHub Security Advisories 历史记录，其中包括 RCE、session hijacking、SSRF、IDOR、XSS/open redirect 与 secret logging 等平台级风险 [GH:license][GH:security][GH:advisories-2026-07-11]。
-
-因此我把它放在 `ai-programs/agents/assistant-agents`，并明确状态为 `active-platform-classic-deprecated`：这是按 Classic/agent-history lineage 归类，不表示当前 AutoGPT Platform 只是简单 assistant；当前 product surface 已明显接近 workflow automation / agent platform。
+单容器分发与新的 expert/integration 模型改变了部署和能力边界，但不自动解决凭据、租户授权、webhook 或升级运维风险。当前仍有 Classic 弃用线与 Polyform Shield/MIT 混合许可 [GH:license][GH:security]。能力从 5 调为 4：广泛产品声明尚没有代表性端到端验证；社区从 5 调为 4，不再用 stars 和文件齐全替代响应质量。
 
 ## 推荐度：1/5
 
-推荐收录和研究；不推荐未经审查直接作为生产平台采用。评分表中的“推荐度”按生产采用推荐度计算。
-
-适合的推荐语是：**读 AutoGPT 是为了理解 agent 史；用 AutoGPT Platform 是另一个更重、更有许可证和安全边界的工程决策。**
+**目标角色**：研究 agent 史和平台安全的人可优先阅读；需要可靠生产自动化的个人或团队应避免未经隔离、许可审查和版本安全核验就采用。这里的 1/5 是默认生产采用建议，不是否认研究价值，也不声称已证明最新版本有未修高危漏洞。
 
 ## 优势
 
-1. **历史地位极高**：Classic 明确是早期 autonomous GPT-4 agent 实验，README 称其为 one of the first implementations of autonomous AI agents [GH:classic]。
-2. **生态可见度巨大**：18.4 万 stars、4.6 万 forks，远超多数 agent 项目 [GH:api]。
-3. **平台化能力广**：低代码 agent builder、workflow blocks、triggers、monitoring、marketplace/server/frontend 结构完整 [GH:readme][Docs:platform]。
-4. **集成面很宽**：docs/integrations 覆盖 Slack、Telegram、Discord、GitHub、Airtable、Stagehand web actions、webhooks 等 [GH:integrations]。
-5. **治理文件齐全**：community profile 100% 表示 README/SECURITY/CONTRIBUTING/CODE_OF_CONDUCT/issue-PR templates 等文件存在，不等同于治理质量无风险 [GH:community]。
+1. Classic 到 Platform 的演变提供完整研究对象 [GH:security][GH:readme]。
+2. README 描述自然语言入口、可视化 builder、agent 管理与 marketplace 的组合 [GH:readme]。
+3. 新 release 持续扩充 expert/integration 与部署路径 [GH:release]。
+4. 公布安全政策和 GHSA，使历史攻击面可以核查，而非只能依赖营销声明 [GH:security][GH:webhook-advisory]。
 
 ## 劣势
 
-1. **Classic 已弃用且不受安全支持**：SECURITY 明确 classic/ deprecated、unsupported、out of scope for security reports [GH:security]。
-2. **混合许可证影响采用**：autogpt_platform 是 Polyform Shield，其余为 MIT；这不是简单的 MIT 项目 [GH:license]。
-3. **安全历史很重**：32 条 published advisories，样本包括 critical RCE、high session hijacking、SSRF、IDOR、XSS/open redirect、secret logging 与 DoS；记录中的样本均列出 patched version，但这仍是攻击面强信号 [GH:advisories-2026-07-11]。
-4. **复杂度高**：self-host 推荐 4+ cores、8GB minimum RAM、Docker/Compose/Node/npm；不是轻量 CLI agent [GH:readme]。
-5. **issue/PR backlog 不低**：2026-07-11 GraphQL 显示 open issues=285、open PRs=208 [GH:refresh-2026-07-11]。
+1. Classic 不受支持，不能当作当前维护的轻量 agent [GH:security]。
+2. Polyform Shield 的竞争用途限制影响商业选择；“可查看源码”不等于全 MIT [GH:license]。
+3. webhook、credentials、外部工具与多租户逻辑有真实历史安全缺陷 [GH:webhook-advisory]。
+4. 单容器降低安装形式复杂度，不消除内部服务、数据库、备份和升级责任 [GH:release]。
 
 ## 适合什么场景
 
-- 写 agent 史、2023 autonomous-agent 热潮综述。
-- 分析从 single autonomous agent 到 low-code continuous-agent platform 的演化。
-- 研究 blocks/triggers/workflow 化 agent 产品设计。
-- 研究 agent 平台的安全失败模式与治理压力。
-- 在充分隔离的环境中评估 self-host platform。
+- agent 史、角色/工作流产品化与权限边界研究。
+- 在独立账号、脱敏数据和可丢弃环境里评估平台。
+- 研究 webhook 验签、凭据与租户隔离的失败模式。
 
 ## 不适合什么场景
 
-- 想快速获得轻量本地个人 agent。
-- 希望全 MIT / Apache-2.0 permissive license 的项目。
-- 没有 Docker/Node/平台运维能力的个人用户。
-- 对安全边界要求高、但不愿跟踪 advisories 和版本迁移的生产系统。
-- 继续使用 Classic 作为生产依赖；官方明确不建议 [GH:security]。
+- 需要无额外许可限制的竞争性托管产品。
+- 将已弃用 Classic 用于生产。
+- 没有运维、安全升级或秘密管理能力的团队。
+- 将平台广泛功能宣传等同于已经通过业务验收。
 
 ## 与类似项目对比
 
-上述项目按 `ai-programs/agents/assistant-agents` 同类/相邻范围做定位级对比，未按同一 10 维度框架深审；这里主要用于 agent 史定位。
-
 | 项目 | 定位 | 相对本项目 |
 |---|---|---|
-| AutoGPT | autonomous-agent history + continuous-agent platform | 历史可见度最高之一；当前 platform 化、许可证与安全复杂度也最高 |
-| BabyAGI | early task-loop autonomous-agent experiment | 更轻、更像概念原型；AutoGPT 更产品化、平台化 |
-| OpenDevin / OpenHands | software-engineering agent | 更偏 coding agent；AutoGPT 更偏 general digital-task automation |
-| Flowise | visual LLM/agent builder | Flowise 更明确是 visual builder；AutoGPT 更强调 continuous agents 与平台/server/frontend |
-| LangGraph apps | agent workflow orchestration | LangGraph 更偏 framework/runtime；AutoGPT 更偏 end-user/platform product |
+| BabyAGI | 早期自主任务循环实验 | 更适合观察最小循环；AutoGPT 已扩展为平台 |
+| AionUi | 个人桌面 Cowork 工作台 | 更偏桌面与办公；AutoGPT 更偏持续工作流服务 |
+| Hermes Agent | CLI-first 通用 assistant | 更偏个人 agent 执行；AutoGPT 更强调平台管理与 builder |
 
+仅为 assistant/agent-history 同类定位比较，竞品未做本轮同等十维审计，不比较未经验证的安全默认值。
 
 ## 它能做什么
 
-当前 README/docs 描述的 AutoGPT Platform 能做：
-
-- 创建、部署、管理 continuous AI agents [GH:readme]。
-- 用低代码界面连接 blocks 形成 workflow [GH:readme][Docs:platform]。
-- 让 server 持续运行 agents，并由外部 trigger 触发 [GH:readme]。
-- 接入 marketplace/prebuilt agents 的产品形态 [GH:readme]。
-- 使用多类 integration blocks，包括通信、GitHub、webhook、Stagehand web actions 等 [GH:integrations]。
-- Classic 侧曾提供 Forge、benchmark、Classic GUI、agent protocol 相关组件，但现在应视为历史/教育材料 [GH:classic][GH:security]。
+能力 4/5。按 README，AutoPilot 从自然语言任务开始，Agents 展示运行/成本/待处理动作，Marketplace 提供可复用 agents，Build 提供 blocks 编排 [GH:readme]。v0.7.4 涉及 expert 的 integration scope 与工作流安装等功能；这些是 release 声明，本轮没有验证托管服务和自托管在所有功能上等价 [GH:release]。
 
 ## 运行环境与资源占用
 
-README 给出的 self-host 要求较重：
+| 场景 | CPU | 内存 | 存储 | 说明 |
+|---|---|---|---|---|
+| Hosted Platform | 服务端承担 | 服务端承担 | 服务配额 | 付费/用量声明；未测试或审价 |
+| Self-host | 未测量 | 未测量 | Docker、数据库和任务数据 | 自有模型 key；未执行安装脚本 |
+| Single-container | 未测量 | 未测量 | 镜像与持久化卷 | 官方发布记录；未拉取或测试恢复 |
 
-- CPU：4+ cores recommended。
-- RAM：minimum 8GB，recommended 16GB。
-- Storage：at least 10GB。
-- OS：Linux、macOS、Windows with WSL2。
-- Software：Docker Engine、Docker Compose、Git、Node.js、npm、VS Code 或现代编辑器 [GH:readme]。
-
-Docker support: `docker_support: true` 指 self-host/development stack 路径；这说明它不是“一条 pip install 就跑”的轻量 agent，而是一个 Docker 化平台栈。
-
-frontmatter 中 `enterprise_ready: false` 是针对 AutoGPT Platform 当前 beta release line（复核时最新 v0.6.66）、Polyform Shield 边界、高严重度历史 advisories、未做 smoke test 与部署复杂度的保守判断，不是对其历史价值的否定 [GH:releases-2026-07-11][GH:license][GH:advisories-2026-07-11][GH:readme]。
+性能 3/5。旧分析的精确 CPU/RAM 数值不作为当前单容器最低要求；实际开销取决于数据库、工具、并发与模型。`docker_support: true` 由官方 single-container image 发布记录支持，而不只是发现 Dockerfile [GH:release]。GPU 非平台调用远端模型的固有要求，本地推理另计。
 
 ## 上手体验
 
-README 提供一行安装脚本：macOS/Linux 下 `curl -fsSL https://setup.agpt.co/install.sh -o install.sh && bash install.sh`，Windows PowerShell 也有对应脚本 [GH:readme]。
-
-但我仍只给 3/5：
-
-- 一行脚本降低入口门槛；
-- 平台依赖 Docker/Compose/Node/npm；
-- 还要理解 frontend/server/blocks/triggers；
-- Cloud beta/waitlist 与 self-host 路径会让用户预期复杂化 [GH:readme][Docs:platform]。
+3/5。当前 README 明确公开 hosted signup 与自托管的区别，自托管仍提供下载后执行安装脚本的入口 [GH:readme]。脚本简短不等于部署简单，执行前应审查来源和权限。没有本轮安装结果，不能承诺零配置或运行耗时。
 
 ## 代码质量
 
-代码规模大，本地 shallow clone 3904 tracked files、102M，语言以 Python/TypeScript 为主 [GH:local-scan][GH:api]。
-
-正面：
-
-- 前后端、docs、integrations、security/contribution 文件齐全。
-- AGENTS.md 给出较具体的 backend/frontend/testing/conventional commits 规则 [GH:local-scan]。
-- release 节奏仍活跃，latest beta release 为 v0.6.66（2026-07-09）[GH:releases-2026-07-11]。
-
-负面：
-
-- Classic deprecated 与 platform 主线共存，历史包袱重。
-- 安全 advisories 多，说明复杂平台曾暴露多处严重问题 [GH:advisories]。
-- 本次未运行测试，不能验证当前 master 的 runtime health。
+3/5。platform/classic 分区、测试/发布工程及治理文件提供结构线索，但持续的 auth/runtime/dependency 修复与较大维护面要求保守 [GH:structure][GH:release]。未运行测试或计算覆盖率；release 完成不等于 master 或用户部署健康。
 
 ## 可扩展性
 
-可扩展性很强但代价高。AutoGPT Platform 采用 blocks/integrations/triggers 思路，docs 提供 custom blocks 指引，现有 integrations 覆盖通信、GitHub、web、webhook、数据处理等 [GH:integrations][Docs:platform]。
-
-这类扩展性更像 Zapier/n8n-style workflow builder，而不是 library-style SDK。优点是非开发者也可能组合 agent workflow；缺点是每个 block 都是潜在权限与安全边界。
+4/5。blocks、integrations、triggers、expert/workflow 组合形成应用扩展面 [GH:readme][GH:release]。每个外部连接同时增加凭据和授权边界；插件丰富不代表可无审查运行任意第三方逻辑。
 
 ## 文档质量
 
-README、docs site、integrations docs、SECURITY、CONTRIBUTING 都存在且信息量充足 [GH:readme][Docs:platform][GH:integrations]。
-
-扣分点主要是：
-
-- 历史线、Classic、Platform、Cloud beta/self-host 之间对新用户可能混淆。
-- README 有明显 typo，例如 in-developlemt；这不是大问题，但反映文档 polish 不完美 [GH:readme]。
-- 平台 claim 很多，本次未逐一部署验证。
+4/5。README 对 hosted/self-host、产品入口与许可证的分隔比旧版明确，SECURITY 和贡献文档也提供支持边界 [GH:readme][GH:license][GH:security]。但产品页声明、版本化 release 与 rolling preview 工件仍容易混淆，操作时要核对真实产品 tag。
 
 ## 社区与成熟度
 
-社区可见度是 5/5 级别：18.4 万 stars、4.6 万 forks、100 first-page contributors、community profile 100%（文件存在性信号）[GH:api][GH:contributors][GH:community]。
+| 维度 | 评分 | 说明 |
+|---|---|---|
+| 社区 | 4/5 | 活跃但不以受众规模证明响应质量 [GH:current] |
+| 成熟度 | 3/5 | beta 平台与部署路径仍在演进 [GH:release] |
 
-成熟度只给 3/5：原因是成熟不是 stars。AutoGPT 经历了从 Classic 到 Platform 的大转向，当前 releases 仍是 `autogpt-platform-beta` 系列；2026-07-11 open issues=285/open PRs=208；安全公告历史重 [GH:refresh-2026-07-11][GH:releases-2026-07-11][GH:advisories-2026-07-11]。
+社区 4/5、成熟度 3/5。本轮 312 open issues、260 open PRs 与持续 beta release 说明维护活跃但不能证明快速响应或兼容稳定 [GH:current][GH:release]。平台贡献需要 CLA，README 的广泛受众也不是开放治理或生产采用率的证据 [GH:license]。
 
 ## 安全与风险
 
-历史 advisories 数量与 platform attack surface 是 AutoGPT 当前生产采用最大的风险项。
+2/5，反映高权限平台的历史攻击面和持续审查成本，不把 40 条发布公告读作 40 个当前漏洞 [GH:current]。
 
-正面：有 SECURITY.md、私密报告路径、支持版本说明、disclosure policy、GitHub advisories 公开透明 [GH:security][GH:advisories]。
+本轮样本 GHSA-349p-3c3r-8mjr 是 webhook provider 路径混淆导致验签绕过；API 标记平台版本低于 v0.6.70 受影响，v0.6.70 修复，CVSS v3 为 8.2。它不能证明 v0.7.4 仍受该缺陷影响，却说明只验证“有 webhook secret”不足以验证所有请求路径 [GH:webhook-advisory]。
 
-负面：
-
-- 32 条 published advisories，且样本中有 critical RCE、高危 session hijacking、SSRF、IDOR、XSS/open redirect、secret logging、DoS、Redis pickle deserialization/RCE 等 [GH:advisories-2026-07-11]。
-- Classic 被明确标为 deprecated/unsupported/out of scope [GH:security]。
-- workflow blocks 与外部 credentials、webhooks、browser/web actions 的组合天然扩大攻击面 [GH:integrations]。
-- Polyform Shield 对商业竞争场景有许可证风险 [GH:license]。
-
-因此 security_score 只给 2/5。不是说当前 v0.6.66 必然仍受这些已修公告影响，而是历史攻击面和平台权限模型要求很高；操作时仍须逐条核对所部署版本与公告 patched version。
+部署前应逐公告匹配实际 tag、固定镜像、限制出站网络与工具凭据，并核验租户、webhook 和数据库权限。Classic 仍不应使用；新发布的 Classic 公告或依赖清理不等于恢复支持 [GH:security]。Polyform Shield 的商业用途边界另行审查 [GH:license]。
 
 ## 学习价值
 
-学习价值很高，主要在三点：
-
-1. agent 史：为什么 2023 年 AutoGPT 能成为象征。
-2. 产品演化：从 autonomous task loop 到 continuous workflow platform。
-3. 工程教训：agent 平台一旦连接 credentials、webhooks、browser actions、blocks，就进入严肃安全工程，而非 prompt demo。
+很高。AutoGPT 展示了自主循环如何发展成有数据、触发器、凭据、计费和用户权限的平台；真正值得研究的是这一步为何把 prompt 演示变成严肃系统与安全工程，而非只看 agent 能调用多少工具。

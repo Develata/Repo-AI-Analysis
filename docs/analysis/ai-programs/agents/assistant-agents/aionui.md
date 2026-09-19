@@ -1,36 +1,23 @@
 ---
-
-
 title: "AionUi"
 created: 2026-05-14
-updated: 2026-07-11
+updated: 2026-09-16
+last_checked: 2026-09-16
+last_verified: 2026-09-16
 type: repository-analysis
-repo_url: https://github.com/iOfficeAI/AionUi
+repo_url: "https://github.com/iOfficeAI/AionUi"
 category: "ai-programs/agents/assistant-agents"
-tags:
-  - ai-agent
-  - desktop
-  - multi-agent
-  - automation
-  - electron
-  - rust
-  - office
-  - cowork
+tags: [ai-agent, desktop, multi-agent, electron, office, cowork]
 primary_language: TypeScript
+stars: 32952
 license: Apache-2.0
-stars: 29793
-forks: 2986
-last_checked: 2026-07-11
-last_verified: 2026-07-11
-evidence: "user deployment experience + docs review + release notes analysis + community signals"
-archived_reason: ""
-successor: ""
+status: active
 docker_support: false
 gpu_required: false
-estimated_cpu: "4-8 cores"
-estimated_memory: "4-16GB"
-estimated_storage: "2-5GB"
-status: active
+estimated_cpu: "desktop plus backend and invoked agents; not measured"
+estimated_memory: "depends on Electron, AionCore, conversations and external agents; not measured"
+estimated_storage: "application, backend, skills and user files; no verified minimum"
+evidence: "Prior user deployment feedback retained; 2026-09-16 GitHub API, README, release notes, LICENSE, CONTRIBUTING, package.json and tree inspection; no fresh runtime or backend deployment test"
 ratings:
   capability: 4
   usability: 3
@@ -44,225 +31,121 @@ ratings:
   recommendation: 3
 overall_score: 3.2
 sources:
-  - "[GH:refresh-2026-07-11] GitHub REST/GraphQL snapshot for iOfficeAI/AionUi on 2026-07-11: repository exists and is not archived/disabled; default_branch=main, pushed_at=2026-07-10T14:08:18Z, language=TypeScript, license=Apache-2.0, stars=29793, forks=2986, open issues=533, open PRs=139, discussions=60, releases=141."
-  - "[GH:releases-2026-07-11] GitHub Releases checked 2026-07-11: latest v2.1.32 published 2026-07-11. Recent v2.1 releases add manual teammate management, assistant/settings UX, skill slash commands and team/cron fixes, while their high frequency and continuing correctness fixes show that the architecture has moved beyond the original v2.0 Preview label but has not yet stabilized."
-  - "[GH:advisories-2026-07-11] GitHub repository security-advisories endpoint returned [] on 2026-07-11; this means no published repository advisory was found in this check, not that the project or its agent/tool surface is safe."
-  - "[GH:readme-2026-07-11] Current README inspected 2026-07-11: AionUi presents a built-in agent, 19+ external CLI agents, Team Mode with leader/teammates and shared task board, three-tier skills, OfficeCLI-backed document assistants, WebUI/chat channels and scheduled tasks; README explicitly exposes YOLO/full-auto operation as an option."
-  - "[GH] https://github.com/iOfficeAI/AionUi"
-  - "[Docs] https://github.com/iOfficeAI/AionUi/tree/main/docs"
-  - "[Wiki] https://github.com/iOfficeAI/AionUi/wiki"
-  - "[Backend] https://github.com/iOfficeAI/aionui-backend"
-  - "[Wiki: LLM Configuration] GitHub wiki page under iOfficeAI/AionUi for LLM/custom OpenAI-compatible platform configuration, checked as part of wiki/documentation review: https://github.com/iOfficeAI/AionUi/wiki"
-
+  - "[GH:stars] https://api.github.com/repos/iOfficeAI/AionUi — queried 2026-09-19 UTC+8; stargazers_count=32952. Metadata-only repair of the omitted stars field; no new full freshness audit."
+  - "[GH:current] https://api.github.com/repos/iOfficeAI/AionUi — queried 2026-09-16 UTC+8: canonical unchanged, archived=false, disabled=false, TypeScript, Apache-2.0; branch/pushed_at, community profile, tree, LICENSE checked; separate Search queries open issues=680, open PRs=228; published repository security-advisories=[] (negative lookup only)."
+  - "[GH:readme] https://github.com/iOfficeAI/AionUi/blob/main/README.md — read through GitHub API 2026-09-16: built-in/external agents, office assistants, WebUI/channels, cron, skills and extensions. Development now uses AionUi Electron frontend plus AionCore backend; built-in assistant catalog/skills link to iOfficeAI/AionCore. This check did not independently deploy AionCore or audit OfficeCLI."
+  - "[GH:release] https://github.com/iOfficeAI/AionUi/releases/tag/v2.2.2 — published 2026-09-09T11:29:49Z, checked 2026-09-16 along with four preceding releases; v2.2.2 adds tab-scoped explorer refresh/repo rediscovery/Collapse All (#4202). Release states installers are no longer published on GitHub and directs users to https://www.aionui.com/; current README Download Now still links GitHub Releases. Website download artifact was not tested."
+  - "[GH:structure] https://github.com/iOfficeAI/AionUi — package.json, CONTRIBUTING.md, CHANGELOG.md and tree read 2026-09-16; packages/desktop, packages/web-cli, packages/web-host, packages/shared-scripts, mobile/package.json, extension example manifests, tests/e2e and build/release workflows visible. Static presence does not prove supported mobile delivery or test success."
+  - "[History] Local Git revision 72fa10bef9d4175ff42f56d4824bb7ab0579b168:wiki/github-repo-wiki/ai-programs/agents/assistant-agents/aionui.md, read before editing 2026-09-16. Prior analysis dated 2026-07-11 preserved user deployment concerns: bugs/state inconsistency and multi-agent token cost; then v2.1.32, 533 open issues/139 PRs. Historical feedback/snapshots, not a fresh test of v2.2.2."
 ---
 
 # AionUi
 
-> Free, local, open-source 24/7 Cowork app — one desktop interface for 20+ AI agents, with built-in office tools and cron automation
+> 多 agent Cowork 桌面工作台；功能广、权限面大，当前采用判断仍是尝鲜而非关键依赖。
 >
 > **状态**: `active` · **总分**: 3.2/5 · **推荐度**: 3/5
 
+> **验证边界**：本轮未下载安装包、启动桌面/backend、运行办公任务或 benchmark；既有用户反馈不等于对新版本的实测。
+
 ## 一句话总结
 
-面向同时使用多个 AI agent、需要统一 workspace 的用户——AionUi 的理念迷人但现实骨感：功能极多、bugs 同样多，变动太快无法用于生产，共享上下文的 token 成本常被忽视。适合尝鲜和灵感参考，不适合依赖。
+适合想在统一桌面界面中组合 agent、办公文件与定时任务的尝鲜者；没有足够新运行证据推翻 用户 既有稳定性与成本顾虑 [History]。
 
 ## 总体评价
 
-AionUi 的定位是 AI agent 的 **Cowork 平台**：聚合 built-in agent 与 19+ 外部 CLI agents，再叠加 Team Mode、office 工具链和 cron [GH:readme-2026-07-11]。v2 已从最初 Preview 推进到 v2.1.32，但高频 release 与持续的 team/cron/model/runtime correctness fixes 表明架构仍在收敛；2026-07-11 仍有 533 open issues 与 139 open PRs [GH:refresh-2026-07-11][GH:releases-2026-07-11]。
+本轮的实质变化不是 patch 数量，而是产品交付与后端边界：最新 v2.2.2 的 release 指向官网下载安装包，不再在 GitHub 发布 installers；README 的开发说明与助手/skills 定义指向 **AionCore**。旧条目把 `aionui-backend`、Electron/Node/Rust 三种运行方式和精确硬件门槛混作当前已验证事实，不再适用 [GH:readme][GH:release]。
 
-共享上下文是多 agent 聚合的核心优势，但带来的 token 消耗爆炸是隐藏成本——在多 agent 场景下，每个 agent 都要阅读相同的对话历史，实际成本远超单独运行。
-
-适合：愿意忍受 bugs 的尝鲜者、需要 office AI 文档生成的人、想研究多 agent 架构的开发者。不适合：需要生产稳定性的团队、对 bug 零容忍的用户。
-
-> AionUi's ambition is 10/10. Its execution, at the time of writing, is not.
+AionUi 仓库本身没有迁移，仍是 TypeScript/Apache-2.0。AionCore 是当前 README 指出的另一个组件，不据此自动迁移本条目，也不从前端许可证推断所有组件许可 [GH:current][GH:readme]。
 
 ## 推荐度：3/5
 
-**目标角色**：愿意忍受 bugs 的 AI agent 尝鲜者、追求 office 文档 AI 生成的用户、想研究多 agent 架构的开发者。
+**目标角色**：愿意自行验证桌面、后端、外部 CLI 和办公文件链路的个人高级用户。适合办公自动化试验与架构研究；不建议将关键账号、唯一文件副本或无人看守的高权限任务立即交给它。
 
-AionUi 的愿景——一个界面聚合所有 agent——是正确的方向。但当前阶段，bugs 太多、变动太快、token 开销太大，三个因素叠加使得日常使用体验远不如单独使用 Claude Code 或 Codex。Office 工具链是独有的亮点，但光靠这一点不足以撑起推荐度。
-
-从 MCP/CLI + MCP 的角度看，多 agent 协作的基础设施已经存在——Claude Code 和 Codex 各自都有 MCP 集成。AionUi 的差异化在于共享上下文和统一界面，但这个差异化的代价是 token 爆炸和 bugs。
-
-**结论**：v2.1 已证明 Rust/backend 拆分并非停留在 Preview，但稳定性门槛尚未跨过。若 backlog 和 weekly fix churn 明显下降、token 管理引入智能压缩，可重新评估；当前仍是关注和试用，而非依赖。
+没有本轮 runtime smoke，就不能因升级到 v2.2 而宣称旧 bugs 已修复；也不能断言所有旧问题在新版本必然存在。保留原有 3/5 推荐与成熟度 2/5 [History][GH:current]。
 
 ## 优势
 
-1. **真正的多 agent 工作台**：自动检测已安装的 20+ CLI agent，不需要额外配置。一个界面切换 agent、对比输出、编排协作
-2. **内置 office 工具链**：PPT（Morph 动画）、Word、Excel 的 AI 生成与编辑，直接输出可编辑的 `.pptx`/`.docx`/`.xlsx`，这是其他 agent 客户端完全没有的
-3. **24/7 定时自动化**：内置 Cron 系统，支持 cron 表达式、定时间隔、一次性执行。可以设定「每周一早上 9 点生成项目周报」这种任务
-4. **多渠道远程控制**：WebUI（手机/平板浏览器）+ Telegram + 钉钉 + 飞书 + 微信 + 企业微信，你不在电脑前也能操控 agent
-5. **v2.0.0 架构升级**：后端从 Electron 拆出，Rust 编写，支持独立部署（NAS/树莓派/服务器），REST + WebSocket API 默认开放
-6. **Apache 2.0 协议**：比 GPL 更友好的企业使用授权，没有 copyleft 顾虑
+1. README 将 built-in 与外部 agents、文件操作和定时任务放在同一工作台 [GH:readme]。
+2. OfficeCLI/助手预设提供 PPT、Word、Excel 文件工作流入口；是产品声明而非本轮文件生成验收 [GH:readme]。
+3. 前端、backend 与扩展定义的归属更明确，有利于分层排障 [GH:readme][GH:structure]。
+4. skills/extension 示例与 e2e 结构可供开发者研究 [GH:structure]。
 
 ## 劣势
 
-1. **Bugs 严重影响体验**：功能多但质量参差；533 open issues 与近期持续的 correctness fixes 是直接负信号 [GH:refresh-2026-07-11][GH:releases-2026-07-11]
-2. **共享上下文的 token 爆炸**：多 agent 共享对话历史是核心优势，但每个 agent 都反复读取相同上下文，token 消耗飙升
-3. **变动太大，仍不宜用于生产依赖**：虽然版本已到 v2.1.32，但近期每数日一个 release，且持续修复 backend startup、OpenAI key、team state、cron history 与 MCP cwd 等基础路径 [GH:releases-2026-07-11]
-4. **功能膨胀**：一直在加新功能，issue 积压却居高不下，反映出「重 feature 轻质量」的倾向
-5. **核心贡献者集中且维护面宽**：@piorpua 仍出现在多数 release 中；141 releases、533 issues、139 PRs 对年轻项目形成显著维护压力 [GH:refresh-2026-07-11]
-
----
+1. 既有用户反馈中的 bug 与成本顾虑没有新实测闭环 [History]。
+2. 本轮 680 issues、228 PRs，维护面较历史快照扩大；这不是“680 个 bug”的统计 [GH:current]。
+3. 安装包交付转至官网，README 按钮与 release 正文指引不完全一致 [GH:release]。
+4. 跨仓库 backend、外部 agents、插件、渠道与 cron 使权限/升级排障复杂 [GH:readme]。
 
 ## 适合什么场景
 
-- 同时使用多个 agent（如 Claude Code + Codex + Hermes Agent），需要一个统一界面
-- 需要定时自动化（每日摘要、周报生成、备份等）
-- 需要在手机上通过 Telegram/微信远程操控 desktop agent
-- 需要 AI 批量生成/处理 Office 文档（PPT 大纲、Word 报告、Excel 数据分析）
-- 想在本地跑 agent、用自己的 API key，不想把文件上传到云端
+- 对脱敏或可恢复文件做办公自动化原型。
+- 需要桌面界面统一管理多个 agent 的个人使用。
+- 研究 assistant catalog、skills、扩展与前后端拆分。
 
 ## 不适合什么场景
 
-- 只用一个 agent 的轻量用户——AionUi 的桌面 overhead 不值得
-- 追求极简 CLI 体验的开发者——直接用 Claude Code / Codex 更轻
-- 需要稳定生产环境的团队——v2.0 架构变动大，目前不适合作为团队基础设施
-- 对内存/CPU 敏感的低配机器（如 4GB RAM 笔记本）——Electron 底子决定了它不轻量
+- 仅一次 CLI 调用即可完成的简单任务。
+- 对生产稳定性与审计隔离有刚性要求的无人值守平台。
+- 将“本地 UI”误认为数据绝不会发往模型或工具服务。
 
 ## 与类似项目对比
 
 | 项目 | 定位 | 相对本项目 |
-|------|------|-----------|
-| Claude Cowork | macOS-only 官方 agent | 免费、跨平台、多 agent，但 Claude Cowork 与 Claude Code 的集成更原生 |
-| OpenClaw | 自部署纯后端 agent platform | AionUi 有桌面 GUI + office 工具链，OpenClaw 生态更大(371k stars)但无前端 |
-| Hermes Agent | 自进化型 CLI agent | Hermes 强在 learning loop(skills 自动创建+自修正)，AionUi 强在聚合与办公 |
-| Cursor | AI IDE | Cursor 专注代码编辑，AionUi 是通用 agent workspace + 办公自动化 |
-| Copilot Chat | IDE 内嵌 chat | AionUi 多 agent、有 office 能力、有 cron，但 coding 深度不如 IDE 工具 |
+|---|---|---|
+| Hermes Agent | CLI-first 通用 assistant | AionUi 更偏桌面聚合与办公；这里不比较未核验的权限默认值 |
+| OpenClaw | 自部署 assistant 平台 | 与 AionUi 的桌面 Cowork 交互重心不同，不据此断言其没有前端 |
+| AutoGPT | 持续 agent/workflow 平台 | AionUi 更贴近个人桌面工作台，AutoGPT 更偏平台化工作流 |
 
----
+仅为同类 assistant 项目的定位比较，没有本轮同等十维竞品审计，也没有验证任何双向集成。
 
 ## 它能做什么
 
-AionUi 的功能矩阵可拆为四个层 [GH]：
+能力 4/5。README 宣称 built-in agent 可读写文件、搜索、调用 MCP，并聚合外部 agents；办公助手输出可编辑文档，WebUI/聊天渠道提供远程入口，cron 提供定时运行 [GH:readme]。当前助手 catalog 与 built-in skills 的源码入口在 AionCore；不能把前端 repo 单独当作完整运行时。
 
-**Agent 层**：
-- Built-in agent（零配置，安装即用）
-- 自动检测 20+ CLI agent：Claude Code、Codex、Qwen Code、Goose AI、OpenClaw、Augment Code、CodeBuddy、Kimi CLI、OpenCode、Factory Droid、GitHub Copilot、Qoder CLI、Mistral Vibe、Nanobot、Aion CLI (aionrs)、Snow CLI、Kiro、Hermes Agent、Cursor Agent 等
-- Team Mode：Leader agent 分解任务 → Teammate agents 并行执行 → shared task board
-- ACP 2.0 协议层统一 agent 通信
-- ⚠️ 共享上下文模式：多 agent 读取相同对话历史，token 消耗随 agent 数量线性增长
-
-**办公层**：
-- PPT Assistant：生成带 Morph 动画的可编辑 `.pptx`
-- Word Assistant：生成论文/报告 `.docx`
-- Excel Assistant：数据分析与图表 `.xlsx/.xlsm/.csv`
-- Preview Panel：直接在应用内预览 10+ 格式（doc/xls/ppt/md/html/diff 等）
-
-**自动化层**：
-- Cron 定时任务：cron 表达式 / 每 N 分钟 / 一次性
-- 执行策略：续写已有对话 或 每次新对话
-- 智能文件管理：AI 批量重命名、自动分类、重复清理
-
-**接入层**：
-- 25+ LLM 平台（Gemini、OpenAI、Anthropic、AWS Bedrock、Ollama、国内 Dashscope/智谱/Moonshot 等）
-- NewAPI 统一网关，支持多 API key 轮转
-- WebUI 远程访问（浏览器，手机可用）
-- Telegram / Lark / DingTalk / WeChat / WeCom 集成
+v2.2.2 的明确新增是 tab-scoped explorer refresh、仓库重新发现和 Collapse All；这是交互改进，不构成整个系统稳定性证明 [GH:release]。
 
 ## 运行环境与资源占用
 
 | 场景 | CPU | 内存 | 存储 | 说明 |
-|------|-----|------|------|------|
-| 最小（desktop） | 4 核 | 8GB | 2GB | 仅 built-in agent，不做多 agent 并行 |
-| 推荐（desktop） | 8 核 | 16GB | 5GB | 多 agent + office + WebUI |
-| 服务器模式 | 4 核 | 4GB | 2GB | Rust 后端独立部署，无 Electron overhead |
-| v2.0 后端 | 2 核 | 1GB | 500MB | Rust 单文件服务 (aionui-backend)，树莓派可用 |
+|---|---|---|---|---|
+| Desktop | 未测量 | Electron 与本地 backend | 安装包与用户状态 | 本轮未安装 |
+| Backend | 未测量 | 未测量 | 配置和运行数据 | README 指向 AionCore；未独立部署 |
+| 外部 agents/office tools | 依实际任务 | 依并发和模型 | 模型、工具与文件 | 不沿用旧版硬件最低值 |
 
-- **运行时**：Electron (desktop) / Node.js (server mode) / Rust binary (v2.0 backend)
-- **操作系统**：macOS / Windows / Linux，均提供二进制安装包 (.dmg, .exe, .deb)
-- **Docker**：未官方提供，但有 2,287 fork 中存在社区 Docker 方案
-- **GPU**：不需要
-- **外部依赖**：Bun（开发时），Node.js 22+（开发时）；用户侧只需安装二进制
+性能 3/5，无精确 CPU/RAM 最低值或基准数据。多 agent 可能重复消耗上下文，但不能统一声称成本必然按 agent 数线性增长。`docker_support: false` 指本轮未核实官方用户 Docker image；GPU 不是桌面客户端的固有要求 [GH:readme][GH:structure]。
 
 ## 上手体验
 
-评分 3/5。
-
-Built-in agent 的安装体验流畅——下载二进制、启动、登录、开始对话，这个过程确实快速。但一旦进入日常使用，bugs 就冒出来了：功能间歇性失效、状态不同步、界面卡顿。多 agent 场景下的 token 消耗也让人头疼——看似方便的共享上下文，实际是让每个 agent 都重新消费一遍相同的对话历史。
-
-「零配置」适用于 built-in agent，但一旦涉及 LLM 平台配置、MCP server 设定、远程访问设置，就需要爬文档。不过文档引导基本齐全，不算硬伤。真正的硬伤是 bug 密度——这个问题不解决，其他体验优化都是空中楼阁。
+3/5。当前应从 release 正文进入官网获取安装包，不能保证 GitHub release assets 中仍有 installers；本轮未下载、校验签名或安装 [GH:release]。模型凭据、backend 与外部 CLI 的配置仍需单独处理，“零配置”不覆盖所有这些边界。
 
 ## 代码质量
 
-评分 3/5。
-
-静态质量信号表现不错：AGENTS.md 详细规范、三进程架构清晰、完整的 CI pipeline（prek、oxlint、oxfmt）、PR automation bot、vitest 测试体系 [GH]。这些都是优秀工程实践的标志。
-
-但 **bug 密度是硬指标**。2026-07-11 的 533 open issues 与 139 open PRs，加上 v2.1 releases 持续修复用户关键路径，说明静态工程规范尚未转化为足够稳定的系统行为 [GH:refresh-2026-07-11][GH:releases-2026-07-11]。可能原因仍包括功能膨胀快于测试增长、架构过渡回归，以及 integration/e2e 覆盖不足。
-
-代码可读性方面，结构清晰但 v2.0 过渡期意味着部分代码处于新旧交替状态。架构文档 (`docs/architecture/overview.md`) 质量高，但代码本身能否对齐文档描述是另一个问题。
+3/5。package/tree 显示 desktop/web packages、扩展示例、e2e 与 CI 结构，是治理正信号，但没有执行测试或覆盖率证据 [GH:structure]。跨仓库重组与既有真实故障反馈要求继续保守，不能把静态工程规范当成质量验收 [History]。
 
 ## 可扩展性
 
-评分 4/5。
-
-三层 skill/扩展体系 [GH]：
-
-1. **Built-in skills**：随应用发布（pptx, docx, pdf, xlsx, mermaid 等）
-2. **Custom skills**：用户在 `skills/` 目录自定义，支持按 assistant 启用/禁用
-3. **Extension SDK**：加载外部扩展，但目前文档浅
-
-其他扩展点：
-- **Custom agent**：通过 ACP 2.0 协议接入任意 agent
-- **Custom platform**：任何 OpenAI-compatible 的 API 端点均可配置 [Wiki: LLM Configuration]
-- **MCP integration**：配置一次，所有 agent 自动同步 MCP tools
-- **v2.0 REST + WebSocket API**：后端暴露 `/api/*` 和 `/ws`，可编程调用
-
-差距在于 Extension SDK 文档尚浅（Contributing guide 中无详细说明），以及目前没有类似 VS Code 扩展市场的分发渠道。4 分代表「有插件机制且设计良好，但生态尚未形成」。
+4/5。README 提供 built-in/custom/extension skills 路线；tree 有 agents、assistants、MCP servers、settings、themes 等扩展清单示例 [GH:readme][GH:structure]。这说明存在扩展接口，不保证任意 agent 或任意 MCP server 可无配置接入。
 
 ## 文档质量
 
-评分 4/5。
-
-文档覆盖了主要功能路径 [Docs][Wiki]：
-
-- **架构文档**：`docs/architecture/overview.md` 覆盖进程模型、IPC 通信、运行模式、Cron 系统
-- **开发指南**：`docs/contributing/development.md` 有完整的 scripts 参考表和 multi-instance 说明
-- **LLM 配置**：Wiki 中有详细的多平台配置指南，含 base URL 列表和 API key rotation
-- **用例概览**：Wiki 有 Use Cases 页面，但标注为 "Available" 的只有 File Management，其余五个全部 "Coming Soon"
-
-缺失项与 4 分的边界吻合：
-- Use Cases 大面积空白（Coming Soon 占 5/6）
-- LLM FAQ 只有标题没有答案
-- Extension SDK 缺少开发文档
-- 没有安全加固指南
+4/5。多语言 README、贡献与开发入口、release notes 能帮助定位组件；AionCore 归属也比旧 backend 命名更清楚。下载按钮仍指 GitHub、release 却指官网，是当前需要读者辨别的文档一致性问题 [GH:readme][GH:release]。不保留未经本轮核验的旧 Wiki“5/6 Coming Soon”判断。
 
 ## 社区与成熟度
 
 | 维度 | 评分 | 说明 |
-|------|------|------|
-| 社区活跃度 | 3/5 | 29.8k stars、3.0k forks、60 discussions，增长迅速；但 533 open issues 与 139 open PRs 显示维护压力仍高 [GH:refresh-2026-07-11] |
-| 成熟度 | 2/5 | v2 已到 2.1.32，但 141 releases、近乎日更的迭代与基础路径修复表明仍未稳定。feature breadth 与 backlog 同时上升，按评分边界不应因版本号越过 Preview 就升分 [GH:refresh-2026-07-11][GH:releases-2026-07-11] |
+|---|---|---|
+| 社区 | 3/5 | 活动持续但维护压力较大 [GH:current] |
+| 成熟度 | 2/5 | 交付/组件变化与既有反馈仍需运行验证 [GH:release][History] |
 
-社区贡献者分布：@piorpua（核心，几乎每次 release）、@IceyLiu、@TCP404、@kaizhou-lab、@JerryLiu369 等为核心贡献者，整体呈现「一个 lead + 稳定 committer 群」的结构。Bus factor 风险存在，但对一个新项目来说属正常。
+社区 3/5、成熟度 2/5。持续发布和 680/228 backlog 说明活动与维护压力同时存在，不能因单次 bugfix release 升级评分 [GH:current][GH:release]。贡献者响应速度与当前用户成功率未测；用户 先前实际体验仍有优先权 [History]。
 
 ## 安全与风险
 
-评分 3/5。
+3/5。本轮 repository advisories 为空，只说明这个接口未发现发布公告 [GH:current]。文件读写、外部工具、远程渠道与定时运行组合意味着模型输出可能影响宿主数据；本地 UI 不代表隔离沙箱或无外传 [GH:readme]。
 
-已有的安全措施 [GH]；本次 advisories endpoint 未发现 published repo advisory，但这不是安全证明 [GH:advisories-2026-07-11]：
-- JWT 认证（WebUI / server 模式）
-- 密码保护 + QR code 登录（远程访问）
-- 多实例隔离（`AIONUI_MULTI_INSTANCE` 使用独立的 user data 目录）
-- API key 本地存储（标准桌面应用做法）
-
-风险点：
-- WebUI 模式下 REST + WebSocket 端点暴露，默认无 HTTPS（需反向代理）
-- Server 模式失去 Electron 的 10 个 sandbox bridge（fs/dialog/shell 等），攻击面变化未充分文档化
-- 无安全审计记录
-- API key 多轮转时黑名单机制的细节未公开
-- Cron 系统可执行任意命令——等于给 agent 用户的文件系统权限
-- README 公开提供 YOLO/full-auto 以绕过权限提示；这对无人值守很方便，但也把 model/tool injection 的后果放大到宿主权限边界 [GH:readme-2026-07-11]
-
-3 分代表「有基本安全措施，正常使用风险可控，但生产环境部署需要自行加固」。这比 OpenClaw/Hermes 的 2 分（ALLOW-ALL 默认无权限模型）要好一些，但远不到安全完善的水平。
+建议隔离工作目录、使用可恢复文件和低权限账号、限制模型/工具 credentials，并验证远程访问认证、TLS 和绑定地址。本轮未核验新 backend 的 auth 默认值，不沿用旧 JWT/端口/桥接数量来作安全保证，也不与其他 assistant 做无证据安全排名。官网安装包与 backend 分发还需独立做来源、签名和版本一致性校验。
 
 ## 学习价值
 
-**高**。即使不部署，AionUi 的以下设计值得学习：
-
-- **ACP 2.0 协议**：一个统一 20+ agent 通信的抽象层，设计思路清晰
-- **多进程 Electron 架构**：main/renderer/worker 三层分离 + IPC bridge 的工程实践
-- **PR automation bot**：label-driven state machine 实现自动化 review → fix → merge 流程
-- **Rust 后端拆分策略**：从 Electron monolith 到独立 Rust 服务、再推进到 v2.1 的迁移路径 [GH:releases-2026-07-11]
-- **三模式运行**：Desktop / WebUI (Electron no-window) / Server (pure Node.js)，同一代码库支撑不同部署形态
+高。值得研究的是桌面 UI、agent runtime、助手内容与工具链各由谁负责，以及多入口如何共同处理任务状态与授权。功能越广，越应把一个真实文件任务从入口到交付完整测通，而非数 feature。

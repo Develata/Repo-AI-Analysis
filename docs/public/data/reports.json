@@ -140,40 +140,6 @@
       "summary": "Svelte 是 compiler-first 前端框架：把声明式组件编译为直接更新 DOM 的 JavaScript，兼具成熟生态与清晰的开发体验。 [GH:readme]"
     },
     {
-      "slug": "ustc/academic-tools/ustcthesis",
-      "route": "/analysis/ustc/academic-tools/ustcthesis",
-      "title": "ustcthesis",
-      "repo_url": "https://github.com/ustctug/ustcthesis",
-      "category": "ustc/academic-tools",
-      "directory": "ustc/academic-tools",
-      "tags": [
-        "ustc",
-        "latex",
-        "thesis-template",
-        "academic-writing",
-        "tex"
-      ],
-      "primary_language": "TeX",
-      "stars": 2119,
-      "status": "active",
-      "ratings": {
-        "capability": 5,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 5,
-        "documentation": 5,
-        "community": 4,
-        "maturity": 5,
-        "extensibility": 4,
-        "security": 5,
-        "recommendation": 5
-      },
-      "overall_score": 4.6,
-      "last_checked": "2026-07-07",
-      "updated": "2026-07-07",
-      "summary": "ustcthesis 是 USTC 学位论文写作的事实标准级 LaTeX 模板，适合希望用 LaTeX 写本科毕设、硕士或博士论文的同学。"
-    },
-    {
       "slug": "dev-tools/package-managers/uv",
       "route": "/analysis/dev-tools/package-managers/uv",
       "title": "uv",
@@ -247,38 +213,38 @@
       "summary": "Hello Algo 是中文语境下极强的 DSA 入门资源：对初学者几乎可直接推荐；但 CC BY-NC-SA 4.0 的非商业/相同方式共享限制需要明确。"
     },
     {
-      "slug": "dev-tools/scrcpy",
-      "route": "/analysis/dev-tools/scrcpy",
-      "title": "scrcpy",
-      "repo_url": "https://github.com/Genymobile/scrcpy",
-      "category": "dev-tools",
-      "directory": "dev-tools",
+      "slug": "ustc/academic-tools/ustcthesis",
+      "route": "/analysis/ustc/academic-tools/ustcthesis",
+      "title": "ustcthesis",
+      "repo_url": "https://github.com/ustctug/ustcthesis",
+      "category": "ustc/academic-tools",
+      "directory": "ustc/academic-tools",
       "tags": [
-        "android",
-        "screen-mirroring",
-        "remote-control",
-        "adb",
-        "automation"
+        "ustc",
+        "latex",
+        "thesis-template",
+        "academic-writing",
+        "tex"
       ],
-      "primary_language": "C",
-      "stars": 145199,
+      "primary_language": "TeX",
+      "stars": 2119,
       "status": "active",
       "ratings": {
         "capability": 5,
         "usability": 4,
-        "performance": 5,
-        "code_quality": 4,
+        "performance": 3,
+        "code_quality": 5,
         "documentation": 5,
         "community": 4,
         "maturity": 5,
-        "extensibility": 3,
-        "security": 4,
+        "extensibility": 4,
+        "security": 5,
         "recommendation": 5
       },
-      "overall_score": 4.4,
-      "last_checked": "2026-07-07",
-      "updated": "2026-07-07",
-      "summary": "scrcpy 适合需要从电脑控制、录制、调试或自动化 Android 真机的开发者；在移动数据采集链路中，它是基础设施而非解析器。"
+      "overall_score": 4.5,
+      "last_checked": "2026-09-16",
+      "updated": "2026-09-16",
+      "summary": "ustcthesis 是长期维护的 USTC 学位论文社区 LaTeX 模板，适合希望用 LaTeX 写本科毕设、硕士或博士论文的同学；不把模板受欢迎程度当成学校强制标准。"
     },
     {
       "slug": "education-resourses/programming/programming-language-guides/rust/rust-book",
@@ -495,39 +461,6 @@
       "last_checked": "2026-07-15",
       "updated": "2026-07-15",
       "summary": "Ollama 是 Agent Infrastructure 中的 local model runtime layer：它主要给 agent 提供可本地运行、可 API 调用、兼容部分 OpenAI API 的模型后端。v0.30–v0.32 又增加 `ollama launch` 与内置 coding-agent，但这层交互入口并未把它变成多租户 agent"
-    },
-    {
-      "slug": "ai-programs/agent-infrastructure/scrapy",
-      "route": "/analysis/ai-programs/agent-infrastructure/scrapy",
-      "title": "Scrapy",
-      "repo_url": "https://github.com/scrapy/scrapy",
-      "category": "ai-programs/agent-infrastructure",
-      "directory": "ai-programs/agent-infrastructure",
-      "tags": [
-        "web-scraping",
-        "crawler",
-        "python",
-        "framework"
-      ],
-      "primary_language": "Python",
-      "stars": 62968,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 3,
-        "performance": 4,
-        "code_quality": 5,
-        "documentation": 5,
-        "community": 4,
-        "maturity": 5,
-        "extensibility": 5,
-        "security": 4,
-        "recommendation": 4
-      },
-      "overall_score": 4.3,
-      "last_checked": "2026-07-07",
-      "updated": "2026-07-07",
-      "summary": "Scrapy 适合需要长期维护、可扩展、可调度的 Python 爬虫项目；不适合期待“自动理解网页并给 Markdown”的 LLM-first 快速抽取。"
     },
     {
       "slug": "ai-programs/agent-frameworks/semantic-kernel",
@@ -753,6 +686,73 @@
       "summary": "Quarto CLI 是“研究写作发布管线”，不是单纯编辑器：当你需要 Markdown、Jupyter/R、引用、交叉引用、网站、书、PDF/HTML 多输出时，它比单一排版工具更合适。"
     },
     {
+      "slug": "ai-programs/agent-infrastructure/scrapy",
+      "route": "/analysis/ai-programs/agent-infrastructure/scrapy",
+      "title": "Scrapy",
+      "repo_url": "https://github.com/scrapy/scrapy",
+      "category": "ai-programs/agent-infrastructure",
+      "directory": "ai-programs/agent-infrastructure",
+      "tags": [
+        "web-scraping",
+        "crawler",
+        "python",
+        "framework"
+      ],
+      "primary_language": "Python",
+      "stars": 62968,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 5,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 5,
+        "extensibility": 5,
+        "security": 4,
+        "recommendation": 4
+      },
+      "overall_score": 4.2,
+      "last_checked": "2026-09-16",
+      "updated": "2026-09-16",
+      "summary": "Scrapy 适合需要长期维护、可扩展、可调度的 Python 爬虫项目；不适合期待“自动理解网页并给 Markdown”的 LLM-first 快速抽取。"
+    },
+    {
+      "slug": "dev-tools/scrcpy",
+      "route": "/analysis/dev-tools/scrcpy",
+      "title": "scrcpy",
+      "repo_url": "https://github.com/Genymobile/scrcpy",
+      "category": "dev-tools",
+      "directory": "dev-tools",
+      "tags": [
+        "android",
+        "screen-mirroring",
+        "remote-control",
+        "adb",
+        "automation"
+      ],
+      "primary_language": "C",
+      "stars": 145199,
+      "status": "active",
+      "ratings": {
+        "capability": 5,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 5,
+        "community": 4,
+        "maturity": 5,
+        "extensibility": 3,
+        "security": 4,
+        "recommendation": 5
+      },
+      "overall_score": 4.2,
+      "last_checked": "2026-09-16",
+      "updated": "2026-09-16",
+      "summary": "scrcpy 适合需要从电脑控制、录制、调试或自动化 Android 真机的开发者；在移动数据采集链路中，它是基础设施而非解析器。"
+    },
+    {
       "slug": "ai-programs/agent-infrastructure/vllm",
       "route": "/analysis/ai-programs/agent-infrastructure/vllm",
       "title": "vLLM",
@@ -823,42 +823,6 @@
       "last_checked": "2026-09-10",
       "updated": "2026-09-10",
       "summary": "Crawlee 适合需要 queue、retry、session、storage 和 browser orchestration 的 JS/TS 团队；新部署先明确选择稳定 v3 还是试验 v4，不要混用两代文档 [GH:release][Docs:v4]。"
-    },
-    {
-      "slug": "ai-programs/agent-frameworks/crewai",
-      "route": "/analysis/ai-programs/agent-frameworks/crewai",
-      "title": "CrewAI",
-      "repo_url": "https://github.com/crewAIInc/crewAI",
-      "category": "ai-programs/agent-frameworks",
-      "directory": "ai-programs/agent-frameworks",
-      "tags": [
-        "multi-agent",
-        "role-based-agents",
-        "agent-framework",
-        "python",
-        "workflow-orchestration",
-        "mcp",
-        "observability"
-      ],
-      "primary_language": "",
-      "stars": 51800,
-      "status": "active",
-      "ratings": {
-        "capability": 4,
-        "usability": 4,
-        "performance": 4,
-        "code_quality": 4,
-        "documentation": 4,
-        "community": 5,
-        "maturity": 4,
-        "extensibility": 5,
-        "security": 3,
-        "recommendation": 4
-      },
-      "overall_score": 4.1,
-      "last_checked": "2026-07-11",
-      "updated": "2026-05-27",
-      "summary": "CrewAI 是 role-based multi-agent framework 的主线代表之一：它用 `Agents + Tasks + Crews` 表达“角色协作”，再用 `Flows` 给生产系统补上事件驱动、状态、路由与可控性 [GH:readme][Docs:concepts]。"
     },
     {
       "slug": "dev-tools/gitea",
@@ -2293,6 +2257,40 @@
       "summary": "CopilotKit 是给 agent 应用补“用户交互层”的强候选：浏览器内覆盖 chat、generative UI、shared state、frontend actions 和 HITL，浏览器外开始以 Channels 0.2.x 覆盖 Slack、Teams、Discord、Telegram、WhatsApp；能力广，但 monorepo、rel"
     },
     {
+      "slug": "ai-programs/agent-frameworks/crewai",
+      "route": "/analysis/ai-programs/agent-frameworks/crewai",
+      "title": "CrewAI",
+      "repo_url": "https://github.com/crewAIInc/crewAI",
+      "category": "ai-programs/agent-frameworks",
+      "directory": "ai-programs/agent-frameworks",
+      "tags": [
+        "multi-agent",
+        "python",
+        "agent-framework",
+        "workflow-orchestration",
+        "mcp"
+      ],
+      "primary_language": "Python",
+      "stars": 58755,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 5,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.7,
+      "last_checked": "2026-09-16",
+      "updated": "2026-09-16",
+      "summary": "面向希望用 Python 建模角色、任务和多 agent 工作流的开发者；适合受控试验，不适合把“production-ready”宣传直接当成运维保证 [GH:readme]。"
+    },
+    {
       "slug": "ai-programs/agent-infrastructure/hcom",
       "route": "/analysis/ai-programs/agent-infrastructure/hcom",
       "title": "hcom",
@@ -3634,8 +3632,8 @@
         "recommendation": 3
       },
       "overall_score": 3.5,
-      "last_checked": "2026-07-07",
-      "updated": "2026-07-07",
+      "last_checked": "2026-09-16",
+      "updated": "2026-09-16",
       "summary": "Scrapling 适合愿意试用现代反爬/自适应抽取能力的 Python 爬虫开发者；不适合把 README 的“bypass anti-bot”当作生产保证。"
     },
     {
@@ -4304,42 +4302,6 @@
       "summary": "Archon Horizon 把 Archon 的单项目自动化扩展成“多个 team 在一个数学 workspace 中持续工作”的 orchestration layer；它最有价值的不是单轮 proof prompt，而是 durable state、provenance、budget、resume、freeze 与跨 run 协作 [GH:readme"
     },
     {
-      "slug": "ai-programs/agents/assistant-agents/autogpt",
-      "route": "/analysis/ai-programs/agents/assistant-agents/autogpt",
-      "title": "AutoGPT",
-      "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
-      "category": "ai-programs/agents/assistant-agents",
-      "directory": "ai-programs/agents/assistant-agents",
-      "tags": [
-        "autonomous-agents",
-        "agent-history",
-        "agent-platform",
-        "workflow-automation",
-        "low-code-agents",
-        "python",
-        "typescript"
-      ],
-      "primary_language": "",
-      "stars": 185457,
-      "status": "active-platform-classic-deprecated",
-      "ratings": {
-        "capability": 5,
-        "usability": 3,
-        "performance": 3,
-        "code_quality": 3,
-        "documentation": 4,
-        "community": 5,
-        "maturity": 3,
-        "extensibility": 4,
-        "security": 2,
-        "recommendation": 1
-      },
-      "overall_score": 3.3,
-      "last_checked": "2026-07-11",
-      "updated": "2026-07-11",
-      "summary": "AutoGPT 是 autonomous-agent 史上必须收录的项目：Classic 把“让 GPT-4 自主拆解并执行任务”的想象推到大众视野，今天的仓库则转向带低代码 workflow、blocks、server/frontend、marketplace 设想的 AutoGPT Platform [GH:classic][GH:readme][Doc"
-    },
-    {
       "slug": "ai-programs/agent-infrastructure/browser-use",
       "route": "/analysis/ai-programs/agent-infrastructure/browser-use",
       "title": "Browser Use",
@@ -4932,14 +4894,12 @@
         "ai-agent",
         "desktop",
         "multi-agent",
-        "automation",
         "electron",
-        "rust",
         "office",
         "cowork"
       ],
       "primary_language": "TypeScript",
-      "stars": 29793,
+      "stars": 32952,
       "status": "active",
       "ratings": {
         "capability": 4,
@@ -4954,9 +4914,9 @@
         "recommendation": 3
       },
       "overall_score": 3.2,
-      "last_checked": "2026-07-11",
-      "updated": "2026-07-11",
-      "summary": "面向同时使用多个 AI agent、需要统一 workspace 的用户——AionUi 的理念迷人但现实骨感：功能极多、bugs 同样多，变动太快无法用于生产，共享上下文的 token 成本常被忽视。适合尝鲜和灵感参考，不适合依赖。"
+      "last_checked": "2026-09-16",
+      "updated": "2026-09-16",
+      "summary": "适合想在统一桌面界面中组合 agent、办公文件与定时任务的尝鲜者；没有足够新运行证据推翻 用户 既有稳定性与成本顾虑 [History]。"
     },
     {
       "slug": "ai-programs/ai-harness/memory/byterover-cli",
@@ -5576,6 +5536,40 @@
       "last_checked": "2026-08-28",
       "updated": "2026-08-28",
       "summary": "Archon 不是做单题 benchmark 的 tactic wrapper，而是让 Claude Code 或 Codex 在完整 Lean 4 项目里规划依赖图、并行填补 proofs、运行 `lake build`、复核并持续提交；它的强项是把长程 autoformalization 工程化，代价是复杂、昂贵且默认权限很高 [GH:readme][G"
+    },
+    {
+      "slug": "ai-programs/agents/assistant-agents/autogpt",
+      "route": "/analysis/ai-programs/agents/assistant-agents/autogpt",
+      "title": "AutoGPT",
+      "repo_url": "https://github.com/Significant-Gravitas/AutoGPT",
+      "category": "ai-programs/agents/assistant-agents",
+      "directory": "ai-programs/agents/assistant-agents",
+      "tags": [
+        "autonomous-agents",
+        "agent-history",
+        "agent-platform",
+        "workflow-automation",
+        "python"
+      ],
+      "primary_language": "Python",
+      "stars": 187439,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 1
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-09-16",
+      "updated": "2026-09-16",
+      "summary": "适合研究 autonomous-agent 向 workflow 产品演化的人；对于寻求低维护、低权限风险生产依赖的用户，仍不推荐直接采用 [GH:readme][GH:security]。"
     },
     {
       "slug": "ai-programs/agent-infrastructure/autoscraper",
