@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 191,
+  "count": 196,
   "reports": [
     {
       "slug": "education-resourses/programming/programming-language-guides/go/go",
@@ -5251,6 +5251,41 @@
       "summary": "`mattpocock/skills` 适合已经有 agent harness、希望研究“如何把 alignment、domain language、spec、vertical slices、TDD、debugging 与 review 写成可组合 skills”的工程师；对现有成熟 workflow，应按概念和局部 skill 选择性吸收，不宜全量覆盖安装"
     },
     {
+      "slug": "document-processing/editors/markdown/tinta",
+      "route": "/analysis/document-processing/editors/markdown/tinta",
+      "title": "Tinta",
+      "repo_url": "https://github.com/oipoistar/tinta",
+      "category": "document-processing/editors/markdown",
+      "directory": "document-processing/editors/markdown",
+      "tags": [
+        "markdown",
+        "desktop",
+        "windows",
+        "viewer",
+        "editor",
+        "cpp"
+      ],
+      "primary_language": "C++",
+      "stars": 195,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-09-29",
+      "updated": "2026-09-29",
+      "summary": "Tinta 是面向 Windows 本地 Markdown/Mermaid 阅读、兼顾轻量编辑和导出的原生 C++ 工具，不是跨平台协作文档系统。[GH:readme]"
+    },
+    {
       "slug": "document-processing/editors/tolaria",
       "route": "/analysis/document-processing/editors/tolaria",
       "title": "Tolaria",
@@ -6157,6 +6192,39 @@
       "summary": "`anthropics/knowledge-work-plugins` 是 Anthropic 将 Claude Cowork 从“通用 agent”推向“角色化知识工作 agent”的样板库：每个 plugin 用 markdown/JSON 文件声明 skills、commands、MCP connectors 和角色流程，让 Claude 更像某个业务"
     },
     {
+      "slug": "document-processing/editors/markdown/mdview",
+      "route": "/analysis/document-processing/editors/markdown/mdview",
+      "title": "mdview",
+      "repo_url": "https://github.com/c3er/mdview",
+      "category": "document-processing/editors/markdown",
+      "directory": "document-processing/editors/markdown",
+      "tags": [
+        "markdown",
+        "viewer",
+        "desktop",
+        "electron"
+      ],
+      "primary_language": "JavaScript",
+      "stars": 144,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 3,
+        "extensibility": 3,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3,
+      "last_checked": "2026-09-29",
+      "updated": "2026-09-29",
+      "summary": "面向已有编辑器、只需在 Windows、Linux 或 macOS 独立阅读本地 Markdown 的用户；不负责写作、管理笔记或启动 Web 服务。[GH:readme]"
+    },
+    {
       "slug": "ai-programs/agents/assistant-agents/openclaw",
       "route": "/analysis/ai-programs/agents/assistant-agents/openclaw",
       "title": "OpenClaw",
@@ -6226,6 +6294,41 @@
       "last_checked": "2026-07-21",
       "updated": "2026-07-21",
       "summary": "Presenton 是一个值得观察的开源 AI presentation engine：它把“生成 slide deck”做成 UI + API + Docker + Electron + MCP 的完整产品形态，但当前 beta、依赖重、攻击面宽，不宜仅凭 README 的 Gamma/Beautiful AI alternative 叙事高估成熟度 [G"
+    },
+    {
+      "slug": "document-processing/editors/markdown/rmdv",
+      "route": "/analysis/document-processing/editors/markdown/rmdv",
+      "title": "rmdv",
+      "repo_url": "https://github.com/minchenlee/rmdv",
+      "category": "document-processing/editors/markdown",
+      "directory": "document-processing/editors/markdown",
+      "tags": [
+        "markdown",
+        "rust",
+        "iced",
+        "desktop",
+        "ipc",
+        "mindmap"
+      ],
+      "primary_language": "Rust",
+      "stars": 13,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3,
+      "last_checked": "2026-09-29",
+      "updated": "2026-09-29",
+      "summary": "rmdv 是以阅读工作区为中心、可通过本地 IPC 被脚本或 coding agent 操控的原生 Markdown 查看器，不是浏览器壳，也不是具备权限隔离的 agent 执行平台。[GH:readme][GH:ipc]"
     },
     {
       "slug": "ai-programs/ai-harness/hooks/rtk",
@@ -6703,6 +6806,40 @@
       "summary": "它只适合具备本地 Python/浏览器排障能力、已自行确认使用许可、并愿意把账号和输出数据隔离的个人做低频岗位研究；不适合做通用 scraper、无监督 Agent 能力或组织级数据管道。"
     },
     {
+      "slug": "document-processing/editors/markdown/fastmarkdownviewer",
+      "route": "/analysis/document-processing/editors/markdown/fastmarkdownviewer",
+      "title": "FastMarkdownViewer",
+      "repo_url": "https://github.com/Quetzalcohuatl/fastmarkdownviewer",
+      "category": "document-processing/editors/markdown",
+      "directory": "document-processing/editors/markdown",
+      "tags": [
+        "markdown",
+        "viewer",
+        "desktop",
+        "rust",
+        "read-only"
+      ],
+      "primary_language": "Rust",
+      "stars": 0,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 4,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 1,
+        "maturity": 1,
+        "extensibility": 2,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 2.8,
+      "last_checked": "2026-09-29",
+      "updated": "2026-09-29",
+      "summary": "FastMarkdownViewer 是为 Windows、macOS 和 Ubuntu 用户快速阅读单个或多个 Markdown 文件而设计的只读桌面程序；默认自动获取远程图片，阅读不可信文档时应先关闭该选项。[Local:readme] [Local:privacy]"
+    },
+    {
       "slug": "ai-programs/agent-infrastructure/future-agi",
       "route": "/analysis/ai-programs/agent-infrastructure/future-agi",
       "title": "Future AGI",
@@ -6919,6 +7056,40 @@
       "last_checked": "2026-07-20",
       "updated": "2026-07-20",
       "summary": "Schema Harness 适合正在设计 verification-first agent workflow、希望把“belief → prediction → falsification → planning → controlled action”做成硬约束的研究者；它当前最值得采用的是方法，不是代码，因为公开 GitHub repository 只有"
+    },
+    {
+      "slug": "document-processing/editors/markdown/md-viewer",
+      "route": "/analysis/document-processing/editors/markdown/md-viewer",
+      "title": "MDViewer",
+      "repo_url": "https://github.com/newuni/md-viewer",
+      "category": "document-processing/editors/markdown",
+      "directory": "document-processing/editors/markdown",
+      "tags": [
+        "markdown",
+        "macos",
+        "quicklook",
+        "swift",
+        "viewer"
+      ],
+      "primary_language": "Swift",
+      "stars": 5,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 3,
+        "community": 2,
+        "maturity": 2,
+        "extensibility": 2,
+        "security": 2,
+        "recommendation": 2
+      },
+      "overall_score": 2.5,
+      "last_checked": "2026-09-29",
+      "updated": "2026-09-29",
+      "summary": "MDViewer 面向想在 macOS 阅读本地 Markdown 并利用 Finder 预览的用户，但其未签名发布包会使核心 Quick Look 体验无法作为开箱即用承诺。[GH:readme]"
     },
     {
       "slug": "ai-programs/agents/math-agents/rethlas",
