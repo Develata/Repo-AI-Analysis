@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 196,
+  "count": 197,
   "reports": [
     {
       "slug": "education-resourses/programming/programming-language-guides/go/go",
@@ -5638,6 +5638,42 @@
       "last_checked": "2026-09-10",
       "updated": "2026-07-07",
       "summary": "AutoScraper 适合快速从结构简单、变化不大的网页里抽一类重复字段；不适合复杂站点、大规模爬取或反爬对抗。"
+    },
+    {
+      "slug": "math/machine-proving/bend",
+      "route": "/analysis/math/machine-proving/bend",
+      "title": "Bend",
+      "repo_url": "https://github.com/bendlang/bend",
+      "category": "math/machine-proving",
+      "directory": "math/machine-proving",
+      "tags": [
+        "bend",
+        "dependent-types",
+        "affine-types",
+        "formal-verification",
+        "parallel-computing",
+        "gpu",
+        "programming-language"
+      ],
+      "primary_language": "TypeScript；C/JavaScript 后端；Lean 内核形式化",
+      "stars": 23535,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 3,
+        "documentation": 4,
+        "community": 4,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-10-11",
+      "updated": "2026-10-11",
+      "summary": "Bend 2 把“用依赖类型描述程序定律、交付证明，再把计算编译到 CPU/GPU”放入同一语言；对研究证明与执行如何衔接的人很有吸引力，但证明链和执行链尚有明确缺口。[GH:readme][Local:kernel]"
     },
     {
       "slug": "cloud-server/URLshortener/chhoto-url",
