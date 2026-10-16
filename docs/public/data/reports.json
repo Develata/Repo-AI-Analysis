@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 197,
+  "count": 198,
   "reports": [
     {
       "slug": "education-resourses/programming/programming-language-guides/go/go",
@@ -5249,6 +5249,41 @@
       "last_checked": "2026-07-16",
       "updated": "2026-07-16",
       "summary": "`mattpocock/skills` 适合已经有 agent harness、希望研究“如何把 alignment、domain language、spec、vertical slices、TDD、debugging 与 review 写成可组合 skills”的工程师；对现有成熟 workflow，应按概念和局部 skill 选择性吸收，不宜全量覆盖安装"
+    },
+    {
+      "slug": "ai-programs/ai-harness/mcp/ssh-mcp",
+      "route": "/analysis/ai-programs/ai-harness/mcp/ssh-mcp",
+      "title": "ssh-mcp",
+      "repo_url": "https://github.com/tufantunc/ssh-mcp",
+      "category": "ai-programs/ai-harness/mcp",
+      "directory": "ai-programs/ai-harness/mcp",
+      "tags": [
+        "mcp",
+        "ssh",
+        "remote-execution",
+        "policy",
+        "audit",
+        "typescript"
+      ],
+      "primary_language": "TypeScript",
+      "stars": 808,
+      "status": "active",
+      "ratings": {
+        "capability": 4,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 3,
+        "community": 3,
+        "maturity": 3,
+        "extensibility": 4,
+        "security": 2,
+        "recommendation": 3
+      },
+      "overall_score": 3.2,
+      "last_checked": "2026-10-16",
+      "updated": "2026-10-16",
+      "summary": "把 SSH 命令、SFTP 和持久会话暴露为 MCP 工具，并在执行链上加入命令分类、角色授权、人工批准和审计；适合隔离环境试用，不宜将其文本分类器当作生产主机的最终权限边界。[Docs][Local:source]"
     },
     {
       "slug": "document-processing/editors/markdown/tinta",
