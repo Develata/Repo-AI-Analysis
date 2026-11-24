@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "count": 198,
+  "count": 199,
   "reports": [
     {
       "slug": "education-resourses/programming/programming-language-guides/go/go",
@@ -6039,6 +6039,40 @@
       "last_checked": "2026-07-19",
       "updated": "2026-07-19",
       "summary": "RAGFlow 是一个把 deep document understanding、知识库、RAG workflow、agent canvas、sandbox code execution、MCP/API 与多数据源连接器收束到同一平台里的大型 RAG/agentic workflow repo；它值得收录，但不是“轻量 RAG 库”，也不应在未审计、未加固的"
+    },
+    {
+      "slug": "document-processing/tomoru",
+      "route": "/analysis/document-processing/tomoru",
+      "title": "Tomoru",
+      "repo_url": "https://github.com/ACAne0320/Tomoru",
+      "category": "document-processing",
+      "directory": "document-processing",
+      "tags": [
+        "asr",
+        "live-captions",
+        "subtitle-translation",
+        "desktop",
+        "local-inference"
+      ],
+      "primary_language": "Go",
+      "stars": 403,
+      "status": "active",
+      "ratings": {
+        "capability": 3,
+        "usability": 3,
+        "performance": 3,
+        "code_quality": 4,
+        "documentation": 4,
+        "community": 3,
+        "maturity": 2,
+        "extensibility": 3,
+        "security": 3,
+        "recommendation": 3
+      },
+      "overall_score": 3.1,
+      "last_checked": "2026-11-24",
+      "updated": "2026-11-24",
+      "summary": "给经常看没有字幕的外语直播或视频的桌面用户：不用先拿到媒体文件，直接对播放中的音频做转写和翻译。[Docs:readme]"
     },
     {
       "slug": "programming/security/android-privacy-tools/universal-android-debloater-next-generation",
